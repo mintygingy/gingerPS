@@ -1,0 +1,39 @@
+package emu.gingerps.game.home;
+
+import dev.morphia.annotations.Entity;
+import emu.gingerps.net.proto.HomeAnimalDataOuterClass;
+import emu.gingerps.net.proto.HomeNpcDataOuterClass;
+import emu.gingerps.utils.Position;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.experimental.FieldDefaults;
+
+@Entity
+@Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder(builderMethodName = "of")
+public class HomeNPCItem {
+    int avatarId;
+    Position spawnPos;
+    Position spawnRot;
+    int costumeId;
+
+    public HomeNpcDataOuterClass.HomeNpcData toProto(){
+        return HomeNpcDataOuterClass.HomeNpcData.newBuilder()
+                .setAvatarId(avatarId)
+                .setSpawnPos(spawnPos.toProto())
+                .setSpawnRot(spawnRot.toProto())
+                .setCostumeId(costumeId)
+                .build();
+    }
+
+    public static HomeNPCItem parseFrom(HomeNpcDataOuterClass.HomeNpcData homeNpcData) {
+        return HomeNPCItem.of()
+                .avatarId(homeNpcData.getAvatarId())
+                .spawnPos(new Position(homeNpcData.getSpawnPos()))
+                .spawnRot(new Position(homeNpcData.getSpawnRot()))
+                .costumeId(homeNpcData.getCostumeId())
+                .build();
+    }
+}

@@ -1,0 +1,31 @@
+package emu.gingerps.server.packet.send;
+
+import emu.gingerps.game.activity.ActivityConfigItem;
+import emu.gingerps.net.packet.BasePacket;
+import emu.gingerps.net.packet.PacketOpcodes;
+import emu.gingerps.net.proto.ActivityScheduleInfoNotifyOuterClass;
+import emu.gingerps.net.proto.ActivityScheduleInfoOuterClass;
+import emu.gingerps.utils.DateHelper;
+
+import java.util.Collection;
+
+public class PacketActivityScheduleInfoNotify extends BasePacket {
+
+	public PacketActivityScheduleInfoNotify(Collection<ActivityConfigItem> activityConfigItemList) {
+		super(PacketOpcodes.ActivityScheduleInfoNotify);
+
+		var proto = ActivityScheduleInfoNotifyOuterClass.ActivityScheduleInfoNotify.newBuilder();
+
+        activityConfigItemList.forEach(item -> {
+            proto.addActivityScheduleList(ActivityScheduleInfoOuterClass.ActivityScheduleInfo.newBuilder()
+                .setActivityId(item.getActivityId())
+                .setScheduleId(item.getScheduleId())
+                .setIsOpen(true)
+                .setBeginTime(DateHelper.getUnixTime(item.getBeginTime()))
+                .setEndTime(DateHelper.getUnixTime(item.getEndTime()))
+                .build());
+        });
+
+		this.setData(proto);
+	}
+}
