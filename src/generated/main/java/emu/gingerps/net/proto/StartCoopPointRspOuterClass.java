@@ -88,6 +88,71 @@ public final class StartCoopPointRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private StartCoopPointRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.MainCoopOuterClass.MainCoop.Builder subBuilder = null;
+              if (startMainCoop_ != null) {
+                subBuilder = startMainCoop_.toBuilder();
+              }
+              startMainCoop_ = input.readMessage(emu.gingerps.net.proto.MainCoopOuterClass.MainCoop.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startMainCoop_);
+                startMainCoop_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
+
+              isStart_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              coopPoint_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.StartCoopPointRspOuterClass.internal_static_StartCoopPointRsp_descriptor;
@@ -124,11 +189,11 @@ public final class StartCoopPointRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MainCoopOuterClass.MainCoopOrBuilder getStartMainCoopOrBuilder() {
-      return startMainCoop_ == null ? emu.gingerps.net.proto.MainCoopOuterClass.MainCoop.getDefaultInstance() : startMainCoop_;
+      return getStartMainCoop();
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -139,7 +204,7 @@ public final class StartCoopPointRspOuterClass {
     }
 
     public static final int IS_START_FIELD_NUMBER = 5;
-    private boolean isStart_ = false;
+    private boolean isStart_;
     /**
      * <code>bool is_start = 5;</code>
      * @return The isStart.
@@ -150,7 +215,7 @@ public final class StartCoopPointRspOuterClass {
     }
 
     public static final int COOP_POINT_FIELD_NUMBER = 9;
-    private int coopPoint_ = 0;
+    private int coopPoint_;
     /**
      * <code>uint32 coop_point = 9;</code>
      * @return The coopPoint.
@@ -186,7 +251,7 @@ public final class StartCoopPointRspOuterClass {
       if (coopPoint_ != 0) {
         output.writeUInt32(9, coopPoint_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -211,7 +276,7 @@ public final class StartCoopPointRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, coopPoint_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +302,7 @@ public final class StartCoopPointRspOuterClass {
           != other.getIsStart()) return false;
       if (getCoopPoint()
           != other.getCoopPoint()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -259,7 +324,7 @@ public final class StartCoopPointRspOuterClass {
           getIsStart());
       hash = (37 * hash) + COOP_POINT_FIELD_NUMBER;
       hash = (53 * hash) + getCoopPoint();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -386,26 +451,34 @@ public final class StartCoopPointRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.StartCoopPointRspOuterClass.StartCoopPointRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        startMainCoop_ = null;
-        if (startMainCoopBuilder_ != null) {
-          startMainCoopBuilder_.dispose();
+        if (startMainCoopBuilder_ == null) {
+          startMainCoop_ = null;
+        } else {
+          startMainCoop_ = null;
           startMainCoopBuilder_ = null;
         }
         retcode_ = 0;
+
         isStart_ = false;
+
         coopPoint_ = 0;
+
         return this;
       }
 
@@ -432,27 +505,16 @@ public final class StartCoopPointRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.StartCoopPointRspOuterClass.StartCoopPointRsp buildPartial() {
         emu.gingerps.net.proto.StartCoopPointRspOuterClass.StartCoopPointRsp result = new emu.gingerps.net.proto.StartCoopPointRspOuterClass.StartCoopPointRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (startMainCoopBuilder_ == null) {
+          result.startMainCoop_ = startMainCoop_;
+        } else {
+          result.startMainCoop_ = startMainCoopBuilder_.build();
+        }
+        result.retcode_ = retcode_;
+        result.isStart_ = isStart_;
+        result.coopPoint_ = coopPoint_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.StartCoopPointRspOuterClass.StartCoopPointRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.startMainCoop_ = startMainCoopBuilder_ == null
-              ? startMainCoop_
-              : startMainCoopBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isStart_ = isStart_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.coopPoint_ = coopPoint_;
-        }
       }
 
       @java.lang.Override
@@ -511,7 +573,7 @@ public final class StartCoopPointRspOuterClass {
         if (other.getCoopPoint() != 0) {
           setCoopPoint(other.getCoopPoint());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -526,55 +588,19 @@ public final class StartCoopPointRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.StartCoopPointRspOuterClass.StartCoopPointRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 34: {
-                input.readMessage(
-                    getStartMainCoopFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 34
-              case 40: {
-                isStart_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 72: {
-                coopPoint_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.StartCoopPointRspOuterClass.StartCoopPointRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.MainCoopOuterClass.MainCoop startMainCoop_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -584,7 +610,7 @@ public final class StartCoopPointRspOuterClass {
        * @return Whether the startMainCoop field is set.
        */
       public boolean hasStartMainCoop() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return startMainCoopBuilder_ != null || startMainCoop_ != null;
       }
       /**
        * <code>.MainCoop start_main_coop = 4;</code>
@@ -606,11 +632,11 @@ public final class StartCoopPointRspOuterClass {
             throw new NullPointerException();
           }
           startMainCoop_ = value;
+          onChanged();
         } else {
           startMainCoopBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -620,11 +646,11 @@ public final class StartCoopPointRspOuterClass {
           emu.gingerps.net.proto.MainCoopOuterClass.MainCoop.Builder builderForValue) {
         if (startMainCoopBuilder_ == null) {
           startMainCoop_ = builderForValue.build();
+          onChanged();
         } else {
           startMainCoopBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -632,38 +658,38 @@ public final class StartCoopPointRspOuterClass {
        */
       public Builder mergeStartMainCoop(emu.gingerps.net.proto.MainCoopOuterClass.MainCoop value) {
         if (startMainCoopBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            startMainCoop_ != null &&
-            startMainCoop_ != emu.gingerps.net.proto.MainCoopOuterClass.MainCoop.getDefaultInstance()) {
-            getStartMainCoopBuilder().mergeFrom(value);
+          if (startMainCoop_ != null) {
+            startMainCoop_ =
+              emu.gingerps.net.proto.MainCoopOuterClass.MainCoop.newBuilder(startMainCoop_).mergeFrom(value).buildPartial();
           } else {
             startMainCoop_ = value;
           }
+          onChanged();
         } else {
           startMainCoopBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MainCoop start_main_coop = 4;</code>
        */
       public Builder clearStartMainCoop() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        startMainCoop_ = null;
-        if (startMainCoopBuilder_ != null) {
-          startMainCoopBuilder_.dispose();
+        if (startMainCoopBuilder_ == null) {
+          startMainCoop_ = null;
+          onChanged();
+        } else {
+          startMainCoop_ = null;
           startMainCoopBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MainCoop start_main_coop = 4;</code>
        */
       public emu.gingerps.net.proto.MainCoopOuterClass.MainCoop.Builder getStartMainCoopBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getStartMainCoopFieldBuilder().getBuilder();
       }
@@ -712,7 +738,6 @@ public final class StartCoopPointRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -721,7 +746,7 @@ public final class StartCoopPointRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -744,7 +769,6 @@ public final class StartCoopPointRspOuterClass {
       public Builder setIsStart(boolean value) {
         
         isStart_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -753,7 +777,7 @@ public final class StartCoopPointRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsStart() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isStart_ = false;
         onChanged();
         return this;
@@ -776,7 +800,6 @@ public final class StartCoopPointRspOuterClass {
       public Builder setCoopPoint(int value) {
         
         coopPoint_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -785,7 +808,7 @@ public final class StartCoopPointRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoopPoint() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         coopPoint_ = 0;
         onChanged();
         return this;
@@ -823,18 +846,7 @@ public final class StartCoopPointRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new StartCoopPointRsp(input, extensionRegistry);
       }
     };
 

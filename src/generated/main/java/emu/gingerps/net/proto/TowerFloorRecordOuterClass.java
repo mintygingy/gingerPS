@@ -41,12 +41,14 @@ public final class TowerFloorRecordOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
      */
+
     int getPassedLevelMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
      */
+
     int getPassedLevelMapOrThrow(
         int key);
 
@@ -114,6 +116,79 @@ public final class TowerFloorRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TowerFloorRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                passedLevelRecordList_ = new java.util.ArrayList<emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              passedLevelRecordList_.add(
+                  input.readMessage(emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord.parser(), extensionRegistry));
+              break;
+            }
+            case 32: {
+
+              floorStarRewardProgress_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                passedLevelMap_ = com.google.protobuf.MapField.newMapField(
+                    PassedLevelMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              passedLevelMap__ = input.readMessage(
+                  PassedLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              passedLevelMap_.getMutableMap().put(
+                  passedLevelMap__.getKey(), passedLevelMap__.getValue());
+              break;
+            }
+            case 96: {
+
+              floorId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          passedLevelRecordList_ = java.util.Collections.unmodifiableList(passedLevelRecordList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerFloorRecordOuterClass.internal_static_TowerFloorRecord_descriptor;
@@ -151,7 +226,6 @@ public final class TowerFloorRecordOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> passedLevelMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -162,12 +236,14 @@ public final class TowerFloorRecordOuterClass {
       }
       return passedLevelMap_;
     }
+
     public int getPassedLevelMapCount() {
       return internalGetPassedLevelMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
      */
+
     @java.lang.Override
     public boolean containsPassedLevelMap(
         int key) {
@@ -186,6 +262,7 @@ public final class TowerFloorRecordOuterClass {
      * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getPassedLevelMapMap() {
       return internalGetPassedLevelMap().getMap();
     }
@@ -193,6 +270,7 @@ public final class TowerFloorRecordOuterClass {
      * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
      */
     @java.lang.Override
+
     public int getPassedLevelMapOrDefault(
         int key,
         int defaultValue) {
@@ -205,6 +283,7 @@ public final class TowerFloorRecordOuterClass {
      * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
      */
     @java.lang.Override
+
     public int getPassedLevelMapOrThrow(
         int key) {
       
@@ -217,7 +296,6 @@ public final class TowerFloorRecordOuterClass {
     }
 
     public static final int PASSED_LEVEL_RECORD_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord> passedLevelRecordList_;
     /**
      * <code>repeated .TowerLevelRecord passed_level_record_list = 2;</code>
@@ -258,7 +336,7 @@ public final class TowerFloorRecordOuterClass {
     }
 
     public static final int FLOOR_ID_FIELD_NUMBER = 12;
-    private int floorId_ = 0;
+    private int floorId_;
     /**
      * <code>uint32 floor_id = 12;</code>
      * @return The floorId.
@@ -269,7 +347,7 @@ public final class TowerFloorRecordOuterClass {
     }
 
     public static final int FLOOR_STAR_REWARD_PROGRESS_FIELD_NUMBER = 4;
-    private int floorStarRewardProgress_ = 0;
+    private int floorStarRewardProgress_;
     /**
      * <code>uint32 floor_star_reward_progress = 4;</code>
      * @return The floorStarRewardProgress.
@@ -308,7 +386,7 @@ public final class TowerFloorRecordOuterClass {
       if (floorId_ != 0) {
         output.writeUInt32(12, floorId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -339,7 +417,7 @@ public final class TowerFloorRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, floorId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -362,7 +440,7 @@ public final class TowerFloorRecordOuterClass {
           != other.getFloorId()) return false;
       if (getFloorStarRewardProgress()
           != other.getFloorStarRewardProgress()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -385,7 +463,7 @@ public final class TowerFloorRecordOuterClass {
       hash = (53 * hash) + getFloorId();
       hash = (37 * hash) + FLOOR_STAR_REWARD_PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getFloorStarRewardProgress();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -524,28 +602,34 @@ public final class TowerFloorRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPassedLevelRecordListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutablePassedLevelMap().clear();
         if (passedLevelRecordListBuilder_ == null) {
           passedLevelRecordList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          passedLevelRecordList_ = null;
           passedLevelRecordListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         floorId_ = 0;
+
         floorStarRewardProgress_ = 0;
+
         return this;
       }
 
@@ -572,13 +656,9 @@ public final class TowerFloorRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord buildPartial() {
         emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord result = new emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord result) {
+        int from_bitField0_ = bitField0_;
+        result.passedLevelMap_ = internalGetPassedLevelMap();
+        result.passedLevelMap_.makeImmutable();
         if (passedLevelRecordListBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             passedLevelRecordList_ = java.util.Collections.unmodifiableList(passedLevelRecordList_);
@@ -588,20 +668,10 @@ public final class TowerFloorRecordOuterClass {
         } else {
           result.passedLevelRecordList_ = passedLevelRecordListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.passedLevelMap_ = internalGetPassedLevelMap();
-          result.passedLevelMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.floorId_ = floorId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.floorStarRewardProgress_ = floorStarRewardProgress_;
-        }
+        result.floorId_ = floorId_;
+        result.floorStarRewardProgress_ = floorStarRewardProgress_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -650,7 +720,6 @@ public final class TowerFloorRecordOuterClass {
         if (other == emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord.getDefaultInstance()) return this;
         internalGetMutablePassedLevelMap().mergeFrom(
             other.internalGetPassedLevelMap());
-        bitField0_ |= 0x00000001;
         if (passedLevelRecordListBuilder_ == null) {
           if (!other.passedLevelRecordList_.isEmpty()) {
             if (passedLevelRecordList_.isEmpty()) {
@@ -683,7 +752,7 @@ public final class TowerFloorRecordOuterClass {
         if (other.getFloorStarRewardProgress() != 0) {
           setFloorStarRewardProgress(other.getFloorStarRewardProgress());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -698,62 +767,17 @@ public final class TowerFloorRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord.parser(),
-                        extensionRegistry);
-                if (passedLevelRecordListBuilder_ == null) {
-                  ensurePassedLevelRecordListIsMutable();
-                  passedLevelRecordList_.add(m);
-                } else {
-                  passedLevelRecordListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 32: {
-                floorStarRewardProgress_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 90: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                passedLevelMap__ = input.readMessage(
-                    PassedLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutablePassedLevelMap().getMutableMap().put(
-                    passedLevelMap__.getKey(), passedLevelMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 90
-              case 96: {
-                floorId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -761,7 +785,7 @@ public final class TowerFloorRecordOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> passedLevelMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetPassedLevelMap() {
+      internalGetPassedLevelMap() {
         if (passedLevelMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               PassedLevelMapDefaultEntryHolder.defaultEntry);
@@ -769,7 +793,8 @@ public final class TowerFloorRecordOuterClass {
         return passedLevelMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutablePassedLevelMap() {
+      internalGetMutablePassedLevelMap() {
+        onChanged();;
         if (passedLevelMap_ == null) {
           passedLevelMap_ = com.google.protobuf.MapField.newMapField(
               PassedLevelMapDefaultEntryHolder.defaultEntry);
@@ -777,16 +802,16 @@ public final class TowerFloorRecordOuterClass {
         if (!passedLevelMap_.isMutable()) {
           passedLevelMap_ = passedLevelMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return passedLevelMap_;
       }
+
       public int getPassedLevelMapCount() {
         return internalGetPassedLevelMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
        */
+
       @java.lang.Override
       public boolean containsPassedLevelMap(
           int key) {
@@ -805,6 +830,7 @@ public final class TowerFloorRecordOuterClass {
        * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getPassedLevelMapMap() {
         return internalGetPassedLevelMap().getMap();
       }
@@ -812,6 +838,7 @@ public final class TowerFloorRecordOuterClass {
        * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
        */
       @java.lang.Override
+
       public int getPassedLevelMapOrDefault(
           int key,
           int defaultValue) {
@@ -824,6 +851,7 @@ public final class TowerFloorRecordOuterClass {
        * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
        */
       @java.lang.Override
+
       public int getPassedLevelMapOrThrow(
           int key) {
         
@@ -834,8 +862,8 @@ public final class TowerFloorRecordOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearPassedLevelMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutablePassedLevelMap().getMutableMap()
             .clear();
         return this;
@@ -843,6 +871,7 @@ public final class TowerFloorRecordOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
        */
+
       public Builder removePassedLevelMap(
           int key) {
         
@@ -855,8 +884,7 @@ public final class TowerFloorRecordOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutablePassedLevelMap() {
-        bitField0_ |= 0x00000001;
+      getMutablePassedLevelMap() {
         return internalGetMutablePassedLevelMap().getMutableMap();
       }
       /**
@@ -869,17 +897,16 @@ public final class TowerFloorRecordOuterClass {
         
         internalGetMutablePassedLevelMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; passed_level_map = 11;</code>
        */
+
       public Builder putAllPassedLevelMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutablePassedLevelMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -1140,7 +1167,6 @@ public final class TowerFloorRecordOuterClass {
       public Builder setFloorId(int value) {
         
         floorId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1149,7 +1175,7 @@ public final class TowerFloorRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFloorId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         floorId_ = 0;
         onChanged();
         return this;
@@ -1172,7 +1198,6 @@ public final class TowerFloorRecordOuterClass {
       public Builder setFloorStarRewardProgress(int value) {
         
         floorStarRewardProgress_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1181,7 +1206,7 @@ public final class TowerFloorRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFloorStarRewardProgress() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         floorStarRewardProgress_ = 0;
         onChanged();
         return this;
@@ -1219,18 +1244,7 @@ public final class TowerFloorRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TowerFloorRecord(input, extensionRegistry);
       }
     };
 

@@ -81,6 +81,56 @@ public final class CheckSegmentCRCReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CheckSegmentCRCReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                infoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              infoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          infoList_ = java.util.Collections.unmodifiableList(infoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CheckSegmentCRCReqOuterClass.internal_static_CheckSegmentCRCReq_descriptor;
@@ -95,7 +145,6 @@ public final class CheckSegmentCRCReqOuterClass {
     }
 
     public static final int INFO_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo> infoList_;
     /**
      * <code>repeated .SegmentCRCInfo info_list = 4;</code>
@@ -152,7 +201,7 @@ public final class CheckSegmentCRCReqOuterClass {
       for (int i = 0; i < infoList_.size(); i++) {
         output.writeMessage(4, infoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -165,7 +214,7 @@ public final class CheckSegmentCRCReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, infoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -182,7 +231,7 @@ public final class CheckSegmentCRCReqOuterClass {
 
       if (!getInfoListList()
           .equals(other.getInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -197,7 +246,7 @@ public final class CheckSegmentCRCReqOuterClass {
         hash = (37 * hash) + INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -325,25 +374,29 @@ public final class CheckSegmentCRCReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.CheckSegmentCRCReqOuterClass.CheckSegmentCRCReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (infoListBuilder_ == null) {
           infoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          infoList_ = null;
           infoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -370,13 +423,7 @@ public final class CheckSegmentCRCReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CheckSegmentCRCReqOuterClass.CheckSegmentCRCReq buildPartial() {
         emu.gingerps.net.proto.CheckSegmentCRCReqOuterClass.CheckSegmentCRCReq result = new emu.gingerps.net.proto.CheckSegmentCRCReqOuterClass.CheckSegmentCRCReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CheckSegmentCRCReqOuterClass.CheckSegmentCRCReq result) {
+        int from_bitField0_ = bitField0_;
         if (infoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             infoList_ = java.util.Collections.unmodifiableList(infoList_);
@@ -386,10 +433,8 @@ public final class CheckSegmentCRCReqOuterClass {
         } else {
           result.infoList_ = infoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CheckSegmentCRCReqOuterClass.CheckSegmentCRCReq result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -462,7 +507,7 @@ public final class CheckSegmentCRCReqOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -477,43 +522,17 @@ public final class CheckSegmentCRCReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CheckSegmentCRCReqOuterClass.CheckSegmentCRCReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 34: {
-                emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo.parser(),
-                        extensionRegistry);
-                if (infoListBuilder_ == null) {
-                  ensureInfoListIsMutable();
-                  infoList_.add(m);
-                } else {
-                  infoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CheckSegmentCRCReqOuterClass.CheckSegmentCRCReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -790,18 +809,7 @@ public final class CheckSegmentCRCReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CheckSegmentCRCReq(input, extensionRegistry);
       }
     };
 

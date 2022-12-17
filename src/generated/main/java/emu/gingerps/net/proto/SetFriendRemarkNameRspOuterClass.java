@@ -86,6 +86,64 @@ public final class SetFriendRemarkNameRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SetFriendRemarkNameRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              isClearRemark_ = input.readBool();
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              remarkName_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SetFriendRemarkNameRspOuterClass.internal_static_SetFriendRemarkNameRsp_descriptor;
@@ -100,8 +158,7 @@ public final class SetFriendRemarkNameRspOuterClass {
     }
 
     public static final int REMARK_NAME_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object remarkName_ = "";
+    private volatile java.lang.Object remarkName_;
     /**
      * <code>string remark_name = 13;</code>
      * @return The remarkName.
@@ -139,7 +196,7 @@ public final class SetFriendRemarkNameRspOuterClass {
     }
 
     public static final int IS_CLEAR_REMARK_FIELD_NUMBER = 12;
-    private boolean isClearRemark_ = false;
+    private boolean isClearRemark_;
     /**
      * <code>bool is_clear_remark = 12;</code>
      * @return The isClearRemark.
@@ -150,7 +207,7 @@ public final class SetFriendRemarkNameRspOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 1;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 1;</code>
      * @return The uid.
@@ -161,7 +218,7 @@ public final class SetFriendRemarkNameRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
@@ -197,7 +254,7 @@ public final class SetFriendRemarkNameRspOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remarkName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, remarkName_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -221,7 +278,7 @@ public final class SetFriendRemarkNameRspOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remarkName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, remarkName_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -244,7 +301,7 @@ public final class SetFriendRemarkNameRspOuterClass {
           != other.getUid()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -264,7 +321,7 @@ public final class SetFriendRemarkNameRspOuterClass {
       hash = (53 * hash) + getUid();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -391,22 +448,30 @@ public final class SetFriendRemarkNameRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SetFriendRemarkNameRspOuterClass.SetFriendRemarkNameRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         remarkName_ = "";
+
         isClearRemark_ = false;
+
         uid_ = 0;
+
         retcode_ = 0;
+
         return this;
       }
 
@@ -433,25 +498,12 @@ public final class SetFriendRemarkNameRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SetFriendRemarkNameRspOuterClass.SetFriendRemarkNameRsp buildPartial() {
         emu.gingerps.net.proto.SetFriendRemarkNameRspOuterClass.SetFriendRemarkNameRsp result = new emu.gingerps.net.proto.SetFriendRemarkNameRspOuterClass.SetFriendRemarkNameRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.remarkName_ = remarkName_;
+        result.isClearRemark_ = isClearRemark_;
+        result.uid_ = uid_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SetFriendRemarkNameRspOuterClass.SetFriendRemarkNameRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.remarkName_ = remarkName_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isClearRemark_ = isClearRemark_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.uid_ = uid_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.retcode_ = retcode_;
-        }
       }
 
       @java.lang.Override
@@ -500,7 +552,6 @@ public final class SetFriendRemarkNameRspOuterClass {
         if (other == emu.gingerps.net.proto.SetFriendRemarkNameRspOuterClass.SetFriendRemarkNameRsp.getDefaultInstance()) return this;
         if (!other.getRemarkName().isEmpty()) {
           remarkName_ = other.remarkName_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getIsClearRemark() != false) {
@@ -512,7 +563,7 @@ public final class SetFriendRemarkNameRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -527,53 +578,19 @@ public final class SetFriendRemarkNameRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SetFriendRemarkNameRspOuterClass.SetFriendRemarkNameRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 8
-              case 56: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 96: {
-                isClearRemark_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              case 106: {
-                remarkName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SetFriendRemarkNameRspOuterClass.SetFriendRemarkNameRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object remarkName_ = "";
       /**
@@ -616,9 +633,11 @@ public final class SetFriendRemarkNameRspOuterClass {
        */
       public Builder setRemarkName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         remarkName_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -627,8 +646,8 @@ public final class SetFriendRemarkNameRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemarkName() {
+        
         remarkName_ = getDefaultInstance().getRemarkName();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -639,10 +658,12 @@ public final class SetFriendRemarkNameRspOuterClass {
        */
       public Builder setRemarkNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         remarkName_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -664,7 +685,6 @@ public final class SetFriendRemarkNameRspOuterClass {
       public Builder setIsClearRemark(boolean value) {
         
         isClearRemark_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -673,7 +693,7 @@ public final class SetFriendRemarkNameRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsClearRemark() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isClearRemark_ = false;
         onChanged();
         return this;
@@ -696,7 +716,6 @@ public final class SetFriendRemarkNameRspOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -705,7 +724,7 @@ public final class SetFriendRemarkNameRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -728,7 +747,6 @@ public final class SetFriendRemarkNameRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -737,7 +755,7 @@ public final class SetFriendRemarkNameRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -775,18 +793,7 @@ public final class SetFriendRemarkNameRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SetFriendRemarkNameRsp(input, extensionRegistry);
       }
     };
 

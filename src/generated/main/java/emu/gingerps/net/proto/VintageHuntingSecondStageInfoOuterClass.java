@@ -63,6 +63,58 @@ public final class VintageHuntingSecondStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private VintageHuntingSecondStageInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 80: {
+
+              captureAnimalNum_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              totalNum_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              leftNum_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.internal_static_VintageHuntingSecondStageInfo_descriptor;
@@ -77,7 +129,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
     }
 
     public static final int LEFT_NUM_FIELD_NUMBER = 15;
-    private int leftNum_ = 0;
+    private int leftNum_;
     /**
      * <code>uint32 left_num = 15;</code>
      * @return The leftNum.
@@ -88,7 +140,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
     }
 
     public static final int TOTAL_NUM_FIELD_NUMBER = 13;
-    private int totalNum_ = 0;
+    private int totalNum_;
     /**
      * <code>uint32 total_num = 13;</code>
      * @return The totalNum.
@@ -99,7 +151,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
     }
 
     public static final int CAPTURE_ANIMAL_NUM_FIELD_NUMBER = 10;
-    private int captureAnimalNum_ = 0;
+    private int captureAnimalNum_;
     /**
      * <code>uint32 capture_animal_num = 10;</code>
      * @return The captureAnimalNum.
@@ -132,7 +184,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
       if (leftNum_ != 0) {
         output.writeUInt32(15, leftNum_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +205,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, leftNum_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +226,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
           != other.getTotalNum()) return false;
       if (getCaptureAnimalNum()
           != other.getCaptureAnimalNum()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -191,7 +243,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
       hash = (53 * hash) + getTotalNum();
       hash = (37 * hash) + CAPTURE_ANIMAL_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getCaptureAnimalNum();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -308,21 +360,28 @@ public final class VintageHuntingSecondStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         leftNum_ = 0;
+
         totalNum_ = 0;
+
         captureAnimalNum_ = 0;
+
         return this;
       }
 
@@ -349,22 +408,11 @@ public final class VintageHuntingSecondStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo buildPartial() {
         emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo result = new emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.leftNum_ = leftNum_;
+        result.totalNum_ = totalNum_;
+        result.captureAnimalNum_ = captureAnimalNum_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.leftNum_ = leftNum_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.totalNum_ = totalNum_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.captureAnimalNum_ = captureAnimalNum_;
-        }
       }
 
       @java.lang.Override
@@ -420,7 +468,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
         if (other.getCaptureAnimalNum() != 0) {
           setCaptureAnimalNum(other.getCaptureAnimalNum());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -435,48 +483,19 @@ public final class VintageHuntingSecondStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 80: {
-                captureAnimalNum_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              case 104: {
-                totalNum_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              case 120: {
-                leftNum_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int leftNum_ ;
       /**
@@ -495,7 +514,6 @@ public final class VintageHuntingSecondStageInfoOuterClass {
       public Builder setLeftNum(int value) {
         
         leftNum_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -504,7 +522,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLeftNum() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         leftNum_ = 0;
         onChanged();
         return this;
@@ -527,7 +545,6 @@ public final class VintageHuntingSecondStageInfoOuterClass {
       public Builder setTotalNum(int value) {
         
         totalNum_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +553,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalNum() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         totalNum_ = 0;
         onChanged();
         return this;
@@ -559,7 +576,6 @@ public final class VintageHuntingSecondStageInfoOuterClass {
       public Builder setCaptureAnimalNum(int value) {
         
         captureAnimalNum_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -568,7 +584,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCaptureAnimalNum() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         captureAnimalNum_ = 0;
         onChanged();
         return this;
@@ -606,18 +622,7 @@ public final class VintageHuntingSecondStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new VintageHuntingSecondStageInfo(input, extensionRegistry);
       }
     };
 

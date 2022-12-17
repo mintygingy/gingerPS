@@ -67,6 +67,53 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ExpeditionChallengeEnterRegionNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              isPuzzleFinished_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              id_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ExpeditionChallengeEnterRegionNotifyOuterClass.internal_static_ExpeditionChallengeEnterRegionNotify_descriptor;
@@ -81,7 +128,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
     }
 
     public static final int IS_PUZZLE_FINISHED_FIELD_NUMBER = 1;
-    private boolean isPuzzleFinished_ = false;
+    private boolean isPuzzleFinished_;
     /**
      * <code>bool is_puzzle_finished = 1;</code>
      * @return The isPuzzleFinished.
@@ -92,7 +139,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 10;
-    private int id_ = 0;
+    private int id_;
     /**
      * <code>uint32 id = 10;</code>
      * @return The id.
@@ -122,7 +169,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
       if (id_ != 0) {
         output.writeUInt32(10, id_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, id_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
           != other.getIsPuzzleFinished()) return false;
       if (getId()
           != other.getId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
           getIsPuzzleFinished());
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -301,20 +348,26 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ExpeditionChallengeEnterRegionNotifyOuterClass.ExpeditionChallengeEnterRegionNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isPuzzleFinished_ = false;
+
         id_ = 0;
+
         return this;
       }
 
@@ -341,19 +394,10 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ExpeditionChallengeEnterRegionNotifyOuterClass.ExpeditionChallengeEnterRegionNotify buildPartial() {
         emu.gingerps.net.proto.ExpeditionChallengeEnterRegionNotifyOuterClass.ExpeditionChallengeEnterRegionNotify result = new emu.gingerps.net.proto.ExpeditionChallengeEnterRegionNotifyOuterClass.ExpeditionChallengeEnterRegionNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isPuzzleFinished_ = isPuzzleFinished_;
+        result.id_ = id_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ExpeditionChallengeEnterRegionNotifyOuterClass.ExpeditionChallengeEnterRegionNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isPuzzleFinished_ = isPuzzleFinished_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.id_ = id_;
-        }
       }
 
       @java.lang.Override
@@ -406,7 +450,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -421,43 +465,19 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ExpeditionChallengeEnterRegionNotifyOuterClass.ExpeditionChallengeEnterRegionNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                isPuzzleFinished_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 80: {
-                id_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ExpeditionChallengeEnterRegionNotifyOuterClass.ExpeditionChallengeEnterRegionNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isPuzzleFinished_ ;
       /**
@@ -476,7 +496,6 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
       public Builder setIsPuzzleFinished(boolean value) {
         
         isPuzzleFinished_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -485,7 +504,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsPuzzleFinished() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isPuzzleFinished_ = false;
         onChanged();
         return this;
@@ -508,7 +527,6 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -517,7 +535,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         id_ = 0;
         onChanged();
         return this;
@@ -555,18 +573,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ExpeditionChallengeEnterRegionNotify(input, extensionRegistry);
       }
     };
 

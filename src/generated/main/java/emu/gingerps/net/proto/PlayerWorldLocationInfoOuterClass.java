@@ -66,6 +66,61 @@ public final class PlayerWorldLocationInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerWorldLocationInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder subBuilder = null;
+              if (playerLoc_ != null) {
+                subBuilder = playerLoc_.toBuilder();
+              }
+              playerLoc_ = input.readMessage(emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(playerLoc_);
+                playerLoc_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 88: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.internal_static_PlayerWorldLocationInfo_descriptor;
@@ -102,11 +157,11 @@ public final class PlayerWorldLocationInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocOrBuilder() {
-      return playerLoc_ == null ? emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.getDefaultInstance() : playerLoc_;
+      return getPlayerLoc();
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 11;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 11;</code>
      * @return The sceneId.
@@ -136,7 +191,7 @@ public final class PlayerWorldLocationInfoOuterClass {
       if (sceneId_ != 0) {
         output.writeUInt32(11, sceneId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +208,7 @@ public final class PlayerWorldLocationInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, sceneId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +230,7 @@ public final class PlayerWorldLocationInfoOuterClass {
       }
       if (getSceneId()
           != other.getSceneId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -192,7 +247,7 @@ public final class PlayerWorldLocationInfoOuterClass {
       }
       hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -309,24 +364,30 @@ public final class PlayerWorldLocationInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        playerLoc_ = null;
-        if (playerLocBuilder_ != null) {
-          playerLocBuilder_.dispose();
+        if (playerLocBuilder_ == null) {
+          playerLoc_ = null;
+        } else {
+          playerLoc_ = null;
           playerLocBuilder_ = null;
         }
         sceneId_ = 0;
+
         return this;
       }
 
@@ -353,21 +414,14 @@ public final class PlayerWorldLocationInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo buildPartial() {
         emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo result = new emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (playerLocBuilder_ == null) {
+          result.playerLoc_ = playerLoc_;
+        } else {
+          result.playerLoc_ = playerLocBuilder_.build();
+        }
+        result.sceneId_ = sceneId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.playerLoc_ = playerLocBuilder_ == null
-              ? playerLoc_
-              : playerLocBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
       }
 
       @java.lang.Override
@@ -420,7 +474,7 @@ public final class PlayerWorldLocationInfoOuterClass {
         if (other.getSceneId() != 0) {
           setSceneId(other.getSceneId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -435,45 +489,19 @@ public final class PlayerWorldLocationInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                input.readMessage(
-                    getPlayerLocFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 26
-              case 88: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo playerLoc_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -483,7 +511,7 @@ public final class PlayerWorldLocationInfoOuterClass {
        * @return Whether the playerLoc field is set.
        */
       public boolean hasPlayerLoc() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return playerLocBuilder_ != null || playerLoc_ != null;
       }
       /**
        * <code>.PlayerLocationInfo player_loc = 3;</code>
@@ -505,11 +533,11 @@ public final class PlayerWorldLocationInfoOuterClass {
             throw new NullPointerException();
           }
           playerLoc_ = value;
+          onChanged();
         } else {
           playerLocBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -519,11 +547,11 @@ public final class PlayerWorldLocationInfoOuterClass {
           emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder builderForValue) {
         if (playerLocBuilder_ == null) {
           playerLoc_ = builderForValue.build();
+          onChanged();
         } else {
           playerLocBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -531,38 +559,38 @@ public final class PlayerWorldLocationInfoOuterClass {
        */
       public Builder mergePlayerLoc(emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo value) {
         if (playerLocBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            playerLoc_ != null &&
-            playerLoc_ != emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.getDefaultInstance()) {
-            getPlayerLocBuilder().mergeFrom(value);
+          if (playerLoc_ != null) {
+            playerLoc_ =
+              emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.newBuilder(playerLoc_).mergeFrom(value).buildPartial();
           } else {
             playerLoc_ = value;
           }
+          onChanged();
         } else {
           playerLocBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PlayerLocationInfo player_loc = 3;</code>
        */
       public Builder clearPlayerLoc() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        playerLoc_ = null;
-        if (playerLocBuilder_ != null) {
-          playerLocBuilder_.dispose();
+        if (playerLocBuilder_ == null) {
+          playerLoc_ = null;
+          onChanged();
+        } else {
+          playerLoc_ = null;
           playerLocBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PlayerLocationInfo player_loc = 3;</code>
        */
       public emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder getPlayerLocBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getPlayerLocFieldBuilder().getBuilder();
       }
@@ -611,7 +639,6 @@ public final class PlayerWorldLocationInfoOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -620,7 +647,7 @@ public final class PlayerWorldLocationInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -658,18 +685,7 @@ public final class PlayerWorldLocationInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerWorldLocationInfo(input, extensionRegistry);
       }
     };
 

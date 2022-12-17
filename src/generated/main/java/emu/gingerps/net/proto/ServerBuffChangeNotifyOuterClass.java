@@ -134,6 +134,115 @@ public final class ServerBuffChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ServerBuffChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                serverBuffList_ = new java.util.ArrayList<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              serverBuffList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                avatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              avatarGuidList_.addLong(input.readUInt64());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                avatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                avatarGuidList_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                entityIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              entityIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                entityIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                entityIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              isCreatureBuff_ = input.readBool();
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              serverBuffChangeType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          avatarGuidList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          entityIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.internal_static_ServerBuffChangeNotify_descriptor;
@@ -256,7 +365,6 @@ public final class ServerBuffChangeNotifyOuterClass {
     }
 
     public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_;
     /**
      * <code>repeated .ServerBuff server_buff_list = 4;</code>
@@ -297,7 +405,7 @@ public final class ServerBuffChangeNotifyOuterClass {
     }
 
     public static final int IS_CREATURE_BUFF_FIELD_NUMBER = 8;
-    private boolean isCreatureBuff_ = false;
+    private boolean isCreatureBuff_;
     /**
      * <code>bool is_creature_buff = 8;</code>
      * @return The isCreatureBuff.
@@ -308,7 +416,6 @@ public final class ServerBuffChangeNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList entityIdList_;
     /**
      * <code>repeated uint32 entity_id_list = 6;</code>
@@ -337,7 +444,7 @@ public final class ServerBuffChangeNotifyOuterClass {
     private int entityIdListMemoizedSerializedSize = -1;
 
     public static final int SERVER_BUFF_CHANGE_TYPE_FIELD_NUMBER = 9;
-    private int serverBuffChangeType_ = 0;
+    private int serverBuffChangeType_;
     /**
      * <code>.ServerBuffChangeNotify.ServerBuffChangeType server_buff_change_type = 9;</code>
      * @return The enum numeric value on the wire for serverBuffChangeType.
@@ -350,12 +457,12 @@ public final class ServerBuffChangeNotifyOuterClass {
      * @return The serverBuffChangeType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType getServerBuffChangeType() {
-      emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType result = emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType.forNumber(serverBuffChangeType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType result = emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType.valueOf(serverBuffChangeType_);
       return result == null ? emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType.UNRECOGNIZED : result;
     }
 
     public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList avatarGuidList_;
     /**
      * <code>repeated uint64 avatar_guid_list = 5;</code>
@@ -421,7 +528,7 @@ public final class ServerBuffChangeNotifyOuterClass {
       if (serverBuffChangeType_ != emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF.getNumber()) {
         output.writeEnum(9, serverBuffChangeType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -470,7 +577,7 @@ public final class ServerBuffChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, serverBuffChangeType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -494,7 +601,7 @@ public final class ServerBuffChangeNotifyOuterClass {
       if (serverBuffChangeType_ != other.serverBuffChangeType_) return false;
       if (!getAvatarGuidListList()
           .equals(other.getAvatarGuidListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -522,7 +629,7 @@ public final class ServerBuffChangeNotifyOuterClass {
         hash = (37 * hash) + AVATAR_GUID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarGuidListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -649,29 +756,37 @@ public final class ServerBuffChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getServerBuffListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (serverBuffListBuilder_ == null) {
           serverBuffList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          serverBuffList_ = null;
           serverBuffListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         isCreatureBuff_ = false;
+
         entityIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         serverBuffChangeType_ = 0;
+
         avatarGuidList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -698,13 +813,7 @@ public final class ServerBuffChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify buildPartial() {
         emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify result = new emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify result) {
+        int from_bitField0_ = bitField0_;
         if (serverBuffListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
@@ -714,26 +823,20 @@ public final class ServerBuffChangeNotifyOuterClass {
         } else {
           result.serverBuffList_ = serverBuffListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
+        result.isCreatureBuff_ = isCreatureBuff_;
+        if (((bitField0_ & 0x00000002) != 0)) {
           entityIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.entityIdList_ = entityIdList_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        result.serverBuffChangeType_ = serverBuffChangeType_;
+        if (((bitField0_ & 0x00000004) != 0)) {
           avatarGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.avatarGuidList_ = avatarGuidList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isCreatureBuff_ = isCreatureBuff_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.serverBuffChangeType_ = serverBuffChangeType_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -812,7 +915,7 @@ public final class ServerBuffChangeNotifyOuterClass {
         if (!other.entityIdList_.isEmpty()) {
           if (entityIdList_.isEmpty()) {
             entityIdList_ = other.entityIdList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureEntityIdListIsMutable();
             entityIdList_.addAll(other.entityIdList_);
@@ -825,14 +928,14 @@ public final class ServerBuffChangeNotifyOuterClass {
         if (!other.avatarGuidList_.isEmpty()) {
           if (avatarGuidList_.isEmpty()) {
             avatarGuidList_ = other.avatarGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureAvatarGuidListIsMutable();
             avatarGuidList_.addAll(other.avatarGuidList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -847,85 +950,17 @@ public final class ServerBuffChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 34: {
-                emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(),
-                        extensionRegistry);
-                if (serverBuffListBuilder_ == null) {
-                  ensureServerBuffListIsMutable();
-                  serverBuffList_.add(m);
-                } else {
-                  serverBuffListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 40: {
-                long v = input.readUInt64();
-                ensureAvatarGuidListIsMutable();
-                avatarGuidList_.addLong(v);
-                break;
-              } // case 40
-              case 42: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureAvatarGuidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  avatarGuidList_.addLong(input.readUInt64());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 42
-              case 48: {
-                int v = input.readUInt32();
-                ensureEntityIdListIsMutable();
-                entityIdList_.addInt(v);
-                break;
-              } // case 48
-              case 50: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureEntityIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  entityIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 50
-              case 64: {
-                isCreatureBuff_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 72: {
-                serverBuffChangeType_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1187,7 +1222,6 @@ public final class ServerBuffChangeNotifyOuterClass {
       public Builder setIsCreatureBuff(boolean value) {
         
         isCreatureBuff_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1196,7 +1230,7 @@ public final class ServerBuffChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCreatureBuff() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isCreatureBuff_ = false;
         onChanged();
         return this;
@@ -1204,10 +1238,10 @@ public final class ServerBuffChangeNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList entityIdList_ = emptyIntList();
       private void ensureEntityIdListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           entityIdList_ = mutableCopy(entityIdList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 entity_id_list = 6;</code>
@@ -1215,7 +1249,7 @@ public final class ServerBuffChangeNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getEntityIdListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(entityIdList_) : entityIdList_;
       }
       /**
@@ -1241,7 +1275,6 @@ public final class ServerBuffChangeNotifyOuterClass {
        */
       public Builder setEntityIdList(
           int index, int value) {
-        
         ensureEntityIdListIsMutable();
         entityIdList_.setInt(index, value);
         onChanged();
@@ -1253,7 +1286,6 @@ public final class ServerBuffChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addEntityIdList(int value) {
-        
         ensureEntityIdListIsMutable();
         entityIdList_.addInt(value);
         onChanged();
@@ -1278,7 +1310,7 @@ public final class ServerBuffChangeNotifyOuterClass {
        */
       public Builder clearEntityIdList() {
         entityIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1297,8 +1329,8 @@ public final class ServerBuffChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setServerBuffChangeTypeValue(int value) {
+        
         serverBuffChangeType_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1308,7 +1340,8 @@ public final class ServerBuffChangeNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType getServerBuffChangeType() {
-        emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType result = emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType.forNumber(serverBuffChangeType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType result = emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType.valueOf(serverBuffChangeType_);
         return result == null ? emu.gingerps.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType.UNRECOGNIZED : result;
       }
       /**
@@ -1320,7 +1353,7 @@ public final class ServerBuffChangeNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        
         serverBuffChangeType_ = value.getNumber();
         onChanged();
         return this;
@@ -1330,7 +1363,7 @@ public final class ServerBuffChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearServerBuffChangeType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         serverBuffChangeType_ = 0;
         onChanged();
         return this;
@@ -1338,10 +1371,10 @@ public final class ServerBuffChangeNotifyOuterClass {
 
       private com.google.protobuf.Internal.LongList avatarGuidList_ = emptyLongList();
       private void ensureAvatarGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           avatarGuidList_ = mutableCopy(avatarGuidList_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated uint64 avatar_guid_list = 5;</code>
@@ -1349,7 +1382,7 @@ public final class ServerBuffChangeNotifyOuterClass {
        */
       public java.util.List<java.lang.Long>
           getAvatarGuidListList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(avatarGuidList_) : avatarGuidList_;
       }
       /**
@@ -1375,7 +1408,6 @@ public final class ServerBuffChangeNotifyOuterClass {
        */
       public Builder setAvatarGuidList(
           int index, long value) {
-        
         ensureAvatarGuidListIsMutable();
         avatarGuidList_.setLong(index, value);
         onChanged();
@@ -1387,7 +1419,6 @@ public final class ServerBuffChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAvatarGuidList(long value) {
-        
         ensureAvatarGuidListIsMutable();
         avatarGuidList_.addLong(value);
         onChanged();
@@ -1412,7 +1443,7 @@ public final class ServerBuffChangeNotifyOuterClass {
        */
       public Builder clearAvatarGuidList() {
         avatarGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1449,18 +1480,7 @@ public final class ServerBuffChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ServerBuffChangeNotify(input, extensionRegistry);
       }
     };
 

@@ -72,6 +72,62 @@ public final class CreateGadgetInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CreateGadgetInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              bornType_ = rawValue;
+              break;
+            }
+            case 18: {
+              emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest.Builder subBuilder = null;
+              if (chest_ != null) {
+                subBuilder = chest_.toBuilder();
+              }
+              chest_ = input.readMessage(emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(chest_);
+                chest_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CreateGadgetInfoOuterClass.internal_static_CreateGadgetInfo_descriptor;
@@ -128,6 +184,53 @@ public final class CreateGadgetInfoOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
+      private Chest(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                chestDropId_ = input.readUInt32();
+                break;
+              }
+              case 16: {
+
+                isShowCutscene_ = input.readBool();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.gingerps.net.proto.CreateGadgetInfoOuterClass.internal_static_CreateGadgetInfo_Chest_descriptor;
@@ -142,7 +245,7 @@ public final class CreateGadgetInfoOuterClass {
       }
 
       public static final int CHEST_DROP_ID_FIELD_NUMBER = 1;
-      private int chestDropId_ = 0;
+      private int chestDropId_;
       /**
        * <code>uint32 chest_drop_id = 1;</code>
        * @return The chestDropId.
@@ -153,7 +256,7 @@ public final class CreateGadgetInfoOuterClass {
       }
 
       public static final int IS_SHOW_CUTSCENE_FIELD_NUMBER = 2;
-      private boolean isShowCutscene_ = false;
+      private boolean isShowCutscene_;
       /**
        * <code>bool is_show_cutscene = 2;</code>
        * @return The isShowCutscene.
@@ -183,7 +286,7 @@ public final class CreateGadgetInfoOuterClass {
         if (isShowCutscene_ != false) {
           output.writeBool(2, isShowCutscene_);
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -200,7 +303,7 @@ public final class CreateGadgetInfoOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(2, isShowCutscene_);
         }
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -219,7 +322,7 @@ public final class CreateGadgetInfoOuterClass {
             != other.getChestDropId()) return false;
         if (getIsShowCutscene()
             != other.getIsShowCutscene()) return false;
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
 
@@ -235,7 +338,7 @@ public final class CreateGadgetInfoOuterClass {
         hash = (37 * hash) + IS_SHOW_CUTSCENE_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getIsShowCutscene());
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -352,20 +455,26 @@ public final class CreateGadgetInfoOuterClass {
 
         // Construct using emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          bitField0_ = 0;
           chestDropId_ = 0;
+
           isShowCutscene_ = false;
+
           return this;
         }
 
@@ -392,19 +501,10 @@ public final class CreateGadgetInfoOuterClass {
         @java.lang.Override
         public emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest buildPartial() {
           emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest result = new emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest(this);
-          if (bitField0_ != 0) { buildPartial0(result); }
+          result.chestDropId_ = chestDropId_;
+          result.isShowCutscene_ = isShowCutscene_;
           onBuilt();
           return result;
-        }
-
-        private void buildPartial0(emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest result) {
-          int from_bitField0_ = bitField0_;
-          if (((from_bitField0_ & 0x00000001) != 0)) {
-            result.chestDropId_ = chestDropId_;
-          }
-          if (((from_bitField0_ & 0x00000002) != 0)) {
-            result.isShowCutscene_ = isShowCutscene_;
-          }
         }
 
         @java.lang.Override
@@ -457,7 +557,7 @@ public final class CreateGadgetInfoOuterClass {
           if (other.getIsShowCutscene() != false) {
             setIsShowCutscene(other.getIsShowCutscene());
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -472,43 +572,19 @@ public final class CreateGadgetInfoOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 8: {
-                  chestDropId_ = input.readUInt32();
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 8
-                case 16: {
-                  isShowCutscene_ = input.readBool();
-                  bitField0_ |= 0x00000002;
-                  break;
-                } // case 16
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
-        private int bitField0_;
 
         private int chestDropId_ ;
         /**
@@ -527,7 +603,6 @@ public final class CreateGadgetInfoOuterClass {
         public Builder setChestDropId(int value) {
           
           chestDropId_ = value;
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -536,7 +611,7 @@ public final class CreateGadgetInfoOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearChestDropId() {
-          bitField0_ = (bitField0_ & ~0x00000001);
+          
           chestDropId_ = 0;
           onChanged();
           return this;
@@ -559,7 +634,6 @@ public final class CreateGadgetInfoOuterClass {
         public Builder setIsShowCutscene(boolean value) {
           
           isShowCutscene_ = value;
-          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -568,7 +642,7 @@ public final class CreateGadgetInfoOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearIsShowCutscene() {
-          bitField0_ = (bitField0_ & ~0x00000002);
+          
           isShowCutscene_ = false;
           onChanged();
           return this;
@@ -606,18 +680,7 @@ public final class CreateGadgetInfoOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new Chest(input, extensionRegistry);
         }
       };
 
@@ -638,7 +701,7 @@ public final class CreateGadgetInfoOuterClass {
     }
 
     public static final int BORN_TYPE_FIELD_NUMBER = 1;
-    private int bornType_ = 0;
+    private int bornType_;
     /**
      * <code>.GadgetBornType born_type = 1;</code>
      * @return The enum numeric value on the wire for bornType.
@@ -651,7 +714,8 @@ public final class CreateGadgetInfoOuterClass {
      * @return The bornType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType() {
-      emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.forNumber(bornType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.valueOf(bornType_);
       return result == null ? emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.UNRECOGNIZED : result;
     }
 
@@ -678,7 +742,7 @@ public final class CreateGadgetInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.ChestOrBuilder getChestOrBuilder() {
-      return chest_ == null ? emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest.getDefaultInstance() : chest_;
+      return getChest();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -701,7 +765,7 @@ public final class CreateGadgetInfoOuterClass {
       if (chest_ != null) {
         output.writeMessage(2, getChest());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -718,7 +782,7 @@ public final class CreateGadgetInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getChest());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -739,7 +803,7 @@ public final class CreateGadgetInfoOuterClass {
         if (!getChest()
             .equals(other.getChest())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -756,7 +820,7 @@ public final class CreateGadgetInfoOuterClass {
         hash = (37 * hash) + CHEST_FIELD_NUMBER;
         hash = (53 * hash) + getChest().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -873,22 +937,28 @@ public final class CreateGadgetInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         bornType_ = 0;
-        chest_ = null;
-        if (chestBuilder_ != null) {
-          chestBuilder_.dispose();
+
+        if (chestBuilder_ == null) {
+          chest_ = null;
+        } else {
+          chest_ = null;
           chestBuilder_ = null;
         }
         return this;
@@ -917,21 +987,14 @@ public final class CreateGadgetInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo buildPartial() {
         emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo result = new emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.bornType_ = bornType_;
+        if (chestBuilder_ == null) {
+          result.chest_ = chest_;
+        } else {
+          result.chest_ = chestBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.bornType_ = bornType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.chest_ = chestBuilder_ == null
-              ? chest_
-              : chestBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -984,7 +1047,7 @@ public final class CreateGadgetInfoOuterClass {
         if (other.hasChest()) {
           mergeChest(other.getChest());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -999,45 +1062,19 @@ public final class CreateGadgetInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                bornType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getChestFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int bornType_ = 0;
       /**
@@ -1053,8 +1090,8 @@ public final class CreateGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBornTypeValue(int value) {
+        
         bornType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1064,7 +1101,8 @@ public final class CreateGadgetInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType() {
-        emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.forNumber(bornType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.valueOf(bornType_);
         return result == null ? emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.UNRECOGNIZED : result;
       }
       /**
@@ -1076,7 +1114,7 @@ public final class CreateGadgetInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         bornType_ = value.getNumber();
         onChanged();
         return this;
@@ -1086,7 +1124,7 @@ public final class CreateGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBornType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         bornType_ = 0;
         onChanged();
         return this;
@@ -1100,7 +1138,7 @@ public final class CreateGadgetInfoOuterClass {
        * @return Whether the chest field is set.
        */
       public boolean hasChest() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return chestBuilder_ != null || chest_ != null;
       }
       /**
        * <code>.CreateGadgetInfo.Chest chest = 2;</code>
@@ -1122,11 +1160,11 @@ public final class CreateGadgetInfoOuterClass {
             throw new NullPointerException();
           }
           chest_ = value;
+          onChanged();
         } else {
           chestBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1136,11 +1174,11 @@ public final class CreateGadgetInfoOuterClass {
           emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest.Builder builderForValue) {
         if (chestBuilder_ == null) {
           chest_ = builderForValue.build();
+          onChanged();
         } else {
           chestBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1148,38 +1186,38 @@ public final class CreateGadgetInfoOuterClass {
        */
       public Builder mergeChest(emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest value) {
         if (chestBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            chest_ != null &&
-            chest_ != emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest.getDefaultInstance()) {
-            getChestBuilder().mergeFrom(value);
+          if (chest_ != null) {
+            chest_ =
+              emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest.newBuilder(chest_).mergeFrom(value).buildPartial();
           } else {
             chest_ = value;
           }
+          onChanged();
         } else {
           chestBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CreateGadgetInfo.Chest chest = 2;</code>
        */
       public Builder clearChest() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        chest_ = null;
-        if (chestBuilder_ != null) {
-          chestBuilder_.dispose();
+        if (chestBuilder_ == null) {
+          chest_ = null;
+          onChanged();
+        } else {
+          chest_ = null;
           chestBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CreateGadgetInfo.Chest chest = 2;</code>
        */
       public emu.gingerps.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest.Builder getChestBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getChestFieldBuilder().getBuilder();
       }
@@ -1243,18 +1281,7 @@ public final class CreateGadgetInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CreateGadgetInfo(input, extensionRegistry);
       }
     };
 

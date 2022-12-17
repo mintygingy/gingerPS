@@ -41,12 +41,14 @@ public final class SceneGalleryBulletInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
      */
+
     int getHitCountMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
      */
+
     int getHitCountMapOrThrow(
         int key);
 
@@ -82,6 +84,62 @@ public final class SceneGalleryBulletInfoOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SceneGalleryBulletInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                hitCountMap_ = com.google.protobuf.MapField.newMapField(
+                    HitCountMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              hitCountMap__ = input.readMessage(
+                  HitCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              hitCountMap_.getMutableMap().put(
+                  hitCountMap__.getKey(), hitCountMap__.getValue());
+              break;
+            }
+            case 104: {
+
+              endTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -120,7 +178,6 @@ public final class SceneGalleryBulletInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> hitCountMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -131,12 +188,14 @@ public final class SceneGalleryBulletInfoOuterClass {
       }
       return hitCountMap_;
     }
+
     public int getHitCountMapCount() {
       return internalGetHitCountMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
      */
+
     @java.lang.Override
     public boolean containsHitCountMap(
         int key) {
@@ -155,6 +214,7 @@ public final class SceneGalleryBulletInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getHitCountMapMap() {
       return internalGetHitCountMap().getMap();
     }
@@ -162,6 +222,7 @@ public final class SceneGalleryBulletInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
      */
     @java.lang.Override
+
     public int getHitCountMapOrDefault(
         int key,
         int defaultValue) {
@@ -174,6 +235,7 @@ public final class SceneGalleryBulletInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
      */
     @java.lang.Override
+
     public int getHitCountMapOrThrow(
         int key) {
       
@@ -186,7 +248,7 @@ public final class SceneGalleryBulletInfoOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 13;
-    private int endTime_ = 0;
+    private int endTime_;
     /**
      * <code>uint32 end_time = 13;</code>
      * @return The endTime.
@@ -219,7 +281,7 @@ public final class SceneGalleryBulletInfoOuterClass {
       if (endTime_ != 0) {
         output.writeUInt32(13, endTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -242,7 +304,7 @@ public final class SceneGalleryBulletInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, endTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -261,7 +323,7 @@ public final class SceneGalleryBulletInfoOuterClass {
           other.internalGetHitCountMap())) return false;
       if (getEndTime()
           != other.getEndTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -278,7 +340,7 @@ public final class SceneGalleryBulletInfoOuterClass {
       }
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -417,20 +479,25 @@ public final class SceneGalleryBulletInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableHitCountMap().clear();
         endTime_ = 0;
+
         return this;
       }
 
@@ -457,20 +524,12 @@ public final class SceneGalleryBulletInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo result = new emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.hitCountMap_ = internalGetHitCountMap();
+        result.hitCountMap_.makeImmutable();
+        result.endTime_ = endTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.hitCountMap_ = internalGetHitCountMap();
-          result.hitCountMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.endTime_ = endTime_;
-        }
       }
 
       @java.lang.Override
@@ -519,11 +578,10 @@ public final class SceneGalleryBulletInfoOuterClass {
         if (other == emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo.getDefaultInstance()) return this;
         internalGetMutableHitCountMap().mergeFrom(
             other.internalGetHitCountMap());
-        bitField0_ |= 0x00000001;
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -538,44 +596,17 @@ public final class SceneGalleryBulletInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                hitCountMap__ = input.readMessage(
-                    HitCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableHitCountMap().getMutableMap().put(
-                    hitCountMap__.getKey(), hitCountMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 18
-              case 104: {
-                endTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -583,7 +614,7 @@ public final class SceneGalleryBulletInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> hitCountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetHitCountMap() {
+      internalGetHitCountMap() {
         if (hitCountMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               HitCountMapDefaultEntryHolder.defaultEntry);
@@ -591,7 +622,8 @@ public final class SceneGalleryBulletInfoOuterClass {
         return hitCountMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableHitCountMap() {
+      internalGetMutableHitCountMap() {
+        onChanged();;
         if (hitCountMap_ == null) {
           hitCountMap_ = com.google.protobuf.MapField.newMapField(
               HitCountMapDefaultEntryHolder.defaultEntry);
@@ -599,16 +631,16 @@ public final class SceneGalleryBulletInfoOuterClass {
         if (!hitCountMap_.isMutable()) {
           hitCountMap_ = hitCountMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return hitCountMap_;
       }
+
       public int getHitCountMapCount() {
         return internalGetHitCountMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
        */
+
       @java.lang.Override
       public boolean containsHitCountMap(
           int key) {
@@ -627,6 +659,7 @@ public final class SceneGalleryBulletInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getHitCountMapMap() {
         return internalGetHitCountMap().getMap();
       }
@@ -634,6 +667,7 @@ public final class SceneGalleryBulletInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
        */
       @java.lang.Override
+
       public int getHitCountMapOrDefault(
           int key,
           int defaultValue) {
@@ -646,6 +680,7 @@ public final class SceneGalleryBulletInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
        */
       @java.lang.Override
+
       public int getHitCountMapOrThrow(
           int key) {
         
@@ -656,8 +691,8 @@ public final class SceneGalleryBulletInfoOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearHitCountMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableHitCountMap().getMutableMap()
             .clear();
         return this;
@@ -665,6 +700,7 @@ public final class SceneGalleryBulletInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
        */
+
       public Builder removeHitCountMap(
           int key) {
         
@@ -677,8 +713,7 @@ public final class SceneGalleryBulletInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableHitCountMap() {
-        bitField0_ |= 0x00000001;
+      getMutableHitCountMap() {
         return internalGetMutableHitCountMap().getMutableMap();
       }
       /**
@@ -691,17 +726,16 @@ public final class SceneGalleryBulletInfoOuterClass {
         
         internalGetMutableHitCountMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; hit_count_map = 2;</code>
        */
+
       public Builder putAllHitCountMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableHitCountMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -722,7 +756,6 @@ public final class SceneGalleryBulletInfoOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -731,7 +764,7 @@ public final class SceneGalleryBulletInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         endTime_ = 0;
         onChanged();
         return this;
@@ -769,18 +802,7 @@ public final class SceneGalleryBulletInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneGalleryBulletInfo(input, extensionRegistry);
       }
     };
 

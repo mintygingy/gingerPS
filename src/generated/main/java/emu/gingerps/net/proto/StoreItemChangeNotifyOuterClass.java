@@ -92,6 +92,62 @@ public final class StoreItemChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private StoreItemChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+              int rawValue = input.readEnum();
+
+              storeType_ = rawValue;
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemOuterClass.Item>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              itemList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ItemOuterClass.Item.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          itemList_ = java.util.Collections.unmodifiableList(itemList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.StoreItemChangeNotifyOuterClass.internal_static_StoreItemChangeNotify_descriptor;
@@ -106,7 +162,7 @@ public final class StoreItemChangeNotifyOuterClass {
     }
 
     public static final int STORE_TYPE_FIELD_NUMBER = 4;
-    private int storeType_ = 0;
+    private int storeType_;
     /**
      * <code>.StoreType store_type = 4;</code>
      * @return The enum numeric value on the wire for storeType.
@@ -119,12 +175,12 @@ public final class StoreItemChangeNotifyOuterClass {
      * @return The storeType.
      */
     @java.lang.Override public emu.gingerps.net.proto.StoreTypeOuterClass.StoreType getStoreType() {
-      emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.forNumber(storeType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.valueOf(storeType_);
       return result == null ? emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
     }
 
     public static final int ITEM_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemOuterClass.Item> itemList_;
     /**
      * <code>repeated .Item item_list = 5;</code>
@@ -184,7 +240,7 @@ public final class StoreItemChangeNotifyOuterClass {
       for (int i = 0; i < itemList_.size(); i++) {
         output.writeMessage(5, itemList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -201,7 +257,7 @@ public final class StoreItemChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, itemList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -219,7 +275,7 @@ public final class StoreItemChangeNotifyOuterClass {
       if (storeType_ != other.storeType_) return false;
       if (!getItemListList()
           .equals(other.getItemListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -236,7 +292,7 @@ public final class StoreItemChangeNotifyOuterClass {
         hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -363,26 +419,31 @@ public final class StoreItemChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getItemListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         storeType_ = 0;
+
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          itemList_ = null;
           itemListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -409,29 +470,19 @@ public final class StoreItemChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotify buildPartial() {
         emu.gingerps.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotify result = new emu.gingerps.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.storeType_ = storeType_;
         if (itemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.itemList_ = itemList_;
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.storeType_ = storeType_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -485,7 +536,7 @@ public final class StoreItemChangeNotifyOuterClass {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureItemListIsMutable();
               itemList_.addAll(other.itemList_);
@@ -498,7 +549,7 @@ public final class StoreItemChangeNotifyOuterClass {
               itemListBuilder_.dispose();
               itemListBuilder_ = null;
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               itemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemListFieldBuilder() : null;
@@ -507,7 +558,7 @@ public final class StoreItemChangeNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -522,48 +573,17 @@ public final class StoreItemChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                storeType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 42: {
-                emu.gingerps.net.proto.ItemOuterClass.Item m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ItemOuterClass.Item.parser(),
-                        extensionRegistry);
-                if (itemListBuilder_ == null) {
-                  ensureItemListIsMutable();
-                  itemList_.add(m);
-                } else {
-                  itemListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -582,8 +602,8 @@ public final class StoreItemChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStoreTypeValue(int value) {
+        
         storeType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -593,7 +613,8 @@ public final class StoreItemChangeNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.StoreTypeOuterClass.StoreType getStoreType() {
-        emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.forNumber(storeType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.valueOf(storeType_);
         return result == null ? emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
       }
       /**
@@ -605,7 +626,7 @@ public final class StoreItemChangeNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         storeType_ = value.getNumber();
         onChanged();
         return this;
@@ -615,7 +636,7 @@ public final class StoreItemChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStoreType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         storeType_ = 0;
         onChanged();
         return this;
@@ -624,9 +645,9 @@ public final class StoreItemChangeNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemOuterClass.Item> itemList_ =
         java.util.Collections.emptyList();
       private void ensureItemListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemOuterClass.Item>(itemList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -776,7 +797,7 @@ public final class StoreItemChangeNotifyOuterClass {
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           itemListBuilder_.clear();
@@ -853,7 +874,7 @@ public final class StoreItemChangeNotifyOuterClass {
           itemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemOuterClass.Item, emu.gingerps.net.proto.ItemOuterClass.Item.Builder, emu.gingerps.net.proto.ItemOuterClass.ItemOrBuilder>(
                   itemList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           itemList_ = null;
@@ -893,18 +914,7 @@ public final class StoreItemChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new StoreItemChangeNotify(input, extensionRegistry);
       }
     };
 

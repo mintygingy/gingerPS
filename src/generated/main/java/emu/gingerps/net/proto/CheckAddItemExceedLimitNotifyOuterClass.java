@@ -115,6 +115,108 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CheckAddItemExceedLimitNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                exceededItemList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              exceededItemList_.addInt(input.readUInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                exceededItemList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                exceededItemList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              msgType_ = rawValue;
+              break;
+            }
+            case 72: {
+
+              reason_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                exceededItemTypeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              exceededItemTypeList_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                exceededItemTypeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                exceededItemTypeList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 112: {
+
+              isDrop_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          exceededItemList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          exceededItemTypeList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.internal_static_CheckAddItemExceedLimitNotify_descriptor;
@@ -255,7 +357,6 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
     }
 
     public static final int EXCEEDED_ITEM_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList exceededItemList_;
     /**
      * <code>repeated uint32 exceeded_item_list = 4;</code>
@@ -284,7 +385,6 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
     private int exceededItemListMemoizedSerializedSize = -1;
 
     public static final int EXCEEDED_ITEM_TYPE_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList exceededItemTypeList_;
     /**
      * <code>repeated uint32 exceeded_item_type_list = 11;</code>
@@ -313,7 +413,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
     private int exceededItemTypeListMemoizedSerializedSize = -1;
 
     public static final int REASON_FIELD_NUMBER = 9;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>uint32 reason = 9;</code>
      * @return The reason.
@@ -324,7 +424,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
     }
 
     public static final int IS_DROP_FIELD_NUMBER = 14;
-    private boolean isDrop_ = false;
+    private boolean isDrop_;
     /**
      * <code>bool is_drop = 14;</code>
      * @return The isDrop.
@@ -335,7 +435,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
     }
 
     public static final int MSG_TYPE_FIELD_NUMBER = 6;
-    private int msgType_ = 0;
+    private int msgType_;
     /**
      * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 6;</code>
      * @return The enum numeric value on the wire for msgType.
@@ -348,7 +448,8 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
      * @return The msgType.
      */
     @java.lang.Override public emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType getMsgType() {
-      emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType result = emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.forNumber(msgType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType result = emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.valueOf(msgType_);
       return result == null ? emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.UNRECOGNIZED : result;
     }
 
@@ -390,7 +491,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       if (isDrop_ != false) {
         output.writeBool(14, isDrop_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -439,7 +540,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isDrop_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -463,7 +564,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       if (getIsDrop()
           != other.getIsDrop()) return false;
       if (msgType_ != other.msgType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -489,7 +590,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
           getIsDrop());
       hash = (37 * hash) + MSG_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + msgType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -616,23 +717,32 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         exceededItemList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         exceededItemTypeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         reason_ = 0;
+
         isDrop_ = false;
+
         msgType_ = 0;
+
         return this;
       }
 
@@ -659,13 +769,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify buildPartial() {
         emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify result = new emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           exceededItemList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -676,19 +780,11 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.exceededItemTypeList_ = exceededItemTypeList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isDrop_ = isDrop_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.msgType_ = msgType_;
-        }
+        result.reason_ = reason_;
+        result.isDrop_ = isDrop_;
+        result.msgType_ = msgType_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -764,7 +860,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         if (other.msgType_ != 0) {
           setMsgTypeValue(other.getMsgTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -779,77 +875,17 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                int v = input.readUInt32();
-                ensureExceededItemListIsMutable();
-                exceededItemList_.addInt(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureExceededItemListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  exceededItemList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              case 48: {
-                msgType_ = input.readEnum();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 48
-              case 72: {
-                reason_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 72
-              case 88: {
-                int v = input.readUInt32();
-                ensureExceededItemTypeListIsMutable();
-                exceededItemTypeList_.addInt(v);
-                break;
-              } // case 88
-              case 90: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureExceededItemTypeListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  exceededItemTypeList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 90
-              case 112: {
-                isDrop_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -859,7 +895,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           exceededItemList_ = mutableCopy(exceededItemList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 exceeded_item_list = 4;</code>
@@ -893,7 +929,6 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
        */
       public Builder setExceededItemList(
           int index, int value) {
-        
         ensureExceededItemListIsMutable();
         exceededItemList_.setInt(index, value);
         onChanged();
@@ -905,7 +940,6 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addExceededItemList(int value) {
-        
         ensureExceededItemListIsMutable();
         exceededItemList_.addInt(value);
         onChanged();
@@ -940,7 +974,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           exceededItemTypeList_ = mutableCopy(exceededItemTypeList_);
           bitField0_ |= 0x00000002;
-        }
+         }
       }
       /**
        * <code>repeated uint32 exceeded_item_type_list = 11;</code>
@@ -974,7 +1008,6 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
        */
       public Builder setExceededItemTypeList(
           int index, int value) {
-        
         ensureExceededItemTypeListIsMutable();
         exceededItemTypeList_.setInt(index, value);
         onChanged();
@@ -986,7 +1019,6 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addExceededItemTypeList(int value) {
-        
         ensureExceededItemTypeListIsMutable();
         exceededItemTypeList_.addInt(value);
         onChanged();
@@ -1033,7 +1065,6 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       public Builder setReason(int value) {
         
         reason_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1042,7 +1073,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -1065,7 +1096,6 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       public Builder setIsDrop(boolean value) {
         
         isDrop_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1074,7 +1104,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsDrop() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isDrop_ = false;
         onChanged();
         return this;
@@ -1094,8 +1124,8 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMsgTypeValue(int value) {
+        
         msgType_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1105,7 +1135,8 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType getMsgType() {
-        emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType result = emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.forNumber(msgType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType result = emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.valueOf(msgType_);
         return result == null ? emu.gingerps.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.UNRECOGNIZED : result;
       }
       /**
@@ -1117,7 +1148,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000010;
+        
         msgType_ = value.getNumber();
         onChanged();
         return this;
@@ -1127,7 +1158,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMsgType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         msgType_ = 0;
         onChanged();
         return this;
@@ -1165,18 +1196,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CheckAddItemExceedLimitNotify(input, extensionRegistry);
       }
     };
 

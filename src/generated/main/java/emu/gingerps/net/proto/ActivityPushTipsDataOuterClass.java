@@ -63,6 +63,54 @@ public final class ActivityPushTipsDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ActivityPushTipsData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
+            case 112: {
+
+              activityPushTipsId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.internal_static_ActivityPushTipsData_descriptor;
@@ -77,7 +125,7 @@ public final class ActivityPushTipsDataOuterClass {
     }
 
     public static final int ACTIVITY_PUSH_TIPS_ID_FIELD_NUMBER = 14;
-    private int activityPushTipsId_ = 0;
+    private int activityPushTipsId_;
     /**
      * <code>uint32 activity_push_tips_id = 14;</code>
      * @return The activityPushTipsId.
@@ -88,7 +136,7 @@ public final class ActivityPushTipsDataOuterClass {
     }
 
     public static final int STATE_FIELD_NUMBER = 3;
-    private int state_ = 0;
+    private int state_;
     /**
      * <code>.ActivityPushTipsState state = 3;</code>
      * @return The enum numeric value on the wire for state.
@@ -101,7 +149,8 @@ public final class ActivityPushTipsDataOuterClass {
      * @return The state.
      */
     @java.lang.Override public emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState getState() {
-      emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState result = emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState.forNumber(state_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState result = emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState.valueOf(state_);
       return result == null ? emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState.UNRECOGNIZED : result;
     }
 
@@ -125,7 +174,7 @@ public final class ActivityPushTipsDataOuterClass {
       if (activityPushTipsId_ != 0) {
         output.writeUInt32(14, activityPushTipsId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -142,7 +191,7 @@ public final class ActivityPushTipsDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, activityPushTipsId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -160,7 +209,7 @@ public final class ActivityPushTipsDataOuterClass {
       if (getActivityPushTipsId()
           != other.getActivityPushTipsId()) return false;
       if (state_ != other.state_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -175,7 +224,7 @@ public final class ActivityPushTipsDataOuterClass {
       hash = (53 * hash) + getActivityPushTipsId();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -292,20 +341,26 @@ public final class ActivityPushTipsDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         activityPushTipsId_ = 0;
+
         state_ = 0;
+
         return this;
       }
 
@@ -332,19 +387,10 @@ public final class ActivityPushTipsDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData buildPartial() {
         emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData result = new emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.activityPushTipsId_ = activityPushTipsId_;
+        result.state_ = state_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.activityPushTipsId_ = activityPushTipsId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.state_ = state_;
-        }
       }
 
       @java.lang.Override
@@ -397,7 +443,7 @@ public final class ActivityPushTipsDataOuterClass {
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -412,43 +458,19 @@ public final class ActivityPushTipsDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                state_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 112: {
-                activityPushTipsId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int activityPushTipsId_ ;
       /**
@@ -467,7 +489,6 @@ public final class ActivityPushTipsDataOuterClass {
       public Builder setActivityPushTipsId(int value) {
         
         activityPushTipsId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -476,7 +497,7 @@ public final class ActivityPushTipsDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityPushTipsId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         activityPushTipsId_ = 0;
         onChanged();
         return this;
@@ -496,8 +517,8 @@ public final class ActivityPushTipsDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
+        
         state_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -507,7 +528,8 @@ public final class ActivityPushTipsDataOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState getState() {
-        emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState result = emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState.forNumber(state_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState result = emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState.valueOf(state_);
         return result == null ? emu.gingerps.net.proto.ActivityPushTipsStateOuterClass.ActivityPushTipsState.UNRECOGNIZED : result;
       }
       /**
@@ -519,7 +541,7 @@ public final class ActivityPushTipsDataOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -529,7 +551,7 @@ public final class ActivityPushTipsDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         state_ = 0;
         onChanged();
         return this;
@@ -567,18 +589,7 @@ public final class ActivityPushTipsDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ActivityPushTipsData(input, extensionRegistry);
       }
     };
 

@@ -41,14 +41,14 @@ public final class AllShareCDDataNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrDefault(
+
+    emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue);
+        emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue);
     /**
      * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
      */
+
     emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrThrow(
         int key);
   }
@@ -89,6 +89,57 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue);
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AllShareCDDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                shareCdInfoMap_ = com.google.protobuf.MapField.newMapField(
+                    ShareCdInfoMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
+              shareCdInfoMap__ = input.readMessage(
+                  ShareCdInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              shareCdInfoMap_.getMutableMap().put(
+                  shareCdInfoMap__.getKey(), shareCdInfoMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AllShareCDDataNotifyOuterClass.internal_static_AllShareCDDataNotify_descriptor;
@@ -126,7 +177,6 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo> shareCdInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
@@ -137,12 +187,14 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue);
       }
       return shareCdInfoMap_;
     }
+
     public int getShareCdInfoMapCount() {
       return internalGetShareCdInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
      */
+
     @java.lang.Override
     public boolean containsShareCdInfoMap(
         int key) {
@@ -161,6 +213,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue);
      * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo> getShareCdInfoMapMap() {
       return internalGetShareCdInfoMap().getMap();
     }
@@ -168,11 +221,10 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue);
      * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrDefault(
+
+    public emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
+        emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo> map =
           internalGetShareCdInfoMap().getMap();
@@ -182,6 +234,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
      * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrThrow(
         int key) {
       
@@ -213,7 +266,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
           internalGetShareCdInfoMap(),
           ShareCdInfoMapDefaultEntryHolder.defaultEntry,
           13);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -232,7 +285,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(13, shareCdInfoMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -249,7 +302,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
 
       if (!internalGetShareCdInfoMap().equals(
           other.internalGetShareCdInfoMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -264,7 +317,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
         hash = (37 * hash) + SHARE_CD_INFO_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetShareCdInfoMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -413,18 +466,22 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
 
       // Construct using emu.gingerps.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableShareCdInfoMap().clear();
         return this;
       }
@@ -452,17 +509,11 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
       @java.lang.Override
       public emu.gingerps.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify buildPartial() {
         emu.gingerps.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify result = new emu.gingerps.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.shareCdInfoMap_ = internalGetShareCdInfoMap();
+        result.shareCdInfoMap_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.shareCdInfoMap_ = internalGetShareCdInfoMap();
-          result.shareCdInfoMap_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -511,8 +562,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
         if (other == emu.gingerps.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify.getDefaultInstance()) return this;
         internalGetMutableShareCdInfoMap().mergeFrom(
             other.internalGetShareCdInfoMap());
-        bitField0_ |= 0x00000001;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -527,39 +577,17 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 106: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-                shareCdInfoMap__ = input.readMessage(
-                    ShareCdInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableShareCdInfoMap().getMutableMap().put(
-                    shareCdInfoMap__.getKey(), shareCdInfoMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -567,7 +595,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo> shareCdInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-          internalGetShareCdInfoMap() {
+      internalGetShareCdInfoMap() {
         if (shareCdInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ShareCdInfoMapDefaultEntryHolder.defaultEntry);
@@ -575,7 +603,8 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
         return shareCdInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-          internalGetMutableShareCdInfoMap() {
+      internalGetMutableShareCdInfoMap() {
+        onChanged();;
         if (shareCdInfoMap_ == null) {
           shareCdInfoMap_ = com.google.protobuf.MapField.newMapField(
               ShareCdInfoMapDefaultEntryHolder.defaultEntry);
@@ -583,16 +612,16 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
         if (!shareCdInfoMap_.isMutable()) {
           shareCdInfoMap_ = shareCdInfoMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return shareCdInfoMap_;
       }
+
       public int getShareCdInfoMapCount() {
         return internalGetShareCdInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
        */
+
       @java.lang.Override
       public boolean containsShareCdInfoMap(
           int key) {
@@ -611,6 +640,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
        * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo> getShareCdInfoMapMap() {
         return internalGetShareCdInfoMap().getMap();
       }
@@ -618,11 +648,10 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
        * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrDefault(
+
+      public emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
+          emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo> map =
             internalGetShareCdInfoMap().getMap();
@@ -632,6 +661,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
        * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrThrow(
           int key) {
         
@@ -642,8 +672,8 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearShareCdInfoMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableShareCdInfoMap().getMutableMap()
             .clear();
         return this;
@@ -651,6 +681,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
       /**
        * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
        */
+
       public Builder removeShareCdInfoMap(
           int key) {
         
@@ -663,8 +694,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-          getMutableShareCdInfoMap() {
-        bitField0_ |= 0x00000001;
+      getMutableShareCdInfoMap() {
         return internalGetMutableShareCdInfoMap().getMutableMap();
       }
       /**
@@ -674,20 +704,19 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
           int key,
           emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableShareCdInfoMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 13;</code>
        */
+
       public Builder putAllShareCdInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo> values) {
         internalGetMutableShareCdInfoMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -723,18 +752,7 @@ emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AllShareCDDataNotify(input, extensionRegistry);
       }
     };
 

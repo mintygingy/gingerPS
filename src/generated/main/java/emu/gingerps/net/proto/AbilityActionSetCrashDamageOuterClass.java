@@ -66,6 +66,61 @@ public final class AbilityActionSetCrashDamageOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityActionSetCrashDamage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 21: {
+
+              damage_ = input.readFloat();
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (hitPos_ != null) {
+                subBuilder = hitPos_.toBuilder();
+              }
+              hitPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hitPos_);
+                hitPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityActionSetCrashDamageOuterClass.internal_static_AbilityActionSetCrashDamage_descriptor;
@@ -80,7 +135,7 @@ public final class AbilityActionSetCrashDamageOuterClass {
     }
 
     public static final int DAMAGE_FIELD_NUMBER = 2;
-    private float damage_ = 0F;
+    private float damage_;
     /**
      * <code>float damage = 2;</code>
      * @return The damage.
@@ -113,7 +168,7 @@ public final class AbilityActionSetCrashDamageOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getHitPosOrBuilder() {
-      return hitPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hitPos_;
+      return getHitPos();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -130,13 +185,13 @@ public final class AbilityActionSetCrashDamageOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Float.floatToRawIntBits(damage_) != 0) {
+      if (damage_ != 0F) {
         output.writeFloat(2, damage_);
       }
       if (hitPos_ != null) {
         output.writeMessage(8, getHitPos());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -145,7 +200,7 @@ public final class AbilityActionSetCrashDamageOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Float.floatToRawIntBits(damage_) != 0) {
+      if (damage_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, damage_);
       }
@@ -153,7 +208,7 @@ public final class AbilityActionSetCrashDamageOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getHitPos());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -176,7 +231,7 @@ public final class AbilityActionSetCrashDamageOuterClass {
         if (!getHitPos()
             .equals(other.getHitPos())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -194,7 +249,7 @@ public final class AbilityActionSetCrashDamageOuterClass {
         hash = (37 * hash) + HIT_POS_FIELD_NUMBER;
         hash = (53 * hash) + getHitPos().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -311,22 +366,28 @@ public final class AbilityActionSetCrashDamageOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityActionSetCrashDamageOuterClass.AbilityActionSetCrashDamage.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         damage_ = 0F;
-        hitPos_ = null;
-        if (hitPosBuilder_ != null) {
-          hitPosBuilder_.dispose();
+
+        if (hitPosBuilder_ == null) {
+          hitPos_ = null;
+        } else {
+          hitPos_ = null;
           hitPosBuilder_ = null;
         }
         return this;
@@ -355,21 +416,14 @@ public final class AbilityActionSetCrashDamageOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityActionSetCrashDamageOuterClass.AbilityActionSetCrashDamage buildPartial() {
         emu.gingerps.net.proto.AbilityActionSetCrashDamageOuterClass.AbilityActionSetCrashDamage result = new emu.gingerps.net.proto.AbilityActionSetCrashDamageOuterClass.AbilityActionSetCrashDamage(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.damage_ = damage_;
+        if (hitPosBuilder_ == null) {
+          result.hitPos_ = hitPos_;
+        } else {
+          result.hitPos_ = hitPosBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityActionSetCrashDamageOuterClass.AbilityActionSetCrashDamage result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.damage_ = damage_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.hitPos_ = hitPosBuilder_ == null
-              ? hitPos_
-              : hitPosBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -422,7 +476,7 @@ public final class AbilityActionSetCrashDamageOuterClass {
         if (other.hasHitPos()) {
           mergeHitPos(other.getHitPos());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -437,45 +491,19 @@ public final class AbilityActionSetCrashDamageOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityActionSetCrashDamageOuterClass.AbilityActionSetCrashDamage parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 21: {
-                damage_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 21
-              case 66: {
-                input.readMessage(
-                    getHitPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 66
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityActionSetCrashDamageOuterClass.AbilityActionSetCrashDamage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private float damage_ ;
       /**
@@ -494,7 +522,6 @@ public final class AbilityActionSetCrashDamageOuterClass {
       public Builder setDamage(float value) {
         
         damage_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -503,7 +530,7 @@ public final class AbilityActionSetCrashDamageOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDamage() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         damage_ = 0F;
         onChanged();
         return this;
@@ -517,7 +544,7 @@ public final class AbilityActionSetCrashDamageOuterClass {
        * @return Whether the hitPos field is set.
        */
       public boolean hasHitPos() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return hitPosBuilder_ != null || hitPos_ != null;
       }
       /**
        * <code>.Vector hit_pos = 8;</code>
@@ -539,11 +566,11 @@ public final class AbilityActionSetCrashDamageOuterClass {
             throw new NullPointerException();
           }
           hitPos_ = value;
+          onChanged();
         } else {
           hitPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -553,11 +580,11 @@ public final class AbilityActionSetCrashDamageOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (hitPosBuilder_ == null) {
           hitPos_ = builderForValue.build();
+          onChanged();
         } else {
           hitPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -565,38 +592,38 @@ public final class AbilityActionSetCrashDamageOuterClass {
        */
       public Builder mergeHitPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (hitPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            hitPos_ != null &&
-            hitPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getHitPosBuilder().mergeFrom(value);
+          if (hitPos_ != null) {
+            hitPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(hitPos_).mergeFrom(value).buildPartial();
           } else {
             hitPos_ = value;
           }
+          onChanged();
         } else {
           hitPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector hit_pos = 8;</code>
        */
       public Builder clearHitPos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        hitPos_ = null;
-        if (hitPosBuilder_ != null) {
-          hitPosBuilder_.dispose();
+        if (hitPosBuilder_ == null) {
+          hitPos_ = null;
+          onChanged();
+        } else {
+          hitPos_ = null;
           hitPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector hit_pos = 8;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getHitPosBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getHitPosFieldBuilder().getBuilder();
       }
@@ -660,18 +687,7 @@ public final class AbilityActionSetCrashDamageOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityActionSetCrashDamage(input, extensionRegistry);
       }
     };
 

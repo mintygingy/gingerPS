@@ -79,6 +79,63 @@ public final class SalesmanTakeRewardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SalesmanTakeRewardRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              rewardId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              position_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SalesmanTakeRewardRspOuterClass.internal_static_SalesmanTakeRewardRsp_descriptor;
@@ -93,7 +150,7 @@ public final class SalesmanTakeRewardRspOuterClass {
     }
 
     public static final int REWARD_ID_FIELD_NUMBER = 12;
-    private int rewardId_ = 0;
+    private int rewardId_;
     /**
      * <code>uint32 reward_id = 12;</code>
      * @return The rewardId.
@@ -104,7 +161,7 @@ public final class SalesmanTakeRewardRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -115,7 +172,7 @@ public final class SalesmanTakeRewardRspOuterClass {
     }
 
     public static final int POSITION_FIELD_NUMBER = 15;
-    private int position_ = 0;
+    private int position_;
     /**
      * <code>uint32 position = 15;</code>
      * @return The position.
@@ -126,7 +183,7 @@ public final class SalesmanTakeRewardRspOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 2;
-    private int scheduleId_ = 0;
+    private int scheduleId_;
     /**
      * <code>uint32 schedule_id = 2;</code>
      * @return The scheduleId.
@@ -162,7 +219,7 @@ public final class SalesmanTakeRewardRspOuterClass {
       if (position_ != 0) {
         output.writeUInt32(15, position_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +244,7 @@ public final class SalesmanTakeRewardRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, position_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +267,7 @@ public final class SalesmanTakeRewardRspOuterClass {
           != other.getPosition()) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -229,7 +286,7 @@ public final class SalesmanTakeRewardRspOuterClass {
       hash = (53 * hash) + getPosition();
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -356,22 +413,30 @@ public final class SalesmanTakeRewardRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SalesmanTakeRewardRspOuterClass.SalesmanTakeRewardRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         rewardId_ = 0;
+
         retcode_ = 0;
+
         position_ = 0;
+
         scheduleId_ = 0;
+
         return this;
       }
 
@@ -398,25 +463,12 @@ public final class SalesmanTakeRewardRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SalesmanTakeRewardRspOuterClass.SalesmanTakeRewardRsp buildPartial() {
         emu.gingerps.net.proto.SalesmanTakeRewardRspOuterClass.SalesmanTakeRewardRsp result = new emu.gingerps.net.proto.SalesmanTakeRewardRspOuterClass.SalesmanTakeRewardRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.rewardId_ = rewardId_;
+        result.retcode_ = retcode_;
+        result.position_ = position_;
+        result.scheduleId_ = scheduleId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SalesmanTakeRewardRspOuterClass.SalesmanTakeRewardRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.rewardId_ = rewardId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.position_ = position_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.scheduleId_ = scheduleId_;
-        }
       }
 
       @java.lang.Override
@@ -475,7 +527,7 @@ public final class SalesmanTakeRewardRspOuterClass {
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,53 +542,19 @@ public final class SalesmanTakeRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SalesmanTakeRewardRspOuterClass.SalesmanTakeRewardRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                scheduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 16
-              case 32: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 96: {
-                rewardId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              case 120: {
-                position_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SalesmanTakeRewardRspOuterClass.SalesmanTakeRewardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int rewardId_ ;
       /**
@@ -555,7 +573,6 @@ public final class SalesmanTakeRewardRspOuterClass {
       public Builder setRewardId(int value) {
         
         rewardId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -564,7 +581,7 @@ public final class SalesmanTakeRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRewardId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         rewardId_ = 0;
         onChanged();
         return this;
@@ -587,7 +604,6 @@ public final class SalesmanTakeRewardRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -596,7 +612,7 @@ public final class SalesmanTakeRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -619,7 +635,6 @@ public final class SalesmanTakeRewardRspOuterClass {
       public Builder setPosition(int value) {
         
         position_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -628,7 +643,7 @@ public final class SalesmanTakeRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPosition() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         position_ = 0;
         onChanged();
         return this;
@@ -651,7 +666,6 @@ public final class SalesmanTakeRewardRspOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -660,7 +674,7 @@ public final class SalesmanTakeRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -698,18 +712,7 @@ public final class SalesmanTakeRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SalesmanTakeRewardRsp(input, extensionRegistry);
       }
     };
 

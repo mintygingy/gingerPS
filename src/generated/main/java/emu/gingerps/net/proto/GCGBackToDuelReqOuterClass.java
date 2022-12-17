@@ -62,6 +62,48 @@ public final class GCGBackToDuelReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGBackToDuelReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 80: {
+
+              isBack_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGBackToDuelReqOuterClass.internal_static_GCGBackToDuelReq_descriptor;
@@ -76,7 +118,7 @@ public final class GCGBackToDuelReqOuterClass {
     }
 
     public static final int IS_BACK_FIELD_NUMBER = 10;
-    private boolean isBack_ = false;
+    private boolean isBack_;
     /**
      * <code>bool is_back = 10;</code>
      * @return The isBack.
@@ -103,7 +145,7 @@ public final class GCGBackToDuelReqOuterClass {
       if (isBack_ != false) {
         output.writeBool(10, isBack_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -116,7 +158,7 @@ public final class GCGBackToDuelReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, isBack_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -133,7 +175,7 @@ public final class GCGBackToDuelReqOuterClass {
 
       if (getIsBack()
           != other.getIsBack()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -147,7 +189,7 @@ public final class GCGBackToDuelReqOuterClass {
       hash = (37 * hash) + IS_BACK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsBack());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -275,19 +317,24 @@ public final class GCGBackToDuelReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGBackToDuelReqOuterClass.GCGBackToDuelReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isBack_ = false;
+
         return this;
       }
 
@@ -314,16 +361,9 @@ public final class GCGBackToDuelReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGBackToDuelReqOuterClass.GCGBackToDuelReq buildPartial() {
         emu.gingerps.net.proto.GCGBackToDuelReqOuterClass.GCGBackToDuelReq result = new emu.gingerps.net.proto.GCGBackToDuelReqOuterClass.GCGBackToDuelReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isBack_ = isBack_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGBackToDuelReqOuterClass.GCGBackToDuelReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isBack_ = isBack_;
-        }
       }
 
       @java.lang.Override
@@ -373,7 +413,7 @@ public final class GCGBackToDuelReqOuterClass {
         if (other.getIsBack() != false) {
           setIsBack(other.getIsBack());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -388,38 +428,19 @@ public final class GCGBackToDuelReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGBackToDuelReqOuterClass.GCGBackToDuelReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 80: {
-                isBack_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGBackToDuelReqOuterClass.GCGBackToDuelReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isBack_ ;
       /**
@@ -438,7 +459,6 @@ public final class GCGBackToDuelReqOuterClass {
       public Builder setIsBack(boolean value) {
         
         isBack_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -447,7 +467,7 @@ public final class GCGBackToDuelReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsBack() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isBack_ = false;
         onChanged();
         return this;
@@ -485,18 +505,7 @@ public final class GCGBackToDuelReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGBackToDuelReq(input, extensionRegistry);
       }
     };
 

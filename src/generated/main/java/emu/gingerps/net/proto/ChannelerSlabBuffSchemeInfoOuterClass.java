@@ -47,12 +47,14 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
      */
+
     int getSlotMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
      */
+
     int getSlotMapOrThrow(
         int key);
 
@@ -89,6 +91,67 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ChannelerSlabBuffSchemeInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              unk3300CKMNFOCNMGL_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              unk3300NCMDDAFNENO_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                slotMap_ = com.google.protobuf.MapField.newMapField(
+                    SlotMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              slotMap__ = input.readMessage(
+                  SlotMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              slotMap_.getMutableMap().put(
+                  slotMap__.getKey(), slotMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.internal_static_ChannelerSlabBuffSchemeInfo_descriptor;
@@ -115,7 +178,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
     }
 
     public static final int UNK3300_NCMDDAFNENO_FIELD_NUMBER = 9;
-    private int unk3300NCMDDAFNENO_ = 0;
+    private int unk3300NCMDDAFNENO_;
     /**
      * <code>uint32 Unk3300_NCMDDAFNENO = 9;</code>
      * @return The unk3300NCMDDAFNENO.
@@ -137,7 +200,6 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> slotMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -148,12 +210,14 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
       }
       return slotMap_;
     }
+
     public int getSlotMapCount() {
       return internalGetSlotMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
      */
+
     @java.lang.Override
     public boolean containsSlotMap(
         int key) {
@@ -172,6 +236,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getSlotMapMap() {
       return internalGetSlotMap().getMap();
     }
@@ -179,6 +244,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
      */
     @java.lang.Override
+
     public int getSlotMapOrDefault(
         int key,
         int defaultValue) {
@@ -191,6 +257,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
      */
     @java.lang.Override
+
     public int getSlotMapOrThrow(
         int key) {
       
@@ -203,7 +270,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
     }
 
     public static final int UNK3300_CKMNFOCNMGL_FIELD_NUMBER = 5;
-    private int unk3300CKMNFOCNMGL_ = 0;
+    private int unk3300CKMNFOCNMGL_;
     /**
      * <code>uint32 Unk3300_CKMNFOCNMGL = 5;</code>
      * @return The unk3300CKMNFOCNMGL.
@@ -239,7 +306,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
           internalGetSlotMap(),
           SlotMapDefaultEntryHolder.defaultEntry,
           11);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -266,7 +333,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(11, slotMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -287,7 +354,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
           other.internalGetSlotMap())) return false;
       if (getUnk3300CKMNFOCNMGL()
           != other.getUnk3300CKMNFOCNMGL()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -306,7 +373,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
       }
       hash = (37 * hash) + UNK3300_CKMNFOCNMGL_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300CKMNFOCNMGL();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -445,21 +512,27 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300NCMDDAFNENO_ = 0;
+
         internalGetMutableSlotMap().clear();
         unk3300CKMNFOCNMGL_ = 0;
+
         return this;
       }
 
@@ -486,23 +559,13 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo buildPartial() {
         emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo result = new emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.unk3300NCMDDAFNENO_ = unk3300NCMDDAFNENO_;
+        result.slotMap_ = internalGetSlotMap();
+        result.slotMap_.makeImmutable();
+        result.unk3300CKMNFOCNMGL_ = unk3300CKMNFOCNMGL_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300NCMDDAFNENO_ = unk3300NCMDDAFNENO_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.slotMap_ = internalGetSlotMap();
-          result.slotMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300CKMNFOCNMGL_ = unk3300CKMNFOCNMGL_;
-        }
       }
 
       @java.lang.Override
@@ -554,11 +617,10 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
         }
         internalGetMutableSlotMap().mergeFrom(
             other.internalGetSlotMap());
-        bitField0_ |= 0x00000002;
         if (other.getUnk3300CKMNFOCNMGL() != 0) {
           setUnk3300CKMNFOCNMGL(other.getUnk3300CKMNFOCNMGL());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -573,49 +635,17 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                unk3300CKMNFOCNMGL_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 72: {
-                unk3300NCMDDAFNENO_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 90: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                slotMap__ = input.readMessage(
-                    SlotMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableSlotMap().getMutableMap().put(
-                    slotMap__.getKey(), slotMap__.getValue());
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -637,7 +667,6 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
       public Builder setUnk3300NCMDDAFNENO(int value) {
         
         unk3300NCMDDAFNENO_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -646,7 +675,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NCMDDAFNENO() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300NCMDDAFNENO_ = 0;
         onChanged();
         return this;
@@ -655,7 +684,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> slotMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetSlotMap() {
+      internalGetSlotMap() {
         if (slotMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               SlotMapDefaultEntryHolder.defaultEntry);
@@ -663,7 +692,8 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
         return slotMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableSlotMap() {
+      internalGetMutableSlotMap() {
+        onChanged();;
         if (slotMap_ == null) {
           slotMap_ = com.google.protobuf.MapField.newMapField(
               SlotMapDefaultEntryHolder.defaultEntry);
@@ -671,16 +701,16 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
         if (!slotMap_.isMutable()) {
           slotMap_ = slotMap_.copy();
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
         return slotMap_;
       }
+
       public int getSlotMapCount() {
         return internalGetSlotMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
        */
+
       @java.lang.Override
       public boolean containsSlotMap(
           int key) {
@@ -699,6 +729,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getSlotMapMap() {
         return internalGetSlotMap().getMap();
       }
@@ -706,6 +737,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
        */
       @java.lang.Override
+
       public int getSlotMapOrDefault(
           int key,
           int defaultValue) {
@@ -718,6 +750,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
        */
       @java.lang.Override
+
       public int getSlotMapOrThrow(
           int key) {
         
@@ -728,8 +761,8 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearSlotMap() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableSlotMap().getMutableMap()
             .clear();
         return this;
@@ -737,6 +770,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
        */
+
       public Builder removeSlotMap(
           int key) {
         
@@ -749,8 +783,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableSlotMap() {
-        bitField0_ |= 0x00000002;
+      getMutableSlotMap() {
         return internalGetMutableSlotMap().getMutableMap();
       }
       /**
@@ -763,17 +796,16 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
         
         internalGetMutableSlotMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; slot_map = 11;</code>
        */
+
       public Builder putAllSlotMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableSlotMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -794,7 +826,6 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
       public Builder setUnk3300CKMNFOCNMGL(int value) {
         
         unk3300CKMNFOCNMGL_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -803,7 +834,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CKMNFOCNMGL() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300CKMNFOCNMGL_ = 0;
         onChanged();
         return this;
@@ -841,18 +872,7 @@ public final class ChannelerSlabBuffSchemeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ChannelerSlabBuffSchemeInfo(input, extensionRegistry);
       }
     };
 

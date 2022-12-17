@@ -86,6 +86,78 @@ public final class MonsterAlertChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MonsterAlertChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                monsterEntityList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              monsterEntityList_.addInt(input.readUInt32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                monsterEntityList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                monsterEntityList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 96: {
+
+              isAlert_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              avatarEntityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          monsterEntityList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MonsterAlertChangeNotifyOuterClass.internal_static_MonsterAlertChangeNotify_descriptor;
@@ -100,7 +172,6 @@ public final class MonsterAlertChangeNotifyOuterClass {
     }
 
     public static final int MONSTER_ENTITY_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList monsterEntityList_;
     /**
      * <code>repeated uint32 monster_entity_list = 5;</code>
@@ -129,7 +200,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
     private int monsterEntityListMemoizedSerializedSize = -1;
 
     public static final int IS_ALERT_FIELD_NUMBER = 12;
-    private int isAlert_ = 0;
+    private int isAlert_;
     /**
      * <code>uint32 is_alert = 12;</code>
      * @return The isAlert.
@@ -140,7 +211,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
     }
 
     public static final int AVATAR_ENTITY_ID_FIELD_NUMBER = 15;
-    private int avatarEntityId_ = 0;
+    private int avatarEntityId_;
     /**
      * <code>uint32 avatar_entity_id = 15;</code>
      * @return The avatarEntityId.
@@ -178,7 +249,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
       if (avatarEntityId_ != 0) {
         output.writeUInt32(15, avatarEntityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -209,7 +280,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, avatarEntityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +301,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
           != other.getIsAlert()) return false;
       if (getAvatarEntityId()
           != other.getAvatarEntityId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -249,7 +320,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
       hash = (53 * hash) + getIsAlert();
       hash = (37 * hash) + AVATAR_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarEntityId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -377,21 +448,28 @@ public final class MonsterAlertChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MonsterAlertChangeNotifyOuterClass.MonsterAlertChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         monsterEntityList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         isAlert_ = 0;
+
         avatarEntityId_ = 0;
+
         return this;
       }
 
@@ -418,28 +496,16 @@ public final class MonsterAlertChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MonsterAlertChangeNotifyOuterClass.MonsterAlertChangeNotify buildPartial() {
         emu.gingerps.net.proto.MonsterAlertChangeNotifyOuterClass.MonsterAlertChangeNotify result = new emu.gingerps.net.proto.MonsterAlertChangeNotifyOuterClass.MonsterAlertChangeNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MonsterAlertChangeNotifyOuterClass.MonsterAlertChangeNotify result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           monsterEntityList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.monsterEntityList_ = monsterEntityList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MonsterAlertChangeNotifyOuterClass.MonsterAlertChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isAlert_ = isAlert_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.avatarEntityId_ = avatarEntityId_;
-        }
+        result.isAlert_ = isAlert_;
+        result.avatarEntityId_ = avatarEntityId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -502,7 +568,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
         if (other.getAvatarEntityId() != 0) {
           setAvatarEntityId(other.getAvatarEntityId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -517,56 +583,17 @@ public final class MonsterAlertChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MonsterAlertChangeNotifyOuterClass.MonsterAlertChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                int v = input.readUInt32();
-                ensureMonsterEntityListIsMutable();
-                monsterEntityList_.addInt(v);
-                break;
-              } // case 40
-              case 42: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureMonsterEntityListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  monsterEntityList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 42
-              case 96: {
-                isAlert_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              case 120: {
-                avatarEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MonsterAlertChangeNotifyOuterClass.MonsterAlertChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -576,7 +603,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           monsterEntityList_ = mutableCopy(monsterEntityList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 monster_entity_list = 5;</code>
@@ -610,7 +637,6 @@ public final class MonsterAlertChangeNotifyOuterClass {
        */
       public Builder setMonsterEntityList(
           int index, int value) {
-        
         ensureMonsterEntityListIsMutable();
         monsterEntityList_.setInt(index, value);
         onChanged();
@@ -622,7 +648,6 @@ public final class MonsterAlertChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addMonsterEntityList(int value) {
-        
         ensureMonsterEntityListIsMutable();
         monsterEntityList_.addInt(value);
         onChanged();
@@ -669,7 +694,6 @@ public final class MonsterAlertChangeNotifyOuterClass {
       public Builder setIsAlert(int value) {
         
         isAlert_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -678,7 +702,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAlert() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isAlert_ = 0;
         onChanged();
         return this;
@@ -701,7 +725,6 @@ public final class MonsterAlertChangeNotifyOuterClass {
       public Builder setAvatarEntityId(int value) {
         
         avatarEntityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -710,7 +733,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         avatarEntityId_ = 0;
         onChanged();
         return this;
@@ -748,18 +771,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MonsterAlertChangeNotify(input, extensionRegistry);
       }
     };
 

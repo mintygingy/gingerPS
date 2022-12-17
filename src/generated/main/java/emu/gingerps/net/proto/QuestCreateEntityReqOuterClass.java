@@ -89,6 +89,71 @@ public final class QuestCreateEntityReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private QuestCreateEntityReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder subBuilder = null;
+              if (entity_ != null) {
+                subBuilder = entity_.toBuilder();
+              }
+              entity_ = input.readMessage(emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(entity_);
+                entity_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
+
+              questId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              isRewind_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              parentQuestId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.QuestCreateEntityReqOuterClass.internal_static_QuestCreateEntityReq_descriptor;
@@ -103,7 +168,7 @@ public final class QuestCreateEntityReqOuterClass {
     }
 
     public static final int PARENT_QUEST_ID_FIELD_NUMBER = 14;
-    private int parentQuestId_ = 0;
+    private int parentQuestId_;
     /**
      * <code>uint32 parent_quest_id = 14;</code>
      * @return The parentQuestId.
@@ -136,11 +201,11 @@ public final class QuestCreateEntityReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfoOrBuilder getEntityOrBuilder() {
-      return entity_ == null ? emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.getDefaultInstance() : entity_;
+      return getEntity();
     }
 
     public static final int QUEST_ID_FIELD_NUMBER = 5;
-    private int questId_ = 0;
+    private int questId_;
     /**
      * <code>uint32 quest_id = 5;</code>
      * @return The questId.
@@ -151,7 +216,7 @@ public final class QuestCreateEntityReqOuterClass {
     }
 
     public static final int IS_REWIND_FIELD_NUMBER = 11;
-    private boolean isRewind_ = false;
+    private boolean isRewind_;
     /**
      * <code>bool is_rewind = 11;</code>
      * @return The isRewind.
@@ -187,7 +252,7 @@ public final class QuestCreateEntityReqOuterClass {
       if (parentQuestId_ != 0) {
         output.writeUInt32(14, parentQuestId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -212,7 +277,7 @@ public final class QuestCreateEntityReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, parentQuestId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -238,7 +303,7 @@ public final class QuestCreateEntityReqOuterClass {
           != other.getQuestId()) return false;
       if (getIsRewind()
           != other.getIsRewind()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -260,7 +325,7 @@ public final class QuestCreateEntityReqOuterClass {
       hash = (37 * hash) + IS_REWIND_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsRewind());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -388,26 +453,34 @@ public final class QuestCreateEntityReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         parentQuestId_ = 0;
-        entity_ = null;
-        if (entityBuilder_ != null) {
-          entityBuilder_.dispose();
+
+        if (entityBuilder_ == null) {
+          entity_ = null;
+        } else {
+          entity_ = null;
           entityBuilder_ = null;
         }
         questId_ = 0;
+
         isRewind_ = false;
+
         return this;
       }
 
@@ -434,27 +507,16 @@ public final class QuestCreateEntityReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReq buildPartial() {
         emu.gingerps.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReq result = new emu.gingerps.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.parentQuestId_ = parentQuestId_;
+        if (entityBuilder_ == null) {
+          result.entity_ = entity_;
+        } else {
+          result.entity_ = entityBuilder_.build();
+        }
+        result.questId_ = questId_;
+        result.isRewind_ = isRewind_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.parentQuestId_ = parentQuestId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entity_ = entityBuilder_ == null
-              ? entity_
-              : entityBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.questId_ = questId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isRewind_ = isRewind_;
-        }
       }
 
       @java.lang.Override
@@ -513,7 +575,7 @@ public final class QuestCreateEntityReqOuterClass {
         if (other.getIsRewind() != false) {
           setIsRewind(other.getIsRewind());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -528,55 +590,19 @@ public final class QuestCreateEntityReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                input.readMessage(
-                    getEntityFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 26
-              case 40: {
-                questId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 88: {
-                isRewind_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 88
-              case 112: {
-                parentQuestId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int parentQuestId_ ;
       /**
@@ -595,7 +621,6 @@ public final class QuestCreateEntityReqOuterClass {
       public Builder setParentQuestId(int value) {
         
         parentQuestId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -604,7 +629,7 @@ public final class QuestCreateEntityReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParentQuestId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         parentQuestId_ = 0;
         onChanged();
         return this;
@@ -618,7 +643,7 @@ public final class QuestCreateEntityReqOuterClass {
        * @return Whether the entity field is set.
        */
       public boolean hasEntity() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return entityBuilder_ != null || entity_ != null;
       }
       /**
        * <code>.CreateEntityInfo entity = 3;</code>
@@ -640,11 +665,11 @@ public final class QuestCreateEntityReqOuterClass {
             throw new NullPointerException();
           }
           entity_ = value;
+          onChanged();
         } else {
           entityBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -654,11 +679,11 @@ public final class QuestCreateEntityReqOuterClass {
           emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder builderForValue) {
         if (entityBuilder_ == null) {
           entity_ = builderForValue.build();
+          onChanged();
         } else {
           entityBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -666,38 +691,38 @@ public final class QuestCreateEntityReqOuterClass {
        */
       public Builder mergeEntity(emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo value) {
         if (entityBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            entity_ != null &&
-            entity_ != emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.getDefaultInstance()) {
-            getEntityBuilder().mergeFrom(value);
+          if (entity_ != null) {
+            entity_ =
+              emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.newBuilder(entity_).mergeFrom(value).buildPartial();
           } else {
             entity_ = value;
           }
+          onChanged();
         } else {
           entityBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CreateEntityInfo entity = 3;</code>
        */
       public Builder clearEntity() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        entity_ = null;
-        if (entityBuilder_ != null) {
-          entityBuilder_.dispose();
+        if (entityBuilder_ == null) {
+          entity_ = null;
+          onChanged();
+        } else {
+          entity_ = null;
           entityBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CreateEntityInfo entity = 3;</code>
        */
       public emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder getEntityBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getEntityFieldBuilder().getBuilder();
       }
@@ -746,7 +771,6 @@ public final class QuestCreateEntityReqOuterClass {
       public Builder setQuestId(int value) {
         
         questId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -755,7 +779,7 @@ public final class QuestCreateEntityReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         questId_ = 0;
         onChanged();
         return this;
@@ -778,7 +802,6 @@ public final class QuestCreateEntityReqOuterClass {
       public Builder setIsRewind(boolean value) {
         
         isRewind_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -787,7 +810,7 @@ public final class QuestCreateEntityReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsRewind() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isRewind_ = false;
         onChanged();
         return this;
@@ -825,18 +848,7 @@ public final class QuestCreateEntityReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new QuestCreateEntityReq(input, extensionRegistry);
       }
     };
 

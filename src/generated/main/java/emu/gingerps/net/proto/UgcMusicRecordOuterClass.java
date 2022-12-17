@@ -76,6 +76,61 @@ public final class UgcMusicRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private UgcMusicRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              musicId_ = input.readUInt32();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                musicTrackList_ = new java.util.ArrayList<emu.gingerps.net.proto.UgcMusicTrackOuterClass.UgcMusicTrack>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              musicTrackList_.add(
+                  input.readMessage(emu.gingerps.net.proto.UgcMusicTrackOuterClass.UgcMusicTrack.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          musicTrackList_ = java.util.Collections.unmodifiableList(musicTrackList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.UgcMusicRecordOuterClass.internal_static_UgcMusicRecord_descriptor;
@@ -90,7 +145,7 @@ public final class UgcMusicRecordOuterClass {
     }
 
     public static final int MUSIC_ID_FIELD_NUMBER = 1;
-    private int musicId_ = 0;
+    private int musicId_;
     /**
      * <code>uint32 music_id = 1;</code>
      * @return The musicId.
@@ -101,7 +156,6 @@ public final class UgcMusicRecordOuterClass {
     }
 
     public static final int MUSIC_TRACK_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.UgcMusicTrackOuterClass.UgcMusicTrack> musicTrackList_;
     /**
      * <code>repeated .UgcMusicTrack music_track_list = 4;</code>
@@ -161,7 +215,7 @@ public final class UgcMusicRecordOuterClass {
       for (int i = 0; i < musicTrackList_.size(); i++) {
         output.writeMessage(4, musicTrackList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -178,7 +232,7 @@ public final class UgcMusicRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, musicTrackList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +251,7 @@ public final class UgcMusicRecordOuterClass {
           != other.getMusicId()) return false;
       if (!getMusicTrackListList()
           .equals(other.getMusicTrackListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -214,7 +268,7 @@ public final class UgcMusicRecordOuterClass {
         hash = (37 * hash) + MUSIC_TRACK_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMusicTrackListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +385,31 @@ public final class UgcMusicRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMusicTrackListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         musicId_ = 0;
+
         if (musicTrackListBuilder_ == null) {
           musicTrackList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          musicTrackList_ = null;
           musicTrackListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -377,29 +436,19 @@ public final class UgcMusicRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord buildPartial() {
         emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord result = new emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord result) {
+        int from_bitField0_ = bitField0_;
+        result.musicId_ = musicId_;
         if (musicTrackListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             musicTrackList_ = java.util.Collections.unmodifiableList(musicTrackList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.musicTrackList_ = musicTrackList_;
         } else {
           result.musicTrackList_ = musicTrackListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.musicId_ = musicId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -453,7 +502,7 @@ public final class UgcMusicRecordOuterClass {
           if (!other.musicTrackList_.isEmpty()) {
             if (musicTrackList_.isEmpty()) {
               musicTrackList_ = other.musicTrackList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureMusicTrackListIsMutable();
               musicTrackList_.addAll(other.musicTrackList_);
@@ -466,7 +515,7 @@ public final class UgcMusicRecordOuterClass {
               musicTrackListBuilder_.dispose();
               musicTrackListBuilder_ = null;
               musicTrackList_ = other.musicTrackList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               musicTrackListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMusicTrackListFieldBuilder() : null;
@@ -475,7 +524,7 @@ public final class UgcMusicRecordOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,48 +539,17 @@ public final class UgcMusicRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                musicId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 34: {
-                emu.gingerps.net.proto.UgcMusicTrackOuterClass.UgcMusicTrack m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.UgcMusicTrackOuterClass.UgcMusicTrack.parser(),
-                        extensionRegistry);
-                if (musicTrackListBuilder_ == null) {
-                  ensureMusicTrackListIsMutable();
-                  musicTrackList_.add(m);
-                } else {
-                  musicTrackListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -553,7 +571,6 @@ public final class UgcMusicRecordOuterClass {
       public Builder setMusicId(int value) {
         
         musicId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +579,7 @@ public final class UgcMusicRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMusicId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         musicId_ = 0;
         onChanged();
         return this;
@@ -571,9 +588,9 @@ public final class UgcMusicRecordOuterClass {
       private java.util.List<emu.gingerps.net.proto.UgcMusicTrackOuterClass.UgcMusicTrack> musicTrackList_ =
         java.util.Collections.emptyList();
       private void ensureMusicTrackListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           musicTrackList_ = new java.util.ArrayList<emu.gingerps.net.proto.UgcMusicTrackOuterClass.UgcMusicTrack>(musicTrackList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -723,7 +740,7 @@ public final class UgcMusicRecordOuterClass {
       public Builder clearMusicTrackList() {
         if (musicTrackListBuilder_ == null) {
           musicTrackList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           musicTrackListBuilder_.clear();
@@ -800,7 +817,7 @@ public final class UgcMusicRecordOuterClass {
           musicTrackListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.UgcMusicTrackOuterClass.UgcMusicTrack, emu.gingerps.net.proto.UgcMusicTrackOuterClass.UgcMusicTrack.Builder, emu.gingerps.net.proto.UgcMusicTrackOuterClass.UgcMusicTrackOrBuilder>(
                   musicTrackList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           musicTrackList_ = null;
@@ -840,18 +857,7 @@ public final class UgcMusicRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new UgcMusicRecord(input, extensionRegistry);
       }
     };
 

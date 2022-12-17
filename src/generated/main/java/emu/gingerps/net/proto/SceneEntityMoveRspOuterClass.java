@@ -94,6 +94,76 @@ public final class SceneEntityMoveRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneEntityMoveRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 66: {
+              emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.Builder subBuilder = null;
+              if (failMotion_ != null) {
+                subBuilder = failMotion_.toBuilder();
+              }
+              failMotion_ = input.readMessage(emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(failMotion_);
+                failMotion_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 72: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 88: {
+
+              sceneTime_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              reliableSeq_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneEntityMoveRspOuterClass.internal_static_SceneEntityMoveRsp_descriptor;
@@ -108,7 +178,7 @@ public final class SceneEntityMoveRspOuterClass {
     }
 
     public static final int SCENE_TIME_FIELD_NUMBER = 11;
-    private int sceneTime_ = 0;
+    private int sceneTime_;
     /**
      * <code>uint32 scene_time = 11;</code>
      * @return The sceneTime.
@@ -141,11 +211,11 @@ public final class SceneEntityMoveRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfoOrBuilder getFailMotionOrBuilder() {
-      return failMotion_ == null ? emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.getDefaultInstance() : failMotion_;
+      return getFailMotion();
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 12;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 12;</code>
      * @return The entityId.
@@ -156,7 +226,7 @@ public final class SceneEntityMoveRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 9;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 9;</code>
      * @return The retcode.
@@ -167,7 +237,7 @@ public final class SceneEntityMoveRspOuterClass {
     }
 
     public static final int RELIABLE_SEQ_FIELD_NUMBER = 15;
-    private int reliableSeq_ = 0;
+    private int reliableSeq_;
     /**
      * <code>uint32 reliable_seq = 15;</code>
      * @return The reliableSeq.
@@ -206,7 +276,7 @@ public final class SceneEntityMoveRspOuterClass {
       if (reliableSeq_ != 0) {
         output.writeUInt32(15, reliableSeq_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -235,7 +305,7 @@ public final class SceneEntityMoveRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, reliableSeq_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -263,7 +333,7 @@ public final class SceneEntityMoveRspOuterClass {
           != other.getRetcode()) return false;
       if (getReliableSeq()
           != other.getReliableSeq()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -286,7 +356,7 @@ public final class SceneEntityMoveRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + RELIABLE_SEQ_FIELD_NUMBER;
       hash = (53 * hash) + getReliableSeq();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -413,27 +483,36 @@ public final class SceneEntityMoveRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneEntityMoveRspOuterClass.SceneEntityMoveRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         sceneTime_ = 0;
-        failMotion_ = null;
-        if (failMotionBuilder_ != null) {
-          failMotionBuilder_.dispose();
+
+        if (failMotionBuilder_ == null) {
+          failMotion_ = null;
+        } else {
+          failMotion_ = null;
           failMotionBuilder_ = null;
         }
         entityId_ = 0;
+
         retcode_ = 0;
+
         reliableSeq_ = 0;
+
         return this;
       }
 
@@ -460,30 +539,17 @@ public final class SceneEntityMoveRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneEntityMoveRspOuterClass.SceneEntityMoveRsp buildPartial() {
         emu.gingerps.net.proto.SceneEntityMoveRspOuterClass.SceneEntityMoveRsp result = new emu.gingerps.net.proto.SceneEntityMoveRspOuterClass.SceneEntityMoveRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.sceneTime_ = sceneTime_;
+        if (failMotionBuilder_ == null) {
+          result.failMotion_ = failMotion_;
+        } else {
+          result.failMotion_ = failMotionBuilder_.build();
+        }
+        result.entityId_ = entityId_;
+        result.retcode_ = retcode_;
+        result.reliableSeq_ = reliableSeq_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneEntityMoveRspOuterClass.SceneEntityMoveRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sceneTime_ = sceneTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.failMotion_ = failMotionBuilder_ == null
-              ? failMotion_
-              : failMotionBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.reliableSeq_ = reliableSeq_;
-        }
       }
 
       @java.lang.Override
@@ -545,7 +611,7 @@ public final class SceneEntityMoveRspOuterClass {
         if (other.getReliableSeq() != 0) {
           setReliableSeq(other.getReliableSeq());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -560,60 +626,19 @@ public final class SceneEntityMoveRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneEntityMoveRspOuterClass.SceneEntityMoveRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 66: {
-                input.readMessage(
-                    getFailMotionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 66
-              case 72: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 72
-              case 88: {
-                sceneTime_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 96: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              case 120: {
-                reliableSeq_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneEntityMoveRspOuterClass.SceneEntityMoveRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int sceneTime_ ;
       /**
@@ -632,7 +657,6 @@ public final class SceneEntityMoveRspOuterClass {
       public Builder setSceneTime(int value) {
         
         sceneTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -641,7 +665,7 @@ public final class SceneEntityMoveRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         sceneTime_ = 0;
         onChanged();
         return this;
@@ -655,7 +679,7 @@ public final class SceneEntityMoveRspOuterClass {
        * @return Whether the failMotion field is set.
        */
       public boolean hasFailMotion() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return failMotionBuilder_ != null || failMotion_ != null;
       }
       /**
        * <code>.MotionInfo fail_motion = 8;</code>
@@ -677,11 +701,11 @@ public final class SceneEntityMoveRspOuterClass {
             throw new NullPointerException();
           }
           failMotion_ = value;
+          onChanged();
         } else {
           failMotionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -691,11 +715,11 @@ public final class SceneEntityMoveRspOuterClass {
           emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.Builder builderForValue) {
         if (failMotionBuilder_ == null) {
           failMotion_ = builderForValue.build();
+          onChanged();
         } else {
           failMotionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -703,38 +727,38 @@ public final class SceneEntityMoveRspOuterClass {
        */
       public Builder mergeFailMotion(emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo value) {
         if (failMotionBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            failMotion_ != null &&
-            failMotion_ != emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.getDefaultInstance()) {
-            getFailMotionBuilder().mergeFrom(value);
+          if (failMotion_ != null) {
+            failMotion_ =
+              emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.newBuilder(failMotion_).mergeFrom(value).buildPartial();
           } else {
             failMotion_ = value;
           }
+          onChanged();
         } else {
           failMotionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MotionInfo fail_motion = 8;</code>
        */
       public Builder clearFailMotion() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        failMotion_ = null;
-        if (failMotionBuilder_ != null) {
-          failMotionBuilder_.dispose();
+        if (failMotionBuilder_ == null) {
+          failMotion_ = null;
+          onChanged();
+        } else {
+          failMotion_ = null;
           failMotionBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MotionInfo fail_motion = 8;</code>
        */
       public emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.Builder getFailMotionBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getFailMotionFieldBuilder().getBuilder();
       }
@@ -783,7 +807,6 @@ public final class SceneEntityMoveRspOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -792,7 +815,7 @@ public final class SceneEntityMoveRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -815,7 +838,6 @@ public final class SceneEntityMoveRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -824,7 +846,7 @@ public final class SceneEntityMoveRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -847,7 +869,6 @@ public final class SceneEntityMoveRspOuterClass {
       public Builder setReliableSeq(int value) {
         
         reliableSeq_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -856,7 +877,7 @@ public final class SceneEntityMoveRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReliableSeq() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         reliableSeq_ = 0;
         onChanged();
         return this;
@@ -894,18 +915,7 @@ public final class SceneEntityMoveRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneEntityMoveRsp(input, extensionRegistry);
       }
     };
 

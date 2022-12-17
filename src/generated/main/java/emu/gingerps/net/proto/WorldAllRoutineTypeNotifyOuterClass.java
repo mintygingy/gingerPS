@@ -80,6 +80,56 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WorldAllRoutineTypeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                worldRoutineTypeList_ = new java.util.ArrayList<emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              worldRoutineTypeList_.add(
+                  input.readMessage(emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          worldRoutineTypeList_ = java.util.Collections.unmodifiableList(worldRoutineTypeList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WorldAllRoutineTypeNotifyOuterClass.internal_static_WorldAllRoutineTypeNotify_descriptor;
@@ -94,7 +144,6 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
     }
 
     public static final int WORLD_ROUTINE_TYPE_LIST_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo> worldRoutineTypeList_;
     /**
      * <code>repeated .WorldRoutineTypeInfo world_routine_type_list = 9;</code>
@@ -151,7 +200,7 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
       for (int i = 0; i < worldRoutineTypeList_.size(); i++) {
         output.writeMessage(9, worldRoutineTypeList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -164,7 +213,7 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, worldRoutineTypeList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -181,7 +230,7 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
 
       if (!getWorldRoutineTypeListList()
           .equals(other.getWorldRoutineTypeListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -196,7 +245,7 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
         hash = (37 * hash) + WORLD_ROUTINE_TYPE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getWorldRoutineTypeListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -323,25 +372,29 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WorldAllRoutineTypeNotifyOuterClass.WorldAllRoutineTypeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getWorldRoutineTypeListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (worldRoutineTypeListBuilder_ == null) {
           worldRoutineTypeList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          worldRoutineTypeList_ = null;
           worldRoutineTypeListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -368,13 +421,7 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WorldAllRoutineTypeNotifyOuterClass.WorldAllRoutineTypeNotify buildPartial() {
         emu.gingerps.net.proto.WorldAllRoutineTypeNotifyOuterClass.WorldAllRoutineTypeNotify result = new emu.gingerps.net.proto.WorldAllRoutineTypeNotifyOuterClass.WorldAllRoutineTypeNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.WorldAllRoutineTypeNotifyOuterClass.WorldAllRoutineTypeNotify result) {
+        int from_bitField0_ = bitField0_;
         if (worldRoutineTypeListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             worldRoutineTypeList_ = java.util.Collections.unmodifiableList(worldRoutineTypeList_);
@@ -384,10 +431,8 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
         } else {
           result.worldRoutineTypeList_ = worldRoutineTypeListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WorldAllRoutineTypeNotifyOuterClass.WorldAllRoutineTypeNotify result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -460,7 +505,7 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -475,43 +520,17 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WorldAllRoutineTypeNotifyOuterClass.WorldAllRoutineTypeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 74: {
-                emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo.parser(),
-                        extensionRegistry);
-                if (worldRoutineTypeListBuilder_ == null) {
-                  ensureWorldRoutineTypeListIsMutable();
-                  worldRoutineTypeList_.add(m);
-                } else {
-                  worldRoutineTypeListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 74
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WorldAllRoutineTypeNotifyOuterClass.WorldAllRoutineTypeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -788,18 +807,7 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WorldAllRoutineTypeNotify(input, extensionRegistry);
       }
     };
 

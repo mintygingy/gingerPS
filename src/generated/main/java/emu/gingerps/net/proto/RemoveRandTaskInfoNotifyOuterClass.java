@@ -79,6 +79,59 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RemoveRandTaskInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              isSucc_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              randTaskId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.internal_static_RemoveRandTaskInfoNotify_descriptor;
@@ -219,7 +272,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
     }
 
     public static final int RAND_TASK_ID_FIELD_NUMBER = 10;
-    private int randTaskId_ = 0;
+    private int randTaskId_;
     /**
      * <code>uint32 rand_task_id = 10;</code>
      * @return The randTaskId.
@@ -230,7 +283,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 13;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.RemoveRandTaskInfoNotify.FinishReason reason = 13;</code>
      * @return The enum numeric value on the wire for reason.
@@ -243,12 +296,13 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason getReason() {
-      emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason result = emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason result = emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason.UNRECOGNIZED : result;
     }
 
     public static final int IS_SUCC_FIELD_NUMBER = 5;
-    private boolean isSucc_ = false;
+    private boolean isSucc_;
     /**
      * <code>bool is_succ = 5;</code>
      * @return The isSucc.
@@ -281,7 +335,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
       if (reason_ != emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason.FINISH_REASON_DEFAULT.getNumber()) {
         output.writeEnum(13, reason_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -302,7 +356,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, reason_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -322,7 +376,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
       if (reason_ != other.reason_) return false;
       if (getIsSucc()
           != other.getIsSucc()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -340,7 +394,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
       hash = (37 * hash) + IS_SUCC_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSucc());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -467,21 +521,28 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         randTaskId_ = 0;
+
         reason_ = 0;
+
         isSucc_ = false;
+
         return this;
       }
 
@@ -508,22 +569,11 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify buildPartial() {
         emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify result = new emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.randTaskId_ = randTaskId_;
+        result.reason_ = reason_;
+        result.isSucc_ = isSucc_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.randTaskId_ = randTaskId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isSucc_ = isSucc_;
-        }
       }
 
       @java.lang.Override
@@ -579,7 +629,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
         if (other.getIsSucc() != false) {
           setIsSucc(other.getIsSucc());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -594,48 +644,19 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                isSucc_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 80: {
-                randTaskId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 104: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int randTaskId_ ;
       /**
@@ -654,7 +675,6 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
       public Builder setRandTaskId(int value) {
         
         randTaskId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -663,7 +683,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRandTaskId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         randTaskId_ = 0;
         onChanged();
         return this;
@@ -683,8 +703,8 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -694,7 +714,8 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason getReason() {
-        emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason result = emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason result = emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.RemoveRandTaskInfoNotifyOuterClass.RemoveRandTaskInfoNotify.FinishReason.UNRECOGNIZED : result;
       }
       /**
@@ -706,7 +727,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -716,7 +737,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -739,7 +760,6 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
       public Builder setIsSucc(boolean value) {
         
         isSucc_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -748,7 +768,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSucc() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isSucc_ = false;
         onChanged();
         return this;
@@ -786,18 +806,7 @@ public final class RemoveRandTaskInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RemoveRandTaskInfoNotify(input, extensionRegistry);
       }
     };
 

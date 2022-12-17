@@ -68,6 +68,53 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EffigyChallengeV2ChooseSkillReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              challengeModeSkillNo_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EffigyChallengeV2ChooseSkillReqOuterClass.internal_static_EffigyChallengeV2ChooseSkillReq_descriptor;
@@ -82,7 +129,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
     }
 
     public static final int CHALLENGE_MODE_SKILL_NO_FIELD_NUMBER = 10;
-    private int challengeModeSkillNo_ = 0;
+    private int challengeModeSkillNo_;
     /**
      * <code>uint32 challenge_mode_skill_no = 10;</code>
      * @return The challengeModeSkillNo.
@@ -93,7 +140,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 7;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 7;</code>
      * @return The levelId.
@@ -123,7 +170,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
       if (challengeModeSkillNo_ != 0) {
         output.writeUInt32(10, challengeModeSkillNo_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, challengeModeSkillNo_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
           != other.getChallengeModeSkillNo()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
       hash = (53 * hash) + getChallengeModeSkillNo();
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -302,20 +349,26 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.EffigyChallengeV2ChooseSkillReqOuterClass.EffigyChallengeV2ChooseSkillReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         challengeModeSkillNo_ = 0;
+
         levelId_ = 0;
+
         return this;
       }
 
@@ -342,19 +395,10 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EffigyChallengeV2ChooseSkillReqOuterClass.EffigyChallengeV2ChooseSkillReq buildPartial() {
         emu.gingerps.net.proto.EffigyChallengeV2ChooseSkillReqOuterClass.EffigyChallengeV2ChooseSkillReq result = new emu.gingerps.net.proto.EffigyChallengeV2ChooseSkillReqOuterClass.EffigyChallengeV2ChooseSkillReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.challengeModeSkillNo_ = challengeModeSkillNo_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EffigyChallengeV2ChooseSkillReqOuterClass.EffigyChallengeV2ChooseSkillReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.challengeModeSkillNo_ = challengeModeSkillNo_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.levelId_ = levelId_;
-        }
       }
 
       @java.lang.Override
@@ -407,7 +451,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -422,43 +466,19 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EffigyChallengeV2ChooseSkillReqOuterClass.EffigyChallengeV2ChooseSkillReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 80: {
-                challengeModeSkillNo_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EffigyChallengeV2ChooseSkillReqOuterClass.EffigyChallengeV2ChooseSkillReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int challengeModeSkillNo_ ;
       /**
@@ -477,7 +497,6 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
       public Builder setChallengeModeSkillNo(int value) {
         
         challengeModeSkillNo_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -486,7 +505,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeModeSkillNo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         challengeModeSkillNo_ = 0;
         onChanged();
         return this;
@@ -509,7 +528,6 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -518,7 +536,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -556,18 +574,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EffigyChallengeV2ChooseSkillReq(input, extensionRegistry);
       }
     };
 

@@ -87,14 +87,14 @@ public final class BossChestInfoOuterClass {
     /**
      * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo getUidDiscountMapOrDefault(
+
+    emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo getUidDiscountMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo defaultValue);
+        emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo defaultValue);
     /**
      * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
+
     emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo getUidDiscountMapOrThrow(
         int key);
   }
@@ -127,6 +127,115 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BossChestInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              monsterConfigId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              resin_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                remainUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              remainUidList_.addInt(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                remainUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                remainUidList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                qualifyUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              qualifyUidList_.addInt(input.readUInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                qualifyUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                qualifyUidList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                uidDiscountMap_ = com.google.protobuf.MapField.newMapField(
+                    UidDiscountMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo>
+              uidDiscountMap__ = input.readMessage(
+                  UidDiscountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              uidDiscountMap_.getMutableMap().put(
+                  uidDiscountMap__.getKey(), uidDiscountMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          remainUidList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          qualifyUidList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BossChestInfoOuterClass.internal_static_BossChestInfo_descriptor;
@@ -153,7 +262,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
     }
 
     public static final int MONSTER_CONFIG_ID_FIELD_NUMBER = 1;
-    private int monsterConfigId_ = 0;
+    private int monsterConfigId_;
     /**
      * <code>uint32 monster_config_id = 1;</code>
      * @return The monsterConfigId.
@@ -164,7 +273,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
     }
 
     public static final int RESIN_FIELD_NUMBER = 2;
-    private int resin_ = 0;
+    private int resin_;
     /**
      * <code>uint32 resin = 2;</code>
      * @return The resin.
@@ -175,7 +284,6 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
     }
 
     public static final int REMAIN_UID_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList remainUidList_;
     /**
      * <code>repeated uint32 remain_uid_list = 3;</code>
@@ -204,7 +312,6 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
     private int remainUidListMemoizedSerializedSize = -1;
 
     public static final int QUALIFY_UID_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList qualifyUidList_;
     /**
      * <code>repeated uint32 qualify_uid_list = 4;</code>
@@ -244,7 +351,6 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo> uidDiscountMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo>
@@ -255,12 +361,14 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
       }
       return uidDiscountMap_;
     }
+
     public int getUidDiscountMapCount() {
       return internalGetUidDiscountMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
+
     @java.lang.Override
     public boolean containsUidDiscountMap(
         int key) {
@@ -279,6 +387,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
      * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo> getUidDiscountMapMap() {
       return internalGetUidDiscountMap().getMap();
     }
@@ -286,11 +395,10 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
      * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo getUidDiscountMapOrDefault(
+
+    public emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo getUidDiscountMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo defaultValue) {
+        emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo> map =
           internalGetUidDiscountMap().getMap();
@@ -300,6 +408,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
      * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo getUidDiscountMapOrThrow(
         int key) {
       
@@ -352,7 +461,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
           internalGetUidDiscountMap(),
           UidDiscountMapDefaultEntryHolder.defaultEntry,
           5);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -407,7 +516,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, uidDiscountMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -432,7 +541,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
           .equals(other.getQualifyUidListList())) return false;
       if (!internalGetUidDiscountMap().equals(
           other.internalGetUidDiscountMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -459,7 +568,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
         hash = (37 * hash) + UID_DISCOUNT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetUidDiscountMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -598,22 +707,30 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
 
       // Construct using emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         monsterConfigId_ = 0;
+
         resin_ = 0;
+
         remainUidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         qualifyUidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableUidDiscountMap().clear();
         return this;
       }
@@ -641,37 +758,23 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
       @java.lang.Override
       public emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo buildPartial() {
         emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo result = new emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.monsterConfigId_ = monsterConfigId_;
+        result.resin_ = resin_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           remainUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.remainUidList_ = remainUidList_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           qualifyUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.qualifyUidList_ = qualifyUidList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.monsterConfigId_ = monsterConfigId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.resin_ = resin_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.uidDiscountMap_ = internalGetUidDiscountMap();
-          result.uidDiscountMap_.makeImmutable();
-        }
+        result.uidDiscountMap_ = internalGetUidDiscountMap();
+        result.uidDiscountMap_.makeImmutable();
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -727,7 +830,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
         if (!other.remainUidList_.isEmpty()) {
           if (remainUidList_.isEmpty()) {
             remainUidList_ = other.remainUidList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureRemainUidListIsMutable();
             remainUidList_.addAll(other.remainUidList_);
@@ -737,7 +840,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
         if (!other.qualifyUidList_.isEmpty()) {
           if (qualifyUidList_.isEmpty()) {
             qualifyUidList_ = other.qualifyUidList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureQualifyUidListIsMutable();
             qualifyUidList_.addAll(other.qualifyUidList_);
@@ -746,8 +849,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
         }
         internalGetMutableUidDiscountMap().mergeFrom(
             other.internalGetUidDiscountMap());
-        bitField0_ |= 0x00000010;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -762,81 +864,17 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                monsterConfigId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                resin_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                int v = input.readUInt32();
-                ensureRemainUidListIsMutable();
-                remainUidList_.addInt(v);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureRemainUidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  remainUidList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 26
-              case 32: {
-                int v = input.readUInt32();
-                ensureQualifyUidListIsMutable();
-                qualifyUidList_.addInt(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureQualifyUidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  qualifyUidList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              case 42: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo>
-                uidDiscountMap__ = input.readMessage(
-                    UidDiscountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableUidDiscountMap().getMutableMap().put(
-                    uidDiscountMap__.getKey(), uidDiscountMap__.getValue());
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -858,7 +896,6 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
       public Builder setMonsterConfigId(int value) {
         
         monsterConfigId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -867,7 +904,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        * @return This builder for chaining.
        */
       public Builder clearMonsterConfigId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         monsterConfigId_ = 0;
         onChanged();
         return this;
@@ -890,7 +927,6 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
       public Builder setResin(int value) {
         
         resin_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -899,7 +935,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        * @return This builder for chaining.
        */
       public Builder clearResin() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         resin_ = 0;
         onChanged();
         return this;
@@ -907,10 +943,10 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
 
       private com.google.protobuf.Internal.IntList remainUidList_ = emptyIntList();
       private void ensureRemainUidListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           remainUidList_ = mutableCopy(remainUidList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 remain_uid_list = 3;</code>
@@ -918,7 +954,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        */
       public java.util.List<java.lang.Integer>
           getRemainUidListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(remainUidList_) : remainUidList_;
       }
       /**
@@ -944,7 +980,6 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        */
       public Builder setRemainUidList(
           int index, int value) {
-        
         ensureRemainUidListIsMutable();
         remainUidList_.setInt(index, value);
         onChanged();
@@ -956,7 +991,6 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        * @return This builder for chaining.
        */
       public Builder addRemainUidList(int value) {
-        
         ensureRemainUidListIsMutable();
         remainUidList_.addInt(value);
         onChanged();
@@ -981,17 +1015,17 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        */
       public Builder clearRemainUidList() {
         remainUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList qualifyUidList_ = emptyIntList();
       private void ensureQualifyUidListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           qualifyUidList_ = mutableCopy(qualifyUidList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 qualify_uid_list = 4;</code>
@@ -999,7 +1033,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        */
       public java.util.List<java.lang.Integer>
           getQualifyUidListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(qualifyUidList_) : qualifyUidList_;
       }
       /**
@@ -1025,7 +1059,6 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        */
       public Builder setQualifyUidList(
           int index, int value) {
-        
         ensureQualifyUidListIsMutable();
         qualifyUidList_.setInt(index, value);
         onChanged();
@@ -1037,7 +1070,6 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        * @return This builder for chaining.
        */
       public Builder addQualifyUidList(int value) {
-        
         ensureQualifyUidListIsMutable();
         qualifyUidList_.addInt(value);
         onChanged();
@@ -1062,7 +1094,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        */
       public Builder clearQualifyUidList() {
         qualifyUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1070,7 +1102,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo> uidDiscountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo>
-          internalGetUidDiscountMap() {
+      internalGetUidDiscountMap() {
         if (uidDiscountMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               UidDiscountMapDefaultEntryHolder.defaultEntry);
@@ -1078,7 +1110,8 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
         return uidDiscountMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo>
-          internalGetMutableUidDiscountMap() {
+      internalGetMutableUidDiscountMap() {
+        onChanged();;
         if (uidDiscountMap_ == null) {
           uidDiscountMap_ = com.google.protobuf.MapField.newMapField(
               UidDiscountMapDefaultEntryHolder.defaultEntry);
@@ -1086,16 +1119,16 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
         if (!uidDiscountMap_.isMutable()) {
           uidDiscountMap_ = uidDiscountMap_.copy();
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
         return uidDiscountMap_;
       }
+
       public int getUidDiscountMapCount() {
         return internalGetUidDiscountMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
+
       @java.lang.Override
       public boolean containsUidDiscountMap(
           int key) {
@@ -1114,6 +1147,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo> getUidDiscountMapMap() {
         return internalGetUidDiscountMap().getMap();
       }
@@ -1121,11 +1155,10 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo getUidDiscountMapOrDefault(
+
+      public emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo getUidDiscountMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo defaultValue) {
+          emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo> map =
             internalGetUidDiscountMap().getMap();
@@ -1135,6 +1168,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo getUidDiscountMapOrThrow(
           int key) {
         
@@ -1145,8 +1179,8 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
         }
         return map.get(key);
       }
+
       public Builder clearUidDiscountMap() {
-        bitField0_ = (bitField0_ & ~0x00000010);
         internalGetMutableUidDiscountMap().getMutableMap()
             .clear();
         return this;
@@ -1154,6 +1188,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
       /**
        * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
+
       public Builder removeUidDiscountMap(
           int key) {
         
@@ -1166,8 +1201,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo>
-          getMutableUidDiscountMap() {
-        bitField0_ |= 0x00000010;
+      getMutableUidDiscountMap() {
         return internalGetMutableUidDiscountMap().getMutableMap();
       }
       /**
@@ -1177,20 +1211,19 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
           int key,
           emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableUidDiscountMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000010;
         return this;
       }
       /**
        * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
+
       public Builder putAllUidDiscountMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo> values) {
         internalGetMutableUidDiscountMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000010;
         return this;
       }
       @java.lang.Override
@@ -1226,18 +1259,7 @@ emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDisc
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BossChestInfo(input, extensionRegistry);
       }
     };
 

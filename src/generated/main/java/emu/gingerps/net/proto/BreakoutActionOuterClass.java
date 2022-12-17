@@ -186,6 +186,158 @@ public final class BreakoutActionOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BreakoutAction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              actionType_ = rawValue;
+              break;
+            }
+            case 16: {
+
+              clientGameTime_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              serverGameTime_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              isFailed_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              preIndex_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              newIndex_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder = null;
+              if (pos_ != null) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder = null;
+              if (moveDir_ != null) {
+                subBuilder = moveDir_.toBuilder();
+              }
+              moveDir_ = input.readMessage(emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(moveDir_);
+                moveDir_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 72: {
+
+              speed_ = input.readInt32();
+              break;
+            }
+            case 80: {
+
+              peerId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              elementType_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              elementReactionBuff_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              speedIncreaseCount_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              hasExtraBall_ = input.readBool();
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder = null;
+              if (extraBallDir_ != null) {
+                subBuilder = extraBallDir_.toBuilder();
+              }
+              extraBallDir_ = input.readMessage(emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(extraBallDir_);
+                extraBallDir_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 128: {
+
+              extraBallIndex_ = input.readUInt32();
+              break;
+            }
+            case 136: {
+
+              offset_ = input.readInt32();
+              break;
+            }
+            case 144: {
+
+              unk3300AIEBGJHBOHL_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BreakoutActionOuterClass.internal_static_BreakoutAction_descriptor;
@@ -335,7 +487,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int ACTION_TYPE_FIELD_NUMBER = 1;
-    private int actionType_ = 0;
+    private int actionType_;
     /**
      * <code>.BreakoutAction.BreakoutActionType action_type = 1;</code>
      * @return The enum numeric value on the wire for actionType.
@@ -348,12 +500,13 @@ public final class BreakoutActionOuterClass {
      * @return The actionType.
      */
     @java.lang.Override public emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType getActionType() {
-      emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType result = emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType.forNumber(actionType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType result = emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType.valueOf(actionType_);
       return result == null ? emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType.UNRECOGNIZED : result;
     }
 
     public static final int CLIENT_GAME_TIME_FIELD_NUMBER = 2;
-    private long clientGameTime_ = 0L;
+    private long clientGameTime_;
     /**
      * <code>uint64 client_game_time = 2;</code>
      * @return The clientGameTime.
@@ -364,7 +517,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int SERVER_GAME_TIME_FIELD_NUMBER = 3;
-    private long serverGameTime_ = 0L;
+    private long serverGameTime_;
     /**
      * <code>uint64 server_game_time = 3;</code>
      * @return The serverGameTime.
@@ -375,7 +528,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int IS_FAILED_FIELD_NUMBER = 4;
-    private boolean isFailed_ = false;
+    private boolean isFailed_;
     /**
      * <code>bool is_failed = 4;</code>
      * @return The isFailed.
@@ -386,7 +539,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int PRE_INDEX_FIELD_NUMBER = 5;
-    private int preIndex_ = 0;
+    private int preIndex_;
     /**
      * <code>uint32 pre_index = 5;</code>
      * @return The preIndex.
@@ -397,7 +550,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int NEW_INDEX_FIELD_NUMBER = 6;
-    private int newIndex_ = 0;
+    private int newIndex_;
     /**
      * <code>uint32 new_index = 6;</code>
      * @return The newIndex.
@@ -430,7 +583,7 @@ public final class BreakoutActionOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2OrBuilder getPosOrBuilder() {
-      return pos_ == null ? emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : pos_;
+      return getPos();
     }
 
     public static final int MOVE_DIR_FIELD_NUMBER = 8;
@@ -456,11 +609,11 @@ public final class BreakoutActionOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMoveDirOrBuilder() {
-      return moveDir_ == null ? emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : moveDir_;
+      return getMoveDir();
     }
 
     public static final int SPEED_FIELD_NUMBER = 9;
-    private int speed_ = 0;
+    private int speed_;
     /**
      * <code>int32 speed = 9;</code>
      * @return The speed.
@@ -471,7 +624,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int PEER_ID_FIELD_NUMBER = 10;
-    private int peerId_ = 0;
+    private int peerId_;
     /**
      * <code>uint32 peer_id = 10;</code>
      * @return The peerId.
@@ -482,7 +635,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int ELEMENT_TYPE_FIELD_NUMBER = 11;
-    private int elementType_ = 0;
+    private int elementType_;
     /**
      * <code>uint32 element_type = 11;</code>
      * @return The elementType.
@@ -493,7 +646,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int ELEMENT_REACTION_BUFF_FIELD_NUMBER = 12;
-    private int elementReactionBuff_ = 0;
+    private int elementReactionBuff_;
     /**
      * <code>uint32 element_reaction_buff = 12;</code>
      * @return The elementReactionBuff.
@@ -504,7 +657,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int SPEED_INCREASE_COUNT_FIELD_NUMBER = 13;
-    private int speedIncreaseCount_ = 0;
+    private int speedIncreaseCount_;
     /**
      * <code>uint32 speed_increase_count = 13;</code>
      * @return The speedIncreaseCount.
@@ -515,7 +668,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int HAS_EXTRA_BALL_FIELD_NUMBER = 14;
-    private boolean hasExtraBall_ = false;
+    private boolean hasExtraBall_;
     /**
      * <code>bool has_extra_ball = 14;</code>
      * @return The hasExtraBall.
@@ -548,11 +701,11 @@ public final class BreakoutActionOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2OrBuilder getExtraBallDirOrBuilder() {
-      return extraBallDir_ == null ? emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : extraBallDir_;
+      return getExtraBallDir();
     }
 
     public static final int EXTRA_BALL_INDEX_FIELD_NUMBER = 16;
-    private int extraBallIndex_ = 0;
+    private int extraBallIndex_;
     /**
      * <code>uint32 extra_ball_index = 16;</code>
      * @return The extraBallIndex.
@@ -563,7 +716,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int OFFSET_FIELD_NUMBER = 17;
-    private int offset_ = 0;
+    private int offset_;
     /**
      * <code>int32 offset = 17;</code>
      * @return The offset.
@@ -574,7 +727,7 @@ public final class BreakoutActionOuterClass {
     }
 
     public static final int UNK3300_AIEBGJHBOHL_FIELD_NUMBER = 18;
-    private long unk3300AIEBGJHBOHL_ = 0L;
+    private long unk3300AIEBGJHBOHL_;
     /**
      * <code>uint64 Unk3300_AIEBGJHBOHL = 18;</code>
      * @return The unk3300AIEBGJHBOHL.
@@ -652,7 +805,7 @@ public final class BreakoutActionOuterClass {
       if (unk3300AIEBGJHBOHL_ != 0L) {
         output.writeUInt64(18, unk3300AIEBGJHBOHL_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -733,7 +886,7 @@ public final class BreakoutActionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(18, unk3300AIEBGJHBOHL_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -792,7 +945,7 @@ public final class BreakoutActionOuterClass {
           != other.getOffset()) return false;
       if (getUnk3300AIEBGJHBOHL()
           != other.getUnk3300AIEBGJHBOHL()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -850,7 +1003,7 @@ public final class BreakoutActionOuterClass {
       hash = (37 * hash) + UNK3300_AIEBGJHBOHL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUnk3300AIEBGJHBOHL());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -967,48 +1120,70 @@ public final class BreakoutActionOuterClass {
 
       // Construct using emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         actionType_ = 0;
+
         clientGameTime_ = 0L;
+
         serverGameTime_ = 0L;
+
         isFailed_ = false;
+
         preIndex_ = 0;
+
         newIndex_ = 0;
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
-        moveDir_ = null;
-        if (moveDirBuilder_ != null) {
-          moveDirBuilder_.dispose();
+        if (moveDirBuilder_ == null) {
+          moveDir_ = null;
+        } else {
+          moveDir_ = null;
           moveDirBuilder_ = null;
         }
         speed_ = 0;
+
         peerId_ = 0;
+
         elementType_ = 0;
+
         elementReactionBuff_ = 0;
+
         speedIncreaseCount_ = 0;
+
         hasExtraBall_ = false;
-        extraBallDir_ = null;
-        if (extraBallDirBuilder_ != null) {
-          extraBallDirBuilder_.dispose();
+
+        if (extraBallDirBuilder_ == null) {
+          extraBallDir_ = null;
+        } else {
+          extraBallDir_ = null;
           extraBallDirBuilder_ = null;
         }
         extraBallIndex_ = 0;
+
         offset_ = 0;
+
         unk3300AIEBGJHBOHL_ = 0L;
+
         return this;
       }
 
@@ -1035,73 +1210,38 @@ public final class BreakoutActionOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction buildPartial() {
         emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction result = new emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.actionType_ = actionType_;
+        result.clientGameTime_ = clientGameTime_;
+        result.serverGameTime_ = serverGameTime_;
+        result.isFailed_ = isFailed_;
+        result.preIndex_ = preIndex_;
+        result.newIndex_ = newIndex_;
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        if (moveDirBuilder_ == null) {
+          result.moveDir_ = moveDir_;
+        } else {
+          result.moveDir_ = moveDirBuilder_.build();
+        }
+        result.speed_ = speed_;
+        result.peerId_ = peerId_;
+        result.elementType_ = elementType_;
+        result.elementReactionBuff_ = elementReactionBuff_;
+        result.speedIncreaseCount_ = speedIncreaseCount_;
+        result.hasExtraBall_ = hasExtraBall_;
+        if (extraBallDirBuilder_ == null) {
+          result.extraBallDir_ = extraBallDir_;
+        } else {
+          result.extraBallDir_ = extraBallDirBuilder_.build();
+        }
+        result.extraBallIndex_ = extraBallIndex_;
+        result.offset_ = offset_;
+        result.unk3300AIEBGJHBOHL_ = unk3300AIEBGJHBOHL_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.actionType_ = actionType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.clientGameTime_ = clientGameTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.serverGameTime_ = serverGameTime_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isFailed_ = isFailed_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.preIndex_ = preIndex_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.newIndex_ = newIndex_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.moveDir_ = moveDirBuilder_ == null
-              ? moveDir_
-              : moveDirBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.speed_ = speed_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.peerId_ = peerId_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.elementType_ = elementType_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.elementReactionBuff_ = elementReactionBuff_;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.speedIncreaseCount_ = speedIncreaseCount_;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.hasExtraBall_ = hasExtraBall_;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.extraBallDir_ = extraBallDirBuilder_ == null
-              ? extraBallDir_
-              : extraBallDirBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.extraBallIndex_ = extraBallIndex_;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.offset_ = offset_;
-        }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.unk3300AIEBGJHBOHL_ = unk3300AIEBGJHBOHL_;
-        }
       }
 
       @java.lang.Override
@@ -1202,7 +1342,7 @@ public final class BreakoutActionOuterClass {
         if (other.getUnk3300AIEBGJHBOHL() != 0L) {
           setUnk3300AIEBGJHBOHL(other.getUnk3300AIEBGJHBOHL());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1217,129 +1357,19 @@ public final class BreakoutActionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                actionType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                clientGameTime_ = input.readUInt64();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                serverGameTime_ = input.readUInt64();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                isFailed_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                preIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 48: {
-                newIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 58: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 58
-              case 66: {
-                input.readMessage(
-                    getMoveDirFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 66
-              case 72: {
-                speed_ = input.readInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 80: {
-                peerId_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 80
-              case 88: {
-                elementType_ = input.readUInt32();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 88
-              case 96: {
-                elementReactionBuff_ = input.readUInt32();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 96
-              case 104: {
-                speedIncreaseCount_ = input.readUInt32();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 104
-              case 112: {
-                hasExtraBall_ = input.readBool();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 112
-              case 122: {
-                input.readMessage(
-                    getExtraBallDirFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 122
-              case 128: {
-                extraBallIndex_ = input.readUInt32();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 128
-              case 136: {
-                offset_ = input.readInt32();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 136
-              case 144: {
-                unk3300AIEBGJHBOHL_ = input.readUInt64();
-                bitField0_ |= 0x00020000;
-                break;
-              } // case 144
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int actionType_ = 0;
       /**
@@ -1355,8 +1385,8 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder setActionTypeValue(int value) {
+        
         actionType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1366,7 +1396,8 @@ public final class BreakoutActionOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType getActionType() {
-        emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType result = emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType.forNumber(actionType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType result = emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType.valueOf(actionType_);
         return result == null ? emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType.UNRECOGNIZED : result;
       }
       /**
@@ -1378,7 +1409,7 @@ public final class BreakoutActionOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         actionType_ = value.getNumber();
         onChanged();
         return this;
@@ -1388,7 +1419,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActionType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         actionType_ = 0;
         onChanged();
         return this;
@@ -1411,7 +1442,6 @@ public final class BreakoutActionOuterClass {
       public Builder setClientGameTime(long value) {
         
         clientGameTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1420,7 +1450,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientGameTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         clientGameTime_ = 0L;
         onChanged();
         return this;
@@ -1443,7 +1473,6 @@ public final class BreakoutActionOuterClass {
       public Builder setServerGameTime(long value) {
         
         serverGameTime_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1452,7 +1481,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearServerGameTime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         serverGameTime_ = 0L;
         onChanged();
         return this;
@@ -1475,7 +1504,6 @@ public final class BreakoutActionOuterClass {
       public Builder setIsFailed(boolean value) {
         
         isFailed_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1484,7 +1512,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFailed() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isFailed_ = false;
         onChanged();
         return this;
@@ -1507,7 +1535,6 @@ public final class BreakoutActionOuterClass {
       public Builder setPreIndex(int value) {
         
         preIndex_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1516,7 +1543,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPreIndex() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         preIndex_ = 0;
         onChanged();
         return this;
@@ -1539,7 +1566,6 @@ public final class BreakoutActionOuterClass {
       public Builder setNewIndex(int value) {
         
         newIndex_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1548,7 +1574,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNewIndex() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         newIndex_ = 0;
         onChanged();
         return this;
@@ -1562,7 +1588,7 @@ public final class BreakoutActionOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return posBuilder_ != null || pos_ != null;
       }
       /**
        * <code>.BreakoutVector2 pos = 7;</code>
@@ -1584,11 +1610,11 @@ public final class BreakoutActionOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1598,11 +1624,11 @@ public final class BreakoutActionOuterClass {
           emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1610,38 +1636,38 @@ public final class BreakoutActionOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2 value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0) &&
-            pos_ != null &&
-            pos_ != emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (pos_ != null) {
+            pos_ =
+              emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutVector2 pos = 7;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutVector2 pos = 7;</code>
        */
       public emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder getPosBuilder() {
-        bitField0_ |= 0x00000040;
+        
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -1681,7 +1707,7 @@ public final class BreakoutActionOuterClass {
        * @return Whether the moveDir field is set.
        */
       public boolean hasMoveDir() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return moveDirBuilder_ != null || moveDir_ != null;
       }
       /**
        * <code>.BreakoutVector2 move_dir = 8;</code>
@@ -1703,11 +1729,11 @@ public final class BreakoutActionOuterClass {
             throw new NullPointerException();
           }
           moveDir_ = value;
+          onChanged();
         } else {
           moveDirBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
-        onChanged();
+
         return this;
       }
       /**
@@ -1717,11 +1743,11 @@ public final class BreakoutActionOuterClass {
           emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder builderForValue) {
         if (moveDirBuilder_ == null) {
           moveDir_ = builderForValue.build();
+          onChanged();
         } else {
           moveDirBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
-        onChanged();
+
         return this;
       }
       /**
@@ -1729,38 +1755,38 @@ public final class BreakoutActionOuterClass {
        */
       public Builder mergeMoveDir(emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2 value) {
         if (moveDirBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0) &&
-            moveDir_ != null &&
-            moveDir_ != emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance()) {
-            getMoveDirBuilder().mergeFrom(value);
+          if (moveDir_ != null) {
+            moveDir_ =
+              emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.newBuilder(moveDir_).mergeFrom(value).buildPartial();
           } else {
             moveDir_ = value;
           }
+          onChanged();
         } else {
           moveDirBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000080;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutVector2 move_dir = 8;</code>
        */
       public Builder clearMoveDir() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        moveDir_ = null;
-        if (moveDirBuilder_ != null) {
-          moveDirBuilder_.dispose();
+        if (moveDirBuilder_ == null) {
+          moveDir_ = null;
+          onChanged();
+        } else {
+          moveDir_ = null;
           moveDirBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutVector2 move_dir = 8;</code>
        */
       public emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder getMoveDirBuilder() {
-        bitField0_ |= 0x00000080;
+        
         onChanged();
         return getMoveDirFieldBuilder().getBuilder();
       }
@@ -1809,7 +1835,6 @@ public final class BreakoutActionOuterClass {
       public Builder setSpeed(int value) {
         
         speed_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1818,7 +1843,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSpeed() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         speed_ = 0;
         onChanged();
         return this;
@@ -1841,7 +1866,6 @@ public final class BreakoutActionOuterClass {
       public Builder setPeerId(int value) {
         
         peerId_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1850,7 +1874,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPeerId() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         peerId_ = 0;
         onChanged();
         return this;
@@ -1873,7 +1897,6 @@ public final class BreakoutActionOuterClass {
       public Builder setElementType(int value) {
         
         elementType_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -1882,7 +1905,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementType() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         elementType_ = 0;
         onChanged();
         return this;
@@ -1905,7 +1928,6 @@ public final class BreakoutActionOuterClass {
       public Builder setElementReactionBuff(int value) {
         
         elementReactionBuff_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -1914,7 +1936,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementReactionBuff() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         elementReactionBuff_ = 0;
         onChanged();
         return this;
@@ -1937,7 +1959,6 @@ public final class BreakoutActionOuterClass {
       public Builder setSpeedIncreaseCount(int value) {
         
         speedIncreaseCount_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -1946,7 +1967,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSpeedIncreaseCount() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         speedIncreaseCount_ = 0;
         onChanged();
         return this;
@@ -1969,7 +1990,6 @@ public final class BreakoutActionOuterClass {
       public Builder setHasExtraBall(boolean value) {
         
         hasExtraBall_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -1978,7 +1998,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHasExtraBall() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        
         hasExtraBall_ = false;
         onChanged();
         return this;
@@ -1992,7 +2012,7 @@ public final class BreakoutActionOuterClass {
        * @return Whether the extraBallDir field is set.
        */
       public boolean hasExtraBallDir() {
-        return ((bitField0_ & 0x00004000) != 0);
+        return extraBallDirBuilder_ != null || extraBallDir_ != null;
       }
       /**
        * <code>.BreakoutVector2 extra_ball_dir = 15;</code>
@@ -2014,11 +2034,11 @@ public final class BreakoutActionOuterClass {
             throw new NullPointerException();
           }
           extraBallDir_ = value;
+          onChanged();
         } else {
           extraBallDirBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00004000;
-        onChanged();
+
         return this;
       }
       /**
@@ -2028,11 +2048,11 @@ public final class BreakoutActionOuterClass {
           emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder builderForValue) {
         if (extraBallDirBuilder_ == null) {
           extraBallDir_ = builderForValue.build();
+          onChanged();
         } else {
           extraBallDirBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00004000;
-        onChanged();
+
         return this;
       }
       /**
@@ -2040,38 +2060,38 @@ public final class BreakoutActionOuterClass {
        */
       public Builder mergeExtraBallDir(emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2 value) {
         if (extraBallDirBuilder_ == null) {
-          if (((bitField0_ & 0x00004000) != 0) &&
-            extraBallDir_ != null &&
-            extraBallDir_ != emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance()) {
-            getExtraBallDirBuilder().mergeFrom(value);
+          if (extraBallDir_ != null) {
+            extraBallDir_ =
+              emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.newBuilder(extraBallDir_).mergeFrom(value).buildPartial();
           } else {
             extraBallDir_ = value;
           }
+          onChanged();
         } else {
           extraBallDirBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00004000;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutVector2 extra_ball_dir = 15;</code>
        */
       public Builder clearExtraBallDir() {
-        bitField0_ = (bitField0_ & ~0x00004000);
-        extraBallDir_ = null;
-        if (extraBallDirBuilder_ != null) {
-          extraBallDirBuilder_.dispose();
+        if (extraBallDirBuilder_ == null) {
+          extraBallDir_ = null;
+          onChanged();
+        } else {
+          extraBallDir_ = null;
           extraBallDirBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutVector2 extra_ball_dir = 15;</code>
        */
       public emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder getExtraBallDirBuilder() {
-        bitField0_ |= 0x00004000;
+        
         onChanged();
         return getExtraBallDirFieldBuilder().getBuilder();
       }
@@ -2120,7 +2140,6 @@ public final class BreakoutActionOuterClass {
       public Builder setExtraBallIndex(int value) {
         
         extraBallIndex_ = value;
-        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -2129,7 +2148,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExtraBallIndex() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        
         extraBallIndex_ = 0;
         onChanged();
         return this;
@@ -2152,7 +2171,6 @@ public final class BreakoutActionOuterClass {
       public Builder setOffset(int value) {
         
         offset_ = value;
-        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -2161,7 +2179,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOffset() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        
         offset_ = 0;
         onChanged();
         return this;
@@ -2184,7 +2202,6 @@ public final class BreakoutActionOuterClass {
       public Builder setUnk3300AIEBGJHBOHL(long value) {
         
         unk3300AIEBGJHBOHL_ = value;
-        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -2193,7 +2210,7 @@ public final class BreakoutActionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AIEBGJHBOHL() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        
         unk3300AIEBGJHBOHL_ = 0L;
         onChanged();
         return this;
@@ -2231,18 +2248,7 @@ public final class BreakoutActionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BreakoutAction(input, extensionRegistry);
       }
     };
 

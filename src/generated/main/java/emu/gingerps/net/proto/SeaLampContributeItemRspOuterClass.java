@@ -79,6 +79,63 @@ public final class SeaLampContributeItemRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SeaLampContributeItemRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 40: {
+
+              addProgress_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              unk3300LPHALOGLGAL_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              unk3300AIINHBHNHOI_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SeaLampContributeItemRspOuterClass.internal_static_SeaLampContributeItemRsp_descriptor;
@@ -93,7 +150,7 @@ public final class SeaLampContributeItemRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -104,7 +161,7 @@ public final class SeaLampContributeItemRspOuterClass {
     }
 
     public static final int UNK3300_AIINHBHNHOI_FIELD_NUMBER = 11;
-    private int unk3300AIINHBHNHOI_ = 0;
+    private int unk3300AIINHBHNHOI_;
     /**
      * <code>uint32 Unk3300_AIINHBHNHOI = 11;</code>
      * @return The unk3300AIINHBHNHOI.
@@ -115,7 +172,7 @@ public final class SeaLampContributeItemRspOuterClass {
     }
 
     public static final int ADD_PROGRESS_FIELD_NUMBER = 5;
-    private int addProgress_ = 0;
+    private int addProgress_;
     /**
      * <code>uint32 add_progress = 5;</code>
      * @return The addProgress.
@@ -126,7 +183,7 @@ public final class SeaLampContributeItemRspOuterClass {
     }
 
     public static final int UNK3300_LPHALOGLGAL_FIELD_NUMBER = 9;
-    private int unk3300LPHALOGLGAL_ = 0;
+    private int unk3300LPHALOGLGAL_;
     /**
      * <code>uint32 Unk3300_LPHALOGLGAL = 9;</code>
      * @return The unk3300LPHALOGLGAL.
@@ -162,7 +219,7 @@ public final class SeaLampContributeItemRspOuterClass {
       if (unk3300AIINHBHNHOI_ != 0) {
         output.writeUInt32(11, unk3300AIINHBHNHOI_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +244,7 @@ public final class SeaLampContributeItemRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, unk3300AIINHBHNHOI_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +267,7 @@ public final class SeaLampContributeItemRspOuterClass {
           != other.getAddProgress()) return false;
       if (getUnk3300LPHALOGLGAL()
           != other.getUnk3300LPHALOGLGAL()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -229,7 +286,7 @@ public final class SeaLampContributeItemRspOuterClass {
       hash = (53 * hash) + getAddProgress();
       hash = (37 * hash) + UNK3300_LPHALOGLGAL_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300LPHALOGLGAL();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -356,22 +413,30 @@ public final class SeaLampContributeItemRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         unk3300AIINHBHNHOI_ = 0;
+
         addProgress_ = 0;
+
         unk3300LPHALOGLGAL_ = 0;
+
         return this;
       }
 
@@ -398,25 +463,12 @@ public final class SeaLampContributeItemRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp buildPartial() {
         emu.gingerps.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp result = new emu.gingerps.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        result.unk3300AIINHBHNHOI_ = unk3300AIINHBHNHOI_;
+        result.addProgress_ = addProgress_;
+        result.unk3300LPHALOGLGAL_ = unk3300LPHALOGLGAL_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300AIINHBHNHOI_ = unk3300AIINHBHNHOI_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.addProgress_ = addProgress_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300LPHALOGLGAL_ = unk3300LPHALOGLGAL_;
-        }
       }
 
       @java.lang.Override
@@ -475,7 +527,7 @@ public final class SeaLampContributeItemRspOuterClass {
         if (other.getUnk3300LPHALOGLGAL() != 0) {
           setUnk3300LPHALOGLGAL(other.getUnk3300LPHALOGLGAL());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,53 +542,19 @@ public final class SeaLampContributeItemRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 40: {
-                addProgress_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 72: {
-                unk3300LPHALOGLGAL_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 72
-              case 88: {
-                unk3300AIINHBHNHOI_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -555,7 +573,6 @@ public final class SeaLampContributeItemRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -564,7 +581,7 @@ public final class SeaLampContributeItemRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -587,7 +604,6 @@ public final class SeaLampContributeItemRspOuterClass {
       public Builder setUnk3300AIINHBHNHOI(int value) {
         
         unk3300AIINHBHNHOI_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -596,7 +612,7 @@ public final class SeaLampContributeItemRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AIINHBHNHOI() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300AIINHBHNHOI_ = 0;
         onChanged();
         return this;
@@ -619,7 +635,6 @@ public final class SeaLampContributeItemRspOuterClass {
       public Builder setAddProgress(int value) {
         
         addProgress_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -628,7 +643,7 @@ public final class SeaLampContributeItemRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAddProgress() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         addProgress_ = 0;
         onChanged();
         return this;
@@ -651,7 +666,6 @@ public final class SeaLampContributeItemRspOuterClass {
       public Builder setUnk3300LPHALOGLGAL(int value) {
         
         unk3300LPHALOGLGAL_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -660,7 +674,7 @@ public final class SeaLampContributeItemRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LPHALOGLGAL() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300LPHALOGLGAL_ = 0;
         onChanged();
         return this;
@@ -698,18 +712,7 @@ public final class SeaLampContributeItemRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SeaLampContributeItemRsp(input, extensionRegistry);
       }
     };
 

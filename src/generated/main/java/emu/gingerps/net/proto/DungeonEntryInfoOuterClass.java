@@ -108,6 +108,96 @@ public final class DungeonEntryInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DungeonEntryInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              nextBossChestRefreshTime_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              leftTimes_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder subBuilder = null;
+              if (weeklyBossResinDiscountInfo_ != null) {
+                subBuilder = weeklyBossResinDiscountInfo_.toBuilder();
+              }
+              weeklyBossResinDiscountInfo_ = input.readMessage(emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(weeklyBossResinDiscountInfo_);
+                weeklyBossResinDiscountInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 64: {
+
+              dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              maxBossChestNum_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              nextRefreshTime_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              startTime_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              isPassed_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              endTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonEntryInfoOuterClass.internal_static_DungeonEntryInfo_descriptor;
@@ -122,7 +212,7 @@ public final class DungeonEntryInfoOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 14;
-    private int endTime_ = 0;
+    private int endTime_;
     /**
      * <code>uint32 end_time = 14;</code>
      * @return The endTime.
@@ -133,7 +223,7 @@ public final class DungeonEntryInfoOuterClass {
     }
 
     public static final int MAX_BOSS_CHEST_NUM_FIELD_NUMBER = 9;
-    private int maxBossChestNum_ = 0;
+    private int maxBossChestNum_;
     /**
      * <code>uint32 max_boss_chest_num = 9;</code>
      * @return The maxBossChestNum.
@@ -144,7 +234,7 @@ public final class DungeonEntryInfoOuterClass {
     }
 
     public static final int IS_PASSED_FIELD_NUMBER = 13;
-    private boolean isPassed_ = false;
+    private boolean isPassed_;
     /**
      * <code>bool is_passed = 13;</code>
      * @return The isPassed.
@@ -177,11 +267,11 @@ public final class DungeonEntryInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfoOrBuilder getWeeklyBossResinDiscountInfoOrBuilder() {
-      return weeklyBossResinDiscountInfo_ == null ? emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.getDefaultInstance() : weeklyBossResinDiscountInfo_;
+      return getWeeklyBossResinDiscountInfo();
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 8;
-    private int dungeonId_ = 0;
+    private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 8;</code>
      * @return The dungeonId.
@@ -192,7 +282,7 @@ public final class DungeonEntryInfoOuterClass {
     }
 
     public static final int LEFT_TIMES_FIELD_NUMBER = 5;
-    private int leftTimes_ = 0;
+    private int leftTimes_;
     /**
      * <code>uint32 left_times = 5;</code>
      * @return The leftTimes.
@@ -203,7 +293,7 @@ public final class DungeonEntryInfoOuterClass {
     }
 
     public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 10;
-    private int nextRefreshTime_ = 0;
+    private int nextRefreshTime_;
     /**
      * <code>uint32 next_refresh_time = 10;</code>
      * @return The nextRefreshTime.
@@ -214,7 +304,7 @@ public final class DungeonEntryInfoOuterClass {
     }
 
     public static final int NEXT_BOSS_CHEST_REFRESH_TIME_FIELD_NUMBER = 3;
-    private int nextBossChestRefreshTime_ = 0;
+    private int nextBossChestRefreshTime_;
     /**
      * <code>uint32 next_boss_chest_refresh_time = 3;</code>
      * @return The nextBossChestRefreshTime.
@@ -225,7 +315,7 @@ public final class DungeonEntryInfoOuterClass {
     }
 
     public static final int START_TIME_FIELD_NUMBER = 11;
-    private int startTime_ = 0;
+    private int startTime_;
     /**
      * <code>uint32 start_time = 11;</code>
      * @return The startTime.
@@ -276,7 +366,7 @@ public final class DungeonEntryInfoOuterClass {
       if (endTime_ != 0) {
         output.writeUInt32(14, endTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -321,7 +411,7 @@ public final class DungeonEntryInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, endTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -357,7 +447,7 @@ public final class DungeonEntryInfoOuterClass {
           != other.getNextBossChestRefreshTime()) return false;
       if (getStartTime()
           != other.getStartTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -389,7 +479,7 @@ public final class DungeonEntryInfoOuterClass {
       hash = (53 * hash) + getNextBossChestRefreshTime();
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -506,31 +596,44 @@ public final class DungeonEntryInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         endTime_ = 0;
+
         maxBossChestNum_ = 0;
+
         isPassed_ = false;
-        weeklyBossResinDiscountInfo_ = null;
-        if (weeklyBossResinDiscountInfoBuilder_ != null) {
-          weeklyBossResinDiscountInfoBuilder_.dispose();
+
+        if (weeklyBossResinDiscountInfoBuilder_ == null) {
+          weeklyBossResinDiscountInfo_ = null;
+        } else {
+          weeklyBossResinDiscountInfo_ = null;
           weeklyBossResinDiscountInfoBuilder_ = null;
         }
         dungeonId_ = 0;
+
         leftTimes_ = 0;
+
         nextRefreshTime_ = 0;
+
         nextBossChestRefreshTime_ = 0;
+
         startTime_ = 0;
+
         return this;
       }
 
@@ -557,42 +660,21 @@ public final class DungeonEntryInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo buildPartial() {
         emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo result = new emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.endTime_ = endTime_;
+        result.maxBossChestNum_ = maxBossChestNum_;
+        result.isPassed_ = isPassed_;
+        if (weeklyBossResinDiscountInfoBuilder_ == null) {
+          result.weeklyBossResinDiscountInfo_ = weeklyBossResinDiscountInfo_;
+        } else {
+          result.weeklyBossResinDiscountInfo_ = weeklyBossResinDiscountInfoBuilder_.build();
+        }
+        result.dungeonId_ = dungeonId_;
+        result.leftTimes_ = leftTimes_;
+        result.nextRefreshTime_ = nextRefreshTime_;
+        result.nextBossChestRefreshTime_ = nextBossChestRefreshTime_;
+        result.startTime_ = startTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.endTime_ = endTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.maxBossChestNum_ = maxBossChestNum_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isPassed_ = isPassed_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.weeklyBossResinDiscountInfo_ = weeklyBossResinDiscountInfoBuilder_ == null
-              ? weeklyBossResinDiscountInfo_
-              : weeklyBossResinDiscountInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.dungeonId_ = dungeonId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.leftTimes_ = leftTimes_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.nextRefreshTime_ = nextRefreshTime_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.nextBossChestRefreshTime_ = nextBossChestRefreshTime_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.startTime_ = startTime_;
-        }
       }
 
       @java.lang.Override
@@ -666,7 +748,7 @@ public final class DungeonEntryInfoOuterClass {
         if (other.getStartTime() != 0) {
           setStartTime(other.getStartTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -681,80 +763,19 @@ public final class DungeonEntryInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                nextBossChestRefreshTime_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 24
-              case 40: {
-                leftTimes_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 40
-              case 50: {
-                input.readMessage(
-                    getWeeklyBossResinDiscountInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 50
-              case 64: {
-                dungeonId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 64
-              case 72: {
-                maxBossChestNum_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 80: {
-                nextRefreshTime_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 80
-              case 88: {
-                startTime_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 88
-              case 104: {
-                isPassed_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              case 112: {
-                endTime_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int endTime_ ;
       /**
@@ -773,7 +794,6 @@ public final class DungeonEntryInfoOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -782,7 +802,7 @@ public final class DungeonEntryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         endTime_ = 0;
         onChanged();
         return this;
@@ -805,7 +825,6 @@ public final class DungeonEntryInfoOuterClass {
       public Builder setMaxBossChestNum(int value) {
         
         maxBossChestNum_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -814,7 +833,7 @@ public final class DungeonEntryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxBossChestNum() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         maxBossChestNum_ = 0;
         onChanged();
         return this;
@@ -837,7 +856,6 @@ public final class DungeonEntryInfoOuterClass {
       public Builder setIsPassed(boolean value) {
         
         isPassed_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -846,7 +864,7 @@ public final class DungeonEntryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsPassed() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isPassed_ = false;
         onChanged();
         return this;
@@ -860,7 +878,7 @@ public final class DungeonEntryInfoOuterClass {
        * @return Whether the weeklyBossResinDiscountInfo field is set.
        */
       public boolean hasWeeklyBossResinDiscountInfo() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return weeklyBossResinDiscountInfoBuilder_ != null || weeklyBossResinDiscountInfo_ != null;
       }
       /**
        * <code>.WeeklyBossResinDiscountInfo weekly_boss_resin_discount_info = 6;</code>
@@ -882,11 +900,11 @@ public final class DungeonEntryInfoOuterClass {
             throw new NullPointerException();
           }
           weeklyBossResinDiscountInfo_ = value;
+          onChanged();
         } else {
           weeklyBossResinDiscountInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -896,11 +914,11 @@ public final class DungeonEntryInfoOuterClass {
           emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder builderForValue) {
         if (weeklyBossResinDiscountInfoBuilder_ == null) {
           weeklyBossResinDiscountInfo_ = builderForValue.build();
+          onChanged();
         } else {
           weeklyBossResinDiscountInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -908,38 +926,38 @@ public final class DungeonEntryInfoOuterClass {
        */
       public Builder mergeWeeklyBossResinDiscountInfo(emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo value) {
         if (weeklyBossResinDiscountInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            weeklyBossResinDiscountInfo_ != null &&
-            weeklyBossResinDiscountInfo_ != emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.getDefaultInstance()) {
-            getWeeklyBossResinDiscountInfoBuilder().mergeFrom(value);
+          if (weeklyBossResinDiscountInfo_ != null) {
+            weeklyBossResinDiscountInfo_ =
+              emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.newBuilder(weeklyBossResinDiscountInfo_).mergeFrom(value).buildPartial();
           } else {
             weeklyBossResinDiscountInfo_ = value;
           }
+          onChanged();
         } else {
           weeklyBossResinDiscountInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.WeeklyBossResinDiscountInfo weekly_boss_resin_discount_info = 6;</code>
        */
       public Builder clearWeeklyBossResinDiscountInfo() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        weeklyBossResinDiscountInfo_ = null;
-        if (weeklyBossResinDiscountInfoBuilder_ != null) {
-          weeklyBossResinDiscountInfoBuilder_.dispose();
+        if (weeklyBossResinDiscountInfoBuilder_ == null) {
+          weeklyBossResinDiscountInfo_ = null;
+          onChanged();
+        } else {
+          weeklyBossResinDiscountInfo_ = null;
           weeklyBossResinDiscountInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.WeeklyBossResinDiscountInfo weekly_boss_resin_discount_info = 6;</code>
        */
       public emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder getWeeklyBossResinDiscountInfoBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getWeeklyBossResinDiscountInfoFieldBuilder().getBuilder();
       }
@@ -988,7 +1006,6 @@ public final class DungeonEntryInfoOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -997,7 +1014,7 @@ public final class DungeonEntryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -1020,7 +1037,6 @@ public final class DungeonEntryInfoOuterClass {
       public Builder setLeftTimes(int value) {
         
         leftTimes_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1029,7 +1045,7 @@ public final class DungeonEntryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLeftTimes() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         leftTimes_ = 0;
         onChanged();
         return this;
@@ -1052,7 +1068,6 @@ public final class DungeonEntryInfoOuterClass {
       public Builder setNextRefreshTime(int value) {
         
         nextRefreshTime_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1061,7 +1076,7 @@ public final class DungeonEntryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextRefreshTime() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         nextRefreshTime_ = 0;
         onChanged();
         return this;
@@ -1084,7 +1099,6 @@ public final class DungeonEntryInfoOuterClass {
       public Builder setNextBossChestRefreshTime(int value) {
         
         nextBossChestRefreshTime_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1093,7 +1107,7 @@ public final class DungeonEntryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextBossChestRefreshTime() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         nextBossChestRefreshTime_ = 0;
         onChanged();
         return this;
@@ -1116,7 +1130,6 @@ public final class DungeonEntryInfoOuterClass {
       public Builder setStartTime(int value) {
         
         startTime_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1125,7 +1138,7 @@ public final class DungeonEntryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         startTime_ = 0;
         onChanged();
         return this;
@@ -1163,18 +1176,7 @@ public final class DungeonEntryInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DungeonEntryInfo(input, extensionRegistry);
       }
     };
 

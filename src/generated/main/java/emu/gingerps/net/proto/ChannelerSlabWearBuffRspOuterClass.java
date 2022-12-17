@@ -79,6 +79,63 @@ public final class ChannelerSlabWearBuffRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ChannelerSlabWearBuffRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              isMp_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              buffId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              slotId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChannelerSlabWearBuffRspOuterClass.internal_static_ChannelerSlabWearBuffRsp_descriptor;
@@ -93,7 +150,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
     }
 
     public static final int IS_MP_FIELD_NUMBER = 7;
-    private boolean isMp_ = false;
+    private boolean isMp_;
     /**
      * <code>bool is_mp = 7;</code>
      * @return The isMp.
@@ -104,7 +161,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
     }
 
     public static final int BUFF_ID_FIELD_NUMBER = 8;
-    private int buffId_ = 0;
+    private int buffId_;
     /**
      * <code>uint32 buff_id = 8;</code>
      * @return The buffId.
@@ -115,7 +172,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
     }
 
     public static final int SLOT_ID_FIELD_NUMBER = 11;
-    private int slotId_ = 0;
+    private int slotId_;
     /**
      * <code>uint32 slot_id = 11;</code>
      * @return The slotId.
@@ -126,7 +183,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 13;</code>
      * @return The retcode.
@@ -162,7 +219,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(13, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +244,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +267,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
           != other.getSlotId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -230,7 +287,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
       hash = (53 * hash) + getSlotId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -357,22 +414,30 @@ public final class ChannelerSlabWearBuffRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChannelerSlabWearBuffRspOuterClass.ChannelerSlabWearBuffRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isMp_ = false;
+
         buffId_ = 0;
+
         slotId_ = 0;
+
         retcode_ = 0;
+
         return this;
       }
 
@@ -399,25 +464,12 @@ public final class ChannelerSlabWearBuffRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChannelerSlabWearBuffRspOuterClass.ChannelerSlabWearBuffRsp buildPartial() {
         emu.gingerps.net.proto.ChannelerSlabWearBuffRspOuterClass.ChannelerSlabWearBuffRsp result = new emu.gingerps.net.proto.ChannelerSlabWearBuffRspOuterClass.ChannelerSlabWearBuffRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isMp_ = isMp_;
+        result.buffId_ = buffId_;
+        result.slotId_ = slotId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ChannelerSlabWearBuffRspOuterClass.ChannelerSlabWearBuffRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isMp_ = isMp_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.buffId_ = buffId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.slotId_ = slotId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.retcode_ = retcode_;
-        }
       }
 
       @java.lang.Override
@@ -476,7 +528,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -491,53 +543,19 @@ public final class ChannelerSlabWearBuffRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ChannelerSlabWearBuffRspOuterClass.ChannelerSlabWearBuffRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                isMp_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 64: {
-                buffId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 88: {
-                slotId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              case 104: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ChannelerSlabWearBuffRspOuterClass.ChannelerSlabWearBuffRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isMp_ ;
       /**
@@ -556,7 +574,6 @@ public final class ChannelerSlabWearBuffRspOuterClass {
       public Builder setIsMp(boolean value) {
         
         isMp_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -565,7 +582,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsMp() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isMp_ = false;
         onChanged();
         return this;
@@ -588,7 +605,6 @@ public final class ChannelerSlabWearBuffRspOuterClass {
       public Builder setBuffId(int value) {
         
         buffId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -597,7 +613,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuffId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         buffId_ = 0;
         onChanged();
         return this;
@@ -620,7 +636,6 @@ public final class ChannelerSlabWearBuffRspOuterClass {
       public Builder setSlotId(int value) {
         
         slotId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -629,7 +644,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSlotId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         slotId_ = 0;
         onChanged();
         return this;
@@ -652,7 +667,6 @@ public final class ChannelerSlabWearBuffRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -661,7 +675,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -699,18 +713,7 @@ public final class ChannelerSlabWearBuffRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ChannelerSlabWearBuffRsp(input, extensionRegistry);
       }
     };
 

@@ -91,6 +91,83 @@ public final class EffigyChallengeInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EffigyChallengeInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              difficultyId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              challengeId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                conditionIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              conditionIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                conditionIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                conditionIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 88: {
+
+              challengeScore_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          conditionIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EffigyChallengeInfoNotifyOuterClass.internal_static_EffigyChallengeInfoNotify_descriptor;
@@ -105,7 +182,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
     }
 
     public static final int CHALLENGE_ID_FIELD_NUMBER = 6;
-    private int challengeId_ = 0;
+    private int challengeId_;
     /**
      * <code>uint32 challenge_id = 6;</code>
      * @return The challengeId.
@@ -116,7 +193,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
     }
 
     public static final int DIFFICULTY_ID_FIELD_NUMBER = 2;
-    private int difficultyId_ = 0;
+    private int difficultyId_;
     /**
      * <code>uint32 difficulty_id = 2;</code>
      * @return The difficultyId.
@@ -127,7 +204,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
     }
 
     public static final int CHALLENGE_SCORE_FIELD_NUMBER = 11;
-    private int challengeScore_ = 0;
+    private int challengeScore_;
     /**
      * <code>uint32 challenge_score = 11;</code>
      * @return The challengeScore.
@@ -138,7 +215,6 @@ public final class EffigyChallengeInfoNotifyOuterClass {
     }
 
     public static final int CONDITION_ID_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList conditionIdList_;
     /**
      * <code>repeated uint32 condition_id_list = 7;</code>
@@ -197,7 +273,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       if (challengeScore_ != 0) {
         output.writeUInt32(11, challengeScore_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -232,7 +308,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, challengeScore_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -255,7 +331,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
           != other.getChallengeScore()) return false;
       if (!getConditionIdListList()
           .equals(other.getConditionIdListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -276,7 +352,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
         hash = (37 * hash) + CONDITION_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getConditionIdListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -403,22 +479,30 @@ public final class EffigyChallengeInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         challengeId_ = 0;
+
         difficultyId_ = 0;
+
         challengeScore_ = 0;
+
         conditionIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -445,31 +529,17 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify buildPartial() {
         emu.gingerps.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify result = new emu.gingerps.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify result) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.challengeId_ = challengeId_;
+        result.difficultyId_ = difficultyId_;
+        result.challengeScore_ = challengeScore_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           conditionIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.conditionIdList_ = conditionIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.challengeId_ = challengeId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.difficultyId_ = difficultyId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.challengeScore_ = challengeScore_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -528,14 +598,14 @@ public final class EffigyChallengeInfoNotifyOuterClass {
         if (!other.conditionIdList_.isEmpty()) {
           if (conditionIdList_.isEmpty()) {
             conditionIdList_ = other.conditionIdList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureConditionIdListIsMutable();
             conditionIdList_.addAll(other.conditionIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -550,61 +620,17 @@ public final class EffigyChallengeInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                difficultyId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 48: {
-                challengeId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 56: {
-                int v = input.readUInt32();
-                ensureConditionIdListIsMutable();
-                conditionIdList_.addInt(v);
-                break;
-              } // case 56
-              case 58: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureConditionIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  conditionIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 58
-              case 88: {
-                challengeScore_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -626,7 +652,6 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       public Builder setChallengeId(int value) {
         
         challengeId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -635,7 +660,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         challengeId_ = 0;
         onChanged();
         return this;
@@ -658,7 +683,6 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       public Builder setDifficultyId(int value) {
         
         difficultyId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -667,7 +691,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficultyId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         difficultyId_ = 0;
         onChanged();
         return this;
@@ -690,7 +714,6 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       public Builder setChallengeScore(int value) {
         
         challengeScore_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -699,7 +722,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeScore() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         challengeScore_ = 0;
         onChanged();
         return this;
@@ -707,10 +730,10 @@ public final class EffigyChallengeInfoNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList conditionIdList_ = emptyIntList();
       private void ensureConditionIdListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           conditionIdList_ = mutableCopy(conditionIdList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 condition_id_list = 7;</code>
@@ -718,7 +741,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getConditionIdListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(conditionIdList_) : conditionIdList_;
       }
       /**
@@ -744,7 +767,6 @@ public final class EffigyChallengeInfoNotifyOuterClass {
        */
       public Builder setConditionIdList(
           int index, int value) {
-        
         ensureConditionIdListIsMutable();
         conditionIdList_.setInt(index, value);
         onChanged();
@@ -756,7 +778,6 @@ public final class EffigyChallengeInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addConditionIdList(int value) {
-        
         ensureConditionIdListIsMutable();
         conditionIdList_.addInt(value);
         onChanged();
@@ -781,7 +802,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
        */
       public Builder clearConditionIdList() {
         conditionIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -818,18 +839,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EffigyChallengeInfoNotify(input, extensionRegistry);
       }
     };
 

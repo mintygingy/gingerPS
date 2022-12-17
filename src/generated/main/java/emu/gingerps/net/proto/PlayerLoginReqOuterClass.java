@@ -455,6 +455,287 @@ public final class PlayerLoginReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerLoginReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              isEditor_ = input.readBool();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientVersion_ = s;
+              break;
+            }
+            case 24: {
+
+              platformType_ = input.readUInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              platform_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceUuid_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              systemVersion_ = s;
+              break;
+            }
+            case 56: {
+
+              accountType_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            case 72: {
+
+              loginRand_ = input.readUInt64();
+              break;
+            }
+            case 80: {
+
+              targetUid_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              languageType_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceName_ = s;
+              break;
+            }
+            case 104: {
+
+              isGuest_ = input.readBool();
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              accountUid_ = s;
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceInfo_ = s;
+              break;
+            }
+            case 514: {
+              emu.gingerps.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.Builder subBuilder = null;
+              if (adjustTrackingInfo_ != null) {
+                subBuilder = adjustTrackingInfo_.toBuilder();
+              }
+              adjustTrackingInfo_ = input.readMessage(emu.gingerps.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(adjustTrackingInfo_);
+                adjustTrackingInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 656: {
+
+              unk3300PMGFBMJNNCL_ = input.readUInt32();
+              break;
+            }
+            case 680: {
+
+              unk3300OOBHAIIIPHH_ = input.readUInt32();
+              break;
+            }
+            case 834: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              countryCode_ = s;
+              break;
+            }
+            case 2050: {
+
+              environmentErrorCode_ = input.readBytes();
+              break;
+            }
+            case 3392: {
+
+              regPlatform_ = input.readUInt32();
+              break;
+            }
+            case 4200: {
+
+              tag_ = input.readUInt32();
+              break;
+            }
+            case 4618: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              onlineId_ = s;
+              break;
+            }
+            case 4650: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              checksumClientVersion_ = s;
+              break;
+            }
+            case 4992: {
+
+              isTransfer_ = input.readBool();
+              break;
+            }
+            case 6626: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              securityLibraryVersion_ = s;
+              break;
+            }
+            case 6776: {
+
+              clientDataVersion_ = input.readUInt32();
+              break;
+            }
+            case 6946: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              securityLibraryMd5_ = s;
+              break;
+            }
+            case 6994: {
+
+              securityCmdReply_ = input.readBytes();
+              break;
+            }
+            case 7002: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              birthday_ = s;
+              break;
+            }
+            case 7192: {
+
+              targetHomeOwnerUid_ = input.readUInt32();
+              break;
+            }
+            case 8224: {
+
+              unk3300OFFHPAFIFGD_ = input.readUInt32();
+              break;
+            }
+            case 9170: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              psnId_ = s;
+              break;
+            }
+            case 10560: {
+
+              unk3300NDLANBEIGEG_ = input.readUInt32();
+              break;
+            }
+            case 10674: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              checksum_ = s;
+              break;
+            }
+            case 11664: {
+
+              subChannelId_ = input.readUInt32();
+              break;
+            }
+            case 12520: {
+
+              channelId_ = input.readUInt32();
+              break;
+            }
+            case 13706: {
+              emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo.Builder subBuilder = null;
+              if (trackingIoInfo_ != null) {
+                subBuilder = trackingIoInfo_.toBuilder();
+              }
+              trackingIoInfo_ = input.readMessage(emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(trackingIoInfo_);
+                trackingIoInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 14320: {
+
+              unk3300PIPLDEAPMMN_ = input.readUInt32();
+              break;
+            }
+            case 15866: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cps_ = s;
+              break;
+            }
+            case 16322: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientVerisonHash_ = s;
+              break;
+            }
+            case 16370: {
+
+              extraBinData_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerLoginReqOuterClass.internal_static_PlayerLoginReq_descriptor;
@@ -469,8 +750,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int DEVICE_UUID_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object deviceUuid_ = "";
+    private volatile java.lang.Object deviceUuid_;
     /**
      * <code>string device_uuid = 5;</code>
      * @return The deviceUuid.
@@ -508,7 +788,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int TARGET_UID_FIELD_NUMBER = 10;
-    private int targetUid_ = 0;
+    private int targetUid_;
     /**
      * <code>uint32 target_uid = 10;</code>
      * @return The targetUid.
@@ -519,7 +799,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int EXTRA_BIN_DATA_FIELD_NUMBER = 2046;
-    private com.google.protobuf.ByteString extraBinData_ = com.google.protobuf.ByteString.EMPTY;
+    private com.google.protobuf.ByteString extraBinData_;
     /**
      * <code>bytes extra_bin_data = 2046;</code>
      * @return The extraBinData.
@@ -530,8 +810,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int PLATFORM_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object platform_ = "";
+    private volatile java.lang.Object platform_;
     /**
      * <code>string platform = 4;</code>
      * @return The platform.
@@ -569,8 +848,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int CHECKSUM_FIELD_NUMBER = 1334;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object checksum_ = "";
+    private volatile java.lang.Object checksum_;
     /**
      * <code>string checksum = 1334;</code>
      * @return The checksum.
@@ -608,7 +886,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int CHANNEL_ID_FIELD_NUMBER = 1565;
-    private int channelId_ = 0;
+    private int channelId_;
     /**
      * <code>uint32 channel_id = 1565;</code>
      * @return The channelId.
@@ -619,8 +897,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int CLIENT_VERISON_HASH_FIELD_NUMBER = 2040;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object clientVerisonHash_ = "";
+    private volatile java.lang.Object clientVerisonHash_;
     /**
      * <code>string client_verison_hash = 2040;</code>
      * @return The clientVerisonHash.
@@ -658,7 +935,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int LANGUAGE_TYPE_FIELD_NUMBER = 11;
-    private int languageType_ = 0;
+    private int languageType_;
     /**
      * <code>uint32 language_type = 11;</code>
      * @return The languageType.
@@ -669,7 +946,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int CLIENT_DATA_VERSION_FIELD_NUMBER = 847;
-    private int clientDataVersion_ = 0;
+    private int clientDataVersion_;
     /**
      * <code>uint32 client_data_version = 847;</code>
      * @return The clientDataVersion.
@@ -680,7 +957,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int ACCOUNT_TYPE_FIELD_NUMBER = 7;
-    private int accountType_ = 0;
+    private int accountType_;
     /**
      * <code>uint32 account_type = 7;</code>
      * @return The accountType.
@@ -691,8 +968,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int SECURITY_LIBRARY_MD5_FIELD_NUMBER = 868;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object securityLibraryMd5_ = "";
+    private volatile java.lang.Object securityLibraryMd5_;
     /**
      * <code>string security_library_md5 = 868;</code>
      * @return The securityLibraryMd5.
@@ -730,8 +1006,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int ONLINE_ID_FIELD_NUMBER = 577;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object onlineId_ = "";
+    private volatile java.lang.Object onlineId_;
     /**
      * <code>string online_id = 577;</code>
      * @return The onlineId.
@@ -769,7 +1044,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int UNK3300_PMGFBMJNNCL_FIELD_NUMBER = 82;
-    private int unk3300PMGFBMJNNCL_ = 0;
+    private int unk3300PMGFBMJNNCL_;
     /**
      * <code>uint32 Unk3300_PMGFBMJNNCL = 82;</code>
      * @return The unk3300PMGFBMJNNCL.
@@ -780,8 +1055,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int DEVICE_NAME_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object deviceName_ = "";
+    private volatile java.lang.Object deviceName_;
     /**
      * <code>string device_name = 12;</code>
      * @return The deviceName.
@@ -819,8 +1093,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int BIRTHDAY_FIELD_NUMBER = 875;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object birthday_ = "";
+    private volatile java.lang.Object birthday_;
     /**
      * <code>string birthday = 875;</code>
      * @return The birthday.
@@ -858,7 +1131,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int TAG_FIELD_NUMBER = 525;
-    private int tag_ = 0;
+    private int tag_;
     /**
      * <code>uint32 tag = 525;</code>
      * @return The tag.
@@ -869,8 +1142,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int ACCOUNT_UID_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object accountUid_ = "";
+    private volatile java.lang.Object accountUid_;
     /**
      * <code>string account_uid = 14;</code>
      * @return The accountUid.
@@ -908,8 +1180,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int DEVICE_INFO_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object deviceInfo_ = "";
+    private volatile java.lang.Object deviceInfo_;
     /**
      * <code>string device_info = 15;</code>
      * @return The deviceInfo.
@@ -947,7 +1218,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int SUB_CHANNEL_ID_FIELD_NUMBER = 1458;
-    private int subChannelId_ = 0;
+    private int subChannelId_;
     /**
      * <code>uint32 sub_channel_id = 1458;</code>
      * @return The subChannelId.
@@ -958,7 +1229,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int IS_EDITOR_FIELD_NUMBER = 1;
-    private boolean isEditor_ = false;
+    private boolean isEditor_;
     /**
      * <code>bool is_editor = 1;</code>
      * @return The isEditor.
@@ -969,8 +1240,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int TOKEN_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object token_ = "";
+    private volatile java.lang.Object token_;
     /**
      * <code>string token = 8;</code>
      * @return The token.
@@ -1008,7 +1278,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int REG_PLATFORM_FIELD_NUMBER = 424;
-    private int regPlatform_ = 0;
+    private int regPlatform_;
     /**
      * <code>uint32 reg_platform = 424;</code>
      * @return The regPlatform.
@@ -1019,8 +1289,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int CHECKSUM_CLIENT_VERSION_FIELD_NUMBER = 581;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object checksumClientVersion_ = "";
+    private volatile java.lang.Object checksumClientVersion_;
     /**
      * <code>string checksum_client_version = 581;</code>
      * @return The checksumClientVersion.
@@ -1058,7 +1327,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int UNK3300_OOBHAIIIPHH_FIELD_NUMBER = 85;
-    private int unk3300OOBHAIIIPHH_ = 0;
+    private int unk3300OOBHAIIIPHH_;
     /**
      * <code>uint32 Unk3300_OOBHAIIIPHH = 85;</code>
      * @return The unk3300OOBHAIIIPHH.
@@ -1069,7 +1338,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int UNK3300_NDLANBEIGEG_FIELD_NUMBER = 1320;
-    private int unk3300NDLANBEIGEG_ = 0;
+    private int unk3300NDLANBEIGEG_;
     /**
      * <code>uint32 Unk3300_NDLANBEIGEG = 1320;</code>
      * @return The unk3300NDLANBEIGEG.
@@ -1080,8 +1349,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int COUNTRY_CODE_FIELD_NUMBER = 104;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object countryCode_ = "";
+    private volatile java.lang.Object countryCode_;
     /**
      * <code>string country_code = 104;</code>
      * @return The countryCode.
@@ -1119,7 +1387,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int UNK3300_PIPLDEAPMMN_FIELD_NUMBER = 1790;
-    private int unk3300PIPLDEAPMMN_ = 0;
+    private int unk3300PIPLDEAPMMN_;
     /**
      * <code>uint32 Unk3300_PIPLDEAPMMN = 1790;</code>
      * @return The unk3300PIPLDEAPMMN.
@@ -1152,11 +1420,11 @@ public final class PlayerLoginReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfoOrBuilder getTrackingIoInfoOrBuilder() {
-      return trackingIoInfo_ == null ? emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo.getDefaultInstance() : trackingIoInfo_;
+      return getTrackingIoInfo();
     }
 
     public static final int IS_TRANSFER_FIELD_NUMBER = 624;
-    private boolean isTransfer_ = false;
+    private boolean isTransfer_;
     /**
      * <code>bool is_transfer = 624;</code>
      * @return The isTransfer.
@@ -1167,8 +1435,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int SECURITY_LIBRARY_VERSION_FIELD_NUMBER = 828;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object securityLibraryVersion_ = "";
+    private volatile java.lang.Object securityLibraryVersion_;
     /**
      * <code>string security_library_version = 828;</code>
      * @return The securityLibraryVersion.
@@ -1206,8 +1473,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int CLIENT_VERSION_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object clientVersion_ = "";
+    private volatile java.lang.Object clientVersion_;
     /**
      * <code>string client_version = 2;</code>
      * @return The clientVersion.
@@ -1245,7 +1511,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int IS_GUEST_FIELD_NUMBER = 13;
-    private boolean isGuest_ = false;
+    private boolean isGuest_;
     /**
      * <code>bool is_guest = 13;</code>
      * @return The isGuest.
@@ -1256,8 +1522,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int SYSTEM_VERSION_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object systemVersion_ = "";
+    private volatile java.lang.Object systemVersion_;
     /**
      * <code>string system_version = 6;</code>
      * @return The systemVersion.
@@ -1295,7 +1560,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int TARGET_HOME_OWNER_UID_FIELD_NUMBER = 899;
-    private int targetHomeOwnerUid_ = 0;
+    private int targetHomeOwnerUid_;
     /**
      * <code>uint32 target_home_owner_uid = 899;</code>
      * @return The targetHomeOwnerUid.
@@ -1306,8 +1571,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int PSN_ID_FIELD_NUMBER = 1146;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object psnId_ = "";
+    private volatile java.lang.Object psnId_;
     /**
      * <code>string psn_id = 1146;</code>
      * @return The psnId.
@@ -1345,7 +1609,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int SECURITY_CMD_REPLY_FIELD_NUMBER = 874;
-    private com.google.protobuf.ByteString securityCmdReply_ = com.google.protobuf.ByteString.EMPTY;
+    private com.google.protobuf.ByteString securityCmdReply_;
     /**
      * <code>bytes security_cmd_reply = 874;</code>
      * @return The securityCmdReply.
@@ -1356,7 +1620,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int UNK3300_OFFHPAFIFGD_FIELD_NUMBER = 1028;
-    private int unk3300OFFHPAFIFGD_ = 0;
+    private int unk3300OFFHPAFIFGD_;
     /**
      * <code>uint32 Unk3300_OFFHPAFIFGD = 1028;</code>
      * @return The unk3300OFFHPAFIFGD.
@@ -1367,7 +1631,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int LOGIN_RAND_FIELD_NUMBER = 9;
-    private long loginRand_ = 0L;
+    private long loginRand_;
     /**
      * <code>uint64 login_rand = 9;</code>
      * @return The loginRand.
@@ -1400,11 +1664,11 @@ public final class PlayerLoginReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder getAdjustTrackingInfoOrBuilder() {
-      return adjustTrackingInfo_ == null ? emu.gingerps.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.getDefaultInstance() : adjustTrackingInfo_;
+      return getAdjustTrackingInfo();
     }
 
     public static final int ENVIRONMENT_ERROR_CODE_FIELD_NUMBER = 256;
-    private com.google.protobuf.ByteString environmentErrorCode_ = com.google.protobuf.ByteString.EMPTY;
+    private com.google.protobuf.ByteString environmentErrorCode_;
     /**
      * <code>bytes environment_error_code = 256;</code>
      * @return The environmentErrorCode.
@@ -1415,7 +1679,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int PLATFORM_TYPE_FIELD_NUMBER = 3;
-    private int platformType_ = 0;
+    private int platformType_;
     /**
      * <code>uint32 platform_type = 3;</code>
      * @return The platformType.
@@ -1426,8 +1690,7 @@ public final class PlayerLoginReqOuterClass {
     }
 
     public static final int CPS_FIELD_NUMBER = 1983;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object cps_ = "";
+    private volatile java.lang.Object cps_;
     /**
      * <code>string cps = 1983;</code>
      * @return The cps.
@@ -1604,7 +1867,7 @@ public final class PlayerLoginReqOuterClass {
       if (!extraBinData_.isEmpty()) {
         output.writeBytes(2046, extraBinData_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1763,7 +2026,7 @@ public final class PlayerLoginReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2046, extraBinData_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1868,7 +2131,7 @@ public final class PlayerLoginReqOuterClass {
           != other.getPlatformType()) return false;
       if (!getCps()
           .equals(other.getCps())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1971,7 +2234,7 @@ public final class PlayerLoginReqOuterClass {
       hash = (53 * hash) + getPlatformType();
       hash = (37 * hash) + CPS_FIELD_NUMBER;
       hash = (53 * hash) + getCps().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2099,69 +2362,114 @@ public final class PlayerLoginReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerLoginReqOuterClass.PlayerLoginReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        bitField1_ = 0;
         deviceUuid_ = "";
+
         targetUid_ = 0;
+
         extraBinData_ = com.google.protobuf.ByteString.EMPTY;
+
         platform_ = "";
+
         checksum_ = "";
+
         channelId_ = 0;
+
         clientVerisonHash_ = "";
+
         languageType_ = 0;
+
         clientDataVersion_ = 0;
+
         accountType_ = 0;
+
         securityLibraryMd5_ = "";
+
         onlineId_ = "";
+
         unk3300PMGFBMJNNCL_ = 0;
+
         deviceName_ = "";
+
         birthday_ = "";
+
         tag_ = 0;
+
         accountUid_ = "";
+
         deviceInfo_ = "";
+
         subChannelId_ = 0;
+
         isEditor_ = false;
+
         token_ = "";
+
         regPlatform_ = 0;
+
         checksumClientVersion_ = "";
+
         unk3300OOBHAIIIPHH_ = 0;
+
         unk3300NDLANBEIGEG_ = 0;
+
         countryCode_ = "";
+
         unk3300PIPLDEAPMMN_ = 0;
-        trackingIoInfo_ = null;
-        if (trackingIoInfoBuilder_ != null) {
-          trackingIoInfoBuilder_.dispose();
+
+        if (trackingIoInfoBuilder_ == null) {
+          trackingIoInfo_ = null;
+        } else {
+          trackingIoInfo_ = null;
           trackingIoInfoBuilder_ = null;
         }
         isTransfer_ = false;
+
         securityLibraryVersion_ = "";
+
         clientVersion_ = "";
+
         isGuest_ = false;
+
         systemVersion_ = "";
+
         targetHomeOwnerUid_ = 0;
+
         psnId_ = "";
+
         securityCmdReply_ = com.google.protobuf.ByteString.EMPTY;
+
         unk3300OFFHPAFIFGD_ = 0;
+
         loginRand_ = 0L;
-        adjustTrackingInfo_ = null;
-        if (adjustTrackingInfoBuilder_ != null) {
-          adjustTrackingInfoBuilder_.dispose();
+
+        if (adjustTrackingInfoBuilder_ == null) {
+          adjustTrackingInfo_ = null;
+        } else {
+          adjustTrackingInfo_ = null;
           adjustTrackingInfoBuilder_ = null;
         }
         environmentErrorCode_ = com.google.protobuf.ByteString.EMPTY;
+
         platformType_ = 0;
+
         cps_ = "";
+
         return this;
       }
 
@@ -2188,148 +2496,58 @@ public final class PlayerLoginReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerLoginReqOuterClass.PlayerLoginReq buildPartial() {
         emu.gingerps.net.proto.PlayerLoginReqOuterClass.PlayerLoginReq result = new emu.gingerps.net.proto.PlayerLoginReqOuterClass.PlayerLoginReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        if (bitField1_ != 0) { buildPartial1(result); }
+        result.deviceUuid_ = deviceUuid_;
+        result.targetUid_ = targetUid_;
+        result.extraBinData_ = extraBinData_;
+        result.platform_ = platform_;
+        result.checksum_ = checksum_;
+        result.channelId_ = channelId_;
+        result.clientVerisonHash_ = clientVerisonHash_;
+        result.languageType_ = languageType_;
+        result.clientDataVersion_ = clientDataVersion_;
+        result.accountType_ = accountType_;
+        result.securityLibraryMd5_ = securityLibraryMd5_;
+        result.onlineId_ = onlineId_;
+        result.unk3300PMGFBMJNNCL_ = unk3300PMGFBMJNNCL_;
+        result.deviceName_ = deviceName_;
+        result.birthday_ = birthday_;
+        result.tag_ = tag_;
+        result.accountUid_ = accountUid_;
+        result.deviceInfo_ = deviceInfo_;
+        result.subChannelId_ = subChannelId_;
+        result.isEditor_ = isEditor_;
+        result.token_ = token_;
+        result.regPlatform_ = regPlatform_;
+        result.checksumClientVersion_ = checksumClientVersion_;
+        result.unk3300OOBHAIIIPHH_ = unk3300OOBHAIIIPHH_;
+        result.unk3300NDLANBEIGEG_ = unk3300NDLANBEIGEG_;
+        result.countryCode_ = countryCode_;
+        result.unk3300PIPLDEAPMMN_ = unk3300PIPLDEAPMMN_;
+        if (trackingIoInfoBuilder_ == null) {
+          result.trackingIoInfo_ = trackingIoInfo_;
+        } else {
+          result.trackingIoInfo_ = trackingIoInfoBuilder_.build();
+        }
+        result.isTransfer_ = isTransfer_;
+        result.securityLibraryVersion_ = securityLibraryVersion_;
+        result.clientVersion_ = clientVersion_;
+        result.isGuest_ = isGuest_;
+        result.systemVersion_ = systemVersion_;
+        result.targetHomeOwnerUid_ = targetHomeOwnerUid_;
+        result.psnId_ = psnId_;
+        result.securityCmdReply_ = securityCmdReply_;
+        result.unk3300OFFHPAFIFGD_ = unk3300OFFHPAFIFGD_;
+        result.loginRand_ = loginRand_;
+        if (adjustTrackingInfoBuilder_ == null) {
+          result.adjustTrackingInfo_ = adjustTrackingInfo_;
+        } else {
+          result.adjustTrackingInfo_ = adjustTrackingInfoBuilder_.build();
+        }
+        result.environmentErrorCode_ = environmentErrorCode_;
+        result.platformType_ = platformType_;
+        result.cps_ = cps_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerLoginReqOuterClass.PlayerLoginReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.deviceUuid_ = deviceUuid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.targetUid_ = targetUid_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.extraBinData_ = extraBinData_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.platform_ = platform_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.checksum_ = checksum_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.channelId_ = channelId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.clientVerisonHash_ = clientVerisonHash_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.languageType_ = languageType_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.clientDataVersion_ = clientDataVersion_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.accountType_ = accountType_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.securityLibraryMd5_ = securityLibraryMd5_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.onlineId_ = onlineId_;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.unk3300PMGFBMJNNCL_ = unk3300PMGFBMJNNCL_;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.deviceName_ = deviceName_;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.birthday_ = birthday_;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.tag_ = tag_;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.accountUid_ = accountUid_;
-        }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.deviceInfo_ = deviceInfo_;
-        }
-        if (((from_bitField0_ & 0x00040000) != 0)) {
-          result.subChannelId_ = subChannelId_;
-        }
-        if (((from_bitField0_ & 0x00080000) != 0)) {
-          result.isEditor_ = isEditor_;
-        }
-        if (((from_bitField0_ & 0x00100000) != 0)) {
-          result.token_ = token_;
-        }
-        if (((from_bitField0_ & 0x00200000) != 0)) {
-          result.regPlatform_ = regPlatform_;
-        }
-        if (((from_bitField0_ & 0x00400000) != 0)) {
-          result.checksumClientVersion_ = checksumClientVersion_;
-        }
-        if (((from_bitField0_ & 0x00800000) != 0)) {
-          result.unk3300OOBHAIIIPHH_ = unk3300OOBHAIIIPHH_;
-        }
-        if (((from_bitField0_ & 0x01000000) != 0)) {
-          result.unk3300NDLANBEIGEG_ = unk3300NDLANBEIGEG_;
-        }
-        if (((from_bitField0_ & 0x02000000) != 0)) {
-          result.countryCode_ = countryCode_;
-        }
-        if (((from_bitField0_ & 0x04000000) != 0)) {
-          result.unk3300PIPLDEAPMMN_ = unk3300PIPLDEAPMMN_;
-        }
-        if (((from_bitField0_ & 0x08000000) != 0)) {
-          result.trackingIoInfo_ = trackingIoInfoBuilder_ == null
-              ? trackingIoInfo_
-              : trackingIoInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x10000000) != 0)) {
-          result.isTransfer_ = isTransfer_;
-        }
-        if (((from_bitField0_ & 0x20000000) != 0)) {
-          result.securityLibraryVersion_ = securityLibraryVersion_;
-        }
-        if (((from_bitField0_ & 0x40000000) != 0)) {
-          result.clientVersion_ = clientVersion_;
-        }
-        if (((from_bitField0_ & 0x80000000) != 0)) {
-          result.isGuest_ = isGuest_;
-        }
-      }
-
-      private void buildPartial1(emu.gingerps.net.proto.PlayerLoginReqOuterClass.PlayerLoginReq result) {
-        int from_bitField1_ = bitField1_;
-        if (((from_bitField1_ & 0x00000001) != 0)) {
-          result.systemVersion_ = systemVersion_;
-        }
-        if (((from_bitField1_ & 0x00000002) != 0)) {
-          result.targetHomeOwnerUid_ = targetHomeOwnerUid_;
-        }
-        if (((from_bitField1_ & 0x00000004) != 0)) {
-          result.psnId_ = psnId_;
-        }
-        if (((from_bitField1_ & 0x00000008) != 0)) {
-          result.securityCmdReply_ = securityCmdReply_;
-        }
-        if (((from_bitField1_ & 0x00000010) != 0)) {
-          result.unk3300OFFHPAFIFGD_ = unk3300OFFHPAFIFGD_;
-        }
-        if (((from_bitField1_ & 0x00000020) != 0)) {
-          result.loginRand_ = loginRand_;
-        }
-        if (((from_bitField1_ & 0x00000040) != 0)) {
-          result.adjustTrackingInfo_ = adjustTrackingInfoBuilder_ == null
-              ? adjustTrackingInfo_
-              : adjustTrackingInfoBuilder_.build();
-        }
-        if (((from_bitField1_ & 0x00000080) != 0)) {
-          result.environmentErrorCode_ = environmentErrorCode_;
-        }
-        if (((from_bitField1_ & 0x00000100) != 0)) {
-          result.platformType_ = platformType_;
-        }
-        if (((from_bitField1_ & 0x00000200) != 0)) {
-          result.cps_ = cps_;
-        }
       }
 
       @java.lang.Override
@@ -2378,7 +2596,6 @@ public final class PlayerLoginReqOuterClass {
         if (other == emu.gingerps.net.proto.PlayerLoginReqOuterClass.PlayerLoginReq.getDefaultInstance()) return this;
         if (!other.getDeviceUuid().isEmpty()) {
           deviceUuid_ = other.deviceUuid_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getTargetUid() != 0) {
@@ -2389,12 +2606,10 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getPlatform().isEmpty()) {
           platform_ = other.platform_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getChecksum().isEmpty()) {
           checksum_ = other.checksum_;
-          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (other.getChannelId() != 0) {
@@ -2402,7 +2617,6 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getClientVerisonHash().isEmpty()) {
           clientVerisonHash_ = other.clientVerisonHash_;
-          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (other.getLanguageType() != 0) {
@@ -2416,12 +2630,10 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getSecurityLibraryMd5().isEmpty()) {
           securityLibraryMd5_ = other.securityLibraryMd5_;
-          bitField0_ |= 0x00000400;
           onChanged();
         }
         if (!other.getOnlineId().isEmpty()) {
           onlineId_ = other.onlineId_;
-          bitField0_ |= 0x00000800;
           onChanged();
         }
         if (other.getUnk3300PMGFBMJNNCL() != 0) {
@@ -2429,12 +2641,10 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getDeviceName().isEmpty()) {
           deviceName_ = other.deviceName_;
-          bitField0_ |= 0x00002000;
           onChanged();
         }
         if (!other.getBirthday().isEmpty()) {
           birthday_ = other.birthday_;
-          bitField0_ |= 0x00004000;
           onChanged();
         }
         if (other.getTag() != 0) {
@@ -2442,12 +2652,10 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getAccountUid().isEmpty()) {
           accountUid_ = other.accountUid_;
-          bitField0_ |= 0x00010000;
           onChanged();
         }
         if (!other.getDeviceInfo().isEmpty()) {
           deviceInfo_ = other.deviceInfo_;
-          bitField0_ |= 0x00020000;
           onChanged();
         }
         if (other.getSubChannelId() != 0) {
@@ -2458,7 +2666,6 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
-          bitField0_ |= 0x00100000;
           onChanged();
         }
         if (other.getRegPlatform() != 0) {
@@ -2466,7 +2673,6 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getChecksumClientVersion().isEmpty()) {
           checksumClientVersion_ = other.checksumClientVersion_;
-          bitField0_ |= 0x00400000;
           onChanged();
         }
         if (other.getUnk3300OOBHAIIIPHH() != 0) {
@@ -2477,7 +2683,6 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getCountryCode().isEmpty()) {
           countryCode_ = other.countryCode_;
-          bitField0_ |= 0x02000000;
           onChanged();
         }
         if (other.getUnk3300PIPLDEAPMMN() != 0) {
@@ -2491,12 +2696,10 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getSecurityLibraryVersion().isEmpty()) {
           securityLibraryVersion_ = other.securityLibraryVersion_;
-          bitField0_ |= 0x20000000;
           onChanged();
         }
         if (!other.getClientVersion().isEmpty()) {
           clientVersion_ = other.clientVersion_;
-          bitField0_ |= 0x40000000;
           onChanged();
         }
         if (other.getIsGuest() != false) {
@@ -2504,7 +2707,6 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getSystemVersion().isEmpty()) {
           systemVersion_ = other.systemVersion_;
-          bitField1_ |= 0x00000001;
           onChanged();
         }
         if (other.getTargetHomeOwnerUid() != 0) {
@@ -2512,7 +2714,6 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getPsnId().isEmpty()) {
           psnId_ = other.psnId_;
-          bitField1_ |= 0x00000004;
           onChanged();
         }
         if (other.getSecurityCmdReply() != com.google.protobuf.ByteString.EMPTY) {
@@ -2535,10 +2736,9 @@ public final class PlayerLoginReqOuterClass {
         }
         if (!other.getCps().isEmpty()) {
           cps_ = other.cps_;
-          bitField1_ |= 0x00000200;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2553,248 +2753,19 @@ public final class PlayerLoginReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerLoginReqOuterClass.PlayerLoginReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                isEditor_ = input.readBool();
-                bitField0_ |= 0x00080000;
-                break;
-              } // case 8
-              case 18: {
-                clientVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
-                break;
-              } // case 18
-              case 24: {
-                platformType_ = input.readUInt32();
-                bitField1_ |= 0x00000100;
-                break;
-              } // case 24
-              case 34: {
-                platform_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 42: {
-                deviceUuid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 42
-              case 50: {
-                systemVersion_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000001;
-                break;
-              } // case 50
-              case 56: {
-                accountType_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 56
-              case 66: {
-                token_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
-                break;
-              } // case 66
-              case 72: {
-                loginRand_ = input.readUInt64();
-                bitField1_ |= 0x00000020;
-                break;
-              } // case 72
-              case 80: {
-                targetUid_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 88: {
-                languageType_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 88
-              case 98: {
-                deviceName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 98
-              case 104: {
-                isGuest_ = input.readBool();
-                bitField0_ |= 0x80000000;
-                break;
-              } // case 104
-              case 114: {
-                accountUid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 114
-              case 122: {
-                deviceInfo_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
-                break;
-              } // case 122
-              case 514: {
-                input.readMessage(
-                    getAdjustTrackingInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField1_ |= 0x00000040;
-                break;
-              } // case 514
-              case 656: {
-                unk3300PMGFBMJNNCL_ = input.readUInt32();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 656
-              case 680: {
-                unk3300OOBHAIIIPHH_ = input.readUInt32();
-                bitField0_ |= 0x00800000;
-                break;
-              } // case 680
-              case 834: {
-                countryCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
-                break;
-              } // case 834
-              case 2050: {
-                environmentErrorCode_ = input.readBytes();
-                bitField1_ |= 0x00000080;
-                break;
-              } // case 2050
-              case 3392: {
-                regPlatform_ = input.readUInt32();
-                bitField0_ |= 0x00200000;
-                break;
-              } // case 3392
-              case 4200: {
-                tag_ = input.readUInt32();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 4200
-              case 4618: {
-                onlineId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 4618
-              case 4650: {
-                checksumClientVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
-                break;
-              } // case 4650
-              case 4992: {
-                isTransfer_ = input.readBool();
-                bitField0_ |= 0x10000000;
-                break;
-              } // case 4992
-              case 6626: {
-                securityLibraryVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x20000000;
-                break;
-              } // case 6626
-              case 6776: {
-                clientDataVersion_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 6776
-              case 6946: {
-                securityLibraryMd5_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 6946
-              case 6994: {
-                securityCmdReply_ = input.readBytes();
-                bitField1_ |= 0x00000008;
-                break;
-              } // case 6994
-              case 7002: {
-                birthday_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 7002
-              case 7192: {
-                targetHomeOwnerUid_ = input.readUInt32();
-                bitField1_ |= 0x00000002;
-                break;
-              } // case 7192
-              case 8224: {
-                unk3300OFFHPAFIFGD_ = input.readUInt32();
-                bitField1_ |= 0x00000010;
-                break;
-              } // case 8224
-              case 9170: {
-                psnId_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000004;
-                break;
-              } // case 9170
-              case 10560: {
-                unk3300NDLANBEIGEG_ = input.readUInt32();
-                bitField0_ |= 0x01000000;
-                break;
-              } // case 10560
-              case 10674: {
-                checksum_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 10674
-              case 11664: {
-                subChannelId_ = input.readUInt32();
-                bitField0_ |= 0x00040000;
-                break;
-              } // case 11664
-              case 12520: {
-                channelId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 12520
-              case 13706: {
-                input.readMessage(
-                    getTrackingIoInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x08000000;
-                break;
-              } // case 13706
-              case 14320: {
-                unk3300PIPLDEAPMMN_ = input.readUInt32();
-                bitField0_ |= 0x04000000;
-                break;
-              } // case 14320
-              case 15866: {
-                cps_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000200;
-                break;
-              } // case 15866
-              case 16322: {
-                clientVerisonHash_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 16322
-              case 16370: {
-                extraBinData_ = input.readBytes();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16370
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerLoginReqOuterClass.PlayerLoginReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
-      private int bitField1_;
 
       private java.lang.Object deviceUuid_ = "";
       /**
@@ -2837,9 +2808,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setDeviceUuid(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         deviceUuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2848,8 +2821,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDeviceUuid() {
+        
         deviceUuid_ = getDefaultInstance().getDeviceUuid();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2860,10 +2833,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setDeviceUuidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         deviceUuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2885,7 +2860,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setTargetUid(int value) {
         
         targetUid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2894,7 +2868,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         targetUid_ = 0;
         onChanged();
         return this;
@@ -2915,9 +2889,11 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setExtraBinData(com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         extraBinData_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2926,7 +2902,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExtraBinData() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         extraBinData_ = getDefaultInstance().getExtraBinData();
         onChanged();
         return this;
@@ -2973,9 +2949,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setPlatform(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         platform_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2984,8 +2962,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlatform() {
+        
         platform_ = getDefaultInstance().getPlatform();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2996,10 +2974,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setPlatformBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         platform_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3045,9 +3025,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setChecksum(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         checksum_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3056,8 +3038,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChecksum() {
+        
         checksum_ = getDefaultInstance().getChecksum();
-        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -3068,10 +3050,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setChecksumBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         checksum_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3093,7 +3077,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setChannelId(int value) {
         
         channelId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -3102,7 +3085,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChannelId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         channelId_ = 0;
         onChanged();
         return this;
@@ -3149,9 +3132,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setClientVerisonHash(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         clientVerisonHash_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3160,8 +3145,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientVerisonHash() {
+        
         clientVerisonHash_ = getDefaultInstance().getClientVerisonHash();
-        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -3172,10 +3157,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setClientVerisonHashBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         clientVerisonHash_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3197,7 +3184,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setLanguageType(int value) {
         
         languageType_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -3206,7 +3192,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLanguageType() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         languageType_ = 0;
         onChanged();
         return this;
@@ -3229,7 +3215,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setClientDataVersion(int value) {
         
         clientDataVersion_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -3238,7 +3223,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientDataVersion() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         clientDataVersion_ = 0;
         onChanged();
         return this;
@@ -3261,7 +3246,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setAccountType(int value) {
         
         accountType_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -3270,7 +3254,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAccountType() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         accountType_ = 0;
         onChanged();
         return this;
@@ -3317,9 +3301,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setSecurityLibraryMd5(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         securityLibraryMd5_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -3328,8 +3314,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSecurityLibraryMd5() {
+        
         securityLibraryMd5_ = getDefaultInstance().getSecurityLibraryMd5();
-        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -3340,10 +3326,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setSecurityLibraryMd5Bytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         securityLibraryMd5_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -3389,9 +3377,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setOnlineId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         onlineId_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -3400,8 +3390,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
+        
         onlineId_ = getDefaultInstance().getOnlineId();
-        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
@@ -3412,10 +3402,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setOnlineIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         onlineId_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -3437,7 +3429,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setUnk3300PMGFBMJNNCL(int value) {
         
         unk3300PMGFBMJNNCL_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -3446,7 +3437,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PMGFBMJNNCL() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         unk3300PMGFBMJNNCL_ = 0;
         onChanged();
         return this;
@@ -3493,9 +3484,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setDeviceName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         deviceName_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -3504,8 +3497,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDeviceName() {
+        
         deviceName_ = getDefaultInstance().getDeviceName();
-        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
         return this;
       }
@@ -3516,10 +3509,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setDeviceNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         deviceName_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -3565,9 +3560,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setBirthday(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         birthday_ = value;
-        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -3576,8 +3573,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBirthday() {
+        
         birthday_ = getDefaultInstance().getBirthday();
-        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
         return this;
       }
@@ -3588,10 +3585,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setBirthdayBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         birthday_ = value;
-        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -3613,7 +3612,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setTag(int value) {
         
         tag_ = value;
-        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -3622,7 +3620,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        
         tag_ = 0;
         onChanged();
         return this;
@@ -3669,9 +3667,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setAccountUid(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         accountUid_ = value;
-        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -3680,8 +3680,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAccountUid() {
+        
         accountUid_ = getDefaultInstance().getAccountUid();
-        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
         return this;
       }
@@ -3692,10 +3692,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setAccountUidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         accountUid_ = value;
-        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -3741,9 +3743,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setDeviceInfo(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         deviceInfo_ = value;
-        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -3752,8 +3756,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDeviceInfo() {
+        
         deviceInfo_ = getDefaultInstance().getDeviceInfo();
-        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
         return this;
       }
@@ -3764,10 +3768,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setDeviceInfoBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         deviceInfo_ = value;
-        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -3789,7 +3795,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setSubChannelId(int value) {
         
         subChannelId_ = value;
-        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -3798,7 +3803,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSubChannelId() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        
         subChannelId_ = 0;
         onChanged();
         return this;
@@ -3821,7 +3826,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setIsEditor(boolean value) {
         
         isEditor_ = value;
-        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -3830,7 +3834,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsEditor() {
-        bitField0_ = (bitField0_ & ~0x00080000);
+        
         isEditor_ = false;
         onChanged();
         return this;
@@ -3877,9 +3881,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setToken(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         token_ = value;
-        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
@@ -3888,8 +3894,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearToken() {
+        
         token_ = getDefaultInstance().getToken();
-        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
         return this;
       }
@@ -3900,10 +3906,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         token_ = value;
-        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
@@ -3925,7 +3933,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setRegPlatform(int value) {
         
         regPlatform_ = value;
-        bitField0_ |= 0x00200000;
         onChanged();
         return this;
       }
@@ -3934,7 +3941,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegPlatform() {
-        bitField0_ = (bitField0_ & ~0x00200000);
+        
         regPlatform_ = 0;
         onChanged();
         return this;
@@ -3981,9 +3988,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setChecksumClientVersion(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         checksumClientVersion_ = value;
-        bitField0_ |= 0x00400000;
         onChanged();
         return this;
       }
@@ -3992,8 +4001,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChecksumClientVersion() {
+        
         checksumClientVersion_ = getDefaultInstance().getChecksumClientVersion();
-        bitField0_ = (bitField0_ & ~0x00400000);
         onChanged();
         return this;
       }
@@ -4004,10 +4013,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setChecksumClientVersionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         checksumClientVersion_ = value;
-        bitField0_ |= 0x00400000;
         onChanged();
         return this;
       }
@@ -4029,7 +4040,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setUnk3300OOBHAIIIPHH(int value) {
         
         unk3300OOBHAIIIPHH_ = value;
-        bitField0_ |= 0x00800000;
         onChanged();
         return this;
       }
@@ -4038,7 +4048,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OOBHAIIIPHH() {
-        bitField0_ = (bitField0_ & ~0x00800000);
+        
         unk3300OOBHAIIIPHH_ = 0;
         onChanged();
         return this;
@@ -4061,7 +4071,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setUnk3300NDLANBEIGEG(int value) {
         
         unk3300NDLANBEIGEG_ = value;
-        bitField0_ |= 0x01000000;
         onChanged();
         return this;
       }
@@ -4070,7 +4079,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NDLANBEIGEG() {
-        bitField0_ = (bitField0_ & ~0x01000000);
+        
         unk3300NDLANBEIGEG_ = 0;
         onChanged();
         return this;
@@ -4117,9 +4126,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setCountryCode(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         countryCode_ = value;
-        bitField0_ |= 0x02000000;
         onChanged();
         return this;
       }
@@ -4128,8 +4139,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCountryCode() {
+        
         countryCode_ = getDefaultInstance().getCountryCode();
-        bitField0_ = (bitField0_ & ~0x02000000);
         onChanged();
         return this;
       }
@@ -4140,10 +4151,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setCountryCodeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         countryCode_ = value;
-        bitField0_ |= 0x02000000;
         onChanged();
         return this;
       }
@@ -4165,7 +4178,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setUnk3300PIPLDEAPMMN(int value) {
         
         unk3300PIPLDEAPMMN_ = value;
-        bitField0_ |= 0x04000000;
         onChanged();
         return this;
       }
@@ -4174,7 +4186,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PIPLDEAPMMN() {
-        bitField0_ = (bitField0_ & ~0x04000000);
+        
         unk3300PIPLDEAPMMN_ = 0;
         onChanged();
         return this;
@@ -4188,7 +4200,7 @@ public final class PlayerLoginReqOuterClass {
        * @return Whether the trackingIoInfo field is set.
        */
       public boolean hasTrackingIoInfo() {
-        return ((bitField0_ & 0x08000000) != 0);
+        return trackingIoInfoBuilder_ != null || trackingIoInfo_ != null;
       }
       /**
        * <code>.TrackingIOInfo tracking_io_info = 1713;</code>
@@ -4210,11 +4222,11 @@ public final class PlayerLoginReqOuterClass {
             throw new NullPointerException();
           }
           trackingIoInfo_ = value;
+          onChanged();
         } else {
           trackingIoInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x08000000;
-        onChanged();
+
         return this;
       }
       /**
@@ -4224,11 +4236,11 @@ public final class PlayerLoginReqOuterClass {
           emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo.Builder builderForValue) {
         if (trackingIoInfoBuilder_ == null) {
           trackingIoInfo_ = builderForValue.build();
+          onChanged();
         } else {
           trackingIoInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x08000000;
-        onChanged();
+
         return this;
       }
       /**
@@ -4236,38 +4248,38 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder mergeTrackingIoInfo(emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo value) {
         if (trackingIoInfoBuilder_ == null) {
-          if (((bitField0_ & 0x08000000) != 0) &&
-            trackingIoInfo_ != null &&
-            trackingIoInfo_ != emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo.getDefaultInstance()) {
-            getTrackingIoInfoBuilder().mergeFrom(value);
+          if (trackingIoInfo_ != null) {
+            trackingIoInfo_ =
+              emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo.newBuilder(trackingIoInfo_).mergeFrom(value).buildPartial();
           } else {
             trackingIoInfo_ = value;
           }
+          onChanged();
         } else {
           trackingIoInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x08000000;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TrackingIOInfo tracking_io_info = 1713;</code>
        */
       public Builder clearTrackingIoInfo() {
-        bitField0_ = (bitField0_ & ~0x08000000);
-        trackingIoInfo_ = null;
-        if (trackingIoInfoBuilder_ != null) {
-          trackingIoInfoBuilder_.dispose();
+        if (trackingIoInfoBuilder_ == null) {
+          trackingIoInfo_ = null;
+          onChanged();
+        } else {
+          trackingIoInfo_ = null;
           trackingIoInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TrackingIOInfo tracking_io_info = 1713;</code>
        */
       public emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo.Builder getTrackingIoInfoBuilder() {
-        bitField0_ |= 0x08000000;
+        
         onChanged();
         return getTrackingIoInfoFieldBuilder().getBuilder();
       }
@@ -4316,7 +4328,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setIsTransfer(boolean value) {
         
         isTransfer_ = value;
-        bitField0_ |= 0x10000000;
         onChanged();
         return this;
       }
@@ -4325,7 +4336,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsTransfer() {
-        bitField0_ = (bitField0_ & ~0x10000000);
+        
         isTransfer_ = false;
         onChanged();
         return this;
@@ -4372,9 +4383,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setSecurityLibraryVersion(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         securityLibraryVersion_ = value;
-        bitField0_ |= 0x20000000;
         onChanged();
         return this;
       }
@@ -4383,8 +4396,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSecurityLibraryVersion() {
+        
         securityLibraryVersion_ = getDefaultInstance().getSecurityLibraryVersion();
-        bitField0_ = (bitField0_ & ~0x20000000);
         onChanged();
         return this;
       }
@@ -4395,10 +4408,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setSecurityLibraryVersionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         securityLibraryVersion_ = value;
-        bitField0_ |= 0x20000000;
         onChanged();
         return this;
       }
@@ -4444,9 +4459,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setClientVersion(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         clientVersion_ = value;
-        bitField0_ |= 0x40000000;
         onChanged();
         return this;
       }
@@ -4455,8 +4472,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientVersion() {
+        
         clientVersion_ = getDefaultInstance().getClientVersion();
-        bitField0_ = (bitField0_ & ~0x40000000);
         onChanged();
         return this;
       }
@@ -4467,10 +4484,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setClientVersionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         clientVersion_ = value;
-        bitField0_ |= 0x40000000;
         onChanged();
         return this;
       }
@@ -4492,7 +4511,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setIsGuest(boolean value) {
         
         isGuest_ = value;
-        bitField0_ |= 0x80000000;
         onChanged();
         return this;
       }
@@ -4501,7 +4519,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsGuest() {
-        bitField0_ = (bitField0_ & ~0x80000000);
+        
         isGuest_ = false;
         onChanged();
         return this;
@@ -4548,9 +4566,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setSystemVersion(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         systemVersion_ = value;
-        bitField1_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4559,8 +4579,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSystemVersion() {
+        
         systemVersion_ = getDefaultInstance().getSystemVersion();
-        bitField1_ = (bitField1_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4571,10 +4591,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setSystemVersionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         systemVersion_ = value;
-        bitField1_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4596,7 +4618,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setTargetHomeOwnerUid(int value) {
         
         targetHomeOwnerUid_ = value;
-        bitField1_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4605,7 +4626,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetHomeOwnerUid() {
-        bitField1_ = (bitField1_ & ~0x00000002);
+        
         targetHomeOwnerUid_ = 0;
         onChanged();
         return this;
@@ -4652,9 +4673,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setPsnId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         psnId_ = value;
-        bitField1_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4663,8 +4686,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPsnId() {
+        
         psnId_ = getDefaultInstance().getPsnId();
-        bitField1_ = (bitField1_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -4675,10 +4698,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setPsnIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         psnId_ = value;
-        bitField1_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4698,9 +4723,11 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setSecurityCmdReply(com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         securityCmdReply_ = value;
-        bitField1_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4709,7 +4736,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSecurityCmdReply() {
-        bitField1_ = (bitField1_ & ~0x00000008);
+        
         securityCmdReply_ = getDefaultInstance().getSecurityCmdReply();
         onChanged();
         return this;
@@ -4732,7 +4759,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setUnk3300OFFHPAFIFGD(int value) {
         
         unk3300OFFHPAFIFGD_ = value;
-        bitField1_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -4741,7 +4767,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OFFHPAFIFGD() {
-        bitField1_ = (bitField1_ & ~0x00000010);
+        
         unk3300OFFHPAFIFGD_ = 0;
         onChanged();
         return this;
@@ -4764,7 +4790,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setLoginRand(long value) {
         
         loginRand_ = value;
-        bitField1_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -4773,7 +4798,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLoginRand() {
-        bitField1_ = (bitField1_ & ~0x00000020);
+        
         loginRand_ = 0L;
         onChanged();
         return this;
@@ -4787,7 +4812,7 @@ public final class PlayerLoginReqOuterClass {
        * @return Whether the adjustTrackingInfo field is set.
        */
       public boolean hasAdjustTrackingInfo() {
-        return ((bitField1_ & 0x00000040) != 0);
+        return adjustTrackingInfoBuilder_ != null || adjustTrackingInfo_ != null;
       }
       /**
        * <code>.AdjustTrackingInfo adjust_tracking_info = 64;</code>
@@ -4809,11 +4834,11 @@ public final class PlayerLoginReqOuterClass {
             throw new NullPointerException();
           }
           adjustTrackingInfo_ = value;
+          onChanged();
         } else {
           adjustTrackingInfoBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -4823,11 +4848,11 @@ public final class PlayerLoginReqOuterClass {
           emu.gingerps.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.Builder builderForValue) {
         if (adjustTrackingInfoBuilder_ == null) {
           adjustTrackingInfo_ = builderForValue.build();
+          onChanged();
         } else {
           adjustTrackingInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -4835,38 +4860,38 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder mergeAdjustTrackingInfo(emu.gingerps.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo value) {
         if (adjustTrackingInfoBuilder_ == null) {
-          if (((bitField1_ & 0x00000040) != 0) &&
-            adjustTrackingInfo_ != null &&
-            adjustTrackingInfo_ != emu.gingerps.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.getDefaultInstance()) {
-            getAdjustTrackingInfoBuilder().mergeFrom(value);
+          if (adjustTrackingInfo_ != null) {
+            adjustTrackingInfo_ =
+              emu.gingerps.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.newBuilder(adjustTrackingInfo_).mergeFrom(value).buildPartial();
           } else {
             adjustTrackingInfo_ = value;
           }
+          onChanged();
         } else {
           adjustTrackingInfoBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AdjustTrackingInfo adjust_tracking_info = 64;</code>
        */
       public Builder clearAdjustTrackingInfo() {
-        bitField1_ = (bitField1_ & ~0x00000040);
-        adjustTrackingInfo_ = null;
-        if (adjustTrackingInfoBuilder_ != null) {
-          adjustTrackingInfoBuilder_.dispose();
+        if (adjustTrackingInfoBuilder_ == null) {
+          adjustTrackingInfo_ = null;
+          onChanged();
+        } else {
+          adjustTrackingInfo_ = null;
           adjustTrackingInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AdjustTrackingInfo adjust_tracking_info = 64;</code>
        */
       public emu.gingerps.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.Builder getAdjustTrackingInfoBuilder() {
-        bitField1_ |= 0x00000040;
+        
         onChanged();
         return getAdjustTrackingInfoFieldBuilder().getBuilder();
       }
@@ -4913,9 +4938,11 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setEnvironmentErrorCode(com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         environmentErrorCode_ = value;
-        bitField1_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4924,7 +4951,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEnvironmentErrorCode() {
-        bitField1_ = (bitField1_ & ~0x00000080);
+        
         environmentErrorCode_ = getDefaultInstance().getEnvironmentErrorCode();
         onChanged();
         return this;
@@ -4947,7 +4974,6 @@ public final class PlayerLoginReqOuterClass {
       public Builder setPlatformType(int value) {
         
         platformType_ = value;
-        bitField1_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4956,7 +4982,7 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlatformType() {
-        bitField1_ = (bitField1_ & ~0x00000100);
+        
         platformType_ = 0;
         onChanged();
         return this;
@@ -5003,9 +5029,11 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setCps(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         cps_ = value;
-        bitField1_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -5014,8 +5042,8 @@ public final class PlayerLoginReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCps() {
+        
         cps_ = getDefaultInstance().getCps();
-        bitField1_ = (bitField1_ & ~0x00000200);
         onChanged();
         return this;
       }
@@ -5026,10 +5054,12 @@ public final class PlayerLoginReqOuterClass {
        */
       public Builder setCpsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         cps_ = value;
-        bitField1_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -5066,18 +5096,7 @@ public final class PlayerLoginReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerLoginReq(input, extensionRegistry);
       }
     };
 

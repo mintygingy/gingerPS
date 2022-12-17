@@ -86,6 +86,61 @@ public final class GMShowNavMeshRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GMShowNavMeshRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tiles_ = new java.util.ArrayList<emu.gingerps.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tiles_.add(
+                  input.readMessage(emu.gingerps.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tiles_ = java.util.Collections.unmodifiableList(tiles_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GMShowNavMeshRspOuterClass.internal_static_GMShowNavMeshRsp_descriptor;
@@ -100,7 +155,7 @@ public final class GMShowNavMeshRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -111,7 +166,6 @@ public final class GMShowNavMeshRspOuterClass {
     }
 
     public static final int TILES_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile> tiles_;
     /**
      * <code>repeated .PBNavMeshTile tiles = 10;</code>
@@ -171,7 +225,7 @@ public final class GMShowNavMeshRspOuterClass {
       for (int i = 0; i < tiles_.size(); i++) {
         output.writeMessage(10, tiles_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class GMShowNavMeshRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, tiles_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class GMShowNavMeshRspOuterClass {
           != other.getRetcode()) return false;
       if (!getTilesList()
           .equals(other.getTilesList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class GMShowNavMeshRspOuterClass {
         hash = (37 * hash) + TILES_FIELD_NUMBER;
         hash = (53 * hash) + getTilesList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +405,31 @@ public final class GMShowNavMeshRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GMShowNavMeshRspOuterClass.GMShowNavMeshRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTilesFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         if (tilesBuilder_ == null) {
           tiles_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          tiles_ = null;
           tilesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -397,29 +456,19 @@ public final class GMShowNavMeshRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GMShowNavMeshRspOuterClass.GMShowNavMeshRsp buildPartial() {
         emu.gingerps.net.proto.GMShowNavMeshRspOuterClass.GMShowNavMeshRsp result = new emu.gingerps.net.proto.GMShowNavMeshRspOuterClass.GMShowNavMeshRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GMShowNavMeshRspOuterClass.GMShowNavMeshRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         if (tilesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             tiles_ = java.util.Collections.unmodifiableList(tiles_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.tiles_ = tiles_;
         } else {
           result.tiles_ = tilesBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GMShowNavMeshRspOuterClass.GMShowNavMeshRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -473,7 +522,7 @@ public final class GMShowNavMeshRspOuterClass {
           if (!other.tiles_.isEmpty()) {
             if (tiles_.isEmpty()) {
               tiles_ = other.tiles_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureTilesIsMutable();
               tiles_.addAll(other.tiles_);
@@ -486,7 +535,7 @@ public final class GMShowNavMeshRspOuterClass {
               tilesBuilder_.dispose();
               tilesBuilder_ = null;
               tiles_ = other.tiles_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               tilesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTilesFieldBuilder() : null;
@@ -495,7 +544,7 @@ public final class GMShowNavMeshRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -510,48 +559,17 @@ public final class GMShowNavMeshRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GMShowNavMeshRspOuterClass.GMShowNavMeshRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 82: {
-                emu.gingerps.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.parser(),
-                        extensionRegistry);
-                if (tilesBuilder_ == null) {
-                  ensureTilesIsMutable();
-                  tiles_.add(m);
-                } else {
-                  tilesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GMShowNavMeshRspOuterClass.GMShowNavMeshRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -573,7 +591,6 @@ public final class GMShowNavMeshRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +599,7 @@ public final class GMShowNavMeshRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -591,9 +608,9 @@ public final class GMShowNavMeshRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile> tiles_ =
         java.util.Collections.emptyList();
       private void ensureTilesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           tiles_ = new java.util.ArrayList<emu.gingerps.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile>(tiles_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -743,7 +760,7 @@ public final class GMShowNavMeshRspOuterClass {
       public Builder clearTiles() {
         if (tilesBuilder_ == null) {
           tiles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           tilesBuilder_.clear();
@@ -820,7 +837,7 @@ public final class GMShowNavMeshRspOuterClass {
           tilesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile, emu.gingerps.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.Builder, emu.gingerps.net.proto.PBNavMeshTileOuterClass.PBNavMeshTileOrBuilder>(
                   tiles_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           tiles_ = null;
@@ -860,18 +877,7 @@ public final class GMShowNavMeshRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GMShowNavMeshRsp(input, extensionRegistry);
       }
     };
 

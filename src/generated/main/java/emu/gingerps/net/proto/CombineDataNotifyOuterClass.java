@@ -73,6 +73,68 @@ public final class CombineDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CombineDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                combineIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              combineIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                combineIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                combineIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          combineIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CombineDataNotifyOuterClass.internal_static_CombineDataNotify_descriptor;
@@ -87,7 +149,6 @@ public final class CombineDataNotifyOuterClass {
     }
 
     public static final int COMBINE_ID_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList combineIdList_;
     /**
      * <code>repeated uint32 combine_id_list = 7;</code>
@@ -137,7 +198,7 @@ public final class CombineDataNotifyOuterClass {
       for (int i = 0; i < combineIdList_.size(); i++) {
         output.writeUInt32NoTag(combineIdList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -160,7 +221,7 @@ public final class CombineDataNotifyOuterClass {
         }
         combineIdListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -177,7 +238,7 @@ public final class CombineDataNotifyOuterClass {
 
       if (!getCombineIdListList()
           .equals(other.getCombineIdListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -192,7 +253,7 @@ public final class CombineDataNotifyOuterClass {
         hash = (37 * hash) + COMBINE_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCombineIdListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -319,19 +380,24 @@ public final class CombineDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CombineDataNotifyOuterClass.CombineDataNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         combineIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -358,22 +424,14 @@ public final class CombineDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CombineDataNotifyOuterClass.CombineDataNotify buildPartial() {
         emu.gingerps.net.proto.CombineDataNotifyOuterClass.CombineDataNotify result = new emu.gingerps.net.proto.CombineDataNotifyOuterClass.CombineDataNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CombineDataNotifyOuterClass.CombineDataNotify result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           combineIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.combineIdList_ = combineIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CombineDataNotifyOuterClass.CombineDataNotify result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -430,7 +488,7 @@ public final class CombineDataNotifyOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -445,46 +503,17 @@ public final class CombineDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CombineDataNotifyOuterClass.CombineDataNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                int v = input.readUInt32();
-                ensureCombineIdListIsMutable();
-                combineIdList_.addInt(v);
-                break;
-              } // case 56
-              case 58: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureCombineIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  combineIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CombineDataNotifyOuterClass.CombineDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -494,7 +523,7 @@ public final class CombineDataNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           combineIdList_ = mutableCopy(combineIdList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 combine_id_list = 7;</code>
@@ -528,7 +557,6 @@ public final class CombineDataNotifyOuterClass {
        */
       public Builder setCombineIdList(
           int index, int value) {
-        
         ensureCombineIdListIsMutable();
         combineIdList_.setInt(index, value);
         onChanged();
@@ -540,7 +568,6 @@ public final class CombineDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCombineIdList(int value) {
-        
         ensureCombineIdListIsMutable();
         combineIdList_.addInt(value);
         onChanged();
@@ -602,18 +629,7 @@ public final class CombineDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CombineDataNotify(input, extensionRegistry);
       }
     };
 

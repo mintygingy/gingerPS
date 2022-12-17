@@ -41,14 +41,14 @@ public final class VintageActivityDetailInfoOuterClass {
     /**
      * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData getUnk3300PCIIGPJJHGFOrDefault(
+
+    emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData getUnk3300PCIIGPJJHGFOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData defaultValue);
+        emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData defaultValue);
     /**
      * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
      */
+
     emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData getUnk3300PCIIGPJJHGFOrThrow(
         int key);
 
@@ -81,14 +81,14 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
     /**
      * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData getUnk3300EHHPFKIOKOOOrDefault(
+
+    emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData getUnk3300EHHPFKIOKOOOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData defaultValue);
+        emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData defaultValue);
     /**
      * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
      */
+
     emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData getUnk3300EHHPFKIOKOOOrThrow(
         int key);
 
@@ -130,14 +130,14 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
     /**
      * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData getUnk3300NPKMDFCLGBJOrDefault(
+
+    emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData getUnk3300NPKMDFCLGBJOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData defaultValue);
+        emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData defaultValue);
     /**
      * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
      */
+
     emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData getUnk3300NPKMDFCLGBJOrThrow(
         int key);
 
@@ -183,6 +183,114 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
     getUnknownFields() {
       return this.unknownFields;
     }
+    private VintageActivityDetailInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                unk3300NPKMDFCLGBJ_ = com.google.protobuf.MapField.newMapField(
+                    Unk3300NPKMDFCLGBJDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData>
+              unk3300NPKMDFCLGBJ__ = input.readMessage(
+                  Unk3300NPKMDFCLGBJDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              unk3300NPKMDFCLGBJ_.getMutableMap().put(
+                  unk3300NPKMDFCLGBJ__.getKey(), unk3300NPKMDFCLGBJ__.getValue());
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemData.Builder subBuilder = null;
+              if (boothData_ != null) {
+                subBuilder = boothData_.toBuilder();
+              }
+              boothData_ = input.readMessage(emu.gingerps.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(boothData_);
+                boothData_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300EHHPFKIOKOO_ = com.google.protobuf.MapField.newMapField(
+                    Unk3300EHHPFKIOKOODefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData>
+              unk3300EHHPFKIOKOO__ = input.readMessage(
+                  Unk3300EHHPFKIOKOODefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              unk3300EHHPFKIOKOO_.getMutableMap().put(
+                  unk3300EHHPFKIOKOO__.getKey(), unk3300EHHPFKIOKOO__.getValue());
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300PCIIGPJJHGF_ = com.google.protobuf.MapField.newMapField(
+                    Unk3300PCIIGPJJHGFDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData>
+              unk3300PCIIGPJJHGF__ = input.readMessage(
+                  Unk3300PCIIGPJJHGFDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              unk3300PCIIGPJJHGF_.getMutableMap().put(
+                  unk3300PCIIGPJJHGF__.getKey(), unk3300PCIIGPJJHGF__.getValue());
+              break;
+            }
+            case 104: {
+
+              isContentClosed_ = input.readBool();
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.VintageMarketInfoOuterClass.VintageMarketInfo.Builder subBuilder = null;
+              if (marketInfo_ != null) {
+                subBuilder = marketInfo_.toBuilder();
+              }
+              marketInfo_ = input.readMessage(emu.gingerps.net.proto.VintageMarketInfoOuterClass.VintageMarketInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(marketInfo_);
+                marketInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.internal_static_VintageActivityDetailInfo_descriptor;
@@ -224,7 +332,6 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData> unk3300PCIIGPJJHGF_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData>
@@ -235,12 +342,14 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
       }
       return unk3300PCIIGPJJHGF_;
     }
+
     public int getUnk3300PCIIGPJJHGFCount() {
       return internalGetUnk3300PCIIGPJJHGF().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
      */
+
     @java.lang.Override
     public boolean containsUnk3300PCIIGPJJHGF(
         int key) {
@@ -259,6 +368,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
      * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData> getUnk3300PCIIGPJJHGFMap() {
       return internalGetUnk3300PCIIGPJJHGF().getMap();
     }
@@ -266,11 +376,10 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
      * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData getUnk3300PCIIGPJJHGFOrDefault(
+
+    public emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData getUnk3300PCIIGPJJHGFOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData defaultValue) {
+        emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData> map =
           internalGetUnk3300PCIIGPJJHGF().getMap();
@@ -280,6 +389,7 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
      * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData getUnk3300PCIIGPJJHGFOrThrow(
         int key) {
       
@@ -292,7 +402,7 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 13;
-    private boolean isContentClosed_ = false;
+    private boolean isContentClosed_;
     /**
      * <code>bool is_content_closed = 13;</code>
      * @return The isContentClosed.
@@ -314,7 +424,6 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData> unk3300EHHPFKIOKOO_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData>
@@ -325,12 +434,14 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
       }
       return unk3300EHHPFKIOKOO_;
     }
+
     public int getUnk3300EHHPFKIOKOOCount() {
       return internalGetUnk3300EHHPFKIOKOO().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
      */
+
     @java.lang.Override
     public boolean containsUnk3300EHHPFKIOKOO(
         int key) {
@@ -349,6 +460,7 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
      * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData> getUnk3300EHHPFKIOKOOMap() {
       return internalGetUnk3300EHHPFKIOKOO().getMap();
     }
@@ -356,11 +468,10 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
      * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData getUnk3300EHHPFKIOKOOOrDefault(
+
+    public emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData getUnk3300EHHPFKIOKOOOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData defaultValue) {
+        emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData> map =
           internalGetUnk3300EHHPFKIOKOO().getMap();
@@ -370,6 +481,7 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
      * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData getUnk3300EHHPFKIOKOOOrThrow(
         int key) {
       
@@ -404,7 +516,7 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemDataOrBuilder getBoothDataOrBuilder() {
-      return boothData_ == null ? emu.gingerps.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemData.getDefaultInstance() : boothData_;
+      return getBoothData();
     }
 
     public static final int UNK3300_NPKMDFCLGBJ_FIELD_NUMBER = 2;
@@ -419,7 +531,6 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData> unk3300NPKMDFCLGBJ_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData>
@@ -430,12 +541,14 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
       }
       return unk3300NPKMDFCLGBJ_;
     }
+
     public int getUnk3300NPKMDFCLGBJCount() {
       return internalGetUnk3300NPKMDFCLGBJ().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
      */
+
     @java.lang.Override
     public boolean containsUnk3300NPKMDFCLGBJ(
         int key) {
@@ -454,6 +567,7 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
      * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData> getUnk3300NPKMDFCLGBJMap() {
       return internalGetUnk3300NPKMDFCLGBJ().getMap();
     }
@@ -461,11 +575,10 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
      * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData getUnk3300NPKMDFCLGBJOrDefault(
+
+    public emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData getUnk3300NPKMDFCLGBJOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData defaultValue) {
+        emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData> map =
           internalGetUnk3300NPKMDFCLGBJ().getMap();
@@ -475,6 +588,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
      * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData getUnk3300NPKMDFCLGBJOrThrow(
         int key) {
       
@@ -509,7 +623,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VintageMarketInfoOuterClass.VintageMarketInfoOrBuilder getMarketInfoOrBuilder() {
-      return marketInfo_ == null ? emu.gingerps.net.proto.VintageMarketInfoOuterClass.VintageMarketInfo.getDefaultInstance() : marketInfo_;
+      return getMarketInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -553,7 +667,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
       if (marketInfo_ != null) {
         output.writeMessage(14, getMarketInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -604,7 +718,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getMarketInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -637,7 +751,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
         if (!getMarketInfo()
             .equals(other.getMarketInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -671,7 +785,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
         hash = (37 * hash) + MARKET_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getMarketInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -818,30 +932,37 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
 
       // Construct using emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableUnk3300PCIIGPJJHGF().clear();
         isContentClosed_ = false;
+
         internalGetMutableUnk3300EHHPFKIOKOO().clear();
-        boothData_ = null;
-        if (boothDataBuilder_ != null) {
-          boothDataBuilder_.dispose();
+        if (boothDataBuilder_ == null) {
+          boothData_ = null;
+        } else {
+          boothData_ = null;
           boothDataBuilder_ = null;
         }
         internalGetMutableUnk3300NPKMDFCLGBJ().clear();
-        marketInfo_ = null;
-        if (marketInfoBuilder_ != null) {
-          marketInfoBuilder_.dispose();
+        if (marketInfoBuilder_ == null) {
+          marketInfo_ = null;
+        } else {
+          marketInfo_ = null;
           marketInfoBuilder_ = null;
         }
         return this;
@@ -870,38 +991,26 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
       @java.lang.Override
       public emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo result = new emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.unk3300PCIIGPJJHGF_ = internalGetUnk3300PCIIGPJJHGF();
+        result.unk3300PCIIGPJJHGF_.makeImmutable();
+        result.isContentClosed_ = isContentClosed_;
+        result.unk3300EHHPFKIOKOO_ = internalGetUnk3300EHHPFKIOKOO();
+        result.unk3300EHHPFKIOKOO_.makeImmutable();
+        if (boothDataBuilder_ == null) {
+          result.boothData_ = boothData_;
+        } else {
+          result.boothData_ = boothDataBuilder_.build();
+        }
+        result.unk3300NPKMDFCLGBJ_ = internalGetUnk3300NPKMDFCLGBJ();
+        result.unk3300NPKMDFCLGBJ_.makeImmutable();
+        if (marketInfoBuilder_ == null) {
+          result.marketInfo_ = marketInfo_;
+        } else {
+          result.marketInfo_ = marketInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300PCIIGPJJHGF_ = internalGetUnk3300PCIIGPJJHGF();
-          result.unk3300PCIIGPJJHGF_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isContentClosed_ = isContentClosed_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300EHHPFKIOKOO_ = internalGetUnk3300EHHPFKIOKOO();
-          result.unk3300EHHPFKIOKOO_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.boothData_ = boothDataBuilder_ == null
-              ? boothData_
-              : boothDataBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300NPKMDFCLGBJ_ = internalGetUnk3300NPKMDFCLGBJ();
-          result.unk3300NPKMDFCLGBJ_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.marketInfo_ = marketInfoBuilder_ == null
-              ? marketInfo_
-              : marketInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -950,23 +1059,20 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
         if (other == emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo.getDefaultInstance()) return this;
         internalGetMutableUnk3300PCIIGPJJHGF().mergeFrom(
             other.internalGetUnk3300PCIIGPJJHGF());
-        bitField0_ |= 0x00000001;
         if (other.getIsContentClosed() != false) {
           setIsContentClosed(other.getIsContentClosed());
         }
         internalGetMutableUnk3300EHHPFKIOKOO().mergeFrom(
             other.internalGetUnk3300EHHPFKIOKOO());
-        bitField0_ |= 0x00000004;
         if (other.hasBoothData()) {
           mergeBoothData(other.getBoothData());
         }
         internalGetMutableUnk3300NPKMDFCLGBJ().mergeFrom(
             other.internalGetUnk3300NPKMDFCLGBJ());
-        bitField0_ |= 0x00000010;
         if (other.hasMarketInfo()) {
           mergeMarketInfo(other.getMarketInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -981,76 +1087,17 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData>
-                unk3300NPKMDFCLGBJ__ = input.readMessage(
-                    Unk3300NPKMDFCLGBJDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableUnk3300NPKMDFCLGBJ().getMutableMap().put(
-                    unk3300NPKMDFCLGBJ__.getKey(), unk3300NPKMDFCLGBJ__.getValue());
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 18
-              case 74: {
-                input.readMessage(
-                    getBoothDataFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 74
-              case 82: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData>
-                unk3300EHHPFKIOKOO__ = input.readMessage(
-                    Unk3300EHHPFKIOKOODefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableUnk3300EHHPFKIOKOO().getMutableMap().put(
-                    unk3300EHHPFKIOKOO__.getKey(), unk3300EHHPFKIOKOO__.getValue());
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 82
-              case 90: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData>
-                unk3300PCIIGPJJHGF__ = input.readMessage(
-                    Unk3300PCIIGPJJHGFDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableUnk3300PCIIGPJJHGF().getMutableMap().put(
-                    unk3300PCIIGPJJHGF__.getKey(), unk3300PCIIGPJJHGF__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 90
-              case 104: {
-                isContentClosed_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              case 114: {
-                input.readMessage(
-                    getMarketInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1058,7 +1105,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData> unk3300PCIIGPJJHGF_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData>
-          internalGetUnk3300PCIIGPJJHGF() {
+      internalGetUnk3300PCIIGPJJHGF() {
         if (unk3300PCIIGPJJHGF_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300PCIIGPJJHGFDefaultEntryHolder.defaultEntry);
@@ -1066,7 +1113,8 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
         return unk3300PCIIGPJJHGF_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData>
-          internalGetMutableUnk3300PCIIGPJJHGF() {
+      internalGetMutableUnk3300PCIIGPJJHGF() {
+        onChanged();;
         if (unk3300PCIIGPJJHGF_ == null) {
           unk3300PCIIGPJJHGF_ = com.google.protobuf.MapField.newMapField(
               Unk3300PCIIGPJJHGFDefaultEntryHolder.defaultEntry);
@@ -1074,16 +1122,16 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
         if (!unk3300PCIIGPJJHGF_.isMutable()) {
           unk3300PCIIGPJJHGF_ = unk3300PCIIGPJJHGF_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return unk3300PCIIGPJJHGF_;
       }
+
       public int getUnk3300PCIIGPJJHGFCount() {
         return internalGetUnk3300PCIIGPJJHGF().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
        */
+
       @java.lang.Override
       public boolean containsUnk3300PCIIGPJJHGF(
           int key) {
@@ -1102,6 +1150,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
        * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData> getUnk3300PCIIGPJJHGFMap() {
         return internalGetUnk3300PCIIGPJJHGF().getMap();
       }
@@ -1109,11 +1158,10 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
        * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData getUnk3300PCIIGPJJHGFOrDefault(
+
+      public emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData getUnk3300PCIIGPJJHGFOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData defaultValue) {
+          emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData> map =
             internalGetUnk3300PCIIGPJJHGF().getMap();
@@ -1123,6 +1171,7 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
        * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData getUnk3300PCIIGPJJHGFOrThrow(
           int key) {
         
@@ -1133,8 +1182,8 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
         }
         return map.get(key);
       }
+
       public Builder clearUnk3300PCIIGPJJHGF() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableUnk3300PCIIGPJJHGF().getMutableMap()
             .clear();
         return this;
@@ -1142,6 +1191,7 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
       /**
        * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
        */
+
       public Builder removeUnk3300PCIIGPJJHGF(
           int key) {
         
@@ -1154,8 +1204,7 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData>
-          getMutableUnk3300PCIIGPJJHGF() {
-        bitField0_ |= 0x00000001;
+      getMutableUnk3300PCIIGPJJHGF() {
         return internalGetMutableUnk3300PCIIGPJJHGF().getMutableMap();
       }
       /**
@@ -1165,20 +1214,19 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
           int key,
           emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableUnk3300PCIIGPJJHGF().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .VintagePresentStageData&gt; Unk3300_PCIIGPJJHGF = 11;</code>
        */
+
       public Builder putAllUnk3300PCIIGPJJHGF(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData> values) {
         internalGetMutableUnk3300PCIIGPJJHGF().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -1199,7 +1247,6 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1208,7 +1255,7 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -1217,7 +1264,7 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData> unk3300EHHPFKIOKOO_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData>
-          internalGetUnk3300EHHPFKIOKOO() {
+      internalGetUnk3300EHHPFKIOKOO() {
         if (unk3300EHHPFKIOKOO_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300EHHPFKIOKOODefaultEntryHolder.defaultEntry);
@@ -1225,7 +1272,8 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
         return unk3300EHHPFKIOKOO_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData>
-          internalGetMutableUnk3300EHHPFKIOKOO() {
+      internalGetMutableUnk3300EHHPFKIOKOO() {
+        onChanged();;
         if (unk3300EHHPFKIOKOO_ == null) {
           unk3300EHHPFKIOKOO_ = com.google.protobuf.MapField.newMapField(
               Unk3300EHHPFKIOKOODefaultEntryHolder.defaultEntry);
@@ -1233,16 +1281,16 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
         if (!unk3300EHHPFKIOKOO_.isMutable()) {
           unk3300EHHPFKIOKOO_ = unk3300EHHPFKIOKOO_.copy();
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
         return unk3300EHHPFKIOKOO_;
       }
+
       public int getUnk3300EHHPFKIOKOOCount() {
         return internalGetUnk3300EHHPFKIOKOO().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
        */
+
       @java.lang.Override
       public boolean containsUnk3300EHHPFKIOKOO(
           int key) {
@@ -1261,6 +1309,7 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
        * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData> getUnk3300EHHPFKIOKOOMap() {
         return internalGetUnk3300EHHPFKIOKOO().getMap();
       }
@@ -1268,11 +1317,10 @@ emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData
        * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData getUnk3300EHHPFKIOKOOOrDefault(
+
+      public emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData getUnk3300EHHPFKIOKOOOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData defaultValue) {
+          emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData> map =
             internalGetUnk3300EHHPFKIOKOO().getMap();
@@ -1282,6 +1330,7 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
        * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData getUnk3300EHHPFKIOKOOOrThrow(
           int key) {
         
@@ -1292,8 +1341,8 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
         }
         return map.get(key);
       }
+
       public Builder clearUnk3300EHHPFKIOKOO() {
-        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableUnk3300EHHPFKIOKOO().getMutableMap()
             .clear();
         return this;
@@ -1301,6 +1350,7 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
       /**
        * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
        */
+
       public Builder removeUnk3300EHHPFKIOKOO(
           int key) {
         
@@ -1313,8 +1363,7 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData>
-          getMutableUnk3300EHHPFKIOKOO() {
-        bitField0_ |= 0x00000004;
+      getMutableUnk3300EHHPFKIOKOO() {
         return internalGetMutableUnk3300EHHPFKIOKOO().getMutableMap();
       }
       /**
@@ -1324,20 +1373,19 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
           int key,
           emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableUnk3300EHHPFKIOKOO().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, .VintageHuntingStageData&gt; Unk3300_EHHPFKIOKOO = 10;</code>
        */
+
       public Builder putAllUnk3300EHHPFKIOKOO(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData> values) {
         internalGetMutableUnk3300EHHPFKIOKOO().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000004;
         return this;
       }
 
@@ -1349,7 +1397,7 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
        * @return Whether the boothData field is set.
        */
       public boolean hasBoothData() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return boothDataBuilder_ != null || boothData_ != null;
       }
       /**
        * <code>.VintageBoothUsedItemData booth_data = 9;</code>
@@ -1371,11 +1419,11 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
             throw new NullPointerException();
           }
           boothData_ = value;
+          onChanged();
         } else {
           boothDataBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1385,11 +1433,11 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
           emu.gingerps.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemData.Builder builderForValue) {
         if (boothDataBuilder_ == null) {
           boothData_ = builderForValue.build();
+          onChanged();
         } else {
           boothDataBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1397,38 +1445,38 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
        */
       public Builder mergeBoothData(emu.gingerps.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemData value) {
         if (boothDataBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            boothData_ != null &&
-            boothData_ != emu.gingerps.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemData.getDefaultInstance()) {
-            getBoothDataBuilder().mergeFrom(value);
+          if (boothData_ != null) {
+            boothData_ =
+              emu.gingerps.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemData.newBuilder(boothData_).mergeFrom(value).buildPartial();
           } else {
             boothData_ = value;
           }
+          onChanged();
         } else {
           boothDataBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.VintageBoothUsedItemData booth_data = 9;</code>
        */
       public Builder clearBoothData() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        boothData_ = null;
-        if (boothDataBuilder_ != null) {
-          boothDataBuilder_.dispose();
+        if (boothDataBuilder_ == null) {
+          boothData_ = null;
+          onChanged();
+        } else {
+          boothData_ = null;
           boothDataBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.VintageBoothUsedItemData booth_data = 9;</code>
        */
       public emu.gingerps.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemData.Builder getBoothDataBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getBoothDataFieldBuilder().getBuilder();
       }
@@ -1463,7 +1511,7 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData> unk3300NPKMDFCLGBJ_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData>
-          internalGetUnk3300NPKMDFCLGBJ() {
+      internalGetUnk3300NPKMDFCLGBJ() {
         if (unk3300NPKMDFCLGBJ_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300NPKMDFCLGBJDefaultEntryHolder.defaultEntry);
@@ -1471,7 +1519,8 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
         return unk3300NPKMDFCLGBJ_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData>
-          internalGetMutableUnk3300NPKMDFCLGBJ() {
+      internalGetMutableUnk3300NPKMDFCLGBJ() {
+        onChanged();;
         if (unk3300NPKMDFCLGBJ_ == null) {
           unk3300NPKMDFCLGBJ_ = com.google.protobuf.MapField.newMapField(
               Unk3300NPKMDFCLGBJDefaultEntryHolder.defaultEntry);
@@ -1479,16 +1528,16 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
         if (!unk3300NPKMDFCLGBJ_.isMutable()) {
           unk3300NPKMDFCLGBJ_ = unk3300NPKMDFCLGBJ_.copy();
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
         return unk3300NPKMDFCLGBJ_;
       }
+
       public int getUnk3300NPKMDFCLGBJCount() {
         return internalGetUnk3300NPKMDFCLGBJ().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
        */
+
       @java.lang.Override
       public boolean containsUnk3300NPKMDFCLGBJ(
           int key) {
@@ -1507,6 +1556,7 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
        * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData> getUnk3300NPKMDFCLGBJMap() {
         return internalGetUnk3300NPKMDFCLGBJ().getMap();
       }
@@ -1514,11 +1564,10 @@ emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData
        * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData getUnk3300NPKMDFCLGBJOrDefault(
+
+      public emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData getUnk3300NPKMDFCLGBJOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData defaultValue) {
+          emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData> map =
             internalGetUnk3300NPKMDFCLGBJ().getMap();
@@ -1528,6 +1577,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
        * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData getUnk3300NPKMDFCLGBJOrThrow(
           int key) {
         
@@ -1538,8 +1588,8 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
         }
         return map.get(key);
       }
+
       public Builder clearUnk3300NPKMDFCLGBJ() {
-        bitField0_ = (bitField0_ & ~0x00000010);
         internalGetMutableUnk3300NPKMDFCLGBJ().getMutableMap()
             .clear();
         return this;
@@ -1547,6 +1597,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
       /**
        * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
        */
+
       public Builder removeUnk3300NPKMDFCLGBJ(
           int key) {
         
@@ -1559,8 +1610,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData>
-          getMutableUnk3300NPKMDFCLGBJ() {
-        bitField0_ |= 0x00000010;
+      getMutableUnk3300NPKMDFCLGBJ() {
         return internalGetMutableUnk3300NPKMDFCLGBJ().getMutableMap();
       }
       /**
@@ -1570,20 +1620,19 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
           int key,
           emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableUnk3300NPKMDFCLGBJ().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000010;
         return this;
       }
       /**
        * <code>map&lt;uint32, .VintageCampChallengeStageData&gt; Unk3300_NPKMDFCLGBJ = 2;</code>
        */
+
       public Builder putAllUnk3300NPKMDFCLGBJ(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData> values) {
         internalGetMutableUnk3300NPKMDFCLGBJ().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000010;
         return this;
       }
 
@@ -1595,7 +1644,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
        * @return Whether the marketInfo field is set.
        */
       public boolean hasMarketInfo() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return marketInfoBuilder_ != null || marketInfo_ != null;
       }
       /**
        * <code>.VintageMarketInfo market_info = 14;</code>
@@ -1617,11 +1666,11 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
             throw new NullPointerException();
           }
           marketInfo_ = value;
+          onChanged();
         } else {
           marketInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1631,11 +1680,11 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
           emu.gingerps.net.proto.VintageMarketInfoOuterClass.VintageMarketInfo.Builder builderForValue) {
         if (marketInfoBuilder_ == null) {
           marketInfo_ = builderForValue.build();
+          onChanged();
         } else {
           marketInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1643,38 +1692,38 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
        */
       public Builder mergeMarketInfo(emu.gingerps.net.proto.VintageMarketInfoOuterClass.VintageMarketInfo value) {
         if (marketInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            marketInfo_ != null &&
-            marketInfo_ != emu.gingerps.net.proto.VintageMarketInfoOuterClass.VintageMarketInfo.getDefaultInstance()) {
-            getMarketInfoBuilder().mergeFrom(value);
+          if (marketInfo_ != null) {
+            marketInfo_ =
+              emu.gingerps.net.proto.VintageMarketInfoOuterClass.VintageMarketInfo.newBuilder(marketInfo_).mergeFrom(value).buildPartial();
           } else {
             marketInfo_ = value;
           }
+          onChanged();
         } else {
           marketInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.VintageMarketInfo market_info = 14;</code>
        */
       public Builder clearMarketInfo() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        marketInfo_ = null;
-        if (marketInfoBuilder_ != null) {
-          marketInfoBuilder_.dispose();
+        if (marketInfoBuilder_ == null) {
+          marketInfo_ = null;
+          onChanged();
+        } else {
+          marketInfo_ = null;
           marketInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.VintageMarketInfo market_info = 14;</code>
        */
       public emu.gingerps.net.proto.VintageMarketInfoOuterClass.VintageMarketInfo.Builder getMarketInfoBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getMarketInfoFieldBuilder().getBuilder();
       }
@@ -1738,18 +1787,7 @@ emu.gingerps.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChalle
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new VintageActivityDetailInfo(input, extensionRegistry);
       }
     };
 

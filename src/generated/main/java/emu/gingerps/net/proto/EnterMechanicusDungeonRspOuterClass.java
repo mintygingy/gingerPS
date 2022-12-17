@@ -79,6 +79,63 @@ public final class EnterMechanicusDungeonRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EnterMechanicusDungeonRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 80: {
+
+              dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 104: {
+
+              wrongUid_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              difficultLevel_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EnterMechanicusDungeonRspOuterClass.internal_static_EnterMechanicusDungeonRsp_descriptor;
@@ -93,7 +150,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
     }
 
     public static final int WRONG_UID_FIELD_NUMBER = 13;
-    private int wrongUid_ = 0;
+    private int wrongUid_;
     /**
      * <code>uint32 wrong_uid = 13;</code>
      * @return The wrongUid.
@@ -104,7 +161,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
     }
 
     public static final int DIFFICULT_LEVEL_FIELD_NUMBER = 15;
-    private int difficultLevel_ = 0;
+    private int difficultLevel_;
     /**
      * <code>uint32 difficult_level = 15;</code>
      * @return The difficultLevel.
@@ -115,7 +172,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
@@ -126,7 +183,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 10;
-    private int dungeonId_ = 0;
+    private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 10;</code>
      * @return The dungeonId.
@@ -162,7 +219,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
       if (difficultLevel_ != 0) {
         output.writeUInt32(15, difficultLevel_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +244,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, difficultLevel_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +267,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
           != other.getRetcode()) return false;
       if (getDungeonId()
           != other.getDungeonId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -229,7 +286,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDungeonId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -356,22 +413,30 @@ public final class EnterMechanicusDungeonRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.EnterMechanicusDungeonRspOuterClass.EnterMechanicusDungeonRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         wrongUid_ = 0;
+
         difficultLevel_ = 0;
+
         retcode_ = 0;
+
         dungeonId_ = 0;
+
         return this;
       }
 
@@ -398,25 +463,12 @@ public final class EnterMechanicusDungeonRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EnterMechanicusDungeonRspOuterClass.EnterMechanicusDungeonRsp buildPartial() {
         emu.gingerps.net.proto.EnterMechanicusDungeonRspOuterClass.EnterMechanicusDungeonRsp result = new emu.gingerps.net.proto.EnterMechanicusDungeonRspOuterClass.EnterMechanicusDungeonRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.wrongUid_ = wrongUid_;
+        result.difficultLevel_ = difficultLevel_;
+        result.retcode_ = retcode_;
+        result.dungeonId_ = dungeonId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EnterMechanicusDungeonRspOuterClass.EnterMechanicusDungeonRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.wrongUid_ = wrongUid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.difficultLevel_ = difficultLevel_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.dungeonId_ = dungeonId_;
-        }
       }
 
       @java.lang.Override
@@ -475,7 +527,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
         if (other.getDungeonId() != 0) {
           setDungeonId(other.getDungeonId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,53 +542,19 @@ public final class EnterMechanicusDungeonRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EnterMechanicusDungeonRspOuterClass.EnterMechanicusDungeonRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 80: {
-                dungeonId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 80
-              case 96: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              case 104: {
-                wrongUid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              case 120: {
-                difficultLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EnterMechanicusDungeonRspOuterClass.EnterMechanicusDungeonRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int wrongUid_ ;
       /**
@@ -555,7 +573,6 @@ public final class EnterMechanicusDungeonRspOuterClass {
       public Builder setWrongUid(int value) {
         
         wrongUid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -564,7 +581,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWrongUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         wrongUid_ = 0;
         onChanged();
         return this;
@@ -587,7 +604,6 @@ public final class EnterMechanicusDungeonRspOuterClass {
       public Builder setDifficultLevel(int value) {
         
         difficultLevel_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -596,7 +612,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficultLevel() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         difficultLevel_ = 0;
         onChanged();
         return this;
@@ -619,7 +635,6 @@ public final class EnterMechanicusDungeonRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -628,7 +643,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -651,7 +666,6 @@ public final class EnterMechanicusDungeonRspOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -660,7 +674,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -698,18 +712,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EnterMechanicusDungeonRsp(input, extensionRegistry);
       }
     };
 

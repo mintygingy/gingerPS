@@ -68,6 +68,53 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ChangeWidgetBackgroundActiveStateReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              isActive_ = input.readBool();
+              break;
+            }
+            case 104: {
+
+              materialId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChangeWidgetBackgroundActiveStateReqOuterClass.internal_static_ChangeWidgetBackgroundActiveStateReq_descriptor;
@@ -82,7 +129,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
     }
 
     public static final int IS_ACTIVE_FIELD_NUMBER = 6;
-    private boolean isActive_ = false;
+    private boolean isActive_;
     /**
      * <code>bool is_active = 6;</code>
      * @return The isActive.
@@ -93,7 +140,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
     }
 
     public static final int MATERIAL_ID_FIELD_NUMBER = 13;
-    private int materialId_ = 0;
+    private int materialId_;
     /**
      * <code>uint32 material_id = 13;</code>
      * @return The materialId.
@@ -123,7 +170,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
       if (materialId_ != 0) {
         output.writeUInt32(13, materialId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, materialId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
           != other.getIsActive()) return false;
       if (getMaterialId()
           != other.getMaterialId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -175,7 +222,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
           getIsActive());
       hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMaterialId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -303,20 +350,26 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChangeWidgetBackgroundActiveStateReqOuterClass.ChangeWidgetBackgroundActiveStateReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isActive_ = false;
+
         materialId_ = 0;
+
         return this;
       }
 
@@ -343,19 +396,10 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChangeWidgetBackgroundActiveStateReqOuterClass.ChangeWidgetBackgroundActiveStateReq buildPartial() {
         emu.gingerps.net.proto.ChangeWidgetBackgroundActiveStateReqOuterClass.ChangeWidgetBackgroundActiveStateReq result = new emu.gingerps.net.proto.ChangeWidgetBackgroundActiveStateReqOuterClass.ChangeWidgetBackgroundActiveStateReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isActive_ = isActive_;
+        result.materialId_ = materialId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ChangeWidgetBackgroundActiveStateReqOuterClass.ChangeWidgetBackgroundActiveStateReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isActive_ = isActive_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.materialId_ = materialId_;
-        }
       }
 
       @java.lang.Override
@@ -408,7 +452,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
         if (other.getMaterialId() != 0) {
           setMaterialId(other.getMaterialId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -423,43 +467,19 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ChangeWidgetBackgroundActiveStateReqOuterClass.ChangeWidgetBackgroundActiveStateReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                isActive_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 104: {
-                materialId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ChangeWidgetBackgroundActiveStateReqOuterClass.ChangeWidgetBackgroundActiveStateReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isActive_ ;
       /**
@@ -478,7 +498,6 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
       public Builder setIsActive(boolean value) {
         
         isActive_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -487,7 +506,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsActive() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isActive_ = false;
         onChanged();
         return this;
@@ -510,7 +529,6 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
       public Builder setMaterialId(int value) {
         
         materialId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -519,7 +537,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         materialId_ = 0;
         onChanged();
         return this;
@@ -557,18 +575,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ChangeWidgetBackgroundActiveStateReq(input, extensionRegistry);
       }
     };
 

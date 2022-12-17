@@ -123,6 +123,114 @@ public final class ExpeditionPathInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ExpeditionPathInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              unk3300LFIFDGAGFDC_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              unk3300AIEJKADFLKG_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              unk3300AFGPGIIGAKA_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                avatarIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              avatarIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                avatarIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                avatarIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
+
+              challengeId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              startTime_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              pathId_ = input.readUInt32();
+              break;
+            }
+            case 101: {
+
+              bonusProbability_ = input.readFloat();
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
+            case 112: {
+
+              unk3300LKAHOEBNBBI_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          avatarIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.internal_static_ExpeditionPathInfo_descriptor;
@@ -137,7 +245,7 @@ public final class ExpeditionPathInfoOuterClass {
     }
 
     public static final int START_TIME_FIELD_NUMBER = 10;
-    private int startTime_ = 0;
+    private int startTime_;
     /**
      * <code>uint32 start_time = 10;</code>
      * @return The startTime.
@@ -148,7 +256,7 @@ public final class ExpeditionPathInfoOuterClass {
     }
 
     public static final int BONUS_PROBABILITY_FIELD_NUMBER = 12;
-    private float bonusProbability_ = 0F;
+    private float bonusProbability_;
     /**
      * <code>float bonus_probability = 12;</code>
      * @return The bonusProbability.
@@ -159,7 +267,6 @@ public final class ExpeditionPathInfoOuterClass {
     }
 
     public static final int AVATAR_ID_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList avatarIdList_;
     /**
      * <code>repeated uint32 avatar_id_list = 8;</code>
@@ -188,7 +295,7 @@ public final class ExpeditionPathInfoOuterClass {
     private int avatarIdListMemoizedSerializedSize = -1;
 
     public static final int PATH_ID_FIELD_NUMBER = 11;
-    private int pathId_ = 0;
+    private int pathId_;
     /**
      * <code>uint32 path_id = 11;</code>
      * @return The pathId.
@@ -199,7 +306,7 @@ public final class ExpeditionPathInfoOuterClass {
     }
 
     public static final int UNK3300_AIEJKADFLKG_FIELD_NUMBER = 6;
-    private int unk3300AIEJKADFLKG_ = 0;
+    private int unk3300AIEJKADFLKG_;
     /**
      * <code>uint32 Unk3300_AIEJKADFLKG = 6;</code>
      * @return The unk3300AIEJKADFLKG.
@@ -210,7 +317,7 @@ public final class ExpeditionPathInfoOuterClass {
     }
 
     public static final int UNK3300_LKAHOEBNBBI_FIELD_NUMBER = 14;
-    private int unk3300LKAHOEBNBBI_ = 0;
+    private int unk3300LKAHOEBNBBI_;
     /**
      * <code>uint32 Unk3300_LKAHOEBNBBI = 14;</code>
      * @return The unk3300LKAHOEBNBBI.
@@ -221,7 +328,7 @@ public final class ExpeditionPathInfoOuterClass {
     }
 
     public static final int UNK3300_AFGPGIIGAKA_FIELD_NUMBER = 7;
-    private int unk3300AFGPGIIGAKA_ = 0;
+    private int unk3300AFGPGIIGAKA_;
     /**
      * <code>uint32 Unk3300_AFGPGIIGAKA = 7;</code>
      * @return The unk3300AFGPGIIGAKA.
@@ -232,7 +339,7 @@ public final class ExpeditionPathInfoOuterClass {
     }
 
     public static final int UNK3300_LFIFDGAGFDC_FIELD_NUMBER = 5;
-    private int unk3300LFIFDGAGFDC_ = 0;
+    private int unk3300LFIFDGAGFDC_;
     /**
      * <code>uint32 Unk3300_LFIFDGAGFDC = 5;</code>
      * @return The unk3300LFIFDGAGFDC.
@@ -243,7 +350,7 @@ public final class ExpeditionPathInfoOuterClass {
     }
 
     public static final int STATE_FIELD_NUMBER = 13;
-    private int state_ = 0;
+    private int state_;
     /**
      * <code>.ExpeditionState state = 13;</code>
      * @return The enum numeric value on the wire for state.
@@ -256,12 +363,13 @@ public final class ExpeditionPathInfoOuterClass {
      * @return The state.
      */
     @java.lang.Override public emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState getState() {
-      emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState result = emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState.forNumber(state_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState result = emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState.valueOf(state_);
       return result == null ? emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState.UNRECOGNIZED : result;
     }
 
     public static final int CHALLENGE_ID_FIELD_NUMBER = 9;
-    private int challengeId_ = 0;
+    private int challengeId_;
     /**
      * <code>uint32 challenge_id = 9;</code>
      * @return The challengeId.
@@ -311,7 +419,7 @@ public final class ExpeditionPathInfoOuterClass {
       if (pathId_ != 0) {
         output.writeUInt32(11, pathId_);
       }
-      if (java.lang.Float.floatToRawIntBits(bonusProbability_) != 0) {
+      if (bonusProbability_ != 0F) {
         output.writeFloat(12, bonusProbability_);
       }
       if (state_ != emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState.EXPEDITION_STATE_NONE.getNumber()) {
@@ -320,7 +428,7 @@ public final class ExpeditionPathInfoOuterClass {
       if (unk3300LKAHOEBNBBI_ != 0) {
         output.writeUInt32(14, unk3300LKAHOEBNBBI_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -367,7 +475,7 @@ public final class ExpeditionPathInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, pathId_);
       }
-      if (java.lang.Float.floatToRawIntBits(bonusProbability_) != 0) {
+      if (bonusProbability_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(12, bonusProbability_);
       }
@@ -379,7 +487,7 @@ public final class ExpeditionPathInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, unk3300LKAHOEBNBBI_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -414,7 +522,7 @@ public final class ExpeditionPathInfoOuterClass {
       if (state_ != other.state_) return false;
       if (getChallengeId()
           != other.getChallengeId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -448,7 +556,7 @@ public final class ExpeditionPathInfoOuterClass {
       hash = (53 * hash) + state_;
       hash = (37 * hash) + CHALLENGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -565,28 +673,42 @@ public final class ExpeditionPathInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         startTime_ = 0;
+
         bonusProbability_ = 0F;
+
         avatarIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         pathId_ = 0;
+
         unk3300AIEJKADFLKG_ = 0;
+
         unk3300LKAHOEBNBBI_ = 0;
+
         unk3300AFGPGIIGAKA_ = 0;
+
         unk3300LFIFDGAGFDC_ = 0;
+
         state_ = 0;
+
         challengeId_ = 0;
+
         return this;
       }
 
@@ -613,49 +735,23 @@ public final class ExpeditionPathInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo buildPartial() {
         emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo result = new emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.startTime_ = startTime_;
+        result.bonusProbability_ = bonusProbability_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           avatarIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.avatarIdList_ = avatarIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.startTime_ = startTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.bonusProbability_ = bonusProbability_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.pathId_ = pathId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300AIEJKADFLKG_ = unk3300AIEJKADFLKG_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.unk3300LKAHOEBNBBI_ = unk3300LKAHOEBNBBI_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.unk3300AFGPGIIGAKA_ = unk3300AFGPGIIGAKA_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.unk3300LFIFDGAGFDC_ = unk3300LFIFDGAGFDC_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.state_ = state_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.challengeId_ = challengeId_;
-        }
+        result.pathId_ = pathId_;
+        result.unk3300AIEJKADFLKG_ = unk3300AIEJKADFLKG_;
+        result.unk3300LKAHOEBNBBI_ = unk3300LKAHOEBNBBI_;
+        result.unk3300AFGPGIIGAKA_ = unk3300AFGPGIIGAKA_;
+        result.unk3300LFIFDGAGFDC_ = unk3300LFIFDGAGFDC_;
+        result.state_ = state_;
+        result.challengeId_ = challengeId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -711,7 +807,7 @@ public final class ExpeditionPathInfoOuterClass {
         if (!other.avatarIdList_.isEmpty()) {
           if (avatarIdList_.isEmpty()) {
             avatarIdList_ = other.avatarIdList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAvatarIdListIsMutable();
             avatarIdList_.addAll(other.avatarIdList_);
@@ -739,7 +835,7 @@ public final class ExpeditionPathInfoOuterClass {
         if (other.getChallengeId() != 0) {
           setChallengeId(other.getChallengeId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -754,91 +850,17 @@ public final class ExpeditionPathInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                unk3300LFIFDGAGFDC_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 40
-              case 48: {
-                unk3300AIEJKADFLKG_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 48
-              case 56: {
-                unk3300AFGPGIIGAKA_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              case 64: {
-                int v = input.readUInt32();
-                ensureAvatarIdListIsMutable();
-                avatarIdList_.addInt(v);
-                break;
-              } // case 64
-              case 66: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureAvatarIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  avatarIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 66
-              case 72: {
-                challengeId_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 72
-              case 80: {
-                startTime_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 88: {
-                pathId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 88
-              case 101: {
-                bonusProbability_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 101
-              case 104: {
-                state_ = input.readEnum();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 104
-              case 112: {
-                unk3300LKAHOEBNBBI_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -860,7 +882,6 @@ public final class ExpeditionPathInfoOuterClass {
       public Builder setStartTime(int value) {
         
         startTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -869,7 +890,7 @@ public final class ExpeditionPathInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         startTime_ = 0;
         onChanged();
         return this;
@@ -892,7 +913,6 @@ public final class ExpeditionPathInfoOuterClass {
       public Builder setBonusProbability(float value) {
         
         bonusProbability_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -901,7 +921,7 @@ public final class ExpeditionPathInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBonusProbability() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         bonusProbability_ = 0F;
         onChanged();
         return this;
@@ -909,10 +929,10 @@ public final class ExpeditionPathInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList avatarIdList_ = emptyIntList();
       private void ensureAvatarIdListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           avatarIdList_ = mutableCopy(avatarIdList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 avatar_id_list = 8;</code>
@@ -920,7 +940,7 @@ public final class ExpeditionPathInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getAvatarIdListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(avatarIdList_) : avatarIdList_;
       }
       /**
@@ -946,7 +966,6 @@ public final class ExpeditionPathInfoOuterClass {
        */
       public Builder setAvatarIdList(
           int index, int value) {
-        
         ensureAvatarIdListIsMutable();
         avatarIdList_.setInt(index, value);
         onChanged();
@@ -958,7 +977,6 @@ public final class ExpeditionPathInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAvatarIdList(int value) {
-        
         ensureAvatarIdListIsMutable();
         avatarIdList_.addInt(value);
         onChanged();
@@ -983,7 +1001,7 @@ public final class ExpeditionPathInfoOuterClass {
        */
       public Builder clearAvatarIdList() {
         avatarIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1005,7 +1023,6 @@ public final class ExpeditionPathInfoOuterClass {
       public Builder setPathId(int value) {
         
         pathId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1014,7 +1031,7 @@ public final class ExpeditionPathInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPathId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         pathId_ = 0;
         onChanged();
         return this;
@@ -1037,7 +1054,6 @@ public final class ExpeditionPathInfoOuterClass {
       public Builder setUnk3300AIEJKADFLKG(int value) {
         
         unk3300AIEJKADFLKG_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1046,7 +1062,7 @@ public final class ExpeditionPathInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AIEJKADFLKG() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300AIEJKADFLKG_ = 0;
         onChanged();
         return this;
@@ -1069,7 +1085,6 @@ public final class ExpeditionPathInfoOuterClass {
       public Builder setUnk3300LKAHOEBNBBI(int value) {
         
         unk3300LKAHOEBNBBI_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1078,7 +1093,7 @@ public final class ExpeditionPathInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LKAHOEBNBBI() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         unk3300LKAHOEBNBBI_ = 0;
         onChanged();
         return this;
@@ -1101,7 +1116,6 @@ public final class ExpeditionPathInfoOuterClass {
       public Builder setUnk3300AFGPGIIGAKA(int value) {
         
         unk3300AFGPGIIGAKA_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1110,7 +1124,7 @@ public final class ExpeditionPathInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AFGPGIIGAKA() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         unk3300AFGPGIIGAKA_ = 0;
         onChanged();
         return this;
@@ -1133,7 +1147,6 @@ public final class ExpeditionPathInfoOuterClass {
       public Builder setUnk3300LFIFDGAGFDC(int value) {
         
         unk3300LFIFDGAGFDC_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1142,7 +1155,7 @@ public final class ExpeditionPathInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LFIFDGAGFDC() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         unk3300LFIFDGAGFDC_ = 0;
         onChanged();
         return this;
@@ -1162,8 +1175,8 @@ public final class ExpeditionPathInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
+        
         state_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1173,7 +1186,8 @@ public final class ExpeditionPathInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState getState() {
-        emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState result = emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState.forNumber(state_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState result = emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState.valueOf(state_);
         return result == null ? emu.gingerps.net.proto.ExpeditionStateOuterClass.ExpeditionState.UNRECOGNIZED : result;
       }
       /**
@@ -1185,7 +1199,7 @@ public final class ExpeditionPathInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000100;
+        
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -1195,7 +1209,7 @@ public final class ExpeditionPathInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         state_ = 0;
         onChanged();
         return this;
@@ -1218,7 +1232,6 @@ public final class ExpeditionPathInfoOuterClass {
       public Builder setChallengeId(int value) {
         
         challengeId_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1227,7 +1240,7 @@ public final class ExpeditionPathInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeId() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         challengeId_ = 0;
         onChanged();
         return this;
@@ -1265,18 +1278,7 @@ public final class ExpeditionPathInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ExpeditionPathInfo(input, extensionRegistry);
       }
     };
 

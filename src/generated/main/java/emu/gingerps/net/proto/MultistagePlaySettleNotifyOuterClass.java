@@ -114,6 +114,95 @@ public final class MultistagePlaySettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MultistagePlaySettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              groupId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              playIndex_ = input.readUInt32();
+              break;
+            }
+            case 4098: {
+              emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo.Builder subBuilder = null;
+              if (detailCase_ == 512) {
+                subBuilder = ((emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 512;
+              break;
+            }
+            case 4162: {
+              emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.InBattleIrodoriChessSettleInfo.Builder subBuilder = null;
+              if (detailCase_ == 520) {
+                subBuilder = ((emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.InBattleIrodoriChessSettleInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.InBattleIrodoriChessSettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.InBattleIrodoriChessSettleInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 520;
+              break;
+            }
+            case 5194: {
+              emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo.Builder subBuilder = null;
+              if (detailCase_ == 649) {
+                subBuilder = ((emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 649;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MultistagePlaySettleNotifyOuterClass.internal_static_MultistagePlaySettleNotify_descriptor;
@@ -171,7 +260,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 3;
-    private int groupId_ = 0;
+    private int groupId_;
     /**
      * <code>uint32 group_id = 3;</code>
      * @return The groupId.
@@ -182,7 +271,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
     }
 
     public static final int PLAY_INDEX_FIELD_NUMBER = 9;
-    private int playIndex_ = 0;
+    private int playIndex_;
     /**
      * <code>uint32 play_index = 9;</code>
      * @return The playIndex.
@@ -314,7 +403,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
       if (detailCase_ == 649) {
         output.writeMessage(649, (emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo) detail_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -343,7 +432,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(649, (emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo) detail_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -379,7 +468,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -410,7 +499,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -537,29 +626,26 @@ public final class MultistagePlaySettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MultistagePlaySettleNotifyOuterClass.MultistagePlaySettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         groupId_ = 0;
+
         playIndex_ = 0;
-        if (mechanicusSettleInfoBuilder_ != null) {
-          mechanicusSettleInfoBuilder_.clear();
-        }
-        if (chessSettleInfoBuilder_ != null) {
-          chessSettleInfoBuilder_.clear();
-        }
-        if (irodoriChessSettleInfoBuilder_ != null) {
-          irodoriChessSettleInfoBuilder_.clear();
-        }
+
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -588,37 +674,32 @@ public final class MultistagePlaySettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MultistagePlaySettleNotifyOuterClass.MultistagePlaySettleNotify buildPartial() {
         emu.gingerps.net.proto.MultistagePlaySettleNotifyOuterClass.MultistagePlaySettleNotify result = new emu.gingerps.net.proto.MultistagePlaySettleNotifyOuterClass.MultistagePlaySettleNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        result.groupId_ = groupId_;
+        result.playIndex_ = playIndex_;
+        if (detailCase_ == 649) {
+          if (mechanicusSettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = mechanicusSettleInfoBuilder_.build();
+          }
+        }
+        if (detailCase_ == 512) {
+          if (chessSettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = chessSettleInfoBuilder_.build();
+          }
+        }
+        if (detailCase_ == 520) {
+          if (irodoriChessSettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = irodoriChessSettleInfoBuilder_.build();
+          }
+        }
+        result.detailCase_ = detailCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MultistagePlaySettleNotifyOuterClass.MultistagePlaySettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.groupId_ = groupId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.playIndex_ = playIndex_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.MultistagePlaySettleNotifyOuterClass.MultistagePlaySettleNotify result) {
-        result.detailCase_ = detailCase_;
-        result.detail_ = this.detail_;
-        if (detailCase_ == 649 &&
-            mechanicusSettleInfoBuilder_ != null) {
-          result.detail_ = mechanicusSettleInfoBuilder_.build();
-        }
-        if (detailCase_ == 512 &&
-            chessSettleInfoBuilder_ != null) {
-          result.detail_ = chessSettleInfoBuilder_.build();
-        }
-        if (detailCase_ == 520 &&
-            irodoriChessSettleInfoBuilder_ != null) {
-          result.detail_ = irodoriChessSettleInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -688,7 +769,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -703,61 +784,17 @@ public final class MultistagePlaySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MultistagePlaySettleNotifyOuterClass.MultistagePlaySettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                groupId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 72: {
-                playIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 4098: {
-                input.readMessage(
-                    getChessSettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 512;
-                break;
-              } // case 4098
-              case 4162: {
-                input.readMessage(
-                    getIrodoriChessSettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 520;
-                break;
-              } // case 4162
-              case 5194: {
-                input.readMessage(
-                    getMechanicusSettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 649;
-                break;
-              } // case 5194
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MultistagePlaySettleNotifyOuterClass.MultistagePlaySettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int detailCase_ = 0;
@@ -775,7 +812,6 @@ public final class MultistagePlaySettleNotifyOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private int groupId_ ;
       /**
@@ -794,7 +830,6 @@ public final class MultistagePlaySettleNotifyOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -803,7 +838,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         groupId_ = 0;
         onChanged();
         return this;
@@ -826,7 +861,6 @@ public final class MultistagePlaySettleNotifyOuterClass {
       public Builder setPlayIndex(int value) {
         
         playIndex_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -835,7 +869,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayIndex() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         playIndex_ = 0;
         onChanged();
         return this;
@@ -915,9 +949,8 @@ public final class MultistagePlaySettleNotifyOuterClass {
         } else {
           if (detailCase_ == 649) {
             mechanicusSettleInfoBuilder_.mergeFrom(value);
-          } else {
-            mechanicusSettleInfoBuilder_.setMessage(value);
           }
+          mechanicusSettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 649;
         return this;
@@ -979,7 +1012,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
           detail_ = null;
         }
         detailCase_ = 649;
-        onChanged();
+        onChanged();;
         return mechanicusSettleInfoBuilder_;
       }
 
@@ -1057,9 +1090,8 @@ public final class MultistagePlaySettleNotifyOuterClass {
         } else {
           if (detailCase_ == 512) {
             chessSettleInfoBuilder_.mergeFrom(value);
-          } else {
-            chessSettleInfoBuilder_.setMessage(value);
           }
+          chessSettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 512;
         return this;
@@ -1121,7 +1153,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
           detail_ = null;
         }
         detailCase_ = 512;
-        onChanged();
+        onChanged();;
         return chessSettleInfoBuilder_;
       }
 
@@ -1199,9 +1231,8 @@ public final class MultistagePlaySettleNotifyOuterClass {
         } else {
           if (detailCase_ == 520) {
             irodoriChessSettleInfoBuilder_.mergeFrom(value);
-          } else {
-            irodoriChessSettleInfoBuilder_.setMessage(value);
           }
+          irodoriChessSettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 520;
         return this;
@@ -1263,7 +1294,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
           detail_ = null;
         }
         detailCase_ = 520;
-        onChanged();
+        onChanged();;
         return irodoriChessSettleInfoBuilder_;
       }
       @java.lang.Override
@@ -1299,18 +1330,7 @@ public final class MultistagePlaySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MultistagePlaySettleNotify(input, extensionRegistry);
       }
     };
 

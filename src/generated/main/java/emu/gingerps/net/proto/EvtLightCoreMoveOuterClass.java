@@ -84,6 +84,76 @@ public final class EvtLightCoreMoveOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtLightCoreMove(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+
+              unk3300BLNIJMMNAGH_ = input.readFloat();
+              break;
+            }
+            case 37: {
+
+              speed_ = input.readFloat();
+              break;
+            }
+            case 45: {
+
+              unk3300NHPEDPJMCOL_ = input.readFloat();
+              break;
+            }
+            case 90: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (targetPos_ != null) {
+                subBuilder = targetPos_.toBuilder();
+              }
+              targetPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetPos_);
+                targetPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 96: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtLightCoreMoveOuterClass.internal_static_EvtLightCoreMove_descriptor;
@@ -98,7 +168,7 @@ public final class EvtLightCoreMoveOuterClass {
     }
 
     public static final int SPEED_FIELD_NUMBER = 4;
-    private float speed_ = 0F;
+    private float speed_;
     /**
      * <code>float speed = 4;</code>
      * @return The speed.
@@ -109,7 +179,7 @@ public final class EvtLightCoreMoveOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 12;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 12;</code>
      * @return The entityId.
@@ -120,7 +190,7 @@ public final class EvtLightCoreMoveOuterClass {
     }
 
     public static final int UNK3300_BLNIJMMNAGH_FIELD_NUMBER = 1;
-    private float unk3300BLNIJMMNAGH_ = 0F;
+    private float unk3300BLNIJMMNAGH_;
     /**
      * <code>float Unk3300_BLNIJMMNAGH = 1;</code>
      * @return The unk3300BLNIJMMNAGH.
@@ -131,7 +201,7 @@ public final class EvtLightCoreMoveOuterClass {
     }
 
     public static final int UNK3300_NHPEDPJMCOL_FIELD_NUMBER = 5;
-    private float unk3300NHPEDPJMCOL_ = 0F;
+    private float unk3300NHPEDPJMCOL_;
     /**
      * <code>float Unk3300_NHPEDPJMCOL = 5;</code>
      * @return The unk3300NHPEDPJMCOL.
@@ -164,7 +234,7 @@ public final class EvtLightCoreMoveOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getTargetPosOrBuilder() {
-      return targetPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : targetPos_;
+      return getTargetPos();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -181,13 +251,13 @@ public final class EvtLightCoreMoveOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Float.floatToRawIntBits(unk3300BLNIJMMNAGH_) != 0) {
+      if (unk3300BLNIJMMNAGH_ != 0F) {
         output.writeFloat(1, unk3300BLNIJMMNAGH_);
       }
-      if (java.lang.Float.floatToRawIntBits(speed_) != 0) {
+      if (speed_ != 0F) {
         output.writeFloat(4, speed_);
       }
-      if (java.lang.Float.floatToRawIntBits(unk3300NHPEDPJMCOL_) != 0) {
+      if (unk3300NHPEDPJMCOL_ != 0F) {
         output.writeFloat(5, unk3300NHPEDPJMCOL_);
       }
       if (targetPos_ != null) {
@@ -196,7 +266,7 @@ public final class EvtLightCoreMoveOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(12, entityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -205,15 +275,15 @@ public final class EvtLightCoreMoveOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Float.floatToRawIntBits(unk3300BLNIJMMNAGH_) != 0) {
+      if (unk3300BLNIJMMNAGH_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, unk3300BLNIJMMNAGH_);
       }
-      if (java.lang.Float.floatToRawIntBits(speed_) != 0) {
+      if (speed_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, speed_);
       }
-      if (java.lang.Float.floatToRawIntBits(unk3300NHPEDPJMCOL_) != 0) {
+      if (unk3300NHPEDPJMCOL_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, unk3300NHPEDPJMCOL_);
       }
@@ -225,7 +295,7 @@ public final class EvtLightCoreMoveOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, entityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -256,7 +326,7 @@ public final class EvtLightCoreMoveOuterClass {
         if (!getTargetPos()
             .equals(other.getTargetPos())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -282,7 +352,7 @@ public final class EvtLightCoreMoveOuterClass {
         hash = (37 * hash) + TARGET_POS_FIELD_NUMBER;
         hash = (53 * hash) + getTargetPos().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -399,25 +469,34 @@ public final class EvtLightCoreMoveOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtLightCoreMoveOuterClass.EvtLightCoreMove.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         speed_ = 0F;
+
         entityId_ = 0;
+
         unk3300BLNIJMMNAGH_ = 0F;
+
         unk3300NHPEDPJMCOL_ = 0F;
-        targetPos_ = null;
-        if (targetPosBuilder_ != null) {
-          targetPosBuilder_.dispose();
+
+        if (targetPosBuilder_ == null) {
+          targetPos_ = null;
+        } else {
+          targetPos_ = null;
           targetPosBuilder_ = null;
         }
         return this;
@@ -446,30 +525,17 @@ public final class EvtLightCoreMoveOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtLightCoreMoveOuterClass.EvtLightCoreMove buildPartial() {
         emu.gingerps.net.proto.EvtLightCoreMoveOuterClass.EvtLightCoreMove result = new emu.gingerps.net.proto.EvtLightCoreMoveOuterClass.EvtLightCoreMove(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.speed_ = speed_;
+        result.entityId_ = entityId_;
+        result.unk3300BLNIJMMNAGH_ = unk3300BLNIJMMNAGH_;
+        result.unk3300NHPEDPJMCOL_ = unk3300NHPEDPJMCOL_;
+        if (targetPosBuilder_ == null) {
+          result.targetPos_ = targetPos_;
+        } else {
+          result.targetPos_ = targetPosBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtLightCoreMoveOuterClass.EvtLightCoreMove result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.speed_ = speed_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300BLNIJMMNAGH_ = unk3300BLNIJMMNAGH_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300NHPEDPJMCOL_ = unk3300NHPEDPJMCOL_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.targetPos_ = targetPosBuilder_ == null
-              ? targetPos_
-              : targetPosBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -531,7 +597,7 @@ public final class EvtLightCoreMoveOuterClass {
         if (other.hasTargetPos()) {
           mergeTargetPos(other.getTargetPos());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -546,60 +612,19 @@ public final class EvtLightCoreMoveOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtLightCoreMoveOuterClass.EvtLightCoreMove parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                unk3300BLNIJMMNAGH_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 13
-              case 37: {
-                speed_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 37
-              case 45: {
-                unk3300NHPEDPJMCOL_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 45
-              case 90: {
-                input.readMessage(
-                    getTargetPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 90
-              case 96: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtLightCoreMoveOuterClass.EvtLightCoreMove) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private float speed_ ;
       /**
@@ -618,7 +643,6 @@ public final class EvtLightCoreMoveOuterClass {
       public Builder setSpeed(float value) {
         
         speed_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -627,7 +651,7 @@ public final class EvtLightCoreMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSpeed() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         speed_ = 0F;
         onChanged();
         return this;
@@ -650,7 +674,6 @@ public final class EvtLightCoreMoveOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -659,7 +682,7 @@ public final class EvtLightCoreMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -682,7 +705,6 @@ public final class EvtLightCoreMoveOuterClass {
       public Builder setUnk3300BLNIJMMNAGH(float value) {
         
         unk3300BLNIJMMNAGH_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -691,7 +713,7 @@ public final class EvtLightCoreMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BLNIJMMNAGH() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300BLNIJMMNAGH_ = 0F;
         onChanged();
         return this;
@@ -714,7 +736,6 @@ public final class EvtLightCoreMoveOuterClass {
       public Builder setUnk3300NHPEDPJMCOL(float value) {
         
         unk3300NHPEDPJMCOL_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -723,7 +744,7 @@ public final class EvtLightCoreMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NHPEDPJMCOL() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300NHPEDPJMCOL_ = 0F;
         onChanged();
         return this;
@@ -737,7 +758,7 @@ public final class EvtLightCoreMoveOuterClass {
        * @return Whether the targetPos field is set.
        */
       public boolean hasTargetPos() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return targetPosBuilder_ != null || targetPos_ != null;
       }
       /**
        * <code>.Vector target_pos = 11;</code>
@@ -759,11 +780,11 @@ public final class EvtLightCoreMoveOuterClass {
             throw new NullPointerException();
           }
           targetPos_ = value;
+          onChanged();
         } else {
           targetPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -773,11 +794,11 @@ public final class EvtLightCoreMoveOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (targetPosBuilder_ == null) {
           targetPos_ = builderForValue.build();
+          onChanged();
         } else {
           targetPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -785,38 +806,38 @@ public final class EvtLightCoreMoveOuterClass {
        */
       public Builder mergeTargetPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (targetPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            targetPos_ != null &&
-            targetPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getTargetPosBuilder().mergeFrom(value);
+          if (targetPos_ != null) {
+            targetPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(targetPos_).mergeFrom(value).buildPartial();
           } else {
             targetPos_ = value;
           }
+          onChanged();
         } else {
           targetPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector target_pos = 11;</code>
        */
       public Builder clearTargetPos() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        targetPos_ = null;
-        if (targetPosBuilder_ != null) {
-          targetPosBuilder_.dispose();
+        if (targetPosBuilder_ == null) {
+          targetPos_ = null;
+          onChanged();
+        } else {
+          targetPos_ = null;
           targetPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector target_pos = 11;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getTargetPosBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getTargetPosFieldBuilder().getBuilder();
       }
@@ -880,18 +901,7 @@ public final class EvtLightCoreMoveOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtLightCoreMove(input, extensionRegistry);
       }
     };
 

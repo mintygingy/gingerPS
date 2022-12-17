@@ -61,6 +61,48 @@ public final class ChessLeftMonstersNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ChessLeftMonstersNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              leftMonsters_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChessLeftMonstersNotifyOuterClass.internal_static_ChessLeftMonstersNotify_descriptor;
@@ -75,7 +117,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
     }
 
     public static final int LEFT_MONSTERS_FIELD_NUMBER = 5;
-    private int leftMonsters_ = 0;
+    private int leftMonsters_;
     /**
      * <code>uint32 left_monsters = 5;</code>
      * @return The leftMonsters.
@@ -102,7 +144,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
       if (leftMonsters_ != 0) {
         output.writeUInt32(5, leftMonsters_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -115,7 +157,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, leftMonsters_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -132,7 +174,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
 
       if (getLeftMonsters()
           != other.getLeftMonsters()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -145,7 +187,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + LEFT_MONSTERS_FIELD_NUMBER;
       hash = (53 * hash) + getLeftMonsters();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -272,19 +314,24 @@ public final class ChessLeftMonstersNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChessLeftMonstersNotifyOuterClass.ChessLeftMonstersNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         leftMonsters_ = 0;
+
         return this;
       }
 
@@ -311,16 +358,9 @@ public final class ChessLeftMonstersNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChessLeftMonstersNotifyOuterClass.ChessLeftMonstersNotify buildPartial() {
         emu.gingerps.net.proto.ChessLeftMonstersNotifyOuterClass.ChessLeftMonstersNotify result = new emu.gingerps.net.proto.ChessLeftMonstersNotifyOuterClass.ChessLeftMonstersNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.leftMonsters_ = leftMonsters_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ChessLeftMonstersNotifyOuterClass.ChessLeftMonstersNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.leftMonsters_ = leftMonsters_;
-        }
       }
 
       @java.lang.Override
@@ -370,7 +410,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
         if (other.getLeftMonsters() != 0) {
           setLeftMonsters(other.getLeftMonsters());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -385,38 +425,19 @@ public final class ChessLeftMonstersNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ChessLeftMonstersNotifyOuterClass.ChessLeftMonstersNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                leftMonsters_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ChessLeftMonstersNotifyOuterClass.ChessLeftMonstersNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int leftMonsters_ ;
       /**
@@ -435,7 +456,6 @@ public final class ChessLeftMonstersNotifyOuterClass {
       public Builder setLeftMonsters(int value) {
         
         leftMonsters_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -444,7 +464,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLeftMonsters() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         leftMonsters_ = 0;
         onChanged();
         return this;
@@ -482,18 +502,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ChessLeftMonstersNotify(input, extensionRegistry);
       }
     };
 

@@ -94,6 +94,68 @@ public final class GCGMsgPhaseChangeOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGMsgPhaseChange(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+              int rawValue = input.readEnum();
+
+              afterPhase_ = rawValue;
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                allowControllerMap_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              allowControllerMap_.add(
+                  input.readMessage(emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
+              int rawValue = input.readEnum();
+
+              beforePhase_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          allowControllerMap_ = java.util.Collections.unmodifiableList(allowControllerMap_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.internal_static_GCGMsgPhaseChange_descriptor;
@@ -108,7 +170,7 @@ public final class GCGMsgPhaseChangeOuterClass {
     }
 
     public static final int BEFORE_PHASE_FIELD_NUMBER = 15;
-    private int beforePhase_ = 0;
+    private int beforePhase_;
     /**
      * <code>.GCGPhaseType before_phase = 15;</code>
      * @return The enum numeric value on the wire for beforePhase.
@@ -121,12 +183,13 @@ public final class GCGMsgPhaseChangeOuterClass {
      * @return The beforePhase.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType getBeforePhase() {
-      emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.forNumber(beforePhase_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.valueOf(beforePhase_);
       return result == null ? emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.UNRECOGNIZED : result;
     }
 
     public static final int AFTER_PHASE_FIELD_NUMBER = 3;
-    private int afterPhase_ = 0;
+    private int afterPhase_;
     /**
      * <code>.GCGPhaseType after_phase = 3;</code>
      * @return The enum numeric value on the wire for afterPhase.
@@ -139,12 +202,12 @@ public final class GCGMsgPhaseChangeOuterClass {
      * @return The afterPhase.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType getAfterPhase() {
-      emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.forNumber(afterPhase_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.valueOf(afterPhase_);
       return result == null ? emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.UNRECOGNIZED : result;
     }
 
     public static final int ALLOW_CONTROLLER_MAP_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> allowControllerMap_;
     /**
      * <code>repeated .Uint32Pair allow_controller_map = 11;</code>
@@ -207,7 +270,7 @@ public final class GCGMsgPhaseChangeOuterClass {
       if (beforePhase_ != emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.GCG_PHASE_TYPE_INVALID.getNumber()) {
         output.writeEnum(15, beforePhase_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -228,7 +291,7 @@ public final class GCGMsgPhaseChangeOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(15, beforePhase_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -247,7 +310,7 @@ public final class GCGMsgPhaseChangeOuterClass {
       if (afterPhase_ != other.afterPhase_) return false;
       if (!getAllowControllerMapList()
           .equals(other.getAllowControllerMapList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -266,7 +329,7 @@ public final class GCGMsgPhaseChangeOuterClass {
         hash = (37 * hash) + ALLOW_CONTROLLER_MAP_FIELD_NUMBER;
         hash = (53 * hash) + getAllowControllerMapList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -383,27 +446,33 @@ public final class GCGMsgPhaseChangeOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAllowControllerMapFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         beforePhase_ = 0;
+
         afterPhase_ = 0;
+
         if (allowControllerMapBuilder_ == null) {
           allowControllerMap_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          allowControllerMap_ = null;
           allowControllerMapBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -430,32 +499,20 @@ public final class GCGMsgPhaseChangeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange buildPartial() {
         emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange result = new emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange result) {
+        int from_bitField0_ = bitField0_;
+        result.beforePhase_ = beforePhase_;
+        result.afterPhase_ = afterPhase_;
         if (allowControllerMapBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             allowControllerMap_ = java.util.Collections.unmodifiableList(allowControllerMap_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.allowControllerMap_ = allowControllerMap_;
         } else {
           result.allowControllerMap_ = allowControllerMapBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.beforePhase_ = beforePhase_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.afterPhase_ = afterPhase_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -512,7 +569,7 @@ public final class GCGMsgPhaseChangeOuterClass {
           if (!other.allowControllerMap_.isEmpty()) {
             if (allowControllerMap_.isEmpty()) {
               allowControllerMap_ = other.allowControllerMap_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureAllowControllerMapIsMutable();
               allowControllerMap_.addAll(other.allowControllerMap_);
@@ -525,7 +582,7 @@ public final class GCGMsgPhaseChangeOuterClass {
               allowControllerMapBuilder_.dispose();
               allowControllerMapBuilder_ = null;
               allowControllerMap_ = other.allowControllerMap_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               allowControllerMapBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAllowControllerMapFieldBuilder() : null;
@@ -534,7 +591,7 @@ public final class GCGMsgPhaseChangeOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -549,53 +606,17 @@ public final class GCGMsgPhaseChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                afterPhase_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 90: {
-                emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(),
-                        extensionRegistry);
-                if (allowControllerMapBuilder_ == null) {
-                  ensureAllowControllerMapIsMutable();
-                  allowControllerMap_.add(m);
-                } else {
-                  allowControllerMapBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              case 120: {
-                beforePhase_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -614,8 +635,8 @@ public final class GCGMsgPhaseChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBeforePhaseValue(int value) {
+        
         beforePhase_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -625,7 +646,8 @@ public final class GCGMsgPhaseChangeOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType getBeforePhase() {
-        emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.forNumber(beforePhase_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.valueOf(beforePhase_);
         return result == null ? emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.UNRECOGNIZED : result;
       }
       /**
@@ -637,7 +659,7 @@ public final class GCGMsgPhaseChangeOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         beforePhase_ = value.getNumber();
         onChanged();
         return this;
@@ -647,7 +669,7 @@ public final class GCGMsgPhaseChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBeforePhase() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         beforePhase_ = 0;
         onChanged();
         return this;
@@ -667,8 +689,8 @@ public final class GCGMsgPhaseChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder setAfterPhaseValue(int value) {
+        
         afterPhase_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -678,7 +700,8 @@ public final class GCGMsgPhaseChangeOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType getAfterPhase() {
-        emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.forNumber(afterPhase_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.valueOf(afterPhase_);
         return result == null ? emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.UNRECOGNIZED : result;
       }
       /**
@@ -690,7 +713,7 @@ public final class GCGMsgPhaseChangeOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         afterPhase_ = value.getNumber();
         onChanged();
         return this;
@@ -700,7 +723,7 @@ public final class GCGMsgPhaseChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAfterPhase() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         afterPhase_ = 0;
         onChanged();
         return this;
@@ -709,9 +732,9 @@ public final class GCGMsgPhaseChangeOuterClass {
       private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> allowControllerMap_ =
         java.util.Collections.emptyList();
       private void ensureAllowControllerMapIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           allowControllerMap_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>(allowControllerMap_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -861,7 +884,7 @@ public final class GCGMsgPhaseChangeOuterClass {
       public Builder clearAllowControllerMap() {
         if (allowControllerMapBuilder_ == null) {
           allowControllerMap_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           allowControllerMapBuilder_.clear();
@@ -938,7 +961,7 @@ public final class GCGMsgPhaseChangeOuterClass {
           allowControllerMapBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
                   allowControllerMap_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           allowControllerMap_ = null;
@@ -978,18 +1001,7 @@ public final class GCGMsgPhaseChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGMsgPhaseChange(input, extensionRegistry);
       }
     };
 

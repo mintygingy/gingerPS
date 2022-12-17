@@ -67,6 +67,53 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RogueDungeonPlayerCellChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              cellId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              oldCellId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.internal_static_RogueDungeonPlayerCellChangeNotify_descriptor;
@@ -81,7 +128,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
     }
 
     public static final int CELL_ID_FIELD_NUMBER = 4;
-    private int cellId_ = 0;
+    private int cellId_;
     /**
      * <code>uint32 cell_id = 4;</code>
      * @return The cellId.
@@ -92,7 +139,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
     }
 
     public static final int OLD_CELL_ID_FIELD_NUMBER = 7;
-    private int oldCellId_ = 0;
+    private int oldCellId_;
     /**
      * <code>uint32 old_cell_id = 7;</code>
      * @return The oldCellId.
@@ -122,7 +169,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       if (oldCellId_ != 0) {
         output.writeUInt32(7, oldCellId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, oldCellId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
           != other.getCellId()) return false;
       if (getOldCellId()
           != other.getOldCellId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -173,7 +220,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       hash = (53 * hash) + getCellId();
       hash = (37 * hash) + OLD_CELL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOldCellId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -300,20 +347,26 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         cellId_ = 0;
+
         oldCellId_ = 0;
+
         return this;
       }
 
@@ -340,19 +393,10 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify buildPartial() {
         emu.gingerps.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify result = new emu.gingerps.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.cellId_ = cellId_;
+        result.oldCellId_ = oldCellId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.cellId_ = cellId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.oldCellId_ = oldCellId_;
-        }
       }
 
       @java.lang.Override
@@ -405,7 +449,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
         if (other.getOldCellId() != 0) {
           setOldCellId(other.getOldCellId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,43 +464,19 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                cellId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 56: {
-                oldCellId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int cellId_ ;
       /**
@@ -475,7 +495,6 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       public Builder setCellId(int value) {
         
         cellId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -484,7 +503,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCellId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         cellId_ = 0;
         onChanged();
         return this;
@@ -507,7 +526,6 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       public Builder setOldCellId(int value) {
         
         oldCellId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -516,7 +534,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOldCellId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         oldCellId_ = 0;
         onChanged();
         return this;
@@ -554,18 +572,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RogueDungeonPlayerCellChangeNotify(input, extensionRegistry);
       }
     };
 

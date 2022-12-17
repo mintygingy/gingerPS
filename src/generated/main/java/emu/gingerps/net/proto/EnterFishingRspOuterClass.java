@@ -67,6 +67,53 @@ public final class EnterFishingRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EnterFishingRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+
+              fishPoolId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EnterFishingRspOuterClass.internal_static_EnterFishingRsp_descriptor;
@@ -81,7 +128,7 @@ public final class EnterFishingRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
@@ -92,7 +139,7 @@ public final class EnterFishingRspOuterClass {
     }
 
     public static final int FISH_POOL_ID_FIELD_NUMBER = 9;
-    private int fishPoolId_ = 0;
+    private int fishPoolId_;
     /**
      * <code>uint32 fish_pool_id = 9;</code>
      * @return The fishPoolId.
@@ -122,7 +169,7 @@ public final class EnterFishingRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(10, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class EnterFishingRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(10, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class EnterFishingRspOuterClass {
           != other.getRetcode()) return false;
       if (getFishPoolId()
           != other.getFishPoolId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -173,7 +220,7 @@ public final class EnterFishingRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + FISH_POOL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFishPoolId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -300,20 +347,26 @@ public final class EnterFishingRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.EnterFishingRspOuterClass.EnterFishingRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         fishPoolId_ = 0;
+
         return this;
       }
 
@@ -340,19 +393,10 @@ public final class EnterFishingRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EnterFishingRspOuterClass.EnterFishingRsp buildPartial() {
         emu.gingerps.net.proto.EnterFishingRspOuterClass.EnterFishingRsp result = new emu.gingerps.net.proto.EnterFishingRspOuterClass.EnterFishingRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        result.fishPoolId_ = fishPoolId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EnterFishingRspOuterClass.EnterFishingRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.fishPoolId_ = fishPoolId_;
-        }
       }
 
       @java.lang.Override
@@ -405,7 +449,7 @@ public final class EnterFishingRspOuterClass {
         if (other.getFishPoolId() != 0) {
           setFishPoolId(other.getFishPoolId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,43 +464,19 @@ public final class EnterFishingRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EnterFishingRspOuterClass.EnterFishingRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                fishPoolId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 80: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EnterFishingRspOuterClass.EnterFishingRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -475,7 +495,6 @@ public final class EnterFishingRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -484,7 +503,7 @@ public final class EnterFishingRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -507,7 +526,6 @@ public final class EnterFishingRspOuterClass {
       public Builder setFishPoolId(int value) {
         
         fishPoolId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -516,7 +534,7 @@ public final class EnterFishingRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFishPoolId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         fishPoolId_ = 0;
         onChanged();
         return this;
@@ -554,18 +572,7 @@ public final class EnterFishingRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EnterFishingRsp(input, extensionRegistry);
       }
     };
 

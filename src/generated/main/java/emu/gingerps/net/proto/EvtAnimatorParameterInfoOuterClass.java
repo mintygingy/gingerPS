@@ -78,6 +78,71 @@ public final class EvtAnimatorParameterInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtAnimatorParameterInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 58: {
+              emu.gingerps.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo.Builder subBuilder = null;
+              if (value_ != null) {
+                subBuilder = value_.toBuilder();
+              }
+              value_ = input.readMessage(emu.gingerps.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(value_);
+                value_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 72: {
+
+              isServerCache_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              nameId_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.internal_static_EvtAnimatorParameterInfo_descriptor;
@@ -92,7 +157,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
     }
 
     public static final int NAME_ID_FIELD_NUMBER = 10;
-    private int nameId_ = 0;
+    private int nameId_;
     /**
      * <code>int32 name_id = 10;</code>
      * @return The nameId.
@@ -125,11 +190,11 @@ public final class EvtAnimatorParameterInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfoOrBuilder getValueOrBuilder() {
-      return value_ == null ? emu.gingerps.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo.getDefaultInstance() : value_;
+      return getValue();
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 14;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
@@ -140,7 +205,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
     }
 
     public static final int IS_SERVER_CACHE_FIELD_NUMBER = 9;
-    private boolean isServerCache_ = false;
+    private boolean isServerCache_;
     /**
      * <code>bool is_server_cache = 9;</code>
      * @return The isServerCache.
@@ -176,7 +241,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(14, entityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -201,7 +266,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, entityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -227,7 +292,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
           != other.getEntityId()) return false;
       if (getIsServerCache()
           != other.getIsServerCache()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -249,7 +314,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
       hash = (37 * hash) + IS_SERVER_CACHE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsServerCache());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -366,26 +431,34 @@ public final class EvtAnimatorParameterInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         nameId_ = 0;
-        value_ = null;
-        if (valueBuilder_ != null) {
-          valueBuilder_.dispose();
+
+        if (valueBuilder_ == null) {
+          value_ = null;
+        } else {
+          value_ = null;
           valueBuilder_ = null;
         }
         entityId_ = 0;
+
         isServerCache_ = false;
+
         return this;
       }
 
@@ -412,27 +485,16 @@ public final class EvtAnimatorParameterInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo buildPartial() {
         emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo result = new emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.nameId_ = nameId_;
+        if (valueBuilder_ == null) {
+          result.value_ = value_;
+        } else {
+          result.value_ = valueBuilder_.build();
+        }
+        result.entityId_ = entityId_;
+        result.isServerCache_ = isServerCache_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.nameId_ = nameId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.value_ = valueBuilder_ == null
-              ? value_
-              : valueBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isServerCache_ = isServerCache_;
-        }
       }
 
       @java.lang.Override
@@ -491,7 +553,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
         if (other.getIsServerCache() != false) {
           setIsServerCache(other.getIsServerCache());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -506,55 +568,19 @@ public final class EvtAnimatorParameterInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 58: {
-                input.readMessage(
-                    getValueFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 58
-              case 72: {
-                isServerCache_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 72
-              case 80: {
-                nameId_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 112: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int nameId_ ;
       /**
@@ -573,7 +599,6 @@ public final class EvtAnimatorParameterInfoOuterClass {
       public Builder setNameId(int value) {
         
         nameId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +607,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNameId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         nameId_ = 0;
         onChanged();
         return this;
@@ -596,7 +621,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
        * @return Whether the value field is set.
        */
       public boolean hasValue() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return valueBuilder_ != null || value_ != null;
       }
       /**
        * <code>.AnimatorParameterValueInfo value = 7;</code>
@@ -618,11 +643,11 @@ public final class EvtAnimatorParameterInfoOuterClass {
             throw new NullPointerException();
           }
           value_ = value;
+          onChanged();
         } else {
           valueBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -632,11 +657,11 @@ public final class EvtAnimatorParameterInfoOuterClass {
           emu.gingerps.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo.Builder builderForValue) {
         if (valueBuilder_ == null) {
           value_ = builderForValue.build();
+          onChanged();
         } else {
           valueBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -644,38 +669,38 @@ public final class EvtAnimatorParameterInfoOuterClass {
        */
       public Builder mergeValue(emu.gingerps.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo value) {
         if (valueBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            value_ != null &&
-            value_ != emu.gingerps.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo.getDefaultInstance()) {
-            getValueBuilder().mergeFrom(value);
+          if (value_ != null) {
+            value_ =
+              emu.gingerps.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo.newBuilder(value_).mergeFrom(value).buildPartial();
           } else {
             value_ = value;
           }
+          onChanged();
         } else {
           valueBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AnimatorParameterValueInfo value = 7;</code>
        */
       public Builder clearValue() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        value_ = null;
-        if (valueBuilder_ != null) {
-          valueBuilder_.dispose();
+        if (valueBuilder_ == null) {
+          value_ = null;
+          onChanged();
+        } else {
+          value_ = null;
           valueBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AnimatorParameterValueInfo value = 7;</code>
        */
       public emu.gingerps.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo.Builder getValueBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getValueFieldBuilder().getBuilder();
       }
@@ -724,7 +749,6 @@ public final class EvtAnimatorParameterInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -733,7 +757,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -756,7 +780,6 @@ public final class EvtAnimatorParameterInfoOuterClass {
       public Builder setIsServerCache(boolean value) {
         
         isServerCache_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -765,7 +788,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsServerCache() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isServerCache_ = false;
         onChanged();
         return this;
@@ -803,18 +826,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtAnimatorParameterInfo(input, extensionRegistry);
       }
     };
 

@@ -41,14 +41,14 @@ public final class AvatarSkillInfoNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrDefault(
+
+    emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue);
+        emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue);
     /**
      * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
      */
+
     emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrThrow(
         int key);
 
@@ -95,6 +95,62 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue);
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AvatarSkillInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              guid_ = input.readUInt64();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                skillMap_ = com.google.protobuf.MapField.newMapField(
+                    SkillMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo>
+              skillMap__ = input.readMessage(
+                  SkillMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              skillMap_.getMutableMap().put(
+                  skillMap__.getKey(), skillMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarSkillInfoNotifyOuterClass.internal_static_AvatarSkillInfoNotify_descriptor;
@@ -132,7 +188,6 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo> skillMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo>
@@ -143,12 +198,14 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue);
       }
       return skillMap_;
     }
+
     public int getSkillMapCount() {
       return internalGetSkillMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
      */
+
     @java.lang.Override
     public boolean containsSkillMap(
         int key) {
@@ -167,6 +224,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue);
      * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo> getSkillMapMap() {
       return internalGetSkillMap().getMap();
     }
@@ -174,11 +232,10 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue);
      * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrDefault(
+
+    public emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
+        emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo> map =
           internalGetSkillMap().getMap();
@@ -188,6 +245,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
      * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrThrow(
         int key) {
       
@@ -200,7 +258,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
     }
 
     public static final int GUID_FIELD_NUMBER = 4;
-    private long guid_ = 0L;
+    private long guid_;
     /**
      * <code>uint64 guid = 4;</code>
      * @return The guid.
@@ -233,7 +291,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
           internalGetSkillMap(),
           SkillMapDefaultEntryHolder.defaultEntry,
           6);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -256,7 +314,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(6, skillMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -275,7 +333,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
           other.internalGetSkillMap())) return false;
       if (getGuid()
           != other.getGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -293,7 +351,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
       hash = (37 * hash) + GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGuid());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -442,20 +500,25 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
 
       // Construct using emu.gingerps.net.proto.AvatarSkillInfoNotifyOuterClass.AvatarSkillInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableSkillMap().clear();
         guid_ = 0L;
+
         return this;
       }
 
@@ -482,20 +545,12 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarSkillInfoNotifyOuterClass.AvatarSkillInfoNotify buildPartial() {
         emu.gingerps.net.proto.AvatarSkillInfoNotifyOuterClass.AvatarSkillInfoNotify result = new emu.gingerps.net.proto.AvatarSkillInfoNotifyOuterClass.AvatarSkillInfoNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.skillMap_ = internalGetSkillMap();
+        result.skillMap_.makeImmutable();
+        result.guid_ = guid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AvatarSkillInfoNotifyOuterClass.AvatarSkillInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.skillMap_ = internalGetSkillMap();
-          result.skillMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.guid_ = guid_;
-        }
       }
 
       @java.lang.Override
@@ -544,11 +599,10 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
         if (other == emu.gingerps.net.proto.AvatarSkillInfoNotifyOuterClass.AvatarSkillInfoNotify.getDefaultInstance()) return this;
         internalGetMutableSkillMap().mergeFrom(
             other.internalGetSkillMap());
-        bitField0_ |= 0x00000001;
         if (other.getGuid() != 0L) {
           setGuid(other.getGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -563,44 +617,17 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AvatarSkillInfoNotifyOuterClass.AvatarSkillInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                guid_ = input.readUInt64();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 50: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo>
-                skillMap__ = input.readMessage(
-                    SkillMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableSkillMap().getMutableMap().put(
-                    skillMap__.getKey(), skillMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AvatarSkillInfoNotifyOuterClass.AvatarSkillInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -608,7 +635,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo> skillMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo>
-          internalGetSkillMap() {
+      internalGetSkillMap() {
         if (skillMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               SkillMapDefaultEntryHolder.defaultEntry);
@@ -616,7 +643,8 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
         return skillMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo>
-          internalGetMutableSkillMap() {
+      internalGetMutableSkillMap() {
+        onChanged();;
         if (skillMap_ == null) {
           skillMap_ = com.google.protobuf.MapField.newMapField(
               SkillMapDefaultEntryHolder.defaultEntry);
@@ -624,16 +652,16 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
         if (!skillMap_.isMutable()) {
           skillMap_ = skillMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return skillMap_;
       }
+
       public int getSkillMapCount() {
         return internalGetSkillMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
        */
+
       @java.lang.Override
       public boolean containsSkillMap(
           int key) {
@@ -652,6 +680,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
        * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo> getSkillMapMap() {
         return internalGetSkillMap().getMap();
       }
@@ -659,11 +688,10 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
        * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrDefault(
+
+      public emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
+          emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo> map =
             internalGetSkillMap().getMap();
@@ -673,6 +701,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
        * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrThrow(
           int key) {
         
@@ -683,8 +712,8 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearSkillMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableSkillMap().getMutableMap()
             .clear();
         return this;
@@ -692,6 +721,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
       /**
        * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
        */
+
       public Builder removeSkillMap(
           int key) {
         
@@ -704,8 +734,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo>
-          getMutableSkillMap() {
-        bitField0_ |= 0x00000001;
+      getMutableSkillMap() {
         return internalGetMutableSkillMap().getMutableMap();
       }
       /**
@@ -715,20 +744,19 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
           int key,
           emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableSkillMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 6;</code>
        */
+
       public Builder putAllSkillMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo> values) {
         internalGetMutableSkillMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -749,7 +777,6 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
       public Builder setGuid(long value) {
         
         guid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -758,7 +785,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         guid_ = 0L;
         onChanged();
         return this;
@@ -796,18 +823,7 @@ emu.gingerps.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AvatarSkillInfoNotify(input, extensionRegistry);
       }
     };
 

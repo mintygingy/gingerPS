@@ -253,6 +253,196 @@ public final class InBattleMechanicusInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private InBattleMechanicusInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              totalRound_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              waitBeginTimeUs_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              unk3300CIJALCAMHCD_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              unk3300EBOIGFMOKHK_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                historyCardList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              historyCardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 48: {
+
+              unk3300IFIPKLOGEOF_ = input.readUInt64();
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              stage_ = rawValue;
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                pickCardList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              pickCardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                monsterList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusMonsterInfoOuterClass.InBattleMechanicusMonsterInfo>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              monsterList_.add(
+                  input.readMessage(emu.gingerps.net.proto.InBattleMechanicusMonsterInfoOuterClass.InBattleMechanicusMonsterInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 80: {
+
+              escapedMonsterNum_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              round_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                playerList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              playerList_.add(
+                  input.readMessage(emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 104: {
+
+              waitSeconds_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              unk3300IAPINOLIALF_ = input.readUInt64();
+              break;
+            }
+            case 120: {
+
+              leftMonsterNum_ = input.readUInt32();
+              break;
+            }
+            case 5248: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300MNNDELKIBLG_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unk3300MNNDELKIBLG_.addInt(input.readUInt32());
+              break;
+            }
+            case 5250: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300MNNDELKIBLG_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300MNNDELKIBLG_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 5464: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300GHBEHPGBBIH_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unk3300GHBEHPGBBIH_.addInt(input.readUInt32());
+              break;
+            }
+            case 5466: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300GHBEHPGBBIH_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300GHBEHPGBBIH_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          historyCardList_ = java.util.Collections.unmodifiableList(historyCardList_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          pickCardList_ = java.util.Collections.unmodifiableList(pickCardList_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          monsterList_ = java.util.Collections.unmodifiableList(monsterList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          playerList_ = java.util.Collections.unmodifiableList(playerList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unk3300MNNDELKIBLG_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          unk3300GHBEHPGBBIH_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.internal_static_InBattleMechanicusInfo_descriptor;
@@ -267,7 +457,6 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int UNK3300_MNNDELKIBLG_FIELD_NUMBER = 656;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300MNNDELKIBLG_;
     /**
      * <code>repeated uint32 Unk3300_MNNDELKIBLG = 656;</code>
@@ -296,7 +485,6 @@ public final class InBattleMechanicusInfoOuterClass {
     private int unk3300MNNDELKIBLGMemoizedSerializedSize = -1;
 
     public static final int UNK3300_GHBEHPGBBIH_FIELD_NUMBER = 683;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300GHBEHPGBBIH_;
     /**
      * <code>repeated uint32 Unk3300_GHBEHPGBBIH = 683;</code>
@@ -325,7 +513,7 @@ public final class InBattleMechanicusInfoOuterClass {
     private int unk3300GHBEHPGBBIHMemoizedSerializedSize = -1;
 
     public static final int STAGE_FIELD_NUMBER = 7;
-    private int stage_ = 0;
+    private int stage_;
     /**
      * <code>.InBattleMechanicusStageType stage = 7;</code>
      * @return The enum numeric value on the wire for stage.
@@ -338,12 +526,13 @@ public final class InBattleMechanicusInfoOuterClass {
      * @return The stage.
      */
     @java.lang.Override public emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType getStage() {
-      emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType result = emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType.forNumber(stage_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType result = emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType.valueOf(stage_);
       return result == null ? emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType.UNRECOGNIZED : result;
     }
 
     public static final int UNK3300_EBOIGFMOKHK_FIELD_NUMBER = 4;
-    private int unk3300EBOIGFMOKHK_ = 0;
+    private int unk3300EBOIGFMOKHK_;
     /**
      * <code>uint32 Unk3300_EBOIGFMOKHK = 4;</code>
      * @return The unk3300EBOIGFMOKHK.
@@ -354,7 +543,7 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int WAIT_SECONDS_FIELD_NUMBER = 13;
-    private int waitSeconds_ = 0;
+    private int waitSeconds_;
     /**
      * <code>uint32 wait_seconds = 13;</code>
      * @return The waitSeconds.
@@ -365,7 +554,7 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int LEFT_MONSTER_NUM_FIELD_NUMBER = 15;
-    private int leftMonsterNum_ = 0;
+    private int leftMonsterNum_;
     /**
      * <code>uint32 left_monster_num = 15;</code>
      * @return The leftMonsterNum.
@@ -376,7 +565,7 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int UNK3300_IFIPKLOGEOF_FIELD_NUMBER = 6;
-    private long unk3300IFIPKLOGEOF_ = 0L;
+    private long unk3300IFIPKLOGEOF_;
     /**
      * <code>uint64 Unk3300_IFIPKLOGEOF = 6;</code>
      * @return The unk3300IFIPKLOGEOF.
@@ -387,7 +576,6 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int PLAYER_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo> playerList_;
     /**
      * <code>repeated .InBattleMechanicusPlayerInfo player_list = 12;</code>
@@ -428,7 +616,7 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int TOTAL_ROUND_FIELD_NUMBER = 1;
-    private int totalRound_ = 0;
+    private int totalRound_;
     /**
      * <code>uint32 total_round = 1;</code>
      * @return The totalRound.
@@ -439,7 +627,7 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int UNK3300_IAPINOLIALF_FIELD_NUMBER = 14;
-    private long unk3300IAPINOLIALF_ = 0L;
+    private long unk3300IAPINOLIALF_;
     /**
      * <code>uint64 Unk3300_IAPINOLIALF = 14;</code>
      * @return The unk3300IAPINOLIALF.
@@ -450,7 +638,6 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int MONSTER_LIST_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.InBattleMechanicusMonsterInfoOuterClass.InBattleMechanicusMonsterInfo> monsterList_;
     /**
      * <code>repeated .InBattleMechanicusMonsterInfo monster_list = 9;</code>
@@ -491,7 +678,7 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int UNK3300_CIJALCAMHCD_FIELD_NUMBER = 3;
-    private int unk3300CIJALCAMHCD_ = 0;
+    private int unk3300CIJALCAMHCD_;
     /**
      * <code>uint32 Unk3300_CIJALCAMHCD = 3;</code>
      * @return The unk3300CIJALCAMHCD.
@@ -502,7 +689,7 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int WAIT_BEGIN_TIME_US_FIELD_NUMBER = 2;
-    private long waitBeginTimeUs_ = 0L;
+    private long waitBeginTimeUs_;
     /**
      * <code>uint64 wait_begin_time_us = 2;</code>
      * @return The waitBeginTimeUs.
@@ -513,7 +700,6 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int HISTORY_CARD_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo> historyCardList_;
     /**
      * <code>repeated .InBattleMechanicusCardInfo history_card_list = 5;</code>
@@ -554,7 +740,6 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int PICK_CARD_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo> pickCardList_;
     /**
      * <code>repeated .InBattleMechanicusCardInfo pick_card_list = 8;</code>
@@ -595,7 +780,7 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int ESCAPED_MONSTER_NUM_FIELD_NUMBER = 10;
-    private int escapedMonsterNum_ = 0;
+    private int escapedMonsterNum_;
     /**
      * <code>uint32 escaped_monster_num = 10;</code>
      * @return The escapedMonsterNum.
@@ -606,7 +791,7 @@ public final class InBattleMechanicusInfoOuterClass {
     }
 
     public static final int ROUND_FIELD_NUMBER = 11;
-    private int round_ = 0;
+    private int round_;
     /**
      * <code>uint32 round = 11;</code>
      * @return The round.
@@ -690,7 +875,7 @@ public final class InBattleMechanicusInfoOuterClass {
       for (int i = 0; i < unk3300GHBEHPGBBIH_.size(); i++) {
         output.writeUInt32NoTag(unk3300GHBEHPGBBIH_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -787,7 +972,7 @@ public final class InBattleMechanicusInfoOuterClass {
         }
         unk3300GHBEHPGBBIHMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -835,7 +1020,7 @@ public final class InBattleMechanicusInfoOuterClass {
           != other.getEscapedMonsterNum()) return false;
       if (getRound()
           != other.getRound()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -895,7 +1080,7 @@ public final class InBattleMechanicusInfoOuterClass {
       hash = (53 * hash) + getEscapedMonsterNum();
       hash = (37 * hash) + ROUND_FIELD_NUMBER;
       hash = (53 * hash) + getRound();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1012,59 +1197,76 @@ public final class InBattleMechanicusInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPlayerListFieldBuilder();
+          getMonsterListFieldBuilder();
+          getHistoryCardListFieldBuilder();
+          getPickCardListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300MNNDELKIBLG_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300GHBEHPGBBIH_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         stage_ = 0;
+
         unk3300EBOIGFMOKHK_ = 0;
+
         waitSeconds_ = 0;
+
         leftMonsterNum_ = 0;
+
         unk3300IFIPKLOGEOF_ = 0L;
+
         if (playerListBuilder_ == null) {
           playerList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          playerList_ = null;
           playerListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
         totalRound_ = 0;
+
         unk3300IAPINOLIALF_ = 0L;
+
         if (monsterListBuilder_ == null) {
           monsterList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          monsterList_ = null;
           monsterListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000400);
         unk3300CIJALCAMHCD_ = 0;
+
         waitBeginTimeUs_ = 0L;
+
         if (historyCardListBuilder_ == null) {
           historyCardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          historyCardList_ = null;
           historyCardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00002000);
         if (pickCardListBuilder_ == null) {
           pickCardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
-          pickCardList_ = null;
           pickCardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00004000);
         escapedMonsterNum_ = 0;
+
         round_ = 0;
+
         return this;
       }
 
@@ -1091,13 +1293,7 @@ public final class InBattleMechanicusInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo buildPartial() {
         emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo result = new emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           unk3300MNNDELKIBLG_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -1108,79 +1304,55 @@ public final class InBattleMechanicusInfoOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.unk3300GHBEHPGBBIH_ = unk3300GHBEHPGBBIH_;
+        result.stage_ = stage_;
+        result.unk3300EBOIGFMOKHK_ = unk3300EBOIGFMOKHK_;
+        result.waitSeconds_ = waitSeconds_;
+        result.leftMonsterNum_ = leftMonsterNum_;
+        result.unk3300IFIPKLOGEOF_ = unk3300IFIPKLOGEOF_;
         if (playerListBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             playerList_ = java.util.Collections.unmodifiableList(playerList_);
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.playerList_ = playerList_;
         } else {
           result.playerList_ = playerListBuilder_.build();
         }
+        result.totalRound_ = totalRound_;
+        result.unk3300IAPINOLIALF_ = unk3300IAPINOLIALF_;
         if (monsterListBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             monsterList_ = java.util.Collections.unmodifiableList(monsterList_);
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.monsterList_ = monsterList_;
         } else {
           result.monsterList_ = monsterListBuilder_.build();
         }
+        result.unk3300CIJALCAMHCD_ = unk3300CIJALCAMHCD_;
+        result.waitBeginTimeUs_ = waitBeginTimeUs_;
         if (historyCardListBuilder_ == null) {
-          if (((bitField0_ & 0x00002000) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             historyCardList_ = java.util.Collections.unmodifiableList(historyCardList_);
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.historyCardList_ = historyCardList_;
         } else {
           result.historyCardList_ = historyCardListBuilder_.build();
         }
         if (pickCardListBuilder_ == null) {
-          if (((bitField0_ & 0x00004000) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             pickCardList_ = java.util.Collections.unmodifiableList(pickCardList_);
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.pickCardList_ = pickCardList_;
         } else {
           result.pickCardList_ = pickCardListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.stage_ = stage_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300EBOIGFMOKHK_ = unk3300EBOIGFMOKHK_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.waitSeconds_ = waitSeconds_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.leftMonsterNum_ = leftMonsterNum_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.unk3300IFIPKLOGEOF_ = unk3300IFIPKLOGEOF_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.totalRound_ = totalRound_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.unk3300IAPINOLIALF_ = unk3300IAPINOLIALF_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.unk3300CIJALCAMHCD_ = unk3300CIJALCAMHCD_;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.waitBeginTimeUs_ = waitBeginTimeUs_;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.escapedMonsterNum_ = escapedMonsterNum_;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.round_ = round_;
-        }
+        result.escapedMonsterNum_ = escapedMonsterNum_;
+        result.round_ = round_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -1266,7 +1438,7 @@ public final class InBattleMechanicusInfoOuterClass {
           if (!other.playerList_.isEmpty()) {
             if (playerList_.isEmpty()) {
               playerList_ = other.playerList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensurePlayerListIsMutable();
               playerList_.addAll(other.playerList_);
@@ -1279,7 +1451,7 @@ public final class InBattleMechanicusInfoOuterClass {
               playerListBuilder_.dispose();
               playerListBuilder_ = null;
               playerList_ = other.playerList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000004);
               playerListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayerListFieldBuilder() : null;
@@ -1298,7 +1470,7 @@ public final class InBattleMechanicusInfoOuterClass {
           if (!other.monsterList_.isEmpty()) {
             if (monsterList_.isEmpty()) {
               monsterList_ = other.monsterList_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureMonsterListIsMutable();
               monsterList_.addAll(other.monsterList_);
@@ -1311,7 +1483,7 @@ public final class InBattleMechanicusInfoOuterClass {
               monsterListBuilder_.dispose();
               monsterListBuilder_ = null;
               monsterList_ = other.monsterList_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000008);
               monsterListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMonsterListFieldBuilder() : null;
@@ -1330,7 +1502,7 @@ public final class InBattleMechanicusInfoOuterClass {
           if (!other.historyCardList_.isEmpty()) {
             if (historyCardList_.isEmpty()) {
               historyCardList_ = other.historyCardList_;
-              bitField0_ = (bitField0_ & ~0x00002000);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureHistoryCardListIsMutable();
               historyCardList_.addAll(other.historyCardList_);
@@ -1343,7 +1515,7 @@ public final class InBattleMechanicusInfoOuterClass {
               historyCardListBuilder_.dispose();
               historyCardListBuilder_ = null;
               historyCardList_ = other.historyCardList_;
-              bitField0_ = (bitField0_ & ~0x00002000);
+              bitField0_ = (bitField0_ & ~0x00000010);
               historyCardListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getHistoryCardListFieldBuilder() : null;
@@ -1356,7 +1528,7 @@ public final class InBattleMechanicusInfoOuterClass {
           if (!other.pickCardList_.isEmpty()) {
             if (pickCardList_.isEmpty()) {
               pickCardList_ = other.pickCardList_;
-              bitField0_ = (bitField0_ & ~0x00004000);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensurePickCardListIsMutable();
               pickCardList_.addAll(other.pickCardList_);
@@ -1369,7 +1541,7 @@ public final class InBattleMechanicusInfoOuterClass {
               pickCardListBuilder_.dispose();
               pickCardListBuilder_ = null;
               pickCardList_ = other.pickCardList_;
-              bitField0_ = (bitField0_ & ~0x00004000);
+              bitField0_ = (bitField0_ & ~0x00000020);
               pickCardListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPickCardListFieldBuilder() : null;
@@ -1384,7 +1556,7 @@ public final class InBattleMechanicusInfoOuterClass {
         if (other.getRound() != 0) {
           setRound(other.getRound());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1399,169 +1571,17 @@ public final class InBattleMechanicusInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                totalRound_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 8
-              case 16: {
-                waitBeginTimeUs_ = input.readUInt64();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 16
-              case 24: {
-                unk3300CIJALCAMHCD_ = input.readUInt32();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 24
-              case 32: {
-                unk3300EBOIGFMOKHK_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 42: {
-                emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo.parser(),
-                        extensionRegistry);
-                if (historyCardListBuilder_ == null) {
-                  ensureHistoryCardListIsMutable();
-                  historyCardList_.add(m);
-                } else {
-                  historyCardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 48: {
-                unk3300IFIPKLOGEOF_ = input.readUInt64();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 48
-              case 56: {
-                stage_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              case 66: {
-                emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo.parser(),
-                        extensionRegistry);
-                if (pickCardListBuilder_ == null) {
-                  ensurePickCardListIsMutable();
-                  pickCardList_.add(m);
-                } else {
-                  pickCardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 66
-              case 74: {
-                emu.gingerps.net.proto.InBattleMechanicusMonsterInfoOuterClass.InBattleMechanicusMonsterInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.InBattleMechanicusMonsterInfoOuterClass.InBattleMechanicusMonsterInfo.parser(),
-                        extensionRegistry);
-                if (monsterListBuilder_ == null) {
-                  ensureMonsterListIsMutable();
-                  monsterList_.add(m);
-                } else {
-                  monsterListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 74
-              case 80: {
-                escapedMonsterNum_ = input.readUInt32();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 80
-              case 88: {
-                round_ = input.readUInt32();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 88
-              case 98: {
-                emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo.parser(),
-                        extensionRegistry);
-                if (playerListBuilder_ == null) {
-                  ensurePlayerListIsMutable();
-                  playerList_.add(m);
-                } else {
-                  playerListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              case 104: {
-                waitSeconds_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 104
-              case 112: {
-                unk3300IAPINOLIALF_ = input.readUInt64();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 112
-              case 120: {
-                leftMonsterNum_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 120
-              case 5248: {
-                int v = input.readUInt32();
-                ensureUnk3300MNNDELKIBLGIsMutable();
-                unk3300MNNDELKIBLG_.addInt(v);
-                break;
-              } // case 5248
-              case 5250: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300MNNDELKIBLGIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300MNNDELKIBLG_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 5250
-              case 5464: {
-                int v = input.readUInt32();
-                ensureUnk3300GHBEHPGBBIHIsMutable();
-                unk3300GHBEHPGBBIH_.addInt(v);
-                break;
-              } // case 5464
-              case 5466: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300GHBEHPGBBIHIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300GHBEHPGBBIH_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 5466
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1571,7 +1591,7 @@ public final class InBattleMechanicusInfoOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           unk3300MNNDELKIBLG_ = mutableCopy(unk3300MNNDELKIBLG_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_MNNDELKIBLG = 656;</code>
@@ -1605,7 +1625,6 @@ public final class InBattleMechanicusInfoOuterClass {
        */
       public Builder setUnk3300MNNDELKIBLG(
           int index, int value) {
-        
         ensureUnk3300MNNDELKIBLGIsMutable();
         unk3300MNNDELKIBLG_.setInt(index, value);
         onChanged();
@@ -1617,7 +1636,6 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300MNNDELKIBLG(int value) {
-        
         ensureUnk3300MNNDELKIBLGIsMutable();
         unk3300MNNDELKIBLG_.addInt(value);
         onChanged();
@@ -1652,7 +1670,7 @@ public final class InBattleMechanicusInfoOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           unk3300GHBEHPGBBIH_ = mutableCopy(unk3300GHBEHPGBBIH_);
           bitField0_ |= 0x00000002;
-        }
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_GHBEHPGBBIH = 683;</code>
@@ -1686,7 +1704,6 @@ public final class InBattleMechanicusInfoOuterClass {
        */
       public Builder setUnk3300GHBEHPGBBIH(
           int index, int value) {
-        
         ensureUnk3300GHBEHPGBBIHIsMutable();
         unk3300GHBEHPGBBIH_.setInt(index, value);
         onChanged();
@@ -1698,7 +1715,6 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300GHBEHPGBBIH(int value) {
-        
         ensureUnk3300GHBEHPGBBIHIsMutable();
         unk3300GHBEHPGBBIH_.addInt(value);
         onChanged();
@@ -1742,8 +1758,8 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStageValue(int value) {
+        
         stage_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1753,7 +1769,8 @@ public final class InBattleMechanicusInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType getStage() {
-        emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType result = emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType.forNumber(stage_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType result = emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType.valueOf(stage_);
         return result == null ? emu.gingerps.net.proto.InBattleMechanicusStageTypeOuterClass.InBattleMechanicusStageType.UNRECOGNIZED : result;
       }
       /**
@@ -1765,7 +1782,7 @@ public final class InBattleMechanicusInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         stage_ = value.getNumber();
         onChanged();
         return this;
@@ -1775,7 +1792,7 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStage() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         stage_ = 0;
         onChanged();
         return this;
@@ -1798,7 +1815,6 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder setUnk3300EBOIGFMOKHK(int value) {
         
         unk3300EBOIGFMOKHK_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1807,7 +1823,7 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EBOIGFMOKHK() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300EBOIGFMOKHK_ = 0;
         onChanged();
         return this;
@@ -1830,7 +1846,6 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder setWaitSeconds(int value) {
         
         waitSeconds_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1839,7 +1854,7 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWaitSeconds() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         waitSeconds_ = 0;
         onChanged();
         return this;
@@ -1862,7 +1877,6 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder setLeftMonsterNum(int value) {
         
         leftMonsterNum_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1871,7 +1885,7 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLeftMonsterNum() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         leftMonsterNum_ = 0;
         onChanged();
         return this;
@@ -1894,7 +1908,6 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder setUnk3300IFIPKLOGEOF(long value) {
         
         unk3300IFIPKLOGEOF_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1903,7 +1916,7 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IFIPKLOGEOF() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         unk3300IFIPKLOGEOF_ = 0L;
         onChanged();
         return this;
@@ -1912,9 +1925,9 @@ public final class InBattleMechanicusInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo> playerList_ =
         java.util.Collections.emptyList();
       private void ensurePlayerListIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           playerList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo>(playerList_);
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -2064,7 +2077,7 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder clearPlayerList() {
         if (playerListBuilder_ == null) {
           playerList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           playerListBuilder_.clear();
@@ -2141,7 +2154,7 @@ public final class InBattleMechanicusInfoOuterClass {
           playerListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo, emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo.Builder, emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfoOrBuilder>(
                   playerList_,
-                  ((bitField0_ & 0x00000080) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           playerList_ = null;
@@ -2166,7 +2179,6 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder setTotalRound(int value) {
         
         totalRound_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2175,7 +2187,7 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalRound() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         totalRound_ = 0;
         onChanged();
         return this;
@@ -2198,7 +2210,6 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder setUnk3300IAPINOLIALF(long value) {
         
         unk3300IAPINOLIALF_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2207,7 +2218,7 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IAPINOLIALF() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         unk3300IAPINOLIALF_ = 0L;
         onChanged();
         return this;
@@ -2216,9 +2227,9 @@ public final class InBattleMechanicusInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.InBattleMechanicusMonsterInfoOuterClass.InBattleMechanicusMonsterInfo> monsterList_ =
         java.util.Collections.emptyList();
       private void ensureMonsterListIsMutable() {
-        if (!((bitField0_ & 0x00000400) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           monsterList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusMonsterInfoOuterClass.InBattleMechanicusMonsterInfo>(monsterList_);
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -2368,7 +2379,7 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder clearMonsterList() {
         if (monsterListBuilder_ == null) {
           monsterList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           monsterListBuilder_.clear();
@@ -2445,7 +2456,7 @@ public final class InBattleMechanicusInfoOuterClass {
           monsterListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.InBattleMechanicusMonsterInfoOuterClass.InBattleMechanicusMonsterInfo, emu.gingerps.net.proto.InBattleMechanicusMonsterInfoOuterClass.InBattleMechanicusMonsterInfo.Builder, emu.gingerps.net.proto.InBattleMechanicusMonsterInfoOuterClass.InBattleMechanicusMonsterInfoOrBuilder>(
                   monsterList_,
-                  ((bitField0_ & 0x00000400) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           monsterList_ = null;
@@ -2470,7 +2481,6 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder setUnk3300CIJALCAMHCD(int value) {
         
         unk3300CIJALCAMHCD_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2479,7 +2489,7 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CIJALCAMHCD() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         unk3300CIJALCAMHCD_ = 0;
         onChanged();
         return this;
@@ -2502,7 +2512,6 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder setWaitBeginTimeUs(long value) {
         
         waitBeginTimeUs_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2511,7 +2520,7 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWaitBeginTimeUs() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         waitBeginTimeUs_ = 0L;
         onChanged();
         return this;
@@ -2520,9 +2529,9 @@ public final class InBattleMechanicusInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo> historyCardList_ =
         java.util.Collections.emptyList();
       private void ensureHistoryCardListIsMutable() {
-        if (!((bitField0_ & 0x00002000) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           historyCardList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo>(historyCardList_);
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -2672,7 +2681,7 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder clearHistoryCardList() {
         if (historyCardListBuilder_ == null) {
           historyCardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           historyCardListBuilder_.clear();
@@ -2749,7 +2758,7 @@ public final class InBattleMechanicusInfoOuterClass {
           historyCardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo, emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo.Builder, emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfoOrBuilder>(
                   historyCardList_,
-                  ((bitField0_ & 0x00002000) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           historyCardList_ = null;
@@ -2760,9 +2769,9 @@ public final class InBattleMechanicusInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo> pickCardList_ =
         java.util.Collections.emptyList();
       private void ensurePickCardListIsMutable() {
-        if (!((bitField0_ & 0x00004000) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           pickCardList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo>(pickCardList_);
-          bitField0_ |= 0x00004000;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -2912,7 +2921,7 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder clearPickCardList() {
         if (pickCardListBuilder_ == null) {
           pickCardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           pickCardListBuilder_.clear();
@@ -2989,7 +2998,7 @@ public final class InBattleMechanicusInfoOuterClass {
           pickCardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo, emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo.Builder, emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfoOrBuilder>(
                   pickCardList_,
-                  ((bitField0_ & 0x00004000) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           pickCardList_ = null;
@@ -3014,7 +3023,6 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder setEscapedMonsterNum(int value) {
         
         escapedMonsterNum_ = value;
-        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -3023,7 +3031,7 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEscapedMonsterNum() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        
         escapedMonsterNum_ = 0;
         onChanged();
         return this;
@@ -3046,7 +3054,6 @@ public final class InBattleMechanicusInfoOuterClass {
       public Builder setRound(int value) {
         
         round_ = value;
-        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -3055,7 +3062,7 @@ public final class InBattleMechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRound() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        
         round_ = 0;
         onChanged();
         return this;
@@ -3093,18 +3100,7 @@ public final class InBattleMechanicusInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InBattleMechanicusInfo(input, extensionRegistry);
       }
     };
 

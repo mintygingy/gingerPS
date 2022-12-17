@@ -84,6 +84,76 @@ public final class EvtCompensatePosDiffInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtCompensatePosDiffInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              normalizedTimeCompact_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (curPos_ != null) {
+                subBuilder = curPos_.toBuilder();
+              }
+              curPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(curPos_);
+                curPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 56: {
+
+              curHash_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              faceAngleCompact_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtCompensatePosDiffInfoOuterClass.internal_static_EvtCompensatePosDiffInfo_descriptor;
@@ -98,7 +168,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 12;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 12;</code>
      * @return The entityId.
@@ -109,7 +179,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
     }
 
     public static final int NORMALIZED_TIME_COMPACT_FIELD_NUMBER = 5;
-    private int normalizedTimeCompact_ = 0;
+    private int normalizedTimeCompact_;
     /**
      * <code>uint32 normalized_time_compact = 5;</code>
      * @return The normalizedTimeCompact.
@@ -120,7 +190,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
     }
 
     public static final int CUR_HASH_FIELD_NUMBER = 7;
-    private int curHash_ = 0;
+    private int curHash_;
     /**
      * <code>uint32 cur_hash = 7;</code>
      * @return The curHash.
@@ -131,7 +201,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
     }
 
     public static final int FACE_ANGLE_COMPACT_FIELD_NUMBER = 11;
-    private int faceAngleCompact_ = 0;
+    private int faceAngleCompact_;
     /**
      * <code>int32 face_angle_compact = 11;</code>
      * @return The faceAngleCompact.
@@ -164,7 +234,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getCurPosOrBuilder() {
-      return curPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : curPos_;
+      return getCurPos();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -196,7 +266,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(12, entityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -225,7 +295,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, entityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -253,7 +323,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
         if (!getCurPos()
             .equals(other.getCurPos())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -276,7 +346,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
         hash = (37 * hash) + CUR_POS_FIELD_NUMBER;
         hash = (53 * hash) + getCurPos().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,25 +463,34 @@ public final class EvtCompensatePosDiffInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtCompensatePosDiffInfoOuterClass.EvtCompensatePosDiffInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         entityId_ = 0;
+
         normalizedTimeCompact_ = 0;
+
         curHash_ = 0;
+
         faceAngleCompact_ = 0;
-        curPos_ = null;
-        if (curPosBuilder_ != null) {
-          curPosBuilder_.dispose();
+
+        if (curPosBuilder_ == null) {
+          curPos_ = null;
+        } else {
+          curPos_ = null;
           curPosBuilder_ = null;
         }
         return this;
@@ -440,30 +519,17 @@ public final class EvtCompensatePosDiffInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtCompensatePosDiffInfoOuterClass.EvtCompensatePosDiffInfo buildPartial() {
         emu.gingerps.net.proto.EvtCompensatePosDiffInfoOuterClass.EvtCompensatePosDiffInfo result = new emu.gingerps.net.proto.EvtCompensatePosDiffInfoOuterClass.EvtCompensatePosDiffInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.entityId_ = entityId_;
+        result.normalizedTimeCompact_ = normalizedTimeCompact_;
+        result.curHash_ = curHash_;
+        result.faceAngleCompact_ = faceAngleCompact_;
+        if (curPosBuilder_ == null) {
+          result.curPos_ = curPos_;
+        } else {
+          result.curPos_ = curPosBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtCompensatePosDiffInfoOuterClass.EvtCompensatePosDiffInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.normalizedTimeCompact_ = normalizedTimeCompact_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curHash_ = curHash_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.faceAngleCompact_ = faceAngleCompact_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.curPos_ = curPosBuilder_ == null
-              ? curPos_
-              : curPosBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -525,7 +591,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
         if (other.hasCurPos()) {
           mergeCurPos(other.getCurPos());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -540,60 +606,19 @@ public final class EvtCompensatePosDiffInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtCompensatePosDiffInfoOuterClass.EvtCompensatePosDiffInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                normalizedTimeCompact_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 50: {
-                input.readMessage(
-                    getCurPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 50
-              case 56: {
-                curHash_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              case 88: {
-                faceAngleCompact_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 88
-              case 96: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtCompensatePosDiffInfoOuterClass.EvtCompensatePosDiffInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -612,7 +637,6 @@ public final class EvtCompensatePosDiffInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -621,7 +645,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -644,7 +668,6 @@ public final class EvtCompensatePosDiffInfoOuterClass {
       public Builder setNormalizedTimeCompact(int value) {
         
         normalizedTimeCompact_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -653,7 +676,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNormalizedTimeCompact() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         normalizedTimeCompact_ = 0;
         onChanged();
         return this;
@@ -676,7 +699,6 @@ public final class EvtCompensatePosDiffInfoOuterClass {
       public Builder setCurHash(int value) {
         
         curHash_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -685,7 +707,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurHash() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curHash_ = 0;
         onChanged();
         return this;
@@ -708,7 +730,6 @@ public final class EvtCompensatePosDiffInfoOuterClass {
       public Builder setFaceAngleCompact(int value) {
         
         faceAngleCompact_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -717,7 +738,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFaceAngleCompact() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         faceAngleCompact_ = 0;
         onChanged();
         return this;
@@ -731,7 +752,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
        * @return Whether the curPos field is set.
        */
       public boolean hasCurPos() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return curPosBuilder_ != null || curPos_ != null;
       }
       /**
        * <code>.Vector cur_pos = 6;</code>
@@ -753,11 +774,11 @@ public final class EvtCompensatePosDiffInfoOuterClass {
             throw new NullPointerException();
           }
           curPos_ = value;
+          onChanged();
         } else {
           curPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -767,11 +788,11 @@ public final class EvtCompensatePosDiffInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (curPosBuilder_ == null) {
           curPos_ = builderForValue.build();
+          onChanged();
         } else {
           curPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -779,38 +800,38 @@ public final class EvtCompensatePosDiffInfoOuterClass {
        */
       public Builder mergeCurPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (curPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            curPos_ != null &&
-            curPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getCurPosBuilder().mergeFrom(value);
+          if (curPos_ != null) {
+            curPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(curPos_).mergeFrom(value).buildPartial();
           } else {
             curPos_ = value;
           }
+          onChanged();
         } else {
           curPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector cur_pos = 6;</code>
        */
       public Builder clearCurPos() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        curPos_ = null;
-        if (curPosBuilder_ != null) {
-          curPosBuilder_.dispose();
+        if (curPosBuilder_ == null) {
+          curPos_ = null;
+          onChanged();
+        } else {
+          curPos_ = null;
           curPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector cur_pos = 6;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getCurPosBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getCurPosFieldBuilder().getBuilder();
       }
@@ -874,18 +895,7 @@ public final class EvtCompensatePosDiffInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtCompensatePosDiffInfo(input, extensionRegistry);
       }
     };
 

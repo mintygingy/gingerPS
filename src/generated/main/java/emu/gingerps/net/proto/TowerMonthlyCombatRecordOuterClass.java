@@ -145,6 +145,121 @@ public final class TowerMonthlyCombatRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TowerMonthlyCombatRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder subBuilder = null;
+              if (unk3300OALLHJPBOHO_ != null) {
+                subBuilder = unk3300OALLHJPBOHO_.toBuilder();
+              }
+              unk3300OALLHJPBOHO_ = input.readMessage(emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300OALLHJPBOHO_);
+                unk3300OALLHJPBOHO_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                mostRevealAvatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              mostRevealAvatarList_.add(
+                  input.readMessage(emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder subBuilder = null;
+              if (unk3300KIKPMNPKLDG_ != null) {
+                subBuilder = unk3300KIKPMNPKLDG_.toBuilder();
+              }
+              unk3300KIKPMNPKLDG_ = input.readMessage(emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300KIKPMNPKLDG_);
+                unk3300KIKPMNPKLDG_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder subBuilder = null;
+              if (unk3300EIGEGOGFJND_ != null) {
+                subBuilder = unk3300EIGEGOGFJND_.toBuilder();
+              }
+              unk3300EIGEGOGFJND_ = input.readMessage(emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300EIGEGOGFJND_);
+                unk3300EIGEGOGFJND_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder subBuilder = null;
+              if (unk3300KMCLPHEDNCJ_ != null) {
+                subBuilder = unk3300KMCLPHEDNCJ_.toBuilder();
+              }
+              unk3300KMCLPHEDNCJ_ = input.readMessage(emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300KMCLPHEDNCJ_);
+                unk3300KMCLPHEDNCJ_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder subBuilder = null;
+              if (unk3300CCFHOFCIEPF_ != null) {
+                subBuilder = unk3300CCFHOFCIEPF_.toBuilder();
+              }
+              unk3300CCFHOFCIEPF_ = input.readMessage(emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300CCFHOFCIEPF_);
+                unk3300CCFHOFCIEPF_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          mostRevealAvatarList_ = java.util.Collections.unmodifiableList(mostRevealAvatarList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.internal_static_TowerMonthlyCombatRecord_descriptor;
@@ -159,7 +274,6 @@ public final class TowerMonthlyCombatRecordOuterClass {
     }
 
     public static final int MOST_REVEAL_AVATAR_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair> mostRevealAvatarList_;
     /**
      * <code>repeated .TowerFightRecordPair most_reveal_avatar_list = 3;</code>
@@ -222,7 +336,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPairOrBuilder getUnk3300EIGEGOGFJNDOrBuilder() {
-      return unk3300EIGEGOGFJND_ == null ? emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.getDefaultInstance() : unk3300EIGEGOGFJND_;
+      return getUnk3300EIGEGOGFJND();
     }
 
     public static final int UNK3300_OALLHJPBOHO_FIELD_NUMBER = 2;
@@ -248,7 +362,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPairOrBuilder getUnk3300OALLHJPBOHOOrBuilder() {
-      return unk3300OALLHJPBOHO_ == null ? emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.getDefaultInstance() : unk3300OALLHJPBOHO_;
+      return getUnk3300OALLHJPBOHO();
     }
 
     public static final int UNK3300_KMCLPHEDNCJ_FIELD_NUMBER = 14;
@@ -274,7 +388,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPairOrBuilder getUnk3300KMCLPHEDNCJOrBuilder() {
-      return unk3300KMCLPHEDNCJ_ == null ? emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.getDefaultInstance() : unk3300KMCLPHEDNCJ_;
+      return getUnk3300KMCLPHEDNCJ();
     }
 
     public static final int UNK3300_KIKPMNPKLDG_FIELD_NUMBER = 7;
@@ -300,7 +414,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPairOrBuilder getUnk3300KIKPMNPKLDGOrBuilder() {
-      return unk3300KIKPMNPKLDG_ == null ? emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.getDefaultInstance() : unk3300KIKPMNPKLDG_;
+      return getUnk3300KIKPMNPKLDG();
     }
 
     public static final int UNK3300_CCFHOFCIEPF_FIELD_NUMBER = 15;
@@ -326,7 +440,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPairOrBuilder getUnk3300CCFHOFCIEPFOrBuilder() {
-      return unk3300CCFHOFCIEPF_ == null ? emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.getDefaultInstance() : unk3300CCFHOFCIEPF_;
+      return getUnk3300CCFHOFCIEPF();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -361,7 +475,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
       if (unk3300CCFHOFCIEPF_ != null) {
         output.writeMessage(15, getUnk3300CCFHOFCIEPF());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -394,7 +508,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getUnk3300CCFHOFCIEPF());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -436,7 +550,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
         if (!getUnk3300CCFHOFCIEPF()
             .equals(other.getUnk3300CCFHOFCIEPF())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -471,7 +585,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
         hash = (37 * hash) + UNK3300_CCFHOFCIEPF_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300CCFHOFCIEPF().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -588,48 +702,57 @@ public final class TowerMonthlyCombatRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMostRevealAvatarListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (mostRevealAvatarListBuilder_ == null) {
           mostRevealAvatarList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          mostRevealAvatarList_ = null;
           mostRevealAvatarListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        unk3300EIGEGOGFJND_ = null;
-        if (unk3300EIGEGOGFJNDBuilder_ != null) {
-          unk3300EIGEGOGFJNDBuilder_.dispose();
+        if (unk3300EIGEGOGFJNDBuilder_ == null) {
+          unk3300EIGEGOGFJND_ = null;
+        } else {
+          unk3300EIGEGOGFJND_ = null;
           unk3300EIGEGOGFJNDBuilder_ = null;
         }
-        unk3300OALLHJPBOHO_ = null;
-        if (unk3300OALLHJPBOHOBuilder_ != null) {
-          unk3300OALLHJPBOHOBuilder_.dispose();
+        if (unk3300OALLHJPBOHOBuilder_ == null) {
+          unk3300OALLHJPBOHO_ = null;
+        } else {
+          unk3300OALLHJPBOHO_ = null;
           unk3300OALLHJPBOHOBuilder_ = null;
         }
-        unk3300KMCLPHEDNCJ_ = null;
-        if (unk3300KMCLPHEDNCJBuilder_ != null) {
-          unk3300KMCLPHEDNCJBuilder_.dispose();
+        if (unk3300KMCLPHEDNCJBuilder_ == null) {
+          unk3300KMCLPHEDNCJ_ = null;
+        } else {
+          unk3300KMCLPHEDNCJ_ = null;
           unk3300KMCLPHEDNCJBuilder_ = null;
         }
-        unk3300KIKPMNPKLDG_ = null;
-        if (unk3300KIKPMNPKLDGBuilder_ != null) {
-          unk3300KIKPMNPKLDGBuilder_.dispose();
+        if (unk3300KIKPMNPKLDGBuilder_ == null) {
+          unk3300KIKPMNPKLDG_ = null;
+        } else {
+          unk3300KIKPMNPKLDG_ = null;
           unk3300KIKPMNPKLDGBuilder_ = null;
         }
-        unk3300CCFHOFCIEPF_ = null;
-        if (unk3300CCFHOFCIEPFBuilder_ != null) {
-          unk3300CCFHOFCIEPFBuilder_.dispose();
+        if (unk3300CCFHOFCIEPFBuilder_ == null) {
+          unk3300CCFHOFCIEPF_ = null;
+        } else {
+          unk3300CCFHOFCIEPF_ = null;
           unk3300CCFHOFCIEPFBuilder_ = null;
         }
         return this;
@@ -658,13 +781,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord buildPartial() {
         emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord result = new emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord result) {
+        int from_bitField0_ = bitField0_;
         if (mostRevealAvatarListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             mostRevealAvatarList_ = java.util.Collections.unmodifiableList(mostRevealAvatarList_);
@@ -674,35 +791,33 @@ public final class TowerMonthlyCombatRecordOuterClass {
         } else {
           result.mostRevealAvatarList_ = mostRevealAvatarListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300EIGEGOGFJND_ = unk3300EIGEGOGFJNDBuilder_ == null
-              ? unk3300EIGEGOGFJND_
-              : unk3300EIGEGOGFJNDBuilder_.build();
+        if (unk3300EIGEGOGFJNDBuilder_ == null) {
+          result.unk3300EIGEGOGFJND_ = unk3300EIGEGOGFJND_;
+        } else {
+          result.unk3300EIGEGOGFJND_ = unk3300EIGEGOGFJNDBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300OALLHJPBOHO_ = unk3300OALLHJPBOHOBuilder_ == null
-              ? unk3300OALLHJPBOHO_
-              : unk3300OALLHJPBOHOBuilder_.build();
+        if (unk3300OALLHJPBOHOBuilder_ == null) {
+          result.unk3300OALLHJPBOHO_ = unk3300OALLHJPBOHO_;
+        } else {
+          result.unk3300OALLHJPBOHO_ = unk3300OALLHJPBOHOBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300KMCLPHEDNCJ_ = unk3300KMCLPHEDNCJBuilder_ == null
-              ? unk3300KMCLPHEDNCJ_
-              : unk3300KMCLPHEDNCJBuilder_.build();
+        if (unk3300KMCLPHEDNCJBuilder_ == null) {
+          result.unk3300KMCLPHEDNCJ_ = unk3300KMCLPHEDNCJ_;
+        } else {
+          result.unk3300KMCLPHEDNCJ_ = unk3300KMCLPHEDNCJBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300KIKPMNPKLDG_ = unk3300KIKPMNPKLDGBuilder_ == null
-              ? unk3300KIKPMNPKLDG_
-              : unk3300KIKPMNPKLDGBuilder_.build();
+        if (unk3300KIKPMNPKLDGBuilder_ == null) {
+          result.unk3300KIKPMNPKLDG_ = unk3300KIKPMNPKLDG_;
+        } else {
+          result.unk3300KIKPMNPKLDG_ = unk3300KIKPMNPKLDGBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.unk3300CCFHOFCIEPF_ = unk3300CCFHOFCIEPFBuilder_ == null
-              ? unk3300CCFHOFCIEPF_
-              : unk3300CCFHOFCIEPFBuilder_.build();
+        if (unk3300CCFHOFCIEPFBuilder_ == null) {
+          result.unk3300CCFHOFCIEPF_ = unk3300CCFHOFCIEPF_;
+        } else {
+          result.unk3300CCFHOFCIEPF_ = unk3300CCFHOFCIEPFBuilder_.build();
         }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -790,7 +905,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
         if (other.hasUnk3300CCFHOFCIEPF()) {
           mergeUnk3300CCFHOFCIEPF(other.getUnk3300CCFHOFCIEPF());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -805,78 +920,17 @@ public final class TowerMonthlyCombatRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                input.readMessage(
-                    getUnk3300OALLHJPBOHOFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 18
-              case 26: {
-                emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.parser(),
-                        extensionRegistry);
-                if (mostRevealAvatarListBuilder_ == null) {
-                  ensureMostRevealAvatarListIsMutable();
-                  mostRevealAvatarList_.add(m);
-                } else {
-                  mostRevealAvatarListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 58: {
-                input.readMessage(
-                    getUnk3300KIKPMNPKLDGFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 58
-              case 66: {
-                input.readMessage(
-                    getUnk3300EIGEGOGFJNDFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 66
-              case 114: {
-                input.readMessage(
-                    getUnk3300KMCLPHEDNCJFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 114
-              case 122: {
-                input.readMessage(
-                    getUnk3300CCFHOFCIEPFFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1129,7 +1183,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
        * @return Whether the unk3300EIGEGOGFJND field is set.
        */
       public boolean hasUnk3300EIGEGOGFJND() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return unk3300EIGEGOGFJNDBuilder_ != null || unk3300EIGEGOGFJND_ != null;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_EIGEGOGFJND = 8;</code>
@@ -1151,11 +1205,11 @@ public final class TowerMonthlyCombatRecordOuterClass {
             throw new NullPointerException();
           }
           unk3300EIGEGOGFJND_ = value;
+          onChanged();
         } else {
           unk3300EIGEGOGFJNDBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1165,11 +1219,11 @@ public final class TowerMonthlyCombatRecordOuterClass {
           emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder builderForValue) {
         if (unk3300EIGEGOGFJNDBuilder_ == null) {
           unk3300EIGEGOGFJND_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300EIGEGOGFJNDBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1177,38 +1231,38 @@ public final class TowerMonthlyCombatRecordOuterClass {
        */
       public Builder mergeUnk3300EIGEGOGFJND(emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair value) {
         if (unk3300EIGEGOGFJNDBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            unk3300EIGEGOGFJND_ != null &&
-            unk3300EIGEGOGFJND_ != emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.getDefaultInstance()) {
-            getUnk3300EIGEGOGFJNDBuilder().mergeFrom(value);
+          if (unk3300EIGEGOGFJND_ != null) {
+            unk3300EIGEGOGFJND_ =
+              emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.newBuilder(unk3300EIGEGOGFJND_).mergeFrom(value).buildPartial();
           } else {
             unk3300EIGEGOGFJND_ = value;
           }
+          onChanged();
         } else {
           unk3300EIGEGOGFJNDBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_EIGEGOGFJND = 8;</code>
        */
       public Builder clearUnk3300EIGEGOGFJND() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        unk3300EIGEGOGFJND_ = null;
-        if (unk3300EIGEGOGFJNDBuilder_ != null) {
-          unk3300EIGEGOGFJNDBuilder_.dispose();
+        if (unk3300EIGEGOGFJNDBuilder_ == null) {
+          unk3300EIGEGOGFJND_ = null;
+          onChanged();
+        } else {
+          unk3300EIGEGOGFJND_ = null;
           unk3300EIGEGOGFJNDBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_EIGEGOGFJND = 8;</code>
        */
       public emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder getUnk3300EIGEGOGFJNDBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getUnk3300EIGEGOGFJNDFieldBuilder().getBuilder();
       }
@@ -1248,7 +1302,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
        * @return Whether the unk3300OALLHJPBOHO field is set.
        */
       public boolean hasUnk3300OALLHJPBOHO() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return unk3300OALLHJPBOHOBuilder_ != null || unk3300OALLHJPBOHO_ != null;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_OALLHJPBOHO = 2;</code>
@@ -1270,11 +1324,11 @@ public final class TowerMonthlyCombatRecordOuterClass {
             throw new NullPointerException();
           }
           unk3300OALLHJPBOHO_ = value;
+          onChanged();
         } else {
           unk3300OALLHJPBOHOBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1284,11 +1338,11 @@ public final class TowerMonthlyCombatRecordOuterClass {
           emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder builderForValue) {
         if (unk3300OALLHJPBOHOBuilder_ == null) {
           unk3300OALLHJPBOHO_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300OALLHJPBOHOBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1296,38 +1350,38 @@ public final class TowerMonthlyCombatRecordOuterClass {
        */
       public Builder mergeUnk3300OALLHJPBOHO(emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair value) {
         if (unk3300OALLHJPBOHOBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            unk3300OALLHJPBOHO_ != null &&
-            unk3300OALLHJPBOHO_ != emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.getDefaultInstance()) {
-            getUnk3300OALLHJPBOHOBuilder().mergeFrom(value);
+          if (unk3300OALLHJPBOHO_ != null) {
+            unk3300OALLHJPBOHO_ =
+              emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.newBuilder(unk3300OALLHJPBOHO_).mergeFrom(value).buildPartial();
           } else {
             unk3300OALLHJPBOHO_ = value;
           }
+          onChanged();
         } else {
           unk3300OALLHJPBOHOBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_OALLHJPBOHO = 2;</code>
        */
       public Builder clearUnk3300OALLHJPBOHO() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        unk3300OALLHJPBOHO_ = null;
-        if (unk3300OALLHJPBOHOBuilder_ != null) {
-          unk3300OALLHJPBOHOBuilder_.dispose();
+        if (unk3300OALLHJPBOHOBuilder_ == null) {
+          unk3300OALLHJPBOHO_ = null;
+          onChanged();
+        } else {
+          unk3300OALLHJPBOHO_ = null;
           unk3300OALLHJPBOHOBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_OALLHJPBOHO = 2;</code>
        */
       public emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder getUnk3300OALLHJPBOHOBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getUnk3300OALLHJPBOHOFieldBuilder().getBuilder();
       }
@@ -1367,7 +1421,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
        * @return Whether the unk3300KMCLPHEDNCJ field is set.
        */
       public boolean hasUnk3300KMCLPHEDNCJ() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return unk3300KMCLPHEDNCJBuilder_ != null || unk3300KMCLPHEDNCJ_ != null;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_KMCLPHEDNCJ = 14;</code>
@@ -1389,11 +1443,11 @@ public final class TowerMonthlyCombatRecordOuterClass {
             throw new NullPointerException();
           }
           unk3300KMCLPHEDNCJ_ = value;
+          onChanged();
         } else {
           unk3300KMCLPHEDNCJBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1403,11 +1457,11 @@ public final class TowerMonthlyCombatRecordOuterClass {
           emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder builderForValue) {
         if (unk3300KMCLPHEDNCJBuilder_ == null) {
           unk3300KMCLPHEDNCJ_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300KMCLPHEDNCJBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1415,38 +1469,38 @@ public final class TowerMonthlyCombatRecordOuterClass {
        */
       public Builder mergeUnk3300KMCLPHEDNCJ(emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair value) {
         if (unk3300KMCLPHEDNCJBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            unk3300KMCLPHEDNCJ_ != null &&
-            unk3300KMCLPHEDNCJ_ != emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.getDefaultInstance()) {
-            getUnk3300KMCLPHEDNCJBuilder().mergeFrom(value);
+          if (unk3300KMCLPHEDNCJ_ != null) {
+            unk3300KMCLPHEDNCJ_ =
+              emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.newBuilder(unk3300KMCLPHEDNCJ_).mergeFrom(value).buildPartial();
           } else {
             unk3300KMCLPHEDNCJ_ = value;
           }
+          onChanged();
         } else {
           unk3300KMCLPHEDNCJBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_KMCLPHEDNCJ = 14;</code>
        */
       public Builder clearUnk3300KMCLPHEDNCJ() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        unk3300KMCLPHEDNCJ_ = null;
-        if (unk3300KMCLPHEDNCJBuilder_ != null) {
-          unk3300KMCLPHEDNCJBuilder_.dispose();
+        if (unk3300KMCLPHEDNCJBuilder_ == null) {
+          unk3300KMCLPHEDNCJ_ = null;
+          onChanged();
+        } else {
+          unk3300KMCLPHEDNCJ_ = null;
           unk3300KMCLPHEDNCJBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_KMCLPHEDNCJ = 14;</code>
        */
       public emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder getUnk3300KMCLPHEDNCJBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getUnk3300KMCLPHEDNCJFieldBuilder().getBuilder();
       }
@@ -1486,7 +1540,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
        * @return Whether the unk3300KIKPMNPKLDG field is set.
        */
       public boolean hasUnk3300KIKPMNPKLDG() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return unk3300KIKPMNPKLDGBuilder_ != null || unk3300KIKPMNPKLDG_ != null;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_KIKPMNPKLDG = 7;</code>
@@ -1508,11 +1562,11 @@ public final class TowerMonthlyCombatRecordOuterClass {
             throw new NullPointerException();
           }
           unk3300KIKPMNPKLDG_ = value;
+          onChanged();
         } else {
           unk3300KIKPMNPKLDGBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1522,11 +1576,11 @@ public final class TowerMonthlyCombatRecordOuterClass {
           emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder builderForValue) {
         if (unk3300KIKPMNPKLDGBuilder_ == null) {
           unk3300KIKPMNPKLDG_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300KIKPMNPKLDGBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1534,38 +1588,38 @@ public final class TowerMonthlyCombatRecordOuterClass {
        */
       public Builder mergeUnk3300KIKPMNPKLDG(emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair value) {
         if (unk3300KIKPMNPKLDGBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            unk3300KIKPMNPKLDG_ != null &&
-            unk3300KIKPMNPKLDG_ != emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.getDefaultInstance()) {
-            getUnk3300KIKPMNPKLDGBuilder().mergeFrom(value);
+          if (unk3300KIKPMNPKLDG_ != null) {
+            unk3300KIKPMNPKLDG_ =
+              emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.newBuilder(unk3300KIKPMNPKLDG_).mergeFrom(value).buildPartial();
           } else {
             unk3300KIKPMNPKLDG_ = value;
           }
+          onChanged();
         } else {
           unk3300KIKPMNPKLDGBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_KIKPMNPKLDG = 7;</code>
        */
       public Builder clearUnk3300KIKPMNPKLDG() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        unk3300KIKPMNPKLDG_ = null;
-        if (unk3300KIKPMNPKLDGBuilder_ != null) {
-          unk3300KIKPMNPKLDGBuilder_.dispose();
+        if (unk3300KIKPMNPKLDGBuilder_ == null) {
+          unk3300KIKPMNPKLDG_ = null;
+          onChanged();
+        } else {
+          unk3300KIKPMNPKLDG_ = null;
           unk3300KIKPMNPKLDGBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_KIKPMNPKLDG = 7;</code>
        */
       public emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder getUnk3300KIKPMNPKLDGBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getUnk3300KIKPMNPKLDGFieldBuilder().getBuilder();
       }
@@ -1605,7 +1659,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
        * @return Whether the unk3300CCFHOFCIEPF field is set.
        */
       public boolean hasUnk3300CCFHOFCIEPF() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return unk3300CCFHOFCIEPFBuilder_ != null || unk3300CCFHOFCIEPF_ != null;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_CCFHOFCIEPF = 15;</code>
@@ -1627,11 +1681,11 @@ public final class TowerMonthlyCombatRecordOuterClass {
             throw new NullPointerException();
           }
           unk3300CCFHOFCIEPF_ = value;
+          onChanged();
         } else {
           unk3300CCFHOFCIEPFBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1641,11 +1695,11 @@ public final class TowerMonthlyCombatRecordOuterClass {
           emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder builderForValue) {
         if (unk3300CCFHOFCIEPFBuilder_ == null) {
           unk3300CCFHOFCIEPF_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300CCFHOFCIEPFBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1653,38 +1707,38 @@ public final class TowerMonthlyCombatRecordOuterClass {
        */
       public Builder mergeUnk3300CCFHOFCIEPF(emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair value) {
         if (unk3300CCFHOFCIEPFBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            unk3300CCFHOFCIEPF_ != null &&
-            unk3300CCFHOFCIEPF_ != emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.getDefaultInstance()) {
-            getUnk3300CCFHOFCIEPFBuilder().mergeFrom(value);
+          if (unk3300CCFHOFCIEPF_ != null) {
+            unk3300CCFHOFCIEPF_ =
+              emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.newBuilder(unk3300CCFHOFCIEPF_).mergeFrom(value).buildPartial();
           } else {
             unk3300CCFHOFCIEPF_ = value;
           }
+          onChanged();
         } else {
           unk3300CCFHOFCIEPFBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_CCFHOFCIEPF = 15;</code>
        */
       public Builder clearUnk3300CCFHOFCIEPF() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        unk3300CCFHOFCIEPF_ = null;
-        if (unk3300CCFHOFCIEPFBuilder_ != null) {
-          unk3300CCFHOFCIEPFBuilder_.dispose();
+        if (unk3300CCFHOFCIEPFBuilder_ == null) {
+          unk3300CCFHOFCIEPF_ = null;
+          onChanged();
+        } else {
+          unk3300CCFHOFCIEPF_ = null;
           unk3300CCFHOFCIEPFBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerFightRecordPair Unk3300_CCFHOFCIEPF = 15;</code>
        */
       public emu.gingerps.net.proto.TowerFightRecordPairOuterClass.TowerFightRecordPair.Builder getUnk3300CCFHOFCIEPFBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getUnk3300CCFHOFCIEPFFieldBuilder().getBuilder();
       }
@@ -1748,18 +1802,7 @@ public final class TowerMonthlyCombatRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TowerMonthlyCombatRecord(input, extensionRegistry);
       }
     };
 

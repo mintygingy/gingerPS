@@ -81,6 +81,83 @@ public final class RogueEffectRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RogueEffectRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              count_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isNew_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              sourceId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                extraParamList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              extraParamList_.addInt(input.readUInt32());
+              break;
+            }
+            case 122: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                extraParamList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                extraParamList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          extraParamList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RogueEffectRecordOuterClass.internal_static_RogueEffectRecord_descriptor;
@@ -95,7 +172,7 @@ public final class RogueEffectRecordOuterClass {
     }
 
     public static final int SOURCE_ID_FIELD_NUMBER = 9;
-    private int sourceId_ = 0;
+    private int sourceId_;
     /**
      * <code>uint32 source_id = 9;</code>
      * @return The sourceId.
@@ -106,7 +183,7 @@ public final class RogueEffectRecordOuterClass {
     }
 
     public static final int IS_NEW_FIELD_NUMBER = 8;
-    private boolean isNew_ = false;
+    private boolean isNew_;
     /**
      * <code>bool is_new = 8;</code>
      * @return The isNew.
@@ -117,7 +194,7 @@ public final class RogueEffectRecordOuterClass {
     }
 
     public static final int COUNT_FIELD_NUMBER = 3;
-    private int count_ = 0;
+    private int count_;
     /**
      * <code>uint32 count = 3;</code>
      * @return The count.
@@ -128,7 +205,6 @@ public final class RogueEffectRecordOuterClass {
     }
 
     public static final int EXTRA_PARAM_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList extraParamList_;
     /**
      * <code>repeated uint32 extra_param_list = 15;</code>
@@ -187,7 +263,7 @@ public final class RogueEffectRecordOuterClass {
       for (int i = 0; i < extraParamList_.size(); i++) {
         output.writeUInt32NoTag(extraParamList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -222,7 +298,7 @@ public final class RogueEffectRecordOuterClass {
         }
         extraParamListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -245,7 +321,7 @@ public final class RogueEffectRecordOuterClass {
           != other.getCount()) return false;
       if (!getExtraParamListList()
           .equals(other.getExtraParamListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -267,7 +343,7 @@ public final class RogueEffectRecordOuterClass {
         hash = (37 * hash) + EXTRA_PARAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getExtraParamListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,22 +460,30 @@ public final class RogueEffectRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         sourceId_ = 0;
+
         isNew_ = false;
+
         count_ = 0;
+
         extraParamList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -426,31 +510,17 @@ public final class RogueEffectRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord buildPartial() {
         emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord result = new emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord result) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.sourceId_ = sourceId_;
+        result.isNew_ = isNew_;
+        result.count_ = count_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           extraParamList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.extraParamList_ = extraParamList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sourceId_ = sourceId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isNew_ = isNew_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.count_ = count_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -509,14 +579,14 @@ public final class RogueEffectRecordOuterClass {
         if (!other.extraParamList_.isEmpty()) {
           if (extraParamList_.isEmpty()) {
             extraParamList_ = other.extraParamList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureExtraParamListIsMutable();
             extraParamList_.addAll(other.extraParamList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -531,61 +601,17 @@ public final class RogueEffectRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                count_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 64: {
-                isNew_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 72: {
-                sourceId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 120: {
-                int v = input.readUInt32();
-                ensureExtraParamListIsMutable();
-                extraParamList_.addInt(v);
-                break;
-              } // case 120
-              case 122: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureExtraParamListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  extraParamList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -607,7 +633,6 @@ public final class RogueEffectRecordOuterClass {
       public Builder setSourceId(int value) {
         
         sourceId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -616,7 +641,7 @@ public final class RogueEffectRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSourceId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         sourceId_ = 0;
         onChanged();
         return this;
@@ -639,7 +664,6 @@ public final class RogueEffectRecordOuterClass {
       public Builder setIsNew(boolean value) {
         
         isNew_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -648,7 +672,7 @@ public final class RogueEffectRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNew() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isNew_ = false;
         onChanged();
         return this;
@@ -671,7 +695,6 @@ public final class RogueEffectRecordOuterClass {
       public Builder setCount(int value) {
         
         count_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -680,7 +703,7 @@ public final class RogueEffectRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCount() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         count_ = 0;
         onChanged();
         return this;
@@ -688,10 +711,10 @@ public final class RogueEffectRecordOuterClass {
 
       private com.google.protobuf.Internal.IntList extraParamList_ = emptyIntList();
       private void ensureExtraParamListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           extraParamList_ = mutableCopy(extraParamList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 extra_param_list = 15;</code>
@@ -699,7 +722,7 @@ public final class RogueEffectRecordOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getExtraParamListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(extraParamList_) : extraParamList_;
       }
       /**
@@ -725,7 +748,6 @@ public final class RogueEffectRecordOuterClass {
        */
       public Builder setExtraParamList(
           int index, int value) {
-        
         ensureExtraParamListIsMutable();
         extraParamList_.setInt(index, value);
         onChanged();
@@ -737,7 +759,6 @@ public final class RogueEffectRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder addExtraParamList(int value) {
-        
         ensureExtraParamListIsMutable();
         extraParamList_.addInt(value);
         onChanged();
@@ -762,7 +783,7 @@ public final class RogueEffectRecordOuterClass {
        */
       public Builder clearExtraParamList() {
         extraParamList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -799,18 +820,7 @@ public final class RogueEffectRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RogueEffectRecord(input, extensionRegistry);
       }
     };
 

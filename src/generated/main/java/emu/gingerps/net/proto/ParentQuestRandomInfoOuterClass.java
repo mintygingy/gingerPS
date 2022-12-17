@@ -75,6 +75,78 @@ public final class ParentQuestRandomInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ParentQuestRandomInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                factorList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              factorList_.addInt(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                factorList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                factorList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              entranceId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              templateId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          factorList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ParentQuestRandomInfoOuterClass.internal_static_ParentQuestRandomInfo_descriptor;
@@ -89,7 +161,6 @@ public final class ParentQuestRandomInfoOuterClass {
     }
 
     public static final int FACTOR_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList factorList_;
     /**
      * <code>repeated uint32 factor_list = 1;</code>
@@ -118,7 +189,7 @@ public final class ParentQuestRandomInfoOuterClass {
     private int factorListMemoizedSerializedSize = -1;
 
     public static final int ENTRANCE_ID_FIELD_NUMBER = 8;
-    private int entranceId_ = 0;
+    private int entranceId_;
     /**
      * <code>uint32 entrance_id = 8;</code>
      * @return The entranceId.
@@ -129,7 +200,7 @@ public final class ParentQuestRandomInfoOuterClass {
     }
 
     public static final int TEMPLATE_ID_FIELD_NUMBER = 15;
-    private int templateId_ = 0;
+    private int templateId_;
     /**
      * <code>uint32 template_id = 15;</code>
      * @return The templateId.
@@ -167,7 +238,7 @@ public final class ParentQuestRandomInfoOuterClass {
       if (templateId_ != 0) {
         output.writeUInt32(15, templateId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -198,7 +269,7 @@ public final class ParentQuestRandomInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, templateId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -219,7 +290,7 @@ public final class ParentQuestRandomInfoOuterClass {
           != other.getEntranceId()) return false;
       if (getTemplateId()
           != other.getTemplateId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -238,7 +309,7 @@ public final class ParentQuestRandomInfoOuterClass {
       hash = (53 * hash) + getEntranceId();
       hash = (37 * hash) + TEMPLATE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTemplateId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -355,21 +426,28 @@ public final class ParentQuestRandomInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         factorList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         entranceId_ = 0;
+
         templateId_ = 0;
+
         return this;
       }
 
@@ -396,28 +474,16 @@ public final class ParentQuestRandomInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo buildPartial() {
         emu.gingerps.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo result = new emu.gingerps.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           factorList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.factorList_ = factorList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entranceId_ = entranceId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.templateId_ = templateId_;
-        }
+        result.entranceId_ = entranceId_;
+        result.templateId_ = templateId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -480,7 +546,7 @@ public final class ParentQuestRandomInfoOuterClass {
         if (other.getTemplateId() != 0) {
           setTemplateId(other.getTemplateId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -495,56 +561,17 @@ public final class ParentQuestRandomInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int v = input.readUInt32();
-                ensureFactorListIsMutable();
-                factorList_.addInt(v);
-                break;
-              } // case 8
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureFactorListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  factorList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 10
-              case 64: {
-                entranceId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 120: {
-                templateId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -554,7 +581,7 @@ public final class ParentQuestRandomInfoOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           factorList_ = mutableCopy(factorList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 factor_list = 1;</code>
@@ -588,7 +615,6 @@ public final class ParentQuestRandomInfoOuterClass {
        */
       public Builder setFactorList(
           int index, int value) {
-        
         ensureFactorListIsMutable();
         factorList_.setInt(index, value);
         onChanged();
@@ -600,7 +626,6 @@ public final class ParentQuestRandomInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFactorList(int value) {
-        
         ensureFactorListIsMutable();
         factorList_.addInt(value);
         onChanged();
@@ -647,7 +672,6 @@ public final class ParentQuestRandomInfoOuterClass {
       public Builder setEntranceId(int value) {
         
         entranceId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -656,7 +680,7 @@ public final class ParentQuestRandomInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntranceId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         entranceId_ = 0;
         onChanged();
         return this;
@@ -679,7 +703,6 @@ public final class ParentQuestRandomInfoOuterClass {
       public Builder setTemplateId(int value) {
         
         templateId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -688,7 +711,7 @@ public final class ParentQuestRandomInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTemplateId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         templateId_ = 0;
         onChanged();
         return this;
@@ -726,18 +749,7 @@ public final class ParentQuestRandomInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ParentQuestRandomInfo(input, extensionRegistry);
       }
     };
 

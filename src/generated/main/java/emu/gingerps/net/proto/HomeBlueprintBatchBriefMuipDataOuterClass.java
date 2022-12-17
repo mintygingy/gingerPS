@@ -96,6 +96,68 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeBlueprintBatchBriefMuipData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                briefList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              briefList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                notExistShareCodeList_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              notExistShareCodeList_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          briefList_ = java.util.Collections.unmodifiableList(briefList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          notExistShareCodeList_ = notExistShareCodeList_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeBlueprintBatchBriefMuipDataOuterClass.internal_static_HomeBlueprintBatchBriefMuipData_descriptor;
@@ -110,7 +172,6 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
     }
 
     public static final int BRIEF_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData> briefList_;
     /**
      * <code>repeated .HomeBlueprintBriefMuipData brief_list = 1;</code>
@@ -151,7 +212,6 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
     }
 
     public static final int NOT_EXIST_SHARE_CODE_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList notExistShareCodeList_;
     /**
      * <code>repeated string not_exist_share_code_list = 2;</code>
@@ -206,7 +266,7 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
       for (int i = 0; i < notExistShareCodeList_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, notExistShareCodeList_.getRaw(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -227,7 +287,7 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
         size += dataSize;
         size += 1 * getNotExistShareCodeListList().size();
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -246,7 +306,7 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
           .equals(other.getBriefListList())) return false;
       if (!getNotExistShareCodeListList()
           .equals(other.getNotExistShareCodeListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -265,7 +325,7 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
         hash = (37 * hash) + NOT_EXIST_SHARE_CODE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getNotExistShareCodeListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,25 +442,29 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeBlueprintBatchBriefMuipDataOuterClass.HomeBlueprintBatchBriefMuipData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBriefListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (briefListBuilder_ == null) {
           briefList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          briefList_ = null;
           briefListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         notExistShareCodeList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
@@ -429,13 +493,7 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeBlueprintBatchBriefMuipDataOuterClass.HomeBlueprintBatchBriefMuipData buildPartial() {
         emu.gingerps.net.proto.HomeBlueprintBatchBriefMuipDataOuterClass.HomeBlueprintBatchBriefMuipData result = new emu.gingerps.net.proto.HomeBlueprintBatchBriefMuipDataOuterClass.HomeBlueprintBatchBriefMuipData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomeBlueprintBatchBriefMuipDataOuterClass.HomeBlueprintBatchBriefMuipData result) {
+        int from_bitField0_ = bitField0_;
         if (briefListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             briefList_ = java.util.Collections.unmodifiableList(briefList_);
@@ -450,10 +508,8 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.notExistShareCodeList_ = notExistShareCodeList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeBlueprintBatchBriefMuipDataOuterClass.HomeBlueprintBatchBriefMuipData result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -536,7 +592,7 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -551,49 +607,17 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeBlueprintBatchBriefMuipDataOuterClass.HomeBlueprintBatchBriefMuipData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData.parser(),
-                        extensionRegistry);
-                if (briefListBuilder_ == null) {
-                  ensureBriefListIsMutable();
-                  briefList_.add(m);
-                } else {
-                  briefListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureNotExistShareCodeListIsMutable();
-                notExistShareCodeList_.add(s);
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeBlueprintBatchBriefMuipDataOuterClass.HomeBlueprintBatchBriefMuipData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -885,8 +909,10 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
        */
       public Builder setNotExistShareCodeList(
           int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureNotExistShareCodeListIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNotExistShareCodeListIsMutable();
         notExistShareCodeList_.set(index, value);
         onChanged();
         return this;
@@ -898,8 +924,10 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
        */
       public Builder addNotExistShareCodeList(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureNotExistShareCodeListIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNotExistShareCodeListIsMutable();
         notExistShareCodeList_.add(value);
         onChanged();
         return this;
@@ -934,8 +962,10 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
        */
       public Builder addNotExistShareCodeListBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         ensureNotExistShareCodeListIsMutable();
         notExistShareCodeList_.add(value);
         onChanged();
@@ -974,18 +1004,7 @@ public final class HomeBlueprintBatchBriefMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeBlueprintBatchBriefMuipData(input, extensionRegistry);
       }
     };
 

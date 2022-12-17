@@ -89,6 +89,67 @@ public final class SceneCreateEntityReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneCreateEntityReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder subBuilder = null;
+              if (entity_ != null) {
+                subBuilder = entity_.toBuilder();
+              }
+              entity_ = input.readMessage(emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(entity_);
+                entity_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 120: {
+
+              isDestroyWhenDisconnect_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneCreateEntityReqOuterClass.internal_static_SceneCreateEntityReq_descriptor;
@@ -103,7 +164,7 @@ public final class SceneCreateEntityReqOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 4;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.CreateReason reason = 4;</code>
      * @return The enum numeric value on the wire for reason.
@@ -116,7 +177,8 @@ public final class SceneCreateEntityReqOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason getReason() {
-      emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason result = emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason result = emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason.UNRECOGNIZED : result;
     }
 
@@ -143,11 +205,11 @@ public final class SceneCreateEntityReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfoOrBuilder getEntityOrBuilder() {
-      return entity_ == null ? emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.getDefaultInstance() : entity_;
+      return getEntity();
     }
 
     public static final int IS_DESTROY_WHEN_DISCONNECT_FIELD_NUMBER = 15;
-    private boolean isDestroyWhenDisconnect_ = false;
+    private boolean isDestroyWhenDisconnect_;
     /**
      * <code>bool is_destroy_when_disconnect = 15;</code>
      * @return The isDestroyWhenDisconnect.
@@ -180,7 +242,7 @@ public final class SceneCreateEntityReqOuterClass {
       if (isDestroyWhenDisconnect_ != false) {
         output.writeBool(15, isDestroyWhenDisconnect_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -201,7 +263,7 @@ public final class SceneCreateEntityReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isDestroyWhenDisconnect_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -224,7 +286,7 @@ public final class SceneCreateEntityReqOuterClass {
       }
       if (getIsDestroyWhenDisconnect()
           != other.getIsDestroyWhenDisconnect()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -244,7 +306,7 @@ public final class SceneCreateEntityReqOuterClass {
       hash = (37 * hash) + IS_DESTROY_WHEN_DISCONNECT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsDestroyWhenDisconnect());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,25 +434,32 @@ public final class SceneCreateEntityReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneCreateEntityReqOuterClass.SceneCreateEntityReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         reason_ = 0;
-        entity_ = null;
-        if (entityBuilder_ != null) {
-          entityBuilder_.dispose();
+
+        if (entityBuilder_ == null) {
+          entity_ = null;
+        } else {
+          entity_ = null;
           entityBuilder_ = null;
         }
         isDestroyWhenDisconnect_ = false;
+
         return this;
       }
 
@@ -417,24 +486,15 @@ public final class SceneCreateEntityReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneCreateEntityReqOuterClass.SceneCreateEntityReq buildPartial() {
         emu.gingerps.net.proto.SceneCreateEntityReqOuterClass.SceneCreateEntityReq result = new emu.gingerps.net.proto.SceneCreateEntityReqOuterClass.SceneCreateEntityReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.reason_ = reason_;
+        if (entityBuilder_ == null) {
+          result.entity_ = entity_;
+        } else {
+          result.entity_ = entityBuilder_.build();
+        }
+        result.isDestroyWhenDisconnect_ = isDestroyWhenDisconnect_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneCreateEntityReqOuterClass.SceneCreateEntityReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entity_ = entityBuilder_ == null
-              ? entity_
-              : entityBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isDestroyWhenDisconnect_ = isDestroyWhenDisconnect_;
-        }
       }
 
       @java.lang.Override
@@ -490,7 +550,7 @@ public final class SceneCreateEntityReqOuterClass {
         if (other.getIsDestroyWhenDisconnect() != false) {
           setIsDestroyWhenDisconnect(other.getIsDestroyWhenDisconnect());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -505,50 +565,19 @@ public final class SceneCreateEntityReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneCreateEntityReqOuterClass.SceneCreateEntityReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 66: {
-                input.readMessage(
-                    getEntityFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 66
-              case 120: {
-                isDestroyWhenDisconnect_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneCreateEntityReqOuterClass.SceneCreateEntityReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int reason_ = 0;
       /**
@@ -564,8 +593,8 @@ public final class SceneCreateEntityReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -575,7 +604,8 @@ public final class SceneCreateEntityReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason getReason() {
-        emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason result = emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason result = emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.CreateReasonOuterClass.CreateReason.UNRECOGNIZED : result;
       }
       /**
@@ -587,7 +617,7 @@ public final class SceneCreateEntityReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -597,7 +627,7 @@ public final class SceneCreateEntityReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -611,7 +641,7 @@ public final class SceneCreateEntityReqOuterClass {
        * @return Whether the entity field is set.
        */
       public boolean hasEntity() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return entityBuilder_ != null || entity_ != null;
       }
       /**
        * <code>.CreateEntityInfo entity = 8;</code>
@@ -633,11 +663,11 @@ public final class SceneCreateEntityReqOuterClass {
             throw new NullPointerException();
           }
           entity_ = value;
+          onChanged();
         } else {
           entityBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -647,11 +677,11 @@ public final class SceneCreateEntityReqOuterClass {
           emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder builderForValue) {
         if (entityBuilder_ == null) {
           entity_ = builderForValue.build();
+          onChanged();
         } else {
           entityBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -659,38 +689,38 @@ public final class SceneCreateEntityReqOuterClass {
        */
       public Builder mergeEntity(emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo value) {
         if (entityBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            entity_ != null &&
-            entity_ != emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.getDefaultInstance()) {
-            getEntityBuilder().mergeFrom(value);
+          if (entity_ != null) {
+            entity_ =
+              emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.newBuilder(entity_).mergeFrom(value).buildPartial();
           } else {
             entity_ = value;
           }
+          onChanged();
         } else {
           entityBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CreateEntityInfo entity = 8;</code>
        */
       public Builder clearEntity() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        entity_ = null;
-        if (entityBuilder_ != null) {
-          entityBuilder_.dispose();
+        if (entityBuilder_ == null) {
+          entity_ = null;
+          onChanged();
+        } else {
+          entity_ = null;
           entityBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CreateEntityInfo entity = 8;</code>
        */
       public emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder getEntityBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getEntityFieldBuilder().getBuilder();
       }
@@ -739,7 +769,6 @@ public final class SceneCreateEntityReqOuterClass {
       public Builder setIsDestroyWhenDisconnect(boolean value) {
         
         isDestroyWhenDisconnect_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -748,7 +777,7 @@ public final class SceneCreateEntityReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsDestroyWhenDisconnect() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isDestroyWhenDisconnect_ = false;
         onChanged();
         return this;
@@ -786,18 +815,7 @@ public final class SceneCreateEntityReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneCreateEntityReq(input, extensionRegistry);
       }
     };
 

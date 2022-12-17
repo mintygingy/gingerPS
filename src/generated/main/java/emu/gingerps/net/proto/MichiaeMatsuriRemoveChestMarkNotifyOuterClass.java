@@ -67,6 +67,53 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MichiaeMatsuriRemoveChestMarkNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              groupId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              configId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.internal_static_MichiaeMatsuriRemoveChestMarkNotify_descriptor;
@@ -81,7 +128,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 5;
-    private int groupId_ = 0;
+    private int groupId_;
     /**
      * <code>uint32 group_id = 5;</code>
      * @return The groupId.
@@ -92,7 +139,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 6;
-    private int configId_ = 0;
+    private int configId_;
     /**
      * <code>uint32 config_id = 6;</code>
      * @return The configId.
@@ -122,7 +169,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
       if (configId_ != 0) {
         output.writeUInt32(6, configId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, configId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
           != other.getGroupId()) return false;
       if (getConfigId()
           != other.getConfigId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -173,7 +220,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
       hash = (53 * hash) + getGroupId();
       hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getConfigId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -300,20 +347,26 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         groupId_ = 0;
+
         configId_ = 0;
+
         return this;
       }
 
@@ -340,19 +393,10 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify buildPartial() {
         emu.gingerps.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify result = new emu.gingerps.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.groupId_ = groupId_;
+        result.configId_ = configId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.groupId_ = groupId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.configId_ = configId_;
-        }
       }
 
       @java.lang.Override
@@ -405,7 +449,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
         if (other.getConfigId() != 0) {
           setConfigId(other.getConfigId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,43 +464,19 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                groupId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              case 48: {
-                configId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int groupId_ ;
       /**
@@ -475,7 +495,6 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -484,7 +503,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         groupId_ = 0;
         onChanged();
         return this;
@@ -507,7 +526,6 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -516,7 +534,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         configId_ = 0;
         onChanged();
         return this;
@@ -554,18 +572,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MichiaeMatsuriRemoveChestMarkNotify(input, extensionRegistry);
       }
     };
 

@@ -82,6 +82,62 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGMsgPVEIntentionChange(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                changeIntentionList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              changeIntentionList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention.parser(), extensionRegistry));
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              changeType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          changeIntentionList_ = java.util.Collections.unmodifiableList(changeIntentionList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.internal_static_GCGMsgPVEIntentionChange_descriptor;
@@ -96,7 +152,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
     }
 
     public static final int CHANGE_TYPE_FIELD_NUMBER = 9;
-    private int changeType_ = 0;
+    private int changeType_;
     /**
      * <code>.GCGIntentionChangeType change_type = 9;</code>
      * @return The enum numeric value on the wire for changeType.
@@ -109,12 +165,12 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
      * @return The changeType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType getChangeType() {
-      emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType result = emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType.forNumber(changeType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType result = emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType.valueOf(changeType_);
       return result == null ? emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType.UNRECOGNIZED : result;
     }
 
     public static final int CHANGE_INTENTION_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention> changeIntentionList_;
     /**
      * <code>repeated .GCGMsgPVEIntention change_intention_list = 6;</code>
@@ -174,7 +230,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
       if (changeType_ != emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType.GCG_INTENTION_CHANGE_TYPE_NONE.getNumber()) {
         output.writeEnum(9, changeType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -191,7 +247,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, changeType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +265,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
       if (changeType_ != other.changeType_) return false;
       if (!getChangeIntentionListList()
           .equals(other.getChangeIntentionListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -226,7 +282,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
         hash = (37 * hash) + CHANGE_INTENTION_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getChangeIntentionListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -343,26 +399,31 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getChangeIntentionListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         changeType_ = 0;
+
         if (changeIntentionListBuilder_ == null) {
           changeIntentionList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          changeIntentionList_ = null;
           changeIntentionListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -389,29 +450,19 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange buildPartial() {
         emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange result = new emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange result) {
+        int from_bitField0_ = bitField0_;
+        result.changeType_ = changeType_;
         if (changeIntentionListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             changeIntentionList_ = java.util.Collections.unmodifiableList(changeIntentionList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.changeIntentionList_ = changeIntentionList_;
         } else {
           result.changeIntentionList_ = changeIntentionListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.changeType_ = changeType_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -465,7 +516,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
           if (!other.changeIntentionList_.isEmpty()) {
             if (changeIntentionList_.isEmpty()) {
               changeIntentionList_ = other.changeIntentionList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureChangeIntentionListIsMutable();
               changeIntentionList_.addAll(other.changeIntentionList_);
@@ -478,7 +529,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
               changeIntentionListBuilder_.dispose();
               changeIntentionListBuilder_ = null;
               changeIntentionList_ = other.changeIntentionList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               changeIntentionListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChangeIntentionListFieldBuilder() : null;
@@ -487,7 +538,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -502,48 +553,17 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 50: {
-                emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention.parser(),
-                        extensionRegistry);
-                if (changeIntentionListBuilder_ == null) {
-                  ensureChangeIntentionListIsMutable();
-                  changeIntentionList_.add(m);
-                } else {
-                  changeIntentionListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 72: {
-                changeType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -562,8 +582,8 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder setChangeTypeValue(int value) {
+        
         changeType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -573,7 +593,8 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType getChangeType() {
-        emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType result = emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType.forNumber(changeType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType result = emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType.valueOf(changeType_);
         return result == null ? emu.gingerps.net.proto.GCGIntentionChangeTypeOuterClass.GCGIntentionChangeType.UNRECOGNIZED : result;
       }
       /**
@@ -585,7 +606,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         changeType_ = value.getNumber();
         onChanged();
         return this;
@@ -595,7 +616,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChangeType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         changeType_ = 0;
         onChanged();
         return this;
@@ -604,9 +625,9 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention> changeIntentionList_ =
         java.util.Collections.emptyList();
       private void ensureChangeIntentionListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           changeIntentionList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention>(changeIntentionList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -756,7 +777,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
       public Builder clearChangeIntentionList() {
         if (changeIntentionListBuilder_ == null) {
           changeIntentionList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           changeIntentionListBuilder_.clear();
@@ -833,7 +854,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
           changeIntentionListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention.Builder, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntentionOrBuilder>(
                   changeIntentionList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           changeIntentionList_ = null;
@@ -873,18 +894,7 @@ public final class GCGMsgPVEIntentionChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGMsgPVEIntentionChange(input, extensionRegistry);
       }
     };
 

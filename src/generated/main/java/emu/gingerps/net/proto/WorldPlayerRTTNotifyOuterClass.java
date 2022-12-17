@@ -80,6 +80,56 @@ public final class WorldPlayerRTTNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WorldPlayerRTTNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                playerRttList_ = new java.util.ArrayList<emu.gingerps.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              playerRttList_.add(
+                  input.readMessage(emu.gingerps.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          playerRttList_ = java.util.Collections.unmodifiableList(playerRttList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WorldPlayerRTTNotifyOuterClass.internal_static_WorldPlayerRTTNotify_descriptor;
@@ -94,7 +144,6 @@ public final class WorldPlayerRTTNotifyOuterClass {
     }
 
     public static final int PLAYER_RTT_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo> playerRttList_;
     /**
      * <code>repeated .PlayerRTTInfo player_rtt_list = 6;</code>
@@ -151,7 +200,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
       for (int i = 0; i < playerRttList_.size(); i++) {
         output.writeMessage(6, playerRttList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -164,7 +213,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, playerRttList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -181,7 +230,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
 
       if (!getPlayerRttListList()
           .equals(other.getPlayerRttListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -196,7 +245,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
         hash = (37 * hash) + PLAYER_RTT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerRttListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -323,25 +372,29 @@ public final class WorldPlayerRTTNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WorldPlayerRTTNotifyOuterClass.WorldPlayerRTTNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPlayerRttListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (playerRttListBuilder_ == null) {
           playerRttList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          playerRttList_ = null;
           playerRttListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -368,13 +421,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WorldPlayerRTTNotifyOuterClass.WorldPlayerRTTNotify buildPartial() {
         emu.gingerps.net.proto.WorldPlayerRTTNotifyOuterClass.WorldPlayerRTTNotify result = new emu.gingerps.net.proto.WorldPlayerRTTNotifyOuterClass.WorldPlayerRTTNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.WorldPlayerRTTNotifyOuterClass.WorldPlayerRTTNotify result) {
+        int from_bitField0_ = bitField0_;
         if (playerRttListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             playerRttList_ = java.util.Collections.unmodifiableList(playerRttList_);
@@ -384,10 +431,8 @@ public final class WorldPlayerRTTNotifyOuterClass {
         } else {
           result.playerRttList_ = playerRttListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WorldPlayerRTTNotifyOuterClass.WorldPlayerRTTNotify result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -460,7 +505,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -475,43 +520,17 @@ public final class WorldPlayerRTTNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WorldPlayerRTTNotifyOuterClass.WorldPlayerRTTNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 50: {
-                emu.gingerps.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo.parser(),
-                        extensionRegistry);
-                if (playerRttListBuilder_ == null) {
-                  ensurePlayerRttListIsMutable();
-                  playerRttList_.add(m);
-                } else {
-                  playerRttListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WorldPlayerRTTNotifyOuterClass.WorldPlayerRTTNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -788,18 +807,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WorldPlayerRTTNotify(input, extensionRegistry);
       }
     };
 

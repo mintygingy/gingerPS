@@ -73,6 +73,54 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DungeonCandidateTeamPlayerLeaveNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 56: {
+
+              playerUid_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveNotifyOuterClass.internal_static_DungeonCandidateTeamPlayerLeaveNotify_descriptor;
@@ -87,7 +135,7 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
     }
 
     public static final int PLAYER_UID_FIELD_NUMBER = 7;
-    private int playerUid_ = 0;
+    private int playerUid_;
     /**
      * <code>uint32 player_uid = 7;</code>
      * @return The playerUid.
@@ -98,7 +146,7 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 1;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.DungeonCandidateTeamPlayerLeaveReason reason = 1;</code>
      * @return The enum numeric value on the wire for reason.
@@ -111,7 +159,8 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason getReason() {
-      emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason result = emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason result = emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason.UNRECOGNIZED : result;
     }
 
@@ -135,7 +184,7 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
       if (playerUid_ != 0) {
         output.writeUInt32(7, playerUid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -152,7 +201,7 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, playerUid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -170,7 +219,7 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
       if (getPlayerUid()
           != other.getPlayerUid()) return false;
       if (reason_ != other.reason_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -185,7 +234,7 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
       hash = (53 * hash) + getPlayerUid();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -312,20 +361,26 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveNotifyOuterClass.DungeonCandidateTeamPlayerLeaveNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         playerUid_ = 0;
+
         reason_ = 0;
+
         return this;
       }
 
@@ -352,19 +407,10 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveNotifyOuterClass.DungeonCandidateTeamPlayerLeaveNotify buildPartial() {
         emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveNotifyOuterClass.DungeonCandidateTeamPlayerLeaveNotify result = new emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveNotifyOuterClass.DungeonCandidateTeamPlayerLeaveNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.playerUid_ = playerUid_;
+        result.reason_ = reason_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveNotifyOuterClass.DungeonCandidateTeamPlayerLeaveNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.playerUid_ = playerUid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.reason_ = reason_;
-        }
       }
 
       @java.lang.Override
@@ -417,7 +463,7 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -432,43 +478,19 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveNotifyOuterClass.DungeonCandidateTeamPlayerLeaveNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 8
-              case 56: {
-                playerUid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveNotifyOuterClass.DungeonCandidateTeamPlayerLeaveNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int playerUid_ ;
       /**
@@ -487,7 +509,6 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
       public Builder setPlayerUid(int value) {
         
         playerUid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -496,7 +517,7 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         playerUid_ = 0;
         onChanged();
         return this;
@@ -516,8 +537,8 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -527,7 +548,8 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason getReason() {
-        emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason result = emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason result = emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.DungeonCandidateTeamPlayerLeaveReasonOuterClass.DungeonCandidateTeamPlayerLeaveReason.UNRECOGNIZED : result;
       }
       /**
@@ -539,7 +561,7 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -549,7 +571,7 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -587,18 +609,7 @@ public final class DungeonCandidateTeamPlayerLeaveNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DungeonCandidateTeamPlayerLeaveNotify(input, extensionRegistry);
       }
     };
 

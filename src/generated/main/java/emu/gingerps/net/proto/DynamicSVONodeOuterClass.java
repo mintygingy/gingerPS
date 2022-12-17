@@ -72,6 +72,66 @@ public final class DynamicSVONodeOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DynamicSVONode(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              index_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              area_ = input.readInt32();
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (referPos_ != null) {
+                subBuilder = referPos_.toBuilder();
+              }
+              referPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(referPos_);
+                referPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DynamicSVONodeOuterClass.internal_static_DynamicSVONode_descriptor;
@@ -86,7 +146,7 @@ public final class DynamicSVONodeOuterClass {
     }
 
     public static final int AREA_FIELD_NUMBER = 3;
-    private int area_ = 0;
+    private int area_;
     /**
      * <code>int32 area = 3;</code>
      * @return The area.
@@ -119,11 +179,11 @@ public final class DynamicSVONodeOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getReferPosOrBuilder() {
-      return referPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : referPos_;
+      return getReferPos();
     }
 
     public static final int INDEX_FIELD_NUMBER = 2;
-    private long index_ = 0L;
+    private long index_;
     /**
      * <code>int64 index = 2;</code>
      * @return The index.
@@ -156,7 +216,7 @@ public final class DynamicSVONodeOuterClass {
       if (referPos_ != null) {
         output.writeMessage(15, getReferPos());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +237,7 @@ public final class DynamicSVONodeOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getReferPos());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -201,7 +261,7 @@ public final class DynamicSVONodeOuterClass {
       }
       if (getIndex()
           != other.getIndex()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -221,7 +281,7 @@ public final class DynamicSVONodeOuterClass {
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getIndex());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -338,25 +398,32 @@ public final class DynamicSVONodeOuterClass {
 
       // Construct using emu.gingerps.net.proto.DynamicSVONodeOuterClass.DynamicSVONode.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         area_ = 0;
-        referPos_ = null;
-        if (referPosBuilder_ != null) {
-          referPosBuilder_.dispose();
+
+        if (referPosBuilder_ == null) {
+          referPos_ = null;
+        } else {
+          referPos_ = null;
           referPosBuilder_ = null;
         }
         index_ = 0L;
+
         return this;
       }
 
@@ -383,24 +450,15 @@ public final class DynamicSVONodeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DynamicSVONodeOuterClass.DynamicSVONode buildPartial() {
         emu.gingerps.net.proto.DynamicSVONodeOuterClass.DynamicSVONode result = new emu.gingerps.net.proto.DynamicSVONodeOuterClass.DynamicSVONode(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.area_ = area_;
+        if (referPosBuilder_ == null) {
+          result.referPos_ = referPos_;
+        } else {
+          result.referPos_ = referPosBuilder_.build();
+        }
+        result.index_ = index_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DynamicSVONodeOuterClass.DynamicSVONode result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.area_ = area_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.referPos_ = referPosBuilder_ == null
-              ? referPos_
-              : referPosBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.index_ = index_;
-        }
       }
 
       @java.lang.Override
@@ -456,7 +514,7 @@ public final class DynamicSVONodeOuterClass {
         if (other.getIndex() != 0L) {
           setIndex(other.getIndex());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -471,50 +529,19 @@ public final class DynamicSVONodeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DynamicSVONodeOuterClass.DynamicSVONode parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                index_ = input.readInt64();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 24: {
-                area_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 122: {
-                input.readMessage(
-                    getReferPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DynamicSVONodeOuterClass.DynamicSVONode) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int area_ ;
       /**
@@ -533,7 +560,6 @@ public final class DynamicSVONodeOuterClass {
       public Builder setArea(int value) {
         
         area_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +568,7 @@ public final class DynamicSVONodeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearArea() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         area_ = 0;
         onChanged();
         return this;
@@ -556,7 +582,7 @@ public final class DynamicSVONodeOuterClass {
        * @return Whether the referPos field is set.
        */
       public boolean hasReferPos() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return referPosBuilder_ != null || referPos_ != null;
       }
       /**
        * <code>.Vector refer_pos = 15;</code>
@@ -578,11 +604,11 @@ public final class DynamicSVONodeOuterClass {
             throw new NullPointerException();
           }
           referPos_ = value;
+          onChanged();
         } else {
           referPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -592,11 +618,11 @@ public final class DynamicSVONodeOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (referPosBuilder_ == null) {
           referPos_ = builderForValue.build();
+          onChanged();
         } else {
           referPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -604,38 +630,38 @@ public final class DynamicSVONodeOuterClass {
        */
       public Builder mergeReferPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (referPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            referPos_ != null &&
-            referPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getReferPosBuilder().mergeFrom(value);
+          if (referPos_ != null) {
+            referPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(referPos_).mergeFrom(value).buildPartial();
           } else {
             referPos_ = value;
           }
+          onChanged();
         } else {
           referPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector refer_pos = 15;</code>
        */
       public Builder clearReferPos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        referPos_ = null;
-        if (referPosBuilder_ != null) {
-          referPosBuilder_.dispose();
+        if (referPosBuilder_ == null) {
+          referPos_ = null;
+          onChanged();
+        } else {
+          referPos_ = null;
           referPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector refer_pos = 15;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getReferPosBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getReferPosFieldBuilder().getBuilder();
       }
@@ -684,7 +710,6 @@ public final class DynamicSVONodeOuterClass {
       public Builder setIndex(long value) {
         
         index_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -693,7 +718,7 @@ public final class DynamicSVONodeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         index_ = 0L;
         onChanged();
         return this;
@@ -731,18 +756,7 @@ public final class DynamicSVONodeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DynamicSVONode(input, extensionRegistry);
       }
     };
 

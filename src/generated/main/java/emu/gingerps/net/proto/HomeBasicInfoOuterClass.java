@@ -109,6 +109,92 @@ public final class HomeBasicInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeBasicInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              exp_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              curModuleId_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ownerNickName_ = s;
+              break;
+            }
+            case 56: {
+
+              isInEditMode_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              level_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              homeOwnerUid_ = input.readUInt32();
+              break;
+            }
+            case 106: {
+              emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder subBuilder = null;
+              if (limitedShopInfo_ != null) {
+                subBuilder = limitedShopInfo_.toBuilder();
+              }
+              limitedShopInfo_ = input.readMessage(emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(limitedShopInfo_);
+                limitedShopInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 112: {
+
+              curRoomSceneId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeBasicInfoOuterClass.internal_static_HomeBasicInfo_descriptor;
@@ -123,7 +209,7 @@ public final class HomeBasicInfoOuterClass {
     }
 
     public static final int EXP_FIELD_NUMBER = 3;
-    private long exp_ = 0L;
+    private long exp_;
     /**
      * <code>uint64 exp = 3;</code>
      * @return The exp.
@@ -134,7 +220,7 @@ public final class HomeBasicInfoOuterClass {
     }
 
     public static final int HOME_OWNER_UID_FIELD_NUMBER = 11;
-    private int homeOwnerUid_ = 0;
+    private int homeOwnerUid_;
     /**
      * <code>uint32 home_owner_uid = 11;</code>
      * @return The homeOwnerUid.
@@ -145,7 +231,7 @@ public final class HomeBasicInfoOuterClass {
     }
 
     public static final int CUR_ROOM_SCENE_ID_FIELD_NUMBER = 14;
-    private int curRoomSceneId_ = 0;
+    private int curRoomSceneId_;
     /**
      * <code>uint32 cur_room_scene_id = 14;</code>
      * @return The curRoomSceneId.
@@ -156,8 +242,7 @@ public final class HomeBasicInfoOuterClass {
     }
 
     public static final int OWNER_NICK_NAME_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object ownerNickName_ = "";
+    private volatile java.lang.Object ownerNickName_;
     /**
      * <code>string owner_nick_name = 6;</code>
      * @return The ownerNickName.
@@ -195,7 +280,7 @@ public final class HomeBasicInfoOuterClass {
     }
 
     public static final int CUR_MODULE_ID_FIELD_NUMBER = 4;
-    private int curModuleId_ = 0;
+    private int curModuleId_;
     /**
      * <code>uint32 cur_module_id = 4;</code>
      * @return The curModuleId.
@@ -228,11 +313,11 @@ public final class HomeBasicInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder getLimitedShopInfoOrBuilder() {
-      return limitedShopInfo_ == null ? emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance() : limitedShopInfo_;
+      return getLimitedShopInfo();
     }
 
     public static final int IS_IN_EDIT_MODE_FIELD_NUMBER = 7;
-    private boolean isInEditMode_ = false;
+    private boolean isInEditMode_;
     /**
      * <code>bool is_in_edit_mode = 7;</code>
      * @return The isInEditMode.
@@ -243,7 +328,7 @@ public final class HomeBasicInfoOuterClass {
     }
 
     public static final int LEVEL_FIELD_NUMBER = 9;
-    private int level_ = 0;
+    private int level_;
     /**
      * <code>uint32 level = 9;</code>
      * @return The level.
@@ -291,7 +376,7 @@ public final class HomeBasicInfoOuterClass {
       if (curRoomSceneId_ != 0) {
         output.writeUInt32(14, curRoomSceneId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -331,7 +416,7 @@ public final class HomeBasicInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, curRoomSceneId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -365,7 +450,7 @@ public final class HomeBasicInfoOuterClass {
           != other.getIsInEditMode()) return false;
       if (getLevel()
           != other.getLevel()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -396,7 +481,7 @@ public final class HomeBasicInfoOuterClass {
           getIsInEditMode());
       hash = (37 * hash) + LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getLevel();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -513,30 +598,42 @@ public final class HomeBasicInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         exp_ = 0L;
+
         homeOwnerUid_ = 0;
+
         curRoomSceneId_ = 0;
+
         ownerNickName_ = "";
+
         curModuleId_ = 0;
-        limitedShopInfo_ = null;
-        if (limitedShopInfoBuilder_ != null) {
-          limitedShopInfoBuilder_.dispose();
+
+        if (limitedShopInfoBuilder_ == null) {
+          limitedShopInfo_ = null;
+        } else {
+          limitedShopInfo_ = null;
           limitedShopInfoBuilder_ = null;
         }
         isInEditMode_ = false;
+
         level_ = 0;
+
         return this;
       }
 
@@ -563,39 +660,20 @@ public final class HomeBasicInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo buildPartial() {
         emu.gingerps.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo result = new emu.gingerps.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.exp_ = exp_;
+        result.homeOwnerUid_ = homeOwnerUid_;
+        result.curRoomSceneId_ = curRoomSceneId_;
+        result.ownerNickName_ = ownerNickName_;
+        result.curModuleId_ = curModuleId_;
+        if (limitedShopInfoBuilder_ == null) {
+          result.limitedShopInfo_ = limitedShopInfo_;
+        } else {
+          result.limitedShopInfo_ = limitedShopInfoBuilder_.build();
+        }
+        result.isInEditMode_ = isInEditMode_;
+        result.level_ = level_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.exp_ = exp_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.homeOwnerUid_ = homeOwnerUid_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curRoomSceneId_ = curRoomSceneId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.ownerNickName_ = ownerNickName_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.curModuleId_ = curModuleId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.limitedShopInfo_ = limitedShopInfoBuilder_ == null
-              ? limitedShopInfo_
-              : limitedShopInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.isInEditMode_ = isInEditMode_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.level_ = level_;
-        }
       }
 
       @java.lang.Override
@@ -653,7 +731,6 @@ public final class HomeBasicInfoOuterClass {
         }
         if (!other.getOwnerNickName().isEmpty()) {
           ownerNickName_ = other.ownerNickName_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.getCurModuleId() != 0) {
@@ -668,7 +745,7 @@ public final class HomeBasicInfoOuterClass {
         if (other.getLevel() != 0) {
           setLevel(other.getLevel());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -683,75 +760,19 @@ public final class HomeBasicInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                exp_ = input.readUInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 32: {
-                curModuleId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 32
-              case 50: {
-                ownerNickName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 50
-              case 56: {
-                isInEditMode_ = input.readBool();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              case 72: {
-                level_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 72
-              case 88: {
-                homeOwnerUid_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              case 106: {
-                input.readMessage(
-                    getLimitedShopInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 106
-              case 112: {
-                curRoomSceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long exp_ ;
       /**
@@ -770,7 +791,6 @@ public final class HomeBasicInfoOuterClass {
       public Builder setExp(long value) {
         
         exp_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -779,7 +799,7 @@ public final class HomeBasicInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExp() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         exp_ = 0L;
         onChanged();
         return this;
@@ -802,7 +822,6 @@ public final class HomeBasicInfoOuterClass {
       public Builder setHomeOwnerUid(int value) {
         
         homeOwnerUid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -811,7 +830,7 @@ public final class HomeBasicInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHomeOwnerUid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         homeOwnerUid_ = 0;
         onChanged();
         return this;
@@ -834,7 +853,6 @@ public final class HomeBasicInfoOuterClass {
       public Builder setCurRoomSceneId(int value) {
         
         curRoomSceneId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -843,7 +861,7 @@ public final class HomeBasicInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurRoomSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curRoomSceneId_ = 0;
         onChanged();
         return this;
@@ -890,9 +908,11 @@ public final class HomeBasicInfoOuterClass {
        */
       public Builder setOwnerNickName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         ownerNickName_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -901,8 +921,8 @@ public final class HomeBasicInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOwnerNickName() {
+        
         ownerNickName_ = getDefaultInstance().getOwnerNickName();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -913,10 +933,12 @@ public final class HomeBasicInfoOuterClass {
        */
       public Builder setOwnerNickNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         ownerNickName_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -938,7 +960,6 @@ public final class HomeBasicInfoOuterClass {
       public Builder setCurModuleId(int value) {
         
         curModuleId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -947,7 +968,7 @@ public final class HomeBasicInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurModuleId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         curModuleId_ = 0;
         onChanged();
         return this;
@@ -961,7 +982,7 @@ public final class HomeBasicInfoOuterClass {
        * @return Whether the limitedShopInfo field is set.
        */
       public boolean hasLimitedShopInfo() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return limitedShopInfoBuilder_ != null || limitedShopInfo_ != null;
       }
       /**
        * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
@@ -983,11 +1004,11 @@ public final class HomeBasicInfoOuterClass {
             throw new NullPointerException();
           }
           limitedShopInfo_ = value;
+          onChanged();
         } else {
           limitedShopInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -997,11 +1018,11 @@ public final class HomeBasicInfoOuterClass {
           emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder builderForValue) {
         if (limitedShopInfoBuilder_ == null) {
           limitedShopInfo_ = builderForValue.build();
+          onChanged();
         } else {
           limitedShopInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1009,38 +1030,38 @@ public final class HomeBasicInfoOuterClass {
        */
       public Builder mergeLimitedShopInfo(emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo value) {
         if (limitedShopInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            limitedShopInfo_ != null &&
-            limitedShopInfo_ != emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance()) {
-            getLimitedShopInfoBuilder().mergeFrom(value);
+          if (limitedShopInfo_ != null) {
+            limitedShopInfo_ =
+              emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.newBuilder(limitedShopInfo_).mergeFrom(value).buildPartial();
           } else {
             limitedShopInfo_ = value;
           }
+          onChanged();
         } else {
           limitedShopInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
        */
       public Builder clearLimitedShopInfo() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        limitedShopInfo_ = null;
-        if (limitedShopInfoBuilder_ != null) {
-          limitedShopInfoBuilder_.dispose();
+        if (limitedShopInfoBuilder_ == null) {
+          limitedShopInfo_ = null;
+          onChanged();
+        } else {
+          limitedShopInfo_ = null;
           limitedShopInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeLimitedShopInfo limited_shop_info = 13;</code>
        */
       public emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder getLimitedShopInfoBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getLimitedShopInfoFieldBuilder().getBuilder();
       }
@@ -1089,7 +1110,6 @@ public final class HomeBasicInfoOuterClass {
       public Builder setIsInEditMode(boolean value) {
         
         isInEditMode_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1098,7 +1118,7 @@ public final class HomeBasicInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsInEditMode() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         isInEditMode_ = false;
         onChanged();
         return this;
@@ -1121,7 +1141,6 @@ public final class HomeBasicInfoOuterClass {
       public Builder setLevel(int value) {
         
         level_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1130,7 +1149,7 @@ public final class HomeBasicInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         level_ = 0;
         onChanged();
         return this;
@@ -1168,18 +1187,7 @@ public final class HomeBasicInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeBasicInfo(input, extensionRegistry);
       }
     };
 

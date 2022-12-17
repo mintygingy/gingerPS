@@ -75,6 +75,64 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SalvagePreventGallerySettleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              monsterCount_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              finalScore_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              timeRemain_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SalvagePreventGallerySettleInfoOuterClass.internal_static_SalvagePreventGallerySettleInfo_descriptor;
@@ -89,7 +147,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
     }
 
     public static final int MONSTER_COUNT_FIELD_NUMBER = 2;
-    private int monsterCount_ = 0;
+    private int monsterCount_;
     /**
      * <code>uint32 monster_count = 2;</code>
      * @return The monsterCount.
@@ -100,7 +158,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 11;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.SalvagePreventStopReason reason = 11;</code>
      * @return The enum numeric value on the wire for reason.
@@ -113,12 +171,13 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason getReason() {
-      emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason result = emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason result = emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason.UNRECOGNIZED : result;
     }
 
     public static final int FINAL_SCORE_FIELD_NUMBER = 4;
-    private int finalScore_ = 0;
+    private int finalScore_;
     /**
      * <code>uint32 final_score = 4;</code>
      * @return The finalScore.
@@ -129,7 +188,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
     }
 
     public static final int TIME_REMAIN_FIELD_NUMBER = 8;
-    private int timeRemain_ = 0;
+    private int timeRemain_;
     /**
      * <code>uint32 time_remain = 8;</code>
      * @return The timeRemain.
@@ -165,7 +224,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
       if (reason_ != emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason.SALVAGE_PREVENT_STOP_REASON_NONE.getNumber()) {
         output.writeEnum(11, reason_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -190,7 +249,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, reason_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -212,7 +271,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
           != other.getFinalScore()) return false;
       if (getTimeRemain()
           != other.getTimeRemain()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -231,7 +290,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
       hash = (53 * hash) + getFinalScore();
       hash = (37 * hash) + TIME_REMAIN_FIELD_NUMBER;
       hash = (53 * hash) + getTimeRemain();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -348,22 +407,30 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SalvagePreventGallerySettleInfoOuterClass.SalvagePreventGallerySettleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         monsterCount_ = 0;
+
         reason_ = 0;
+
         finalScore_ = 0;
+
         timeRemain_ = 0;
+
         return this;
       }
 
@@ -390,25 +457,12 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SalvagePreventGallerySettleInfoOuterClass.SalvagePreventGallerySettleInfo buildPartial() {
         emu.gingerps.net.proto.SalvagePreventGallerySettleInfoOuterClass.SalvagePreventGallerySettleInfo result = new emu.gingerps.net.proto.SalvagePreventGallerySettleInfoOuterClass.SalvagePreventGallerySettleInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.monsterCount_ = monsterCount_;
+        result.reason_ = reason_;
+        result.finalScore_ = finalScore_;
+        result.timeRemain_ = timeRemain_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SalvagePreventGallerySettleInfoOuterClass.SalvagePreventGallerySettleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.monsterCount_ = monsterCount_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.finalScore_ = finalScore_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.timeRemain_ = timeRemain_;
-        }
       }
 
       @java.lang.Override
@@ -467,7 +521,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
         if (other.getTimeRemain() != 0) {
           setTimeRemain(other.getTimeRemain());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -482,53 +536,19 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SalvagePreventGallerySettleInfoOuterClass.SalvagePreventGallerySettleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                monsterCount_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 32: {
-                finalScore_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 64: {
-                timeRemain_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 64
-              case 88: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SalvagePreventGallerySettleInfoOuterClass.SalvagePreventGallerySettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int monsterCount_ ;
       /**
@@ -547,7 +567,6 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
       public Builder setMonsterCount(int value) {
         
         monsterCount_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -556,7 +575,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMonsterCount() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         monsterCount_ = 0;
         onChanged();
         return this;
@@ -576,8 +595,8 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -587,7 +606,8 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason getReason() {
-        emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason result = emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason result = emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.SalvagePreventStopReasonOuterClass.SalvagePreventStopReason.UNRECOGNIZED : result;
       }
       /**
@@ -599,7 +619,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -609,7 +629,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -632,7 +652,6 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
       public Builder setFinalScore(int value) {
         
         finalScore_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -641,7 +660,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinalScore() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         finalScore_ = 0;
         onChanged();
         return this;
@@ -664,7 +683,6 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
       public Builder setTimeRemain(int value) {
         
         timeRemain_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -673,7 +691,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimeRemain() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         timeRemain_ = 0;
         onChanged();
         return this;
@@ -711,18 +729,7 @@ public final class SalvagePreventGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SalvagePreventGallerySettleInfo(input, extensionRegistry);
       }
     };
 

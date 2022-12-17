@@ -73,6 +73,54 @@ public final class AreaPlayInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AreaPlayInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              detailPlayType_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              areaPlayType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AreaPlayInfoNotifyOuterClass.internal_static_AreaPlayInfoNotify_descriptor;
@@ -87,7 +135,7 @@ public final class AreaPlayInfoNotifyOuterClass {
     }
 
     public static final int DETAIL_PLAY_TYPE_FIELD_NUMBER = 2;
-    private int detailPlayType_ = 0;
+    private int detailPlayType_;
     /**
      * <code>uint32 detail_play_type = 2;</code>
      * @return The detailPlayType.
@@ -98,7 +146,7 @@ public final class AreaPlayInfoNotifyOuterClass {
     }
 
     public static final int AREA_PLAY_TYPE_FIELD_NUMBER = 6;
-    private int areaPlayType_ = 0;
+    private int areaPlayType_;
     /**
      * <code>.AreaPlayType area_play_type = 6;</code>
      * @return The enum numeric value on the wire for areaPlayType.
@@ -111,7 +159,8 @@ public final class AreaPlayInfoNotifyOuterClass {
      * @return The areaPlayType.
      */
     @java.lang.Override public emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType getAreaPlayType() {
-      emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType result = emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType.forNumber(areaPlayType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType result = emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType.valueOf(areaPlayType_);
       return result == null ? emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType.UNRECOGNIZED : result;
     }
 
@@ -135,7 +184,7 @@ public final class AreaPlayInfoNotifyOuterClass {
       if (areaPlayType_ != emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType.AREA_PLAY_TYPE_NONE.getNumber()) {
         output.writeEnum(6, areaPlayType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -152,7 +201,7 @@ public final class AreaPlayInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, areaPlayType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -170,7 +219,7 @@ public final class AreaPlayInfoNotifyOuterClass {
       if (getDetailPlayType()
           != other.getDetailPlayType()) return false;
       if (areaPlayType_ != other.areaPlayType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -185,7 +234,7 @@ public final class AreaPlayInfoNotifyOuterClass {
       hash = (53 * hash) + getDetailPlayType();
       hash = (37 * hash) + AREA_PLAY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + areaPlayType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -312,20 +361,26 @@ public final class AreaPlayInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AreaPlayInfoNotifyOuterClass.AreaPlayInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         detailPlayType_ = 0;
+
         areaPlayType_ = 0;
+
         return this;
       }
 
@@ -352,19 +407,10 @@ public final class AreaPlayInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AreaPlayInfoNotifyOuterClass.AreaPlayInfoNotify buildPartial() {
         emu.gingerps.net.proto.AreaPlayInfoNotifyOuterClass.AreaPlayInfoNotify result = new emu.gingerps.net.proto.AreaPlayInfoNotifyOuterClass.AreaPlayInfoNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.detailPlayType_ = detailPlayType_;
+        result.areaPlayType_ = areaPlayType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AreaPlayInfoNotifyOuterClass.AreaPlayInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.detailPlayType_ = detailPlayType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.areaPlayType_ = areaPlayType_;
-        }
       }
 
       @java.lang.Override
@@ -417,7 +463,7 @@ public final class AreaPlayInfoNotifyOuterClass {
         if (other.areaPlayType_ != 0) {
           setAreaPlayTypeValue(other.getAreaPlayTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -432,43 +478,19 @@ public final class AreaPlayInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AreaPlayInfoNotifyOuterClass.AreaPlayInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                detailPlayType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 48: {
-                areaPlayType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AreaPlayInfoNotifyOuterClass.AreaPlayInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int detailPlayType_ ;
       /**
@@ -487,7 +509,6 @@ public final class AreaPlayInfoNotifyOuterClass {
       public Builder setDetailPlayType(int value) {
         
         detailPlayType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -496,7 +517,7 @@ public final class AreaPlayInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDetailPlayType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         detailPlayType_ = 0;
         onChanged();
         return this;
@@ -516,8 +537,8 @@ public final class AreaPlayInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setAreaPlayTypeValue(int value) {
+        
         areaPlayType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -527,7 +548,8 @@ public final class AreaPlayInfoNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType getAreaPlayType() {
-        emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType result = emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType.forNumber(areaPlayType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType result = emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType.valueOf(areaPlayType_);
         return result == null ? emu.gingerps.net.proto.AreaPlayTypeOuterClass.AreaPlayType.UNRECOGNIZED : result;
       }
       /**
@@ -539,7 +561,7 @@ public final class AreaPlayInfoNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         areaPlayType_ = value.getNumber();
         onChanged();
         return this;
@@ -549,7 +571,7 @@ public final class AreaPlayInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAreaPlayType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         areaPlayType_ = 0;
         onChanged();
         return this;
@@ -587,18 +609,7 @@ public final class AreaPlayInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AreaPlayInfoNotify(input, extensionRegistry);
       }
     };
 

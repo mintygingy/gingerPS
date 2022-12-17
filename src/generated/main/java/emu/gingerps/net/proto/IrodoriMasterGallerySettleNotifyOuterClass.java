@@ -77,6 +77,61 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private IrodoriMasterGallerySettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 74: {
+              emu.gingerps.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.Builder subBuilder = null;
+              if (settleInfo_ != null) {
+                subBuilder = settleInfo_.toBuilder();
+              }
+              settleInfo_ = input.readMessage(emu.gingerps.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(settleInfo_);
+                settleInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 88: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IrodoriMasterGallerySettleNotifyOuterClass.internal_static_IrodoriMasterGallerySettleNotify_descriptor;
@@ -113,11 +168,11 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfoOrBuilder getSettleInfoOrBuilder() {
-      return settleInfo_ == null ? emu.gingerps.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.getDefaultInstance() : settleInfo_;
+      return getSettleInfo();
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 11;
-    private int galleryId_ = 0;
+    private int galleryId_;
     /**
      * <code>uint32 gallery_id = 11;</code>
      * @return The galleryId.
@@ -147,7 +202,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       if (galleryId_ != 0) {
         output.writeUInt32(11, galleryId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -164,7 +219,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, galleryId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -186,7 +241,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       }
       if (getGalleryId()
           != other.getGalleryId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -203,7 +258,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       }
       hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGalleryId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,24 +386,30 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.IrodoriMasterGallerySettleNotifyOuterClass.IrodoriMasterGallerySettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        settleInfo_ = null;
-        if (settleInfoBuilder_ != null) {
-          settleInfoBuilder_.dispose();
+        if (settleInfoBuilder_ == null) {
+          settleInfo_ = null;
+        } else {
+          settleInfo_ = null;
           settleInfoBuilder_ = null;
         }
         galleryId_ = 0;
+
         return this;
       }
 
@@ -375,21 +436,14 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IrodoriMasterGallerySettleNotifyOuterClass.IrodoriMasterGallerySettleNotify buildPartial() {
         emu.gingerps.net.proto.IrodoriMasterGallerySettleNotifyOuterClass.IrodoriMasterGallerySettleNotify result = new emu.gingerps.net.proto.IrodoriMasterGallerySettleNotifyOuterClass.IrodoriMasterGallerySettleNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (settleInfoBuilder_ == null) {
+          result.settleInfo_ = settleInfo_;
+        } else {
+          result.settleInfo_ = settleInfoBuilder_.build();
+        }
+        result.galleryId_ = galleryId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.IrodoriMasterGallerySettleNotifyOuterClass.IrodoriMasterGallerySettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.settleInfo_ = settleInfoBuilder_ == null
-              ? settleInfo_
-              : settleInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.galleryId_ = galleryId_;
-        }
       }
 
       @java.lang.Override
@@ -442,7 +496,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
         if (other.getGalleryId() != 0) {
           setGalleryId(other.getGalleryId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -457,45 +511,19 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.IrodoriMasterGallerySettleNotifyOuterClass.IrodoriMasterGallerySettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 74: {
-                input.readMessage(
-                    getSettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 74
-              case 88: {
-                galleryId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.IrodoriMasterGallerySettleNotifyOuterClass.IrodoriMasterGallerySettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo settleInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -505,7 +533,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
        * @return Whether the settleInfo field is set.
        */
       public boolean hasSettleInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return settleInfoBuilder_ != null || settleInfo_ != null;
       }
       /**
        * <code>.IrodoriMasterGallerySettleInfo settle_info = 9;</code>
@@ -527,11 +555,11 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
             throw new NullPointerException();
           }
           settleInfo_ = value;
+          onChanged();
         } else {
           settleInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -541,11 +569,11 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
           emu.gingerps.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.Builder builderForValue) {
         if (settleInfoBuilder_ == null) {
           settleInfo_ = builderForValue.build();
+          onChanged();
         } else {
           settleInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -553,38 +581,38 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
        */
       public Builder mergeSettleInfo(emu.gingerps.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo value) {
         if (settleInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            settleInfo_ != null &&
-            settleInfo_ != emu.gingerps.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.getDefaultInstance()) {
-            getSettleInfoBuilder().mergeFrom(value);
+          if (settleInfo_ != null) {
+            settleInfo_ =
+              emu.gingerps.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.newBuilder(settleInfo_).mergeFrom(value).buildPartial();
           } else {
             settleInfo_ = value;
           }
+          onChanged();
         } else {
           settleInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.IrodoriMasterGallerySettleInfo settle_info = 9;</code>
        */
       public Builder clearSettleInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        settleInfo_ = null;
-        if (settleInfoBuilder_ != null) {
-          settleInfoBuilder_.dispose();
+        if (settleInfoBuilder_ == null) {
+          settleInfo_ = null;
+          onChanged();
+        } else {
+          settleInfo_ = null;
           settleInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.IrodoriMasterGallerySettleInfo settle_info = 9;</code>
        */
       public emu.gingerps.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.Builder getSettleInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getSettleInfoFieldBuilder().getBuilder();
       }
@@ -633,7 +661,6 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -642,7 +669,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         galleryId_ = 0;
         onChanged();
         return this;
@@ -680,18 +707,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new IrodoriMasterGallerySettleNotify(input, extensionRegistry);
       }
     };
 

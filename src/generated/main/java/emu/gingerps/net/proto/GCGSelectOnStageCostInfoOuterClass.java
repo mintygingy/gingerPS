@@ -76,6 +76,61 @@ public final class GCGSelectOnStageCostInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGSelectOnStageCostInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                costMap_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              costMap_.add(
+                  input.readMessage(emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+              break;
+            }
+            case 24: {
+
+              cardGuid_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          costMap_ = java.util.Collections.unmodifiableList(costMap_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.internal_static_GCGSelectOnStageCostInfo_descriptor;
@@ -90,7 +145,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
     }
 
     public static final int CARD_GUID_FIELD_NUMBER = 3;
-    private int cardGuid_ = 0;
+    private int cardGuid_;
     /**
      * <code>uint32 card_guid = 3;</code>
      * @return The cardGuid.
@@ -101,7 +156,6 @@ public final class GCGSelectOnStageCostInfoOuterClass {
     }
 
     public static final int COST_MAP_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> costMap_;
     /**
      * <code>repeated .Uint32Pair cost_map = 1;</code>
@@ -161,7 +215,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
       if (cardGuid_ != 0) {
         output.writeUInt32(3, cardGuid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -178,7 +232,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, cardGuid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +251,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
           != other.getCardGuid()) return false;
       if (!getCostMapList()
           .equals(other.getCostMapList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -214,7 +268,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
         hash = (37 * hash) + COST_MAP_FIELD_NUMBER;
         hash = (53 * hash) + getCostMapList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +385,31 @@ public final class GCGSelectOnStageCostInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCostMapFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         cardGuid_ = 0;
+
         if (costMapBuilder_ == null) {
           costMap_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          costMap_ = null;
           costMapBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -377,29 +436,19 @@ public final class GCGSelectOnStageCostInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo buildPartial() {
         emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo result = new emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.cardGuid_ = cardGuid_;
         if (costMapBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             costMap_ = java.util.Collections.unmodifiableList(costMap_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.costMap_ = costMap_;
         } else {
           result.costMap_ = costMapBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.cardGuid_ = cardGuid_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -453,7 +502,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
           if (!other.costMap_.isEmpty()) {
             if (costMap_.isEmpty()) {
               costMap_ = other.costMap_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureCostMapIsMutable();
               costMap_.addAll(other.costMap_);
@@ -466,7 +515,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
               costMapBuilder_.dispose();
               costMapBuilder_ = null;
               costMap_ = other.costMap_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               costMapBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCostMapFieldBuilder() : null;
@@ -475,7 +524,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,48 +539,17 @@ public final class GCGSelectOnStageCostInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(),
-                        extensionRegistry);
-                if (costMapBuilder_ == null) {
-                  ensureCostMapIsMutable();
-                  costMap_.add(m);
-                } else {
-                  costMapBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 24: {
-                cardGuid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -553,7 +571,6 @@ public final class GCGSelectOnStageCostInfoOuterClass {
       public Builder setCardGuid(int value) {
         
         cardGuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +579,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardGuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         cardGuid_ = 0;
         onChanged();
         return this;
@@ -571,9 +588,9 @@ public final class GCGSelectOnStageCostInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> costMap_ =
         java.util.Collections.emptyList();
       private void ensureCostMapIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           costMap_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>(costMap_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -723,7 +740,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
       public Builder clearCostMap() {
         if (costMapBuilder_ == null) {
           costMap_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           costMapBuilder_.clear();
@@ -800,7 +817,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
           costMapBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
                   costMap_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           costMap_ = null;
@@ -840,18 +857,7 @@ public final class GCGSelectOnStageCostInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGSelectOnStageCostInfo(input, extensionRegistry);
       }
     };
 

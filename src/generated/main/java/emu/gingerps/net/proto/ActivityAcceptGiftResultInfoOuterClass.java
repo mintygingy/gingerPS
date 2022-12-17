@@ -41,12 +41,14 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
      */
+
     int getUnk3300JFHLEBLOFMAOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
      */
+
     int getUnk3300JFHLEBLOFMAOrThrow(
         int key);
 
@@ -73,12 +75,14 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
      */
+
     int getUnk3300COCFNBJCFGPOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
      */
+
     int getUnk3300COCFNBJCFGPOrThrow(
         int key);
 
@@ -114,6 +118,75 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private ActivityAcceptGiftResultInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300JFHLEBLOFMA_ = com.google.protobuf.MapField.newMapField(
+                    Unk3300JFHLEBLOFMADefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              unk3300JFHLEBLOFMA__ = input.readMessage(
+                  Unk3300JFHLEBLOFMADefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              unk3300JFHLEBLOFMA_.getMutableMap().put(
+                  unk3300JFHLEBLOFMA__.getKey(), unk3300JFHLEBLOFMA__.getValue());
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300COCFNBJCFGP_ = com.google.protobuf.MapField.newMapField(
+                    Unk3300COCFNBJCFGPDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              unk3300COCFNBJCFGP__ = input.readMessage(
+                  Unk3300COCFNBJCFGPDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              unk3300COCFNBJCFGP_.getMutableMap().put(
+                  unk3300COCFNBJCFGP__.getKey(), unk3300COCFNBJCFGP__.getValue());
+              break;
+            }
+            case 96: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -154,7 +227,6 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> unk3300JFHLEBLOFMA_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -165,12 +237,14 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
       }
       return unk3300JFHLEBLOFMA_;
     }
+
     public int getUnk3300JFHLEBLOFMACount() {
       return internalGetUnk3300JFHLEBLOFMA().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
      */
+
     @java.lang.Override
     public boolean containsUnk3300JFHLEBLOFMA(
         int key) {
@@ -189,6 +263,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300JFHLEBLOFMAMap() {
       return internalGetUnk3300JFHLEBLOFMA().getMap();
     }
@@ -196,6 +271,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
      */
     @java.lang.Override
+
     public int getUnk3300JFHLEBLOFMAOrDefault(
         int key,
         int defaultValue) {
@@ -208,6 +284,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
      */
     @java.lang.Override
+
     public int getUnk3300JFHLEBLOFMAOrThrow(
         int key) {
       
@@ -231,7 +308,6 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> unk3300COCFNBJCFGP_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -242,12 +318,14 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
       }
       return unk3300COCFNBJCFGP_;
     }
+
     public int getUnk3300COCFNBJCFGPCount() {
       return internalGetUnk3300COCFNBJCFGP().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
      */
+
     @java.lang.Override
     public boolean containsUnk3300COCFNBJCFGP(
         int key) {
@@ -266,6 +344,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300COCFNBJCFGPMap() {
       return internalGetUnk3300COCFNBJCFGP().getMap();
     }
@@ -273,6 +352,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
      */
     @java.lang.Override
+
     public int getUnk3300COCFNBJCFGPOrDefault(
         int key,
         int defaultValue) {
@@ -285,6 +365,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
      */
     @java.lang.Override
+
     public int getUnk3300COCFNBJCFGPOrThrow(
         int key) {
       
@@ -297,7 +378,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 12;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 12;</code>
      * @return The uid.
@@ -336,7 +417,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
       if (uid_ != 0) {
         output.writeUInt32(12, uid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -369,7 +450,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, uid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -390,7 +471,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
           other.internalGetUnk3300COCFNBJCFGP())) return false;
       if (getUid()
           != other.getUid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -411,7 +492,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
       }
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -554,21 +635,26 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableUnk3300JFHLEBLOFMA().clear();
         internalGetMutableUnk3300COCFNBJCFGP().clear();
         uid_ = 0;
+
         return this;
       }
 
@@ -595,24 +681,14 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo buildPartial() {
         emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo result = new emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.unk3300JFHLEBLOFMA_ = internalGetUnk3300JFHLEBLOFMA();
+        result.unk3300JFHLEBLOFMA_.makeImmutable();
+        result.unk3300COCFNBJCFGP_ = internalGetUnk3300COCFNBJCFGP();
+        result.unk3300COCFNBJCFGP_.makeImmutable();
+        result.uid_ = uid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300JFHLEBLOFMA_ = internalGetUnk3300JFHLEBLOFMA();
-          result.unk3300JFHLEBLOFMA_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300COCFNBJCFGP_ = internalGetUnk3300COCFNBJCFGP();
-          result.unk3300COCFNBJCFGP_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.uid_ = uid_;
-        }
       }
 
       @java.lang.Override
@@ -661,14 +737,12 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
         if (other == emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo.getDefaultInstance()) return this;
         internalGetMutableUnk3300JFHLEBLOFMA().mergeFrom(
             other.internalGetUnk3300JFHLEBLOFMA());
-        bitField0_ |= 0x00000001;
         internalGetMutableUnk3300COCFNBJCFGP().mergeFrom(
             other.internalGetUnk3300COCFNBJCFGP());
-        bitField0_ |= 0x00000002;
         if (other.getUid() != 0) {
           setUid(other.getUid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -683,53 +757,17 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                unk3300JFHLEBLOFMA__ = input.readMessage(
-                    Unk3300JFHLEBLOFMADefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableUnk3300JFHLEBLOFMA().getMutableMap().put(
-                    unk3300JFHLEBLOFMA__.getKey(), unk3300JFHLEBLOFMA__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 74: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                unk3300COCFNBJCFGP__ = input.readMessage(
-                    Unk3300COCFNBJCFGPDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableUnk3300COCFNBJCFGP().getMutableMap().put(
-                    unk3300COCFNBJCFGP__.getKey(), unk3300COCFNBJCFGP__.getValue());
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 74
-              case 96: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -737,7 +775,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> unk3300JFHLEBLOFMA_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetUnk3300JFHLEBLOFMA() {
+      internalGetUnk3300JFHLEBLOFMA() {
         if (unk3300JFHLEBLOFMA_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300JFHLEBLOFMADefaultEntryHolder.defaultEntry);
@@ -745,7 +783,8 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
         return unk3300JFHLEBLOFMA_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableUnk3300JFHLEBLOFMA() {
+      internalGetMutableUnk3300JFHLEBLOFMA() {
+        onChanged();;
         if (unk3300JFHLEBLOFMA_ == null) {
           unk3300JFHLEBLOFMA_ = com.google.protobuf.MapField.newMapField(
               Unk3300JFHLEBLOFMADefaultEntryHolder.defaultEntry);
@@ -753,16 +792,16 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
         if (!unk3300JFHLEBLOFMA_.isMutable()) {
           unk3300JFHLEBLOFMA_ = unk3300JFHLEBLOFMA_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return unk3300JFHLEBLOFMA_;
       }
+
       public int getUnk3300JFHLEBLOFMACount() {
         return internalGetUnk3300JFHLEBLOFMA().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
        */
+
       @java.lang.Override
       public boolean containsUnk3300JFHLEBLOFMA(
           int key) {
@@ -781,6 +820,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300JFHLEBLOFMAMap() {
         return internalGetUnk3300JFHLEBLOFMA().getMap();
       }
@@ -788,6 +828,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
        */
       @java.lang.Override
+
       public int getUnk3300JFHLEBLOFMAOrDefault(
           int key,
           int defaultValue) {
@@ -800,6 +841,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
        */
       @java.lang.Override
+
       public int getUnk3300JFHLEBLOFMAOrThrow(
           int key) {
         
@@ -810,8 +852,8 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearUnk3300JFHLEBLOFMA() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableUnk3300JFHLEBLOFMA().getMutableMap()
             .clear();
         return this;
@@ -819,6 +861,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
        */
+
       public Builder removeUnk3300JFHLEBLOFMA(
           int key) {
         
@@ -831,8 +874,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableUnk3300JFHLEBLOFMA() {
-        bitField0_ |= 0x00000001;
+      getMutableUnk3300JFHLEBLOFMA() {
         return internalGetMutableUnk3300JFHLEBLOFMA().getMutableMap();
       }
       /**
@@ -845,24 +887,23 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
         
         internalGetMutableUnk3300JFHLEBLOFMA().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_JFHLEBLOFMA = 1;</code>
        */
+
       public Builder putAllUnk3300JFHLEBLOFMA(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableUnk3300JFHLEBLOFMA().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> unk3300COCFNBJCFGP_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetUnk3300COCFNBJCFGP() {
+      internalGetUnk3300COCFNBJCFGP() {
         if (unk3300COCFNBJCFGP_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300COCFNBJCFGPDefaultEntryHolder.defaultEntry);
@@ -870,7 +911,8 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
         return unk3300COCFNBJCFGP_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableUnk3300COCFNBJCFGP() {
+      internalGetMutableUnk3300COCFNBJCFGP() {
+        onChanged();;
         if (unk3300COCFNBJCFGP_ == null) {
           unk3300COCFNBJCFGP_ = com.google.protobuf.MapField.newMapField(
               Unk3300COCFNBJCFGPDefaultEntryHolder.defaultEntry);
@@ -878,16 +920,16 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
         if (!unk3300COCFNBJCFGP_.isMutable()) {
           unk3300COCFNBJCFGP_ = unk3300COCFNBJCFGP_.copy();
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
         return unk3300COCFNBJCFGP_;
       }
+
       public int getUnk3300COCFNBJCFGPCount() {
         return internalGetUnk3300COCFNBJCFGP().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
        */
+
       @java.lang.Override
       public boolean containsUnk3300COCFNBJCFGP(
           int key) {
@@ -906,6 +948,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300COCFNBJCFGPMap() {
         return internalGetUnk3300COCFNBJCFGP().getMap();
       }
@@ -913,6 +956,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
        */
       @java.lang.Override
+
       public int getUnk3300COCFNBJCFGPOrDefault(
           int key,
           int defaultValue) {
@@ -925,6 +969,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
        */
       @java.lang.Override
+
       public int getUnk3300COCFNBJCFGPOrThrow(
           int key) {
         
@@ -935,8 +980,8 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearUnk3300COCFNBJCFGP() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableUnk3300COCFNBJCFGP().getMutableMap()
             .clear();
         return this;
@@ -944,6 +989,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
        */
+
       public Builder removeUnk3300COCFNBJCFGP(
           int key) {
         
@@ -956,8 +1002,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableUnk3300COCFNBJCFGP() {
-        bitField0_ |= 0x00000002;
+      getMutableUnk3300COCFNBJCFGP() {
         return internalGetMutableUnk3300COCFNBJCFGP().getMutableMap();
       }
       /**
@@ -970,17 +1015,16 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
         
         internalGetMutableUnk3300COCFNBJCFGP().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_COCFNBJCFGP = 9;</code>
        */
+
       public Builder putAllUnk3300COCFNBJCFGP(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableUnk3300COCFNBJCFGP().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -1001,7 +1045,6 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1010,7 +1053,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -1048,18 +1091,7 @@ public final class ActivityAcceptGiftResultInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ActivityAcceptGiftResultInfo(input, extensionRegistry);
       }
     };
 

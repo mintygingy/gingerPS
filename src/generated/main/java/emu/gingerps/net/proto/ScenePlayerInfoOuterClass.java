@@ -97,6 +97,82 @@ public final class ScenePlayerInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ScenePlayerInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 16: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              isConnected_ = input.readBool();
+              break;
+            }
+            case 56: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = null;
+              if (onlinePlayerInfo_ != null) {
+                subBuilder = onlinePlayerInfo_.toBuilder();
+              }
+              onlinePlayerInfo_ = input.readMessage(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(onlinePlayerInfo_);
+                onlinePlayerInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 120: {
+
+              peerId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayerInfoOuterClass.internal_static_ScenePlayerInfo_descriptor;
@@ -111,7 +187,7 @@ public final class ScenePlayerInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 2;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 2;</code>
      * @return The uid.
@@ -122,7 +198,7 @@ public final class ScenePlayerInfoOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 7;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 7;</code>
      * @return The sceneId.
@@ -133,7 +209,7 @@ public final class ScenePlayerInfoOuterClass {
     }
 
     public static final int PEER_ID_FIELD_NUMBER = 15;
-    private int peerId_ = 0;
+    private int peerId_;
     /**
      * <code>uint32 peer_id = 15;</code>
      * @return The peerId.
@@ -166,11 +242,11 @@ public final class ScenePlayerInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getOnlinePlayerInfoOrBuilder() {
-      return onlinePlayerInfo_ == null ? emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : onlinePlayerInfo_;
+      return getOnlinePlayerInfo();
     }
 
     public static final int IS_CONNECTED_FIELD_NUMBER = 3;
-    private boolean isConnected_ = false;
+    private boolean isConnected_;
     /**
      * <code>bool is_connected = 3;</code>
      * @return The isConnected.
@@ -181,8 +257,7 @@ public final class ScenePlayerInfoOuterClass {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
+    private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
      * @return The name.
@@ -251,7 +326,7 @@ public final class ScenePlayerInfoOuterClass {
       if (peerId_ != 0) {
         output.writeUInt32(15, peerId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -283,7 +358,7 @@ public final class ScenePlayerInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, peerId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -313,7 +388,7 @@ public final class ScenePlayerInfoOuterClass {
           != other.getIsConnected()) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -339,7 +414,7 @@ public final class ScenePlayerInfoOuterClass {
           getIsConnected());
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -456,28 +531,38 @@ public final class ScenePlayerInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         uid_ = 0;
+
         sceneId_ = 0;
+
         peerId_ = 0;
-        onlinePlayerInfo_ = null;
-        if (onlinePlayerInfoBuilder_ != null) {
-          onlinePlayerInfoBuilder_.dispose();
+
+        if (onlinePlayerInfoBuilder_ == null) {
+          onlinePlayerInfo_ = null;
+        } else {
+          onlinePlayerInfo_ = null;
           onlinePlayerInfoBuilder_ = null;
         }
         isConnected_ = false;
+
         name_ = "";
+
         return this;
       }
 
@@ -504,33 +589,18 @@ public final class ScenePlayerInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo buildPartial() {
         emu.gingerps.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo result = new emu.gingerps.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.uid_ = uid_;
+        result.sceneId_ = sceneId_;
+        result.peerId_ = peerId_;
+        if (onlinePlayerInfoBuilder_ == null) {
+          result.onlinePlayerInfo_ = onlinePlayerInfo_;
+        } else {
+          result.onlinePlayerInfo_ = onlinePlayerInfoBuilder_.build();
+        }
+        result.isConnected_ = isConnected_;
+        result.name_ = name_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.uid_ = uid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.peerId_ = peerId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.onlinePlayerInfo_ = onlinePlayerInfoBuilder_ == null
-              ? onlinePlayerInfo_
-              : onlinePlayerInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.isConnected_ = isConnected_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.name_ = name_;
-        }
       }
 
       @java.lang.Override
@@ -594,10 +664,9 @@ public final class ScenePlayerInfoOuterClass {
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
-          bitField0_ |= 0x00000020;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -612,65 +681,19 @@ public final class ScenePlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 10
-              case 16: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 24: {
-                isConnected_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 24
-              case 56: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 74: {
-                input.readMessage(
-                    getOnlinePlayerInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 74
-              case 120: {
-                peerId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int uid_ ;
       /**
@@ -689,7 +712,6 @@ public final class ScenePlayerInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -698,7 +720,7 @@ public final class ScenePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -721,7 +743,6 @@ public final class ScenePlayerInfoOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -730,7 +751,7 @@ public final class ScenePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -753,7 +774,6 @@ public final class ScenePlayerInfoOuterClass {
       public Builder setPeerId(int value) {
         
         peerId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -762,7 +782,7 @@ public final class ScenePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPeerId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         peerId_ = 0;
         onChanged();
         return this;
@@ -776,7 +796,7 @@ public final class ScenePlayerInfoOuterClass {
        * @return Whether the onlinePlayerInfo field is set.
        */
       public boolean hasOnlinePlayerInfo() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return onlinePlayerInfoBuilder_ != null || onlinePlayerInfo_ != null;
       }
       /**
        * <code>.OnlinePlayerInfo online_player_info = 9;</code>
@@ -798,11 +818,11 @@ public final class ScenePlayerInfoOuterClass {
             throw new NullPointerException();
           }
           onlinePlayerInfo_ = value;
+          onChanged();
         } else {
           onlinePlayerInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -812,11 +832,11 @@ public final class ScenePlayerInfoOuterClass {
           emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder builderForValue) {
         if (onlinePlayerInfoBuilder_ == null) {
           onlinePlayerInfo_ = builderForValue.build();
+          onChanged();
         } else {
           onlinePlayerInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -824,38 +844,38 @@ public final class ScenePlayerInfoOuterClass {
        */
       public Builder mergeOnlinePlayerInfo(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
         if (onlinePlayerInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            onlinePlayerInfo_ != null &&
-            onlinePlayerInfo_ != emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance()) {
-            getOnlinePlayerInfoBuilder().mergeFrom(value);
+          if (onlinePlayerInfo_ != null) {
+            onlinePlayerInfo_ =
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.newBuilder(onlinePlayerInfo_).mergeFrom(value).buildPartial();
           } else {
             onlinePlayerInfo_ = value;
           }
+          onChanged();
         } else {
           onlinePlayerInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo online_player_info = 9;</code>
        */
       public Builder clearOnlinePlayerInfo() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onlinePlayerInfo_ = null;
-        if (onlinePlayerInfoBuilder_ != null) {
-          onlinePlayerInfoBuilder_.dispose();
+        if (onlinePlayerInfoBuilder_ == null) {
+          onlinePlayerInfo_ = null;
+          onChanged();
+        } else {
+          onlinePlayerInfo_ = null;
           onlinePlayerInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo online_player_info = 9;</code>
        */
       public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder getOnlinePlayerInfoBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getOnlinePlayerInfoFieldBuilder().getBuilder();
       }
@@ -904,7 +924,6 @@ public final class ScenePlayerInfoOuterClass {
       public Builder setIsConnected(boolean value) {
         
         isConnected_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -913,7 +932,7 @@ public final class ScenePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsConnected() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         isConnected_ = false;
         onChanged();
         return this;
@@ -960,9 +979,11 @@ public final class ScenePlayerInfoOuterClass {
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         name_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -971,8 +992,8 @@ public final class ScenePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearName() {
+        
         name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -983,10 +1004,12 @@ public final class ScenePlayerInfoOuterClass {
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         name_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1023,18 +1046,7 @@ public final class ScenePlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ScenePlayerInfo(input, extensionRegistry);
       }
     };
 

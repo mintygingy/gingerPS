@@ -118,6 +118,92 @@ public final class CustomDungeonResultInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CustomDungeonResultInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                childChallengeList_ = new java.util.ArrayList<emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              childChallengeList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief.parser(), extensionRegistry));
+              break;
+            }
+            case 16: {
+
+              isArriveFinish_ = input.readBool();
+              break;
+            }
+            case 32: {
+
+              gotCoinNum_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              dungeonGuid_ = input.readUInt64();
+              break;
+            }
+            case 48: {
+
+              isStored_ = input.readBool();
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              finishType_ = rawValue;
+              break;
+            }
+            case 72: {
+
+              timeCost_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              isLiked_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          childChallengeList_ = java.util.Collections.unmodifiableList(childChallengeList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.internal_static_CustomDungeonResultInfo_descriptor;
@@ -132,7 +218,7 @@ public final class CustomDungeonResultInfoOuterClass {
     }
 
     public static final int IS_LIKED_FIELD_NUMBER = 13;
-    private boolean isLiked_ = false;
+    private boolean isLiked_;
     /**
      * <code>bool is_liked = 13;</code>
      * @return The isLiked.
@@ -143,7 +229,7 @@ public final class CustomDungeonResultInfoOuterClass {
     }
 
     public static final int IS_ARRIVE_FINISH_FIELD_NUMBER = 2;
-    private boolean isArriveFinish_ = false;
+    private boolean isArriveFinish_;
     /**
      * <code>bool is_arrive_finish = 2;</code>
      * @return The isArriveFinish.
@@ -154,7 +240,7 @@ public final class CustomDungeonResultInfoOuterClass {
     }
 
     public static final int DUNGEON_GUID_FIELD_NUMBER = 5;
-    private long dungeonGuid_ = 0L;
+    private long dungeonGuid_;
     /**
      * <code>uint64 dungeon_guid = 5;</code>
      * @return The dungeonGuid.
@@ -165,7 +251,7 @@ public final class CustomDungeonResultInfoOuterClass {
     }
 
     public static final int FINISH_TYPE_FIELD_NUMBER = 8;
-    private int finishType_ = 0;
+    private int finishType_;
     /**
      * <code>.CustomDungeonFinishType finish_type = 8;</code>
      * @return The enum numeric value on the wire for finishType.
@@ -178,12 +264,12 @@ public final class CustomDungeonResultInfoOuterClass {
      * @return The finishType.
      */
     @java.lang.Override public emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType getFinishType() {
-      emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType result = emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType.forNumber(finishType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType result = emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType.valueOf(finishType_);
       return result == null ? emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType.UNRECOGNIZED : result;
     }
 
     public static final int CHILD_CHALLENGE_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief> childChallengeList_;
     /**
      * <code>repeated .ChallengeBrief child_challenge_list = 1;</code>
@@ -224,7 +310,7 @@ public final class CustomDungeonResultInfoOuterClass {
     }
 
     public static final int IS_STORED_FIELD_NUMBER = 6;
-    private boolean isStored_ = false;
+    private boolean isStored_;
     /**
      * <code>bool is_stored = 6;</code>
      * @return The isStored.
@@ -235,7 +321,7 @@ public final class CustomDungeonResultInfoOuterClass {
     }
 
     public static final int TIME_COST_FIELD_NUMBER = 9;
-    private int timeCost_ = 0;
+    private int timeCost_;
     /**
      * <code>uint32 time_cost = 9;</code>
      * @return The timeCost.
@@ -246,7 +332,7 @@ public final class CustomDungeonResultInfoOuterClass {
     }
 
     public static final int GOT_COIN_NUM_FIELD_NUMBER = 4;
-    private int gotCoinNum_ = 0;
+    private int gotCoinNum_;
     /**
      * <code>uint32 got_coin_num = 4;</code>
      * @return The gotCoinNum.
@@ -294,7 +380,7 @@ public final class CustomDungeonResultInfoOuterClass {
       if (isLiked_ != false) {
         output.writeBool(13, isLiked_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -335,7 +421,7 @@ public final class CustomDungeonResultInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isLiked_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -365,7 +451,7 @@ public final class CustomDungeonResultInfoOuterClass {
           != other.getTimeCost()) return false;
       if (getGotCoinNum()
           != other.getGotCoinNum()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -398,7 +484,7 @@ public final class CustomDungeonResultInfoOuterClass {
       hash = (53 * hash) + getTimeCost();
       hash = (37 * hash) + GOT_COIN_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getGotCoinNum();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -515,32 +601,43 @@ public final class CustomDungeonResultInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getChildChallengeListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isLiked_ = false;
+
         isArriveFinish_ = false;
+
         dungeonGuid_ = 0L;
+
         finishType_ = 0;
+
         if (childChallengeListBuilder_ == null) {
           childChallengeList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          childChallengeList_ = null;
           childChallengeListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         isStored_ = false;
+
         timeCost_ = 0;
+
         gotCoinNum_ = 0;
+
         return this;
       }
 
@@ -567,47 +664,25 @@ public final class CustomDungeonResultInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo buildPartial() {
         emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo result = new emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.isLiked_ = isLiked_;
+        result.isArriveFinish_ = isArriveFinish_;
+        result.dungeonGuid_ = dungeonGuid_;
+        result.finishType_ = finishType_;
         if (childChallengeListBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             childChallengeList_ = java.util.Collections.unmodifiableList(childChallengeList_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.childChallengeList_ = childChallengeList_;
         } else {
           result.childChallengeList_ = childChallengeListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isLiked_ = isLiked_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isArriveFinish_ = isArriveFinish_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.dungeonGuid_ = dungeonGuid_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.finishType_ = finishType_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isStored_ = isStored_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.timeCost_ = timeCost_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.gotCoinNum_ = gotCoinNum_;
-        }
+        result.isStored_ = isStored_;
+        result.timeCost_ = timeCost_;
+        result.gotCoinNum_ = gotCoinNum_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -670,7 +745,7 @@ public final class CustomDungeonResultInfoOuterClass {
           if (!other.childChallengeList_.isEmpty()) {
             if (childChallengeList_.isEmpty()) {
               childChallengeList_ = other.childChallengeList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureChildChallengeListIsMutable();
               childChallengeList_.addAll(other.childChallengeList_);
@@ -683,7 +758,7 @@ public final class CustomDungeonResultInfoOuterClass {
               childChallengeListBuilder_.dispose();
               childChallengeListBuilder_ = null;
               childChallengeList_ = other.childChallengeList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
               childChallengeListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChildChallengeListFieldBuilder() : null;
@@ -701,7 +776,7 @@ public final class CustomDungeonResultInfoOuterClass {
         if (other.getGotCoinNum() != 0) {
           setGotCoinNum(other.getGotCoinNum());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -716,78 +791,17 @@ public final class CustomDungeonResultInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief.parser(),
-                        extensionRegistry);
-                if (childChallengeListBuilder_ == null) {
-                  ensureChildChallengeListIsMutable();
-                  childChallengeList_.add(m);
-                } else {
-                  childChallengeListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 16: {
-                isArriveFinish_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 32: {
-                gotCoinNum_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 32
-              case 40: {
-                dungeonGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 48: {
-                isStored_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 64: {
-                finishType_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 64
-              case 72: {
-                timeCost_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 72
-              case 104: {
-                isLiked_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -809,7 +823,6 @@ public final class CustomDungeonResultInfoOuterClass {
       public Builder setIsLiked(boolean value) {
         
         isLiked_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -818,7 +831,7 @@ public final class CustomDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsLiked() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isLiked_ = false;
         onChanged();
         return this;
@@ -841,7 +854,6 @@ public final class CustomDungeonResultInfoOuterClass {
       public Builder setIsArriveFinish(boolean value) {
         
         isArriveFinish_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -850,7 +862,7 @@ public final class CustomDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsArriveFinish() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isArriveFinish_ = false;
         onChanged();
         return this;
@@ -873,7 +885,6 @@ public final class CustomDungeonResultInfoOuterClass {
       public Builder setDungeonGuid(long value) {
         
         dungeonGuid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -882,7 +893,7 @@ public final class CustomDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonGuid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         dungeonGuid_ = 0L;
         onChanged();
         return this;
@@ -902,8 +913,8 @@ public final class CustomDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setFinishTypeValue(int value) {
+        
         finishType_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -913,7 +924,8 @@ public final class CustomDungeonResultInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType getFinishType() {
-        emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType result = emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType.forNumber(finishType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType result = emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType.valueOf(finishType_);
         return result == null ? emu.gingerps.net.proto.CustomDungeonFinishTypeOuterClass.CustomDungeonFinishType.UNRECOGNIZED : result;
       }
       /**
@@ -925,7 +937,7 @@ public final class CustomDungeonResultInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        
         finishType_ = value.getNumber();
         onChanged();
         return this;
@@ -935,7 +947,7 @@ public final class CustomDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         finishType_ = 0;
         onChanged();
         return this;
@@ -944,9 +956,9 @@ public final class CustomDungeonResultInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief> childChallengeList_ =
         java.util.Collections.emptyList();
       private void ensureChildChallengeListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           childChallengeList_ = new java.util.ArrayList<emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief>(childChallengeList_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1096,7 +1108,7 @@ public final class CustomDungeonResultInfoOuterClass {
       public Builder clearChildChallengeList() {
         if (childChallengeListBuilder_ == null) {
           childChallengeList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           childChallengeListBuilder_.clear();
@@ -1173,7 +1185,7 @@ public final class CustomDungeonResultInfoOuterClass {
           childChallengeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief, emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief.Builder, emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBriefOrBuilder>(
                   childChallengeList_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           childChallengeList_ = null;
@@ -1198,7 +1210,6 @@ public final class CustomDungeonResultInfoOuterClass {
       public Builder setIsStored(boolean value) {
         
         isStored_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1207,7 +1218,7 @@ public final class CustomDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsStored() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isStored_ = false;
         onChanged();
         return this;
@@ -1230,7 +1241,6 @@ public final class CustomDungeonResultInfoOuterClass {
       public Builder setTimeCost(int value) {
         
         timeCost_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1239,7 +1249,7 @@ public final class CustomDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimeCost() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         timeCost_ = 0;
         onChanged();
         return this;
@@ -1262,7 +1272,6 @@ public final class CustomDungeonResultInfoOuterClass {
       public Builder setGotCoinNum(int value) {
         
         gotCoinNum_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1271,7 +1280,7 @@ public final class CustomDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGotCoinNum() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         gotCoinNum_ = 0;
         onChanged();
         return this;
@@ -1309,18 +1318,7 @@ public final class CustomDungeonResultInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CustomDungeonResultInfo(input, extensionRegistry);
       }
     };
 

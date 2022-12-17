@@ -296,6 +296,236 @@ public final class SocialDetailOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SocialDetail(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickname_ = s;
+              break;
+            }
+            case 24: {
+
+              level_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              avatarId_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              signature_ = s;
+              break;
+            }
+            case 50: {
+              emu.gingerps.net.proto.BirthdayOuterClass.Birthday.Builder subBuilder = null;
+              if (birthday_ != null) {
+                subBuilder = birthday_.toBuilder();
+              }
+              birthday_ = input.readMessage(emu.gingerps.net.proto.BirthdayOuterClass.Birthday.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(birthday_);
+                birthday_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 56: {
+
+              worldLevel_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                reservedList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              reservedList_.addInt(input.readUInt32());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                reservedList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                reservedList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              onlineState_ = rawValue;
+              break;
+            }
+            case 80: {
+
+              param_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              isFriend_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              isMpModeAvailable_ = input.readBool();
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              onlineId_ = s;
+              break;
+            }
+            case 112: {
+
+              nameCardId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              isInBlacklist_ = input.readBool();
+              break;
+            }
+            case 128: {
+
+              isChatNoDisturb_ = input.readBool();
+              break;
+            }
+            case 138: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              remarkName_ = s;
+              break;
+            }
+            case 144: {
+
+              finishAchievementNum_ = input.readUInt32();
+              break;
+            }
+            case 152: {
+
+              towerFloorIndex_ = input.readUInt32();
+              break;
+            }
+            case 160: {
+
+              towerLevelIndex_ = input.readUInt32();
+              break;
+            }
+            case 168: {
+
+              isShowAvatar_ = input.readBool();
+              break;
+            }
+            case 178: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                showAvatarInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              showAvatarInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 184: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                showNameCardIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              showNameCardIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 186: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                showNameCardIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                showNameCardIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 192: {
+              int rawValue = input.readEnum();
+
+              friendEnterHomeOption_ = rawValue;
+              break;
+            }
+            case 202: {
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
+              if (profilePicture_ != null) {
+                subBuilder = profilePicture_.toBuilder();
+              }
+              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(profilePicture_);
+                profilePicture_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          reservedList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          showAvatarInfoList_ = java.util.Collections.unmodifiableList(showAvatarInfoList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          showNameCardIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SocialDetailOuterClass.internal_static_SocialDetail_descriptor;
@@ -310,7 +540,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 1;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 1;</code>
      * @return The uid.
@@ -321,8 +551,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object nickname_ = "";
+    private volatile java.lang.Object nickname_;
     /**
      * <code>string nickname = 2;</code>
      * @return The nickname.
@@ -360,7 +589,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int LEVEL_FIELD_NUMBER = 3;
-    private int level_ = 0;
+    private int level_;
     /**
      * <code>uint32 level = 3;</code>
      * @return The level.
@@ -371,7 +600,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 4;
-    private int avatarId_ = 0;
+    private int avatarId_;
     /**
      * <code>uint32 avatar_id = 4;</code>
      * @return The avatarId.
@@ -382,8 +611,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int SIGNATURE_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object signature_ = "";
+    private volatile java.lang.Object signature_;
     /**
      * <code>string signature = 5;</code>
      * @return The signature.
@@ -443,11 +671,11 @@ public final class SocialDetailOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BirthdayOuterClass.BirthdayOrBuilder getBirthdayOrBuilder() {
-      return birthday_ == null ? emu.gingerps.net.proto.BirthdayOuterClass.Birthday.getDefaultInstance() : birthday_;
+      return getBirthday();
     }
 
     public static final int WORLD_LEVEL_FIELD_NUMBER = 7;
-    private int worldLevel_ = 0;
+    private int worldLevel_;
     /**
      * <code>uint32 world_level = 7;</code>
      * @return The worldLevel.
@@ -458,7 +686,6 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int RESERVED_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList reservedList_;
     /**
      * <code>repeated uint32 reserved_list = 8;</code>
@@ -487,7 +714,7 @@ public final class SocialDetailOuterClass {
     private int reservedListMemoizedSerializedSize = -1;
 
     public static final int ONLINE_STATE_FIELD_NUMBER = 9;
-    private int onlineState_ = 0;
+    private int onlineState_;
     /**
      * <code>.FriendOnlineState online_state = 9;</code>
      * @return The enum numeric value on the wire for onlineState.
@@ -500,12 +727,13 @@ public final class SocialDetailOuterClass {
      * @return The onlineState.
      */
     @java.lang.Override public emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState getOnlineState() {
-      emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState result = emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState.forNumber(onlineState_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState result = emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState.valueOf(onlineState_);
       return result == null ? emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState.UNRECOGNIZED : result;
     }
 
     public static final int PARAM_FIELD_NUMBER = 10;
-    private int param_ = 0;
+    private int param_;
     /**
      * <code>uint32 param = 10;</code>
      * @return The param.
@@ -516,7 +744,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int IS_FRIEND_FIELD_NUMBER = 11;
-    private boolean isFriend_ = false;
+    private boolean isFriend_;
     /**
      * <code>bool is_friend = 11;</code>
      * @return The isFriend.
@@ -527,7 +755,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int IS_MP_MODE_AVAILABLE_FIELD_NUMBER = 12;
-    private boolean isMpModeAvailable_ = false;
+    private boolean isMpModeAvailable_;
     /**
      * <code>bool is_mp_mode_available = 12;</code>
      * @return The isMpModeAvailable.
@@ -538,8 +766,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int ONLINE_ID_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object onlineId_ = "";
+    private volatile java.lang.Object onlineId_;
     /**
      * <code>string online_id = 13;</code>
      * @return The onlineId.
@@ -577,7 +804,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int NAME_CARD_ID_FIELD_NUMBER = 14;
-    private int nameCardId_ = 0;
+    private int nameCardId_;
     /**
      * <code>uint32 name_card_id = 14;</code>
      * @return The nameCardId.
@@ -588,7 +815,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int IS_IN_BLACKLIST_FIELD_NUMBER = 15;
-    private boolean isInBlacklist_ = false;
+    private boolean isInBlacklist_;
     /**
      * <code>bool is_in_blacklist = 15;</code>
      * @return The isInBlacklist.
@@ -599,7 +826,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int IS_CHAT_NO_DISTURB_FIELD_NUMBER = 16;
-    private boolean isChatNoDisturb_ = false;
+    private boolean isChatNoDisturb_;
     /**
      * <code>bool is_chat_no_disturb = 16;</code>
      * @return The isChatNoDisturb.
@@ -610,8 +837,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int REMARK_NAME_FIELD_NUMBER = 17;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object remarkName_ = "";
+    private volatile java.lang.Object remarkName_;
     /**
      * <code>string remark_name = 17;</code>
      * @return The remarkName.
@@ -649,7 +875,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int FINISH_ACHIEVEMENT_NUM_FIELD_NUMBER = 18;
-    private int finishAchievementNum_ = 0;
+    private int finishAchievementNum_;
     /**
      * <code>uint32 finish_achievement_num = 18;</code>
      * @return The finishAchievementNum.
@@ -660,7 +886,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int TOWER_FLOOR_INDEX_FIELD_NUMBER = 19;
-    private int towerFloorIndex_ = 0;
+    private int towerFloorIndex_;
     /**
      * <code>uint32 tower_floor_index = 19;</code>
      * @return The towerFloorIndex.
@@ -671,7 +897,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int TOWER_LEVEL_INDEX_FIELD_NUMBER = 20;
-    private int towerLevelIndex_ = 0;
+    private int towerLevelIndex_;
     /**
      * <code>uint32 tower_level_index = 20;</code>
      * @return The towerLevelIndex.
@@ -682,7 +908,7 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int IS_SHOW_AVATAR_FIELD_NUMBER = 21;
-    private boolean isShowAvatar_ = false;
+    private boolean isShowAvatar_;
     /**
      * <code>bool is_show_avatar = 21;</code>
      * @return The isShowAvatar.
@@ -693,7 +919,6 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int SHOW_AVATAR_INFO_LIST_FIELD_NUMBER = 22;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> showAvatarInfoList_;
     /**
      * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
@@ -734,7 +959,6 @@ public final class SocialDetailOuterClass {
     }
 
     public static final int SHOW_NAME_CARD_ID_LIST_FIELD_NUMBER = 23;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList showNameCardIdList_;
     /**
      * <code>repeated uint32 show_name_card_id_list = 23;</code>
@@ -763,7 +987,7 @@ public final class SocialDetailOuterClass {
     private int showNameCardIdListMemoizedSerializedSize = -1;
 
     public static final int FRIEND_ENTER_HOME_OPTION_FIELD_NUMBER = 24;
-    private int friendEnterHomeOption_ = 0;
+    private int friendEnterHomeOption_;
     /**
      * <code>.FriendEnterHomeOption friend_enter_home_option = 24;</code>
      * @return The enum numeric value on the wire for friendEnterHomeOption.
@@ -776,7 +1000,8 @@ public final class SocialDetailOuterClass {
      * @return The friendEnterHomeOption.
      */
     @java.lang.Override public emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption getFriendEnterHomeOption() {
-      emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption result = emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.forNumber(friendEnterHomeOption_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption result = emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.valueOf(friendEnterHomeOption_);
       return result == null ? emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.UNRECOGNIZED : result;
     }
 
@@ -803,7 +1028,7 @@ public final class SocialDetailOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+      return getProfilePicture();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -904,7 +1129,7 @@ public final class SocialDetailOuterClass {
       if (profilePicture_ != null) {
         output.writeMessage(25, getProfilePicture());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1029,7 +1254,7 @@ public final class SocialDetailOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(25, getProfilePicture());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1098,7 +1323,7 @@ public final class SocialDetailOuterClass {
         if (!getProfilePicture()
             .equals(other.getProfilePicture())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1174,7 +1399,7 @@ public final class SocialDetailOuterClass {
         hash = (37 * hash) + PROFILE_PICTURE_FIELD_NUMBER;
         hash = (53 * hash) + getProfilePicture().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1291,55 +1516,83 @@ public final class SocialDetailOuterClass {
 
       // Construct using emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getShowAvatarInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         uid_ = 0;
+
         nickname_ = "";
+
         level_ = 0;
+
         avatarId_ = 0;
+
         signature_ = "";
-        birthday_ = null;
-        if (birthdayBuilder_ != null) {
-          birthdayBuilder_.dispose();
+
+        if (birthdayBuilder_ == null) {
+          birthday_ = null;
+        } else {
+          birthday_ = null;
           birthdayBuilder_ = null;
         }
         worldLevel_ = 0;
+
         reservedList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onlineState_ = 0;
+
         param_ = 0;
+
         isFriend_ = false;
+
         isMpModeAvailable_ = false;
+
         onlineId_ = "";
+
         nameCardId_ = 0;
+
         isInBlacklist_ = false;
+
         isChatNoDisturb_ = false;
+
         remarkName_ = "";
+
         finishAchievementNum_ = 0;
+
         towerFloorIndex_ = 0;
+
         towerLevelIndex_ = 0;
+
         isShowAvatar_ = false;
+
         if (showAvatarInfoListBuilder_ == null) {
           showAvatarInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          showAvatarInfoList_ = null;
           showAvatarInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00200000);
         showNameCardIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         friendEnterHomeOption_ = 0;
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
         return this;
@@ -1368,106 +1621,58 @@ public final class SocialDetailOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail buildPartial() {
         emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail result = new emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail result) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.uid_ = uid_;
+        result.nickname_ = nickname_;
+        result.level_ = level_;
+        result.avatarId_ = avatarId_;
+        result.signature_ = signature_;
+        if (birthdayBuilder_ == null) {
+          result.birthday_ = birthday_;
+        } else {
+          result.birthday_ = birthdayBuilder_.build();
+        }
+        result.worldLevel_ = worldLevel_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           reservedList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.reservedList_ = reservedList_;
+        result.onlineState_ = onlineState_;
+        result.param_ = param_;
+        result.isFriend_ = isFriend_;
+        result.isMpModeAvailable_ = isMpModeAvailable_;
+        result.onlineId_ = onlineId_;
+        result.nameCardId_ = nameCardId_;
+        result.isInBlacklist_ = isInBlacklist_;
+        result.isChatNoDisturb_ = isChatNoDisturb_;
+        result.remarkName_ = remarkName_;
+        result.finishAchievementNum_ = finishAchievementNum_;
+        result.towerFloorIndex_ = towerFloorIndex_;
+        result.towerLevelIndex_ = towerLevelIndex_;
+        result.isShowAvatar_ = isShowAvatar_;
         if (showAvatarInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00200000) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             showAvatarInfoList_ = java.util.Collections.unmodifiableList(showAvatarInfoList_);
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.showAvatarInfoList_ = showAvatarInfoList_;
         } else {
           result.showAvatarInfoList_ = showAvatarInfoListBuilder_.build();
         }
-        if (((bitField0_ & 0x00400000) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           showNameCardIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00400000);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.showNameCardIdList_ = showNameCardIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.uid_ = uid_;
+        result.friendEnterHomeOption_ = friendEnterHomeOption_;
+        if (profilePictureBuilder_ == null) {
+          result.profilePicture_ = profilePicture_;
+        } else {
+          result.profilePicture_ = profilePictureBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.nickname_ = nickname_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.level_ = level_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.avatarId_ = avatarId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.signature_ = signature_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.birthday_ = birthdayBuilder_ == null
-              ? birthday_
-              : birthdayBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.worldLevel_ = worldLevel_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.onlineState_ = onlineState_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.param_ = param_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.isFriend_ = isFriend_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.isMpModeAvailable_ = isMpModeAvailable_;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.onlineId_ = onlineId_;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.nameCardId_ = nameCardId_;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.isInBlacklist_ = isInBlacklist_;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.isChatNoDisturb_ = isChatNoDisturb_;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.remarkName_ = remarkName_;
-        }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.finishAchievementNum_ = finishAchievementNum_;
-        }
-        if (((from_bitField0_ & 0x00040000) != 0)) {
-          result.towerFloorIndex_ = towerFloorIndex_;
-        }
-        if (((from_bitField0_ & 0x00080000) != 0)) {
-          result.towerLevelIndex_ = towerLevelIndex_;
-        }
-        if (((from_bitField0_ & 0x00100000) != 0)) {
-          result.isShowAvatar_ = isShowAvatar_;
-        }
-        if (((from_bitField0_ & 0x00800000) != 0)) {
-          result.friendEnterHomeOption_ = friendEnterHomeOption_;
-        }
-        if (((from_bitField0_ & 0x01000000) != 0)) {
-          result.profilePicture_ = profilePictureBuilder_ == null
-              ? profilePicture_
-              : profilePictureBuilder_.build();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -1519,7 +1724,6 @@ public final class SocialDetailOuterClass {
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getLevel() != 0) {
@@ -1530,7 +1734,6 @@ public final class SocialDetailOuterClass {
         }
         if (!other.getSignature().isEmpty()) {
           signature_ = other.signature_;
-          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (other.hasBirthday()) {
@@ -1542,7 +1745,7 @@ public final class SocialDetailOuterClass {
         if (!other.reservedList_.isEmpty()) {
           if (reservedList_.isEmpty()) {
             reservedList_ = other.reservedList_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureReservedListIsMutable();
             reservedList_.addAll(other.reservedList_);
@@ -1563,7 +1766,6 @@ public final class SocialDetailOuterClass {
         }
         if (!other.getOnlineId().isEmpty()) {
           onlineId_ = other.onlineId_;
-          bitField0_ |= 0x00001000;
           onChanged();
         }
         if (other.getNameCardId() != 0) {
@@ -1577,7 +1779,6 @@ public final class SocialDetailOuterClass {
         }
         if (!other.getRemarkName().isEmpty()) {
           remarkName_ = other.remarkName_;
-          bitField0_ |= 0x00010000;
           onChanged();
         }
         if (other.getFinishAchievementNum() != 0) {
@@ -1596,7 +1797,7 @@ public final class SocialDetailOuterClass {
           if (!other.showAvatarInfoList_.isEmpty()) {
             if (showAvatarInfoList_.isEmpty()) {
               showAvatarInfoList_ = other.showAvatarInfoList_;
-              bitField0_ = (bitField0_ & ~0x00200000);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureShowAvatarInfoListIsMutable();
               showAvatarInfoList_.addAll(other.showAvatarInfoList_);
@@ -1609,7 +1810,7 @@ public final class SocialDetailOuterClass {
               showAvatarInfoListBuilder_.dispose();
               showAvatarInfoListBuilder_ = null;
               showAvatarInfoList_ = other.showAvatarInfoList_;
-              bitField0_ = (bitField0_ & ~0x00200000);
+              bitField0_ = (bitField0_ & ~0x00000002);
               showAvatarInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getShowAvatarInfoListFieldBuilder() : null;
@@ -1621,7 +1822,7 @@ public final class SocialDetailOuterClass {
         if (!other.showNameCardIdList_.isEmpty()) {
           if (showNameCardIdList_.isEmpty()) {
             showNameCardIdList_ = other.showNameCardIdList_;
-            bitField0_ = (bitField0_ & ~0x00400000);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureShowNameCardIdListIsMutable();
             showNameCardIdList_.addAll(other.showNameCardIdList_);
@@ -1634,7 +1835,7 @@ public final class SocialDetailOuterClass {
         if (other.hasProfilePicture()) {
           mergeProfilePicture(other.getProfilePicture());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1649,189 +1850,17 @@ public final class SocialDetailOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                nickname_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 24: {
-                level_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                avatarId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 42: {
-                signature_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              case 50: {
-                input.readMessage(
-                    getBirthdayFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 50
-              case 56: {
-                worldLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              case 64: {
-                int v = input.readUInt32();
-                ensureReservedListIsMutable();
-                reservedList_.addInt(v);
-                break;
-              } // case 64
-              case 66: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureReservedListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  reservedList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 66
-              case 72: {
-                onlineState_ = input.readEnum();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 80: {
-                param_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 80
-              case 88: {
-                isFriend_ = input.readBool();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 88
-              case 96: {
-                isMpModeAvailable_ = input.readBool();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 96
-              case 106: {
-                onlineId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 106
-              case 112: {
-                nameCardId_ = input.readUInt32();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 112
-              case 120: {
-                isInBlacklist_ = input.readBool();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 120
-              case 128: {
-                isChatNoDisturb_ = input.readBool();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 128
-              case 138: {
-                remarkName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 138
-              case 144: {
-                finishAchievementNum_ = input.readUInt32();
-                bitField0_ |= 0x00020000;
-                break;
-              } // case 144
-              case 152: {
-                towerFloorIndex_ = input.readUInt32();
-                bitField0_ |= 0x00040000;
-                break;
-              } // case 152
-              case 160: {
-                towerLevelIndex_ = input.readUInt32();
-                bitField0_ |= 0x00080000;
-                break;
-              } // case 160
-              case 168: {
-                isShowAvatar_ = input.readBool();
-                bitField0_ |= 0x00100000;
-                break;
-              } // case 168
-              case 178: {
-                emu.gingerps.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.parser(),
-                        extensionRegistry);
-                if (showAvatarInfoListBuilder_ == null) {
-                  ensureShowAvatarInfoListIsMutable();
-                  showAvatarInfoList_.add(m);
-                } else {
-                  showAvatarInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 178
-              case 184: {
-                int v = input.readUInt32();
-                ensureShowNameCardIdListIsMutable();
-                showNameCardIdList_.addInt(v);
-                break;
-              } // case 184
-              case 186: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureShowNameCardIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  showNameCardIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 186
-              case 192: {
-                friendEnterHomeOption_ = input.readEnum();
-                bitField0_ |= 0x00800000;
-                break;
-              } // case 192
-              case 202: {
-                input.readMessage(
-                    getProfilePictureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x01000000;
-                break;
-              } // case 202
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1853,7 +1882,6 @@ public final class SocialDetailOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1862,7 +1890,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -1909,9 +1937,11 @@ public final class SocialDetailOuterClass {
        */
       public Builder setNickname(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         nickname_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1920,8 +1950,8 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickname() {
+        
         nickname_ = getDefaultInstance().getNickname();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1932,10 +1962,12 @@ public final class SocialDetailOuterClass {
        */
       public Builder setNicknameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         nickname_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1957,7 +1989,6 @@ public final class SocialDetailOuterClass {
       public Builder setLevel(int value) {
         
         level_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1966,7 +1997,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         level_ = 0;
         onChanged();
         return this;
@@ -1989,7 +2020,6 @@ public final class SocialDetailOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1998,7 +2028,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         avatarId_ = 0;
         onChanged();
         return this;
@@ -2045,9 +2075,11 @@ public final class SocialDetailOuterClass {
        */
       public Builder setSignature(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         signature_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2056,8 +2088,8 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSignature() {
+        
         signature_ = getDefaultInstance().getSignature();
-        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -2068,10 +2100,12 @@ public final class SocialDetailOuterClass {
        */
       public Builder setSignatureBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         signature_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2084,7 +2118,7 @@ public final class SocialDetailOuterClass {
        * @return Whether the birthday field is set.
        */
       public boolean hasBirthday() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return birthdayBuilder_ != null || birthday_ != null;
       }
       /**
        * <code>.Birthday birthday = 6;</code>
@@ -2106,11 +2140,11 @@ public final class SocialDetailOuterClass {
             throw new NullPointerException();
           }
           birthday_ = value;
+          onChanged();
         } else {
           birthdayBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -2120,11 +2154,11 @@ public final class SocialDetailOuterClass {
           emu.gingerps.net.proto.BirthdayOuterClass.Birthday.Builder builderForValue) {
         if (birthdayBuilder_ == null) {
           birthday_ = builderForValue.build();
+          onChanged();
         } else {
           birthdayBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -2132,38 +2166,38 @@ public final class SocialDetailOuterClass {
        */
       public Builder mergeBirthday(emu.gingerps.net.proto.BirthdayOuterClass.Birthday value) {
         if (birthdayBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            birthday_ != null &&
-            birthday_ != emu.gingerps.net.proto.BirthdayOuterClass.Birthday.getDefaultInstance()) {
-            getBirthdayBuilder().mergeFrom(value);
+          if (birthday_ != null) {
+            birthday_ =
+              emu.gingerps.net.proto.BirthdayOuterClass.Birthday.newBuilder(birthday_).mergeFrom(value).buildPartial();
           } else {
             birthday_ = value;
           }
+          onChanged();
         } else {
           birthdayBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Birthday birthday = 6;</code>
        */
       public Builder clearBirthday() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        birthday_ = null;
-        if (birthdayBuilder_ != null) {
-          birthdayBuilder_.dispose();
+        if (birthdayBuilder_ == null) {
+          birthday_ = null;
+          onChanged();
+        } else {
+          birthday_ = null;
           birthdayBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Birthday birthday = 6;</code>
        */
       public emu.gingerps.net.proto.BirthdayOuterClass.Birthday.Builder getBirthdayBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getBirthdayFieldBuilder().getBuilder();
       }
@@ -2212,7 +2246,6 @@ public final class SocialDetailOuterClass {
       public Builder setWorldLevel(int value) {
         
         worldLevel_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2221,7 +2254,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWorldLevel() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         worldLevel_ = 0;
         onChanged();
         return this;
@@ -2229,10 +2262,10 @@ public final class SocialDetailOuterClass {
 
       private com.google.protobuf.Internal.IntList reservedList_ = emptyIntList();
       private void ensureReservedListIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           reservedList_ = mutableCopy(reservedList_);
-          bitField0_ |= 0x00000080;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 reserved_list = 8;</code>
@@ -2240,7 +2273,7 @@ public final class SocialDetailOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getReservedListList() {
-        return ((bitField0_ & 0x00000080) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(reservedList_) : reservedList_;
       }
       /**
@@ -2266,7 +2299,6 @@ public final class SocialDetailOuterClass {
        */
       public Builder setReservedList(
           int index, int value) {
-        
         ensureReservedListIsMutable();
         reservedList_.setInt(index, value);
         onChanged();
@@ -2278,7 +2310,6 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder addReservedList(int value) {
-        
         ensureReservedListIsMutable();
         reservedList_.addInt(value);
         onChanged();
@@ -2303,7 +2334,7 @@ public final class SocialDetailOuterClass {
        */
       public Builder clearReservedList() {
         reservedList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2322,8 +2353,8 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOnlineStateValue(int value) {
+        
         onlineState_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2333,7 +2364,8 @@ public final class SocialDetailOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState getOnlineState() {
-        emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState result = emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState.forNumber(onlineState_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState result = emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState.valueOf(onlineState_);
         return result == null ? emu.gingerps.net.proto.FriendOnlineStateOuterClass.FriendOnlineState.UNRECOGNIZED : result;
       }
       /**
@@ -2345,7 +2377,7 @@ public final class SocialDetailOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000100;
+        
         onlineState_ = value.getNumber();
         onChanged();
         return this;
@@ -2355,7 +2387,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOnlineState() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         onlineState_ = 0;
         onChanged();
         return this;
@@ -2378,7 +2410,6 @@ public final class SocialDetailOuterClass {
       public Builder setParam(int value) {
         
         param_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2387,7 +2418,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         param_ = 0;
         onChanged();
         return this;
@@ -2410,7 +2441,6 @@ public final class SocialDetailOuterClass {
       public Builder setIsFriend(boolean value) {
         
         isFriend_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2419,7 +2449,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFriend() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         isFriend_ = false;
         onChanged();
         return this;
@@ -2442,7 +2472,6 @@ public final class SocialDetailOuterClass {
       public Builder setIsMpModeAvailable(boolean value) {
         
         isMpModeAvailable_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2451,7 +2480,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsMpModeAvailable() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         isMpModeAvailable_ = false;
         onChanged();
         return this;
@@ -2498,9 +2527,11 @@ public final class SocialDetailOuterClass {
        */
       public Builder setOnlineId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         onlineId_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2509,8 +2540,8 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
+        
         onlineId_ = getDefaultInstance().getOnlineId();
-        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
         return this;
       }
@@ -2521,10 +2552,12 @@ public final class SocialDetailOuterClass {
        */
       public Builder setOnlineIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         onlineId_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2546,7 +2579,6 @@ public final class SocialDetailOuterClass {
       public Builder setNameCardId(int value) {
         
         nameCardId_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -2555,7 +2587,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNameCardId() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        
         nameCardId_ = 0;
         onChanged();
         return this;
@@ -2578,7 +2610,6 @@ public final class SocialDetailOuterClass {
       public Builder setIsInBlacklist(boolean value) {
         
         isInBlacklist_ = value;
-        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -2587,7 +2618,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsInBlacklist() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        
         isInBlacklist_ = false;
         onChanged();
         return this;
@@ -2610,7 +2641,6 @@ public final class SocialDetailOuterClass {
       public Builder setIsChatNoDisturb(boolean value) {
         
         isChatNoDisturb_ = value;
-        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -2619,7 +2649,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsChatNoDisturb() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        
         isChatNoDisturb_ = false;
         onChanged();
         return this;
@@ -2666,9 +2696,11 @@ public final class SocialDetailOuterClass {
        */
       public Builder setRemarkName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         remarkName_ = value;
-        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -2677,8 +2709,8 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemarkName() {
+        
         remarkName_ = getDefaultInstance().getRemarkName();
-        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
         return this;
       }
@@ -2689,10 +2721,12 @@ public final class SocialDetailOuterClass {
        */
       public Builder setRemarkNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         remarkName_ = value;
-        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -2714,7 +2748,6 @@ public final class SocialDetailOuterClass {
       public Builder setFinishAchievementNum(int value) {
         
         finishAchievementNum_ = value;
-        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -2723,7 +2756,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishAchievementNum() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        
         finishAchievementNum_ = 0;
         onChanged();
         return this;
@@ -2746,7 +2779,6 @@ public final class SocialDetailOuterClass {
       public Builder setTowerFloorIndex(int value) {
         
         towerFloorIndex_ = value;
-        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -2755,7 +2787,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTowerFloorIndex() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        
         towerFloorIndex_ = 0;
         onChanged();
         return this;
@@ -2778,7 +2810,6 @@ public final class SocialDetailOuterClass {
       public Builder setTowerLevelIndex(int value) {
         
         towerLevelIndex_ = value;
-        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -2787,7 +2818,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTowerLevelIndex() {
-        bitField0_ = (bitField0_ & ~0x00080000);
+        
         towerLevelIndex_ = 0;
         onChanged();
         return this;
@@ -2810,7 +2841,6 @@ public final class SocialDetailOuterClass {
       public Builder setIsShowAvatar(boolean value) {
         
         isShowAvatar_ = value;
-        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
@@ -2819,7 +2849,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsShowAvatar() {
-        bitField0_ = (bitField0_ & ~0x00100000);
+        
         isShowAvatar_ = false;
         onChanged();
         return this;
@@ -2828,9 +2858,9 @@ public final class SocialDetailOuterClass {
       private java.util.List<emu.gingerps.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> showAvatarInfoList_ =
         java.util.Collections.emptyList();
       private void ensureShowAvatarInfoListIsMutable() {
-        if (!((bitField0_ & 0x00200000) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           showAvatarInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo>(showAvatarInfoList_);
-          bitField0_ |= 0x00200000;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -2980,7 +3010,7 @@ public final class SocialDetailOuterClass {
       public Builder clearShowAvatarInfoList() {
         if (showAvatarInfoListBuilder_ == null) {
           showAvatarInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           showAvatarInfoListBuilder_.clear();
@@ -3057,7 +3087,7 @@ public final class SocialDetailOuterClass {
           showAvatarInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo, emu.gingerps.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder, emu.gingerps.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder>(
                   showAvatarInfoList_,
-                  ((bitField0_ & 0x00200000) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           showAvatarInfoList_ = null;
@@ -3067,10 +3097,10 @@ public final class SocialDetailOuterClass {
 
       private com.google.protobuf.Internal.IntList showNameCardIdList_ = emptyIntList();
       private void ensureShowNameCardIdListIsMutable() {
-        if (!((bitField0_ & 0x00400000) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           showNameCardIdList_ = mutableCopy(showNameCardIdList_);
-          bitField0_ |= 0x00400000;
-        }
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated uint32 show_name_card_id_list = 23;</code>
@@ -3078,7 +3108,7 @@ public final class SocialDetailOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getShowNameCardIdListList() {
-        return ((bitField0_ & 0x00400000) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(showNameCardIdList_) : showNameCardIdList_;
       }
       /**
@@ -3104,7 +3134,6 @@ public final class SocialDetailOuterClass {
        */
       public Builder setShowNameCardIdList(
           int index, int value) {
-        
         ensureShowNameCardIdListIsMutable();
         showNameCardIdList_.setInt(index, value);
         onChanged();
@@ -3116,7 +3145,6 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder addShowNameCardIdList(int value) {
-        
         ensureShowNameCardIdListIsMutable();
         showNameCardIdList_.addInt(value);
         onChanged();
@@ -3141,7 +3169,7 @@ public final class SocialDetailOuterClass {
        */
       public Builder clearShowNameCardIdList() {
         showNameCardIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -3160,8 +3188,8 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder setFriendEnterHomeOptionValue(int value) {
+        
         friendEnterHomeOption_ = value;
-        bitField0_ |= 0x00800000;
         onChanged();
         return this;
       }
@@ -3171,7 +3199,8 @@ public final class SocialDetailOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption getFriendEnterHomeOption() {
-        emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption result = emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.forNumber(friendEnterHomeOption_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption result = emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.valueOf(friendEnterHomeOption_);
         return result == null ? emu.gingerps.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.UNRECOGNIZED : result;
       }
       /**
@@ -3183,7 +3212,7 @@ public final class SocialDetailOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00800000;
+        
         friendEnterHomeOption_ = value.getNumber();
         onChanged();
         return this;
@@ -3193,7 +3222,7 @@ public final class SocialDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFriendEnterHomeOption() {
-        bitField0_ = (bitField0_ & ~0x00800000);
+        
         friendEnterHomeOption_ = 0;
         onChanged();
         return this;
@@ -3207,7 +3236,7 @@ public final class SocialDetailOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return ((bitField0_ & 0x01000000) != 0);
+        return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
        * <code>.ProfilePicture profile_picture = 25;</code>
@@ -3229,11 +3258,11 @@ public final class SocialDetailOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x01000000;
-        onChanged();
+
         return this;
       }
       /**
@@ -3243,11 +3272,11 @@ public final class SocialDetailOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x01000000;
-        onChanged();
+
         return this;
       }
       /**
@@ -3255,38 +3284,38 @@ public final class SocialDetailOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (((bitField0_ & 0x01000000) != 0) &&
-            profilePicture_ != null &&
-            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
-            getProfilePictureBuilder().mergeFrom(value);
+          if (profilePicture_ != null) {
+            profilePicture_ =
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
           } else {
             profilePicture_ = value;
           }
+          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x01000000;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 25;</code>
        */
       public Builder clearProfilePicture() {
-        bitField0_ = (bitField0_ & ~0x01000000);
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+          onChanged();
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 25;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        bitField0_ |= 0x01000000;
+        
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -3350,18 +3379,7 @@ public final class SocialDetailOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SocialDetail(input, extensionRegistry);
       }
     };
 

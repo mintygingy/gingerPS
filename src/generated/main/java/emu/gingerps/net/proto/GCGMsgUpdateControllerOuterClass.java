@@ -70,6 +70,56 @@ public final class GCGMsgUpdateControllerOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGMsgUpdateController(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                allowControllerMap_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              allowControllerMap_.add(
+                  input.readMessage(emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          allowControllerMap_ = java.util.Collections.unmodifiableList(allowControllerMap_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.internal_static_GCGMsgUpdateController_descriptor;
@@ -84,7 +134,6 @@ public final class GCGMsgUpdateControllerOuterClass {
     }
 
     public static final int ALLOW_CONTROLLER_MAP_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> allowControllerMap_;
     /**
      * <code>repeated .Uint32Pair allow_controller_map = 10;</code>
@@ -141,7 +190,7 @@ public final class GCGMsgUpdateControllerOuterClass {
       for (int i = 0; i < allowControllerMap_.size(); i++) {
         output.writeMessage(10, allowControllerMap_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -154,7 +203,7 @@ public final class GCGMsgUpdateControllerOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, allowControllerMap_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -171,7 +220,7 @@ public final class GCGMsgUpdateControllerOuterClass {
 
       if (!getAllowControllerMapList()
           .equals(other.getAllowControllerMapList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -186,7 +235,7 @@ public final class GCGMsgUpdateControllerOuterClass {
         hash = (37 * hash) + ALLOW_CONTROLLER_MAP_FIELD_NUMBER;
         hash = (53 * hash) + getAllowControllerMapList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -303,25 +352,29 @@ public final class GCGMsgUpdateControllerOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAllowControllerMapFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (allowControllerMapBuilder_ == null) {
           allowControllerMap_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          allowControllerMap_ = null;
           allowControllerMapBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -348,13 +401,7 @@ public final class GCGMsgUpdateControllerOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController buildPartial() {
         emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController result = new emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController result) {
+        int from_bitField0_ = bitField0_;
         if (allowControllerMapBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             allowControllerMap_ = java.util.Collections.unmodifiableList(allowControllerMap_);
@@ -364,10 +411,8 @@ public final class GCGMsgUpdateControllerOuterClass {
         } else {
           result.allowControllerMap_ = allowControllerMapBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -440,7 +485,7 @@ public final class GCGMsgUpdateControllerOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,43 +500,17 @@ public final class GCGMsgUpdateControllerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 82: {
-                emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(),
-                        extensionRegistry);
-                if (allowControllerMapBuilder_ == null) {
-                  ensureAllowControllerMapIsMutable();
-                  allowControllerMap_.add(m);
-                } else {
-                  allowControllerMapBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -768,18 +787,7 @@ public final class GCGMsgUpdateControllerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGMsgUpdateController(input, extensionRegistry);
       }
     };
 

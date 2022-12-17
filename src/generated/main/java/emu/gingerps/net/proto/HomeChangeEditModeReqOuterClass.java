@@ -62,6 +62,48 @@ public final class HomeChangeEditModeReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeChangeEditModeReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 120: {
+
+              isEnterEditMode_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeChangeEditModeReqOuterClass.internal_static_HomeChangeEditModeReq_descriptor;
@@ -76,7 +118,7 @@ public final class HomeChangeEditModeReqOuterClass {
     }
 
     public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 15;
-    private boolean isEnterEditMode_ = false;
+    private boolean isEnterEditMode_;
     /**
      * <code>bool is_enter_edit_mode = 15;</code>
      * @return The isEnterEditMode.
@@ -103,7 +145,7 @@ public final class HomeChangeEditModeReqOuterClass {
       if (isEnterEditMode_ != false) {
         output.writeBool(15, isEnterEditMode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -116,7 +158,7 @@ public final class HomeChangeEditModeReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isEnterEditMode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -133,7 +175,7 @@ public final class HomeChangeEditModeReqOuterClass {
 
       if (getIsEnterEditMode()
           != other.getIsEnterEditMode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -147,7 +189,7 @@ public final class HomeChangeEditModeReqOuterClass {
       hash = (37 * hash) + IS_ENTER_EDIT_MODE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsEnterEditMode());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -275,19 +317,24 @@ public final class HomeChangeEditModeReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isEnterEditMode_ = false;
+
         return this;
       }
 
@@ -314,16 +361,9 @@ public final class HomeChangeEditModeReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq buildPartial() {
         emu.gingerps.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq result = new emu.gingerps.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isEnterEditMode_ = isEnterEditMode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isEnterEditMode_ = isEnterEditMode_;
-        }
       }
 
       @java.lang.Override
@@ -373,7 +413,7 @@ public final class HomeChangeEditModeReqOuterClass {
         if (other.getIsEnterEditMode() != false) {
           setIsEnterEditMode(other.getIsEnterEditMode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -388,38 +428,19 @@ public final class HomeChangeEditModeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 120: {
-                isEnterEditMode_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isEnterEditMode_ ;
       /**
@@ -438,7 +459,6 @@ public final class HomeChangeEditModeReqOuterClass {
       public Builder setIsEnterEditMode(boolean value) {
         
         isEnterEditMode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -447,7 +467,7 @@ public final class HomeChangeEditModeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsEnterEditMode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isEnterEditMode_ = false;
         onChanged();
         return this;
@@ -485,18 +505,7 @@ public final class HomeChangeEditModeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeChangeEditModeReq(input, extensionRegistry);
       }
     };
 

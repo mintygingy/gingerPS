@@ -69,6 +69,63 @@ public final class AbilityMetaElementReactionVisualOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityMetaElementReactionVisual(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              elementReactorType_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              elementReactionType_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              elementSourceType_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              hitIndex_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMetaElementReactionVisualOuterClass.internal_static_AbilityMetaElementReactionVisual_descriptor;
@@ -83,7 +140,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
     }
 
     public static final int ELEMENT_SOURCE_TYPE_FIELD_NUMBER = 6;
-    private int elementSourceType_ = 0;
+    private int elementSourceType_;
     /**
      * <code>uint32 element_source_type = 6;</code>
      * @return The elementSourceType.
@@ -94,7 +151,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
     }
 
     public static final int ELEMENT_REACTOR_TYPE_FIELD_NUMBER = 1;
-    private int elementReactorType_ = 0;
+    private int elementReactorType_;
     /**
      * <code>uint32 element_reactor_type = 1;</code>
      * @return The elementReactorType.
@@ -105,7 +162,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
     }
 
     public static final int HIT_INDEX_FIELD_NUMBER = 14;
-    private int hitIndex_ = 0;
+    private int hitIndex_;
     /**
      * <code>int32 hit_index = 14;</code>
      * @return The hitIndex.
@@ -116,7 +173,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
     }
 
     public static final int ELEMENT_REACTION_TYPE_FIELD_NUMBER = 2;
-    private int elementReactionType_ = 0;
+    private int elementReactionType_;
     /**
      * <code>uint32 element_reaction_type = 2;</code>
      * @return The elementReactionType.
@@ -152,7 +209,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
       if (hitIndex_ != 0) {
         output.writeInt32(14, hitIndex_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, hitIndex_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -200,7 +257,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
           != other.getHitIndex()) return false;
       if (getElementReactionType()
           != other.getElementReactionType()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -219,7 +276,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
       hash = (53 * hash) + getHitIndex();
       hash = (37 * hash) + ELEMENT_REACTION_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getElementReactionType();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -336,22 +393,30 @@ public final class AbilityMetaElementReactionVisualOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMetaElementReactionVisualOuterClass.AbilityMetaElementReactionVisual.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         elementSourceType_ = 0;
+
         elementReactorType_ = 0;
+
         hitIndex_ = 0;
+
         elementReactionType_ = 0;
+
         return this;
       }
 
@@ -378,25 +443,12 @@ public final class AbilityMetaElementReactionVisualOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMetaElementReactionVisualOuterClass.AbilityMetaElementReactionVisual buildPartial() {
         emu.gingerps.net.proto.AbilityMetaElementReactionVisualOuterClass.AbilityMetaElementReactionVisual result = new emu.gingerps.net.proto.AbilityMetaElementReactionVisualOuterClass.AbilityMetaElementReactionVisual(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.elementSourceType_ = elementSourceType_;
+        result.elementReactorType_ = elementReactorType_;
+        result.hitIndex_ = hitIndex_;
+        result.elementReactionType_ = elementReactionType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityMetaElementReactionVisualOuterClass.AbilityMetaElementReactionVisual result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.elementSourceType_ = elementSourceType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.elementReactorType_ = elementReactorType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.hitIndex_ = hitIndex_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.elementReactionType_ = elementReactionType_;
-        }
       }
 
       @java.lang.Override
@@ -455,7 +507,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
         if (other.getElementReactionType() != 0) {
           setElementReactionType(other.getElementReactionType());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -470,53 +522,19 @@ public final class AbilityMetaElementReactionVisualOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityMetaElementReactionVisualOuterClass.AbilityMetaElementReactionVisual parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                elementReactorType_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 8
-              case 16: {
-                elementReactionType_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 16
-              case 48: {
-                elementSourceType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 112: {
-                hitIndex_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityMetaElementReactionVisualOuterClass.AbilityMetaElementReactionVisual) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int elementSourceType_ ;
       /**
@@ -535,7 +553,6 @@ public final class AbilityMetaElementReactionVisualOuterClass {
       public Builder setElementSourceType(int value) {
         
         elementSourceType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +561,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementSourceType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         elementSourceType_ = 0;
         onChanged();
         return this;
@@ -567,7 +584,6 @@ public final class AbilityMetaElementReactionVisualOuterClass {
       public Builder setElementReactorType(int value) {
         
         elementReactorType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -576,7 +592,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementReactorType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         elementReactorType_ = 0;
         onChanged();
         return this;
@@ -599,7 +615,6 @@ public final class AbilityMetaElementReactionVisualOuterClass {
       public Builder setHitIndex(int value) {
         
         hitIndex_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -608,7 +623,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHitIndex() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         hitIndex_ = 0;
         onChanged();
         return this;
@@ -631,7 +646,6 @@ public final class AbilityMetaElementReactionVisualOuterClass {
       public Builder setElementReactionType(int value) {
         
         elementReactionType_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -640,7 +654,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementReactionType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         elementReactionType_ = 0;
         onChanged();
         return this;
@@ -678,18 +692,7 @@ public final class AbilityMetaElementReactionVisualOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityMetaElementReactionVisual(input, extensionRegistry);
       }
     };
 

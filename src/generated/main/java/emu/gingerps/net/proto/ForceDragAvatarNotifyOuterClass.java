@@ -100,6 +100,81 @@ public final class ForceDragAvatarNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ForceDragAvatarNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              unk3300IMFNNPGHKJJ_ = input.readUInt64();
+              break;
+            }
+            case 40: {
+
+              unk3300AFLCLLFDPBD_ = input.readUInt64();
+              break;
+            }
+            case 56: {
+
+              isFirstValid_ = input.readBool();
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.Builder subBuilder = null;
+              if (motionInfo_ != null) {
+                subBuilder = motionInfo_.toBuilder();
+              }
+              motionInfo_ = input.readMessage(emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(motionInfo_);
+                motionInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 80: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              sceneTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ForceDragAvatarNotifyOuterClass.internal_static_ForceDragAvatarNotify_descriptor;
@@ -114,7 +189,7 @@ public final class ForceDragAvatarNotifyOuterClass {
     }
 
     public static final int UNK3300_IMFNNPGHKJJ_FIELD_NUMBER = 3;
-    private long unk3300IMFNNPGHKJJ_ = 0L;
+    private long unk3300IMFNNPGHKJJ_;
     /**
      * <code>uint64 Unk3300_IMFNNPGHKJJ = 3;</code>
      * @return The unk3300IMFNNPGHKJJ.
@@ -147,11 +222,11 @@ public final class ForceDragAvatarNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfoOrBuilder getMotionInfoOrBuilder() {
-      return motionInfo_ == null ? emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.getDefaultInstance() : motionInfo_;
+      return getMotionInfo();
     }
 
     public static final int IS_FIRST_VALID_FIELD_NUMBER = 7;
-    private boolean isFirstValid_ = false;
+    private boolean isFirstValid_;
     /**
      * <code>bool is_first_valid = 7;</code>
      * @return The isFirstValid.
@@ -162,7 +237,7 @@ public final class ForceDragAvatarNotifyOuterClass {
     }
 
     public static final int SCENE_TIME_FIELD_NUMBER = 12;
-    private int sceneTime_ = 0;
+    private int sceneTime_;
     /**
      * <code>uint32 scene_time = 12;</code>
      * @return The sceneTime.
@@ -173,7 +248,7 @@ public final class ForceDragAvatarNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 10;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 10;</code>
      * @return The entityId.
@@ -184,7 +259,7 @@ public final class ForceDragAvatarNotifyOuterClass {
     }
 
     public static final int UNK3300_AFLCLLFDPBD_FIELD_NUMBER = 5;
-    private long unk3300AFLCLLFDPBD_ = 0L;
+    private long unk3300AFLCLLFDPBD_;
     /**
      * <code>uint64 Unk3300_AFLCLLFDPBD = 5;</code>
      * @return The unk3300AFLCLLFDPBD.
@@ -226,7 +301,7 @@ public final class ForceDragAvatarNotifyOuterClass {
       if (sceneTime_ != 0) {
         output.writeUInt32(12, sceneTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -259,7 +334,7 @@ public final class ForceDragAvatarNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, sceneTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -289,7 +364,7 @@ public final class ForceDragAvatarNotifyOuterClass {
           != other.getEntityId()) return false;
       if (getUnk3300AFLCLLFDPBD()
           != other.getUnk3300AFLCLLFDPBD()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -317,7 +392,7 @@ public final class ForceDragAvatarNotifyOuterClass {
       hash = (37 * hash) + UNK3300_AFLCLLFDPBD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUnk3300AFLCLLFDPBD());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -444,28 +519,38 @@ public final class ForceDragAvatarNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ForceDragAvatarNotifyOuterClass.ForceDragAvatarNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300IMFNNPGHKJJ_ = 0L;
-        motionInfo_ = null;
-        if (motionInfoBuilder_ != null) {
-          motionInfoBuilder_.dispose();
+
+        if (motionInfoBuilder_ == null) {
+          motionInfo_ = null;
+        } else {
+          motionInfo_ = null;
           motionInfoBuilder_ = null;
         }
         isFirstValid_ = false;
+
         sceneTime_ = 0;
+
         entityId_ = 0;
+
         unk3300AFLCLLFDPBD_ = 0L;
+
         return this;
       }
 
@@ -492,33 +577,18 @@ public final class ForceDragAvatarNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ForceDragAvatarNotifyOuterClass.ForceDragAvatarNotify buildPartial() {
         emu.gingerps.net.proto.ForceDragAvatarNotifyOuterClass.ForceDragAvatarNotify result = new emu.gingerps.net.proto.ForceDragAvatarNotifyOuterClass.ForceDragAvatarNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.unk3300IMFNNPGHKJJ_ = unk3300IMFNNPGHKJJ_;
+        if (motionInfoBuilder_ == null) {
+          result.motionInfo_ = motionInfo_;
+        } else {
+          result.motionInfo_ = motionInfoBuilder_.build();
+        }
+        result.isFirstValid_ = isFirstValid_;
+        result.sceneTime_ = sceneTime_;
+        result.entityId_ = entityId_;
+        result.unk3300AFLCLLFDPBD_ = unk3300AFLCLLFDPBD_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ForceDragAvatarNotifyOuterClass.ForceDragAvatarNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300IMFNNPGHKJJ_ = unk3300IMFNNPGHKJJ_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.motionInfo_ = motionInfoBuilder_ == null
-              ? motionInfo_
-              : motionInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isFirstValid_ = isFirstValid_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.sceneTime_ = sceneTime_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.unk3300AFLCLLFDPBD_ = unk3300AFLCLLFDPBD_;
-        }
       }
 
       @java.lang.Override
@@ -583,7 +653,7 @@ public final class ForceDragAvatarNotifyOuterClass {
         if (other.getUnk3300AFLCLLFDPBD() != 0L) {
           setUnk3300AFLCLLFDPBD(other.getUnk3300AFLCLLFDPBD());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -598,65 +668,19 @@ public final class ForceDragAvatarNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ForceDragAvatarNotifyOuterClass.ForceDragAvatarNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                unk3300IMFNNPGHKJJ_ = input.readUInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 40: {
-                unk3300AFLCLLFDPBD_ = input.readUInt64();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 40
-              case 56: {
-                isFirstValid_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              case 74: {
-                input.readMessage(
-                    getMotionInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 74
-              case 80: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 80
-              case 96: {
-                sceneTime_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ForceDragAvatarNotifyOuterClass.ForceDragAvatarNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long unk3300IMFNNPGHKJJ_ ;
       /**
@@ -675,7 +699,6 @@ public final class ForceDragAvatarNotifyOuterClass {
       public Builder setUnk3300IMFNNPGHKJJ(long value) {
         
         unk3300IMFNNPGHKJJ_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -684,7 +707,7 @@ public final class ForceDragAvatarNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IMFNNPGHKJJ() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300IMFNNPGHKJJ_ = 0L;
         onChanged();
         return this;
@@ -698,7 +721,7 @@ public final class ForceDragAvatarNotifyOuterClass {
        * @return Whether the motionInfo field is set.
        */
       public boolean hasMotionInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return motionInfoBuilder_ != null || motionInfo_ != null;
       }
       /**
        * <code>.MotionInfo motion_info = 9;</code>
@@ -720,11 +743,11 @@ public final class ForceDragAvatarNotifyOuterClass {
             throw new NullPointerException();
           }
           motionInfo_ = value;
+          onChanged();
         } else {
           motionInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -734,11 +757,11 @@ public final class ForceDragAvatarNotifyOuterClass {
           emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.Builder builderForValue) {
         if (motionInfoBuilder_ == null) {
           motionInfo_ = builderForValue.build();
+          onChanged();
         } else {
           motionInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -746,38 +769,38 @@ public final class ForceDragAvatarNotifyOuterClass {
        */
       public Builder mergeMotionInfo(emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo value) {
         if (motionInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            motionInfo_ != null &&
-            motionInfo_ != emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.getDefaultInstance()) {
-            getMotionInfoBuilder().mergeFrom(value);
+          if (motionInfo_ != null) {
+            motionInfo_ =
+              emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.newBuilder(motionInfo_).mergeFrom(value).buildPartial();
           } else {
             motionInfo_ = value;
           }
+          onChanged();
         } else {
           motionInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MotionInfo motion_info = 9;</code>
        */
       public Builder clearMotionInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        motionInfo_ = null;
-        if (motionInfoBuilder_ != null) {
-          motionInfoBuilder_.dispose();
+        if (motionInfoBuilder_ == null) {
+          motionInfo_ = null;
+          onChanged();
+        } else {
+          motionInfo_ = null;
           motionInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MotionInfo motion_info = 9;</code>
        */
       public emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.Builder getMotionInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getMotionInfoFieldBuilder().getBuilder();
       }
@@ -826,7 +849,6 @@ public final class ForceDragAvatarNotifyOuterClass {
       public Builder setIsFirstValid(boolean value) {
         
         isFirstValid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -835,7 +857,7 @@ public final class ForceDragAvatarNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFirstValid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isFirstValid_ = false;
         onChanged();
         return this;
@@ -858,7 +880,6 @@ public final class ForceDragAvatarNotifyOuterClass {
       public Builder setSceneTime(int value) {
         
         sceneTime_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -867,7 +888,7 @@ public final class ForceDragAvatarNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneTime() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         sceneTime_ = 0;
         onChanged();
         return this;
@@ -890,7 +911,6 @@ public final class ForceDragAvatarNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -899,7 +919,7 @@ public final class ForceDragAvatarNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -922,7 +942,6 @@ public final class ForceDragAvatarNotifyOuterClass {
       public Builder setUnk3300AFLCLLFDPBD(long value) {
         
         unk3300AFLCLLFDPBD_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -931,7 +950,7 @@ public final class ForceDragAvatarNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AFLCLLFDPBD() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         unk3300AFLCLLFDPBD_ = 0L;
         onChanged();
         return this;
@@ -969,18 +988,7 @@ public final class ForceDragAvatarNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ForceDragAvatarNotify(input, extensionRegistry);
       }
     };
 

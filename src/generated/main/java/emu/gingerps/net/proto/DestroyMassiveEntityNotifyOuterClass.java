@@ -81,6 +81,56 @@ public final class DestroyMassiveEntityNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DestroyMassiveEntityNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                massiveEntityList_ = new java.util.ArrayList<emu.gingerps.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              massiveEntityList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          massiveEntityList_ = java.util.Collections.unmodifiableList(massiveEntityList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DestroyMassiveEntityNotifyOuterClass.internal_static_DestroyMassiveEntityNotify_descriptor;
@@ -95,7 +145,6 @@ public final class DestroyMassiveEntityNotifyOuterClass {
     }
 
     public static final int MASSIVE_ENTITY_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity> massiveEntityList_;
     /**
      * <code>repeated .ClientMassiveEntity massive_entity_list = 15;</code>
@@ -152,7 +201,7 @@ public final class DestroyMassiveEntityNotifyOuterClass {
       for (int i = 0; i < massiveEntityList_.size(); i++) {
         output.writeMessage(15, massiveEntityList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -165,7 +214,7 @@ public final class DestroyMassiveEntityNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, massiveEntityList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -182,7 +231,7 @@ public final class DestroyMassiveEntityNotifyOuterClass {
 
       if (!getMassiveEntityListList()
           .equals(other.getMassiveEntityListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -197,7 +246,7 @@ public final class DestroyMassiveEntityNotifyOuterClass {
         hash = (37 * hash) + MASSIVE_ENTITY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMassiveEntityListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -325,25 +374,29 @@ public final class DestroyMassiveEntityNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DestroyMassiveEntityNotifyOuterClass.DestroyMassiveEntityNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMassiveEntityListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (massiveEntityListBuilder_ == null) {
           massiveEntityList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          massiveEntityList_ = null;
           massiveEntityListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -370,13 +423,7 @@ public final class DestroyMassiveEntityNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DestroyMassiveEntityNotifyOuterClass.DestroyMassiveEntityNotify buildPartial() {
         emu.gingerps.net.proto.DestroyMassiveEntityNotifyOuterClass.DestroyMassiveEntityNotify result = new emu.gingerps.net.proto.DestroyMassiveEntityNotifyOuterClass.DestroyMassiveEntityNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.DestroyMassiveEntityNotifyOuterClass.DestroyMassiveEntityNotify result) {
+        int from_bitField0_ = bitField0_;
         if (massiveEntityListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             massiveEntityList_ = java.util.Collections.unmodifiableList(massiveEntityList_);
@@ -386,10 +433,8 @@ public final class DestroyMassiveEntityNotifyOuterClass {
         } else {
           result.massiveEntityList_ = massiveEntityListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DestroyMassiveEntityNotifyOuterClass.DestroyMassiveEntityNotify result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -462,7 +507,7 @@ public final class DestroyMassiveEntityNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -477,43 +522,17 @@ public final class DestroyMassiveEntityNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DestroyMassiveEntityNotifyOuterClass.DestroyMassiveEntityNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 122: {
-                emu.gingerps.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.parser(),
-                        extensionRegistry);
-                if (massiveEntityListBuilder_ == null) {
-                  ensureMassiveEntityListIsMutable();
-                  massiveEntityList_.add(m);
-                } else {
-                  massiveEntityListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DestroyMassiveEntityNotifyOuterClass.DestroyMassiveEntityNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -790,18 +809,7 @@ public final class DestroyMassiveEntityNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DestroyMassiveEntityNotify(input, extensionRegistry);
       }
     };
 

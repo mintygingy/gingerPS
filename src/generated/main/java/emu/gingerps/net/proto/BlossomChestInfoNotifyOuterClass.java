@@ -76,6 +76,61 @@ public final class BlossomChestInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BlossomChestInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 80: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 106: {
+              emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo.Builder subBuilder = null;
+              if (blossomChestInfo_ != null) {
+                subBuilder = blossomChestInfo_.toBuilder();
+              }
+              blossomChestInfo_ = input.readMessage(emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(blossomChestInfo_);
+                blossomChestInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BlossomChestInfoNotifyOuterClass.internal_static_BlossomChestInfoNotify_descriptor;
@@ -112,11 +167,11 @@ public final class BlossomChestInfoNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfoOrBuilder getBlossomChestInfoOrBuilder() {
-      return blossomChestInfo_ == null ? emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo.getDefaultInstance() : blossomChestInfo_;
+      return getBlossomChestInfo();
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 10;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 10;</code>
      * @return The entityId.
@@ -146,7 +201,7 @@ public final class BlossomChestInfoNotifyOuterClass {
       if (blossomChestInfo_ != null) {
         output.writeMessage(13, getBlossomChestInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class BlossomChestInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getBlossomChestInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class BlossomChestInfoNotifyOuterClass {
       }
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +257,7 @@ public final class BlossomChestInfoNotifyOuterClass {
       }
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,24 +384,30 @@ public final class BlossomChestInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.BlossomChestInfoNotifyOuterClass.BlossomChestInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        blossomChestInfo_ = null;
-        if (blossomChestInfoBuilder_ != null) {
-          blossomChestInfoBuilder_.dispose();
+        if (blossomChestInfoBuilder_ == null) {
+          blossomChestInfo_ = null;
+        } else {
+          blossomChestInfo_ = null;
           blossomChestInfoBuilder_ = null;
         }
         entityId_ = 0;
+
         return this;
       }
 
@@ -373,21 +434,14 @@ public final class BlossomChestInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BlossomChestInfoNotifyOuterClass.BlossomChestInfoNotify buildPartial() {
         emu.gingerps.net.proto.BlossomChestInfoNotifyOuterClass.BlossomChestInfoNotify result = new emu.gingerps.net.proto.BlossomChestInfoNotifyOuterClass.BlossomChestInfoNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (blossomChestInfoBuilder_ == null) {
+          result.blossomChestInfo_ = blossomChestInfo_;
+        } else {
+          result.blossomChestInfo_ = blossomChestInfoBuilder_.build();
+        }
+        result.entityId_ = entityId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BlossomChestInfoNotifyOuterClass.BlossomChestInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.blossomChestInfo_ = blossomChestInfoBuilder_ == null
-              ? blossomChestInfo_
-              : blossomChestInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entityId_ = entityId_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +494,7 @@ public final class BlossomChestInfoNotifyOuterClass {
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,45 +509,19 @@ public final class BlossomChestInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BlossomChestInfoNotifyOuterClass.BlossomChestInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 80: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 106: {
-                input.readMessage(
-                    getBlossomChestInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BlossomChestInfoNotifyOuterClass.BlossomChestInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo blossomChestInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -503,7 +531,7 @@ public final class BlossomChestInfoNotifyOuterClass {
        * @return Whether the blossomChestInfo field is set.
        */
       public boolean hasBlossomChestInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return blossomChestInfoBuilder_ != null || blossomChestInfo_ != null;
       }
       /**
        * <code>.BlossomChestInfo blossom_chest_info = 13;</code>
@@ -525,11 +553,11 @@ public final class BlossomChestInfoNotifyOuterClass {
             throw new NullPointerException();
           }
           blossomChestInfo_ = value;
+          onChanged();
         } else {
           blossomChestInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -539,11 +567,11 @@ public final class BlossomChestInfoNotifyOuterClass {
           emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo.Builder builderForValue) {
         if (blossomChestInfoBuilder_ == null) {
           blossomChestInfo_ = builderForValue.build();
+          onChanged();
         } else {
           blossomChestInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -551,38 +579,38 @@ public final class BlossomChestInfoNotifyOuterClass {
        */
       public Builder mergeBlossomChestInfo(emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo value) {
         if (blossomChestInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            blossomChestInfo_ != null &&
-            blossomChestInfo_ != emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo.getDefaultInstance()) {
-            getBlossomChestInfoBuilder().mergeFrom(value);
+          if (blossomChestInfo_ != null) {
+            blossomChestInfo_ =
+              emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo.newBuilder(blossomChestInfo_).mergeFrom(value).buildPartial();
           } else {
             blossomChestInfo_ = value;
           }
+          onChanged();
         } else {
           blossomChestInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BlossomChestInfo blossom_chest_info = 13;</code>
        */
       public Builder clearBlossomChestInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        blossomChestInfo_ = null;
-        if (blossomChestInfoBuilder_ != null) {
-          blossomChestInfoBuilder_.dispose();
+        if (blossomChestInfoBuilder_ == null) {
+          blossomChestInfo_ = null;
+          onChanged();
+        } else {
+          blossomChestInfo_ = null;
           blossomChestInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BlossomChestInfo blossom_chest_info = 13;</code>
        */
       public emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo.Builder getBlossomChestInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getBlossomChestInfoFieldBuilder().getBuilder();
       }
@@ -631,7 +659,6 @@ public final class BlossomChestInfoNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -640,7 +667,7 @@ public final class BlossomChestInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -678,18 +705,7 @@ public final class BlossomChestInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BlossomChestInfoNotify(input, extensionRegistry);
       }
     };
 

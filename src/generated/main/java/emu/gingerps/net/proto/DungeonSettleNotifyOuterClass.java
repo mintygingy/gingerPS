@@ -41,14 +41,14 @@ public final class DungeonSettleNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
+
+    emu.gingerps.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue);
+        emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue);
     /**
      * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
      */
+
     emu.gingerps.net.proto.ParamListOuterClass.ParamList getSettleShowOrThrow(
         int key);
 
@@ -75,14 +75,14 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue);
     /**
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
+
+    emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue);
+        emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue);
     /**
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
+
     emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
         int key);
 
@@ -354,6 +354,276 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DungeonSettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              createPlayerUid_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              result_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                settleShow_ = com.google.protobuf.MapField.newMapField(
+                    SettleShowDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList>
+              settleShow__ = input.readMessage(
+                  SettleShowDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              settleShow_.getMutableMap().put(
+                  settleShow__.getKey(), settleShow__.getValue());
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                strengthenPointDataMap_ = com.google.protobuf.MapField.newMapField(
+                    StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+              strengthenPointDataMap__ = input.readMessage(
+                  StrengthenPointDataMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              strengthenPointDataMap_.getMutableMap().put(
+                  strengthenPointDataMap__.getKey(), strengthenPointDataMap__.getValue());
+              break;
+            }
+            case 72: {
+
+              dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              isSuccess_ = input.readBool();
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                failCondList_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              failCondList_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                failCondList_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                failCondList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                exhibitionInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              exhibitionInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+
+              useTime_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              closeTime_ = input.readUInt32();
+              break;
+            }
+            case 2034: {
+              emu.gingerps.net.proto.EffigyChallengeDungeonResultInfoOuterClass.EffigyChallengeDungeonResultInfo.Builder subBuilder = null;
+              if (detailCase_ == 254) {
+                subBuilder = ((emu.gingerps.net.proto.EffigyChallengeDungeonResultInfoOuterClass.EffigyChallengeDungeonResultInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.EffigyChallengeDungeonResultInfoOuterClass.EffigyChallengeDungeonResultInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.EffigyChallengeDungeonResultInfoOuterClass.EffigyChallengeDungeonResultInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 254;
+              break;
+            }
+            case 2282: {
+              emu.gingerps.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo.Builder subBuilder = null;
+              if (detailCase_ == 285) {
+                subBuilder = ((emu.gingerps.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 285;
+              break;
+            }
+            case 8714: {
+              emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder subBuilder = null;
+              if (detailCase_ == 1089) {
+                subBuilder = ((emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1089;
+              break;
+            }
+            case 8938: {
+              emu.gingerps.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.Builder subBuilder = null;
+              if (detailCase_ == 1117) {
+                subBuilder = ((emu.gingerps.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1117;
+              break;
+            }
+            case 11154: {
+              emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo.Builder subBuilder = null;
+              if (detailCase_ == 1394) {
+                subBuilder = ((emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1394;
+              break;
+            }
+            case 12178: {
+              emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo.Builder subBuilder = null;
+              if (detailCase_ == 1522) {
+                subBuilder = ((emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1522;
+              break;
+            }
+            case 14354: {
+              emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo.Builder subBuilder = null;
+              if (detailCase_ == 1794) {
+                subBuilder = ((emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1794;
+              break;
+            }
+            case 14722: {
+              emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.CrystalLinkDungeonSettleInfo.Builder subBuilder = null;
+              if (detailCase_ == 1840) {
+                subBuilder = ((emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.CrystalLinkDungeonSettleInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.CrystalLinkDungeonSettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.CrystalLinkDungeonSettleInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1840;
+              break;
+            }
+            case 15106: {
+              emu.gingerps.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.Builder subBuilder = null;
+              if (detailCase_ == 1888) {
+                subBuilder = ((emu.gingerps.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1888;
+              break;
+            }
+            case 15306: {
+              emu.gingerps.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfo.Builder subBuilder = null;
+              if (detailCase_ == 1913) {
+                subBuilder = ((emu.gingerps.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1913;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          failCondList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          exhibitionInfoList_ = java.util.Collections.unmodifiableList(exhibitionInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonSettleNotifyOuterClass.internal_static_DungeonSettleNotify_descriptor;
@@ -450,7 +720,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.ParamListOuterClass.ParamList.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList> settleShow_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList>
@@ -461,12 +730,14 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       }
       return settleShow_;
     }
+
     public int getSettleShowCount() {
       return internalGetSettleShow().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
      */
+
     @java.lang.Override
     public boolean containsSettleShow(
         int key) {
@@ -485,6 +756,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
      * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList> getSettleShowMap() {
       return internalGetSettleShow().getMap();
     }
@@ -492,11 +764,10 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
      * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
+
+    public emu.gingerps.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
+        emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList> map =
           internalGetSettleShow().getMap();
@@ -506,6 +777,7 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
      * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.ParamListOuterClass.ParamList getSettleShowOrThrow(
         int key) {
       
@@ -529,7 +801,6 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> strengthenPointDataMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
@@ -540,12 +811,14 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
       }
       return strengthenPointDataMap_;
     }
+
     public int getStrengthenPointDataMapCount() {
       return internalGetStrengthenPointDataMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
+
     @java.lang.Override
     public boolean containsStrengthenPointDataMap(
         int key) {
@@ -564,6 +837,7 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> getStrengthenPointDataMapMap() {
       return internalGetStrengthenPointDataMap().getMap();
     }
@@ -571,11 +845,10 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
+
+    public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
+        emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> map =
           internalGetStrengthenPointDataMap().getMap();
@@ -585,6 +858,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
         int key) {
       
@@ -597,7 +871,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int EXHIBITION_INFO_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo> exhibitionInfoList_;
     /**
      * <code>repeated .DungeonSettleExhibitionInfo exhibition_info_list = 12;</code>
@@ -638,7 +911,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int USE_TIME_FIELD_NUMBER = 14;
-    private int useTime_ = 0;
+    private int useTime_;
     /**
      * <code>uint32 use_time = 14;</code>
      * @return The useTime.
@@ -649,7 +922,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 10;
-    private boolean isSuccess_ = false;
+    private boolean isSuccess_;
     /**
      * <code>bool is_success = 10;</code>
      * @return The isSuccess.
@@ -660,7 +933,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int CLOSE_TIME_FIELD_NUMBER = 15;
-    private int closeTime_ = 0;
+    private int closeTime_;
     /**
      * <code>uint32 close_time = 15;</code>
      * @return The closeTime.
@@ -671,7 +944,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 9;
-    private int dungeonId_ = 0;
+    private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 9;</code>
      * @return The dungeonId.
@@ -682,7 +955,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int RESULT_FIELD_NUMBER = 5;
-    private int result_ = 0;
+    private int result_;
     /**
      * <code>uint32 result = 5;</code>
      * @return The result.
@@ -693,7 +966,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int FAIL_COND_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList failCondList_;
     /**
      * <code>repeated uint32 fail_cond_list = 11;</code>
@@ -722,7 +994,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     private int failCondListMemoizedSerializedSize = -1;
 
     public static final int CREATE_PLAYER_UID_FIELD_NUMBER = 2;
-    private int createPlayerUid_ = 0;
+    private int createPlayerUid_;
     /**
      * <code>uint32 create_player_uid = 2;</code>
      * @return The createPlayerUid.
@@ -1127,7 +1399,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       if (detailCase_ == 1913) {
         output.writeMessage(1913, (emu.gingerps.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfo) detail_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1238,7 +1510,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1913, (emu.gingerps.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfo) detail_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1318,7 +1590,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1402,7 +1674,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1555,64 +1827,45 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
 
       // Construct using emu.gingerps.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getExhibitionInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableSettleShow().clear();
         internalGetMutableStrengthenPointDataMap().clear();
         if (exhibitionInfoListBuilder_ == null) {
           exhibitionInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          exhibitionInfoList_ = null;
           exhibitionInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         useTime_ = 0;
+
         isSuccess_ = false;
+
         closeTime_ = 0;
+
         dungeonId_ = 0;
+
         result_ = 0;
+
         failCondList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000008);
         createPlayerUid_ = 0;
-        if (towerLevelEndNotifyBuilder_ != null) {
-          towerLevelEndNotifyBuilder_.clear();
-        }
-        if (trialAvatarFirstPassDungeonNotifyBuilder_ != null) {
-          trialAvatarFirstPassDungeonNotifyBuilder_.clear();
-        }
-        if (channellerSlabLoopDungeonResultInfoBuilder_ != null) {
-          channellerSlabLoopDungeonResultInfoBuilder_.clear();
-        }
-        if (effigyChallengeDungeonResultInfoBuilder_ != null) {
-          effigyChallengeDungeonResultInfoBuilder_.clear();
-        }
-        if (roguelikeDungeonSettleInfoBuilder_ != null) {
-          roguelikeDungeonSettleInfoBuilder_.clear();
-        }
-        if (crystalLinkSettleInfoBuilder_ != null) {
-          crystalLinkSettleInfoBuilder_.clear();
-        }
-        if (summerTimeV2DungeonSettleInfoBuilder_ != null) {
-          summerTimeV2DungeonSettleInfoBuilder_.clear();
-        }
-        if (instableSpraySettleInfoBuilder_ != null) {
-          instableSpraySettleInfoBuilder_.clear();
-        }
-        if (windFieldDungeonSettleInfoBuilder_ != null) {
-          windFieldDungeonSettleInfoBuilder_.clear();
-        }
-        if (effigyChallengeV2SettleInfoBuilder_ != null) {
-          effigyChallengeV2SettleInfoBuilder_.clear();
-        }
+
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -1641,14 +1894,11 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify buildPartial() {
         emu.gingerps.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify result = new emu.gingerps.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.settleShow_ = internalGetSettleShow();
+        result.settleShow_.makeImmutable();
+        result.strengthenPointDataMap_ = internalGetStrengthenPointDataMap();
+        result.strengthenPointDataMap_.makeImmutable();
         if (exhibitionInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)) {
             exhibitionInfoList_ = java.util.Collections.unmodifiableList(exhibitionInfoList_);
@@ -1658,86 +1908,90 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           result.exhibitionInfoList_ = exhibitionInfoListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000100) != 0)) {
+        result.useTime_ = useTime_;
+        result.isSuccess_ = isSuccess_;
+        result.closeTime_ = closeTime_;
+        result.dungeonId_ = dungeonId_;
+        result.result_ = result_;
+        if (((bitField0_ & 0x00000008) != 0)) {
           failCondList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.failCondList_ = failCondList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.settleShow_ = internalGetSettleShow();
-          result.settleShow_.makeImmutable();
+        result.createPlayerUid_ = createPlayerUid_;
+        if (detailCase_ == 1089) {
+          if (towerLevelEndNotifyBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = towerLevelEndNotifyBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.strengthenPointDataMap_ = internalGetStrengthenPointDataMap();
-          result.strengthenPointDataMap_.makeImmutable();
+        if (detailCase_ == 1117) {
+          if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = trialAvatarFirstPassDungeonNotifyBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.useTime_ = useTime_;
+        if (detailCase_ == 1394) {
+          if (channellerSlabLoopDungeonResultInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = channellerSlabLoopDungeonResultInfoBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.isSuccess_ = isSuccess_;
+        if (detailCase_ == 254) {
+          if (effigyChallengeDungeonResultInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = effigyChallengeDungeonResultInfoBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.closeTime_ = closeTime_;
+        if (detailCase_ == 1888) {
+          if (roguelikeDungeonSettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = roguelikeDungeonSettleInfoBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.dungeonId_ = dungeonId_;
+        if (detailCase_ == 1840) {
+          if (crystalLinkSettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = crystalLinkSettleInfoBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.result_ = result_;
+        if (detailCase_ == 285) {
+          if (summerTimeV2DungeonSettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = summerTimeV2DungeonSettleInfoBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.createPlayerUid_ = createPlayerUid_;
+        if (detailCase_ == 1794) {
+          if (instableSpraySettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = instableSpraySettleInfoBuilder_.build();
+          }
         }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify result) {
+        if (detailCase_ == 1522) {
+          if (windFieldDungeonSettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = windFieldDungeonSettleInfoBuilder_.build();
+          }
+        }
+        if (detailCase_ == 1913) {
+          if (effigyChallengeV2SettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = effigyChallengeV2SettleInfoBuilder_.build();
+          }
+        }
         result.detailCase_ = detailCase_;
-        result.detail_ = this.detail_;
-        if (detailCase_ == 1089 &&
-            towerLevelEndNotifyBuilder_ != null) {
-          result.detail_ = towerLevelEndNotifyBuilder_.build();
-        }
-        if (detailCase_ == 1117 &&
-            trialAvatarFirstPassDungeonNotifyBuilder_ != null) {
-          result.detail_ = trialAvatarFirstPassDungeonNotifyBuilder_.build();
-        }
-        if (detailCase_ == 1394 &&
-            channellerSlabLoopDungeonResultInfoBuilder_ != null) {
-          result.detail_ = channellerSlabLoopDungeonResultInfoBuilder_.build();
-        }
-        if (detailCase_ == 254 &&
-            effigyChallengeDungeonResultInfoBuilder_ != null) {
-          result.detail_ = effigyChallengeDungeonResultInfoBuilder_.build();
-        }
-        if (detailCase_ == 1888 &&
-            roguelikeDungeonSettleInfoBuilder_ != null) {
-          result.detail_ = roguelikeDungeonSettleInfoBuilder_.build();
-        }
-        if (detailCase_ == 1840 &&
-            crystalLinkSettleInfoBuilder_ != null) {
-          result.detail_ = crystalLinkSettleInfoBuilder_.build();
-        }
-        if (detailCase_ == 285 &&
-            summerTimeV2DungeonSettleInfoBuilder_ != null) {
-          result.detail_ = summerTimeV2DungeonSettleInfoBuilder_.build();
-        }
-        if (detailCase_ == 1794 &&
-            instableSpraySettleInfoBuilder_ != null) {
-          result.detail_ = instableSpraySettleInfoBuilder_.build();
-        }
-        if (detailCase_ == 1522 &&
-            windFieldDungeonSettleInfoBuilder_ != null) {
-          result.detail_ = windFieldDungeonSettleInfoBuilder_.build();
-        }
-        if (detailCase_ == 1913 &&
-            effigyChallengeV2SettleInfoBuilder_ != null) {
-          result.detail_ = effigyChallengeV2SettleInfoBuilder_.build();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -1786,10 +2040,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         if (other == emu.gingerps.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.getDefaultInstance()) return this;
         internalGetMutableSettleShow().mergeFrom(
             other.internalGetSettleShow());
-        bitField0_ |= 0x00000001;
         internalGetMutableStrengthenPointDataMap().mergeFrom(
             other.internalGetStrengthenPointDataMap());
-        bitField0_ |= 0x00000002;
         if (exhibitionInfoListBuilder_ == null) {
           if (!other.exhibitionInfoList_.isEmpty()) {
             if (exhibitionInfoList_.isEmpty()) {
@@ -1834,7 +2086,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         if (!other.failCondList_.isEmpty()) {
           if (failCondList_.isEmpty()) {
             failCondList_ = other.failCondList_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureFailCondListIsMutable();
             failCondList_.addAll(other.failCondList_);
@@ -1889,7 +2141,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1904,177 +2156,17 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                createPlayerUid_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 16
-              case 40: {
-                result_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 40
-              case 50: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList>
-                settleShow__ = input.readMessage(
-                    SettleShowDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableSettleShow().getMutableMap().put(
-                    settleShow__.getKey(), settleShow__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 50
-              case 58: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-                strengthenPointDataMap__ = input.readMessage(
-                    StrengthenPointDataMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableStrengthenPointDataMap().getMutableMap().put(
-                    strengthenPointDataMap__.getKey(), strengthenPointDataMap__.getValue());
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 58
-              case 72: {
-                dungeonId_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 72
-              case 80: {
-                isSuccess_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 80
-              case 88: {
-                int v = input.readUInt32();
-                ensureFailCondListIsMutable();
-                failCondList_.addInt(v);
-                break;
-              } // case 88
-              case 90: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureFailCondListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  failCondList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 90
-              case 98: {
-                emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo.parser(),
-                        extensionRegistry);
-                if (exhibitionInfoListBuilder_ == null) {
-                  ensureExhibitionInfoListIsMutable();
-                  exhibitionInfoList_.add(m);
-                } else {
-                  exhibitionInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              case 112: {
-                useTime_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 112
-              case 120: {
-                closeTime_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 120
-              case 2034: {
-                input.readMessage(
-                    getEffigyChallengeDungeonResultInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 254;
-                break;
-              } // case 2034
-              case 2282: {
-                input.readMessage(
-                    getSummerTimeV2DungeonSettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 285;
-                break;
-              } // case 2282
-              case 8714: {
-                input.readMessage(
-                    getTowerLevelEndNotifyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 1089;
-                break;
-              } // case 8714
-              case 8938: {
-                input.readMessage(
-                    getTrialAvatarFirstPassDungeonNotifyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 1117;
-                break;
-              } // case 8938
-              case 11154: {
-                input.readMessage(
-                    getChannellerSlabLoopDungeonResultInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 1394;
-                break;
-              } // case 11154
-              case 12178: {
-                input.readMessage(
-                    getWindFieldDungeonSettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 1522;
-                break;
-              } // case 12178
-              case 14354: {
-                input.readMessage(
-                    getInstableSpraySettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 1794;
-                break;
-              } // case 14354
-              case 14722: {
-                input.readMessage(
-                    getCrystalLinkSettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 1840;
-                break;
-              } // case 14722
-              case 15106: {
-                input.readMessage(
-                    getRoguelikeDungeonSettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 1888;
-                break;
-              } // case 15106
-              case 15306: {
-                input.readMessage(
-                    getEffigyChallengeV2SettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 1913;
-                break;
-              } // case 15306
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int detailCase_ = 0;
@@ -2097,7 +2189,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList> settleShow_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList>
-          internalGetSettleShow() {
+      internalGetSettleShow() {
         if (settleShow_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               SettleShowDefaultEntryHolder.defaultEntry);
@@ -2105,7 +2197,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         return settleShow_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList>
-          internalGetMutableSettleShow() {
+      internalGetMutableSettleShow() {
+        onChanged();;
         if (settleShow_ == null) {
           settleShow_ = com.google.protobuf.MapField.newMapField(
               SettleShowDefaultEntryHolder.defaultEntry);
@@ -2113,16 +2206,16 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         if (!settleShow_.isMutable()) {
           settleShow_ = settleShow_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return settleShow_;
       }
+
       public int getSettleShowCount() {
         return internalGetSettleShow().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
        */
+
       @java.lang.Override
       public boolean containsSettleShow(
           int key) {
@@ -2141,6 +2234,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList> getSettleShowMap() {
         return internalGetSettleShow().getMap();
       }
@@ -2148,11 +2242,10 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
+
+      public emu.gingerps.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
+          emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList> map =
             internalGetSettleShow().getMap();
@@ -2162,6 +2255,7 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
        * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.ParamListOuterClass.ParamList getSettleShowOrThrow(
           int key) {
         
@@ -2172,8 +2266,8 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearSettleShow() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableSettleShow().getMutableMap()
             .clear();
         return this;
@@ -2181,6 +2275,7 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
       /**
        * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
        */
+
       public Builder removeSettleShow(
           int key) {
         
@@ -2193,8 +2288,7 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList>
-          getMutableSettleShow() {
-        bitField0_ |= 0x00000001;
+      getMutableSettleShow() {
         return internalGetMutableSettleShow().getMutableMap();
       }
       /**
@@ -2204,27 +2298,26 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
           int key,
           emu.gingerps.net.proto.ParamListOuterClass.ParamList value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableSettleShow().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .ParamList&gt; settle_show = 6;</code>
        */
+
       public Builder putAllSettleShow(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ParamListOuterClass.ParamList> values) {
         internalGetMutableSettleShow().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> strengthenPointDataMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-          internalGetStrengthenPointDataMap() {
+      internalGetStrengthenPointDataMap() {
         if (strengthenPointDataMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
@@ -2232,7 +2325,8 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
         return strengthenPointDataMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-          internalGetMutableStrengthenPointDataMap() {
+      internalGetMutableStrengthenPointDataMap() {
+        onChanged();;
         if (strengthenPointDataMap_ == null) {
           strengthenPointDataMap_ = com.google.protobuf.MapField.newMapField(
               StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
@@ -2240,16 +2334,16 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
         if (!strengthenPointDataMap_.isMutable()) {
           strengthenPointDataMap_ = strengthenPointDataMap_.copy();
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
         return strengthenPointDataMap_;
       }
+
       public int getStrengthenPointDataMapCount() {
         return internalGetStrengthenPointDataMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
+
       @java.lang.Override
       public boolean containsStrengthenPointDataMap(
           int key) {
@@ -2268,6 +2362,7 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> getStrengthenPointDataMapMap() {
         return internalGetStrengthenPointDataMap().getMap();
       }
@@ -2275,11 +2370,10 @@ emu.gingerps.net.proto.ParamListOuterClass.ParamList defaultValue) {
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
+
+      public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
+          emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> map =
             internalGetStrengthenPointDataMap().getMap();
@@ -2289,6 +2383,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
           int key) {
         
@@ -2299,8 +2394,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         }
         return map.get(key);
       }
+
       public Builder clearStrengthenPointDataMap() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableStrengthenPointDataMap().getMutableMap()
             .clear();
         return this;
@@ -2308,6 +2403,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       /**
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
+
       public Builder removeStrengthenPointDataMap(
           int key) {
         
@@ -2320,8 +2416,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-          getMutableStrengthenPointDataMap() {
-        bitField0_ |= 0x00000002;
+      getMutableStrengthenPointDataMap() {
         return internalGetMutableStrengthenPointDataMap().getMutableMap();
       }
       /**
@@ -2331,20 +2426,19 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           int key,
           emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableStrengthenPointDataMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
+
       public Builder putAllStrengthenPointDataMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> values) {
         internalGetMutableStrengthenPointDataMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -2605,7 +2699,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setUseTime(int value) {
         
         useTime_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2614,7 +2707,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearUseTime() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         useTime_ = 0;
         onChanged();
         return this;
@@ -2637,7 +2730,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2646,7 +2738,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         isSuccess_ = false;
         onChanged();
         return this;
@@ -2669,7 +2761,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setCloseTime(int value) {
         
         closeTime_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2678,7 +2769,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearCloseTime() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         closeTime_ = 0;
         onChanged();
         return this;
@@ -2701,7 +2792,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2710,7 +2800,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -2733,7 +2823,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setResult(int value) {
         
         result_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2742,7 +2831,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearResult() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         result_ = 0;
         onChanged();
         return this;
@@ -2750,10 +2839,10 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
 
       private com.google.protobuf.Internal.IntList failCondList_ = emptyIntList();
       private void ensureFailCondListIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           failCondList_ = mutableCopy(failCondList_);
-          bitField0_ |= 0x00000100;
-        }
+          bitField0_ |= 0x00000008;
+         }
       }
       /**
        * <code>repeated uint32 fail_cond_list = 11;</code>
@@ -2761,7 +2850,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        */
       public java.util.List<java.lang.Integer>
           getFailCondListList() {
-        return ((bitField0_ & 0x00000100) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(failCondList_) : failCondList_;
       }
       /**
@@ -2787,7 +2876,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        */
       public Builder setFailCondList(
           int index, int value) {
-        
         ensureFailCondListIsMutable();
         failCondList_.setInt(index, value);
         onChanged();
@@ -2799,7 +2887,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder addFailCondList(int value) {
-        
         ensureFailCondListIsMutable();
         failCondList_.addInt(value);
         onChanged();
@@ -2824,7 +2911,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        */
       public Builder clearFailCondList() {
         failCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2846,7 +2933,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setCreatePlayerUid(int value) {
         
         createPlayerUid_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2855,7 +2941,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearCreatePlayerUid() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         createPlayerUid_ = 0;
         onChanged();
         return this;
@@ -2935,9 +3021,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 1089) {
             towerLevelEndNotifyBuilder_.mergeFrom(value);
-          } else {
-            towerLevelEndNotifyBuilder_.setMessage(value);
           }
+          towerLevelEndNotifyBuilder_.setMessage(value);
         }
         detailCase_ = 1089;
         return this;
@@ -2999,7 +3084,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 1089;
-        onChanged();
+        onChanged();;
         return towerLevelEndNotifyBuilder_;
       }
 
@@ -3077,9 +3162,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 1117) {
             trialAvatarFirstPassDungeonNotifyBuilder_.mergeFrom(value);
-          } else {
-            trialAvatarFirstPassDungeonNotifyBuilder_.setMessage(value);
           }
+          trialAvatarFirstPassDungeonNotifyBuilder_.setMessage(value);
         }
         detailCase_ = 1117;
         return this;
@@ -3141,7 +3225,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 1117;
-        onChanged();
+        onChanged();;
         return trialAvatarFirstPassDungeonNotifyBuilder_;
       }
 
@@ -3219,9 +3303,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 1394) {
             channellerSlabLoopDungeonResultInfoBuilder_.mergeFrom(value);
-          } else {
-            channellerSlabLoopDungeonResultInfoBuilder_.setMessage(value);
           }
+          channellerSlabLoopDungeonResultInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1394;
         return this;
@@ -3283,7 +3366,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 1394;
-        onChanged();
+        onChanged();;
         return channellerSlabLoopDungeonResultInfoBuilder_;
       }
 
@@ -3361,9 +3444,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 254) {
             effigyChallengeDungeonResultInfoBuilder_.mergeFrom(value);
-          } else {
-            effigyChallengeDungeonResultInfoBuilder_.setMessage(value);
           }
+          effigyChallengeDungeonResultInfoBuilder_.setMessage(value);
         }
         detailCase_ = 254;
         return this;
@@ -3425,7 +3507,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 254;
-        onChanged();
+        onChanged();;
         return effigyChallengeDungeonResultInfoBuilder_;
       }
 
@@ -3503,9 +3585,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 1888) {
             roguelikeDungeonSettleInfoBuilder_.mergeFrom(value);
-          } else {
-            roguelikeDungeonSettleInfoBuilder_.setMessage(value);
           }
+          roguelikeDungeonSettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1888;
         return this;
@@ -3567,7 +3648,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 1888;
-        onChanged();
+        onChanged();;
         return roguelikeDungeonSettleInfoBuilder_;
       }
 
@@ -3645,9 +3726,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 1840) {
             crystalLinkSettleInfoBuilder_.mergeFrom(value);
-          } else {
-            crystalLinkSettleInfoBuilder_.setMessage(value);
           }
+          crystalLinkSettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1840;
         return this;
@@ -3709,7 +3789,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 1840;
-        onChanged();
+        onChanged();;
         return crystalLinkSettleInfoBuilder_;
       }
 
@@ -3787,9 +3867,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 285) {
             summerTimeV2DungeonSettleInfoBuilder_.mergeFrom(value);
-          } else {
-            summerTimeV2DungeonSettleInfoBuilder_.setMessage(value);
           }
+          summerTimeV2DungeonSettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 285;
         return this;
@@ -3851,7 +3930,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 285;
-        onChanged();
+        onChanged();;
         return summerTimeV2DungeonSettleInfoBuilder_;
       }
 
@@ -3929,9 +4008,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 1794) {
             instableSpraySettleInfoBuilder_.mergeFrom(value);
-          } else {
-            instableSpraySettleInfoBuilder_.setMessage(value);
           }
+          instableSpraySettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1794;
         return this;
@@ -3993,7 +4071,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 1794;
-        onChanged();
+        onChanged();;
         return instableSpraySettleInfoBuilder_;
       }
 
@@ -4071,9 +4149,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 1522) {
             windFieldDungeonSettleInfoBuilder_.mergeFrom(value);
-          } else {
-            windFieldDungeonSettleInfoBuilder_.setMessage(value);
           }
+          windFieldDungeonSettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1522;
         return this;
@@ -4135,7 +4212,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 1522;
-        onChanged();
+        onChanged();;
         return windFieldDungeonSettleInfoBuilder_;
       }
 
@@ -4213,9 +4290,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 1913) {
             effigyChallengeV2SettleInfoBuilder_.mergeFrom(value);
-          } else {
-            effigyChallengeV2SettleInfoBuilder_.setMessage(value);
           }
+          effigyChallengeV2SettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1913;
         return this;
@@ -4277,7 +4353,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 1913;
-        onChanged();
+        onChanged();;
         return effigyChallengeV2SettleInfoBuilder_;
       }
       @java.lang.Override
@@ -4313,18 +4389,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DungeonSettleNotify(input, extensionRegistry);
       }
     };
 

@@ -87,6 +87,61 @@ public final class BartenderGetFormulaReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BartenderGetFormulaReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              itemList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 32: {
+
+              questId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          itemList_ = java.util.Collections.unmodifiableList(itemList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BartenderGetFormulaReqOuterClass.internal_static_BartenderGetFormulaReq_descriptor;
@@ -101,7 +156,6 @@ public final class BartenderGetFormulaReqOuterClass {
     }
 
     public static final int ITEM_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
      * <code>repeated .ItemParam item_list = 1;</code>
@@ -142,7 +196,7 @@ public final class BartenderGetFormulaReqOuterClass {
     }
 
     public static final int QUEST_ID_FIELD_NUMBER = 4;
-    private int questId_ = 0;
+    private int questId_;
     /**
      * <code>uint32 quest_id = 4;</code>
      * @return The questId.
@@ -172,7 +226,7 @@ public final class BartenderGetFormulaReqOuterClass {
       if (questId_ != 0) {
         output.writeUInt32(4, questId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +243,7 @@ public final class BartenderGetFormulaReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, questId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -208,7 +262,7 @@ public final class BartenderGetFormulaReqOuterClass {
           .equals(other.getItemListList())) return false;
       if (getQuestId()
           != other.getQuestId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -225,7 +279,7 @@ public final class BartenderGetFormulaReqOuterClass {
       }
       hash = (37 * hash) + QUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getQuestId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -353,26 +407,31 @@ public final class BartenderGetFormulaReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.BartenderGetFormulaReqOuterClass.BartenderGetFormulaReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getItemListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          itemList_ = null;
           itemListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         questId_ = 0;
+
         return this;
       }
 
@@ -399,13 +458,7 @@ public final class BartenderGetFormulaReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BartenderGetFormulaReqOuterClass.BartenderGetFormulaReq buildPartial() {
         emu.gingerps.net.proto.BartenderGetFormulaReqOuterClass.BartenderGetFormulaReq result = new emu.gingerps.net.proto.BartenderGetFormulaReqOuterClass.BartenderGetFormulaReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BartenderGetFormulaReqOuterClass.BartenderGetFormulaReq result) {
+        int from_bitField0_ = bitField0_;
         if (itemListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
@@ -415,13 +468,9 @@ public final class BartenderGetFormulaReqOuterClass {
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BartenderGetFormulaReqOuterClass.BartenderGetFormulaReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.questId_ = questId_;
-        }
+        result.questId_ = questId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -497,7 +546,7 @@ public final class BartenderGetFormulaReqOuterClass {
         if (other.getQuestId() != 0) {
           setQuestId(other.getQuestId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -512,48 +561,17 @@ public final class BartenderGetFormulaReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BartenderGetFormulaReqOuterClass.BartenderGetFormulaReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
-                        extensionRegistry);
-                if (itemListBuilder_ == null) {
-                  ensureItemListIsMutable();
-                  itemList_.add(m);
-                } else {
-                  itemListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 32: {
-                questId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BartenderGetFormulaReqOuterClass.BartenderGetFormulaReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -815,7 +833,6 @@ public final class BartenderGetFormulaReqOuterClass {
       public Builder setQuestId(int value) {
         
         questId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -824,7 +841,7 @@ public final class BartenderGetFormulaReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         questId_ = 0;
         onChanged();
         return this;
@@ -862,18 +879,7 @@ public final class BartenderGetFormulaReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BartenderGetFormulaReq(input, extensionRegistry);
       }
     };
 

@@ -116,6 +116,95 @@ public final class RechargeReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RechargeReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct.Builder subBuilder = null;
+              if (playProduct_ != null) {
+                subBuilder = playProduct_.toBuilder();
+              }
+              playProduct_ = input.readMessage(emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(playProduct_);
+                playProduct_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.Builder subBuilder = null;
+              if (cardProduct_ != null) {
+                subBuilder = cardProduct_.toBuilder();
+              }
+              cardProduct_ = input.readMessage(emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cardProduct_);
+                cardProduct_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.Builder subBuilder = null;
+              if (mcoinProduct_ != null) {
+                subBuilder = mcoinProduct_.toBuilder();
+              }
+              mcoinProduct_ = input.readMessage(emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mcoinProduct_);
+                mcoinProduct_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 90: {
+              emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.Builder subBuilder = null;
+              if (concertProduct_ != null) {
+                subBuilder = concertProduct_.toBuilder();
+              }
+              concertProduct_ = input.readMessage(emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(concertProduct_);
+                concertProduct_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RechargeReqOuterClass.internal_static_RechargeReq_descriptor;
@@ -152,7 +241,7 @@ public final class RechargeReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProductOrBuilder getMcoinProductOrBuilder() {
-      return mcoinProduct_ == null ? emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.getDefaultInstance() : mcoinProduct_;
+      return getMcoinProduct();
     }
 
     public static final int CARD_PRODUCT_FIELD_NUMBER = 4;
@@ -178,7 +267,7 @@ public final class RechargeReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProductOrBuilder getCardProductOrBuilder() {
-      return cardProduct_ == null ? emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.getDefaultInstance() : cardProduct_;
+      return getCardProduct();
     }
 
     public static final int PLAY_PRODUCT_FIELD_NUMBER = 3;
@@ -204,7 +293,7 @@ public final class RechargeReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.PlayProductOuterClass.PlayProductOrBuilder getPlayProductOrBuilder() {
-      return playProduct_ == null ? emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct.getDefaultInstance() : playProduct_;
+      return getPlayProduct();
     }
 
     public static final int CONCERT_PRODUCT_FIELD_NUMBER = 11;
@@ -230,7 +319,7 @@ public final class RechargeReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProductOrBuilder getConcertProductOrBuilder() {
-      return concertProduct_ == null ? emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.getDefaultInstance() : concertProduct_;
+      return getConcertProduct();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -259,7 +348,7 @@ public final class RechargeReqOuterClass {
       if (concertProduct_ != null) {
         output.writeMessage(11, getConcertProduct());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -284,7 +373,7 @@ public final class RechargeReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getConcertProduct());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -319,7 +408,7 @@ public final class RechargeReqOuterClass {
         if (!getConcertProduct()
             .equals(other.getConcertProduct())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -346,7 +435,7 @@ public final class RechargeReqOuterClass {
         hash = (37 * hash) + CONCERT_PRODUCT_FIELD_NUMBER;
         hash = (53 * hash) + getConcertProduct().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -474,36 +563,44 @@ public final class RechargeReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.RechargeReqOuterClass.RechargeReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        mcoinProduct_ = null;
-        if (mcoinProductBuilder_ != null) {
-          mcoinProductBuilder_.dispose();
+        if (mcoinProductBuilder_ == null) {
+          mcoinProduct_ = null;
+        } else {
+          mcoinProduct_ = null;
           mcoinProductBuilder_ = null;
         }
-        cardProduct_ = null;
-        if (cardProductBuilder_ != null) {
-          cardProductBuilder_.dispose();
+        if (cardProductBuilder_ == null) {
+          cardProduct_ = null;
+        } else {
+          cardProduct_ = null;
           cardProductBuilder_ = null;
         }
-        playProduct_ = null;
-        if (playProductBuilder_ != null) {
-          playProductBuilder_.dispose();
+        if (playProductBuilder_ == null) {
+          playProduct_ = null;
+        } else {
+          playProduct_ = null;
           playProductBuilder_ = null;
         }
-        concertProduct_ = null;
-        if (concertProductBuilder_ != null) {
-          concertProductBuilder_.dispose();
+        if (concertProductBuilder_ == null) {
+          concertProduct_ = null;
+        } else {
+          concertProduct_ = null;
           concertProductBuilder_ = null;
         }
         return this;
@@ -532,33 +629,28 @@ public final class RechargeReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RechargeReqOuterClass.RechargeReq buildPartial() {
         emu.gingerps.net.proto.RechargeReqOuterClass.RechargeReq result = new emu.gingerps.net.proto.RechargeReqOuterClass.RechargeReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (mcoinProductBuilder_ == null) {
+          result.mcoinProduct_ = mcoinProduct_;
+        } else {
+          result.mcoinProduct_ = mcoinProductBuilder_.build();
+        }
+        if (cardProductBuilder_ == null) {
+          result.cardProduct_ = cardProduct_;
+        } else {
+          result.cardProduct_ = cardProductBuilder_.build();
+        }
+        if (playProductBuilder_ == null) {
+          result.playProduct_ = playProduct_;
+        } else {
+          result.playProduct_ = playProductBuilder_.build();
+        }
+        if (concertProductBuilder_ == null) {
+          result.concertProduct_ = concertProduct_;
+        } else {
+          result.concertProduct_ = concertProductBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RechargeReqOuterClass.RechargeReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.mcoinProduct_ = mcoinProductBuilder_ == null
-              ? mcoinProduct_
-              : mcoinProductBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cardProduct_ = cardProductBuilder_ == null
-              ? cardProduct_
-              : cardProductBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.playProduct_ = playProductBuilder_ == null
-              ? playProduct_
-              : playProductBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.concertProduct_ = concertProductBuilder_ == null
-              ? concertProduct_
-              : concertProductBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -617,7 +709,7 @@ public final class RechargeReqOuterClass {
         if (other.hasConcertProduct()) {
           mergeConcertProduct(other.getConcertProduct());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -632,61 +724,19 @@ public final class RechargeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RechargeReqOuterClass.RechargeReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                input.readMessage(
-                    getPlayProductFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getCardProductFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 34
-              case 82: {
-                input.readMessage(
-                    getMcoinProductFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 82
-              case 90: {
-                input.readMessage(
-                    getConcertProductFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RechargeReqOuterClass.RechargeReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct mcoinProduct_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -696,7 +746,7 @@ public final class RechargeReqOuterClass {
        * @return Whether the mcoinProduct field is set.
        */
       public boolean hasMcoinProduct() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return mcoinProductBuilder_ != null || mcoinProduct_ != null;
       }
       /**
        * <code>.ShopMcoinProduct mcoin_product = 10;</code>
@@ -718,11 +768,11 @@ public final class RechargeReqOuterClass {
             throw new NullPointerException();
           }
           mcoinProduct_ = value;
+          onChanged();
         } else {
           mcoinProductBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -732,11 +782,11 @@ public final class RechargeReqOuterClass {
           emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.Builder builderForValue) {
         if (mcoinProductBuilder_ == null) {
           mcoinProduct_ = builderForValue.build();
+          onChanged();
         } else {
           mcoinProductBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -744,38 +794,38 @@ public final class RechargeReqOuterClass {
        */
       public Builder mergeMcoinProduct(emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct value) {
         if (mcoinProductBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            mcoinProduct_ != null &&
-            mcoinProduct_ != emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.getDefaultInstance()) {
-            getMcoinProductBuilder().mergeFrom(value);
+          if (mcoinProduct_ != null) {
+            mcoinProduct_ =
+              emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.newBuilder(mcoinProduct_).mergeFrom(value).buildPartial();
           } else {
             mcoinProduct_ = value;
           }
+          onChanged();
         } else {
           mcoinProductBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ShopMcoinProduct mcoin_product = 10;</code>
        */
       public Builder clearMcoinProduct() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        mcoinProduct_ = null;
-        if (mcoinProductBuilder_ != null) {
-          mcoinProductBuilder_.dispose();
+        if (mcoinProductBuilder_ == null) {
+          mcoinProduct_ = null;
+          onChanged();
+        } else {
+          mcoinProduct_ = null;
           mcoinProductBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ShopMcoinProduct mcoin_product = 10;</code>
        */
       public emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.Builder getMcoinProductBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getMcoinProductFieldBuilder().getBuilder();
       }
@@ -815,7 +865,7 @@ public final class RechargeReqOuterClass {
        * @return Whether the cardProduct field is set.
        */
       public boolean hasCardProduct() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return cardProductBuilder_ != null || cardProduct_ != null;
       }
       /**
        * <code>.ShopCardProduct card_product = 4;</code>
@@ -837,11 +887,11 @@ public final class RechargeReqOuterClass {
             throw new NullPointerException();
           }
           cardProduct_ = value;
+          onChanged();
         } else {
           cardProductBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -851,11 +901,11 @@ public final class RechargeReqOuterClass {
           emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.Builder builderForValue) {
         if (cardProductBuilder_ == null) {
           cardProduct_ = builderForValue.build();
+          onChanged();
         } else {
           cardProductBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -863,38 +913,38 @@ public final class RechargeReqOuterClass {
        */
       public Builder mergeCardProduct(emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct value) {
         if (cardProductBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            cardProduct_ != null &&
-            cardProduct_ != emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.getDefaultInstance()) {
-            getCardProductBuilder().mergeFrom(value);
+          if (cardProduct_ != null) {
+            cardProduct_ =
+              emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.newBuilder(cardProduct_).mergeFrom(value).buildPartial();
           } else {
             cardProduct_ = value;
           }
+          onChanged();
         } else {
           cardProductBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ShopCardProduct card_product = 4;</code>
        */
       public Builder clearCardProduct() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        cardProduct_ = null;
-        if (cardProductBuilder_ != null) {
-          cardProductBuilder_.dispose();
+        if (cardProductBuilder_ == null) {
+          cardProduct_ = null;
+          onChanged();
+        } else {
+          cardProduct_ = null;
           cardProductBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ShopCardProduct card_product = 4;</code>
        */
       public emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.Builder getCardProductBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getCardProductFieldBuilder().getBuilder();
       }
@@ -934,7 +984,7 @@ public final class RechargeReqOuterClass {
        * @return Whether the playProduct field is set.
        */
       public boolean hasPlayProduct() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return playProductBuilder_ != null || playProduct_ != null;
       }
       /**
        * <code>.PlayProduct play_product = 3;</code>
@@ -956,11 +1006,11 @@ public final class RechargeReqOuterClass {
             throw new NullPointerException();
           }
           playProduct_ = value;
+          onChanged();
         } else {
           playProductBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -970,11 +1020,11 @@ public final class RechargeReqOuterClass {
           emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct.Builder builderForValue) {
         if (playProductBuilder_ == null) {
           playProduct_ = builderForValue.build();
+          onChanged();
         } else {
           playProductBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -982,38 +1032,38 @@ public final class RechargeReqOuterClass {
        */
       public Builder mergePlayProduct(emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct value) {
         if (playProductBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            playProduct_ != null &&
-            playProduct_ != emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct.getDefaultInstance()) {
-            getPlayProductBuilder().mergeFrom(value);
+          if (playProduct_ != null) {
+            playProduct_ =
+              emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct.newBuilder(playProduct_).mergeFrom(value).buildPartial();
           } else {
             playProduct_ = value;
           }
+          onChanged();
         } else {
           playProductBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PlayProduct play_product = 3;</code>
        */
       public Builder clearPlayProduct() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        playProduct_ = null;
-        if (playProductBuilder_ != null) {
-          playProductBuilder_.dispose();
+        if (playProductBuilder_ == null) {
+          playProduct_ = null;
+          onChanged();
+        } else {
+          playProduct_ = null;
           playProductBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PlayProduct play_product = 3;</code>
        */
       public emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct.Builder getPlayProductBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getPlayProductFieldBuilder().getBuilder();
       }
@@ -1053,7 +1103,7 @@ public final class RechargeReqOuterClass {
        * @return Whether the concertProduct field is set.
        */
       public boolean hasConcertProduct() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return concertProductBuilder_ != null || concertProduct_ != null;
       }
       /**
        * <code>.ShopConcertProduct concert_product = 11;</code>
@@ -1075,11 +1125,11 @@ public final class RechargeReqOuterClass {
             throw new NullPointerException();
           }
           concertProduct_ = value;
+          onChanged();
         } else {
           concertProductBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1089,11 +1139,11 @@ public final class RechargeReqOuterClass {
           emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.Builder builderForValue) {
         if (concertProductBuilder_ == null) {
           concertProduct_ = builderForValue.build();
+          onChanged();
         } else {
           concertProductBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1101,38 +1151,38 @@ public final class RechargeReqOuterClass {
        */
       public Builder mergeConcertProduct(emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct value) {
         if (concertProductBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            concertProduct_ != null &&
-            concertProduct_ != emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.getDefaultInstance()) {
-            getConcertProductBuilder().mergeFrom(value);
+          if (concertProduct_ != null) {
+            concertProduct_ =
+              emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.newBuilder(concertProduct_).mergeFrom(value).buildPartial();
           } else {
             concertProduct_ = value;
           }
+          onChanged();
         } else {
           concertProductBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ShopConcertProduct concert_product = 11;</code>
        */
       public Builder clearConcertProduct() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        concertProduct_ = null;
-        if (concertProductBuilder_ != null) {
-          concertProductBuilder_.dispose();
+        if (concertProductBuilder_ == null) {
+          concertProduct_ = null;
+          onChanged();
+        } else {
+          concertProduct_ = null;
           concertProductBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ShopConcertProduct concert_product = 11;</code>
        */
       public emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.Builder getConcertProductBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getConcertProductFieldBuilder().getBuilder();
       }
@@ -1196,18 +1246,7 @@ public final class RechargeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RechargeReq(input, extensionRegistry);
       }
     };
 

@@ -131,6 +131,80 @@ public final class EntityConfigHashNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EntityConfigHashNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                avatarEntryList_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              avatarEntryList_.add(
+                  input.readMessage(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                combatEntryList_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              combatEntryList_.add(
+                  input.readMessage(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                abilityEntryList_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              abilityEntryList_.add(
+                  input.readMessage(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          avatarEntryList_ = java.util.Collections.unmodifiableList(avatarEntryList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          combatEntryList_ = java.util.Collections.unmodifiableList(combatEntryList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          abilityEntryList_ = java.util.Collections.unmodifiableList(abilityEntryList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.internal_static_EntityConfigHashNotify_descriptor;
@@ -145,7 +219,6 @@ public final class EntityConfigHashNotifyOuterClass {
     }
 
     public static final int AVATAR_ENTRY_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> avatarEntryList_;
     /**
      * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
@@ -186,7 +259,6 @@ public final class EntityConfigHashNotifyOuterClass {
     }
 
     public static final int COMBAT_ENTRY_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> combatEntryList_;
     /**
      * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
@@ -227,7 +299,6 @@ public final class EntityConfigHashNotifyOuterClass {
     }
 
     public static final int ABILITY_ENTRY_LIST_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> abilityEntryList_;
     /**
      * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
@@ -290,7 +361,7 @@ public final class EntityConfigHashNotifyOuterClass {
       for (int i = 0; i < abilityEntryList_.size(); i++) {
         output.writeMessage(9, abilityEntryList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -311,7 +382,7 @@ public final class EntityConfigHashNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, abilityEntryList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -332,7 +403,7 @@ public final class EntityConfigHashNotifyOuterClass {
           .equals(other.getCombatEntryListList())) return false;
       if (!getAbilityEntryListList()
           .equals(other.getAbilityEntryListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -355,7 +426,7 @@ public final class EntityConfigHashNotifyOuterClass {
         hash = (37 * hash) + ABILITY_ENTRY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAbilityEntryListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -483,39 +554,43 @@ public final class EntityConfigHashNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAvatarEntryListFieldBuilder();
+          getCombatEntryListFieldBuilder();
+          getAbilityEntryListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (avatarEntryListBuilder_ == null) {
           avatarEntryList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          avatarEntryList_ = null;
           avatarEntryListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (combatEntryListBuilder_ == null) {
           combatEntryList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          combatEntryList_ = null;
           combatEntryListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (abilityEntryListBuilder_ == null) {
           abilityEntryList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          abilityEntryList_ = null;
           abilityEntryListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -542,13 +617,7 @@ public final class EntityConfigHashNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify buildPartial() {
         emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify result = new emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify result) {
+        int from_bitField0_ = bitField0_;
         if (avatarEntryListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             avatarEntryList_ = java.util.Collections.unmodifiableList(avatarEntryList_);
@@ -576,10 +645,8 @@ public final class EntityConfigHashNotifyOuterClass {
         } else {
           result.abilityEntryList_ = abilityEntryListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -704,7 +771,7 @@ public final class EntityConfigHashNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -719,69 +786,17 @@ public final class EntityConfigHashNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(),
-                        extensionRegistry);
-                if (avatarEntryListBuilder_ == null) {
-                  ensureAvatarEntryListIsMutable();
-                  avatarEntryList_.add(m);
-                } else {
-                  avatarEntryListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 18: {
-                emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(),
-                        extensionRegistry);
-                if (combatEntryListBuilder_ == null) {
-                  ensureCombatEntryListIsMutable();
-                  combatEntryList_.add(m);
-                } else {
-                  combatEntryListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 74: {
-                emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(),
-                        extensionRegistry);
-                if (abilityEntryListBuilder_ == null) {
-                  ensureAbilityEntryListIsMutable();
-                  abilityEntryList_.add(m);
-                } else {
-                  abilityEntryListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 74
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1538,18 +1553,7 @@ public final class EntityConfigHashNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EntityConfigHashNotify(input, extensionRegistry);
       }
     };
 

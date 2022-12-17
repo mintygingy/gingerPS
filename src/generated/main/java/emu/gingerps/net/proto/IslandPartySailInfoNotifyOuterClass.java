@@ -85,6 +85,64 @@ public final class IslandPartySailInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private IslandPartySailInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+              int rawValue = input.readEnum();
+
+              stage_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              killMonsterCount_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              progress_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              coin_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IslandPartySailInfoNotifyOuterClass.internal_static_IslandPartySailInfoNotify_descriptor;
@@ -99,7 +157,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
     }
 
     public static final int STAGE_FIELD_NUMBER = 2;
-    private int stage_ = 0;
+    private int stage_;
     /**
      * <code>.IslandPartySailStage stage = 2;</code>
      * @return The enum numeric value on the wire for stage.
@@ -112,12 +170,13 @@ public final class IslandPartySailInfoNotifyOuterClass {
      * @return The stage.
      */
     @java.lang.Override public emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage getStage() {
-      emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage result = emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.forNumber(stage_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage result = emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.valueOf(stage_);
       return result == null ? emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.UNRECOGNIZED : result;
     }
 
     public static final int KILL_MONSTER_COUNT_FIELD_NUMBER = 6;
-    private int killMonsterCount_ = 0;
+    private int killMonsterCount_;
     /**
      * <code>uint32 kill_monster_count = 6;</code>
      * @return The killMonsterCount.
@@ -128,7 +187,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
     }
 
     public static final int COIN_FIELD_NUMBER = 14;
-    private int coin_ = 0;
+    private int coin_;
     /**
      * <code>uint32 coin = 14;</code>
      * @return The coin.
@@ -139,7 +198,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
     }
 
     public static final int PROGRESS_FIELD_NUMBER = 9;
-    private int progress_ = 0;
+    private int progress_;
     /**
      * <code>uint32 progress = 9;</code>
      * @return The progress.
@@ -175,7 +234,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
       if (coin_ != 0) {
         output.writeUInt32(14, coin_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -200,7 +259,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, coin_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -222,7 +281,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
           != other.getCoin()) return false;
       if (getProgress()
           != other.getProgress()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -241,7 +300,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
       hash = (53 * hash) + getCoin();
       hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getProgress();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -368,22 +427,30 @@ public final class IslandPartySailInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.IslandPartySailInfoNotifyOuterClass.IslandPartySailInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         stage_ = 0;
+
         killMonsterCount_ = 0;
+
         coin_ = 0;
+
         progress_ = 0;
+
         return this;
       }
 
@@ -410,25 +477,12 @@ public final class IslandPartySailInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IslandPartySailInfoNotifyOuterClass.IslandPartySailInfoNotify buildPartial() {
         emu.gingerps.net.proto.IslandPartySailInfoNotifyOuterClass.IslandPartySailInfoNotify result = new emu.gingerps.net.proto.IslandPartySailInfoNotifyOuterClass.IslandPartySailInfoNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.stage_ = stage_;
+        result.killMonsterCount_ = killMonsterCount_;
+        result.coin_ = coin_;
+        result.progress_ = progress_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.IslandPartySailInfoNotifyOuterClass.IslandPartySailInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.stage_ = stage_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.killMonsterCount_ = killMonsterCount_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.coin_ = coin_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.progress_ = progress_;
-        }
       }
 
       @java.lang.Override
@@ -487,7 +541,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
         if (other.getProgress() != 0) {
           setProgress(other.getProgress());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -502,53 +556,19 @@ public final class IslandPartySailInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.IslandPartySailInfoNotifyOuterClass.IslandPartySailInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                stage_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 48: {
-                killMonsterCount_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 72: {
-                progress_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 72
-              case 112: {
-                coin_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.IslandPartySailInfoNotifyOuterClass.IslandPartySailInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int stage_ = 0;
       /**
@@ -564,8 +584,8 @@ public final class IslandPartySailInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStageValue(int value) {
+        
         stage_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -575,7 +595,8 @@ public final class IslandPartySailInfoNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage getStage() {
-        emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage result = emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.forNumber(stage_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage result = emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.valueOf(stage_);
         return result == null ? emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.UNRECOGNIZED : result;
       }
       /**
@@ -587,7 +608,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         stage_ = value.getNumber();
         onChanged();
         return this;
@@ -597,7 +618,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStage() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         stage_ = 0;
         onChanged();
         return this;
@@ -620,7 +641,6 @@ public final class IslandPartySailInfoNotifyOuterClass {
       public Builder setKillMonsterCount(int value) {
         
         killMonsterCount_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -629,7 +649,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKillMonsterCount() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         killMonsterCount_ = 0;
         onChanged();
         return this;
@@ -652,7 +672,6 @@ public final class IslandPartySailInfoNotifyOuterClass {
       public Builder setCoin(int value) {
         
         coin_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -661,7 +680,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoin() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         coin_ = 0;
         onChanged();
         return this;
@@ -684,7 +703,6 @@ public final class IslandPartySailInfoNotifyOuterClass {
       public Builder setProgress(int value) {
         
         progress_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -693,7 +711,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProgress() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         progress_ = 0;
         onChanged();
         return this;
@@ -731,18 +749,7 @@ public final class IslandPartySailInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new IslandPartySailInfoNotify(input, extensionRegistry);
       }
     };
 

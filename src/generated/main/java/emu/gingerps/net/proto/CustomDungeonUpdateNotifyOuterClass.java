@@ -70,6 +70,56 @@ public final class CustomDungeonUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CustomDungeonUpdateNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 122: {
+              emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.Builder subBuilder = null;
+              if (dungeonBrief_ != null) {
+                subBuilder = dungeonBrief_.toBuilder();
+              }
+              dungeonBrief_ = input.readMessage(emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dungeonBrief_);
+                dungeonBrief_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonUpdateNotifyOuterClass.internal_static_CustomDungeonUpdateNotify_descriptor;
@@ -106,7 +156,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBriefOrBuilder getDungeonBriefOrBuilder() {
-      return dungeonBrief_ == null ? emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.getDefaultInstance() : dungeonBrief_;
+      return getDungeonBrief();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -126,7 +176,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
       if (dungeonBrief_ != null) {
         output.writeMessage(15, getDungeonBrief());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +189,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getDungeonBrief());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +209,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
         if (!getDungeonBrief()
             .equals(other.getDungeonBrief())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +224,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
         hash = (37 * hash) + DUNGEON_BRIEF_FIELD_NUMBER;
         hash = (53 * hash) + getDungeonBrief().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -301,21 +351,26 @@ public final class CustomDungeonUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonUpdateNotifyOuterClass.CustomDungeonUpdateNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        dungeonBrief_ = null;
-        if (dungeonBriefBuilder_ != null) {
-          dungeonBriefBuilder_.dispose();
+        if (dungeonBriefBuilder_ == null) {
+          dungeonBrief_ = null;
+        } else {
+          dungeonBrief_ = null;
           dungeonBriefBuilder_ = null;
         }
         return this;
@@ -344,18 +399,13 @@ public final class CustomDungeonUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonUpdateNotifyOuterClass.CustomDungeonUpdateNotify buildPartial() {
         emu.gingerps.net.proto.CustomDungeonUpdateNotifyOuterClass.CustomDungeonUpdateNotify result = new emu.gingerps.net.proto.CustomDungeonUpdateNotifyOuterClass.CustomDungeonUpdateNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (dungeonBriefBuilder_ == null) {
+          result.dungeonBrief_ = dungeonBrief_;
+        } else {
+          result.dungeonBrief_ = dungeonBriefBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonUpdateNotifyOuterClass.CustomDungeonUpdateNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.dungeonBrief_ = dungeonBriefBuilder_ == null
-              ? dungeonBrief_
-              : dungeonBriefBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -405,7 +455,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
         if (other.hasDungeonBrief()) {
           mergeDungeonBrief(other.getDungeonBrief());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,40 +470,19 @@ public final class CustomDungeonUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CustomDungeonUpdateNotifyOuterClass.CustomDungeonUpdateNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 122: {
-                input.readMessage(
-                    getDungeonBriefFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CustomDungeonUpdateNotifyOuterClass.CustomDungeonUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief dungeonBrief_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -463,7 +492,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
        * @return Whether the dungeonBrief field is set.
        */
       public boolean hasDungeonBrief() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return dungeonBriefBuilder_ != null || dungeonBrief_ != null;
       }
       /**
        * <code>.CustomDungeonBrief dungeon_brief = 15;</code>
@@ -485,11 +514,11 @@ public final class CustomDungeonUpdateNotifyOuterClass {
             throw new NullPointerException();
           }
           dungeonBrief_ = value;
+          onChanged();
         } else {
           dungeonBriefBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -499,11 +528,11 @@ public final class CustomDungeonUpdateNotifyOuterClass {
           emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.Builder builderForValue) {
         if (dungeonBriefBuilder_ == null) {
           dungeonBrief_ = builderForValue.build();
+          onChanged();
         } else {
           dungeonBriefBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -511,38 +540,38 @@ public final class CustomDungeonUpdateNotifyOuterClass {
        */
       public Builder mergeDungeonBrief(emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief value) {
         if (dungeonBriefBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            dungeonBrief_ != null &&
-            dungeonBrief_ != emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.getDefaultInstance()) {
-            getDungeonBriefBuilder().mergeFrom(value);
+          if (dungeonBrief_ != null) {
+            dungeonBrief_ =
+              emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.newBuilder(dungeonBrief_).mergeFrom(value).buildPartial();
           } else {
             dungeonBrief_ = value;
           }
+          onChanged();
         } else {
           dungeonBriefBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CustomDungeonBrief dungeon_brief = 15;</code>
        */
       public Builder clearDungeonBrief() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        dungeonBrief_ = null;
-        if (dungeonBriefBuilder_ != null) {
-          dungeonBriefBuilder_.dispose();
+        if (dungeonBriefBuilder_ == null) {
+          dungeonBrief_ = null;
+          onChanged();
+        } else {
+          dungeonBrief_ = null;
           dungeonBriefBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CustomDungeonBrief dungeon_brief = 15;</code>
        */
       public emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.Builder getDungeonBriefBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getDungeonBriefFieldBuilder().getBuilder();
       }
@@ -606,18 +635,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CustomDungeonUpdateNotify(input, extensionRegistry);
       }
     };
 

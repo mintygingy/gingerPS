@@ -93,6 +93,102 @@ public final class GCGOperationPlayCardOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGOperationPlayCard(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              cardGuid_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              replaceCardGuid_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                costDiceIndexList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              costDiceIndexList_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                costDiceIndexList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                costDiceIndexList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 112: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                targetCardGuidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              targetCardGuidList_.addInt(input.readUInt32());
+              break;
+            }
+            case 114: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                targetCardGuidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                targetCardGuidList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          costDiceIndexList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          targetCardGuidList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.internal_static_GCGOperationPlayCard_descriptor;
@@ -107,7 +203,7 @@ public final class GCGOperationPlayCardOuterClass {
     }
 
     public static final int REPLACE_CARD_GUID_FIELD_NUMBER = 8;
-    private int replaceCardGuid_ = 0;
+    private int replaceCardGuid_;
     /**
      * <code>uint32 replace_card_guid = 8;</code>
      * @return The replaceCardGuid.
@@ -118,7 +214,6 @@ public final class GCGOperationPlayCardOuterClass {
     }
 
     public static final int TARGET_CARD_GUID_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList targetCardGuidList_;
     /**
      * <code>repeated uint32 target_card_guid_list = 14;</code>
@@ -147,7 +242,7 @@ public final class GCGOperationPlayCardOuterClass {
     private int targetCardGuidListMemoizedSerializedSize = -1;
 
     public static final int CARD_GUID_FIELD_NUMBER = 1;
-    private int cardGuid_ = 0;
+    private int cardGuid_;
     /**
      * <code>uint32 card_guid = 1;</code>
      * @return The cardGuid.
@@ -158,7 +253,6 @@ public final class GCGOperationPlayCardOuterClass {
     }
 
     public static final int COST_DICE_INDEX_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList costDiceIndexList_;
     /**
      * <code>repeated uint32 cost_dice_index_list = 11;</code>
@@ -221,7 +315,7 @@ public final class GCGOperationPlayCardOuterClass {
       for (int i = 0; i < targetCardGuidList_.size(); i++) {
         output.writeUInt32NoTag(targetCardGuidList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -266,7 +360,7 @@ public final class GCGOperationPlayCardOuterClass {
         }
         targetCardGuidListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -289,7 +383,7 @@ public final class GCGOperationPlayCardOuterClass {
           != other.getCardGuid()) return false;
       if (!getCostDiceIndexListList()
           .equals(other.getCostDiceIndexListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -312,7 +406,7 @@ public final class GCGOperationPlayCardOuterClass {
         hash = (37 * hash) + COST_DICE_INDEX_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCostDiceIndexListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -429,22 +523,30 @@ public final class GCGOperationPlayCardOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         replaceCardGuid_ = 0;
+
         targetCardGuidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         cardGuid_ = 0;
+
         costDiceIndexList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -471,33 +573,21 @@ public final class GCGOperationPlayCardOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard buildPartial() {
         emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard result = new emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.replaceCardGuid_ = replaceCardGuid_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           targetCardGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.targetCardGuidList_ = targetCardGuidList_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        result.cardGuid_ = cardGuid_;
+        if (((bitField0_ & 0x00000002) != 0)) {
           costDiceIndexList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.costDiceIndexList_ = costDiceIndexList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.replaceCardGuid_ = replaceCardGuid_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.cardGuid_ = cardGuid_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -550,7 +640,7 @@ public final class GCGOperationPlayCardOuterClass {
         if (!other.targetCardGuidList_.isEmpty()) {
           if (targetCardGuidList_.isEmpty()) {
             targetCardGuidList_ = other.targetCardGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTargetCardGuidListIsMutable();
             targetCardGuidList_.addAll(other.targetCardGuidList_);
@@ -563,14 +653,14 @@ public final class GCGOperationPlayCardOuterClass {
         if (!other.costDiceIndexList_.isEmpty()) {
           if (costDiceIndexList_.isEmpty()) {
             costDiceIndexList_ = other.costDiceIndexList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCostDiceIndexListIsMutable();
             costDiceIndexList_.addAll(other.costDiceIndexList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -585,72 +675,17 @@ public final class GCGOperationPlayCardOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                cardGuid_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 8
-              case 64: {
-                replaceCardGuid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 88: {
-                int v = input.readUInt32();
-                ensureCostDiceIndexListIsMutable();
-                costDiceIndexList_.addInt(v);
-                break;
-              } // case 88
-              case 90: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureCostDiceIndexListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  costDiceIndexList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 90
-              case 112: {
-                int v = input.readUInt32();
-                ensureTargetCardGuidListIsMutable();
-                targetCardGuidList_.addInt(v);
-                break;
-              } // case 112
-              case 114: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureTargetCardGuidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  targetCardGuidList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -672,7 +707,6 @@ public final class GCGOperationPlayCardOuterClass {
       public Builder setReplaceCardGuid(int value) {
         
         replaceCardGuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -681,7 +715,7 @@ public final class GCGOperationPlayCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReplaceCardGuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         replaceCardGuid_ = 0;
         onChanged();
         return this;
@@ -689,10 +723,10 @@ public final class GCGOperationPlayCardOuterClass {
 
       private com.google.protobuf.Internal.IntList targetCardGuidList_ = emptyIntList();
       private void ensureTargetCardGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           targetCardGuidList_ = mutableCopy(targetCardGuidList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 target_card_guid_list = 14;</code>
@@ -700,7 +734,7 @@ public final class GCGOperationPlayCardOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getTargetCardGuidListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(targetCardGuidList_) : targetCardGuidList_;
       }
       /**
@@ -726,7 +760,6 @@ public final class GCGOperationPlayCardOuterClass {
        */
       public Builder setTargetCardGuidList(
           int index, int value) {
-        
         ensureTargetCardGuidListIsMutable();
         targetCardGuidList_.setInt(index, value);
         onChanged();
@@ -738,7 +771,6 @@ public final class GCGOperationPlayCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder addTargetCardGuidList(int value) {
-        
         ensureTargetCardGuidListIsMutable();
         targetCardGuidList_.addInt(value);
         onChanged();
@@ -763,7 +795,7 @@ public final class GCGOperationPlayCardOuterClass {
        */
       public Builder clearTargetCardGuidList() {
         targetCardGuidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -785,7 +817,6 @@ public final class GCGOperationPlayCardOuterClass {
       public Builder setCardGuid(int value) {
         
         cardGuid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -794,7 +825,7 @@ public final class GCGOperationPlayCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardGuid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         cardGuid_ = 0;
         onChanged();
         return this;
@@ -802,10 +833,10 @@ public final class GCGOperationPlayCardOuterClass {
 
       private com.google.protobuf.Internal.IntList costDiceIndexList_ = emptyIntList();
       private void ensureCostDiceIndexListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           costDiceIndexList_ = mutableCopy(costDiceIndexList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 cost_dice_index_list = 11;</code>
@@ -813,7 +844,7 @@ public final class GCGOperationPlayCardOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getCostDiceIndexListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(costDiceIndexList_) : costDiceIndexList_;
       }
       /**
@@ -839,7 +870,6 @@ public final class GCGOperationPlayCardOuterClass {
        */
       public Builder setCostDiceIndexList(
           int index, int value) {
-        
         ensureCostDiceIndexListIsMutable();
         costDiceIndexList_.setInt(index, value);
         onChanged();
@@ -851,7 +881,6 @@ public final class GCGOperationPlayCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCostDiceIndexList(int value) {
-        
         ensureCostDiceIndexListIsMutable();
         costDiceIndexList_.addInt(value);
         onChanged();
@@ -876,7 +905,7 @@ public final class GCGOperationPlayCardOuterClass {
        */
       public Builder clearCostDiceIndexList() {
         costDiceIndexList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -913,18 +942,7 @@ public final class GCGOperationPlayCardOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGOperationPlayCard(input, extensionRegistry);
       }
     };
 

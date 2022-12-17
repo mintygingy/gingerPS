@@ -313,6 +313,179 @@ public final class HomeBlockArrangementInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeBlockArrangementInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                deployNpcList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              deployNpcList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                furnitureSuiteList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureSuiteDataOuterClass.HomeFurnitureSuiteData>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              furnitureSuiteList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeFurnitureSuiteDataOuterClass.HomeFurnitureSuiteData.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+                furnitureCustomSuiteList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              furnitureCustomSuiteList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                weekendDjinnInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfo>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              weekendDjinnInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                dotPatternList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPattern>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              dotPatternList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPattern.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                deployAnimalList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeAnimalDataOuterClass.HomeAnimalData>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              deployAnimalList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeAnimalDataOuterClass.HomeAnimalData.parser(), extensionRegistry));
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                furnitureGroupList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupData>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              furnitureGroupList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupData.parser(), extensionRegistry));
+              break;
+            }
+            case 72: {
+
+              comfortValue_ = input.readUInt32();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                deployFurniureList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              deployFurniureList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry));
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                persistentFurnitureList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              persistentFurnitureList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry));
+              break;
+            }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                fieldList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeBlockFieldDataOuterClass.HomeBlockFieldData>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              fieldList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeBlockFieldDataOuterClass.HomeBlockFieldData.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+
+              blockId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              isUnlocked_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          deployNpcList_ = java.util.Collections.unmodifiableList(deployNpcList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          furnitureSuiteList_ = java.util.Collections.unmodifiableList(furnitureSuiteList_);
+        }
+        if (((mutable_bitField0_ & 0x00000200) != 0)) {
+          furnitureCustomSuiteList_ = java.util.Collections.unmodifiableList(furnitureCustomSuiteList_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          weekendDjinnInfoList_ = java.util.Collections.unmodifiableList(weekendDjinnInfoList_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          dotPatternList_ = java.util.Collections.unmodifiableList(dotPatternList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          deployAnimalList_ = java.util.Collections.unmodifiableList(deployAnimalList_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
+          furnitureGroupList_ = java.util.Collections.unmodifiableList(furnitureGroupList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          deployFurniureList_ = java.util.Collections.unmodifiableList(deployFurniureList_);
+        }
+        if (((mutable_bitField0_ & 0x00000100) != 0)) {
+          persistentFurnitureList_ = java.util.Collections.unmodifiableList(persistentFurnitureList_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+          fieldList_ = java.util.Collections.unmodifiableList(fieldList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.internal_static_HomeBlockArrangementInfo_descriptor;
@@ -327,7 +500,6 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int DEPLOY_FURNIURE_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> deployFurniureList_;
     /**
      * <code>repeated .HomeFurnitureData deploy_furniure_list = 10;</code>
@@ -368,7 +540,6 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int DEPLOY_ANIMAL_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeAnimalDataOuterClass.HomeAnimalData> deployAnimalList_;
     /**
      * <code>repeated .HomeAnimalData deploy_animal_list = 7;</code>
@@ -409,7 +580,6 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int FURNITURE_SUITE_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeFurnitureSuiteDataOuterClass.HomeFurnitureSuiteData> furnitureSuiteList_;
     /**
      * <code>repeated .HomeFurnitureSuiteData furniture_suite_list = 3;</code>
@@ -450,7 +620,6 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int WEEKEND_DJINN_INFO_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfo> weekendDjinnInfoList_;
     /**
      * <code>repeated .WeekendDjinnInfo weekend_djinn_info_list = 5;</code>
@@ -491,7 +660,7 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int BLOCK_ID_FIELD_NUMBER = 14;
-    private int blockId_ = 0;
+    private int blockId_;
     /**
      * <code>uint32 block_id = 14;</code>
      * @return The blockId.
@@ -502,7 +671,6 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int DOT_PATTERN_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPattern> dotPatternList_;
     /**
      * <code>repeated .HomeBlockDotPattern dot_pattern_list = 6;</code>
@@ -543,7 +711,7 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int IS_UNLOCKED_FIELD_NUMBER = 15;
-    private boolean isUnlocked_ = false;
+    private boolean isUnlocked_;
     /**
      * <code>bool is_unlocked = 15;</code>
      * @return The isUnlocked.
@@ -554,7 +722,6 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int DEPLOY_NPC_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData> deployNpcList_;
     /**
      * <code>repeated .HomeNpcData deploy_npc_list = 1;</code>
@@ -595,7 +762,6 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int FURNITURE_GROUP_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupData> furnitureGroupList_;
     /**
      * <code>repeated .HomeFurnitureGroupData furniture_group_list = 8;</code>
@@ -636,7 +802,6 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int FIELD_LIST_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeBlockFieldDataOuterClass.HomeBlockFieldData> fieldList_;
     /**
      * <code>repeated .HomeBlockFieldData field_list = 13;</code>
@@ -677,7 +842,7 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int COMFORT_VALUE_FIELD_NUMBER = 9;
-    private int comfortValue_ = 0;
+    private int comfortValue_;
     /**
      * <code>uint32 comfort_value = 9;</code>
      * @return The comfortValue.
@@ -688,7 +853,6 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int PERSISTENT_FURNITURE_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> persistentFurnitureList_;
     /**
      * <code>repeated .HomeFurnitureData persistent_furniture_list = 12;</code>
@@ -729,7 +893,6 @@ public final class HomeBlockArrangementInfoOuterClass {
     }
 
     public static final int FURNITURE_CUSTOM_SUITE_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData> furnitureCustomSuiteList_;
     /**
      * <code>repeated .HomeFurnitureCustomSuiteData furniture_custom_suite_list = 4;</code>
@@ -822,7 +985,7 @@ public final class HomeBlockArrangementInfoOuterClass {
       if (isUnlocked_ != false) {
         output.writeBool(15, isUnlocked_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -883,7 +1046,7 @@ public final class HomeBlockArrangementInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isUnlocked_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -924,7 +1087,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           .equals(other.getPersistentFurnitureListList())) return false;
       if (!getFurnitureCustomSuiteListList()
           .equals(other.getFurnitureCustomSuiteListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -982,7 +1145,7 @@ public final class HomeBlockArrangementInfoOuterClass {
         hash = (37 * hash) + FURNITURE_CUSTOM_SUITE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFurnitureCustomSuiteListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1099,91 +1262,98 @@ public final class HomeBlockArrangementInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDeployFurniureListFieldBuilder();
+          getDeployAnimalListFieldBuilder();
+          getFurnitureSuiteListFieldBuilder();
+          getWeekendDjinnInfoListFieldBuilder();
+          getDotPatternListFieldBuilder();
+          getDeployNpcListFieldBuilder();
+          getFurnitureGroupListFieldBuilder();
+          getFieldListFieldBuilder();
+          getPersistentFurnitureListFieldBuilder();
+          getFurnitureCustomSuiteListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (deployFurniureListBuilder_ == null) {
           deployFurniureList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          deployFurniureList_ = null;
           deployFurniureListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (deployAnimalListBuilder_ == null) {
           deployAnimalList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          deployAnimalList_ = null;
           deployAnimalListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (furnitureSuiteListBuilder_ == null) {
           furnitureSuiteList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          furnitureSuiteList_ = null;
           furnitureSuiteListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (weekendDjinnInfoListBuilder_ == null) {
           weekendDjinnInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          weekendDjinnInfoList_ = null;
           weekendDjinnInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         blockId_ = 0;
+
         if (dotPatternListBuilder_ == null) {
           dotPatternList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          dotPatternList_ = null;
           dotPatternListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
         isUnlocked_ = false;
+
         if (deployNpcListBuilder_ == null) {
           deployNpcList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
-          deployNpcList_ = null;
           deployNpcListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
         if (furnitureGroupListBuilder_ == null) {
           furnitureGroupList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
-          furnitureGroupList_ = null;
           furnitureGroupListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
         if (fieldListBuilder_ == null) {
           fieldList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
-          fieldList_ = null;
           fieldListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000200);
         comfortValue_ = 0;
+
         if (persistentFurnitureListBuilder_ == null) {
           persistentFurnitureList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
-          persistentFurnitureList_ = null;
           persistentFurnitureListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000800);
         if (furnitureCustomSuiteListBuilder_ == null) {
           furnitureCustomSuiteList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
-          furnitureCustomSuiteList_ = null;
           furnitureCustomSuiteListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
 
@@ -1210,13 +1380,7 @@ public final class HomeBlockArrangementInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo buildPartial() {
         emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo result = new emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo result) {
+        int from_bitField0_ = bitField0_;
         if (deployFurniureListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             deployFurniureList_ = java.util.Collections.unmodifiableList(deployFurniureList_);
@@ -1253,73 +1417,65 @@ public final class HomeBlockArrangementInfoOuterClass {
         } else {
           result.weekendDjinnInfoList_ = weekendDjinnInfoListBuilder_.build();
         }
+        result.blockId_ = blockId_;
         if (dotPatternListBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             dotPatternList_ = java.util.Collections.unmodifiableList(dotPatternList_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.dotPatternList_ = dotPatternList_;
         } else {
           result.dotPatternList_ = dotPatternListBuilder_.build();
         }
+        result.isUnlocked_ = isUnlocked_;
         if (deployNpcListBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             deployNpcList_ = java.util.Collections.unmodifiableList(deployNpcList_);
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.deployNpcList_ = deployNpcList_;
         } else {
           result.deployNpcList_ = deployNpcListBuilder_.build();
         }
         if (furnitureGroupListBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             furnitureGroupList_ = java.util.Collections.unmodifiableList(furnitureGroupList_);
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.furnitureGroupList_ = furnitureGroupList_;
         } else {
           result.furnitureGroupList_ = furnitureGroupListBuilder_.build();
         }
         if (fieldListBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) != 0)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             fieldList_ = java.util.Collections.unmodifiableList(fieldList_);
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.fieldList_ = fieldList_;
         } else {
           result.fieldList_ = fieldListBuilder_.build();
         }
+        result.comfortValue_ = comfortValue_;
         if (persistentFurnitureListBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) != 0)) {
+          if (((bitField0_ & 0x00000100) != 0)) {
             persistentFurnitureList_ = java.util.Collections.unmodifiableList(persistentFurnitureList_);
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000100);
           }
           result.persistentFurnitureList_ = persistentFurnitureList_;
         } else {
           result.persistentFurnitureList_ = persistentFurnitureListBuilder_.build();
         }
         if (furnitureCustomSuiteListBuilder_ == null) {
-          if (((bitField0_ & 0x00001000) != 0)) {
+          if (((bitField0_ & 0x00000200) != 0)) {
             furnitureCustomSuiteList_ = java.util.Collections.unmodifiableList(furnitureCustomSuiteList_);
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00000200);
           }
           result.furnitureCustomSuiteList_ = furnitureCustomSuiteList_;
         } else {
           result.furnitureCustomSuiteList_ = furnitureCustomSuiteListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.blockId_ = blockId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.isUnlocked_ = isUnlocked_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.comfortValue_ = comfortValue_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -1477,7 +1633,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           if (!other.dotPatternList_.isEmpty()) {
             if (dotPatternList_.isEmpty()) {
               dotPatternList_ = other.dotPatternList_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureDotPatternListIsMutable();
               dotPatternList_.addAll(other.dotPatternList_);
@@ -1490,7 +1646,7 @@ public final class HomeBlockArrangementInfoOuterClass {
               dotPatternListBuilder_.dispose();
               dotPatternListBuilder_ = null;
               dotPatternList_ = other.dotPatternList_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000010);
               dotPatternListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDotPatternListFieldBuilder() : null;
@@ -1506,7 +1662,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           if (!other.deployNpcList_.isEmpty()) {
             if (deployNpcList_.isEmpty()) {
               deployNpcList_ = other.deployNpcList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureDeployNpcListIsMutable();
               deployNpcList_.addAll(other.deployNpcList_);
@@ -1519,7 +1675,7 @@ public final class HomeBlockArrangementInfoOuterClass {
               deployNpcListBuilder_.dispose();
               deployNpcListBuilder_ = null;
               deployNpcList_ = other.deployNpcList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000020);
               deployNpcListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDeployNpcListFieldBuilder() : null;
@@ -1532,7 +1688,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           if (!other.furnitureGroupList_.isEmpty()) {
             if (furnitureGroupList_.isEmpty()) {
               furnitureGroupList_ = other.furnitureGroupList_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureFurnitureGroupListIsMutable();
               furnitureGroupList_.addAll(other.furnitureGroupList_);
@@ -1545,7 +1701,7 @@ public final class HomeBlockArrangementInfoOuterClass {
               furnitureGroupListBuilder_.dispose();
               furnitureGroupListBuilder_ = null;
               furnitureGroupList_ = other.furnitureGroupList_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000040);
               furnitureGroupListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFurnitureGroupListFieldBuilder() : null;
@@ -1558,7 +1714,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           if (!other.fieldList_.isEmpty()) {
             if (fieldList_.isEmpty()) {
               fieldList_ = other.fieldList_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureFieldListIsMutable();
               fieldList_.addAll(other.fieldList_);
@@ -1571,7 +1727,7 @@ public final class HomeBlockArrangementInfoOuterClass {
               fieldListBuilder_.dispose();
               fieldListBuilder_ = null;
               fieldList_ = other.fieldList_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000080);
               fieldListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFieldListFieldBuilder() : null;
@@ -1587,7 +1743,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           if (!other.persistentFurnitureList_.isEmpty()) {
             if (persistentFurnitureList_.isEmpty()) {
               persistentFurnitureList_ = other.persistentFurnitureList_;
-              bitField0_ = (bitField0_ & ~0x00000800);
+              bitField0_ = (bitField0_ & ~0x00000100);
             } else {
               ensurePersistentFurnitureListIsMutable();
               persistentFurnitureList_.addAll(other.persistentFurnitureList_);
@@ -1600,7 +1756,7 @@ public final class HomeBlockArrangementInfoOuterClass {
               persistentFurnitureListBuilder_.dispose();
               persistentFurnitureListBuilder_ = null;
               persistentFurnitureList_ = other.persistentFurnitureList_;
-              bitField0_ = (bitField0_ & ~0x00000800);
+              bitField0_ = (bitField0_ & ~0x00000100);
               persistentFurnitureListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPersistentFurnitureListFieldBuilder() : null;
@@ -1613,7 +1769,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           if (!other.furnitureCustomSuiteList_.isEmpty()) {
             if (furnitureCustomSuiteList_.isEmpty()) {
               furnitureCustomSuiteList_ = other.furnitureCustomSuiteList_;
-              bitField0_ = (bitField0_ & ~0x00001000);
+              bitField0_ = (bitField0_ & ~0x00000200);
             } else {
               ensureFurnitureCustomSuiteListIsMutable();
               furnitureCustomSuiteList_.addAll(other.furnitureCustomSuiteList_);
@@ -1626,7 +1782,7 @@ public final class HomeBlockArrangementInfoOuterClass {
               furnitureCustomSuiteListBuilder_.dispose();
               furnitureCustomSuiteListBuilder_ = null;
               furnitureCustomSuiteList_ = other.furnitureCustomSuiteList_;
-              bitField0_ = (bitField0_ & ~0x00001000);
+              bitField0_ = (bitField0_ & ~0x00000200);
               furnitureCustomSuiteListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFurnitureCustomSuiteListFieldBuilder() : null;
@@ -1635,7 +1791,7 @@ public final class HomeBlockArrangementInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1650,175 +1806,17 @@ public final class HomeBlockArrangementInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData.parser(),
-                        extensionRegistry);
-                if (deployNpcListBuilder_ == null) {
-                  ensureDeployNpcListIsMutable();
-                  deployNpcList_.add(m);
-                } else {
-                  deployNpcListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 26: {
-                emu.gingerps.net.proto.HomeFurnitureSuiteDataOuterClass.HomeFurnitureSuiteData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeFurnitureSuiteDataOuterClass.HomeFurnitureSuiteData.parser(),
-                        extensionRegistry);
-                if (furnitureSuiteListBuilder_ == null) {
-                  ensureFurnitureSuiteListIsMutable();
-                  furnitureSuiteList_.add(m);
-                } else {
-                  furnitureSuiteListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData.parser(),
-                        extensionRegistry);
-                if (furnitureCustomSuiteListBuilder_ == null) {
-                  ensureFurnitureCustomSuiteListIsMutable();
-                  furnitureCustomSuiteList_.add(m);
-                } else {
-                  furnitureCustomSuiteListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                emu.gingerps.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfo.parser(),
-                        extensionRegistry);
-                if (weekendDjinnInfoListBuilder_ == null) {
-                  ensureWeekendDjinnInfoListIsMutable();
-                  weekendDjinnInfoList_.add(m);
-                } else {
-                  weekendDjinnInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                emu.gingerps.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPattern m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPattern.parser(),
-                        extensionRegistry);
-                if (dotPatternListBuilder_ == null) {
-                  ensureDotPatternListIsMutable();
-                  dotPatternList_.add(m);
-                } else {
-                  dotPatternListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                emu.gingerps.net.proto.HomeAnimalDataOuterClass.HomeAnimalData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeAnimalDataOuterClass.HomeAnimalData.parser(),
-                        extensionRegistry);
-                if (deployAnimalListBuilder_ == null) {
-                  ensureDeployAnimalListIsMutable();
-                  deployAnimalList_.add(m);
-                } else {
-                  deployAnimalListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              case 66: {
-                emu.gingerps.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupData.parser(),
-                        extensionRegistry);
-                if (furnitureGroupListBuilder_ == null) {
-                  ensureFurnitureGroupListIsMutable();
-                  furnitureGroupList_.add(m);
-                } else {
-                  furnitureGroupListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 66
-              case 72: {
-                comfortValue_ = input.readUInt32();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 72
-              case 82: {
-                emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(),
-                        extensionRegistry);
-                if (deployFurniureListBuilder_ == null) {
-                  ensureDeployFurniureListIsMutable();
-                  deployFurniureList_.add(m);
-                } else {
-                  deployFurniureListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              case 98: {
-                emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(),
-                        extensionRegistry);
-                if (persistentFurnitureListBuilder_ == null) {
-                  ensurePersistentFurnitureListIsMutable();
-                  persistentFurnitureList_.add(m);
-                } else {
-                  persistentFurnitureListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              case 106: {
-                emu.gingerps.net.proto.HomeBlockFieldDataOuterClass.HomeBlockFieldData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeBlockFieldDataOuterClass.HomeBlockFieldData.parser(),
-                        extensionRegistry);
-                if (fieldListBuilder_ == null) {
-                  ensureFieldListIsMutable();
-                  fieldList_.add(m);
-                } else {
-                  fieldListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 106
-              case 112: {
-                blockId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 112
-              case 120: {
-                isUnlocked_ = input.readBool();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2800,7 +2798,6 @@ public final class HomeBlockArrangementInfoOuterClass {
       public Builder setBlockId(int value) {
         
         blockId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2809,7 +2806,7 @@ public final class HomeBlockArrangementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBlockId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         blockId_ = 0;
         onChanged();
         return this;
@@ -2818,9 +2815,9 @@ public final class HomeBlockArrangementInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPattern> dotPatternList_ =
         java.util.Collections.emptyList();
       private void ensureDotPatternListIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           dotPatternList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPattern>(dotPatternList_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -2970,7 +2967,7 @@ public final class HomeBlockArrangementInfoOuterClass {
       public Builder clearDotPatternList() {
         if (dotPatternListBuilder_ == null) {
           dotPatternList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           dotPatternListBuilder_.clear();
@@ -3047,7 +3044,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           dotPatternListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPattern, emu.gingerps.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPattern.Builder, emu.gingerps.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPatternOrBuilder>(
                   dotPatternList_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           dotPatternList_ = null;
@@ -3072,7 +3069,6 @@ public final class HomeBlockArrangementInfoOuterClass {
       public Builder setIsUnlocked(boolean value) {
         
         isUnlocked_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3081,7 +3077,7 @@ public final class HomeBlockArrangementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsUnlocked() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         isUnlocked_ = false;
         onChanged();
         return this;
@@ -3090,9 +3086,9 @@ public final class HomeBlockArrangementInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData> deployNpcList_ =
         java.util.Collections.emptyList();
       private void ensureDeployNpcListIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           deployNpcList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData>(deployNpcList_);
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -3242,7 +3238,7 @@ public final class HomeBlockArrangementInfoOuterClass {
       public Builder clearDeployNpcList() {
         if (deployNpcListBuilder_ == null) {
           deployNpcList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           deployNpcListBuilder_.clear();
@@ -3319,7 +3315,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           deployNpcListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData, emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData.Builder, emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcDataOrBuilder>(
                   deployNpcList_,
-                  ((bitField0_ & 0x00000080) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           deployNpcList_ = null;
@@ -3330,9 +3326,9 @@ public final class HomeBlockArrangementInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupData> furnitureGroupList_ =
         java.util.Collections.emptyList();
       private void ensureFurnitureGroupListIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           furnitureGroupList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupData>(furnitureGroupList_);
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -3482,7 +3478,7 @@ public final class HomeBlockArrangementInfoOuterClass {
       public Builder clearFurnitureGroupList() {
         if (furnitureGroupListBuilder_ == null) {
           furnitureGroupList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           furnitureGroupListBuilder_.clear();
@@ -3559,7 +3555,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           furnitureGroupListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupData, emu.gingerps.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupData.Builder, emu.gingerps.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupDataOrBuilder>(
                   furnitureGroupList_,
-                  ((bitField0_ & 0x00000100) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           furnitureGroupList_ = null;
@@ -3570,9 +3566,9 @@ public final class HomeBlockArrangementInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomeBlockFieldDataOuterClass.HomeBlockFieldData> fieldList_ =
         java.util.Collections.emptyList();
       private void ensureFieldListIsMutable() {
-        if (!((bitField0_ & 0x00000200) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           fieldList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeBlockFieldDataOuterClass.HomeBlockFieldData>(fieldList_);
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000080;
          }
       }
 
@@ -3722,7 +3718,7 @@ public final class HomeBlockArrangementInfoOuterClass {
       public Builder clearFieldList() {
         if (fieldListBuilder_ == null) {
           fieldList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           fieldListBuilder_.clear();
@@ -3799,7 +3795,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           fieldListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomeBlockFieldDataOuterClass.HomeBlockFieldData, emu.gingerps.net.proto.HomeBlockFieldDataOuterClass.HomeBlockFieldData.Builder, emu.gingerps.net.proto.HomeBlockFieldDataOuterClass.HomeBlockFieldDataOrBuilder>(
                   fieldList_,
-                  ((bitField0_ & 0x00000200) != 0),
+                  ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
           fieldList_ = null;
@@ -3824,7 +3820,6 @@ public final class HomeBlockArrangementInfoOuterClass {
       public Builder setComfortValue(int value) {
         
         comfortValue_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -3833,7 +3828,7 @@ public final class HomeBlockArrangementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearComfortValue() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         comfortValue_ = 0;
         onChanged();
         return this;
@@ -3842,9 +3837,9 @@ public final class HomeBlockArrangementInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> persistentFurnitureList_ =
         java.util.Collections.emptyList();
       private void ensurePersistentFurnitureListIsMutable() {
-        if (!((bitField0_ & 0x00000800) != 0)) {
+        if (!((bitField0_ & 0x00000100) != 0)) {
           persistentFurnitureList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>(persistentFurnitureList_);
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00000100;
          }
       }
 
@@ -3994,7 +3989,7 @@ public final class HomeBlockArrangementInfoOuterClass {
       public Builder clearPersistentFurnitureList() {
         if (persistentFurnitureListBuilder_ == null) {
           persistentFurnitureList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
         } else {
           persistentFurnitureListBuilder_.clear();
@@ -4071,7 +4066,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           persistentFurnitureListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder>(
                   persistentFurnitureList_,
-                  ((bitField0_ & 0x00000800) != 0),
+                  ((bitField0_ & 0x00000100) != 0),
                   getParentForChildren(),
                   isClean());
           persistentFurnitureList_ = null;
@@ -4082,9 +4077,9 @@ public final class HomeBlockArrangementInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData> furnitureCustomSuiteList_ =
         java.util.Collections.emptyList();
       private void ensureFurnitureCustomSuiteListIsMutable() {
-        if (!((bitField0_ & 0x00001000) != 0)) {
+        if (!((bitField0_ & 0x00000200) != 0)) {
           furnitureCustomSuiteList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData>(furnitureCustomSuiteList_);
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00000200;
          }
       }
 
@@ -4234,7 +4229,7 @@ public final class HomeBlockArrangementInfoOuterClass {
       public Builder clearFurnitureCustomSuiteList() {
         if (furnitureCustomSuiteListBuilder_ == null) {
           furnitureCustomSuiteList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00000200);
           onChanged();
         } else {
           furnitureCustomSuiteListBuilder_.clear();
@@ -4311,7 +4306,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           furnitureCustomSuiteListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData, emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData.Builder, emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteDataOrBuilder>(
                   furnitureCustomSuiteList_,
-                  ((bitField0_ & 0x00001000) != 0),
+                  ((bitField0_ & 0x00000200) != 0),
                   getParentForChildren(),
                   isClean());
           furnitureCustomSuiteList_ = null;
@@ -4351,18 +4346,7 @@ public final class HomeBlockArrangementInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeBlockArrangementInfo(input, extensionRegistry);
       }
     };
 

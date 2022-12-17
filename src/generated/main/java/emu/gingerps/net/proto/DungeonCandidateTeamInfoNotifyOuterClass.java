@@ -94,11 +94,9 @@ public final class DungeonCandidateTeamInfoNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState getPlayerStateMapOrDefault(
+    emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState getPlayerStateMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState         defaultValue);
+        emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState defaultValue);
     /**
      * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
      */
@@ -118,12 +116,14 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
     /**
      * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
      */
+
     int getPlayerStateMapValueOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
      */
+
     int getPlayerStateMapValueOrThrow(
         int key);
   }
@@ -166,6 +166,103 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DungeonCandidateTeamInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                avatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              avatarList_.add(
+                  input.readMessage(emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar.parser(), extensionRegistry));
+              break;
+            }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                readyPlayerUid_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              readyPlayerUid_.addInt(input.readUInt32());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                readyPlayerUid_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                readyPlayerUid_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                playerStateMap_ = com.google.protobuf.MapField.newMapField(
+                    PlayerStateMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              playerStateMap__ = input.readMessage(
+                  PlayerStateMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              playerStateMap_.getMutableMap().put(
+                  playerStateMap__.getKey(), playerStateMap__.getValue());
+              break;
+            }
+            case 96: {
+
+              matchType_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          avatarList_ = java.util.Collections.unmodifiableList(avatarList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          readyPlayerUid_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonCandidateTeamInfoNotifyOuterClass.internal_static_DungeonCandidateTeamInfoNotify_descriptor;
@@ -192,7 +289,6 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
     }
 
     public static final int READY_PLAYER_UID_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList readyPlayerUid_;
     /**
      * <code>repeated uint32 ready_player_uid = 2;</code>
@@ -221,7 +317,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
     private int readyPlayerUidMemoizedSerializedSize = -1;
 
     public static final int MATCH_TYPE_FIELD_NUMBER = 12;
-    private int matchType_ = 0;
+    private int matchType_;
     /**
      * <code>uint32 match_type = 12;</code>
      * @return The matchType.
@@ -232,7 +328,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 8;
-    private int dungeonId_ = 0;
+    private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 8;</code>
      * @return The dungeonId.
@@ -243,7 +339,6 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
     }
 
     public static final int AVATAR_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar> avatarList_;
     /**
      * <code>repeated .DungeonCandidateTeamAvatar avatar_list = 1;</code>
@@ -295,7 +390,6 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
                   com.google.protobuf.WireFormat.FieldType.ENUM,
                   emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState.DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_IDLE.getNumber());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> playerStateMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -319,12 +413,14 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
           java.lang.Integer, emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState, java.lang.Integer>(
               map, playerStateMapValueConverter);
     }
+
     public int getPlayerStateMapCount() {
       return internalGetPlayerStateMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
      */
+
     @java.lang.Override
     public boolean containsPlayerStateMap(
         int key) {
@@ -344,6 +440,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
      * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState>
     getPlayerStateMapMap() {
       return internalGetAdaptedPlayerStateMapMap(
@@ -352,11 +449,10 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
      * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState getPlayerStateMapOrDefault(
+
+    public emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState getPlayerStateMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState defaultValue) {
+        emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState defaultValue) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
           internalGetPlayerStateMap().getMap();
@@ -368,6 +464,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
      * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState getPlayerStateMapOrThrow(
         int key) {
       
@@ -391,6 +488,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
      * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer>
     getPlayerStateMapValueMap() {
       return internalGetPlayerStateMap().getMap();
@@ -399,6 +497,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
      * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
      */
     @java.lang.Override
+
     public int getPlayerStateMapValueOrDefault(
         int key,
         int defaultValue) {
@@ -411,6 +510,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
      * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
      */
     @java.lang.Override
+
     public int getPlayerStateMapValueOrThrow(
         int key) {
       
@@ -459,7 +559,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
       if (matchType_ != 0) {
         output.writeUInt32(12, matchType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -504,7 +604,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, matchType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -529,7 +629,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
           .equals(other.getAvatarListList())) return false;
       if (!internalGetPlayerStateMap().equals(
           other.internalGetPlayerStateMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -556,7 +656,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
         hash = (37 * hash) + PLAYER_STATE_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetPlayerStateMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -705,28 +805,35 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
 
       // Construct using emu.gingerps.net.proto.DungeonCandidateTeamInfoNotifyOuterClass.DungeonCandidateTeamInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAvatarListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         readyPlayerUid_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         matchType_ = 0;
+
         dungeonId_ = 0;
+
         if (avatarListBuilder_ == null) {
           avatarList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          avatarList_ = null;
           avatarListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutablePlayerStateMap().clear();
         return this;
       }
@@ -754,41 +861,27 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonCandidateTeamInfoNotifyOuterClass.DungeonCandidateTeamInfoNotify buildPartial() {
         emu.gingerps.net.proto.DungeonCandidateTeamInfoNotifyOuterClass.DungeonCandidateTeamInfoNotify result = new emu.gingerps.net.proto.DungeonCandidateTeamInfoNotifyOuterClass.DungeonCandidateTeamInfoNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.DungeonCandidateTeamInfoNotifyOuterClass.DungeonCandidateTeamInfoNotify result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           readyPlayerUid_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.readyPlayerUid_ = readyPlayerUid_;
+        result.matchType_ = matchType_;
+        result.dungeonId_ = dungeonId_;
         if (avatarListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             avatarList_ = java.util.Collections.unmodifiableList(avatarList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.avatarList_ = avatarList_;
         } else {
           result.avatarList_ = avatarListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DungeonCandidateTeamInfoNotifyOuterClass.DungeonCandidateTeamInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.matchType_ = matchType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.dungeonId_ = dungeonId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.playerStateMap_ = internalGetPlayerStateMap();
-          result.playerStateMap_.makeImmutable();
-        }
+        result.playerStateMap_ = internalGetPlayerStateMap();
+        result.playerStateMap_.makeImmutable();
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -855,7 +948,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
           if (!other.avatarList_.isEmpty()) {
             if (avatarList_.isEmpty()) {
               avatarList_ = other.avatarList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureAvatarListIsMutable();
               avatarList_.addAll(other.avatarList_);
@@ -868,7 +961,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
               avatarListBuilder_.dispose();
               avatarListBuilder_ = null;
               avatarList_ = other.avatarList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
               avatarListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAvatarListFieldBuilder() : null;
@@ -879,8 +972,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
         }
         internalGetMutablePlayerStateMap().mergeFrom(
             other.internalGetPlayerStateMap());
-        bitField0_ |= 0x00000010;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -895,78 +987,17 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DungeonCandidateTeamInfoNotifyOuterClass.DungeonCandidateTeamInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar.parser(),
-                        extensionRegistry);
-                if (avatarListBuilder_ == null) {
-                  ensureAvatarListIsMutable();
-                  avatarList_.add(m);
-                } else {
-                  avatarListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 16: {
-                int v = input.readUInt32();
-                ensureReadyPlayerUidIsMutable();
-                readyPlayerUid_.addInt(v);
-                break;
-              } // case 16
-              case 18: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureReadyPlayerUidIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  readyPlayerUid_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 18
-              case 64: {
-                dungeonId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 82: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                playerStateMap__ = input.readMessage(
-                    PlayerStateMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutablePlayerStateMap().getMutableMap().put(
-                    playerStateMap__.getKey(), playerStateMap__.getValue());
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 82
-              case 96: {
-                matchType_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DungeonCandidateTeamInfoNotifyOuterClass.DungeonCandidateTeamInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -976,7 +1007,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
         if (!((bitField0_ & 0x00000001) != 0)) {
           readyPlayerUid_ = mutableCopy(readyPlayerUid_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 ready_player_uid = 2;</code>
@@ -1010,7 +1041,6 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
        */
       public Builder setReadyPlayerUid(
           int index, int value) {
-        
         ensureReadyPlayerUidIsMutable();
         readyPlayerUid_.setInt(index, value);
         onChanged();
@@ -1022,7 +1052,6 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
        * @return This builder for chaining.
        */
       public Builder addReadyPlayerUid(int value) {
-        
         ensureReadyPlayerUidIsMutable();
         readyPlayerUid_.addInt(value);
         onChanged();
@@ -1069,7 +1098,6 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
       public Builder setMatchType(int value) {
         
         matchType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1078,7 +1106,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
        * @return This builder for chaining.
        */
       public Builder clearMatchType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         matchType_ = 0;
         onChanged();
         return this;
@@ -1101,7 +1129,6 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1110,7 +1137,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -1119,9 +1146,9 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
       private java.util.List<emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar> avatarList_ =
         java.util.Collections.emptyList();
       private void ensureAvatarListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           avatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar>(avatarList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1271,7 +1298,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
       public Builder clearAvatarList() {
         if (avatarListBuilder_ == null) {
           avatarList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           avatarListBuilder_.clear();
@@ -1348,7 +1375,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
           avatarListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar, emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar.Builder, emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatarOrBuilder>(
                   avatarList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           avatarList_ = null;
@@ -1359,7 +1386,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> playerStateMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetPlayerStateMap() {
+      internalGetPlayerStateMap() {
         if (playerStateMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               PlayerStateMapDefaultEntryHolder.defaultEntry);
@@ -1367,7 +1394,8 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
         return playerStateMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutablePlayerStateMap() {
+      internalGetMutablePlayerStateMap() {
+        onChanged();;
         if (playerStateMap_ == null) {
           playerStateMap_ = com.google.protobuf.MapField.newMapField(
               PlayerStateMapDefaultEntryHolder.defaultEntry);
@@ -1375,16 +1403,16 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
         if (!playerStateMap_.isMutable()) {
           playerStateMap_ = playerStateMap_.copy();
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
         return playerStateMap_;
       }
+
       public int getPlayerStateMapCount() {
         return internalGetPlayerStateMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
        */
+
       @java.lang.Override
       public boolean containsPlayerStateMap(
           int key) {
@@ -1404,6 +1432,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
        * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState>
       getPlayerStateMapMap() {
         return internalGetAdaptedPlayerStateMapMap(
@@ -1412,11 +1441,10 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
        * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState getPlayerStateMapOrDefault(
+
+      public emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState getPlayerStateMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState defaultValue) {
+          emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState defaultValue) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
             internalGetPlayerStateMap().getMap();
@@ -1428,6 +1456,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
        * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState getPlayerStateMapOrThrow(
           int key) {
         
@@ -1451,6 +1480,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
        * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer>
       getPlayerStateMapValueMap() {
         return internalGetPlayerStateMap().getMap();
@@ -1459,6 +1489,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
        * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
        */
       @java.lang.Override
+
       public int getPlayerStateMapValueOrDefault(
           int key,
           int defaultValue) {
@@ -1471,6 +1502,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
        * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
        */
       @java.lang.Override
+
       public int getPlayerStateMapValueOrThrow(
           int key) {
         
@@ -1481,8 +1513,8 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
         }
         return map.get(key);
       }
+
       public Builder clearPlayerStateMap() {
-        bitField0_ = (bitField0_ & ~0x00000010);
         internalGetMutablePlayerStateMap().getMutableMap()
             .clear();
         return this;
@@ -1490,6 +1522,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
       /**
        * <code>map&lt;uint32, .DungeonCandidateTeamPlayerState&gt; player_state_map = 10;</code>
        */
+
       public Builder removePlayerStateMap(
           int key) {
         
@@ -1502,8 +1535,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState>
-          getMutablePlayerStateMap() {
-        bitField0_ |= 0x00000010;
+      getMutablePlayerStateMap() {
         return internalGetAdaptedPlayerStateMapMap(
              internalGetMutablePlayerStateMap().getMutableMap());
       }
@@ -1514,10 +1546,9 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
           int key,
           emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidateTeamPlayerState value) {
         
-        
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutablePlayerStateMap().getMutableMap()
             .put(key, playerStateMapValueConverter.doBackward(value));
-        bitField0_ |= 0x00000010;
         return this;
       }
       /**
@@ -1528,7 +1559,6 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
         internalGetAdaptedPlayerStateMapMap(
             internalGetMutablePlayerStateMap().getMutableMap())
                 .putAll(values);
-        bitField0_ |= 0x00000010;
         return this;
       }
       /**
@@ -1537,7 +1567,6 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
       getMutablePlayerStateMapValue() {
-        bitField0_ |= 0x00000010;
         return internalGetMutablePlayerStateMap().getMutableMap();
       }
       /**
@@ -1547,10 +1576,8 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
           int key,
           int value) {
         
-        
         internalGetMutablePlayerStateMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000010;
         return this;
       }
       /**
@@ -1560,7 +1587,6 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutablePlayerStateMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000010;
         return this;
       }
       @java.lang.Override
@@ -1596,18 +1622,7 @@ emu.gingerps.net.proto.DungeonCandidateTeamPlayerStateOuterClass.DungeonCandidat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DungeonCandidateTeamInfoNotify(input, extensionRegistry);
       }
     };
 

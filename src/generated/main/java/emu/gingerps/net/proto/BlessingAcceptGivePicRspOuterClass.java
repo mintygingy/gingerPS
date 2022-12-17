@@ -79,6 +79,63 @@ public final class BlessingAcceptGivePicRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BlessingAcceptGivePicRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              picId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              index_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BlessingAcceptGivePicRspOuterClass.internal_static_BlessingAcceptGivePicRsp_descriptor;
@@ -93,7 +150,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
     }
 
     public static final int INDEX_FIELD_NUMBER = 15;
-    private int index_ = 0;
+    private int index_;
     /**
      * <code>uint32 index = 15;</code>
      * @return The index.
@@ -104,7 +161,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
     }
 
     public static final int PIC_ID_FIELD_NUMBER = 12;
-    private int picId_ = 0;
+    private int picId_;
     /**
      * <code>uint32 pic_id = 12;</code>
      * @return The picId.
@@ -115,7 +172,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 4;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 4;</code>
      * @return The uid.
@@ -126,7 +183,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -162,7 +219,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
       if (index_ != 0) {
         output.writeUInt32(15, index_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +244,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, index_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +267,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
           != other.getUid()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -229,7 +286,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
       hash = (53 * hash) + getUid();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -356,22 +413,30 @@ public final class BlessingAcceptGivePicRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.BlessingAcceptGivePicRspOuterClass.BlessingAcceptGivePicRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         index_ = 0;
+
         picId_ = 0;
+
         uid_ = 0;
+
         retcode_ = 0;
+
         return this;
       }
 
@@ -398,25 +463,12 @@ public final class BlessingAcceptGivePicRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BlessingAcceptGivePicRspOuterClass.BlessingAcceptGivePicRsp buildPartial() {
         emu.gingerps.net.proto.BlessingAcceptGivePicRspOuterClass.BlessingAcceptGivePicRsp result = new emu.gingerps.net.proto.BlessingAcceptGivePicRspOuterClass.BlessingAcceptGivePicRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.index_ = index_;
+        result.picId_ = picId_;
+        result.uid_ = uid_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BlessingAcceptGivePicRspOuterClass.BlessingAcceptGivePicRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.index_ = index_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.picId_ = picId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.uid_ = uid_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.retcode_ = retcode_;
-        }
       }
 
       @java.lang.Override
@@ -475,7 +527,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,53 +542,19 @@ public final class BlessingAcceptGivePicRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BlessingAcceptGivePicRspOuterClass.BlessingAcceptGivePicRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 64: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 64
-              case 96: {
-                picId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              case 120: {
-                index_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BlessingAcceptGivePicRspOuterClass.BlessingAcceptGivePicRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int index_ ;
       /**
@@ -555,7 +573,6 @@ public final class BlessingAcceptGivePicRspOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -564,7 +581,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         index_ = 0;
         onChanged();
         return this;
@@ -587,7 +604,6 @@ public final class BlessingAcceptGivePicRspOuterClass {
       public Builder setPicId(int value) {
         
         picId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -596,7 +612,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPicId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         picId_ = 0;
         onChanged();
         return this;
@@ -619,7 +635,6 @@ public final class BlessingAcceptGivePicRspOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -628,7 +643,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -651,7 +666,6 @@ public final class BlessingAcceptGivePicRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -660,7 +674,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -698,18 +712,7 @@ public final class BlessingAcceptGivePicRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BlessingAcceptGivePicRsp(input, extensionRegistry);
       }
     };
 

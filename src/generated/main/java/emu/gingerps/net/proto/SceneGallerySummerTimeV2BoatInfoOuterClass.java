@@ -69,6 +69,63 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneGallerySummerTimeV2BoatInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              param2_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              param1_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              usedTime_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              param3_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.internal_static_SceneGallerySummerTimeV2BoatInfo_descriptor;
@@ -83,7 +140,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
     }
 
     public static final int USED_TIME_FIELD_NUMBER = 6;
-    private int usedTime_ = 0;
+    private int usedTime_;
     /**
      * <code>uint32 used_time = 6;</code>
      * @return The usedTime.
@@ -94,7 +151,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
     }
 
     public static final int PARAM1_FIELD_NUMBER = 5;
-    private int param1_ = 0;
+    private int param1_;
     /**
      * <code>uint32 param1 = 5;</code>
      * @return The param1.
@@ -105,7 +162,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
     }
 
     public static final int PARAM3_FIELD_NUMBER = 12;
-    private int param3_ = 0;
+    private int param3_;
     /**
      * <code>uint32 param3 = 12;</code>
      * @return The param3.
@@ -116,7 +173,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
     }
 
     public static final int PARAM2_FIELD_NUMBER = 3;
-    private int param2_ = 0;
+    private int param2_;
     /**
      * <code>uint32 param2 = 3;</code>
      * @return The param2.
@@ -152,7 +209,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       if (param3_ != 0) {
         output.writeUInt32(12, param3_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, param3_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -200,7 +257,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
           != other.getParam3()) return false;
       if (getParam2()
           != other.getParam2()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -219,7 +276,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       hash = (53 * hash) + getParam3();
       hash = (37 * hash) + PARAM2_FIELD_NUMBER;
       hash = (53 * hash) + getParam2();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -336,22 +393,30 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         usedTime_ = 0;
+
         param1_ = 0;
+
         param3_ = 0;
+
         param2_ = 0;
+
         return this;
       }
 
@@ -378,25 +443,12 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo buildPartial() {
         emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo result = new emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.usedTime_ = usedTime_;
+        result.param1_ = param1_;
+        result.param3_ = param3_;
+        result.param2_ = param2_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.usedTime_ = usedTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.param1_ = param1_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.param3_ = param3_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.param2_ = param2_;
-        }
       }
 
       @java.lang.Override
@@ -455,7 +507,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
         if (other.getParam2() != 0) {
           setParam2(other.getParam2());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -470,53 +522,19 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                param2_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 24
-              case 40: {
-                param1_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 48: {
-                usedTime_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 96: {
-                param3_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int usedTime_ ;
       /**
@@ -535,7 +553,6 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       public Builder setUsedTime(int value) {
         
         usedTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +561,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUsedTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         usedTime_ = 0;
         onChanged();
         return this;
@@ -567,7 +584,6 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       public Builder setParam1(int value) {
         
         param1_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -576,7 +592,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam1() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         param1_ = 0;
         onChanged();
         return this;
@@ -599,7 +615,6 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       public Builder setParam3(int value) {
         
         param3_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -608,7 +623,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam3() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         param3_ = 0;
         onChanged();
         return this;
@@ -631,7 +646,6 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       public Builder setParam2(int value) {
         
         param2_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -640,7 +654,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam2() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         param2_ = 0;
         onChanged();
         return this;
@@ -678,18 +692,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneGallerySummerTimeV2BoatInfo(input, extensionRegistry);
       }
     };
 

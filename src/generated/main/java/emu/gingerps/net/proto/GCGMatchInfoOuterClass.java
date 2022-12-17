@@ -70,6 +70,56 @@ public final class GCGMatchInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGMatchInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                playerList_ = new java.util.ArrayList<emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              playerList_.add(
+                  input.readMessage(emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          playerList_ = java.util.Collections.unmodifiableList(playerList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMatchInfoOuterClass.internal_static_GCGMatchInfo_descriptor;
@@ -84,7 +134,6 @@ public final class GCGMatchInfoOuterClass {
     }
 
     public static final int PLAYER_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo> playerList_;
     /**
      * <code>repeated .MatchPlayerInfo player_list = 15;</code>
@@ -141,7 +190,7 @@ public final class GCGMatchInfoOuterClass {
       for (int i = 0; i < playerList_.size(); i++) {
         output.writeMessage(15, playerList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -154,7 +203,7 @@ public final class GCGMatchInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, playerList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -171,7 +220,7 @@ public final class GCGMatchInfoOuterClass {
 
       if (!getPlayerListList()
           .equals(other.getPlayerListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -186,7 +235,7 @@ public final class GCGMatchInfoOuterClass {
         hash = (37 * hash) + PLAYER_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -303,25 +352,29 @@ public final class GCGMatchInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPlayerListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (playerListBuilder_ == null) {
           playerList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          playerList_ = null;
           playerListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -348,13 +401,7 @@ public final class GCGMatchInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo buildPartial() {
         emu.gingerps.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo result = new emu.gingerps.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo result) {
+        int from_bitField0_ = bitField0_;
         if (playerListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             playerList_ = java.util.Collections.unmodifiableList(playerList_);
@@ -364,10 +411,8 @@ public final class GCGMatchInfoOuterClass {
         } else {
           result.playerList_ = playerListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -440,7 +485,7 @@ public final class GCGMatchInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,43 +500,17 @@ public final class GCGMatchInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 122: {
-                emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo.parser(),
-                        extensionRegistry);
-                if (playerListBuilder_ == null) {
-                  ensurePlayerListIsMutable();
-                  playerList_.add(m);
-                } else {
-                  playerListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -768,18 +787,7 @@ public final class GCGMatchInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGMatchInfo(input, extensionRegistry);
       }
     };
 

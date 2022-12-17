@@ -79,6 +79,63 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EffigyChallengeV2EnterDungeonRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              challengeModeDifficulty_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              challengeModeSkillNo_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EffigyChallengeV2EnterDungeonRspOuterClass.internal_static_EffigyChallengeV2EnterDungeonRsp_descriptor;
@@ -93,7 +150,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
     }
 
     public static final int CHALLENGE_MODE_DIFFICULTY_FIELD_NUMBER = 3;
-    private int challengeModeDifficulty_ = 0;
+    private int challengeModeDifficulty_;
     /**
      * <code>uint32 challenge_mode_difficulty = 3;</code>
      * @return The challengeModeDifficulty.
@@ -104,7 +161,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
     }
 
     public static final int CHALLENGE_MODE_SKILL_NO_FIELD_NUMBER = 7;
-    private int challengeModeSkillNo_ = 0;
+    private int challengeModeSkillNo_;
     /**
      * <code>uint32 challenge_mode_skill_no = 7;</code>
      * @return The challengeModeSkillNo.
@@ -115,7 +172,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 10;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 10;</code>
      * @return The levelId.
@@ -126,7 +183,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 15;</code>
      * @return The retcode.
@@ -162,7 +219,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(15, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +244,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +267,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
           != other.getLevelId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -229,7 +286,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
       hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -356,22 +413,30 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.EffigyChallengeV2EnterDungeonRspOuterClass.EffigyChallengeV2EnterDungeonRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         challengeModeDifficulty_ = 0;
+
         challengeModeSkillNo_ = 0;
+
         levelId_ = 0;
+
         retcode_ = 0;
+
         return this;
       }
 
@@ -398,25 +463,12 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EffigyChallengeV2EnterDungeonRspOuterClass.EffigyChallengeV2EnterDungeonRsp buildPartial() {
         emu.gingerps.net.proto.EffigyChallengeV2EnterDungeonRspOuterClass.EffigyChallengeV2EnterDungeonRsp result = new emu.gingerps.net.proto.EffigyChallengeV2EnterDungeonRspOuterClass.EffigyChallengeV2EnterDungeonRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.challengeModeDifficulty_ = challengeModeDifficulty_;
+        result.challengeModeSkillNo_ = challengeModeSkillNo_;
+        result.levelId_ = levelId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EffigyChallengeV2EnterDungeonRspOuterClass.EffigyChallengeV2EnterDungeonRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.challengeModeDifficulty_ = challengeModeDifficulty_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.challengeModeSkillNo_ = challengeModeSkillNo_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.levelId_ = levelId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.retcode_ = retcode_;
-        }
       }
 
       @java.lang.Override
@@ -475,7 +527,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,53 +542,19 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EffigyChallengeV2EnterDungeonRspOuterClass.EffigyChallengeV2EnterDungeonRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                challengeModeDifficulty_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 56: {
-                challengeModeSkillNo_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 80: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              case 120: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EffigyChallengeV2EnterDungeonRspOuterClass.EffigyChallengeV2EnterDungeonRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int challengeModeDifficulty_ ;
       /**
@@ -555,7 +573,6 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
       public Builder setChallengeModeDifficulty(int value) {
         
         challengeModeDifficulty_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -564,7 +581,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeModeDifficulty() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         challengeModeDifficulty_ = 0;
         onChanged();
         return this;
@@ -587,7 +604,6 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
       public Builder setChallengeModeSkillNo(int value) {
         
         challengeModeSkillNo_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -596,7 +612,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeModeSkillNo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         challengeModeSkillNo_ = 0;
         onChanged();
         return this;
@@ -619,7 +635,6 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -628,7 +643,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -651,7 +666,6 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -660,7 +674,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -698,18 +712,7 @@ public final class EffigyChallengeV2EnterDungeonRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EffigyChallengeV2EnterDungeonRsp(input, extensionRegistry);
       }
     };
 

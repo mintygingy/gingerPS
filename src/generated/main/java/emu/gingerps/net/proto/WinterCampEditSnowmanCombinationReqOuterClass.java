@@ -77,6 +77,61 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WinterCampEditSnowmanCombinationReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 42: {
+              emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder subBuilder = null;
+              if (combinationInfo_ != null) {
+                subBuilder = combinationInfo_.toBuilder();
+              }
+              combinationInfo_ = input.readMessage(emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(combinationInfo_);
+                combinationInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 48: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WinterCampEditSnowmanCombinationReqOuterClass.internal_static_WinterCampEditSnowmanCombinationReq_descriptor;
@@ -91,7 +146,7 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 6;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 6;</code>
      * @return The entityId.
@@ -124,7 +179,7 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder() {
-      return combinationInfo_ == null ? emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.getDefaultInstance() : combinationInfo_;
+      return getCombinationInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -147,7 +202,7 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(6, entityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -164,7 +219,7 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, entityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -186,7 +241,7 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
         if (!getCombinationInfo()
             .equals(other.getCombinationInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -203,7 +258,7 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
         hash = (37 * hash) + COMBINATION_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getCombinationInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,22 +386,28 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.WinterCampEditSnowmanCombinationReqOuterClass.WinterCampEditSnowmanCombinationReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         entityId_ = 0;
-        combinationInfo_ = null;
-        if (combinationInfoBuilder_ != null) {
-          combinationInfoBuilder_.dispose();
+
+        if (combinationInfoBuilder_ == null) {
+          combinationInfo_ = null;
+        } else {
+          combinationInfo_ = null;
           combinationInfoBuilder_ = null;
         }
         return this;
@@ -375,21 +436,14 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WinterCampEditSnowmanCombinationReqOuterClass.WinterCampEditSnowmanCombinationReq buildPartial() {
         emu.gingerps.net.proto.WinterCampEditSnowmanCombinationReqOuterClass.WinterCampEditSnowmanCombinationReq result = new emu.gingerps.net.proto.WinterCampEditSnowmanCombinationReqOuterClass.WinterCampEditSnowmanCombinationReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.entityId_ = entityId_;
+        if (combinationInfoBuilder_ == null) {
+          result.combinationInfo_ = combinationInfo_;
+        } else {
+          result.combinationInfo_ = combinationInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WinterCampEditSnowmanCombinationReqOuterClass.WinterCampEditSnowmanCombinationReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.combinationInfo_ = combinationInfoBuilder_ == null
-              ? combinationInfo_
-              : combinationInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -442,7 +496,7 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
         if (other.hasCombinationInfo()) {
           mergeCombinationInfo(other.getCombinationInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -457,45 +511,19 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WinterCampEditSnowmanCombinationReqOuterClass.WinterCampEditSnowmanCombinationReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 42: {
-                input.readMessage(
-                    getCombinationInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 42
-              case 48: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WinterCampEditSnowmanCombinationReqOuterClass.WinterCampEditSnowmanCombinationReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -514,7 +542,6 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -523,7 +550,7 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -537,7 +564,7 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
        * @return Whether the combinationInfo field is set.
        */
       public boolean hasCombinationInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return combinationInfoBuilder_ != null || combinationInfo_ != null;
       }
       /**
        * <code>.CustomGadgetTreeInfo combination_info = 5;</code>
@@ -559,11 +586,11 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
             throw new NullPointerException();
           }
           combinationInfo_ = value;
+          onChanged();
         } else {
           combinationInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -573,11 +600,11 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
           emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder builderForValue) {
         if (combinationInfoBuilder_ == null) {
           combinationInfo_ = builderForValue.build();
+          onChanged();
         } else {
           combinationInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -585,38 +612,38 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
        */
       public Builder mergeCombinationInfo(emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo value) {
         if (combinationInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            combinationInfo_ != null &&
-            combinationInfo_ != emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.getDefaultInstance()) {
-            getCombinationInfoBuilder().mergeFrom(value);
+          if (combinationInfo_ != null) {
+            combinationInfo_ =
+              emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.newBuilder(combinationInfo_).mergeFrom(value).buildPartial();
           } else {
             combinationInfo_ = value;
           }
+          onChanged();
         } else {
           combinationInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CustomGadgetTreeInfo combination_info = 5;</code>
        */
       public Builder clearCombinationInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        combinationInfo_ = null;
-        if (combinationInfoBuilder_ != null) {
-          combinationInfoBuilder_.dispose();
+        if (combinationInfoBuilder_ == null) {
+          combinationInfo_ = null;
+          onChanged();
+        } else {
+          combinationInfo_ = null;
           combinationInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CustomGadgetTreeInfo combination_info = 5;</code>
        */
       public emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder getCombinationInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getCombinationInfoFieldBuilder().getBuilder();
       }
@@ -680,18 +707,7 @@ public final class WinterCampEditSnowmanCombinationReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WinterCampEditSnowmanCombinationReq(input, extensionRegistry);
       }
     };
 

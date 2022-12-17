@@ -106,6 +106,92 @@ public final class FishEscapeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FishEscapeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                fishIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              fishIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 74: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                fishIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                fishIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 90: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (pos_ != null) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          fishIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FishEscapeNotifyOuterClass.internal_static_FishEscapeNotify_descriptor;
@@ -120,7 +206,7 @@ public final class FishEscapeNotifyOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 2;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 2;</code>
      * @return The uid.
@@ -153,11 +239,10 @@ public final class FishEscapeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+      return getPos();
     }
 
     public static final int FISH_ID_LIST_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList fishIdList_;
     /**
      * <code>repeated uint32 fish_id_list = 9;</code>
@@ -186,7 +271,7 @@ public final class FishEscapeNotifyOuterClass {
     private int fishIdListMemoizedSerializedSize = -1;
 
     public static final int REASON_FIELD_NUMBER = 12;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.FishEscapeReason reason = 12;</code>
      * @return The enum numeric value on the wire for reason.
@@ -199,7 +284,8 @@ public final class FishEscapeNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason getReason() {
-      emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason result = emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason result = emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason.UNRECOGNIZED : result;
     }
 
@@ -234,7 +320,7 @@ public final class FishEscapeNotifyOuterClass {
       if (reason_ != emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason.FISH_ESCAPE_REASON_NONE.getNumber()) {
         output.writeEnum(12, reason_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -269,7 +355,7 @@ public final class FishEscapeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, reason_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -294,7 +380,7 @@ public final class FishEscapeNotifyOuterClass {
       if (!getFishIdListList()
           .equals(other.getFishIdListList())) return false;
       if (reason_ != other.reason_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -317,7 +403,7 @@ public final class FishEscapeNotifyOuterClass {
       }
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -444,26 +530,34 @@ public final class FishEscapeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.FishEscapeNotifyOuterClass.FishEscapeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         uid_ = 0;
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
         fishIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         reason_ = 0;
+
         return this;
       }
 
@@ -490,33 +584,21 @@ public final class FishEscapeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FishEscapeNotifyOuterClass.FishEscapeNotify buildPartial() {
         emu.gingerps.net.proto.FishEscapeNotifyOuterClass.FishEscapeNotify result = new emu.gingerps.net.proto.FishEscapeNotifyOuterClass.FishEscapeNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.FishEscapeNotifyOuterClass.FishEscapeNotify result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.uid_ = uid_;
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
           fishIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fishIdList_ = fishIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FishEscapeNotifyOuterClass.FishEscapeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.uid_ = uid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.reason_ = reason_;
-        }
+        result.reason_ = reason_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -572,7 +654,7 @@ public final class FishEscapeNotifyOuterClass {
         if (!other.fishIdList_.isEmpty()) {
           if (fishIdList_.isEmpty()) {
             fishIdList_ = other.fishIdList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFishIdListIsMutable();
             fishIdList_.addAll(other.fishIdList_);
@@ -582,7 +664,7 @@ public final class FishEscapeNotifyOuterClass {
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -597,63 +679,17 @@ public final class FishEscapeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FishEscapeNotifyOuterClass.FishEscapeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 72: {
-                int v = input.readUInt32();
-                ensureFishIdListIsMutable();
-                fishIdList_.addInt(v);
-                break;
-              } // case 72
-              case 74: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureFishIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  fishIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 74
-              case 90: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 90
-              case 96: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FishEscapeNotifyOuterClass.FishEscapeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -675,7 +711,6 @@ public final class FishEscapeNotifyOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -684,7 +719,7 @@ public final class FishEscapeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -698,7 +733,7 @@ public final class FishEscapeNotifyOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return posBuilder_ != null || pos_ != null;
       }
       /**
        * <code>.Vector pos = 11;</code>
@@ -720,11 +755,11 @@ public final class FishEscapeNotifyOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -734,11 +769,11 @@ public final class FishEscapeNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -746,38 +781,38 @@ public final class FishEscapeNotifyOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            pos_ != null &&
-            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (pos_ != null) {
+            pos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 11;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 11;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -811,10 +846,10 @@ public final class FishEscapeNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList fishIdList_ = emptyIntList();
       private void ensureFishIdListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           fishIdList_ = mutableCopy(fishIdList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 fish_id_list = 9;</code>
@@ -822,7 +857,7 @@ public final class FishEscapeNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getFishIdListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(fishIdList_) : fishIdList_;
       }
       /**
@@ -848,7 +883,6 @@ public final class FishEscapeNotifyOuterClass {
        */
       public Builder setFishIdList(
           int index, int value) {
-        
         ensureFishIdListIsMutable();
         fishIdList_.setInt(index, value);
         onChanged();
@@ -860,7 +894,6 @@ public final class FishEscapeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFishIdList(int value) {
-        
         ensureFishIdListIsMutable();
         fishIdList_.addInt(value);
         onChanged();
@@ -885,7 +918,7 @@ public final class FishEscapeNotifyOuterClass {
        */
       public Builder clearFishIdList() {
         fishIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -904,8 +937,8 @@ public final class FishEscapeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -915,7 +948,8 @@ public final class FishEscapeNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason getReason() {
-        emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason result = emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason result = emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.FishEscapeReasonOuterClass.FishEscapeReason.UNRECOGNIZED : result;
       }
       /**
@@ -927,7 +961,7 @@ public final class FishEscapeNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -937,7 +971,7 @@ public final class FishEscapeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -975,18 +1009,7 @@ public final class FishEscapeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FishEscapeNotify(input, extensionRegistry);
       }
     };
 

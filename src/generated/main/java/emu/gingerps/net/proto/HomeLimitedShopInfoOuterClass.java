@@ -99,6 +99,89 @@ public final class HomeLimitedShopInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeLimitedShopInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (djinnPos_ != null) {
+                subBuilder = djinnPos_.toBuilder();
+              }
+              djinnPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(djinnPos_);
+                djinnPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 45: {
+
+              nextOpenTime_ = input.readFixed32();
+              break;
+            }
+            case 69: {
+
+              nextGuestOpenTime_ = input.readFixed32();
+              break;
+            }
+            case 72: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (djinnRot_ != null) {
+                subBuilder = djinnRot_.toBuilder();
+              }
+              djinnRot_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(djinnRot_);
+                djinnRot_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 125: {
+
+              nextCloseTime_ = input.readFixed32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.internal_static_HomeLimitedShopInfo_descriptor;
@@ -113,7 +196,7 @@ public final class HomeLimitedShopInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 9;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 9;</code>
      * @return The uid.
@@ -124,7 +207,7 @@ public final class HomeLimitedShopInfoOuterClass {
     }
 
     public static final int NEXT_GUEST_OPEN_TIME_FIELD_NUMBER = 8;
-    private int nextGuestOpenTime_ = 0;
+    private int nextGuestOpenTime_;
     /**
      * <code>fixed32 next_guest_open_time = 8;</code>
      * @return The nextGuestOpenTime.
@@ -157,11 +240,11 @@ public final class HomeLimitedShopInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getDjinnRotOrBuilder() {
-      return djinnRot_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : djinnRot_;
+      return getDjinnRot();
     }
 
     public static final int NEXT_OPEN_TIME_FIELD_NUMBER = 5;
-    private int nextOpenTime_ = 0;
+    private int nextOpenTime_;
     /**
      * <code>fixed32 next_open_time = 5;</code>
      * @return The nextOpenTime.
@@ -194,11 +277,11 @@ public final class HomeLimitedShopInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder() {
-      return djinnPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : djinnPos_;
+      return getDjinnPos();
     }
 
     public static final int NEXT_CLOSE_TIME_FIELD_NUMBER = 15;
-    private int nextCloseTime_ = 0;
+    private int nextCloseTime_;
     /**
      * <code>fixed32 next_close_time = 15;</code>
      * @return The nextCloseTime.
@@ -240,7 +323,7 @@ public final class HomeLimitedShopInfoOuterClass {
       if (nextCloseTime_ != 0) {
         output.writeFixed32(15, nextCloseTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -273,7 +356,7 @@ public final class HomeLimitedShopInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeFixed32Size(15, nextCloseTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -306,7 +389,7 @@ public final class HomeLimitedShopInfoOuterClass {
       }
       if (getNextCloseTime()
           != other.getNextCloseTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -333,7 +416,7 @@ public final class HomeLimitedShopInfoOuterClass {
       }
       hash = (37 * hash) + NEXT_CLOSE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getNextCloseTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -450,32 +533,42 @@ public final class HomeLimitedShopInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         uid_ = 0;
+
         nextGuestOpenTime_ = 0;
-        djinnRot_ = null;
-        if (djinnRotBuilder_ != null) {
-          djinnRotBuilder_.dispose();
+
+        if (djinnRotBuilder_ == null) {
+          djinnRot_ = null;
+        } else {
+          djinnRot_ = null;
           djinnRotBuilder_ = null;
         }
         nextOpenTime_ = 0;
-        djinnPos_ = null;
-        if (djinnPosBuilder_ != null) {
-          djinnPosBuilder_.dispose();
+
+        if (djinnPosBuilder_ == null) {
+          djinnPos_ = null;
+        } else {
+          djinnPos_ = null;
           djinnPosBuilder_ = null;
         }
         nextCloseTime_ = 0;
+
         return this;
       }
 
@@ -502,35 +595,22 @@ public final class HomeLimitedShopInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo buildPartial() {
         emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo result = new emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.uid_ = uid_;
+        result.nextGuestOpenTime_ = nextGuestOpenTime_;
+        if (djinnRotBuilder_ == null) {
+          result.djinnRot_ = djinnRot_;
+        } else {
+          result.djinnRot_ = djinnRotBuilder_.build();
+        }
+        result.nextOpenTime_ = nextOpenTime_;
+        if (djinnPosBuilder_ == null) {
+          result.djinnPos_ = djinnPos_;
+        } else {
+          result.djinnPos_ = djinnPosBuilder_.build();
+        }
+        result.nextCloseTime_ = nextCloseTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.uid_ = uid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.nextGuestOpenTime_ = nextGuestOpenTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.djinnRot_ = djinnRotBuilder_ == null
-              ? djinnRot_
-              : djinnRotBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.nextOpenTime_ = nextOpenTime_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.djinnPos_ = djinnPosBuilder_ == null
-              ? djinnPos_
-              : djinnPosBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.nextCloseTime_ = nextCloseTime_;
-        }
       }
 
       @java.lang.Override
@@ -595,7 +675,7 @@ public final class HomeLimitedShopInfoOuterClass {
         if (other.getNextCloseTime() != 0) {
           setNextCloseTime(other.getNextCloseTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -610,67 +690,19 @@ public final class HomeLimitedShopInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                input.readMessage(
-                    getDjinnPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 18
-              case 45: {
-                nextOpenTime_ = input.readFixed32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 45
-              case 69: {
-                nextGuestOpenTime_ = input.readFixed32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 69
-              case 72: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 90: {
-                input.readMessage(
-                    getDjinnRotFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 90
-              case 125: {
-                nextCloseTime_ = input.readFixed32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 125
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int uid_ ;
       /**
@@ -689,7 +721,6 @@ public final class HomeLimitedShopInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -698,7 +729,7 @@ public final class HomeLimitedShopInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -721,7 +752,6 @@ public final class HomeLimitedShopInfoOuterClass {
       public Builder setNextGuestOpenTime(int value) {
         
         nextGuestOpenTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -730,7 +760,7 @@ public final class HomeLimitedShopInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextGuestOpenTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         nextGuestOpenTime_ = 0;
         onChanged();
         return this;
@@ -744,7 +774,7 @@ public final class HomeLimitedShopInfoOuterClass {
        * @return Whether the djinnRot field is set.
        */
       public boolean hasDjinnRot() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return djinnRotBuilder_ != null || djinnRot_ != null;
       }
       /**
        * <code>.Vector djinn_rot = 11;</code>
@@ -766,11 +796,11 @@ public final class HomeLimitedShopInfoOuterClass {
             throw new NullPointerException();
           }
           djinnRot_ = value;
+          onChanged();
         } else {
           djinnRotBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -780,11 +810,11 @@ public final class HomeLimitedShopInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (djinnRotBuilder_ == null) {
           djinnRot_ = builderForValue.build();
+          onChanged();
         } else {
           djinnRotBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -792,38 +822,38 @@ public final class HomeLimitedShopInfoOuterClass {
        */
       public Builder mergeDjinnRot(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (djinnRotBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            djinnRot_ != null &&
-            djinnRot_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getDjinnRotBuilder().mergeFrom(value);
+          if (djinnRot_ != null) {
+            djinnRot_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(djinnRot_).mergeFrom(value).buildPartial();
           } else {
             djinnRot_ = value;
           }
+          onChanged();
         } else {
           djinnRotBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector djinn_rot = 11;</code>
        */
       public Builder clearDjinnRot() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        djinnRot_ = null;
-        if (djinnRotBuilder_ != null) {
-          djinnRotBuilder_.dispose();
+        if (djinnRotBuilder_ == null) {
+          djinnRot_ = null;
+          onChanged();
+        } else {
+          djinnRot_ = null;
           djinnRotBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector djinn_rot = 11;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getDjinnRotBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getDjinnRotFieldBuilder().getBuilder();
       }
@@ -872,7 +902,6 @@ public final class HomeLimitedShopInfoOuterClass {
       public Builder setNextOpenTime(int value) {
         
         nextOpenTime_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -881,7 +910,7 @@ public final class HomeLimitedShopInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextOpenTime() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         nextOpenTime_ = 0;
         onChanged();
         return this;
@@ -895,7 +924,7 @@ public final class HomeLimitedShopInfoOuterClass {
        * @return Whether the djinnPos field is set.
        */
       public boolean hasDjinnPos() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return djinnPosBuilder_ != null || djinnPos_ != null;
       }
       /**
        * <code>.Vector djinn_pos = 2;</code>
@@ -917,11 +946,11 @@ public final class HomeLimitedShopInfoOuterClass {
             throw new NullPointerException();
           }
           djinnPos_ = value;
+          onChanged();
         } else {
           djinnPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -931,11 +960,11 @@ public final class HomeLimitedShopInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (djinnPosBuilder_ == null) {
           djinnPos_ = builderForValue.build();
+          onChanged();
         } else {
           djinnPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -943,38 +972,38 @@ public final class HomeLimitedShopInfoOuterClass {
        */
       public Builder mergeDjinnPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (djinnPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            djinnPos_ != null &&
-            djinnPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getDjinnPosBuilder().mergeFrom(value);
+          if (djinnPos_ != null) {
+            djinnPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(djinnPos_).mergeFrom(value).buildPartial();
           } else {
             djinnPos_ = value;
           }
+          onChanged();
         } else {
           djinnPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector djinn_pos = 2;</code>
        */
       public Builder clearDjinnPos() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        djinnPos_ = null;
-        if (djinnPosBuilder_ != null) {
-          djinnPosBuilder_.dispose();
+        if (djinnPosBuilder_ == null) {
+          djinnPos_ = null;
+          onChanged();
+        } else {
+          djinnPos_ = null;
           djinnPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector djinn_pos = 2;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getDjinnPosBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getDjinnPosFieldBuilder().getBuilder();
       }
@@ -1023,7 +1052,6 @@ public final class HomeLimitedShopInfoOuterClass {
       public Builder setNextCloseTime(int value) {
         
         nextCloseTime_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1032,7 +1060,7 @@ public final class HomeLimitedShopInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextCloseTime() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         nextCloseTime_ = 0;
         onChanged();
         return this;
@@ -1070,18 +1098,7 @@ public final class HomeLimitedShopInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeLimitedShopInfo(input, extensionRegistry);
       }
     };
 

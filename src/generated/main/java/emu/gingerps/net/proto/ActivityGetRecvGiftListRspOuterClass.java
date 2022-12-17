@@ -92,6 +92,66 @@ public final class ActivityGetRecvGiftListRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ActivityGetRecvGiftListRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                recvGiftList_ = new java.util.ArrayList<emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              recvGiftList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          recvGiftList_ = java.util.Collections.unmodifiableList(recvGiftList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityGetRecvGiftListRspOuterClass.internal_static_ActivityGetRecvGiftListRsp_descriptor;
@@ -106,7 +166,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 7;
-    private int scheduleId_ = 0;
+    private int scheduleId_;
     /**
      * <code>uint32 schedule_id = 7;</code>
      * @return The scheduleId.
@@ -117,7 +177,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 9;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 9;</code>
      * @return The retcode.
@@ -128,7 +188,6 @@ public final class ActivityGetRecvGiftListRspOuterClass {
     }
 
     public static final int RECV_GIFT_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData> recvGiftList_;
     /**
      * <code>repeated .ActivityRecvGiftData recv_gift_list = 10;</code>
@@ -191,7 +250,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
       for (int i = 0; i < recvGiftList_.size(); i++) {
         output.writeMessage(10, recvGiftList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -212,7 +271,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, recvGiftList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -233,7 +292,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
           != other.getRetcode()) return false;
       if (!getRecvGiftListList()
           .equals(other.getRecvGiftListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -252,7 +311,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
         hash = (37 * hash) + RECV_GIFT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRecvGiftListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -379,27 +438,33 @@ public final class ActivityGetRecvGiftListRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityGetRecvGiftListRspOuterClass.ActivityGetRecvGiftListRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRecvGiftListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         scheduleId_ = 0;
+
         retcode_ = 0;
+
         if (recvGiftListBuilder_ == null) {
           recvGiftList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          recvGiftList_ = null;
           recvGiftListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -426,32 +491,20 @@ public final class ActivityGetRecvGiftListRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityGetRecvGiftListRspOuterClass.ActivityGetRecvGiftListRsp buildPartial() {
         emu.gingerps.net.proto.ActivityGetRecvGiftListRspOuterClass.ActivityGetRecvGiftListRsp result = new emu.gingerps.net.proto.ActivityGetRecvGiftListRspOuterClass.ActivityGetRecvGiftListRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ActivityGetRecvGiftListRspOuterClass.ActivityGetRecvGiftListRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.scheduleId_ = scheduleId_;
+        result.retcode_ = retcode_;
         if (recvGiftListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             recvGiftList_ = java.util.Collections.unmodifiableList(recvGiftList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.recvGiftList_ = recvGiftList_;
         } else {
           result.recvGiftList_ = recvGiftListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ActivityGetRecvGiftListRspOuterClass.ActivityGetRecvGiftListRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.scheduleId_ = scheduleId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -508,7 +561,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
           if (!other.recvGiftList_.isEmpty()) {
             if (recvGiftList_.isEmpty()) {
               recvGiftList_ = other.recvGiftList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureRecvGiftListIsMutable();
               recvGiftList_.addAll(other.recvGiftList_);
@@ -521,7 +574,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
               recvGiftListBuilder_.dispose();
               recvGiftListBuilder_ = null;
               recvGiftList_ = other.recvGiftList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               recvGiftListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRecvGiftListFieldBuilder() : null;
@@ -530,7 +583,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -545,53 +598,17 @@ public final class ActivityGetRecvGiftListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ActivityGetRecvGiftListRspOuterClass.ActivityGetRecvGiftListRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                scheduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 72: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 82: {
-                emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData.parser(),
-                        extensionRegistry);
-                if (recvGiftListBuilder_ == null) {
-                  ensureRecvGiftListIsMutable();
-                  recvGiftList_.add(m);
-                } else {
-                  recvGiftListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ActivityGetRecvGiftListRspOuterClass.ActivityGetRecvGiftListRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -613,7 +630,6 @@ public final class ActivityGetRecvGiftListRspOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -622,7 +638,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -645,7 +661,6 @@ public final class ActivityGetRecvGiftListRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -654,7 +669,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -663,9 +678,9 @@ public final class ActivityGetRecvGiftListRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData> recvGiftList_ =
         java.util.Collections.emptyList();
       private void ensureRecvGiftListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           recvGiftList_ = new java.util.ArrayList<emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData>(recvGiftList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -815,7 +830,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
       public Builder clearRecvGiftList() {
         if (recvGiftListBuilder_ == null) {
           recvGiftList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           recvGiftListBuilder_.clear();
@@ -892,7 +907,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
           recvGiftListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData, emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData.Builder, emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftDataOrBuilder>(
                   recvGiftList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           recvGiftList_ = null;
@@ -932,18 +947,7 @@ public final class ActivityGetRecvGiftListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ActivityGetRecvGiftListRsp(input, extensionRegistry);
       }
     };
 

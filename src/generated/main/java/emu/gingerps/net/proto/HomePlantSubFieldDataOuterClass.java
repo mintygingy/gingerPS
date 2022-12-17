@@ -93,6 +93,89 @@ public final class HomePlantSubFieldDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomePlantSubFieldData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+              int rawValue = input.readEnum();
+
+              fieldStatus_ = rawValue;
+              break;
+            }
+            case 53: {
+
+              endTime_ = input.readFixed32();
+              break;
+            }
+            case 56: {
+
+              homeGatherId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              seedId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                entityIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              entityIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                entityIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                entityIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          entityIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.internal_static_HomePlantSubFieldData_descriptor;
@@ -107,7 +190,7 @@ public final class HomePlantSubFieldDataOuterClass {
     }
 
     public static final int FIELD_STATUS_FIELD_NUMBER = 5;
-    private int fieldStatus_ = 0;
+    private int fieldStatus_;
     /**
      * <code>.HomePlantFieldStatus field_status = 5;</code>
      * @return The enum numeric value on the wire for fieldStatus.
@@ -120,12 +203,13 @@ public final class HomePlantSubFieldDataOuterClass {
      * @return The fieldStatus.
      */
     @java.lang.Override public emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus getFieldStatus() {
-      emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus result = emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.forNumber(fieldStatus_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus result = emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.valueOf(fieldStatus_);
       return result == null ? emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.UNRECOGNIZED : result;
     }
 
     public static final int HOME_GATHER_ID_FIELD_NUMBER = 7;
-    private int homeGatherId_ = 0;
+    private int homeGatherId_;
     /**
      * <code>uint32 home_gather_id = 7;</code>
      * @return The homeGatherId.
@@ -136,7 +220,6 @@ public final class HomePlantSubFieldDataOuterClass {
     }
 
     public static final int ENTITY_ID_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList entityIdList_;
     /**
      * <code>repeated uint32 entity_id_list = 12;</code>
@@ -165,7 +248,7 @@ public final class HomePlantSubFieldDataOuterClass {
     private int entityIdListMemoizedSerializedSize = -1;
 
     public static final int END_TIME_FIELD_NUMBER = 6;
-    private int endTime_ = 0;
+    private int endTime_;
     /**
      * <code>fixed32 end_time = 6;</code>
      * @return The endTime.
@@ -176,7 +259,7 @@ public final class HomePlantSubFieldDataOuterClass {
     }
 
     public static final int SEED_ID_FIELD_NUMBER = 9;
-    private int seedId_ = 0;
+    private int seedId_;
     /**
      * <code>uint32 seed_id = 9;</code>
      * @return The seedId.
@@ -220,7 +303,7 @@ public final class HomePlantSubFieldDataOuterClass {
       for (int i = 0; i < entityIdList_.size(); i++) {
         output.writeUInt32NoTag(entityIdList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -259,7 +342,7 @@ public final class HomePlantSubFieldDataOuterClass {
         }
         entityIdListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -283,7 +366,7 @@ public final class HomePlantSubFieldDataOuterClass {
           != other.getEndTime()) return false;
       if (getSeedId()
           != other.getSeedId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -306,7 +389,7 @@ public final class HomePlantSubFieldDataOuterClass {
       hash = (53 * hash) + getEndTime();
       hash = (37 * hash) + SEED_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSeedId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -423,23 +506,32 @@ public final class HomePlantSubFieldDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         fieldStatus_ = 0;
+
         homeGatherId_ = 0;
+
         entityIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         endTime_ = 0;
+
         seedId_ = 0;
+
         return this;
       }
 
@@ -466,34 +558,18 @@ public final class HomePlantSubFieldDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData buildPartial() {
         emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData result = new emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.fieldStatus_ = fieldStatus_;
+        result.homeGatherId_ = homeGatherId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           entityIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.entityIdList_ = entityIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.fieldStatus_ = fieldStatus_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.homeGatherId_ = homeGatherId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.endTime_ = endTime_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.seedId_ = seedId_;
-        }
+        result.endTime_ = endTime_;
+        result.seedId_ = seedId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -549,7 +625,7 @@ public final class HomePlantSubFieldDataOuterClass {
         if (!other.entityIdList_.isEmpty()) {
           if (entityIdList_.isEmpty()) {
             entityIdList_ = other.entityIdList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureEntityIdListIsMutable();
             entityIdList_.addAll(other.entityIdList_);
@@ -562,7 +638,7 @@ public final class HomePlantSubFieldDataOuterClass {
         if (other.getSeedId() != 0) {
           setSeedId(other.getSeedId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -577,66 +653,17 @@ public final class HomePlantSubFieldDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                fieldStatus_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              case 53: {
-                endTime_ = input.readFixed32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 53
-              case 56: {
-                homeGatherId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 72: {
-                seedId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 72
-              case 96: {
-                int v = input.readUInt32();
-                ensureEntityIdListIsMutable();
-                entityIdList_.addInt(v);
-                break;
-              } // case 96
-              case 98: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureEntityIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  entityIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -655,8 +682,8 @@ public final class HomePlantSubFieldDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder setFieldStatusValue(int value) {
+        
         fieldStatus_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -666,7 +693,8 @@ public final class HomePlantSubFieldDataOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus getFieldStatus() {
-        emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus result = emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.forNumber(fieldStatus_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus result = emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.valueOf(fieldStatus_);
         return result == null ? emu.gingerps.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.UNRECOGNIZED : result;
       }
       /**
@@ -678,7 +706,7 @@ public final class HomePlantSubFieldDataOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         fieldStatus_ = value.getNumber();
         onChanged();
         return this;
@@ -688,7 +716,7 @@ public final class HomePlantSubFieldDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFieldStatus() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         fieldStatus_ = 0;
         onChanged();
         return this;
@@ -711,7 +739,6 @@ public final class HomePlantSubFieldDataOuterClass {
       public Builder setHomeGatherId(int value) {
         
         homeGatherId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -720,7 +747,7 @@ public final class HomePlantSubFieldDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHomeGatherId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         homeGatherId_ = 0;
         onChanged();
         return this;
@@ -728,10 +755,10 @@ public final class HomePlantSubFieldDataOuterClass {
 
       private com.google.protobuf.Internal.IntList entityIdList_ = emptyIntList();
       private void ensureEntityIdListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           entityIdList_ = mutableCopy(entityIdList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 entity_id_list = 12;</code>
@@ -739,7 +766,7 @@ public final class HomePlantSubFieldDataOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getEntityIdListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(entityIdList_) : entityIdList_;
       }
       /**
@@ -765,7 +792,6 @@ public final class HomePlantSubFieldDataOuterClass {
        */
       public Builder setEntityIdList(
           int index, int value) {
-        
         ensureEntityIdListIsMutable();
         entityIdList_.setInt(index, value);
         onChanged();
@@ -777,7 +803,6 @@ public final class HomePlantSubFieldDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addEntityIdList(int value) {
-        
         ensureEntityIdListIsMutable();
         entityIdList_.addInt(value);
         onChanged();
@@ -802,7 +827,7 @@ public final class HomePlantSubFieldDataOuterClass {
        */
       public Builder clearEntityIdList() {
         entityIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -824,7 +849,6 @@ public final class HomePlantSubFieldDataOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -833,7 +857,7 @@ public final class HomePlantSubFieldDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         endTime_ = 0;
         onChanged();
         return this;
@@ -856,7 +880,6 @@ public final class HomePlantSubFieldDataOuterClass {
       public Builder setSeedId(int value) {
         
         seedId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -865,7 +888,7 @@ public final class HomePlantSubFieldDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSeedId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         seedId_ = 0;
         onChanged();
         return this;
@@ -903,18 +926,7 @@ public final class HomePlantSubFieldDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomePlantSubFieldData(input, extensionRegistry);
       }
     };
 

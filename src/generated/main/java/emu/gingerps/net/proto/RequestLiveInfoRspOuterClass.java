@@ -93,6 +93,65 @@ public final class RequestLiveInfoRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RequestLiveInfoRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300DNGGIOIKLHC_ = s;
+              break;
+            }
+            case 80: {
+
+              liveId_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300BDOGCPKPLOK_ = s;
+              break;
+            }
+            case 104: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RequestLiveInfoRspOuterClass.internal_static_RequestLiveInfoRsp_descriptor;
@@ -107,7 +166,7 @@ public final class RequestLiveInfoRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 13;</code>
      * @return The retcode.
@@ -118,8 +177,7 @@ public final class RequestLiveInfoRspOuterClass {
     }
 
     public static final int UNK3300_BDOGCPKPLOK_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object unk3300BDOGCPKPLOK_ = "";
+    private volatile java.lang.Object unk3300BDOGCPKPLOK_;
     /**
      * <code>string Unk3300_BDOGCPKPLOK = 11;</code>
      * @return The unk3300BDOGCPKPLOK.
@@ -157,8 +215,7 @@ public final class RequestLiveInfoRspOuterClass {
     }
 
     public static final int UNK3300_DNGGIOIKLHC_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object unk3300DNGGIOIKLHC_ = "";
+    private volatile java.lang.Object unk3300DNGGIOIKLHC_;
     /**
      * <code>string Unk3300_DNGGIOIKLHC = 6;</code>
      * @return The unk3300DNGGIOIKLHC.
@@ -196,7 +253,7 @@ public final class RequestLiveInfoRspOuterClass {
     }
 
     public static final int LIVE_ID_FIELD_NUMBER = 10;
-    private int liveId_ = 0;
+    private int liveId_;
     /**
      * <code>uint32 live_id = 10;</code>
      * @return The liveId.
@@ -232,7 +289,7 @@ public final class RequestLiveInfoRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(13, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -255,7 +312,7 @@ public final class RequestLiveInfoRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -278,7 +335,7 @@ public final class RequestLiveInfoRspOuterClass {
           .equals(other.getUnk3300DNGGIOIKLHC())) return false;
       if (getLiveId()
           != other.getLiveId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -297,7 +354,7 @@ public final class RequestLiveInfoRspOuterClass {
       hash = (53 * hash) + getUnk3300DNGGIOIKLHC().hashCode();
       hash = (37 * hash) + LIVE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLiveId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -424,22 +481,30 @@ public final class RequestLiveInfoRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         unk3300BDOGCPKPLOK_ = "";
+
         unk3300DNGGIOIKLHC_ = "";
+
         liveId_ = 0;
+
         return this;
       }
 
@@ -466,25 +531,12 @@ public final class RequestLiveInfoRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp buildPartial() {
         emu.gingerps.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp result = new emu.gingerps.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        result.unk3300BDOGCPKPLOK_ = unk3300BDOGCPKPLOK_;
+        result.unk3300DNGGIOIKLHC_ = unk3300DNGGIOIKLHC_;
+        result.liveId_ = liveId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300BDOGCPKPLOK_ = unk3300BDOGCPKPLOK_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300DNGGIOIKLHC_ = unk3300DNGGIOIKLHC_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.liveId_ = liveId_;
-        }
       }
 
       @java.lang.Override
@@ -536,18 +588,16 @@ public final class RequestLiveInfoRspOuterClass {
         }
         if (!other.getUnk3300BDOGCPKPLOK().isEmpty()) {
           unk3300BDOGCPKPLOK_ = other.unk3300BDOGCPKPLOK_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getUnk3300DNGGIOIKLHC().isEmpty()) {
           unk3300DNGGIOIKLHC_ = other.unk3300DNGGIOIKLHC_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getLiveId() != 0) {
           setLiveId(other.getLiveId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -562,53 +612,19 @@ public final class RequestLiveInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 50: {
-                unk3300DNGGIOIKLHC_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 50
-              case 80: {
-                liveId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 80
-              case 90: {
-                unk3300BDOGCPKPLOK_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 90
-              case 104: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -627,7 +643,6 @@ public final class RequestLiveInfoRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -636,7 +651,7 @@ public final class RequestLiveInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -683,9 +698,11 @@ public final class RequestLiveInfoRspOuterClass {
        */
       public Builder setUnk3300BDOGCPKPLOK(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         unk3300BDOGCPKPLOK_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -694,8 +711,8 @@ public final class RequestLiveInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BDOGCPKPLOK() {
+        
         unk3300BDOGCPKPLOK_ = getDefaultInstance().getUnk3300BDOGCPKPLOK();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -706,10 +723,12 @@ public final class RequestLiveInfoRspOuterClass {
        */
       public Builder setUnk3300BDOGCPKPLOKBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         unk3300BDOGCPKPLOK_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -755,9 +774,11 @@ public final class RequestLiveInfoRspOuterClass {
        */
       public Builder setUnk3300DNGGIOIKLHC(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         unk3300DNGGIOIKLHC_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -766,8 +787,8 @@ public final class RequestLiveInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DNGGIOIKLHC() {
+        
         unk3300DNGGIOIKLHC_ = getDefaultInstance().getUnk3300DNGGIOIKLHC();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -778,10 +799,12 @@ public final class RequestLiveInfoRspOuterClass {
        */
       public Builder setUnk3300DNGGIOIKLHCBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         unk3300DNGGIOIKLHC_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -803,7 +826,6 @@ public final class RequestLiveInfoRspOuterClass {
       public Builder setLiveId(int value) {
         
         liveId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -812,7 +834,7 @@ public final class RequestLiveInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLiveId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         liveId_ = 0;
         onChanged();
         return this;
@@ -850,18 +872,7 @@ public final class RequestLiveInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RequestLiveInfoRsp(input, extensionRegistry);
       }
     };
 

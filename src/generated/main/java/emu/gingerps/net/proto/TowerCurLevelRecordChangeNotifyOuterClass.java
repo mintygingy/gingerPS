@@ -70,6 +70,56 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TowerCurLevelRecordChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder subBuilder = null;
+              if (curLevelRecord_ != null) {
+                subBuilder = curLevelRecord_.toBuilder();
+              }
+              curLevelRecord_ = input.readMessage(emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(curLevelRecord_);
+                curLevelRecord_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.internal_static_TowerCurLevelRecordChangeNotify_descriptor;
@@ -106,7 +156,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecordOrBuilder getCurLevelRecordOrBuilder() {
-      return curLevelRecord_ == null ? emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.getDefaultInstance() : curLevelRecord_;
+      return getCurLevelRecord();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -126,7 +176,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       if (curLevelRecord_ != null) {
         output.writeMessage(1, getCurLevelRecord());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +189,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getCurLevelRecord());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +209,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         if (!getCurLevelRecord()
             .equals(other.getCurLevelRecord())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +224,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         hash = (37 * hash) + CUR_LEVEL_RECORD_FIELD_NUMBER;
         hash = (53 * hash) + getCurLevelRecord().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -301,21 +351,26 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        curLevelRecord_ = null;
-        if (curLevelRecordBuilder_ != null) {
-          curLevelRecordBuilder_.dispose();
+        if (curLevelRecordBuilder_ == null) {
+          curLevelRecord_ = null;
+        } else {
+          curLevelRecord_ = null;
           curLevelRecordBuilder_ = null;
         }
         return this;
@@ -344,18 +399,13 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify buildPartial() {
         emu.gingerps.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify result = new emu.gingerps.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (curLevelRecordBuilder_ == null) {
+          result.curLevelRecord_ = curLevelRecord_;
+        } else {
+          result.curLevelRecord_ = curLevelRecordBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.curLevelRecord_ = curLevelRecordBuilder_ == null
-              ? curLevelRecord_
-              : curLevelRecordBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -405,7 +455,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         if (other.hasCurLevelRecord()) {
           mergeCurLevelRecord(other.getCurLevelRecord());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,40 +470,19 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getCurLevelRecordFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord curLevelRecord_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -463,7 +492,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
        * @return Whether the curLevelRecord field is set.
        */
       public boolean hasCurLevelRecord() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return curLevelRecordBuilder_ != null || curLevelRecord_ != null;
       }
       /**
        * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
@@ -485,11 +514,11 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
             throw new NullPointerException();
           }
           curLevelRecord_ = value;
+          onChanged();
         } else {
           curLevelRecordBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -499,11 +528,11 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
           emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder builderForValue) {
         if (curLevelRecordBuilder_ == null) {
           curLevelRecord_ = builderForValue.build();
+          onChanged();
         } else {
           curLevelRecordBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -511,38 +540,38 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
        */
       public Builder mergeCurLevelRecord(emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord value) {
         if (curLevelRecordBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            curLevelRecord_ != null &&
-            curLevelRecord_ != emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.getDefaultInstance()) {
-            getCurLevelRecordBuilder().mergeFrom(value);
+          if (curLevelRecord_ != null) {
+            curLevelRecord_ =
+              emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.newBuilder(curLevelRecord_).mergeFrom(value).buildPartial();
           } else {
             curLevelRecord_ = value;
           }
+          onChanged();
         } else {
           curLevelRecordBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
        */
       public Builder clearCurLevelRecord() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        curLevelRecord_ = null;
-        if (curLevelRecordBuilder_ != null) {
-          curLevelRecordBuilder_.dispose();
+        if (curLevelRecordBuilder_ == null) {
+          curLevelRecord_ = null;
+          onChanged();
+        } else {
+          curLevelRecord_ = null;
           curLevelRecordBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
        */
       public emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder getCurLevelRecordBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getCurLevelRecordFieldBuilder().getBuilder();
       }
@@ -606,18 +635,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TowerCurLevelRecordChangeNotify(input, extensionRegistry);
       }
     };
 

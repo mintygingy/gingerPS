@@ -92,6 +92,66 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MistTrialGetChallengeMissionRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                missionInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              missionInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 48: {
+
+              trialId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          missionInfoList_ = java.util.Collections.unmodifiableList(missionInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MistTrialGetChallengeMissionRspOuterClass.internal_static_MistTrialGetChallengeMissionRsp_descriptor;
@@ -106,7 +166,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
     }
 
     public static final int TRIAL_ID_FIELD_NUMBER = 6;
-    private int trialId_ = 0;
+    private int trialId_;
     /**
      * <code>uint32 trial_id = 6;</code>
      * @return The trialId.
@@ -117,7 +177,6 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
     }
 
     public static final int MISSION_INFO_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo> missionInfoList_;
     /**
      * <code>repeated .MistTrialMissionInfo mission_info_list = 3;</code>
@@ -158,7 +217,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
@@ -191,7 +250,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(7, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -212,7 +271,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -233,7 +292,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
           .equals(other.getMissionInfoListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -252,7 +311,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -379,27 +438,33 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMissionInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         trialId_ = 0;
+
         if (missionInfoListBuilder_ == null) {
           missionInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          missionInfoList_ = null;
           missionInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
+
         return this;
       }
 
@@ -426,32 +491,20 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp buildPartial() {
         emu.gingerps.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp result = new emu.gingerps.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.trialId_ = trialId_;
         if (missionInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             missionInfoList_ = java.util.Collections.unmodifiableList(missionInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.missionInfoList_ = missionInfoList_;
         } else {
           result.missionInfoList_ = missionInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.trialId_ = trialId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        result.retcode_ = retcode_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -505,7 +558,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
           if (!other.missionInfoList_.isEmpty()) {
             if (missionInfoList_.isEmpty()) {
               missionInfoList_ = other.missionInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureMissionInfoListIsMutable();
               missionInfoList_.addAll(other.missionInfoList_);
@@ -518,7 +571,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
               missionInfoListBuilder_.dispose();
               missionInfoListBuilder_ = null;
               missionInfoList_ = other.missionInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               missionInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMissionInfoListFieldBuilder() : null;
@@ -530,7 +583,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -545,53 +598,17 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                emu.gingerps.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo.parser(),
-                        extensionRegistry);
-                if (missionInfoListBuilder_ == null) {
-                  ensureMissionInfoListIsMutable();
-                  missionInfoList_.add(m);
-                } else {
-                  missionInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 48: {
-                trialId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 56: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -613,7 +630,6 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       public Builder setTrialId(int value) {
         
         trialId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -622,7 +638,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTrialId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         trialId_ = 0;
         onChanged();
         return this;
@@ -631,9 +647,9 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo> missionInfoList_ =
         java.util.Collections.emptyList();
       private void ensureMissionInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           missionInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo>(missionInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -783,7 +799,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       public Builder clearMissionInfoList() {
         if (missionInfoListBuilder_ == null) {
           missionInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           missionInfoListBuilder_.clear();
@@ -860,7 +876,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
           missionInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo, emu.gingerps.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo.Builder, emu.gingerps.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfoOrBuilder>(
                   missionInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           missionInfoList_ = null;
@@ -885,7 +901,6 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -894,7 +909,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -932,18 +947,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MistTrialGetChallengeMissionRsp(input, extensionRegistry);
       }
     };
 

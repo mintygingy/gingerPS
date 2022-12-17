@@ -76,6 +76,61 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AvatarEquipAffixStartNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              avatarGuid_ = input.readUInt64();
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.Builder subBuilder = null;
+              if (equipAffixInfo_ != null) {
+                subBuilder = equipAffixInfo_.toBuilder();
+              }
+              equipAffixInfo_ = input.readMessage(emu.gingerps.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(equipAffixInfo_);
+                equipAffixInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarEquipAffixStartNotifyOuterClass.internal_static_AvatarEquipAffixStartNotify_descriptor;
@@ -90,7 +145,7 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 1;
-    private long avatarGuid_ = 0L;
+    private long avatarGuid_;
     /**
      * <code>uint64 avatar_guid = 1;</code>
      * @return The avatarGuid.
@@ -123,7 +178,7 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfoOrBuilder getEquipAffixInfoOrBuilder() {
-      return equipAffixInfo_ == null ? emu.gingerps.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.getDefaultInstance() : equipAffixInfo_;
+      return getEquipAffixInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -146,7 +201,7 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
       if (equipAffixInfo_ != null) {
         output.writeMessage(9, getEquipAffixInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getEquipAffixInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
         if (!getEquipAffixInfo()
             .equals(other.getEquipAffixInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -203,7 +258,7 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
         hash = (37 * hash) + EQUIP_AFFIX_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getEquipAffixInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -330,22 +385,28 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         avatarGuid_ = 0L;
-        equipAffixInfo_ = null;
-        if (equipAffixInfoBuilder_ != null) {
-          equipAffixInfoBuilder_.dispose();
+
+        if (equipAffixInfoBuilder_ == null) {
+          equipAffixInfo_ = null;
+        } else {
+          equipAffixInfo_ = null;
           equipAffixInfoBuilder_ = null;
         }
         return this;
@@ -374,21 +435,14 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotify buildPartial() {
         emu.gingerps.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotify result = new emu.gingerps.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.avatarGuid_ = avatarGuid_;
+        if (equipAffixInfoBuilder_ == null) {
+          result.equipAffixInfo_ = equipAffixInfo_;
+        } else {
+          result.equipAffixInfo_ = equipAffixInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.avatarGuid_ = avatarGuid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.equipAffixInfo_ = equipAffixInfoBuilder_ == null
-              ? equipAffixInfo_
-              : equipAffixInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -441,7 +495,7 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
         if (other.hasEquipAffixInfo()) {
           mergeEquipAffixInfo(other.getEquipAffixInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -456,45 +510,19 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                avatarGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 74: {
-                input.readMessage(
-                    getEquipAffixInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 74
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long avatarGuid_ ;
       /**
@@ -513,7 +541,6 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -522,7 +549,7 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -536,7 +563,7 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
        * @return Whether the equipAffixInfo field is set.
        */
       public boolean hasEquipAffixInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return equipAffixInfoBuilder_ != null || equipAffixInfo_ != null;
       }
       /**
        * <code>.AvatarEquipAffixInfo equip_affix_info = 9;</code>
@@ -558,11 +585,11 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
             throw new NullPointerException();
           }
           equipAffixInfo_ = value;
+          onChanged();
         } else {
           equipAffixInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -572,11 +599,11 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
           emu.gingerps.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.Builder builderForValue) {
         if (equipAffixInfoBuilder_ == null) {
           equipAffixInfo_ = builderForValue.build();
+          onChanged();
         } else {
           equipAffixInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -584,38 +611,38 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
        */
       public Builder mergeEquipAffixInfo(emu.gingerps.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo value) {
         if (equipAffixInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            equipAffixInfo_ != null &&
-            equipAffixInfo_ != emu.gingerps.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.getDefaultInstance()) {
-            getEquipAffixInfoBuilder().mergeFrom(value);
+          if (equipAffixInfo_ != null) {
+            equipAffixInfo_ =
+              emu.gingerps.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.newBuilder(equipAffixInfo_).mergeFrom(value).buildPartial();
           } else {
             equipAffixInfo_ = value;
           }
+          onChanged();
         } else {
           equipAffixInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AvatarEquipAffixInfo equip_affix_info = 9;</code>
        */
       public Builder clearEquipAffixInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        equipAffixInfo_ = null;
-        if (equipAffixInfoBuilder_ != null) {
-          equipAffixInfoBuilder_.dispose();
+        if (equipAffixInfoBuilder_ == null) {
+          equipAffixInfo_ = null;
+          onChanged();
+        } else {
+          equipAffixInfo_ = null;
           equipAffixInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AvatarEquipAffixInfo equip_affix_info = 9;</code>
        */
       public emu.gingerps.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.Builder getEquipAffixInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getEquipAffixInfoFieldBuilder().getBuilder();
       }
@@ -679,18 +706,7 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AvatarEquipAffixStartNotify(input, extensionRegistry);
       }
     };
 

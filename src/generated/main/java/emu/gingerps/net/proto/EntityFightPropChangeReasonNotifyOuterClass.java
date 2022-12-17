@@ -127,6 +127,101 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EntityFightPropChangeReasonNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 40: {
+
+              propType_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                paramList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              paramList_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                paramList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                paramList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              changeHpReason_ = rawValue;
+              break;
+            }
+            case 85: {
+
+              propDelta_ = input.readFloat();
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              changeEnergyReason_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          paramList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EntityFightPropChangeReasonNotifyOuterClass.internal_static_EntityFightPropChangeReasonNotify_descriptor;
@@ -141,7 +236,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
     }
 
     public static final int PROP_TYPE_FIELD_NUMBER = 5;
-    private int propType_ = 0;
+    private int propType_;
     /**
      * <code>uint32 prop_type = 5;</code>
      * @return The propType.
@@ -152,7 +247,6 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
     }
 
     public static final int PARAM_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList paramList_;
     /**
      * <code>repeated uint32 param_list = 7;</code>
@@ -181,7 +275,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
     private int paramListMemoizedSerializedSize = -1;
 
     public static final int ENTITY_ID_FIELD_NUMBER = 8;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 8;</code>
      * @return The entityId.
@@ -192,7 +286,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 2;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.PropChangeReason reason = 2;</code>
      * @return The enum numeric value on the wire for reason.
@@ -205,12 +299,13 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason getReason() {
-      emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason result = emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason result = emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.UNRECOGNIZED : result;
     }
 
     public static final int CHANGE_HP_REASON_FIELD_NUMBER = 9;
-    private int changeHpReason_ = 0;
+    private int changeHpReason_;
     /**
      * <code>.ChangeHpReason change_hp_reason = 9;</code>
      * @return The enum numeric value on the wire for changeHpReason.
@@ -223,12 +318,13 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
      * @return The changeHpReason.
      */
     @java.lang.Override public emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason getChangeHpReason() {
-      emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason result = emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason.forNumber(changeHpReason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason result = emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason.valueOf(changeHpReason_);
       return result == null ? emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason.UNRECOGNIZED : result;
     }
 
     public static final int CHANGE_ENERGY_REASON_FIELD_NUMBER = 12;
-    private int changeEnergyReason_ = 0;
+    private int changeEnergyReason_;
     /**
      * <code>.ChangeEnergyReason change_energy_reason = 12;</code>
      * @return The enum numeric value on the wire for changeEnergyReason.
@@ -241,12 +337,13 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
      * @return The changeEnergyReason.
      */
     @java.lang.Override public emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason getChangeEnergyReason() {
-      emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason result = emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason.forNumber(changeEnergyReason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason result = emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason.valueOf(changeEnergyReason_);
       return result == null ? emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason.UNRECOGNIZED : result;
     }
 
     public static final int PROP_DELTA_FIELD_NUMBER = 10;
-    private float propDelta_ = 0F;
+    private float propDelta_;
     /**
      * <code>float prop_delta = 10;</code>
      * @return The propDelta.
@@ -290,13 +387,13 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
       if (changeHpReason_ != emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason.CHANGE_HP_REASON_NONE.getNumber()) {
         output.writeEnum(9, changeHpReason_);
       }
-      if (java.lang.Float.floatToRawIntBits(propDelta_) != 0) {
+      if (propDelta_ != 0F) {
         output.writeFloat(10, propDelta_);
       }
       if (changeEnergyReason_ != emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason.CHANGE_ENERGY_REASON_NONE.getNumber()) {
         output.writeEnum(12, changeEnergyReason_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -335,7 +432,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, changeHpReason_);
       }
-      if (java.lang.Float.floatToRawIntBits(propDelta_) != 0) {
+      if (propDelta_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(10, propDelta_);
       }
@@ -343,7 +440,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, changeEnergyReason_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -370,7 +467,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
       if (java.lang.Float.floatToIntBits(getPropDelta())
           != java.lang.Float.floatToIntBits(
               other.getPropDelta())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -398,7 +495,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
       hash = (37 * hash) + PROP_DELTA_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getPropDelta());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -525,25 +622,36 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         propType_ = 0;
+
         paramList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         entityId_ = 0;
+
         reason_ = 0;
+
         changeHpReason_ = 0;
+
         changeEnergyReason_ = 0;
+
         propDelta_ = 0F;
+
         return this;
       }
 
@@ -570,40 +678,20 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotify buildPartial() {
         emu.gingerps.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotify result = new emu.gingerps.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotify result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.propType_ = propType_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           paramList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.paramList_ = paramList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.propType_ = propType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.changeHpReason_ = changeHpReason_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.changeEnergyReason_ = changeEnergyReason_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.propDelta_ = propDelta_;
-        }
+        result.entityId_ = entityId_;
+        result.reason_ = reason_;
+        result.changeHpReason_ = changeHpReason_;
+        result.changeEnergyReason_ = changeEnergyReason_;
+        result.propDelta_ = propDelta_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -656,7 +744,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         if (!other.paramList_.isEmpty()) {
           if (paramList_.isEmpty()) {
             paramList_ = other.paramList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureParamListIsMutable();
             paramList_.addAll(other.paramList_);
@@ -678,7 +766,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         if (other.getPropDelta() != 0F) {
           setPropDelta(other.getPropDelta());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -693,76 +781,17 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 16
-              case 40: {
-                propType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              case 56: {
-                int v = input.readUInt32();
-                ensureParamListIsMutable();
-                paramList_.addInt(v);
-                break;
-              } // case 56
-              case 58: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureParamListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  paramList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 58
-              case 64: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 72: {
-                changeHpReason_ = input.readEnum();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 72
-              case 85: {
-                propDelta_ = input.readFloat();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 85
-              case 96: {
-                changeEnergyReason_ = input.readEnum();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -784,7 +813,6 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
       public Builder setPropType(int value) {
         
         propType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -793,7 +821,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPropType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         propType_ = 0;
         onChanged();
         return this;
@@ -801,10 +829,10 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList paramList_ = emptyIntList();
       private void ensureParamListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           paramList_ = mutableCopy(paramList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 param_list = 7;</code>
@@ -812,7 +840,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getParamListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(paramList_) : paramList_;
       }
       /**
@@ -838,7 +866,6 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        */
       public Builder setParamList(
           int index, int value) {
-        
         ensureParamListIsMutable();
         paramList_.setInt(index, value);
         onChanged();
@@ -850,7 +877,6 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParamList(int value) {
-        
         ensureParamListIsMutable();
         paramList_.addInt(value);
         onChanged();
@@ -875,7 +901,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        */
       public Builder clearParamList() {
         paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -897,7 +923,6 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -906,7 +931,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -926,8 +951,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -937,7 +962,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason getReason() {
-        emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason result = emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason result = emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.UNRECOGNIZED : result;
       }
       /**
@@ -949,7 +975,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -959,7 +985,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -979,8 +1005,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setChangeHpReasonValue(int value) {
+        
         changeHpReason_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -990,7 +1016,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason getChangeHpReason() {
-        emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason result = emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason.forNumber(changeHpReason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason result = emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason.valueOf(changeHpReason_);
         return result == null ? emu.gingerps.net.proto.ChangeHpReasonOuterClass.ChangeHpReason.UNRECOGNIZED : result;
       }
       /**
@@ -1002,7 +1029,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000010;
+        
         changeHpReason_ = value.getNumber();
         onChanged();
         return this;
@@ -1012,7 +1039,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChangeHpReason() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         changeHpReason_ = 0;
         onChanged();
         return this;
@@ -1032,8 +1059,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setChangeEnergyReasonValue(int value) {
+        
         changeEnergyReason_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1043,7 +1070,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason getChangeEnergyReason() {
-        emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason result = emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason.forNumber(changeEnergyReason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason result = emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason.valueOf(changeEnergyReason_);
         return result == null ? emu.gingerps.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason.UNRECOGNIZED : result;
       }
       /**
@@ -1055,7 +1083,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000020;
+        
         changeEnergyReason_ = value.getNumber();
         onChanged();
         return this;
@@ -1065,7 +1093,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChangeEnergyReason() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         changeEnergyReason_ = 0;
         onChanged();
         return this;
@@ -1088,7 +1116,6 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
       public Builder setPropDelta(float value) {
         
         propDelta_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1097,7 +1124,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPropDelta() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         propDelta_ = 0F;
         onChanged();
         return this;
@@ -1135,18 +1162,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EntityFightPropChangeReasonNotify(input, extensionRegistry);
       }
     };
 

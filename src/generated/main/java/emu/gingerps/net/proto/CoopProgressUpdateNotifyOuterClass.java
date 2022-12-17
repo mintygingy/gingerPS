@@ -67,6 +67,53 @@ public final class CoopProgressUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CoopProgressUpdateNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              curCoopPoint_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isHaveProgress_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CoopProgressUpdateNotifyOuterClass.internal_static_CoopProgressUpdateNotify_descriptor;
@@ -81,7 +128,7 @@ public final class CoopProgressUpdateNotifyOuterClass {
     }
 
     public static final int CUR_COOP_POINT_FIELD_NUMBER = 4;
-    private int curCoopPoint_ = 0;
+    private int curCoopPoint_;
     /**
      * <code>uint32 cur_coop_point = 4;</code>
      * @return The curCoopPoint.
@@ -92,7 +139,7 @@ public final class CoopProgressUpdateNotifyOuterClass {
     }
 
     public static final int IS_HAVE_PROGRESS_FIELD_NUMBER = 8;
-    private boolean isHaveProgress_ = false;
+    private boolean isHaveProgress_;
     /**
      * <code>bool is_have_progress = 8;</code>
      * @return The isHaveProgress.
@@ -122,7 +169,7 @@ public final class CoopProgressUpdateNotifyOuterClass {
       if (isHaveProgress_ != false) {
         output.writeBool(8, isHaveProgress_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class CoopProgressUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, isHaveProgress_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class CoopProgressUpdateNotifyOuterClass {
           != other.getCurCoopPoint()) return false;
       if (getIsHaveProgress()
           != other.getIsHaveProgress()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class CoopProgressUpdateNotifyOuterClass {
       hash = (37 * hash) + IS_HAVE_PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsHaveProgress());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -301,20 +348,26 @@ public final class CoopProgressUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CoopProgressUpdateNotifyOuterClass.CoopProgressUpdateNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         curCoopPoint_ = 0;
+
         isHaveProgress_ = false;
+
         return this;
       }
 
@@ -341,19 +394,10 @@ public final class CoopProgressUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CoopProgressUpdateNotifyOuterClass.CoopProgressUpdateNotify buildPartial() {
         emu.gingerps.net.proto.CoopProgressUpdateNotifyOuterClass.CoopProgressUpdateNotify result = new emu.gingerps.net.proto.CoopProgressUpdateNotifyOuterClass.CoopProgressUpdateNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.curCoopPoint_ = curCoopPoint_;
+        result.isHaveProgress_ = isHaveProgress_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CoopProgressUpdateNotifyOuterClass.CoopProgressUpdateNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.curCoopPoint_ = curCoopPoint_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isHaveProgress_ = isHaveProgress_;
-        }
       }
 
       @java.lang.Override
@@ -406,7 +450,7 @@ public final class CoopProgressUpdateNotifyOuterClass {
         if (other.getIsHaveProgress() != false) {
           setIsHaveProgress(other.getIsHaveProgress());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -421,43 +465,19 @@ public final class CoopProgressUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CoopProgressUpdateNotifyOuterClass.CoopProgressUpdateNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                curCoopPoint_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 64: {
-                isHaveProgress_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CoopProgressUpdateNotifyOuterClass.CoopProgressUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int curCoopPoint_ ;
       /**
@@ -476,7 +496,6 @@ public final class CoopProgressUpdateNotifyOuterClass {
       public Builder setCurCoopPoint(int value) {
         
         curCoopPoint_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -485,7 +504,7 @@ public final class CoopProgressUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurCoopPoint() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         curCoopPoint_ = 0;
         onChanged();
         return this;
@@ -508,7 +527,6 @@ public final class CoopProgressUpdateNotifyOuterClass {
       public Builder setIsHaveProgress(boolean value) {
         
         isHaveProgress_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -517,7 +535,7 @@ public final class CoopProgressUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsHaveProgress() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isHaveProgress_ = false;
         onChanged();
         return this;
@@ -555,18 +573,7 @@ public final class CoopProgressUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CoopProgressUpdateNotify(input, extensionRegistry);
       }
     };
 

@@ -77,12 +77,14 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
      */
+
     int getPlayerConfirmedCardMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
      */
+
     int getPlayerConfirmedCardMapOrThrow(
         int key);
 
@@ -136,6 +138,89 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private InBattleMechanicusCardResultNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              waitBeginTimeUs_ = input.readUInt64();
+              break;
+            }
+            case 40: {
+
+              waitSeconds_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                playerConfirmedCardMap_ = com.google.protobuf.MapField.newMapField(
+                    PlayerConfirmedCardMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              playerConfirmedCardMap__ = input.readMessage(
+                  PlayerConfirmedCardMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              playerConfirmedCardMap_.getMutableMap().put(
+                  playerConfirmedCardMap__.getKey(), playerConfirmedCardMap__.getValue());
+              break;
+            }
+            case 80: {
+
+              groupId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              playIndex_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cardList_ = java.util.Collections.unmodifiableList(cardList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleMechanicusCardResultNotifyOuterClass.internal_static_InBattleMechanicusCardResultNotify_descriptor;
@@ -162,7 +247,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 10;
-    private int groupId_ = 0;
+    private int groupId_;
     /**
      * <code>uint32 group_id = 10;</code>
      * @return The groupId.
@@ -173,7 +258,6 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
     }
 
     public static final int CARD_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo> cardList_;
     /**
      * <code>repeated .InBattleMechanicusCardInfo card_list = 8;</code>
@@ -214,7 +298,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
     }
 
     public static final int PLAY_INDEX_FIELD_NUMBER = 14;
-    private int playIndex_ = 0;
+    private int playIndex_;
     /**
      * <code>uint32 play_index = 14;</code>
      * @return The playIndex.
@@ -236,7 +320,6 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> playerConfirmedCardMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -247,12 +330,14 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
       }
       return playerConfirmedCardMap_;
     }
+
     public int getPlayerConfirmedCardMapCount() {
       return internalGetPlayerConfirmedCardMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
      */
+
     @java.lang.Override
     public boolean containsPlayerConfirmedCardMap(
         int key) {
@@ -271,6 +356,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getPlayerConfirmedCardMapMap() {
       return internalGetPlayerConfirmedCardMap().getMap();
     }
@@ -278,6 +364,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
      */
     @java.lang.Override
+
     public int getPlayerConfirmedCardMapOrDefault(
         int key,
         int defaultValue) {
@@ -290,6 +377,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
      */
     @java.lang.Override
+
     public int getPlayerConfirmedCardMapOrThrow(
         int key) {
       
@@ -302,7 +390,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
     }
 
     public static final int WAIT_BEGIN_TIME_US_FIELD_NUMBER = 2;
-    private long waitBeginTimeUs_ = 0L;
+    private long waitBeginTimeUs_;
     /**
      * <code>uint64 wait_begin_time_us = 2;</code>
      * @return The waitBeginTimeUs.
@@ -313,7 +401,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
     }
 
     public static final int WAIT_SECONDS_FIELD_NUMBER = 5;
-    private int waitSeconds_ = 0;
+    private int waitSeconds_;
     /**
      * <code>uint32 wait_seconds = 5;</code>
      * @return The waitSeconds.
@@ -358,7 +446,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
       if (playIndex_ != 0) {
         output.writeUInt32(14, playIndex_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -397,7 +485,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, playIndex_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -424,7 +512,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
           != other.getWaitBeginTimeUs()) return false;
       if (getWaitSeconds()
           != other.getWaitSeconds()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -452,7 +540,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
           getWaitBeginTimeUs());
       hash = (37 * hash) + WAIT_SECONDS_FIELD_NUMBER;
       hash = (53 * hash) + getWaitSeconds();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -601,30 +689,38 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.InBattleMechanicusCardResultNotifyOuterClass.InBattleMechanicusCardResultNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCardListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         groupId_ = 0;
+
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          cardList_ = null;
           cardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         playIndex_ = 0;
+
         internalGetMutablePlayerConfirmedCardMap().clear();
         waitBeginTimeUs_ = 0L;
+
         waitSeconds_ = 0;
+
         return this;
       }
 
@@ -651,42 +747,24 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleMechanicusCardResultNotifyOuterClass.InBattleMechanicusCardResultNotify buildPartial() {
         emu.gingerps.net.proto.InBattleMechanicusCardResultNotifyOuterClass.InBattleMechanicusCardResultNotify result = new emu.gingerps.net.proto.InBattleMechanicusCardResultNotifyOuterClass.InBattleMechanicusCardResultNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.InBattleMechanicusCardResultNotifyOuterClass.InBattleMechanicusCardResultNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.groupId_ = groupId_;
         if (cardListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             cardList_ = java.util.Collections.unmodifiableList(cardList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.cardList_ = cardList_;
         } else {
           result.cardList_ = cardListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.InBattleMechanicusCardResultNotifyOuterClass.InBattleMechanicusCardResultNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.groupId_ = groupId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.playIndex_ = playIndex_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.playerConfirmedCardMap_ = internalGetPlayerConfirmedCardMap();
-          result.playerConfirmedCardMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.waitBeginTimeUs_ = waitBeginTimeUs_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.waitSeconds_ = waitSeconds_;
-        }
+        result.playIndex_ = playIndex_;
+        result.playerConfirmedCardMap_ = internalGetPlayerConfirmedCardMap();
+        result.playerConfirmedCardMap_.makeImmutable();
+        result.waitBeginTimeUs_ = waitBeginTimeUs_;
+        result.waitSeconds_ = waitSeconds_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -740,7 +818,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
           if (!other.cardList_.isEmpty()) {
             if (cardList_.isEmpty()) {
               cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureCardListIsMutable();
               cardList_.addAll(other.cardList_);
@@ -753,7 +831,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
               cardListBuilder_.dispose();
               cardListBuilder_ = null;
               cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               cardListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCardListFieldBuilder() : null;
@@ -767,14 +845,13 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
         }
         internalGetMutablePlayerConfirmedCardMap().mergeFrom(
             other.internalGetPlayerConfirmedCardMap());
-        bitField0_ |= 0x00000008;
         if (other.getWaitBeginTimeUs() != 0L) {
           setWaitBeginTimeUs(other.getWaitBeginTimeUs());
         }
         if (other.getWaitSeconds() != 0) {
           setWaitSeconds(other.getWaitSeconds());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -789,72 +866,17 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.InBattleMechanicusCardResultNotifyOuterClass.InBattleMechanicusCardResultNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                waitBeginTimeUs_ = input.readUInt64();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 16
-              case 40: {
-                waitSeconds_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 40
-              case 66: {
-                emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo.parser(),
-                        extensionRegistry);
-                if (cardListBuilder_ == null) {
-                  ensureCardListIsMutable();
-                  cardList_.add(m);
-                } else {
-                  cardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 66
-              case 74: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                playerConfirmedCardMap__ = input.readMessage(
-                    PlayerConfirmedCardMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutablePlayerConfirmedCardMap().getMutableMap().put(
-                    playerConfirmedCardMap__.getKey(), playerConfirmedCardMap__.getValue());
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 74
-              case 80: {
-                groupId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 112: {
-                playIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.InBattleMechanicusCardResultNotifyOuterClass.InBattleMechanicusCardResultNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -876,7 +898,6 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -885,7 +906,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         groupId_ = 0;
         onChanged();
         return this;
@@ -894,9 +915,9 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo> cardList_ =
         java.util.Collections.emptyList();
       private void ensureCardListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo>(cardList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1046,7 +1067,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
       public Builder clearCardList() {
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           cardListBuilder_.clear();
@@ -1123,7 +1144,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
           cardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo, emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfo.Builder, emu.gingerps.net.proto.InBattleMechanicusCardInfoOuterClass.InBattleMechanicusCardInfoOrBuilder>(
                   cardList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           cardList_ = null;
@@ -1148,7 +1169,6 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
       public Builder setPlayIndex(int value) {
         
         playIndex_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1157,7 +1177,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayIndex() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         playIndex_ = 0;
         onChanged();
         return this;
@@ -1166,7 +1186,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> playerConfirmedCardMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetPlayerConfirmedCardMap() {
+      internalGetPlayerConfirmedCardMap() {
         if (playerConfirmedCardMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               PlayerConfirmedCardMapDefaultEntryHolder.defaultEntry);
@@ -1174,7 +1194,8 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
         return playerConfirmedCardMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutablePlayerConfirmedCardMap() {
+      internalGetMutablePlayerConfirmedCardMap() {
+        onChanged();;
         if (playerConfirmedCardMap_ == null) {
           playerConfirmedCardMap_ = com.google.protobuf.MapField.newMapField(
               PlayerConfirmedCardMapDefaultEntryHolder.defaultEntry);
@@ -1182,16 +1203,16 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
         if (!playerConfirmedCardMap_.isMutable()) {
           playerConfirmedCardMap_ = playerConfirmedCardMap_.copy();
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
         return playerConfirmedCardMap_;
       }
+
       public int getPlayerConfirmedCardMapCount() {
         return internalGetPlayerConfirmedCardMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
        */
+
       @java.lang.Override
       public boolean containsPlayerConfirmedCardMap(
           int key) {
@@ -1210,6 +1231,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getPlayerConfirmedCardMapMap() {
         return internalGetPlayerConfirmedCardMap().getMap();
       }
@@ -1217,6 +1239,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
        */
       @java.lang.Override
+
       public int getPlayerConfirmedCardMapOrDefault(
           int key,
           int defaultValue) {
@@ -1229,6 +1252,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
        */
       @java.lang.Override
+
       public int getPlayerConfirmedCardMapOrThrow(
           int key) {
         
@@ -1239,8 +1263,8 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearPlayerConfirmedCardMap() {
-        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutablePlayerConfirmedCardMap().getMutableMap()
             .clear();
         return this;
@@ -1248,6 +1272,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
        */
+
       public Builder removePlayerConfirmedCardMap(
           int key) {
         
@@ -1260,8 +1285,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutablePlayerConfirmedCardMap() {
-        bitField0_ |= 0x00000008;
+      getMutablePlayerConfirmedCardMap() {
         return internalGetMutablePlayerConfirmedCardMap().getMutableMap();
       }
       /**
@@ -1274,17 +1298,16 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
         
         internalGetMutablePlayerConfirmedCardMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000008;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; player_confirmed_card_map = 9;</code>
        */
+
       public Builder putAllPlayerConfirmedCardMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutablePlayerConfirmedCardMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000008;
         return this;
       }
 
@@ -1305,7 +1328,6 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
       public Builder setWaitBeginTimeUs(long value) {
         
         waitBeginTimeUs_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1314,7 +1336,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWaitBeginTimeUs() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         waitBeginTimeUs_ = 0L;
         onChanged();
         return this;
@@ -1337,7 +1359,6 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
       public Builder setWaitSeconds(int value) {
         
         waitSeconds_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1346,7 +1367,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWaitSeconds() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         waitSeconds_ = 0;
         onChanged();
         return this;
@@ -1384,18 +1405,7 @@ public final class InBattleMechanicusCardResultNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InBattleMechanicusCardResultNotify(input, extensionRegistry);
       }
     };
 

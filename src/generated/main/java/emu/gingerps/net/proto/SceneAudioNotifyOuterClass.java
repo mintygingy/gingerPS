@@ -130,6 +130,114 @@ public final class SceneAudioNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneAudioNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              sourceUid_ = input.readUInt32();
+              break;
+            }
+            case 93: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                param2_ = newFloatList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              param2_.addFloat(input.readFloat());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                param2_ = newFloatList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                param2_.addFloat(input.readFloat());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                param3_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              param3_.add(s);
+              break;
+            }
+            case 112: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                param1_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              param1_.addInt(input.readUInt32());
+              break;
+            }
+            case 114: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                param1_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                param1_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 120: {
+
+              type_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          param2_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          param3_ = param3_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          param1_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneAudioNotifyOuterClass.internal_static_SceneAudioNotify_descriptor;
@@ -144,7 +252,7 @@ public final class SceneAudioNotifyOuterClass {
     }
 
     public static final int SOURCE_UID_FIELD_NUMBER = 6;
-    private int sourceUid_ = 0;
+    private int sourceUid_;
     /**
      * <code>uint32 source_uid = 6;</code>
      * @return The sourceUid.
@@ -155,7 +263,6 @@ public final class SceneAudioNotifyOuterClass {
     }
 
     public static final int PARAM2_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.FloatList param2_;
     /**
      * <code>repeated float param2 = 11;</code>
@@ -184,7 +291,6 @@ public final class SceneAudioNotifyOuterClass {
     private int param2MemoizedSerializedSize = -1;
 
     public static final int PARAM3_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList param3_;
     /**
      * <code>repeated string param3 = 13;</code>
@@ -220,7 +326,7 @@ public final class SceneAudioNotifyOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 15;
-    private int type_ = 0;
+    private int type_;
     /**
      * <code>int32 type = 15;</code>
      * @return The type.
@@ -231,7 +337,6 @@ public final class SceneAudioNotifyOuterClass {
     }
 
     public static final int PARAM1_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList param1_;
     /**
      * <code>repeated uint32 param1 = 14;</code>
@@ -297,7 +402,7 @@ public final class SceneAudioNotifyOuterClass {
       if (type_ != 0) {
         output.writeInt32(15, type_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -347,7 +452,7 @@ public final class SceneAudioNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, type_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -372,7 +477,7 @@ public final class SceneAudioNotifyOuterClass {
           != other.getType()) return false;
       if (!getParam1List()
           .equals(other.getParam1List())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -399,7 +504,7 @@ public final class SceneAudioNotifyOuterClass {
         hash = (37 * hash) + PARAM1_FIELD_NUMBER;
         hash = (53 * hash) + getParam1List().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -527,24 +632,32 @@ public final class SceneAudioNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneAudioNotifyOuterClass.SceneAudioNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         sourceUid_ = 0;
+
         param2_ = emptyFloatList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         param3_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         type_ = 0;
+
         param1_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -571,38 +684,26 @@ public final class SceneAudioNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneAudioNotifyOuterClass.SceneAudioNotify buildPartial() {
         emu.gingerps.net.proto.SceneAudioNotifyOuterClass.SceneAudioNotify result = new emu.gingerps.net.proto.SceneAudioNotifyOuterClass.SceneAudioNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SceneAudioNotifyOuterClass.SceneAudioNotify result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.sourceUid_ = sourceUid_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           param2_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.param2_ = param2_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           param3_ = param3_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.param3_ = param3_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        result.type_ = type_;
+        if (((bitField0_ & 0x00000004) != 0)) {
           param1_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.param1_ = param1_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneAudioNotifyOuterClass.SceneAudioNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sourceUid_ = sourceUid_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.type_ = type_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -655,7 +756,7 @@ public final class SceneAudioNotifyOuterClass {
         if (!other.param2_.isEmpty()) {
           if (param2_.isEmpty()) {
             param2_ = other.param2_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureParam2IsMutable();
             param2_.addAll(other.param2_);
@@ -665,7 +766,7 @@ public final class SceneAudioNotifyOuterClass {
         if (!other.param3_.isEmpty()) {
           if (param3_.isEmpty()) {
             param3_ = other.param3_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureParam3IsMutable();
             param3_.addAll(other.param3_);
@@ -678,14 +779,14 @@ public final class SceneAudioNotifyOuterClass {
         if (!other.param1_.isEmpty()) {
           if (param1_.isEmpty()) {
             param1_ = other.param1_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureParam1IsMutable();
             param1_.addAll(other.param1_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -700,78 +801,17 @@ public final class SceneAudioNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneAudioNotifyOuterClass.SceneAudioNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                sourceUid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 93: {
-                float v = input.readFloat();
-                ensureParam2IsMutable();
-                param2_.addFloat(v);
-                break;
-              } // case 93
-              case 90: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureParam2IsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  param2_.addFloat(input.readFloat());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 90
-              case 106: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureParam3IsMutable();
-                param3_.add(s);
-                break;
-              } // case 106
-              case 112: {
-                int v = input.readUInt32();
-                ensureParam1IsMutable();
-                param1_.addInt(v);
-                break;
-              } // case 112
-              case 114: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureParam1IsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  param1_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 114
-              case 120: {
-                type_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneAudioNotifyOuterClass.SceneAudioNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -793,7 +833,6 @@ public final class SceneAudioNotifyOuterClass {
       public Builder setSourceUid(int value) {
         
         sourceUid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -802,7 +841,7 @@ public final class SceneAudioNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSourceUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         sourceUid_ = 0;
         onChanged();
         return this;
@@ -810,10 +849,10 @@ public final class SceneAudioNotifyOuterClass {
 
       private com.google.protobuf.Internal.FloatList param2_ = emptyFloatList();
       private void ensureParam2IsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           param2_ = mutableCopy(param2_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated float param2 = 11;</code>
@@ -821,7 +860,7 @@ public final class SceneAudioNotifyOuterClass {
        */
       public java.util.List<java.lang.Float>
           getParam2List() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(param2_) : param2_;
       }
       /**
@@ -847,7 +886,6 @@ public final class SceneAudioNotifyOuterClass {
        */
       public Builder setParam2(
           int index, float value) {
-        
         ensureParam2IsMutable();
         param2_.setFloat(index, value);
         onChanged();
@@ -859,7 +897,6 @@ public final class SceneAudioNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParam2(float value) {
-        
         ensureParam2IsMutable();
         param2_.addFloat(value);
         onChanged();
@@ -884,16 +921,16 @@ public final class SceneAudioNotifyOuterClass {
        */
       public Builder clearParam2() {
         param2_ = emptyFloatList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.LazyStringList param3_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureParam3IsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           param3_ = new com.google.protobuf.LazyStringArrayList(param3_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
       /**
@@ -936,8 +973,10 @@ public final class SceneAudioNotifyOuterClass {
        */
       public Builder setParam3(
           int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureParam3IsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureParam3IsMutable();
         param3_.set(index, value);
         onChanged();
         return this;
@@ -949,8 +988,10 @@ public final class SceneAudioNotifyOuterClass {
        */
       public Builder addParam3(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureParam3IsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureParam3IsMutable();
         param3_.add(value);
         onChanged();
         return this;
@@ -974,7 +1015,7 @@ public final class SceneAudioNotifyOuterClass {
        */
       public Builder clearParam3() {
         param3_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -985,8 +1026,10 @@ public final class SceneAudioNotifyOuterClass {
        */
       public Builder addParam3Bytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         ensureParam3IsMutable();
         param3_.add(value);
         onChanged();
@@ -1010,7 +1053,6 @@ public final class SceneAudioNotifyOuterClass {
       public Builder setType(int value) {
         
         type_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1019,7 +1061,7 @@ public final class SceneAudioNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         type_ = 0;
         onChanged();
         return this;
@@ -1027,10 +1069,10 @@ public final class SceneAudioNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList param1_ = emptyIntList();
       private void ensureParam1IsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           param1_ = mutableCopy(param1_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated uint32 param1 = 14;</code>
@@ -1038,7 +1080,7 @@ public final class SceneAudioNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getParam1List() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(param1_) : param1_;
       }
       /**
@@ -1064,7 +1106,6 @@ public final class SceneAudioNotifyOuterClass {
        */
       public Builder setParam1(
           int index, int value) {
-        
         ensureParam1IsMutable();
         param1_.setInt(index, value);
         onChanged();
@@ -1076,7 +1117,6 @@ public final class SceneAudioNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParam1(int value) {
-        
         ensureParam1IsMutable();
         param1_.addInt(value);
         onChanged();
@@ -1101,7 +1141,7 @@ public final class SceneAudioNotifyOuterClass {
        */
       public Builder clearParam1() {
         param1_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1138,18 +1178,7 @@ public final class SceneAudioNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneAudioNotify(input, extensionRegistry);
       }
     };
 

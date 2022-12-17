@@ -82,6 +82,66 @@ public final class LanternRiteFireworksStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private LanternRiteFireworksStageInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                challengeInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              challengeInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          challengeInfoList_ = java.util.Collections.unmodifiableList(challengeInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LanternRiteFireworksStageInfoOuterClass.internal_static_LanternRiteFireworksStageInfo_descriptor;
@@ -96,7 +156,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 14;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 14;</code>
      * @return The stageId.
@@ -107,7 +167,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 9;
-    private boolean isOpen_ = false;
+    private boolean isOpen_;
     /**
      * <code>bool is_open = 9;</code>
      * @return The isOpen.
@@ -118,7 +178,6 @@ public final class LanternRiteFireworksStageInfoOuterClass {
     }
 
     public static final int CHALLENGE_INFO_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> challengeInfoList_;
     /**
      * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 11;</code>
@@ -181,7 +240,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(14, stageId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -202,7 +261,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, stageId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -223,7 +282,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
           != other.getIsOpen()) return false;
       if (!getChallengeInfoListList()
           .equals(other.getChallengeInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -243,7 +302,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
         hash = (37 * hash) + CHALLENGE_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getChallengeInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,27 +419,33 @@ public final class LanternRiteFireworksStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getChallengeInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         stageId_ = 0;
+
         isOpen_ = false;
+
         if (challengeInfoListBuilder_ == null) {
           challengeInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          challengeInfoList_ = null;
           challengeInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -407,32 +472,20 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo buildPartial() {
         emu.gingerps.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo result = new emu.gingerps.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.stageId_ = stageId_;
+        result.isOpen_ = isOpen_;
         if (challengeInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             challengeInfoList_ = java.util.Collections.unmodifiableList(challengeInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.challengeInfoList_ = challengeInfoList_;
         } else {
           result.challengeInfoList_ = challengeInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.stageId_ = stageId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isOpen_ = isOpen_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -489,7 +542,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
           if (!other.challengeInfoList_.isEmpty()) {
             if (challengeInfoList_.isEmpty()) {
               challengeInfoList_ = other.challengeInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureChallengeInfoListIsMutable();
               challengeInfoList_.addAll(other.challengeInfoList_);
@@ -502,7 +555,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
               challengeInfoListBuilder_.dispose();
               challengeInfoListBuilder_ = null;
               challengeInfoList_ = other.challengeInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               challengeInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChallengeInfoListFieldBuilder() : null;
@@ -511,7 +564,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -526,53 +579,17 @@ public final class LanternRiteFireworksStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                isOpen_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 90: {
-                emu.gingerps.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.parser(),
-                        extensionRegistry);
-                if (challengeInfoListBuilder_ == null) {
-                  ensureChallengeInfoListIsMutable();
-                  challengeInfoList_.add(m);
-                } else {
-                  challengeInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              case 112: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -594,7 +611,6 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -603,7 +619,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -626,7 +642,6 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -635,7 +650,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isOpen_ = false;
         onChanged();
         return this;
@@ -644,9 +659,9 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> challengeInfoList_ =
         java.util.Collections.emptyList();
       private void ensureChallengeInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           challengeInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo>(challengeInfoList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -796,7 +811,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       public Builder clearChallengeInfoList() {
         if (challengeInfoListBuilder_ == null) {
           challengeInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           challengeInfoListBuilder_.clear();
@@ -873,7 +888,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
           challengeInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo, emu.gingerps.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder, emu.gingerps.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder>(
                   challengeInfoList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           challengeInfoList_ = null;
@@ -913,18 +928,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new LanternRiteFireworksStageInfo(input, extensionRegistry);
       }
     };
 

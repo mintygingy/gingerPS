@@ -62,14 +62,14 @@ public final class InBattleChessInfoOuterClass {
     /**
      * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo getPlayerInfoMapOrDefault(
+
+    emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo getPlayerInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue);
+        emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue);
     /**
      * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
      */
+
     emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo getPlayerInfoMapOrThrow(
         int key);
 
@@ -167,6 +167,131 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue);
     getUnknownFields() {
       return this.unknownFields;
     }
+    private InBattleChessInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                banCardTagList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              banCardTagList_.addInt(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                banCardTagList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                banCardTagList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 16: {
+
+              round_ = input.readUInt32();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                selectedCardInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ChessCardInfoOuterClass.ChessCardInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              selectedCardInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ChessCardInfoOuterClass.ChessCardInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+
+              leftMonsters_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              emu.gingerps.net.proto.ChessMysteryInfoOuterClass.ChessMysteryInfo.Builder subBuilder = null;
+              if (mysteryInfo_ != null) {
+                subBuilder = mysteryInfo_.toBuilder();
+              }
+              mysteryInfo_ = input.readMessage(emu.gingerps.net.proto.ChessMysteryInfoOuterClass.ChessMysteryInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mysteryInfo_);
+                mysteryInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 56: {
+
+              maxEscapableMonsters_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              escapedMonsters_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              totalRound_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                playerInfoMap_ = com.google.protobuf.MapField.newMapField(
+                    PlayerInfoMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo>
+              playerInfoMap__ = input.readMessage(
+                  PlayerInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              playerInfoMap_.getMutableMap().put(
+                  playerInfoMap__.getKey(), playerInfoMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          banCardTagList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          selectedCardInfoList_ = java.util.Collections.unmodifiableList(selectedCardInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleChessInfoOuterClass.internal_static_InBattleChessInfo_descriptor;
@@ -193,7 +318,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue);
     }
 
     public static final int ROUND_FIELD_NUMBER = 2;
-    private int round_ = 0;
+    private int round_;
     /**
      * <code>uint32 round = 2;</code>
      * @return The round.
@@ -226,7 +351,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue);
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ChessMysteryInfoOuterClass.ChessMysteryInfoOrBuilder getMysteryInfoOrBuilder() {
-      return mysteryInfo_ == null ? emu.gingerps.net.proto.ChessMysteryInfoOuterClass.ChessMysteryInfo.getDefaultInstance() : mysteryInfo_;
+      return getMysteryInfo();
     }
 
     public static final int PLAYER_INFO_MAP_FIELD_NUMBER = 15;
@@ -241,7 +366,6 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo> playerInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo>
@@ -252,12 +376,14 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue);
       }
       return playerInfoMap_;
     }
+
     public int getPlayerInfoMapCount() {
       return internalGetPlayerInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
      */
+
     @java.lang.Override
     public boolean containsPlayerInfoMap(
         int key) {
@@ -276,6 +402,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue);
      * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo> getPlayerInfoMapMap() {
       return internalGetPlayerInfoMap().getMap();
     }
@@ -283,11 +410,10 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue);
      * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo getPlayerInfoMapOrDefault(
+
+    public emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo getPlayerInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
+        emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo> map =
           internalGetPlayerInfoMap().getMap();
@@ -297,6 +423,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
      * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo getPlayerInfoMapOrThrow(
         int key) {
       
@@ -309,7 +436,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
     }
 
     public static final int MAX_ESCAPABLE_MONSTERS_FIELD_NUMBER = 7;
-    private int maxEscapableMonsters_ = 0;
+    private int maxEscapableMonsters_;
     /**
      * <code>uint32 max_escapable_monsters = 7;</code>
      * @return The maxEscapableMonsters.
@@ -320,7 +447,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
     }
 
     public static final int ESCAPED_MONSTERS_FIELD_NUMBER = 11;
-    private int escapedMonsters_ = 0;
+    private int escapedMonsters_;
     /**
      * <code>uint32 escaped_monsters = 11;</code>
      * @return The escapedMonsters.
@@ -331,7 +458,6 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
     }
 
     public static final int SELECTED_CARD_INFO_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ChessCardInfoOuterClass.ChessCardInfo> selectedCardInfoList_;
     /**
      * <code>repeated .ChessCardInfo selected_card_info_list = 4;</code>
@@ -372,7 +498,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
     }
 
     public static final int TOTAL_ROUND_FIELD_NUMBER = 13;
-    private int totalRound_ = 0;
+    private int totalRound_;
     /**
      * <code>uint32 total_round = 13;</code>
      * @return The totalRound.
@@ -383,7 +509,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
     }
 
     public static final int LEFT_MONSTERS_FIELD_NUMBER = 5;
-    private int leftMonsters_ = 0;
+    private int leftMonsters_;
     /**
      * <code>uint32 left_monsters = 5;</code>
      * @return The leftMonsters.
@@ -394,7 +520,6 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
     }
 
     public static final int BAN_CARD_TAG_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList banCardTagList_;
     /**
      * <code>repeated uint32 ban_card_tag_list = 1;</code>
@@ -471,7 +596,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
           internalGetPlayerInfoMap(),
           PlayerInfoMapDefaultEntryHolder.defaultEntry,
           15);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -532,7 +657,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(15, playerInfoMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -568,7 +693,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
           != other.getLeftMonsters()) return false;
       if (!getBanCardTagListList()
           .equals(other.getBanCardTagListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -605,7 +730,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
         hash = (37 * hash) + BAN_CARD_TAG_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBanCardTagListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -744,37 +869,48 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
 
       // Construct using emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSelectedCardInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         round_ = 0;
-        mysteryInfo_ = null;
-        if (mysteryInfoBuilder_ != null) {
-          mysteryInfoBuilder_.dispose();
+
+        if (mysteryInfoBuilder_ == null) {
+          mysteryInfo_ = null;
+        } else {
+          mysteryInfo_ = null;
           mysteryInfoBuilder_ = null;
         }
         internalGetMutablePlayerInfoMap().clear();
         maxEscapableMonsters_ = 0;
+
         escapedMonsters_ = 0;
+
         if (selectedCardInfoListBuilder_ == null) {
           selectedCardInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          selectedCardInfoList_ = null;
           selectedCardInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
         totalRound_ = 0;
+
         leftMonsters_ = 0;
+
         banCardTagList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -801,55 +937,35 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo buildPartial() {
         emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo result = new emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.round_ = round_;
+        if (mysteryInfoBuilder_ == null) {
+          result.mysteryInfo_ = mysteryInfo_;
+        } else {
+          result.mysteryInfo_ = mysteryInfoBuilder_.build();
+        }
+        result.playerInfoMap_ = internalGetPlayerInfoMap();
+        result.playerInfoMap_.makeImmutable();
+        result.maxEscapableMonsters_ = maxEscapableMonsters_;
+        result.escapedMonsters_ = escapedMonsters_;
         if (selectedCardInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             selectedCardInfoList_ = java.util.Collections.unmodifiableList(selectedCardInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.selectedCardInfoList_ = selectedCardInfoList_;
         } else {
           result.selectedCardInfoList_ = selectedCardInfoListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000100) != 0)) {
+        result.totalRound_ = totalRound_;
+        result.leftMonsters_ = leftMonsters_;
+        if (((bitField0_ & 0x00000004) != 0)) {
           banCardTagList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.banCardTagList_ = banCardTagList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.round_ = round_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.mysteryInfo_ = mysteryInfoBuilder_ == null
-              ? mysteryInfo_
-              : mysteryInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.playerInfoMap_ = internalGetPlayerInfoMap();
-          result.playerInfoMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.maxEscapableMonsters_ = maxEscapableMonsters_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.escapedMonsters_ = escapedMonsters_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.totalRound_ = totalRound_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.leftMonsters_ = leftMonsters_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -904,7 +1020,6 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
         }
         internalGetMutablePlayerInfoMap().mergeFrom(
             other.internalGetPlayerInfoMap());
-        bitField0_ |= 0x00000004;
         if (other.getMaxEscapableMonsters() != 0) {
           setMaxEscapableMonsters(other.getMaxEscapableMonsters());
         }
@@ -915,7 +1030,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
           if (!other.selectedCardInfoList_.isEmpty()) {
             if (selectedCardInfoList_.isEmpty()) {
               selectedCardInfoList_ = other.selectedCardInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureSelectedCardInfoListIsMutable();
               selectedCardInfoList_.addAll(other.selectedCardInfoList_);
@@ -928,7 +1043,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
               selectedCardInfoListBuilder_.dispose();
               selectedCardInfoListBuilder_ = null;
               selectedCardInfoList_ = other.selectedCardInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000002);
               selectedCardInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSelectedCardInfoListFieldBuilder() : null;
@@ -946,14 +1061,14 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
         if (!other.banCardTagList_.isEmpty()) {
           if (banCardTagList_.isEmpty()) {
             banCardTagList_ = other.banCardTagList_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureBanCardTagListIsMutable();
             banCardTagList_.addAll(other.banCardTagList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -968,100 +1083,17 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int v = input.readUInt32();
-                ensureBanCardTagListIsMutable();
-                banCardTagList_.addInt(v);
-                break;
-              } // case 8
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureBanCardTagListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  banCardTagList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 10
-              case 16: {
-                round_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 34: {
-                emu.gingerps.net.proto.ChessCardInfoOuterClass.ChessCardInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ChessCardInfoOuterClass.ChessCardInfo.parser(),
-                        extensionRegistry);
-                if (selectedCardInfoListBuilder_ == null) {
-                  ensureSelectedCardInfoListIsMutable();
-                  selectedCardInfoList_.add(m);
-                } else {
-                  selectedCardInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 40: {
-                leftMonsters_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 40
-              case 50: {
-                input.readMessage(
-                    getMysteryInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 50
-              case 56: {
-                maxEscapableMonsters_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 88: {
-                escapedMonsters_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 88
-              case 104: {
-                totalRound_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 104
-              case 122: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo>
-                playerInfoMap__ = input.readMessage(
-                    PlayerInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutablePlayerInfoMap().getMutableMap().put(
-                    playerInfoMap__.getKey(), playerInfoMap__.getValue());
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1083,7 +1115,6 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
       public Builder setRound(int value) {
         
         round_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1092,7 +1123,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearRound() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         round_ = 0;
         onChanged();
         return this;
@@ -1106,7 +1137,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        * @return Whether the mysteryInfo field is set.
        */
       public boolean hasMysteryInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return mysteryInfoBuilder_ != null || mysteryInfo_ != null;
       }
       /**
        * <code>.ChessMysteryInfo mystery_info = 6;</code>
@@ -1128,11 +1159,11 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
             throw new NullPointerException();
           }
           mysteryInfo_ = value;
+          onChanged();
         } else {
           mysteryInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1142,11 +1173,11 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
           emu.gingerps.net.proto.ChessMysteryInfoOuterClass.ChessMysteryInfo.Builder builderForValue) {
         if (mysteryInfoBuilder_ == null) {
           mysteryInfo_ = builderForValue.build();
+          onChanged();
         } else {
           mysteryInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1154,38 +1185,38 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        */
       public Builder mergeMysteryInfo(emu.gingerps.net.proto.ChessMysteryInfoOuterClass.ChessMysteryInfo value) {
         if (mysteryInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            mysteryInfo_ != null &&
-            mysteryInfo_ != emu.gingerps.net.proto.ChessMysteryInfoOuterClass.ChessMysteryInfo.getDefaultInstance()) {
-            getMysteryInfoBuilder().mergeFrom(value);
+          if (mysteryInfo_ != null) {
+            mysteryInfo_ =
+              emu.gingerps.net.proto.ChessMysteryInfoOuterClass.ChessMysteryInfo.newBuilder(mysteryInfo_).mergeFrom(value).buildPartial();
           } else {
             mysteryInfo_ = value;
           }
+          onChanged();
         } else {
           mysteryInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ChessMysteryInfo mystery_info = 6;</code>
        */
       public Builder clearMysteryInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        mysteryInfo_ = null;
-        if (mysteryInfoBuilder_ != null) {
-          mysteryInfoBuilder_.dispose();
+        if (mysteryInfoBuilder_ == null) {
+          mysteryInfo_ = null;
+          onChanged();
+        } else {
+          mysteryInfo_ = null;
           mysteryInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ChessMysteryInfo mystery_info = 6;</code>
        */
       public emu.gingerps.net.proto.ChessMysteryInfoOuterClass.ChessMysteryInfo.Builder getMysteryInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getMysteryInfoFieldBuilder().getBuilder();
       }
@@ -1220,7 +1251,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo> playerInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo>
-          internalGetPlayerInfoMap() {
+      internalGetPlayerInfoMap() {
         if (playerInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               PlayerInfoMapDefaultEntryHolder.defaultEntry);
@@ -1228,7 +1259,8 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
         return playerInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo>
-          internalGetMutablePlayerInfoMap() {
+      internalGetMutablePlayerInfoMap() {
+        onChanged();;
         if (playerInfoMap_ == null) {
           playerInfoMap_ = com.google.protobuf.MapField.newMapField(
               PlayerInfoMapDefaultEntryHolder.defaultEntry);
@@ -1236,16 +1268,16 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
         if (!playerInfoMap_.isMutable()) {
           playerInfoMap_ = playerInfoMap_.copy();
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
         return playerInfoMap_;
       }
+
       public int getPlayerInfoMapCount() {
         return internalGetPlayerInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
        */
+
       @java.lang.Override
       public boolean containsPlayerInfoMap(
           int key) {
@@ -1264,6 +1296,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo> getPlayerInfoMapMap() {
         return internalGetPlayerInfoMap().getMap();
       }
@@ -1271,11 +1304,10 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo getPlayerInfoMapOrDefault(
+
+      public emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo getPlayerInfoMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
+          emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo> map =
             internalGetPlayerInfoMap().getMap();
@@ -1285,6 +1317,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo getPlayerInfoMapOrThrow(
           int key) {
         
@@ -1295,8 +1328,8 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearPlayerInfoMap() {
-        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutablePlayerInfoMap().getMutableMap()
             .clear();
         return this;
@@ -1304,6 +1337,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
       /**
        * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
        */
+
       public Builder removePlayerInfoMap(
           int key) {
         
@@ -1316,8 +1350,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo>
-          getMutablePlayerInfoMap() {
-        bitField0_ |= 0x00000004;
+      getMutablePlayerInfoMap() {
         return internalGetMutablePlayerInfoMap().getMutableMap();
       }
       /**
@@ -1327,20 +1360,19 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
           int key,
           emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutablePlayerInfoMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, .ChessPlayerInfo&gt; player_info_map = 15;</code>
        */
+
       public Builder putAllPlayerInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo> values) {
         internalGetMutablePlayerInfoMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000004;
         return this;
       }
 
@@ -1361,7 +1393,6 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
       public Builder setMaxEscapableMonsters(int value) {
         
         maxEscapableMonsters_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1370,7 +1401,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearMaxEscapableMonsters() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         maxEscapableMonsters_ = 0;
         onChanged();
         return this;
@@ -1393,7 +1424,6 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
       public Builder setEscapedMonsters(int value) {
         
         escapedMonsters_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1402,7 +1432,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearEscapedMonsters() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         escapedMonsters_ = 0;
         onChanged();
         return this;
@@ -1411,9 +1441,9 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
       private java.util.List<emu.gingerps.net.proto.ChessCardInfoOuterClass.ChessCardInfo> selectedCardInfoList_ =
         java.util.Collections.emptyList();
       private void ensureSelectedCardInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           selectedCardInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ChessCardInfoOuterClass.ChessCardInfo>(selectedCardInfoList_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1563,7 +1593,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
       public Builder clearSelectedCardInfoList() {
         if (selectedCardInfoListBuilder_ == null) {
           selectedCardInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           selectedCardInfoListBuilder_.clear();
@@ -1640,7 +1670,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
           selectedCardInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ChessCardInfoOuterClass.ChessCardInfo, emu.gingerps.net.proto.ChessCardInfoOuterClass.ChessCardInfo.Builder, emu.gingerps.net.proto.ChessCardInfoOuterClass.ChessCardInfoOrBuilder>(
                   selectedCardInfoList_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           selectedCardInfoList_ = null;
@@ -1665,7 +1695,6 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
       public Builder setTotalRound(int value) {
         
         totalRound_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1674,7 +1703,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearTotalRound() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         totalRound_ = 0;
         onChanged();
         return this;
@@ -1697,7 +1726,6 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
       public Builder setLeftMonsters(int value) {
         
         leftMonsters_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1706,7 +1734,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearLeftMonsters() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         leftMonsters_ = 0;
         onChanged();
         return this;
@@ -1714,10 +1742,10 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
 
       private com.google.protobuf.Internal.IntList banCardTagList_ = emptyIntList();
       private void ensureBanCardTagListIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           banCardTagList_ = mutableCopy(banCardTagList_);
-          bitField0_ |= 0x00000100;
-        }
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated uint32 ban_card_tag_list = 1;</code>
@@ -1725,7 +1753,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        */
       public java.util.List<java.lang.Integer>
           getBanCardTagListList() {
-        return ((bitField0_ & 0x00000100) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(banCardTagList_) : banCardTagList_;
       }
       /**
@@ -1751,7 +1779,6 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        */
       public Builder setBanCardTagList(
           int index, int value) {
-        
         ensureBanCardTagListIsMutable();
         banCardTagList_.setInt(index, value);
         onChanged();
@@ -1763,7 +1790,6 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder addBanCardTagList(int value) {
-        
         ensureBanCardTagListIsMutable();
         banCardTagList_.addInt(value);
         onChanged();
@@ -1788,7 +1814,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
        */
       public Builder clearBanCardTagList() {
         banCardTagList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1825,18 +1851,7 @@ emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InBattleChessInfo(input, extensionRegistry);
       }
     };
 

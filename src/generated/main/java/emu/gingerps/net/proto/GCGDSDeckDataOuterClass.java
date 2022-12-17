@@ -124,6 +124,123 @@ public final class GCGDSDeckDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGDSDeckData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cardList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardList_.addInt(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                cardList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                cardList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 45: {
+
+              createTime_ = input.readFixed32();
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                characterCardList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              characterCardList_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                characterCardList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                characterCardList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
+
+              cardBackId_ = input.readUInt32();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 96: {
+
+              id_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              fieldId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              isValid_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cardList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          characterCardList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGDSDeckDataOuterClass.internal_static_GCGDSDeckData_descriptor;
@@ -138,7 +255,7 @@ public final class GCGDSDeckDataOuterClass {
     }
 
     public static final int CREATE_TIME_FIELD_NUMBER = 5;
-    private int createTime_ = 0;
+    private int createTime_;
     /**
      * <code>fixed32 create_time = 5;</code>
      * @return The createTime.
@@ -149,7 +266,7 @@ public final class GCGDSDeckDataOuterClass {
     }
 
     public static final int FIELD_ID_FIELD_NUMBER = 13;
-    private int fieldId_ = 0;
+    private int fieldId_;
     /**
      * <code>uint32 field_id = 13;</code>
      * @return The fieldId.
@@ -160,7 +277,7 @@ public final class GCGDSDeckDataOuterClass {
     }
 
     public static final int CARD_BACK_ID_FIELD_NUMBER = 9;
-    private int cardBackId_ = 0;
+    private int cardBackId_;
     /**
      * <code>uint32 card_back_id = 9;</code>
      * @return The cardBackId.
@@ -171,7 +288,6 @@ public final class GCGDSDeckDataOuterClass {
     }
 
     public static final int CARD_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList cardList_;
     /**
      * <code>repeated uint32 card_list = 1;</code>
@@ -200,7 +316,6 @@ public final class GCGDSDeckDataOuterClass {
     private int cardListMemoizedSerializedSize = -1;
 
     public static final int CHARACTER_CARD_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList characterCardList_;
     /**
      * <code>repeated uint32 character_card_list = 7;</code>
@@ -229,7 +344,7 @@ public final class GCGDSDeckDataOuterClass {
     private int characterCardListMemoizedSerializedSize = -1;
 
     public static final int ID_FIELD_NUMBER = 12;
-    private int id_ = 0;
+    private int id_;
     /**
      * <code>uint32 id = 12;</code>
      * @return The id.
@@ -240,8 +355,7 @@ public final class GCGDSDeckDataOuterClass {
     }
 
     public static final int NAME_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
+    private volatile java.lang.Object name_;
     /**
      * <code>string name = 10;</code>
      * @return The name.
@@ -279,7 +393,7 @@ public final class GCGDSDeckDataOuterClass {
     }
 
     public static final int IS_VALID_FIELD_NUMBER = 15;
-    private boolean isValid_ = false;
+    private boolean isValid_;
     /**
      * <code>bool is_valid = 15;</code>
      * @return The isValid.
@@ -336,7 +450,7 @@ public final class GCGDSDeckDataOuterClass {
       if (isValid_ != false) {
         output.writeBool(15, isValid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -396,7 +510,7 @@ public final class GCGDSDeckDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isValid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -427,7 +541,7 @@ public final class GCGDSDeckDataOuterClass {
           .equals(other.getName())) return false;
       if (getIsValid()
           != other.getIsValid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -459,7 +573,7 @@ public final class GCGDSDeckDataOuterClass {
       hash = (37 * hash) + IS_VALID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsValid());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -576,26 +690,38 @@ public final class GCGDSDeckDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGDSDeckDataOuterClass.GCGDSDeckData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         createTime_ = 0;
+
         fieldId_ = 0;
+
         cardBackId_ = 0;
+
         cardList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         characterCardList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         id_ = 0;
+
         name_ = "";
+
         isValid_ = false;
+
         return this;
       }
 
@@ -622,45 +748,25 @@ public final class GCGDSDeckDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGDSDeckDataOuterClass.GCGDSDeckData buildPartial() {
         emu.gingerps.net.proto.GCGDSDeckDataOuterClass.GCGDSDeckData result = new emu.gingerps.net.proto.GCGDSDeckDataOuterClass.GCGDSDeckData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGDSDeckDataOuterClass.GCGDSDeckData result) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.createTime_ = createTime_;
+        result.fieldId_ = fieldId_;
+        result.cardBackId_ = cardBackId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           cardList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.cardList_ = cardList_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           characterCardList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.characterCardList_ = characterCardList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGDSDeckDataOuterClass.GCGDSDeckData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.createTime_ = createTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.fieldId_ = fieldId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.cardBackId_ = cardBackId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.name_ = name_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.isValid_ = isValid_;
-        }
+        result.id_ = id_;
+        result.name_ = name_;
+        result.isValid_ = isValid_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -719,7 +825,7 @@ public final class GCGDSDeckDataOuterClass {
         if (!other.cardList_.isEmpty()) {
           if (cardList_.isEmpty()) {
             cardList_ = other.cardList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureCardListIsMutable();
             cardList_.addAll(other.cardList_);
@@ -729,7 +835,7 @@ public final class GCGDSDeckDataOuterClass {
         if (!other.characterCardList_.isEmpty()) {
           if (characterCardList_.isEmpty()) {
             characterCardList_ = other.characterCardList_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCharacterCardListIsMutable();
             characterCardList_.addAll(other.characterCardList_);
@@ -741,13 +847,12 @@ public final class GCGDSDeckDataOuterClass {
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
-          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (other.getIsValid() != false) {
           setIsValid(other.getIsValid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -762,92 +867,17 @@ public final class GCGDSDeckDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGDSDeckDataOuterClass.GCGDSDeckData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int v = input.readUInt32();
-                ensureCardListIsMutable();
-                cardList_.addInt(v);
-                break;
-              } // case 8
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureCardListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  cardList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 10
-              case 45: {
-                createTime_ = input.readFixed32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 45
-              case 56: {
-                int v = input.readUInt32();
-                ensureCharacterCardListIsMutable();
-                characterCardList_.addInt(v);
-                break;
-              } // case 56
-              case 58: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureCharacterCardListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  characterCardList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 58
-              case 72: {
-                cardBackId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 72
-              case 82: {
-                name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 82
-              case 96: {
-                id_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 96
-              case 104: {
-                fieldId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              case 120: {
-                isValid_ = input.readBool();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGDSDeckDataOuterClass.GCGDSDeckData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -869,7 +899,6 @@ public final class GCGDSDeckDataOuterClass {
       public Builder setCreateTime(int value) {
         
         createTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -878,7 +907,7 @@ public final class GCGDSDeckDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCreateTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         createTime_ = 0;
         onChanged();
         return this;
@@ -901,7 +930,6 @@ public final class GCGDSDeckDataOuterClass {
       public Builder setFieldId(int value) {
         
         fieldId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -910,7 +938,7 @@ public final class GCGDSDeckDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFieldId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         fieldId_ = 0;
         onChanged();
         return this;
@@ -933,7 +961,6 @@ public final class GCGDSDeckDataOuterClass {
       public Builder setCardBackId(int value) {
         
         cardBackId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -942,7 +969,7 @@ public final class GCGDSDeckDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardBackId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         cardBackId_ = 0;
         onChanged();
         return this;
@@ -950,10 +977,10 @@ public final class GCGDSDeckDataOuterClass {
 
       private com.google.protobuf.Internal.IntList cardList_ = emptyIntList();
       private void ensureCardListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           cardList_ = mutableCopy(cardList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 card_list = 1;</code>
@@ -961,7 +988,7 @@ public final class GCGDSDeckDataOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getCardListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(cardList_) : cardList_;
       }
       /**
@@ -987,7 +1014,6 @@ public final class GCGDSDeckDataOuterClass {
        */
       public Builder setCardList(
           int index, int value) {
-        
         ensureCardListIsMutable();
         cardList_.setInt(index, value);
         onChanged();
@@ -999,7 +1025,6 @@ public final class GCGDSDeckDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCardList(int value) {
-        
         ensureCardListIsMutable();
         cardList_.addInt(value);
         onChanged();
@@ -1024,17 +1049,17 @@ public final class GCGDSDeckDataOuterClass {
        */
       public Builder clearCardList() {
         cardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList characterCardList_ = emptyIntList();
       private void ensureCharacterCardListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           characterCardList_ = mutableCopy(characterCardList_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 character_card_list = 7;</code>
@@ -1042,7 +1067,7 @@ public final class GCGDSDeckDataOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getCharacterCardListList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(characterCardList_) : characterCardList_;
       }
       /**
@@ -1068,7 +1093,6 @@ public final class GCGDSDeckDataOuterClass {
        */
       public Builder setCharacterCardList(
           int index, int value) {
-        
         ensureCharacterCardListIsMutable();
         characterCardList_.setInt(index, value);
         onChanged();
@@ -1080,7 +1104,6 @@ public final class GCGDSDeckDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCharacterCardList(int value) {
-        
         ensureCharacterCardListIsMutable();
         characterCardList_.addInt(value);
         onChanged();
@@ -1105,7 +1128,7 @@ public final class GCGDSDeckDataOuterClass {
        */
       public Builder clearCharacterCardList() {
         characterCardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1127,7 +1150,6 @@ public final class GCGDSDeckDataOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1136,7 +1158,7 @@ public final class GCGDSDeckDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         id_ = 0;
         onChanged();
         return this;
@@ -1183,9 +1205,11 @@ public final class GCGDSDeckDataOuterClass {
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         name_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1194,8 +1218,8 @@ public final class GCGDSDeckDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearName() {
+        
         name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -1206,10 +1230,12 @@ public final class GCGDSDeckDataOuterClass {
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         name_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1231,7 +1257,6 @@ public final class GCGDSDeckDataOuterClass {
       public Builder setIsValid(boolean value) {
         
         isValid_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1240,7 +1265,7 @@ public final class GCGDSDeckDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsValid() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         isValid_ = false;
         onChanged();
         return this;
@@ -1278,18 +1303,7 @@ public final class GCGDSDeckDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGDSDeckData(input, extensionRegistry);
       }
     };
 

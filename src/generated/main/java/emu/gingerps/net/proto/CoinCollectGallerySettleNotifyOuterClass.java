@@ -91,6 +91,73 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CoinCollectGallerySettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              unk3300CPLDPCMBHOE_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              multistagePlayIndex_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              unk3300DKBJMLJGLIB_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              unk3300KDHDMOGJDNL_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CoinCollectGallerySettleNotifyOuterClass.internal_static_CoinCollectGallerySettleNotify_descriptor;
@@ -105,7 +172,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 2;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 2;</code>
      * @return The levelId.
@@ -116,7 +183,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
     }
 
     public static final int UNK3300_DKBJMLJGLIB_FIELD_NUMBER = 13;
-    private int unk3300DKBJMLJGLIB_ = 0;
+    private int unk3300DKBJMLJGLIB_;
     /**
      * <code>uint32 Unk3300_DKBJMLJGLIB = 13;</code>
      * @return The unk3300DKBJMLJGLIB.
@@ -127,7 +194,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
     }
 
     public static final int UNK3300_KDHDMOGJDNL_FIELD_NUMBER = 14;
-    private int unk3300KDHDMOGJDNL_ = 0;
+    private int unk3300KDHDMOGJDNL_;
     /**
      * <code>uint32 Unk3300_KDHDMOGJDNL = 14;</code>
      * @return The unk3300KDHDMOGJDNL.
@@ -138,7 +205,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
     }
 
     public static final int MULTISTAGE_PLAY_INDEX_FIELD_NUMBER = 8;
-    private int multistagePlayIndex_ = 0;
+    private int multistagePlayIndex_;
     /**
      * <code>uint32 multistage_play_index = 8;</code>
      * @return The multistagePlayIndex.
@@ -149,7 +216,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
     }
 
     public static final int UNK3300_CPLDPCMBHOE_FIELD_NUMBER = 6;
-    private int unk3300CPLDPCMBHOE_ = 0;
+    private int unk3300CPLDPCMBHOE_;
     /**
      * <code>uint32 Unk3300_CPLDPCMBHOE = 6;</code>
      * @return The unk3300CPLDPCMBHOE.
@@ -160,7 +227,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 15;
-    private boolean isNewRecord_ = false;
+    private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 15;</code>
      * @return The isNewRecord.
@@ -202,7 +269,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
       if (isNewRecord_ != false) {
         output.writeBool(15, isNewRecord_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -235,7 +302,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isNewRecord_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -262,7 +329,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
           != other.getUnk3300CPLDPCMBHOE()) return false;
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -286,7 +353,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -413,24 +480,34 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CoinCollectGallerySettleNotifyOuterClass.CoinCollectGallerySettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         levelId_ = 0;
+
         unk3300DKBJMLJGLIB_ = 0;
+
         unk3300KDHDMOGJDNL_ = 0;
+
         multistagePlayIndex_ = 0;
+
         unk3300CPLDPCMBHOE_ = 0;
+
         isNewRecord_ = false;
+
         return this;
       }
 
@@ -457,31 +534,14 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CoinCollectGallerySettleNotifyOuterClass.CoinCollectGallerySettleNotify buildPartial() {
         emu.gingerps.net.proto.CoinCollectGallerySettleNotifyOuterClass.CoinCollectGallerySettleNotify result = new emu.gingerps.net.proto.CoinCollectGallerySettleNotifyOuterClass.CoinCollectGallerySettleNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.levelId_ = levelId_;
+        result.unk3300DKBJMLJGLIB_ = unk3300DKBJMLJGLIB_;
+        result.unk3300KDHDMOGJDNL_ = unk3300KDHDMOGJDNL_;
+        result.multistagePlayIndex_ = multistagePlayIndex_;
+        result.unk3300CPLDPCMBHOE_ = unk3300CPLDPCMBHOE_;
+        result.isNewRecord_ = isNewRecord_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CoinCollectGallerySettleNotifyOuterClass.CoinCollectGallerySettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.levelId_ = levelId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300DKBJMLJGLIB_ = unk3300DKBJMLJGLIB_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300KDHDMOGJDNL_ = unk3300KDHDMOGJDNL_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.multistagePlayIndex_ = multistagePlayIndex_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300CPLDPCMBHOE_ = unk3300CPLDPCMBHOE_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isNewRecord_ = isNewRecord_;
-        }
       }
 
       @java.lang.Override
@@ -546,7 +606,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -561,63 +621,19 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CoinCollectGallerySettleNotifyOuterClass.CoinCollectGallerySettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 48: {
-                unk3300CPLDPCMBHOE_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 48
-              case 64: {
-                multistagePlayIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 64
-              case 104: {
-                unk3300DKBJMLJGLIB_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              case 112: {
-                unk3300KDHDMOGJDNL_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              case 120: {
-                isNewRecord_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CoinCollectGallerySettleNotifyOuterClass.CoinCollectGallerySettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int levelId_ ;
       /**
@@ -636,7 +652,6 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -645,7 +660,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -668,7 +683,6 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
       public Builder setUnk3300DKBJMLJGLIB(int value) {
         
         unk3300DKBJMLJGLIB_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -677,7 +691,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DKBJMLJGLIB() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300DKBJMLJGLIB_ = 0;
         onChanged();
         return this;
@@ -700,7 +714,6 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
       public Builder setUnk3300KDHDMOGJDNL(int value) {
         
         unk3300KDHDMOGJDNL_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -709,7 +722,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KDHDMOGJDNL() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300KDHDMOGJDNL_ = 0;
         onChanged();
         return this;
@@ -732,7 +745,6 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
       public Builder setMultistagePlayIndex(int value) {
         
         multistagePlayIndex_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -741,7 +753,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMultistagePlayIndex() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         multistagePlayIndex_ = 0;
         onChanged();
         return this;
@@ -764,7 +776,6 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
       public Builder setUnk3300CPLDPCMBHOE(int value) {
         
         unk3300CPLDPCMBHOE_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -773,7 +784,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CPLDPCMBHOE() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300CPLDPCMBHOE_ = 0;
         onChanged();
         return this;
@@ -796,7 +807,6 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -805,7 +815,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -843,18 +853,7 @@ public final class CoinCollectGallerySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CoinCollectGallerySettleNotify(input, extensionRegistry);
       }
     };
 

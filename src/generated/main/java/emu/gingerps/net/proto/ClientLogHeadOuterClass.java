@@ -220,6 +220,126 @@ public final class ClientLogHeadOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ClientLogHead(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              eventTime_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              logSerialNumber_ = s;
+              break;
+            }
+            case 24: {
+
+              actionId_ = input.readUInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              actionName_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uploadIp_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              productId_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              channelId_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              regionName_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gameVersion_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceType_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceUuid_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              macAddr_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              accountName_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              accountUuid_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ClientLogHeadOuterClass.internal_static_ClientLogHead_descriptor;
@@ -234,8 +354,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int EVENT_TIME_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object eventTime_ = "";
+    private volatile java.lang.Object eventTime_;
     /**
      * <code>string event_time = 1;</code>
      * @return The eventTime.
@@ -273,8 +392,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int LOG_SERIAL_NUMBER_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object logSerialNumber_ = "";
+    private volatile java.lang.Object logSerialNumber_;
     /**
      * <code>string log_serial_number = 2;</code>
      * @return The logSerialNumber.
@@ -312,7 +430,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int ACTION_ID_FIELD_NUMBER = 3;
-    private int actionId_ = 0;
+    private int actionId_;
     /**
      * <code>uint32 action_id = 3;</code>
      * @return The actionId.
@@ -323,8 +441,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int ACTION_NAME_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object actionName_ = "";
+    private volatile java.lang.Object actionName_;
     /**
      * <code>string action_name = 4;</code>
      * @return The actionName.
@@ -362,8 +479,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int UPLOAD_IP_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object uploadIp_ = "";
+    private volatile java.lang.Object uploadIp_;
     /**
      * <code>string upload_ip = 5;</code>
      * @return The uploadIp.
@@ -401,8 +517,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int PRODUCT_ID_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object productId_ = "";
+    private volatile java.lang.Object productId_;
     /**
      * <code>string product_id = 6;</code>
      * @return The productId.
@@ -440,8 +555,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int CHANNEL_ID_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object channelId_ = "";
+    private volatile java.lang.Object channelId_;
     /**
      * <code>string channel_id = 7;</code>
      * @return The channelId.
@@ -479,8 +593,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int REGION_NAME_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object regionName_ = "";
+    private volatile java.lang.Object regionName_;
     /**
      * <code>string region_name = 8;</code>
      * @return The regionName.
@@ -518,8 +631,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int GAME_VERSION_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object gameVersion_ = "";
+    private volatile java.lang.Object gameVersion_;
     /**
      * <code>string game_version = 9;</code>
      * @return The gameVersion.
@@ -557,8 +669,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int DEVICE_TYPE_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object deviceType_ = "";
+    private volatile java.lang.Object deviceType_;
     /**
      * <code>string device_type = 10;</code>
      * @return The deviceType.
@@ -596,8 +707,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int DEVICE_UUID_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object deviceUuid_ = "";
+    private volatile java.lang.Object deviceUuid_;
     /**
      * <code>string device_uuid = 11;</code>
      * @return The deviceUuid.
@@ -635,8 +745,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int MAC_ADDR_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object macAddr_ = "";
+    private volatile java.lang.Object macAddr_;
     /**
      * <code>string mac_addr = 12;</code>
      * @return The macAddr.
@@ -674,8 +783,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int ACCOUNT_NAME_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object accountName_ = "";
+    private volatile java.lang.Object accountName_;
     /**
      * <code>string account_name = 13;</code>
      * @return The accountName.
@@ -713,8 +821,7 @@ public final class ClientLogHeadOuterClass {
     }
 
     public static final int ACCOUNT_UUID_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object accountUuid_ = "";
+    private volatile java.lang.Object accountUuid_;
     /**
      * <code>string account_uuid = 14;</code>
      * @return The accountUuid.
@@ -807,7 +914,7 @@ public final class ClientLogHeadOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountUuid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, accountUuid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -859,7 +966,7 @@ public final class ClientLogHeadOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountUuid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, accountUuid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -902,7 +1009,7 @@ public final class ClientLogHeadOuterClass {
           .equals(other.getAccountName())) return false;
       if (!getAccountUuid()
           .equals(other.getAccountUuid())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -941,7 +1048,7 @@ public final class ClientLogHeadOuterClass {
       hash = (53 * hash) + getAccountName().hashCode();
       hash = (37 * hash) + ACCOUNT_UUID_FIELD_NUMBER;
       hash = (53 * hash) + getAccountUuid().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1058,32 +1165,50 @@ public final class ClientLogHeadOuterClass {
 
       // Construct using emu.gingerps.net.proto.ClientLogHeadOuterClass.ClientLogHead.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         eventTime_ = "";
+
         logSerialNumber_ = "";
+
         actionId_ = 0;
+
         actionName_ = "";
+
         uploadIp_ = "";
+
         productId_ = "";
+
         channelId_ = "";
+
         regionName_ = "";
+
         gameVersion_ = "";
+
         deviceType_ = "";
+
         deviceUuid_ = "";
+
         macAddr_ = "";
+
         accountName_ = "";
+
         accountUuid_ = "";
+
         return this;
       }
 
@@ -1110,55 +1235,22 @@ public final class ClientLogHeadOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ClientLogHeadOuterClass.ClientLogHead buildPartial() {
         emu.gingerps.net.proto.ClientLogHeadOuterClass.ClientLogHead result = new emu.gingerps.net.proto.ClientLogHeadOuterClass.ClientLogHead(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.eventTime_ = eventTime_;
+        result.logSerialNumber_ = logSerialNumber_;
+        result.actionId_ = actionId_;
+        result.actionName_ = actionName_;
+        result.uploadIp_ = uploadIp_;
+        result.productId_ = productId_;
+        result.channelId_ = channelId_;
+        result.regionName_ = regionName_;
+        result.gameVersion_ = gameVersion_;
+        result.deviceType_ = deviceType_;
+        result.deviceUuid_ = deviceUuid_;
+        result.macAddr_ = macAddr_;
+        result.accountName_ = accountName_;
+        result.accountUuid_ = accountUuid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ClientLogHeadOuterClass.ClientLogHead result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.eventTime_ = eventTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.logSerialNumber_ = logSerialNumber_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.actionId_ = actionId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.actionName_ = actionName_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.uploadIp_ = uploadIp_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.productId_ = productId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.channelId_ = channelId_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.regionName_ = regionName_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.gameVersion_ = gameVersion_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.deviceType_ = deviceType_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.deviceUuid_ = deviceUuid_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.macAddr_ = macAddr_;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.accountName_ = accountName_;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.accountUuid_ = accountUuid_;
-        }
       }
 
       @java.lang.Override
@@ -1207,12 +1299,10 @@ public final class ClientLogHeadOuterClass {
         if (other == emu.gingerps.net.proto.ClientLogHeadOuterClass.ClientLogHead.getDefaultInstance()) return this;
         if (!other.getEventTime().isEmpty()) {
           eventTime_ = other.eventTime_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getLogSerialNumber().isEmpty()) {
           logSerialNumber_ = other.logSerialNumber_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getActionId() != 0) {
@@ -1220,60 +1310,49 @@ public final class ClientLogHeadOuterClass {
         }
         if (!other.getActionName().isEmpty()) {
           actionName_ = other.actionName_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getUploadIp().isEmpty()) {
           uploadIp_ = other.uploadIp_;
-          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (!other.getProductId().isEmpty()) {
           productId_ = other.productId_;
-          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getChannelId().isEmpty()) {
           channelId_ = other.channelId_;
-          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (!other.getRegionName().isEmpty()) {
           regionName_ = other.regionName_;
-          bitField0_ |= 0x00000080;
           onChanged();
         }
         if (!other.getGameVersion().isEmpty()) {
           gameVersion_ = other.gameVersion_;
-          bitField0_ |= 0x00000100;
           onChanged();
         }
         if (!other.getDeviceType().isEmpty()) {
           deviceType_ = other.deviceType_;
-          bitField0_ |= 0x00000200;
           onChanged();
         }
         if (!other.getDeviceUuid().isEmpty()) {
           deviceUuid_ = other.deviceUuid_;
-          bitField0_ |= 0x00000400;
           onChanged();
         }
         if (!other.getMacAddr().isEmpty()) {
           macAddr_ = other.macAddr_;
-          bitField0_ |= 0x00000800;
           onChanged();
         }
         if (!other.getAccountName().isEmpty()) {
           accountName_ = other.accountName_;
-          bitField0_ |= 0x00001000;
           onChanged();
         }
         if (!other.getAccountUuid().isEmpty()) {
           accountUuid_ = other.accountUuid_;
-          bitField0_ |= 0x00002000;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1288,103 +1367,19 @@ public final class ClientLogHeadOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ClientLogHeadOuterClass.ClientLogHead parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                eventTime_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                logSerialNumber_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 24: {
-                actionId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 34: {
-                actionName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 42: {
-                uploadIp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              case 50: {
-                productId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 50
-              case 58: {
-                channelId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 58
-              case 66: {
-                regionName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 66
-              case 74: {
-                gameVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 74
-              case 82: {
-                deviceType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 82
-              case 90: {
-                deviceUuid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 90
-              case 98: {
-                macAddr_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 98
-              case 106: {
-                accountName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 106
-              case 114: {
-                accountUuid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ClientLogHeadOuterClass.ClientLogHead) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object eventTime_ = "";
       /**
@@ -1427,9 +1422,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setEventTime(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         eventTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1438,8 +1435,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEventTime() {
+        
         eventTime_ = getDefaultInstance().getEventTime();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1450,10 +1447,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setEventTimeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         eventTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1499,9 +1498,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setLogSerialNumber(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         logSerialNumber_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1510,8 +1511,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLogSerialNumber() {
+        
         logSerialNumber_ = getDefaultInstance().getLogSerialNumber();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1522,10 +1523,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setLogSerialNumberBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         logSerialNumber_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1547,7 +1550,6 @@ public final class ClientLogHeadOuterClass {
       public Builder setActionId(int value) {
         
         actionId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1556,7 +1558,7 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActionId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         actionId_ = 0;
         onChanged();
         return this;
@@ -1603,9 +1605,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setActionName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         actionName_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1614,8 +1618,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActionName() {
+        
         actionName_ = getDefaultInstance().getActionName();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1626,10 +1630,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setActionNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         actionName_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1675,9 +1681,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setUploadIp(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         uploadIp_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1686,8 +1694,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUploadIp() {
+        
         uploadIp_ = getDefaultInstance().getUploadIp();
-        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1698,10 +1706,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setUploadIpBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         uploadIp_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1747,9 +1757,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setProductId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         productId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1758,8 +1770,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProductId() {
+        
         productId_ = getDefaultInstance().getProductId();
-        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1770,10 +1782,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setProductIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         productId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1819,9 +1833,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setChannelId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         channelId_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1830,8 +1846,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChannelId() {
+        
         channelId_ = getDefaultInstance().getChannelId();
-        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -1842,10 +1858,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setChannelIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         channelId_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1891,9 +1909,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setRegionName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         regionName_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1902,8 +1922,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegionName() {
+        
         regionName_ = getDefaultInstance().getRegionName();
-        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -1914,10 +1934,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setRegionNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         regionName_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1963,9 +1985,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setGameVersion(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         gameVersion_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1974,8 +1998,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGameVersion() {
+        
         gameVersion_ = getDefaultInstance().getGameVersion();
-        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
@@ -1986,10 +2010,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setGameVersionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         gameVersion_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2035,9 +2061,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setDeviceType(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         deviceType_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2046,8 +2074,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDeviceType() {
+        
         deviceType_ = getDefaultInstance().getDeviceType();
-        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
@@ -2058,10 +2086,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setDeviceTypeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         deviceType_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2107,9 +2137,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setDeviceUuid(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         deviceUuid_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2118,8 +2150,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDeviceUuid() {
+        
         deviceUuid_ = getDefaultInstance().getDeviceUuid();
-        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -2130,10 +2162,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setDeviceUuidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         deviceUuid_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2179,9 +2213,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setMacAddr(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         macAddr_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2190,8 +2226,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMacAddr() {
+        
         macAddr_ = getDefaultInstance().getMacAddr();
-        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
@@ -2202,10 +2238,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setMacAddrBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         macAddr_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2251,9 +2289,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setAccountName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         accountName_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2262,8 +2302,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAccountName() {
+        
         accountName_ = getDefaultInstance().getAccountName();
-        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
         return this;
       }
@@ -2274,10 +2314,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setAccountNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         accountName_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2323,9 +2365,11 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setAccountUuid(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         accountUuid_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -2334,8 +2378,8 @@ public final class ClientLogHeadOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAccountUuid() {
+        
         accountUuid_ = getDefaultInstance().getAccountUuid();
-        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
         return this;
       }
@@ -2346,10 +2390,12 @@ public final class ClientLogHeadOuterClass {
        */
       public Builder setAccountUuidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         accountUuid_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -2386,18 +2432,7 @@ public final class ClientLogHeadOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ClientLogHead(input, extensionRegistry);
       }
     };
 

@@ -129,6 +129,88 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AvatarLifeStateChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              avatarGuid_ = input.readUInt64();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              dieType_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              lifeState_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              sourceEntityId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              moveReliableSeq_ = input.readUInt32();
+              break;
+            }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                serverBuffList_ = new java.util.ArrayList<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              serverBuffList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              attackTag_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarLifeStateChangeNotifyOuterClass.internal_static_AvatarLifeStateChangeNotify_descriptor;
@@ -143,7 +225,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     }
 
     public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 11;
-    private int sourceEntityId_ = 0;
+    private int sourceEntityId_;
     /**
      * <code>uint32 source_entity_id = 11;</code>
      * @return The sourceEntityId.
@@ -154,7 +236,6 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     }
 
     public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_;
     /**
      * <code>repeated .ServerBuff server_buff_list = 14;</code>
@@ -195,7 +276,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     }
 
     public static final int MOVE_RELIABLE_SEQ_FIELD_NUMBER = 12;
-    private int moveReliableSeq_ = 0;
+    private int moveReliableSeq_;
     /**
      * <code>uint32 move_reliable_seq = 12;</code>
      * @return The moveReliableSeq.
@@ -206,7 +287,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     }
 
     public static final int LIFE_STATE_FIELD_NUMBER = 6;
-    private int lifeState_ = 0;
+    private int lifeState_;
     /**
      * <code>uint32 life_state = 6;</code>
      * @return The lifeState.
@@ -217,7 +298,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     }
 
     public static final int DIE_TYPE_FIELD_NUMBER = 5;
-    private int dieType_ = 0;
+    private int dieType_;
     /**
      * <code>.PlayerDieType die_type = 5;</code>
      * @return The enum numeric value on the wire for dieType.
@@ -230,13 +311,13 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
      * @return The dieType.
      */
     @java.lang.Override public emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-      emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.forNumber(dieType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
       return result == null ? emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
     }
 
     public static final int ATTACK_TAG_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object attackTag_ = "";
+    private volatile java.lang.Object attackTag_;
     /**
      * <code>string attack_tag = 15;</code>
      * @return The attackTag.
@@ -274,7 +355,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 2;
-    private long avatarGuid_ = 0L;
+    private long avatarGuid_;
     /**
      * <code>uint64 avatar_guid = 2;</code>
      * @return The avatarGuid.
@@ -319,7 +400,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attackTag_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, attackTag_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -355,7 +436,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attackTag_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, attackTag_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -383,7 +464,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
           .equals(other.getAttackTag())) return false;
       if (getAvatarGuid()
           != other.getAvatarGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -411,7 +492,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -538,31 +619,41 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getServerBuffListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         sourceEntityId_ = 0;
+
         if (serverBuffListBuilder_ == null) {
           serverBuffList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          serverBuffList_ = null;
           serverBuffListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         moveReliableSeq_ = 0;
+
         lifeState_ = 0;
+
         dieType_ = 0;
+
         attackTag_ = "";
+
         avatarGuid_ = 0L;
+
         return this;
       }
 
@@ -589,44 +680,24 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify buildPartial() {
         emu.gingerps.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify result = new emu.gingerps.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.sourceEntityId_ = sourceEntityId_;
         if (serverBuffListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.serverBuffList_ = serverBuffList_;
         } else {
           result.serverBuffList_ = serverBuffListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sourceEntityId_ = sourceEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.moveReliableSeq_ = moveReliableSeq_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.lifeState_ = lifeState_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.dieType_ = dieType_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.attackTag_ = attackTag_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.avatarGuid_ = avatarGuid_;
-        }
+        result.moveReliableSeq_ = moveReliableSeq_;
+        result.lifeState_ = lifeState_;
+        result.dieType_ = dieType_;
+        result.attackTag_ = attackTag_;
+        result.avatarGuid_ = avatarGuid_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -680,7 +751,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
           if (!other.serverBuffList_.isEmpty()) {
             if (serverBuffList_.isEmpty()) {
               serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureServerBuffListIsMutable();
               serverBuffList_.addAll(other.serverBuffList_);
@@ -693,7 +764,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
               serverBuffListBuilder_.dispose();
               serverBuffListBuilder_ = null;
               serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               serverBuffListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getServerBuffListFieldBuilder() : null;
@@ -713,13 +784,12 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         }
         if (!other.getAttackTag().isEmpty()) {
           attackTag_ = other.attackTag_;
-          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (other.getAvatarGuid() != 0L) {
           setAvatarGuid(other.getAvatarGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -734,73 +804,17 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                avatarGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 16
-              case 40: {
-                dieType_ = input.readEnum();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 48: {
-                lifeState_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 48
-              case 88: {
-                sourceEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 96: {
-                moveReliableSeq_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              case 114: {
-                emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(),
-                        extensionRegistry);
-                if (serverBuffListBuilder_ == null) {
-                  ensureServerBuffListIsMutable();
-                  serverBuffList_.add(m);
-                } else {
-                  serverBuffListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 114
-              case 122: {
-                attackTag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -822,7 +836,6 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       public Builder setSourceEntityId(int value) {
         
         sourceEntityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -831,7 +844,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSourceEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         sourceEntityId_ = 0;
         onChanged();
         return this;
@@ -840,9 +853,9 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_ =
         java.util.Collections.emptyList();
       private void ensureServerBuffListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           serverBuffList_ = new java.util.ArrayList<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff>(serverBuffList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -992,7 +1005,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       public Builder clearServerBuffList() {
         if (serverBuffListBuilder_ == null) {
           serverBuffList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           serverBuffListBuilder_.clear();
@@ -1069,7 +1082,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
           serverBuffListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff, emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>(
                   serverBuffList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           serverBuffList_ = null;
@@ -1094,7 +1107,6 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       public Builder setMoveReliableSeq(int value) {
         
         moveReliableSeq_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1103,7 +1115,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMoveReliableSeq() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         moveReliableSeq_ = 0;
         onChanged();
         return this;
@@ -1126,7 +1138,6 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       public Builder setLifeState(int value) {
         
         lifeState_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1135,7 +1146,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLifeState() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         lifeState_ = 0;
         onChanged();
         return this;
@@ -1155,8 +1166,8 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setDieTypeValue(int value) {
+        
         dieType_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1166,7 +1177,8 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-        emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.forNumber(dieType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
         return result == null ? emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
       }
       /**
@@ -1178,7 +1190,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000010;
+        
         dieType_ = value.getNumber();
         onChanged();
         return this;
@@ -1188,7 +1200,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDieType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         dieType_ = 0;
         onChanged();
         return this;
@@ -1235,9 +1247,11 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        */
       public Builder setAttackTag(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         attackTag_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1246,8 +1260,8 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAttackTag() {
+        
         attackTag_ = getDefaultInstance().getAttackTag();
-        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1258,10 +1272,12 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        */
       public Builder setAttackTagBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         attackTag_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1283,7 +1299,6 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1292,7 +1307,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -1330,18 +1345,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AvatarLifeStateChangeNotify(input, extensionRegistry);
       }
     };
 

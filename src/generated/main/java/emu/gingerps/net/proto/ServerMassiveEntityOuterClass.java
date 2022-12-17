@@ -122,6 +122,110 @@ public final class ServerMassiveEntityOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ServerMassiveEntity(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              entityType_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              configId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              runtimeId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              authorityPeerId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              objId_ = input.readInt64();
+              break;
+            }
+            case 50: {
+              emu.gingerps.net.proto.MassiveWaterInfoOuterClass.MassiveWaterInfo.Builder subBuilder = null;
+              if (entityInfoCase_ == 6) {
+                subBuilder = ((emu.gingerps.net.proto.MassiveWaterInfoOuterClass.MassiveWaterInfo) entityInfo_).toBuilder();
+              }
+              entityInfo_ =
+                  input.readMessage(emu.gingerps.net.proto.MassiveWaterInfoOuterClass.MassiveWaterInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.MassiveWaterInfoOuterClass.MassiveWaterInfo) entityInfo_);
+                entityInfo_ = subBuilder.buildPartial();
+              }
+              entityInfoCase_ = 6;
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.MassiveGrassInfoOuterClass.MassiveGrassInfo.Builder subBuilder = null;
+              if (entityInfoCase_ == 7) {
+                subBuilder = ((emu.gingerps.net.proto.MassiveGrassInfoOuterClass.MassiveGrassInfo) entityInfo_).toBuilder();
+              }
+              entityInfo_ =
+                  input.readMessage(emu.gingerps.net.proto.MassiveGrassInfoOuterClass.MassiveGrassInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.MassiveGrassInfoOuterClass.MassiveGrassInfo) entityInfo_);
+                entityInfo_ = subBuilder.buildPartial();
+              }
+              entityInfoCase_ = 7;
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo.Builder subBuilder = null;
+              if (entityInfoCase_ == 8) {
+                subBuilder = ((emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo) entityInfo_).toBuilder();
+              }
+              entityInfo_ =
+                  input.readMessage(emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo) entityInfo_);
+                entityInfo_ = subBuilder.buildPartial();
+              }
+              entityInfoCase_ = 8;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ServerMassiveEntityOuterClass.internal_static_ServerMassiveEntity_descriptor;
@@ -179,7 +283,7 @@ public final class ServerMassiveEntityOuterClass {
     }
 
     public static final int ENTITY_TYPE_FIELD_NUMBER = 1;
-    private int entityType_ = 0;
+    private int entityType_;
     /**
      * <code>uint32 entity_type = 1;</code>
      * @return The entityType.
@@ -190,7 +294,7 @@ public final class ServerMassiveEntityOuterClass {
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 2;
-    private int configId_ = 0;
+    private int configId_;
     /**
      * <code>uint32 config_id = 2;</code>
      * @return The configId.
@@ -201,7 +305,7 @@ public final class ServerMassiveEntityOuterClass {
     }
 
     public static final int RUNTIME_ID_FIELD_NUMBER = 3;
-    private int runtimeId_ = 0;
+    private int runtimeId_;
     /**
      * <code>uint32 runtime_id = 3;</code>
      * @return The runtimeId.
@@ -212,7 +316,7 @@ public final class ServerMassiveEntityOuterClass {
     }
 
     public static final int AUTHORITY_PEER_ID_FIELD_NUMBER = 4;
-    private int authorityPeerId_ = 0;
+    private int authorityPeerId_;
     /**
      * <code>uint32 authority_peer_id = 4;</code>
      * @return The authorityPeerId.
@@ -223,7 +327,7 @@ public final class ServerMassiveEntityOuterClass {
     }
 
     public static final int OBJ_ID_FIELD_NUMBER = 5;
-    private long objId_ = 0L;
+    private long objId_;
     /**
      * <code>int64 obj_id = 5;</code>
      * @return The objId.
@@ -364,7 +468,7 @@ public final class ServerMassiveEntityOuterClass {
       if (entityInfoCase_ == 8) {
         output.writeMessage(8, (emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo) entityInfo_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -405,7 +509,7 @@ public final class ServerMassiveEntityOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, (emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo) entityInfo_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -447,7 +551,7 @@ public final class ServerMassiveEntityOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -485,7 +589,7 @@ public final class ServerMassiveEntityOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -602,32 +706,32 @@ public final class ServerMassiveEntityOuterClass {
 
       // Construct using emu.gingerps.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         entityType_ = 0;
+
         configId_ = 0;
+
         runtimeId_ = 0;
+
         authorityPeerId_ = 0;
+
         objId_ = 0L;
-        if (waterInfoBuilder_ != null) {
-          waterInfoBuilder_.clear();
-        }
-        if (grassInfoBuilder_ != null) {
-          grassInfoBuilder_.clear();
-        }
-        if (boxInfoBuilder_ != null) {
-          boxInfoBuilder_.clear();
-        }
+
         entityInfoCase_ = 0;
         entityInfo_ = null;
         return this;
@@ -656,46 +760,35 @@ public final class ServerMassiveEntityOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity buildPartial() {
         emu.gingerps.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity result = new emu.gingerps.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        result.entityType_ = entityType_;
+        result.configId_ = configId_;
+        result.runtimeId_ = runtimeId_;
+        result.authorityPeerId_ = authorityPeerId_;
+        result.objId_ = objId_;
+        if (entityInfoCase_ == 6) {
+          if (waterInfoBuilder_ == null) {
+            result.entityInfo_ = entityInfo_;
+          } else {
+            result.entityInfo_ = waterInfoBuilder_.build();
+          }
+        }
+        if (entityInfoCase_ == 7) {
+          if (grassInfoBuilder_ == null) {
+            result.entityInfo_ = entityInfo_;
+          } else {
+            result.entityInfo_ = grassInfoBuilder_.build();
+          }
+        }
+        if (entityInfoCase_ == 8) {
+          if (boxInfoBuilder_ == null) {
+            result.entityInfo_ = entityInfo_;
+          } else {
+            result.entityInfo_ = boxInfoBuilder_.build();
+          }
+        }
+        result.entityInfoCase_ = entityInfoCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.entityType_ = entityType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.configId_ = configId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.runtimeId_ = runtimeId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.authorityPeerId_ = authorityPeerId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.objId_ = objId_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity result) {
-        result.entityInfoCase_ = entityInfoCase_;
-        result.entityInfo_ = this.entityInfo_;
-        if (entityInfoCase_ == 6 &&
-            waterInfoBuilder_ != null) {
-          result.entityInfo_ = waterInfoBuilder_.build();
-        }
-        if (entityInfoCase_ == 7 &&
-            grassInfoBuilder_ != null) {
-          result.entityInfo_ = grassInfoBuilder_.build();
-        }
-        if (entityInfoCase_ == 8 &&
-            boxInfoBuilder_ != null) {
-          result.entityInfo_ = boxInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -774,7 +867,7 @@ public final class ServerMassiveEntityOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -789,76 +882,17 @@ public final class ServerMassiveEntityOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                entityType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                configId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                runtimeId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                authorityPeerId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                objId_ = input.readInt64();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 50: {
-                input.readMessage(
-                    getWaterInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                entityInfoCase_ = 6;
-                break;
-              } // case 50
-              case 58: {
-                input.readMessage(
-                    getGrassInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                entityInfoCase_ = 7;
-                break;
-              } // case 58
-              case 66: {
-                input.readMessage(
-                    getBoxInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                entityInfoCase_ = 8;
-                break;
-              } // case 66
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int entityInfoCase_ = 0;
@@ -876,7 +910,6 @@ public final class ServerMassiveEntityOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private int entityType_ ;
       /**
@@ -895,7 +928,6 @@ public final class ServerMassiveEntityOuterClass {
       public Builder setEntityType(int value) {
         
         entityType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -904,7 +936,7 @@ public final class ServerMassiveEntityOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         entityType_ = 0;
         onChanged();
         return this;
@@ -927,7 +959,6 @@ public final class ServerMassiveEntityOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -936,7 +967,7 @@ public final class ServerMassiveEntityOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         configId_ = 0;
         onChanged();
         return this;
@@ -959,7 +990,6 @@ public final class ServerMassiveEntityOuterClass {
       public Builder setRuntimeId(int value) {
         
         runtimeId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -968,7 +998,7 @@ public final class ServerMassiveEntityOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRuntimeId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         runtimeId_ = 0;
         onChanged();
         return this;
@@ -991,7 +1021,6 @@ public final class ServerMassiveEntityOuterClass {
       public Builder setAuthorityPeerId(int value) {
         
         authorityPeerId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1000,7 +1029,7 @@ public final class ServerMassiveEntityOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAuthorityPeerId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         authorityPeerId_ = 0;
         onChanged();
         return this;
@@ -1023,7 +1052,6 @@ public final class ServerMassiveEntityOuterClass {
       public Builder setObjId(long value) {
         
         objId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1032,7 +1060,7 @@ public final class ServerMassiveEntityOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearObjId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         objId_ = 0L;
         onChanged();
         return this;
@@ -1112,9 +1140,8 @@ public final class ServerMassiveEntityOuterClass {
         } else {
           if (entityInfoCase_ == 6) {
             waterInfoBuilder_.mergeFrom(value);
-          } else {
-            waterInfoBuilder_.setMessage(value);
           }
+          waterInfoBuilder_.setMessage(value);
         }
         entityInfoCase_ = 6;
         return this;
@@ -1176,7 +1203,7 @@ public final class ServerMassiveEntityOuterClass {
           entityInfo_ = null;
         }
         entityInfoCase_ = 6;
-        onChanged();
+        onChanged();;
         return waterInfoBuilder_;
       }
 
@@ -1254,9 +1281,8 @@ public final class ServerMassiveEntityOuterClass {
         } else {
           if (entityInfoCase_ == 7) {
             grassInfoBuilder_.mergeFrom(value);
-          } else {
-            grassInfoBuilder_.setMessage(value);
           }
+          grassInfoBuilder_.setMessage(value);
         }
         entityInfoCase_ = 7;
         return this;
@@ -1318,7 +1344,7 @@ public final class ServerMassiveEntityOuterClass {
           entityInfo_ = null;
         }
         entityInfoCase_ = 7;
-        onChanged();
+        onChanged();;
         return grassInfoBuilder_;
       }
 
@@ -1396,9 +1422,8 @@ public final class ServerMassiveEntityOuterClass {
         } else {
           if (entityInfoCase_ == 8) {
             boxInfoBuilder_.mergeFrom(value);
-          } else {
-            boxInfoBuilder_.setMessage(value);
           }
+          boxInfoBuilder_.setMessage(value);
         }
         entityInfoCase_ = 8;
         return this;
@@ -1460,7 +1485,7 @@ public final class ServerMassiveEntityOuterClass {
           entityInfo_ = null;
         }
         entityInfoCase_ = 8;
-        onChanged();
+        onChanged();;
         return boxInfoBuilder_;
       }
       @java.lang.Override
@@ -1496,18 +1521,7 @@ public final class ServerMassiveEntityOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ServerMassiveEntity(input, extensionRegistry);
       }
     };
 

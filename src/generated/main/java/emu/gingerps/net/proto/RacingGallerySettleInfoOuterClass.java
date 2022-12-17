@@ -69,6 +69,59 @@ public final class RacingGallerySettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RacingGallerySettleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 80: {
+
+              winnerUid_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 120: {
+
+              useTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RacingGallerySettleInfoOuterClass.internal_static_RacingGallerySettleInfo_descriptor;
@@ -83,7 +136,7 @@ public final class RacingGallerySettleInfoOuterClass {
     }
 
     public static final int WINNER_UID_FIELD_NUMBER = 10;
-    private int winnerUid_ = 0;
+    private int winnerUid_;
     /**
      * <code>uint32 winner_uid = 10;</code>
      * @return The winnerUid.
@@ -94,7 +147,7 @@ public final class RacingGallerySettleInfoOuterClass {
     }
 
     public static final int USE_TIME_FIELD_NUMBER = 15;
-    private int useTime_ = 0;
+    private int useTime_;
     /**
      * <code>uint32 use_time = 15;</code>
      * @return The useTime.
@@ -105,7 +158,7 @@ public final class RacingGallerySettleInfoOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 11;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.GalleryStopReason reason = 11;</code>
      * @return The enum numeric value on the wire for reason.
@@ -118,7 +171,8 @@ public final class RacingGallerySettleInfoOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
     }
 
@@ -145,7 +199,7 @@ public final class RacingGallerySettleInfoOuterClass {
       if (useTime_ != 0) {
         output.writeUInt32(15, useTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -166,7 +220,7 @@ public final class RacingGallerySettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, useTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -186,7 +240,7 @@ public final class RacingGallerySettleInfoOuterClass {
       if (getUseTime()
           != other.getUseTime()) return false;
       if (reason_ != other.reason_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -203,7 +257,7 @@ public final class RacingGallerySettleInfoOuterClass {
       hash = (53 * hash) + getUseTime();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -320,21 +374,28 @@ public final class RacingGallerySettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         winnerUid_ = 0;
+
         useTime_ = 0;
+
         reason_ = 0;
+
         return this;
       }
 
@@ -361,22 +422,11 @@ public final class RacingGallerySettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo buildPartial() {
         emu.gingerps.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo result = new emu.gingerps.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.winnerUid_ = winnerUid_;
+        result.useTime_ = useTime_;
+        result.reason_ = reason_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.winnerUid_ = winnerUid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.useTime_ = useTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.reason_ = reason_;
-        }
       }
 
       @java.lang.Override
@@ -432,7 +482,7 @@ public final class RacingGallerySettleInfoOuterClass {
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -447,48 +497,19 @@ public final class RacingGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 80: {
-                winnerUid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 88: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              case 120: {
-                useTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int winnerUid_ ;
       /**
@@ -507,7 +528,6 @@ public final class RacingGallerySettleInfoOuterClass {
       public Builder setWinnerUid(int value) {
         
         winnerUid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -516,7 +536,7 @@ public final class RacingGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWinnerUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         winnerUid_ = 0;
         onChanged();
         return this;
@@ -539,7 +559,6 @@ public final class RacingGallerySettleInfoOuterClass {
       public Builder setUseTime(int value) {
         
         useTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -548,7 +567,7 @@ public final class RacingGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUseTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         useTime_ = 0;
         onChanged();
         return this;
@@ -568,8 +587,8 @@ public final class RacingGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -579,7 +598,8 @@ public final class RacingGallerySettleInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
       }
       /**
@@ -591,7 +611,7 @@ public final class RacingGallerySettleInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -601,7 +621,7 @@ public final class RacingGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -639,18 +659,7 @@ public final class RacingGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RacingGallerySettleInfo(input, extensionRegistry);
       }
     };
 

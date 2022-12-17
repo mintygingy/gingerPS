@@ -165,6 +165,124 @@ public final class QueryPathReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private QueryPathReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              queryId_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.Builder subBuilder = null;
+              if (unk3300LHNGPJFOMIK_ != null) {
+                subBuilder = unk3300LHNGPJFOMIK_.toBuilder();
+              }
+              unk3300LHNGPJFOMIK_ = input.readMessage(emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300LHNGPJFOMIK_);
+                unk3300LHNGPJFOMIK_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.Builder subBuilder = null;
+              if (unk3300CLGJBBJDOLN_ != null) {
+                subBuilder = unk3300CLGJBBJDOLN_.toBuilder();
+              }
+              unk3300CLGJBBJDOLN_ = input.readMessage(emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300CLGJBBJDOLN_);
+                unk3300CLGJBBJDOLN_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                destinationPos_ = new java.util.ArrayList<emu.gingerps.net.proto.VectorOuterClass.Vector>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              destinationPos_.add(
+                  input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter.Builder subBuilder = null;
+              if (filter_ != null) {
+                subBuilder = filter_.toBuilder();
+              }
+              filter_ = input.readMessage(emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(filter_);
+                filter_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (sourcePos_ != null) {
+                subBuilder = sourcePos_.toBuilder();
+              }
+              sourcePos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sourcePos_);
+                sourcePos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              queryType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          destinationPos_ = java.util.Collections.unmodifiableList(destinationPos_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.QueryPathReqOuterClass.internal_static_QueryPathReq_descriptor;
@@ -318,11 +436,11 @@ public final class QueryPathReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder getFilterOrBuilder() {
-      return filter_ == null ? emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter.getDefaultInstance() : filter_;
+      return getFilter();
     }
 
     public static final int QUERY_ID_FIELD_NUMBER = 3;
-    private int queryId_ = 0;
+    private int queryId_;
     /**
      * <code>int32 query_id = 3;</code>
      * @return The queryId.
@@ -333,7 +451,6 @@ public final class QueryPathReqOuterClass {
     }
 
     public static final int DESTINATION_POS_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.VectorOuterClass.Vector> destinationPos_;
     /**
      * <code>repeated .Vector destination_pos = 6;</code>
@@ -374,7 +491,7 @@ public final class QueryPathReqOuterClass {
     }
 
     public static final int QUERY_TYPE_FIELD_NUMBER = 11;
-    private int queryType_ = 0;
+    private int queryType_;
     /**
      * <code>.QueryPathReq.OptionType query_type = 11;</code>
      * @return The enum numeric value on the wire for queryType.
@@ -387,7 +504,8 @@ public final class QueryPathReqOuterClass {
      * @return The queryType.
      */
     @java.lang.Override public emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType getQueryType() {
-      emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType result = emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.forNumber(queryType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType result = emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.valueOf(queryType_);
       return result == null ? emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.UNRECOGNIZED : result;
     }
 
@@ -414,11 +532,11 @@ public final class QueryPathReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getUnk3300LHNGPJFOMIKOrBuilder() {
-      return unk3300LHNGPJFOMIK_ == null ? emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.getDefaultInstance() : unk3300LHNGPJFOMIK_;
+      return getUnk3300LHNGPJFOMIK();
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 2;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 2;</code>
      * @return The sceneId.
@@ -451,7 +569,7 @@ public final class QueryPathReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder() {
-      return sourcePos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
+      return getSourcePos();
     }
 
     public static final int UNK3300_CLGJBBJDOLN_FIELD_NUMBER = 5;
@@ -477,7 +595,7 @@ public final class QueryPathReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getUnk3300CLGJBBJDOLNOrBuilder() {
-      return unk3300CLGJBBJDOLN_ == null ? emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.getDefaultInstance() : unk3300CLGJBBJDOLN_;
+      return getUnk3300CLGJBBJDOLN();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -518,7 +636,7 @@ public final class QueryPathReqOuterClass {
       if (queryType_ != emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.OPTION_TYPE_NONE.getNumber()) {
         output.writeEnum(11, queryType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -559,7 +677,7 @@ public final class QueryPathReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, queryType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -601,7 +719,7 @@ public final class QueryPathReqOuterClass {
         if (!getUnk3300CLGJBBJDOLN()
             .equals(other.getUnk3300CLGJBBJDOLN())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -638,7 +756,7 @@ public final class QueryPathReqOuterClass {
         hash = (37 * hash) + UNK3300_CLGJBBJDOLN_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300CLGJBBJDOLN().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -766,46 +884,57 @@ public final class QueryPathReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDestinationPosFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        filter_ = null;
-        if (filterBuilder_ != null) {
-          filterBuilder_.dispose();
+        if (filterBuilder_ == null) {
+          filter_ = null;
+        } else {
+          filter_ = null;
           filterBuilder_ = null;
         }
         queryId_ = 0;
+
         if (destinationPosBuilder_ == null) {
           destinationPos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          destinationPos_ = null;
           destinationPosBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         queryType_ = 0;
-        unk3300LHNGPJFOMIK_ = null;
-        if (unk3300LHNGPJFOMIKBuilder_ != null) {
-          unk3300LHNGPJFOMIKBuilder_.dispose();
+
+        if (unk3300LHNGPJFOMIKBuilder_ == null) {
+          unk3300LHNGPJFOMIK_ = null;
+        } else {
+          unk3300LHNGPJFOMIK_ = null;
           unk3300LHNGPJFOMIKBuilder_ = null;
         }
         sceneId_ = 0;
-        sourcePos_ = null;
-        if (sourcePosBuilder_ != null) {
-          sourcePosBuilder_.dispose();
+
+        if (sourcePosBuilder_ == null) {
+          sourcePos_ = null;
+        } else {
+          sourcePos_ = null;
           sourcePosBuilder_ = null;
         }
-        unk3300CLGJBBJDOLN_ = null;
-        if (unk3300CLGJBBJDOLNBuilder_ != null) {
-          unk3300CLGJBBJDOLNBuilder_.dispose();
+        if (unk3300CLGJBBJDOLNBuilder_ == null) {
+          unk3300CLGJBBJDOLN_ = null;
+        } else {
+          unk3300CLGJBBJDOLN_ = null;
           unk3300CLGJBBJDOLNBuilder_ = null;
         }
         return this;
@@ -834,55 +963,41 @@ public final class QueryPathReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq buildPartial() {
         emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq result = new emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq result) {
+        int from_bitField0_ = bitField0_;
+        if (filterBuilder_ == null) {
+          result.filter_ = filter_;
+        } else {
+          result.filter_ = filterBuilder_.build();
+        }
+        result.queryId_ = queryId_;
         if (destinationPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             destinationPos_ = java.util.Collections.unmodifiableList(destinationPos_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.destinationPos_ = destinationPos_;
         } else {
           result.destinationPos_ = destinationPosBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.filter_ = filterBuilder_ == null
-              ? filter_
-              : filterBuilder_.build();
+        result.queryType_ = queryType_;
+        if (unk3300LHNGPJFOMIKBuilder_ == null) {
+          result.unk3300LHNGPJFOMIK_ = unk3300LHNGPJFOMIK_;
+        } else {
+          result.unk3300LHNGPJFOMIK_ = unk3300LHNGPJFOMIKBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.queryId_ = queryId_;
+        result.sceneId_ = sceneId_;
+        if (sourcePosBuilder_ == null) {
+          result.sourcePos_ = sourcePos_;
+        } else {
+          result.sourcePos_ = sourcePosBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.queryType_ = queryType_;
+        if (unk3300CLGJBBJDOLNBuilder_ == null) {
+          result.unk3300CLGJBBJDOLN_ = unk3300CLGJBBJDOLN_;
+        } else {
+          result.unk3300CLGJBBJDOLN_ = unk3300CLGJBBJDOLNBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300LHNGPJFOMIK_ = unk3300LHNGPJFOMIKBuilder_ == null
-              ? unk3300LHNGPJFOMIK_
-              : unk3300LHNGPJFOMIKBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.sourcePos_ = sourcePosBuilder_ == null
-              ? sourcePos_
-              : sourcePosBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.unk3300CLGJBBJDOLN_ = unk3300CLGJBBJDOLNBuilder_ == null
-              ? unk3300CLGJBBJDOLN_
-              : unk3300CLGJBBJDOLNBuilder_.build();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -939,7 +1054,7 @@ public final class QueryPathReqOuterClass {
           if (!other.destinationPos_.isEmpty()) {
             if (destinationPos_.isEmpty()) {
               destinationPos_ = other.destinationPos_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureDestinationPosIsMutable();
               destinationPos_.addAll(other.destinationPos_);
@@ -952,7 +1067,7 @@ public final class QueryPathReqOuterClass {
               destinationPosBuilder_.dispose();
               destinationPosBuilder_ = null;
               destinationPos_ = other.destinationPos_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               destinationPosBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDestinationPosFieldBuilder() : null;
@@ -976,7 +1091,7 @@ public final class QueryPathReqOuterClass {
         if (other.hasUnk3300CLGJBBJDOLN()) {
           mergeUnk3300CLGJBBJDOLN(other.getUnk3300CLGJBBJDOLN());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -991,86 +1106,17 @@ public final class QueryPathReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 16
-              case 24: {
-                queryId_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 34: {
-                input.readMessage(
-                    getUnk3300LHNGPJFOMIKFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getUnk3300CLGJBBJDOLNFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 42
-              case 50: {
-                emu.gingerps.net.proto.VectorOuterClass.Vector m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.VectorOuterClass.Vector.parser(),
-                        extensionRegistry);
-                if (destinationPosBuilder_ == null) {
-                  ensureDestinationPosIsMutable();
-                  destinationPos_.add(m);
-                } else {
-                  destinationPosBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                input.readMessage(
-                    getFilterFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 58
-              case 66: {
-                input.readMessage(
-                    getSourcePosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 66
-              case 88: {
-                queryType_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1083,7 +1129,7 @@ public final class QueryPathReqOuterClass {
        * @return Whether the filter field is set.
        */
       public boolean hasFilter() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return filterBuilder_ != null || filter_ != null;
       }
       /**
        * <code>.QueryFilter filter = 7;</code>
@@ -1105,11 +1151,11 @@ public final class QueryPathReqOuterClass {
             throw new NullPointerException();
           }
           filter_ = value;
+          onChanged();
         } else {
           filterBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -1119,11 +1165,11 @@ public final class QueryPathReqOuterClass {
           emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter.Builder builderForValue) {
         if (filterBuilder_ == null) {
           filter_ = builderForValue.build();
+          onChanged();
         } else {
           filterBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -1131,38 +1177,38 @@ public final class QueryPathReqOuterClass {
        */
       public Builder mergeFilter(emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter value) {
         if (filterBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            filter_ != null &&
-            filter_ != emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter.getDefaultInstance()) {
-            getFilterBuilder().mergeFrom(value);
+          if (filter_ != null) {
+            filter_ =
+              emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter.newBuilder(filter_).mergeFrom(value).buildPartial();
           } else {
             filter_ = value;
           }
+          onChanged();
         } else {
           filterBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.QueryFilter filter = 7;</code>
        */
       public Builder clearFilter() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        filter_ = null;
-        if (filterBuilder_ != null) {
-          filterBuilder_.dispose();
+        if (filterBuilder_ == null) {
+          filter_ = null;
+          onChanged();
+        } else {
+          filter_ = null;
           filterBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.QueryFilter filter = 7;</code>
        */
       public emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter.Builder getFilterBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getFilterFieldBuilder().getBuilder();
       }
@@ -1211,7 +1257,6 @@ public final class QueryPathReqOuterClass {
       public Builder setQueryId(int value) {
         
         queryId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1220,7 +1265,7 @@ public final class QueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQueryId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         queryId_ = 0;
         onChanged();
         return this;
@@ -1229,9 +1274,9 @@ public final class QueryPathReqOuterClass {
       private java.util.List<emu.gingerps.net.proto.VectorOuterClass.Vector> destinationPos_ =
         java.util.Collections.emptyList();
       private void ensureDestinationPosIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           destinationPos_ = new java.util.ArrayList<emu.gingerps.net.proto.VectorOuterClass.Vector>(destinationPos_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1381,7 +1426,7 @@ public final class QueryPathReqOuterClass {
       public Builder clearDestinationPos() {
         if (destinationPosBuilder_ == null) {
           destinationPos_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           destinationPosBuilder_.clear();
@@ -1458,7 +1503,7 @@ public final class QueryPathReqOuterClass {
           destinationPosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.VectorOuterClass.Vector, emu.gingerps.net.proto.VectorOuterClass.Vector.Builder, emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder>(
                   destinationPos_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           destinationPos_ = null;
@@ -1480,8 +1525,8 @@ public final class QueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setQueryTypeValue(int value) {
+        
         queryType_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1491,7 +1536,8 @@ public final class QueryPathReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType getQueryType() {
-        emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType result = emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.forNumber(queryType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType result = emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.valueOf(queryType_);
         return result == null ? emu.gingerps.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.UNRECOGNIZED : result;
       }
       /**
@@ -1503,7 +1549,7 @@ public final class QueryPathReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        
         queryType_ = value.getNumber();
         onChanged();
         return this;
@@ -1513,7 +1559,7 @@ public final class QueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQueryType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         queryType_ = 0;
         onChanged();
         return this;
@@ -1527,7 +1573,7 @@ public final class QueryPathReqOuterClass {
        * @return Whether the unk3300LHNGPJFOMIK field is set.
        */
       public boolean hasUnk3300LHNGPJFOMIK() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return unk3300LHNGPJFOMIKBuilder_ != null || unk3300LHNGPJFOMIK_ != null;
       }
       /**
        * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
@@ -1549,11 +1595,11 @@ public final class QueryPathReqOuterClass {
             throw new NullPointerException();
           }
           unk3300LHNGPJFOMIK_ = value;
+          onChanged();
         } else {
           unk3300LHNGPJFOMIKBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1563,11 +1609,11 @@ public final class QueryPathReqOuterClass {
           emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.Builder builderForValue) {
         if (unk3300LHNGPJFOMIKBuilder_ == null) {
           unk3300LHNGPJFOMIK_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300LHNGPJFOMIKBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1575,38 +1621,38 @@ public final class QueryPathReqOuterClass {
        */
       public Builder mergeUnk3300LHNGPJFOMIK(emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int value) {
         if (unk3300LHNGPJFOMIKBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            unk3300LHNGPJFOMIK_ != null &&
-            unk3300LHNGPJFOMIK_ != emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.getDefaultInstance()) {
-            getUnk3300LHNGPJFOMIKBuilder().mergeFrom(value);
+          if (unk3300LHNGPJFOMIK_ != null) {
+            unk3300LHNGPJFOMIK_ =
+              emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.newBuilder(unk3300LHNGPJFOMIK_).mergeFrom(value).buildPartial();
           } else {
             unk3300LHNGPJFOMIK_ = value;
           }
+          onChanged();
         } else {
           unk3300LHNGPJFOMIKBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
        */
       public Builder clearUnk3300LHNGPJFOMIK() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        unk3300LHNGPJFOMIK_ = null;
-        if (unk3300LHNGPJFOMIKBuilder_ != null) {
-          unk3300LHNGPJFOMIKBuilder_.dispose();
+        if (unk3300LHNGPJFOMIKBuilder_ == null) {
+          unk3300LHNGPJFOMIK_ = null;
+          onChanged();
+        } else {
+          unk3300LHNGPJFOMIK_ = null;
           unk3300LHNGPJFOMIKBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
        */
       public emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.Builder getUnk3300LHNGPJFOMIKBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getUnk3300LHNGPJFOMIKFieldBuilder().getBuilder();
       }
@@ -1655,7 +1701,6 @@ public final class QueryPathReqOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1664,7 +1709,7 @@ public final class QueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -1678,7 +1723,7 @@ public final class QueryPathReqOuterClass {
        * @return Whether the sourcePos field is set.
        */
       public boolean hasSourcePos() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return sourcePosBuilder_ != null || sourcePos_ != null;
       }
       /**
        * <code>.Vector source_pos = 8;</code>
@@ -1700,11 +1745,11 @@ public final class QueryPathReqOuterClass {
             throw new NullPointerException();
           }
           sourcePos_ = value;
+          onChanged();
         } else {
           sourcePosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1714,11 +1759,11 @@ public final class QueryPathReqOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (sourcePosBuilder_ == null) {
           sourcePos_ = builderForValue.build();
+          onChanged();
         } else {
           sourcePosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1726,38 +1771,38 @@ public final class QueryPathReqOuterClass {
        */
       public Builder mergeSourcePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (sourcePosBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0) &&
-            sourcePos_ != null &&
-            sourcePos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getSourcePosBuilder().mergeFrom(value);
+          if (sourcePos_ != null) {
+            sourcePos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(sourcePos_).mergeFrom(value).buildPartial();
           } else {
             sourcePos_ = value;
           }
+          onChanged();
         } else {
           sourcePosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector source_pos = 8;</code>
        */
       public Builder clearSourcePos() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        sourcePos_ = null;
-        if (sourcePosBuilder_ != null) {
-          sourcePosBuilder_.dispose();
+        if (sourcePosBuilder_ == null) {
+          sourcePos_ = null;
+          onChanged();
+        } else {
+          sourcePos_ = null;
           sourcePosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector source_pos = 8;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSourcePosBuilder() {
-        bitField0_ |= 0x00000040;
+        
         onChanged();
         return getSourcePosFieldBuilder().getBuilder();
       }
@@ -1797,7 +1842,7 @@ public final class QueryPathReqOuterClass {
        * @return Whether the unk3300CLGJBBJDOLN field is set.
        */
       public boolean hasUnk3300CLGJBBJDOLN() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return unk3300CLGJBBJDOLNBuilder_ != null || unk3300CLGJBBJDOLN_ != null;
       }
       /**
        * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
@@ -1819,11 +1864,11 @@ public final class QueryPathReqOuterClass {
             throw new NullPointerException();
           }
           unk3300CLGJBBJDOLN_ = value;
+          onChanged();
         } else {
           unk3300CLGJBBJDOLNBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
-        onChanged();
+
         return this;
       }
       /**
@@ -1833,11 +1878,11 @@ public final class QueryPathReqOuterClass {
           emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.Builder builderForValue) {
         if (unk3300CLGJBBJDOLNBuilder_ == null) {
           unk3300CLGJBBJDOLN_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300CLGJBBJDOLNBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
-        onChanged();
+
         return this;
       }
       /**
@@ -1845,38 +1890,38 @@ public final class QueryPathReqOuterClass {
        */
       public Builder mergeUnk3300CLGJBBJDOLN(emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int value) {
         if (unk3300CLGJBBJDOLNBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0) &&
-            unk3300CLGJBBJDOLN_ != null &&
-            unk3300CLGJBBJDOLN_ != emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.getDefaultInstance()) {
-            getUnk3300CLGJBBJDOLNBuilder().mergeFrom(value);
+          if (unk3300CLGJBBJDOLN_ != null) {
+            unk3300CLGJBBJDOLN_ =
+              emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.newBuilder(unk3300CLGJBBJDOLN_).mergeFrom(value).buildPartial();
           } else {
             unk3300CLGJBBJDOLN_ = value;
           }
+          onChanged();
         } else {
           unk3300CLGJBBJDOLNBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000080;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
        */
       public Builder clearUnk3300CLGJBBJDOLN() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        unk3300CLGJBBJDOLN_ = null;
-        if (unk3300CLGJBBJDOLNBuilder_ != null) {
-          unk3300CLGJBBJDOLNBuilder_.dispose();
+        if (unk3300CLGJBBJDOLNBuilder_ == null) {
+          unk3300CLGJBBJDOLN_ = null;
+          onChanged();
+        } else {
+          unk3300CLGJBBJDOLN_ = null;
           unk3300CLGJBBJDOLNBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
        */
       public emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.Builder getUnk3300CLGJBBJDOLNBuilder() {
-        bitField0_ |= 0x00000080;
+        
         onChanged();
         return getUnk3300CLGJBBJDOLNFieldBuilder().getBuilder();
       }
@@ -1940,18 +1985,7 @@ public final class QueryPathReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new QueryPathReq(input, extensionRegistry);
       }
     };
 

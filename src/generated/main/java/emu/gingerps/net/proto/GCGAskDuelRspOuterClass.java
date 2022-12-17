@@ -76,6 +76,61 @@ public final class GCGAskDuelRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGAskDuelRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel.Builder subBuilder = null;
+              if (duel_ != null) {
+                subBuilder = duel_.toBuilder();
+              }
+              duel_ = input.readMessage(emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(duel_);
+                duel_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGAskDuelRspOuterClass.internal_static_GCGAskDuelRsp_descriptor;
@@ -112,11 +167,11 @@ public final class GCGAskDuelRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuelOrBuilder getDuelOrBuilder() {
-      return duel_ == null ? emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel.getDefaultInstance() : duel_;
+      return getDuel();
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -146,7 +201,7 @@ public final class GCGAskDuelRspOuterClass {
       if (duel_ != null) {
         output.writeMessage(9, getDuel());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class GCGAskDuelRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getDuel());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class GCGAskDuelRspOuterClass {
       }
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +257,7 @@ public final class GCGAskDuelRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,24 +384,30 @@ public final class GCGAskDuelRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        duel_ = null;
-        if (duelBuilder_ != null) {
-          duelBuilder_.dispose();
+        if (duelBuilder_ == null) {
+          duel_ = null;
+        } else {
+          duel_ = null;
           duelBuilder_ = null;
         }
         retcode_ = 0;
+
         return this;
       }
 
@@ -373,21 +434,14 @@ public final class GCGAskDuelRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp buildPartial() {
         emu.gingerps.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp result = new emu.gingerps.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (duelBuilder_ == null) {
+          result.duel_ = duel_;
+        } else {
+          result.duel_ = duelBuilder_.build();
+        }
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.duel_ = duelBuilder_ == null
-              ? duel_
-              : duelBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +494,7 @@ public final class GCGAskDuelRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,45 +509,19 @@ public final class GCGAskDuelRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 74: {
-                input.readMessage(
-                    getDuelFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 74
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel duel_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -503,7 +531,7 @@ public final class GCGAskDuelRspOuterClass {
        * @return Whether the duel field is set.
        */
       public boolean hasDuel() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return duelBuilder_ != null || duel_ != null;
       }
       /**
        * <code>.GCGDuel duel = 9;</code>
@@ -525,11 +553,11 @@ public final class GCGAskDuelRspOuterClass {
             throw new NullPointerException();
           }
           duel_ = value;
+          onChanged();
         } else {
           duelBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -539,11 +567,11 @@ public final class GCGAskDuelRspOuterClass {
           emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel.Builder builderForValue) {
         if (duelBuilder_ == null) {
           duel_ = builderForValue.build();
+          onChanged();
         } else {
           duelBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -551,38 +579,38 @@ public final class GCGAskDuelRspOuterClass {
        */
       public Builder mergeDuel(emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel value) {
         if (duelBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            duel_ != null &&
-            duel_ != emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel.getDefaultInstance()) {
-            getDuelBuilder().mergeFrom(value);
+          if (duel_ != null) {
+            duel_ =
+              emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel.newBuilder(duel_).mergeFrom(value).buildPartial();
           } else {
             duel_ = value;
           }
+          onChanged();
         } else {
           duelBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGDuel duel = 9;</code>
        */
       public Builder clearDuel() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        duel_ = null;
-        if (duelBuilder_ != null) {
-          duelBuilder_.dispose();
+        if (duelBuilder_ == null) {
+          duel_ = null;
+          onChanged();
+        } else {
+          duel_ = null;
           duelBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGDuel duel = 9;</code>
        */
       public emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel.Builder getDuelBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getDuelFieldBuilder().getBuilder();
       }
@@ -631,7 +659,6 @@ public final class GCGAskDuelRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -640,7 +667,7 @@ public final class GCGAskDuelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -678,18 +705,7 @@ public final class GCGAskDuelRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGAskDuelRsp(input, extensionRegistry);
       }
     };
 

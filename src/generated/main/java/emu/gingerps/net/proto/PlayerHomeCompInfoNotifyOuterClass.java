@@ -70,6 +70,56 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerHomeCompInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              emu.gingerps.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.Builder subBuilder = null;
+              if (compInfo_ != null) {
+                subBuilder = compInfo_.toBuilder();
+              }
+              compInfo_ = input.readMessage(emu.gingerps.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(compInfo_);
+                compInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerHomeCompInfoNotifyOuterClass.internal_static_PlayerHomeCompInfoNotify_descriptor;
@@ -106,7 +156,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfoOrBuilder getCompInfoOrBuilder() {
-      return compInfo_ == null ? emu.gingerps.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.getDefaultInstance() : compInfo_;
+      return getCompInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -126,7 +176,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
       if (compInfo_ != null) {
         output.writeMessage(2, getCompInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +189,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getCompInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +209,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         if (!getCompInfo()
             .equals(other.getCompInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +224,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         hash = (37 * hash) + COMP_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getCompInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -301,21 +351,26 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        compInfo_ = null;
-        if (compInfoBuilder_ != null) {
-          compInfoBuilder_.dispose();
+        if (compInfoBuilder_ == null) {
+          compInfo_ = null;
+        } else {
+          compInfo_ = null;
           compInfoBuilder_ = null;
         }
         return this;
@@ -344,18 +399,13 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify buildPartial() {
         emu.gingerps.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify result = new emu.gingerps.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (compInfoBuilder_ == null) {
+          result.compInfo_ = compInfo_;
+        } else {
+          result.compInfo_ = compInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.compInfo_ = compInfoBuilder_ == null
-              ? compInfo_
-              : compInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -405,7 +455,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         if (other.hasCompInfo()) {
           mergeCompInfo(other.getCompInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,40 +470,19 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                input.readMessage(
-                    getCompInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo compInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -463,7 +492,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
        * @return Whether the compInfo field is set.
        */
       public boolean hasCompInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return compInfoBuilder_ != null || compInfo_ != null;
       }
       /**
        * <code>.PlayerHomeCompInfo comp_info = 2;</code>
@@ -485,11 +514,11 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
             throw new NullPointerException();
           }
           compInfo_ = value;
+          onChanged();
         } else {
           compInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -499,11 +528,11 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
           emu.gingerps.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.Builder builderForValue) {
         if (compInfoBuilder_ == null) {
           compInfo_ = builderForValue.build();
+          onChanged();
         } else {
           compInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -511,38 +540,38 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
        */
       public Builder mergeCompInfo(emu.gingerps.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo value) {
         if (compInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            compInfo_ != null &&
-            compInfo_ != emu.gingerps.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.getDefaultInstance()) {
-            getCompInfoBuilder().mergeFrom(value);
+          if (compInfo_ != null) {
+            compInfo_ =
+              emu.gingerps.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.newBuilder(compInfo_).mergeFrom(value).buildPartial();
           } else {
             compInfo_ = value;
           }
+          onChanged();
         } else {
           compInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PlayerHomeCompInfo comp_info = 2;</code>
        */
       public Builder clearCompInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        compInfo_ = null;
-        if (compInfoBuilder_ != null) {
-          compInfoBuilder_.dispose();
+        if (compInfoBuilder_ == null) {
+          compInfo_ = null;
+          onChanged();
+        } else {
+          compInfo_ = null;
           compInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PlayerHomeCompInfo comp_info = 2;</code>
        */
       public emu.gingerps.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.Builder getCompInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getCompInfoFieldBuilder().getBuilder();
       }
@@ -606,18 +635,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerHomeCompInfoNotify(input, extensionRegistry);
       }
     };
 

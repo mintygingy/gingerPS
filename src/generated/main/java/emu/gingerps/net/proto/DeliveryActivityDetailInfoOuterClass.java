@@ -75,6 +75,78 @@ public final class DeliveryActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DeliveryActivityDetailInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              dayIndex_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                finishedDeliveryQuestIndex_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              finishedDeliveryQuestIndex_.addInt(input.readUInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                finishedDeliveryQuestIndex_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                finishedDeliveryQuestIndex_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 88: {
+
+              isTakenReward_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          finishedDeliveryQuestIndex_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.internal_static_DeliveryActivityDetailInfo_descriptor;
@@ -89,7 +161,7 @@ public final class DeliveryActivityDetailInfoOuterClass {
     }
 
     public static final int DAY_INDEX_FIELD_NUMBER = 1;
-    private int dayIndex_ = 0;
+    private int dayIndex_;
     /**
      * <code>uint32 day_index = 1;</code>
      * @return The dayIndex.
@@ -100,7 +172,7 @@ public final class DeliveryActivityDetailInfoOuterClass {
     }
 
     public static final int IS_TAKEN_REWARD_FIELD_NUMBER = 11;
-    private boolean isTakenReward_ = false;
+    private boolean isTakenReward_;
     /**
      * <code>bool is_taken_reward = 11;</code>
      * @return The isTakenReward.
@@ -111,7 +183,6 @@ public final class DeliveryActivityDetailInfoOuterClass {
     }
 
     public static final int FINISHED_DELIVERY_QUEST_INDEX_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList finishedDeliveryQuestIndex_;
     /**
      * <code>repeated uint32 finished_delivery_quest_index = 4;</code>
@@ -167,7 +238,7 @@ public final class DeliveryActivityDetailInfoOuterClass {
       if (isTakenReward_ != false) {
         output.writeBool(11, isTakenReward_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -198,7 +269,7 @@ public final class DeliveryActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, isTakenReward_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -219,7 +290,7 @@ public final class DeliveryActivityDetailInfoOuterClass {
           != other.getIsTakenReward()) return false;
       if (!getFinishedDeliveryQuestIndexList()
           .equals(other.getFinishedDeliveryQuestIndexList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -239,7 +310,7 @@ public final class DeliveryActivityDetailInfoOuterClass {
         hash = (37 * hash) + FINISHED_DELIVERY_QUEST_INDEX_FIELD_NUMBER;
         hash = (53 * hash) + getFinishedDeliveryQuestIndexList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -356,21 +427,28 @@ public final class DeliveryActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         dayIndex_ = 0;
+
         isTakenReward_ = false;
+
         finishedDeliveryQuestIndex_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -397,28 +475,16 @@ public final class DeliveryActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo result = new emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.dayIndex_ = dayIndex_;
+        result.isTakenReward_ = isTakenReward_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           finishedDeliveryQuestIndex_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.finishedDeliveryQuestIndex_ = finishedDeliveryQuestIndex_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.dayIndex_ = dayIndex_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isTakenReward_ = isTakenReward_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -474,14 +540,14 @@ public final class DeliveryActivityDetailInfoOuterClass {
         if (!other.finishedDeliveryQuestIndex_.isEmpty()) {
           if (finishedDeliveryQuestIndex_.isEmpty()) {
             finishedDeliveryQuestIndex_ = other.finishedDeliveryQuestIndex_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFinishedDeliveryQuestIndexIsMutable();
             finishedDeliveryQuestIndex_.addAll(other.finishedDeliveryQuestIndex_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -496,56 +562,17 @@ public final class DeliveryActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                dayIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 32: {
-                int v = input.readUInt32();
-                ensureFinishedDeliveryQuestIndexIsMutable();
-                finishedDeliveryQuestIndex_.addInt(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureFinishedDeliveryQuestIndexIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  finishedDeliveryQuestIndex_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              case 88: {
-                isTakenReward_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -567,7 +594,6 @@ public final class DeliveryActivityDetailInfoOuterClass {
       public Builder setDayIndex(int value) {
         
         dayIndex_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -576,7 +602,7 @@ public final class DeliveryActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDayIndex() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         dayIndex_ = 0;
         onChanged();
         return this;
@@ -599,7 +625,6 @@ public final class DeliveryActivityDetailInfoOuterClass {
       public Builder setIsTakenReward(boolean value) {
         
         isTakenReward_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -608,7 +633,7 @@ public final class DeliveryActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsTakenReward() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isTakenReward_ = false;
         onChanged();
         return this;
@@ -616,10 +641,10 @@ public final class DeliveryActivityDetailInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList finishedDeliveryQuestIndex_ = emptyIntList();
       private void ensureFinishedDeliveryQuestIndexIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           finishedDeliveryQuestIndex_ = mutableCopy(finishedDeliveryQuestIndex_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 finished_delivery_quest_index = 4;</code>
@@ -627,7 +652,7 @@ public final class DeliveryActivityDetailInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getFinishedDeliveryQuestIndexList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(finishedDeliveryQuestIndex_) : finishedDeliveryQuestIndex_;
       }
       /**
@@ -653,7 +678,6 @@ public final class DeliveryActivityDetailInfoOuterClass {
        */
       public Builder setFinishedDeliveryQuestIndex(
           int index, int value) {
-        
         ensureFinishedDeliveryQuestIndexIsMutable();
         finishedDeliveryQuestIndex_.setInt(index, value);
         onChanged();
@@ -665,7 +689,6 @@ public final class DeliveryActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFinishedDeliveryQuestIndex(int value) {
-        
         ensureFinishedDeliveryQuestIndexIsMutable();
         finishedDeliveryQuestIndex_.addInt(value);
         onChanged();
@@ -690,7 +713,7 @@ public final class DeliveryActivityDetailInfoOuterClass {
        */
       public Builder clearFinishedDeliveryQuestIndex() {
         finishedDeliveryQuestIndex_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -727,18 +750,7 @@ public final class DeliveryActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DeliveryActivityDetailInfo(input, extensionRegistry);
       }
     };
 

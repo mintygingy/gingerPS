@@ -99,6 +99,71 @@ public final class DraftOwnerStartInviteRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DraftOwnerStartInviteRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              draftId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              wrongUid_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                inviteFailInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              inviteFailInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          inviteFailInfoList_ = java.util.Collections.unmodifiableList(inviteFailInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DraftOwnerStartInviteRspOuterClass.internal_static_DraftOwnerStartInviteRsp_descriptor;
@@ -113,7 +178,6 @@ public final class DraftOwnerStartInviteRspOuterClass {
     }
 
     public static final int INVITE_FAIL_INFO_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo> inviteFailInfoList_;
     /**
      * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 12;</code>
@@ -154,7 +218,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
     }
 
     public static final int DRAFT_ID_FIELD_NUMBER = 4;
-    private int draftId_ = 0;
+    private int draftId_;
     /**
      * <code>uint32 draft_id = 4;</code>
      * @return The draftId.
@@ -165,7 +229,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -176,7 +240,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
     }
 
     public static final int WRONG_UID_FIELD_NUMBER = 6;
-    private int wrongUid_ = 0;
+    private int wrongUid_;
     /**
      * <code>uint32 wrong_uid = 6;</code>
      * @return The wrongUid.
@@ -212,7 +276,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
       for (int i = 0; i < inviteFailInfoList_.size(); i++) {
         output.writeMessage(12, inviteFailInfoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -237,7 +301,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, inviteFailInfoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -260,7 +324,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
           != other.getRetcode()) return false;
       if (getWrongUid()
           != other.getWrongUid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -281,7 +345,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + WRONG_UID_FIELD_NUMBER;
       hash = (53 * hash) + getWrongUid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -409,28 +473,35 @@ public final class DraftOwnerStartInviteRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getInviteFailInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (inviteFailInfoListBuilder_ == null) {
           inviteFailInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          inviteFailInfoList_ = null;
           inviteFailInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         draftId_ = 0;
+
         retcode_ = 0;
+
         wrongUid_ = 0;
+
         return this;
       }
 
@@ -457,13 +528,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp buildPartial() {
         emu.gingerps.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp result = new emu.gingerps.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp result) {
+        int from_bitField0_ = bitField0_;
         if (inviteFailInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             inviteFailInfoList_ = java.util.Collections.unmodifiableList(inviteFailInfoList_);
@@ -473,19 +538,11 @@ public final class DraftOwnerStartInviteRspOuterClass {
         } else {
           result.inviteFailInfoList_ = inviteFailInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.draftId_ = draftId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.wrongUid_ = wrongUid_;
-        }
+        result.draftId_ = draftId_;
+        result.retcode_ = retcode_;
+        result.wrongUid_ = wrongUid_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -567,7 +624,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         if (other.getWrongUid() != 0) {
           setWrongUid(other.getWrongUid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -582,58 +639,17 @@ public final class DraftOwnerStartInviteRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 32: {
-                draftId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 48: {
-                wrongUid_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 48
-              case 98: {
-                emu.gingerps.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.parser(),
-                        extensionRegistry);
-                if (inviteFailInfoListBuilder_ == null) {
-                  ensureInviteFailInfoListIsMutable();
-                  inviteFailInfoList_.add(m);
-                } else {
-                  inviteFailInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -895,7 +911,6 @@ public final class DraftOwnerStartInviteRspOuterClass {
       public Builder setDraftId(int value) {
         
         draftId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -904,7 +919,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDraftId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         draftId_ = 0;
         onChanged();
         return this;
@@ -927,7 +942,6 @@ public final class DraftOwnerStartInviteRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -936,7 +950,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -959,7 +973,6 @@ public final class DraftOwnerStartInviteRspOuterClass {
       public Builder setWrongUid(int value) {
         
         wrongUid_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -968,7 +981,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWrongUid() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         wrongUid_ = 0;
         onChanged();
         return this;
@@ -1006,18 +1019,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DraftOwnerStartInviteRsp(input, extensionRegistry);
       }
     };
 

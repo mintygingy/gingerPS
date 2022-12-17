@@ -76,6 +76,61 @@ public final class GetChatEmojiCollectionRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetChatEmojiCollectionRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData.Builder subBuilder = null;
+              if (chatEmojiCollectionData_ != null) {
+                subBuilder = chatEmojiCollectionData_.toBuilder();
+              }
+              chatEmojiCollectionData_ = input.readMessage(emu.gingerps.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(chatEmojiCollectionData_);
+                chatEmojiCollectionData_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetChatEmojiCollectionRspOuterClass.internal_static_GetChatEmojiCollectionRsp_descriptor;
@@ -112,11 +167,11 @@ public final class GetChatEmojiCollectionRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionDataOrBuilder getChatEmojiCollectionDataOrBuilder() {
-      return chatEmojiCollectionData_ == null ? emu.gingerps.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData.getDefaultInstance() : chatEmojiCollectionData_;
+      return getChatEmojiCollectionData();
     }
 
     public static final int RETCODE_FIELD_NUMBER = 5;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 5;</code>
      * @return The retcode.
@@ -146,7 +201,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
       if (chatEmojiCollectionData_ != null) {
         output.writeMessage(15, getChatEmojiCollectionData());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getChatEmojiCollectionData());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
       }
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +257,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,24 +384,30 @@ public final class GetChatEmojiCollectionRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetChatEmojiCollectionRspOuterClass.GetChatEmojiCollectionRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        chatEmojiCollectionData_ = null;
-        if (chatEmojiCollectionDataBuilder_ != null) {
-          chatEmojiCollectionDataBuilder_.dispose();
+        if (chatEmojiCollectionDataBuilder_ == null) {
+          chatEmojiCollectionData_ = null;
+        } else {
+          chatEmojiCollectionData_ = null;
           chatEmojiCollectionDataBuilder_ = null;
         }
         retcode_ = 0;
+
         return this;
       }
 
@@ -373,21 +434,14 @@ public final class GetChatEmojiCollectionRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetChatEmojiCollectionRspOuterClass.GetChatEmojiCollectionRsp buildPartial() {
         emu.gingerps.net.proto.GetChatEmojiCollectionRspOuterClass.GetChatEmojiCollectionRsp result = new emu.gingerps.net.proto.GetChatEmojiCollectionRspOuterClass.GetChatEmojiCollectionRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (chatEmojiCollectionDataBuilder_ == null) {
+          result.chatEmojiCollectionData_ = chatEmojiCollectionData_;
+        } else {
+          result.chatEmojiCollectionData_ = chatEmojiCollectionDataBuilder_.build();
+        }
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetChatEmojiCollectionRspOuterClass.GetChatEmojiCollectionRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.chatEmojiCollectionData_ = chatEmojiCollectionDataBuilder_ == null
-              ? chatEmojiCollectionData_
-              : chatEmojiCollectionDataBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +494,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,45 +509,19 @@ public final class GetChatEmojiCollectionRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetChatEmojiCollectionRspOuterClass.GetChatEmojiCollectionRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 122: {
-                input.readMessage(
-                    getChatEmojiCollectionDataFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetChatEmojiCollectionRspOuterClass.GetChatEmojiCollectionRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData chatEmojiCollectionData_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -503,7 +531,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
        * @return Whether the chatEmojiCollectionData field is set.
        */
       public boolean hasChatEmojiCollectionData() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return chatEmojiCollectionDataBuilder_ != null || chatEmojiCollectionData_ != null;
       }
       /**
        * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 15;</code>
@@ -525,11 +553,11 @@ public final class GetChatEmojiCollectionRspOuterClass {
             throw new NullPointerException();
           }
           chatEmojiCollectionData_ = value;
+          onChanged();
         } else {
           chatEmojiCollectionDataBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -539,11 +567,11 @@ public final class GetChatEmojiCollectionRspOuterClass {
           emu.gingerps.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData.Builder builderForValue) {
         if (chatEmojiCollectionDataBuilder_ == null) {
           chatEmojiCollectionData_ = builderForValue.build();
+          onChanged();
         } else {
           chatEmojiCollectionDataBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -551,38 +579,38 @@ public final class GetChatEmojiCollectionRspOuterClass {
        */
       public Builder mergeChatEmojiCollectionData(emu.gingerps.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData value) {
         if (chatEmojiCollectionDataBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            chatEmojiCollectionData_ != null &&
-            chatEmojiCollectionData_ != emu.gingerps.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData.getDefaultInstance()) {
-            getChatEmojiCollectionDataBuilder().mergeFrom(value);
+          if (chatEmojiCollectionData_ != null) {
+            chatEmojiCollectionData_ =
+              emu.gingerps.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData.newBuilder(chatEmojiCollectionData_).mergeFrom(value).buildPartial();
           } else {
             chatEmojiCollectionData_ = value;
           }
+          onChanged();
         } else {
           chatEmojiCollectionDataBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 15;</code>
        */
       public Builder clearChatEmojiCollectionData() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        chatEmojiCollectionData_ = null;
-        if (chatEmojiCollectionDataBuilder_ != null) {
-          chatEmojiCollectionDataBuilder_.dispose();
+        if (chatEmojiCollectionDataBuilder_ == null) {
+          chatEmojiCollectionData_ = null;
+          onChanged();
+        } else {
+          chatEmojiCollectionData_ = null;
           chatEmojiCollectionDataBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 15;</code>
        */
       public emu.gingerps.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData.Builder getChatEmojiCollectionDataBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getChatEmojiCollectionDataFieldBuilder().getBuilder();
       }
@@ -631,7 +659,6 @@ public final class GetChatEmojiCollectionRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -640,7 +667,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -678,18 +705,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetChatEmojiCollectionRsp(input, extensionRegistry);
       }
     };
 

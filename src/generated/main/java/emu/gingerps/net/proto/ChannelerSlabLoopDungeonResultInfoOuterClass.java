@@ -75,6 +75,68 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ChannelerSlabLoopDungeonResultInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              challengeScore_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              dungeonIndex_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isInTimeLimit_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              isSuccess_ = input.readBool();
+              break;
+            }
+            case 104: {
+
+              challengeMaxScore_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.internal_static_ChannelerSlabLoopDungeonResultInfo_descriptor;
@@ -89,7 +151,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
     }
 
     public static final int DUNGEON_INDEX_FIELD_NUMBER = 7;
-    private int dungeonIndex_ = 0;
+    private int dungeonIndex_;
     /**
      * <code>uint32 dungeon_index = 7;</code>
      * @return The dungeonIndex.
@@ -100,7 +162,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
     }
 
     public static final int CHALLENGE_SCORE_FIELD_NUMBER = 5;
-    private int challengeScore_ = 0;
+    private int challengeScore_;
     /**
      * <code>uint32 challenge_score = 5;</code>
      * @return The challengeScore.
@@ -111,7 +173,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
     }
 
     public static final int IS_IN_TIME_LIMIT_FIELD_NUMBER = 8;
-    private boolean isInTimeLimit_ = false;
+    private boolean isInTimeLimit_;
     /**
      * <code>bool is_in_time_limit = 8;</code>
      * @return The isInTimeLimit.
@@ -122,7 +184,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 12;
-    private boolean isSuccess_ = false;
+    private boolean isSuccess_;
     /**
      * <code>bool is_success = 12;</code>
      * @return The isSuccess.
@@ -133,7 +195,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
     }
 
     public static final int CHALLENGE_MAX_SCORE_FIELD_NUMBER = 13;
-    private int challengeMaxScore_ = 0;
+    private int challengeMaxScore_;
     /**
      * <code>uint32 challenge_max_score = 13;</code>
      * @return The challengeMaxScore.
@@ -172,7 +234,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
       if (challengeMaxScore_ != 0) {
         output.writeUInt32(13, challengeMaxScore_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -201,7 +263,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, challengeMaxScore_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +288,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
           != other.getIsSuccess()) return false;
       if (getChallengeMaxScore()
           != other.getChallengeMaxScore()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -249,7 +311,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
           getIsSuccess());
       hash = (37 * hash) + CHALLENGE_MAX_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeMaxScore();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -366,23 +428,32 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         dungeonIndex_ = 0;
+
         challengeScore_ = 0;
+
         isInTimeLimit_ = false;
+
         isSuccess_ = false;
+
         challengeMaxScore_ = 0;
+
         return this;
       }
 
@@ -409,28 +480,13 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo buildPartial() {
         emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo result = new emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.dungeonIndex_ = dungeonIndex_;
+        result.challengeScore_ = challengeScore_;
+        result.isInTimeLimit_ = isInTimeLimit_;
+        result.isSuccess_ = isSuccess_;
+        result.challengeMaxScore_ = challengeMaxScore_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.dungeonIndex_ = dungeonIndex_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.challengeScore_ = challengeScore_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isInTimeLimit_ = isInTimeLimit_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isSuccess_ = isSuccess_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.challengeMaxScore_ = challengeMaxScore_;
-        }
       }
 
       @java.lang.Override
@@ -492,7 +548,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
         if (other.getChallengeMaxScore() != 0) {
           setChallengeMaxScore(other.getChallengeMaxScore());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -507,58 +563,19 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                challengeScore_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 56: {
-                dungeonIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 64: {
-                isInTimeLimit_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 96: {
-                isSuccess_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              case 104: {
-                challengeMaxScore_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int dungeonIndex_ ;
       /**
@@ -577,7 +594,6 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
       public Builder setDungeonIndex(int value) {
         
         dungeonIndex_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -586,7 +602,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonIndex() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         dungeonIndex_ = 0;
         onChanged();
         return this;
@@ -609,7 +625,6 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
       public Builder setChallengeScore(int value) {
         
         challengeScore_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -618,7 +633,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeScore() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         challengeScore_ = 0;
         onChanged();
         return this;
@@ -641,7 +656,6 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
       public Builder setIsInTimeLimit(boolean value) {
         
         isInTimeLimit_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -650,7 +664,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsInTimeLimit() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isInTimeLimit_ = false;
         onChanged();
         return this;
@@ -673,7 +687,6 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -682,7 +695,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isSuccess_ = false;
         onChanged();
         return this;
@@ -705,7 +718,6 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
       public Builder setChallengeMaxScore(int value) {
         
         challengeMaxScore_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -714,7 +726,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeMaxScore() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         challengeMaxScore_ = 0;
         onChanged();
         return this;
@@ -752,18 +764,7 @@ public final class ChannelerSlabLoopDungeonResultInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ChannelerSlabLoopDungeonResultInfo(input, extensionRegistry);
       }
     };
 

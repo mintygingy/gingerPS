@@ -132,6 +132,91 @@ public final class TakeFurnitureMakeRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TakeFurnitureMakeRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              makeId_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                returnItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              returnItemList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                outputItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              outputItemList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.FurnitureMakeSlotOuterClass.FurnitureMakeSlot.Builder subBuilder = null;
+              if (furnitureMakeSlot_ != null) {
+                subBuilder = furnitureMakeSlot_.toBuilder();
+              }
+              furnitureMakeSlot_ = input.readMessage(emu.gingerps.net.proto.FurnitureMakeSlotOuterClass.FurnitureMakeSlot.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(furnitureMakeSlot_);
+                furnitureMakeSlot_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 120: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          returnItemList_ = java.util.Collections.unmodifiableList(returnItemList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          outputItemList_ = java.util.Collections.unmodifiableList(outputItemList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TakeFurnitureMakeRspOuterClass.internal_static_TakeFurnitureMakeRsp_descriptor;
@@ -146,7 +231,7 @@ public final class TakeFurnitureMakeRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 15;</code>
      * @return The retcode.
@@ -157,7 +242,6 @@ public final class TakeFurnitureMakeRspOuterClass {
     }
 
     public static final int RETURN_ITEM_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> returnItemList_;
     /**
      * <code>repeated .ItemParam return_item_list = 5;</code>
@@ -220,11 +304,10 @@ public final class TakeFurnitureMakeRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.FurnitureMakeSlotOuterClass.FurnitureMakeSlotOrBuilder getFurnitureMakeSlotOrBuilder() {
-      return furnitureMakeSlot_ == null ? emu.gingerps.net.proto.FurnitureMakeSlotOuterClass.FurnitureMakeSlot.getDefaultInstance() : furnitureMakeSlot_;
+      return getFurnitureMakeSlot();
     }
 
     public static final int OUTPUT_ITEM_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> outputItemList_;
     /**
      * <code>repeated .ItemParam output_item_list = 10;</code>
@@ -265,7 +348,7 @@ public final class TakeFurnitureMakeRspOuterClass {
     }
 
     public static final int MAKE_ID_FIELD_NUMBER = 3;
-    private int makeId_ = 0;
+    private int makeId_;
     /**
      * <code>uint32 make_id = 3;</code>
      * @return The makeId.
@@ -304,7 +387,7 @@ public final class TakeFurnitureMakeRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(15, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -333,7 +416,7 @@ public final class TakeFurnitureMakeRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -361,7 +444,7 @@ public final class TakeFurnitureMakeRspOuterClass {
           .equals(other.getOutputItemListList())) return false;
       if (getMakeId()
           != other.getMakeId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -388,7 +471,7 @@ public final class TakeFurnitureMakeRspOuterClass {
       }
       hash = (37 * hash) + MAKE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMakeId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -515,39 +598,46 @@ public final class TakeFurnitureMakeRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getReturnItemListFieldBuilder();
+          getOutputItemListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         if (returnItemListBuilder_ == null) {
           returnItemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          returnItemList_ = null;
           returnItemListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        furnitureMakeSlot_ = null;
-        if (furnitureMakeSlotBuilder_ != null) {
-          furnitureMakeSlotBuilder_.dispose();
+        if (furnitureMakeSlotBuilder_ == null) {
+          furnitureMakeSlot_ = null;
+        } else {
+          furnitureMakeSlot_ = null;
           furnitureMakeSlotBuilder_ = null;
         }
         if (outputItemListBuilder_ == null) {
           outputItemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          outputItemList_ = null;
           outputItemListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         makeId_ = 0;
+
         return this;
       }
 
@@ -574,46 +664,34 @@ public final class TakeFurnitureMakeRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp buildPartial() {
         emu.gingerps.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp result = new emu.gingerps.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         if (returnItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             returnItemList_ = java.util.Collections.unmodifiableList(returnItemList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.returnItemList_ = returnItemList_;
         } else {
           result.returnItemList_ = returnItemListBuilder_.build();
         }
+        if (furnitureMakeSlotBuilder_ == null) {
+          result.furnitureMakeSlot_ = furnitureMakeSlot_;
+        } else {
+          result.furnitureMakeSlot_ = furnitureMakeSlotBuilder_.build();
+        }
         if (outputItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             outputItemList_ = java.util.Collections.unmodifiableList(outputItemList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.outputItemList_ = outputItemList_;
         } else {
           result.outputItemList_ = outputItemListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.furnitureMakeSlot_ = furnitureMakeSlotBuilder_ == null
-              ? furnitureMakeSlot_
-              : furnitureMakeSlotBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.makeId_ = makeId_;
-        }
+        result.makeId_ = makeId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -667,7 +745,7 @@ public final class TakeFurnitureMakeRspOuterClass {
           if (!other.returnItemList_.isEmpty()) {
             if (returnItemList_.isEmpty()) {
               returnItemList_ = other.returnItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureReturnItemListIsMutable();
               returnItemList_.addAll(other.returnItemList_);
@@ -680,7 +758,7 @@ public final class TakeFurnitureMakeRspOuterClass {
               returnItemListBuilder_.dispose();
               returnItemListBuilder_ = null;
               returnItemList_ = other.returnItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               returnItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getReturnItemListFieldBuilder() : null;
@@ -696,7 +774,7 @@ public final class TakeFurnitureMakeRspOuterClass {
           if (!other.outputItemList_.isEmpty()) {
             if (outputItemList_.isEmpty()) {
               outputItemList_ = other.outputItemList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureOutputItemListIsMutable();
               outputItemList_.addAll(other.outputItemList_);
@@ -709,7 +787,7 @@ public final class TakeFurnitureMakeRspOuterClass {
               outputItemListBuilder_.dispose();
               outputItemListBuilder_ = null;
               outputItemList_ = other.outputItemList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
               outputItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOutputItemListFieldBuilder() : null;
@@ -721,7 +799,7 @@ public final class TakeFurnitureMakeRspOuterClass {
         if (other.getMakeId() != 0) {
           setMakeId(other.getMakeId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -736,73 +814,17 @@ public final class TakeFurnitureMakeRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                makeId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 24
-              case 42: {
-                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
-                        extensionRegistry);
-                if (returnItemListBuilder_ == null) {
-                  ensureReturnItemListIsMutable();
-                  returnItemList_.add(m);
-                } else {
-                  returnItemListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 82: {
-                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
-                        extensionRegistry);
-                if (outputItemListBuilder_ == null) {
-                  ensureOutputItemListIsMutable();
-                  outputItemList_.add(m);
-                } else {
-                  outputItemListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              case 114: {
-                input.readMessage(
-                    getFurnitureMakeSlotFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 114
-              case 120: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -824,7 +846,6 @@ public final class TakeFurnitureMakeRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -833,7 +854,7 @@ public final class TakeFurnitureMakeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -842,9 +863,9 @@ public final class TakeFurnitureMakeRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> returnItemList_ =
         java.util.Collections.emptyList();
       private void ensureReturnItemListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           returnItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(returnItemList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -994,7 +1015,7 @@ public final class TakeFurnitureMakeRspOuterClass {
       public Builder clearReturnItemList() {
         if (returnItemListBuilder_ == null) {
           returnItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           returnItemListBuilder_.clear();
@@ -1071,7 +1092,7 @@ public final class TakeFurnitureMakeRspOuterClass {
           returnItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   returnItemList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           returnItemList_ = null;
@@ -1087,7 +1108,7 @@ public final class TakeFurnitureMakeRspOuterClass {
        * @return Whether the furnitureMakeSlot field is set.
        */
       public boolean hasFurnitureMakeSlot() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return furnitureMakeSlotBuilder_ != null || furnitureMakeSlot_ != null;
       }
       /**
        * <code>.FurnitureMakeSlot furniture_make_slot = 14;</code>
@@ -1109,11 +1130,11 @@ public final class TakeFurnitureMakeRspOuterClass {
             throw new NullPointerException();
           }
           furnitureMakeSlot_ = value;
+          onChanged();
         } else {
           furnitureMakeSlotBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1123,11 +1144,11 @@ public final class TakeFurnitureMakeRspOuterClass {
           emu.gingerps.net.proto.FurnitureMakeSlotOuterClass.FurnitureMakeSlot.Builder builderForValue) {
         if (furnitureMakeSlotBuilder_ == null) {
           furnitureMakeSlot_ = builderForValue.build();
+          onChanged();
         } else {
           furnitureMakeSlotBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1135,38 +1156,38 @@ public final class TakeFurnitureMakeRspOuterClass {
        */
       public Builder mergeFurnitureMakeSlot(emu.gingerps.net.proto.FurnitureMakeSlotOuterClass.FurnitureMakeSlot value) {
         if (furnitureMakeSlotBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            furnitureMakeSlot_ != null &&
-            furnitureMakeSlot_ != emu.gingerps.net.proto.FurnitureMakeSlotOuterClass.FurnitureMakeSlot.getDefaultInstance()) {
-            getFurnitureMakeSlotBuilder().mergeFrom(value);
+          if (furnitureMakeSlot_ != null) {
+            furnitureMakeSlot_ =
+              emu.gingerps.net.proto.FurnitureMakeSlotOuterClass.FurnitureMakeSlot.newBuilder(furnitureMakeSlot_).mergeFrom(value).buildPartial();
           } else {
             furnitureMakeSlot_ = value;
           }
+          onChanged();
         } else {
           furnitureMakeSlotBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.FurnitureMakeSlot furniture_make_slot = 14;</code>
        */
       public Builder clearFurnitureMakeSlot() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        furnitureMakeSlot_ = null;
-        if (furnitureMakeSlotBuilder_ != null) {
-          furnitureMakeSlotBuilder_.dispose();
+        if (furnitureMakeSlotBuilder_ == null) {
+          furnitureMakeSlot_ = null;
+          onChanged();
+        } else {
+          furnitureMakeSlot_ = null;
           furnitureMakeSlotBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.FurnitureMakeSlot furniture_make_slot = 14;</code>
        */
       public emu.gingerps.net.proto.FurnitureMakeSlotOuterClass.FurnitureMakeSlot.Builder getFurnitureMakeSlotBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getFurnitureMakeSlotFieldBuilder().getBuilder();
       }
@@ -1201,9 +1222,9 @@ public final class TakeFurnitureMakeRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> outputItemList_ =
         java.util.Collections.emptyList();
       private void ensureOutputItemListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           outputItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(outputItemList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1353,7 +1374,7 @@ public final class TakeFurnitureMakeRspOuterClass {
       public Builder clearOutputItemList() {
         if (outputItemListBuilder_ == null) {
           outputItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           outputItemListBuilder_.clear();
@@ -1430,7 +1451,7 @@ public final class TakeFurnitureMakeRspOuterClass {
           outputItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   outputItemList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           outputItemList_ = null;
@@ -1455,7 +1476,6 @@ public final class TakeFurnitureMakeRspOuterClass {
       public Builder setMakeId(int value) {
         
         makeId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1464,7 +1484,7 @@ public final class TakeFurnitureMakeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMakeId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         makeId_ = 0;
         onChanged();
         return this;
@@ -1502,18 +1522,7 @@ public final class TakeFurnitureMakeRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TakeFurnitureMakeRsp(input, extensionRegistry);
       }
     };
 

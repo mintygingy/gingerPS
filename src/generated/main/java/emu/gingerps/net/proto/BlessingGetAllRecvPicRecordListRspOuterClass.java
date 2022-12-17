@@ -86,6 +86,61 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BlessingGetAllRecvPicRecordListRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                recvPicRecordList_ = new java.util.ArrayList<emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              recvPicRecordList_.add(
+                  input.readMessage(emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          recvPicRecordList_ = java.util.Collections.unmodifiableList(recvPicRecordList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BlessingGetAllRecvPicRecordListRspOuterClass.internal_static_BlessingGetAllRecvPicRecordListRsp_descriptor;
@@ -100,7 +155,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -111,7 +166,6 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
     }
 
     public static final int RECV_PIC_RECORD_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord> recvPicRecordList_;
     /**
      * <code>repeated .BlessingRecvPicRecord recv_pic_record_list = 6;</code>
@@ -171,7 +225,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
       for (int i = 0; i < recvPicRecordList_.size(); i++) {
         output.writeMessage(6, recvPicRecordList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, recvPicRecordList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
           != other.getRetcode()) return false;
       if (!getRecvPicRecordListList()
           .equals(other.getRecvPicRecordListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
         hash = (37 * hash) + RECV_PIC_RECORD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRecvPicRecordListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +405,31 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.BlessingGetAllRecvPicRecordListRspOuterClass.BlessingGetAllRecvPicRecordListRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRecvPicRecordListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         if (recvPicRecordListBuilder_ == null) {
           recvPicRecordList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          recvPicRecordList_ = null;
           recvPicRecordListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -397,29 +456,19 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BlessingGetAllRecvPicRecordListRspOuterClass.BlessingGetAllRecvPicRecordListRsp buildPartial() {
         emu.gingerps.net.proto.BlessingGetAllRecvPicRecordListRspOuterClass.BlessingGetAllRecvPicRecordListRsp result = new emu.gingerps.net.proto.BlessingGetAllRecvPicRecordListRspOuterClass.BlessingGetAllRecvPicRecordListRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BlessingGetAllRecvPicRecordListRspOuterClass.BlessingGetAllRecvPicRecordListRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         if (recvPicRecordListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             recvPicRecordList_ = java.util.Collections.unmodifiableList(recvPicRecordList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.recvPicRecordList_ = recvPicRecordList_;
         } else {
           result.recvPicRecordList_ = recvPicRecordListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BlessingGetAllRecvPicRecordListRspOuterClass.BlessingGetAllRecvPicRecordListRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -473,7 +522,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
           if (!other.recvPicRecordList_.isEmpty()) {
             if (recvPicRecordList_.isEmpty()) {
               recvPicRecordList_ = other.recvPicRecordList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureRecvPicRecordListIsMutable();
               recvPicRecordList_.addAll(other.recvPicRecordList_);
@@ -486,7 +535,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
               recvPicRecordListBuilder_.dispose();
               recvPicRecordListBuilder_ = null;
               recvPicRecordList_ = other.recvPicRecordList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               recvPicRecordListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRecvPicRecordListFieldBuilder() : null;
@@ -495,7 +544,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -510,48 +559,17 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BlessingGetAllRecvPicRecordListRspOuterClass.BlessingGetAllRecvPicRecordListRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 50: {
-                emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord.parser(),
-                        extensionRegistry);
-                if (recvPicRecordListBuilder_ == null) {
-                  ensureRecvPicRecordListIsMutable();
-                  recvPicRecordList_.add(m);
-                } else {
-                  recvPicRecordListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BlessingGetAllRecvPicRecordListRspOuterClass.BlessingGetAllRecvPicRecordListRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -573,7 +591,6 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +599,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -591,9 +608,9 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord> recvPicRecordList_ =
         java.util.Collections.emptyList();
       private void ensureRecvPicRecordListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           recvPicRecordList_ = new java.util.ArrayList<emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord>(recvPicRecordList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -743,7 +760,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
       public Builder clearRecvPicRecordList() {
         if (recvPicRecordListBuilder_ == null) {
           recvPicRecordList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           recvPicRecordListBuilder_.clear();
@@ -820,7 +837,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
           recvPicRecordListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord, emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord.Builder, emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecordOrBuilder>(
                   recvPicRecordList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           recvPicRecordList_ = null;
@@ -860,18 +877,7 @@ public final class BlessingGetAllRecvPicRecordListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BlessingGetAllRecvPicRecordListRsp(input, extensionRegistry);
       }
     };
 

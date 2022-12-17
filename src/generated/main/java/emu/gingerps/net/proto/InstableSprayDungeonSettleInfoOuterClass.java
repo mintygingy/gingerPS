@@ -81,6 +81,83 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private InstableSprayDungeonSettleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                scoreList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              scoreList_.addInt(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                scoreList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                scoreList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              difficulty_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          scoreList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.internal_static_InstableSprayDungeonSettleInfo_descriptor;
@@ -95,7 +172,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 12;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 12;</code>
      * @return The stageId.
@@ -106,7 +183,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
     }
 
     public static final int DIFFICULTY_FIELD_NUMBER = 15;
-    private int difficulty_ = 0;
+    private int difficulty_;
     /**
      * <code>uint32 difficulty = 15;</code>
      * @return The difficulty.
@@ -117,7 +194,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 9;
-    private boolean isNewRecord_ = false;
+    private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 9;</code>
      * @return The isNewRecord.
@@ -128,7 +205,6 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
     }
 
     public static final int SCORE_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList scoreList_;
     /**
      * <code>repeated uint32 score_list = 3;</code>
@@ -187,7 +263,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
       if (difficulty_ != 0) {
         output.writeUInt32(15, difficulty_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -222,7 +298,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, difficulty_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -245,7 +321,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
           != other.getIsNewRecord()) return false;
       if (!getScoreListList()
           .equals(other.getScoreListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -267,7 +343,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
         hash = (37 * hash) + SCORE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getScoreListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,22 +460,30 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         stageId_ = 0;
+
         difficulty_ = 0;
+
         isNewRecord_ = false;
+
         scoreList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -426,31 +510,17 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo buildPartial() {
         emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo result = new emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo result) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.stageId_ = stageId_;
+        result.difficulty_ = difficulty_;
+        result.isNewRecord_ = isNewRecord_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           scoreList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.scoreList_ = scoreList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.stageId_ = stageId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.difficulty_ = difficulty_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isNewRecord_ = isNewRecord_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -509,14 +579,14 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
         if (!other.scoreList_.isEmpty()) {
           if (scoreList_.isEmpty()) {
             scoreList_ = other.scoreList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureScoreListIsMutable();
             scoreList_.addAll(other.scoreList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -531,61 +601,17 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                int v = input.readUInt32();
-                ensureScoreListIsMutable();
-                scoreList_.addInt(v);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureScoreListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  scoreList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 26
-              case 72: {
-                isNewRecord_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 72
-              case 96: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              case 120: {
-                difficulty_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.InstableSprayDungeonSettleInfoOuterClass.InstableSprayDungeonSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -607,7 +633,6 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -616,7 +641,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -639,7 +664,6 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
       public Builder setDifficulty(int value) {
         
         difficulty_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -648,7 +672,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficulty() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         difficulty_ = 0;
         onChanged();
         return this;
@@ -671,7 +695,6 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -680,7 +703,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -688,10 +711,10 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList scoreList_ = emptyIntList();
       private void ensureScoreListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           scoreList_ = mutableCopy(scoreList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 score_list = 3;</code>
@@ -699,7 +722,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getScoreListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(scoreList_) : scoreList_;
       }
       /**
@@ -725,7 +748,6 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
        */
       public Builder setScoreList(
           int index, int value) {
-        
         ensureScoreListIsMutable();
         scoreList_.setInt(index, value);
         onChanged();
@@ -737,7 +759,6 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addScoreList(int value) {
-        
         ensureScoreListIsMutable();
         scoreList_.addInt(value);
         onChanged();
@@ -762,7 +783,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
        */
       public Builder clearScoreList() {
         scoreList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -799,18 +820,7 @@ public final class InstableSprayDungeonSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InstableSprayDungeonSettleInfo(input, extensionRegistry);
       }
     };
 

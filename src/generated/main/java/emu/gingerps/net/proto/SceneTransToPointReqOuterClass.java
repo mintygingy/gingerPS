@@ -68,6 +68,53 @@ public final class SceneTransToPointReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneTransToPointReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              pointId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneTransToPointReqOuterClass.internal_static_SceneTransToPointReq_descriptor;
@@ -82,7 +129,7 @@ public final class SceneTransToPointReqOuterClass {
     }
 
     public static final int POINT_ID_FIELD_NUMBER = 9;
-    private int pointId_ = 0;
+    private int pointId_;
     /**
      * <code>uint32 point_id = 9;</code>
      * @return The pointId.
@@ -93,7 +140,7 @@ public final class SceneTransToPointReqOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 7;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 7;</code>
      * @return The sceneId.
@@ -123,7 +170,7 @@ public final class SceneTransToPointReqOuterClass {
       if (pointId_ != 0) {
         output.writeUInt32(9, pointId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class SceneTransToPointReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, pointId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class SceneTransToPointReqOuterClass {
           != other.getPointId()) return false;
       if (getSceneId()
           != other.getSceneId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class SceneTransToPointReqOuterClass {
       hash = (53 * hash) + getPointId();
       hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -302,20 +349,26 @@ public final class SceneTransToPointReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneTransToPointReqOuterClass.SceneTransToPointReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         pointId_ = 0;
+
         sceneId_ = 0;
+
         return this;
       }
 
@@ -342,19 +395,10 @@ public final class SceneTransToPointReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneTransToPointReqOuterClass.SceneTransToPointReq buildPartial() {
         emu.gingerps.net.proto.SceneTransToPointReqOuterClass.SceneTransToPointReq result = new emu.gingerps.net.proto.SceneTransToPointReqOuterClass.SceneTransToPointReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.pointId_ = pointId_;
+        result.sceneId_ = sceneId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneTransToPointReqOuterClass.SceneTransToPointReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.pointId_ = pointId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
       }
 
       @java.lang.Override
@@ -407,7 +451,7 @@ public final class SceneTransToPointReqOuterClass {
         if (other.getSceneId() != 0) {
           setSceneId(other.getSceneId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -422,43 +466,19 @@ public final class SceneTransToPointReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneTransToPointReqOuterClass.SceneTransToPointReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 72: {
-                pointId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneTransToPointReqOuterClass.SceneTransToPointReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int pointId_ ;
       /**
@@ -477,7 +497,6 @@ public final class SceneTransToPointReqOuterClass {
       public Builder setPointId(int value) {
         
         pointId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -486,7 +505,7 @@ public final class SceneTransToPointReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         pointId_ = 0;
         onChanged();
         return this;
@@ -509,7 +528,6 @@ public final class SceneTransToPointReqOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -518,7 +536,7 @@ public final class SceneTransToPointReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -556,18 +574,7 @@ public final class SceneTransToPointReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneTransToPointReq(input, extensionRegistry);
       }
     };
 

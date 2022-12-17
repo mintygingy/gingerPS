@@ -133,6 +133,112 @@ public final class ReunionBriefInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ReunionBriefInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              firstDayStartTime_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              finishTime_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              privilegeId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              missionId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              unk3300MHHLEJIFFIM_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              unk3300ODKLPOMKKPD_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              firstGiftRewardId_ = input.readUInt32();
+              break;
+            }
+            case 82: {
+              emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.Builder subBuilder = null;
+              if (privilegeInfo_ != null) {
+                subBuilder = privilegeInfo_.toBuilder();
+              }
+              privilegeInfo_ = input.readMessage(emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(privilegeInfo_);
+                privilegeInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            case 96: {
+
+              signInConfigId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              unk3300OKGAAEDENEI_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              startTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ReunionBriefInfoOuterClass.internal_static_ReunionBriefInfo_descriptor;
@@ -147,7 +253,7 @@ public final class ReunionBriefInfoOuterClass {
     }
 
     public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 1;
-    private int firstDayStartTime_ = 0;
+    private int firstDayStartTime_;
     /**
      * <code>uint32 first_day_start_time = 1;</code>
      * @return The firstDayStartTime.
@@ -158,8 +264,7 @@ public final class ReunionBriefInfoOuterClass {
     }
 
     public static final int VERSION_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object version_ = "";
+    private volatile java.lang.Object version_;
     /**
      * <code>string version = 11;</code>
      * @return The version.
@@ -197,7 +302,7 @@ public final class ReunionBriefInfoOuterClass {
     }
 
     public static final int MISSION_ID_FIELD_NUMBER = 6;
-    private int missionId_ = 0;
+    private int missionId_;
     /**
      * <code>uint32 mission_id = 6;</code>
      * @return The missionId.
@@ -208,7 +313,7 @@ public final class ReunionBriefInfoOuterClass {
     }
 
     public static final int FINISH_TIME_FIELD_NUMBER = 2;
-    private int finishTime_ = 0;
+    private int finishTime_;
     /**
      * <code>uint32 finish_time = 2;</code>
      * @return The finishTime.
@@ -219,7 +324,7 @@ public final class ReunionBriefInfoOuterClass {
     }
 
     public static final int UNK3300_OKGAAEDENEI_FIELD_NUMBER = 13;
-    private boolean unk3300OKGAAEDENEI_ = false;
+    private boolean unk3300OKGAAEDENEI_;
     /**
      * <code>bool Unk3300_OKGAAEDENEI = 13;</code>
      * @return The unk3300OKGAAEDENEI.
@@ -230,7 +335,7 @@ public final class ReunionBriefInfoOuterClass {
     }
 
     public static final int PRIVILEGE_ID_FIELD_NUMBER = 5;
-    private int privilegeId_ = 0;
+    private int privilegeId_;
     /**
      * <code>uint32 privilege_id = 5;</code>
      * @return The privilegeId.
@@ -263,11 +368,11 @@ public final class ReunionBriefInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfoOrBuilder getPrivilegeInfoOrBuilder() {
-      return privilegeInfo_ == null ? emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.getDefaultInstance() : privilegeInfo_;
+      return getPrivilegeInfo();
     }
 
     public static final int START_TIME_FIELD_NUMBER = 14;
-    private int startTime_ = 0;
+    private int startTime_;
     /**
      * <code>uint32 start_time = 14;</code>
      * @return The startTime.
@@ -278,7 +383,7 @@ public final class ReunionBriefInfoOuterClass {
     }
 
     public static final int FIRST_GIFT_REWARD_ID_FIELD_NUMBER = 9;
-    private int firstGiftRewardId_ = 0;
+    private int firstGiftRewardId_;
     /**
      * <code>uint32 first_gift_reward_id = 9;</code>
      * @return The firstGiftRewardId.
@@ -289,7 +394,7 @@ public final class ReunionBriefInfoOuterClass {
     }
 
     public static final int UNK3300_ODKLPOMKKPD_FIELD_NUMBER = 8;
-    private boolean unk3300ODKLPOMKKPD_ = false;
+    private boolean unk3300ODKLPOMKKPD_;
     /**
      * <code>bool Unk3300_ODKLPOMKKPD = 8;</code>
      * @return The unk3300ODKLPOMKKPD.
@@ -300,7 +405,7 @@ public final class ReunionBriefInfoOuterClass {
     }
 
     public static final int UNK3300_MHHLEJIFFIM_FIELD_NUMBER = 7;
-    private boolean unk3300MHHLEJIFFIM_ = false;
+    private boolean unk3300MHHLEJIFFIM_;
     /**
      * <code>bool Unk3300_MHHLEJIFFIM = 7;</code>
      * @return The unk3300MHHLEJIFFIM.
@@ -311,7 +416,7 @@ public final class ReunionBriefInfoOuterClass {
     }
 
     public static final int SIGN_IN_CONFIG_ID_FIELD_NUMBER = 12;
-    private int signInConfigId_ = 0;
+    private int signInConfigId_;
     /**
      * <code>uint32 sign_in_config_id = 12;</code>
      * @return The signInConfigId.
@@ -371,7 +476,7 @@ public final class ReunionBriefInfoOuterClass {
       if (startTime_ != 0) {
         output.writeUInt32(14, startTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -427,7 +532,7 @@ public final class ReunionBriefInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, startTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -469,7 +574,7 @@ public final class ReunionBriefInfoOuterClass {
           != other.getUnk3300MHHLEJIFFIM()) return false;
       if (getSignInConfigId()
           != other.getSignInConfigId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -509,7 +614,7 @@ public final class ReunionBriefInfoOuterClass {
           getUnk3300MHHLEJIFFIM());
       hash = (37 * hash) + SIGN_IN_CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSignInConfigId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -626,34 +731,50 @@ public final class ReunionBriefInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         firstDayStartTime_ = 0;
+
         version_ = "";
+
         missionId_ = 0;
+
         finishTime_ = 0;
+
         unk3300OKGAAEDENEI_ = false;
+
         privilegeId_ = 0;
-        privilegeInfo_ = null;
-        if (privilegeInfoBuilder_ != null) {
-          privilegeInfoBuilder_.dispose();
+
+        if (privilegeInfoBuilder_ == null) {
+          privilegeInfo_ = null;
+        } else {
+          privilegeInfo_ = null;
           privilegeInfoBuilder_ = null;
         }
         startTime_ = 0;
+
         firstGiftRewardId_ = 0;
+
         unk3300ODKLPOMKKPD_ = false;
+
         unk3300MHHLEJIFFIM_ = false;
+
         signInConfigId_ = 0;
+
         return this;
       }
 
@@ -680,51 +801,24 @@ public final class ReunionBriefInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo buildPartial() {
         emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo result = new emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.firstDayStartTime_ = firstDayStartTime_;
+        result.version_ = version_;
+        result.missionId_ = missionId_;
+        result.finishTime_ = finishTime_;
+        result.unk3300OKGAAEDENEI_ = unk3300OKGAAEDENEI_;
+        result.privilegeId_ = privilegeId_;
+        if (privilegeInfoBuilder_ == null) {
+          result.privilegeInfo_ = privilegeInfo_;
+        } else {
+          result.privilegeInfo_ = privilegeInfoBuilder_.build();
+        }
+        result.startTime_ = startTime_;
+        result.firstGiftRewardId_ = firstGiftRewardId_;
+        result.unk3300ODKLPOMKKPD_ = unk3300ODKLPOMKKPD_;
+        result.unk3300MHHLEJIFFIM_ = unk3300MHHLEJIFFIM_;
+        result.signInConfigId_ = signInConfigId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.firstDayStartTime_ = firstDayStartTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.version_ = version_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.missionId_ = missionId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.finishTime_ = finishTime_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300OKGAAEDENEI_ = unk3300OKGAAEDENEI_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.privilegeId_ = privilegeId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.privilegeInfo_ = privilegeInfoBuilder_ == null
-              ? privilegeInfo_
-              : privilegeInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.startTime_ = startTime_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.firstGiftRewardId_ = firstGiftRewardId_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.unk3300ODKLPOMKKPD_ = unk3300ODKLPOMKKPD_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.unk3300MHHLEJIFFIM_ = unk3300MHHLEJIFFIM_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.signInConfigId_ = signInConfigId_;
-        }
       }
 
       @java.lang.Override
@@ -776,7 +870,6 @@ public final class ReunionBriefInfoOuterClass {
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getMissionId() != 0) {
@@ -809,7 +902,7 @@ public final class ReunionBriefInfoOuterClass {
         if (other.getSignInConfigId() != 0) {
           setSignInConfigId(other.getSignInConfigId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -824,95 +917,19 @@ public final class ReunionBriefInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                firstDayStartTime_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                finishTime_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 16
-              case 40: {
-                privilegeId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 40
-              case 48: {
-                missionId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 48
-              case 56: {
-                unk3300MHHLEJIFFIM_ = input.readBool();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 56
-              case 64: {
-                unk3300ODKLPOMKKPD_ = input.readBool();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 64
-              case 72: {
-                firstGiftRewardId_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 82: {
-                input.readMessage(
-                    getPrivilegeInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 82
-              case 90: {
-                version_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 90
-              case 96: {
-                signInConfigId_ = input.readUInt32();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 96
-              case 104: {
-                unk3300OKGAAEDENEI_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 104
-              case 112: {
-                startTime_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int firstDayStartTime_ ;
       /**
@@ -931,7 +948,6 @@ public final class ReunionBriefInfoOuterClass {
       public Builder setFirstDayStartTime(int value) {
         
         firstDayStartTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -940,7 +956,7 @@ public final class ReunionBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFirstDayStartTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         firstDayStartTime_ = 0;
         onChanged();
         return this;
@@ -987,9 +1003,11 @@ public final class ReunionBriefInfoOuterClass {
        */
       public Builder setVersion(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         version_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -998,8 +1016,8 @@ public final class ReunionBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
+        
         version_ = getDefaultInstance().getVersion();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1010,10 +1028,12 @@ public final class ReunionBriefInfoOuterClass {
        */
       public Builder setVersionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         version_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1035,7 +1055,6 @@ public final class ReunionBriefInfoOuterClass {
       public Builder setMissionId(int value) {
         
         missionId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1044,7 +1063,7 @@ public final class ReunionBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMissionId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         missionId_ = 0;
         onChanged();
         return this;
@@ -1067,7 +1086,6 @@ public final class ReunionBriefInfoOuterClass {
       public Builder setFinishTime(int value) {
         
         finishTime_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1076,7 +1094,7 @@ public final class ReunionBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishTime() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         finishTime_ = 0;
         onChanged();
         return this;
@@ -1099,7 +1117,6 @@ public final class ReunionBriefInfoOuterClass {
       public Builder setUnk3300OKGAAEDENEI(boolean value) {
         
         unk3300OKGAAEDENEI_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1108,7 +1125,7 @@ public final class ReunionBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OKGAAEDENEI() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300OKGAAEDENEI_ = false;
         onChanged();
         return this;
@@ -1131,7 +1148,6 @@ public final class ReunionBriefInfoOuterClass {
       public Builder setPrivilegeId(int value) {
         
         privilegeId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1140,7 +1156,7 @@ public final class ReunionBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPrivilegeId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         privilegeId_ = 0;
         onChanged();
         return this;
@@ -1154,7 +1170,7 @@ public final class ReunionBriefInfoOuterClass {
        * @return Whether the privilegeInfo field is set.
        */
       public boolean hasPrivilegeInfo() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return privilegeInfoBuilder_ != null || privilegeInfo_ != null;
       }
       /**
        * <code>.ReunionPrivilegeInfo privilege_info = 10;</code>
@@ -1176,11 +1192,11 @@ public final class ReunionBriefInfoOuterClass {
             throw new NullPointerException();
           }
           privilegeInfo_ = value;
+          onChanged();
         } else {
           privilegeInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1190,11 +1206,11 @@ public final class ReunionBriefInfoOuterClass {
           emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.Builder builderForValue) {
         if (privilegeInfoBuilder_ == null) {
           privilegeInfo_ = builderForValue.build();
+          onChanged();
         } else {
           privilegeInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1202,38 +1218,38 @@ public final class ReunionBriefInfoOuterClass {
        */
       public Builder mergePrivilegeInfo(emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo value) {
         if (privilegeInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0) &&
-            privilegeInfo_ != null &&
-            privilegeInfo_ != emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.getDefaultInstance()) {
-            getPrivilegeInfoBuilder().mergeFrom(value);
+          if (privilegeInfo_ != null) {
+            privilegeInfo_ =
+              emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.newBuilder(privilegeInfo_).mergeFrom(value).buildPartial();
           } else {
             privilegeInfo_ = value;
           }
+          onChanged();
         } else {
           privilegeInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ReunionPrivilegeInfo privilege_info = 10;</code>
        */
       public Builder clearPrivilegeInfo() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        privilegeInfo_ = null;
-        if (privilegeInfoBuilder_ != null) {
-          privilegeInfoBuilder_.dispose();
+        if (privilegeInfoBuilder_ == null) {
+          privilegeInfo_ = null;
+          onChanged();
+        } else {
+          privilegeInfo_ = null;
           privilegeInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ReunionPrivilegeInfo privilege_info = 10;</code>
        */
       public emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.Builder getPrivilegeInfoBuilder() {
-        bitField0_ |= 0x00000040;
+        
         onChanged();
         return getPrivilegeInfoFieldBuilder().getBuilder();
       }
@@ -1282,7 +1298,6 @@ public final class ReunionBriefInfoOuterClass {
       public Builder setStartTime(int value) {
         
         startTime_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1291,7 +1306,7 @@ public final class ReunionBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         startTime_ = 0;
         onChanged();
         return this;
@@ -1314,7 +1329,6 @@ public final class ReunionBriefInfoOuterClass {
       public Builder setFirstGiftRewardId(int value) {
         
         firstGiftRewardId_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1323,7 +1337,7 @@ public final class ReunionBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFirstGiftRewardId() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         firstGiftRewardId_ = 0;
         onChanged();
         return this;
@@ -1346,7 +1360,6 @@ public final class ReunionBriefInfoOuterClass {
       public Builder setUnk3300ODKLPOMKKPD(boolean value) {
         
         unk3300ODKLPOMKKPD_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1355,7 +1368,7 @@ public final class ReunionBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300ODKLPOMKKPD() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         unk3300ODKLPOMKKPD_ = false;
         onChanged();
         return this;
@@ -1378,7 +1391,6 @@ public final class ReunionBriefInfoOuterClass {
       public Builder setUnk3300MHHLEJIFFIM(boolean value) {
         
         unk3300MHHLEJIFFIM_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -1387,7 +1399,7 @@ public final class ReunionBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MHHLEJIFFIM() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         unk3300MHHLEJIFFIM_ = false;
         onChanged();
         return this;
@@ -1410,7 +1422,6 @@ public final class ReunionBriefInfoOuterClass {
       public Builder setSignInConfigId(int value) {
         
         signInConfigId_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -1419,7 +1430,7 @@ public final class ReunionBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSignInConfigId() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         signInConfigId_ = 0;
         onChanged();
         return this;
@@ -1457,18 +1468,7 @@ public final class ReunionBriefInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ReunionBriefInfo(input, extensionRegistry);
       }
     };
 

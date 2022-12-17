@@ -92,6 +92,74 @@ public final class HitTreeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HitTreeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+
+              treeType_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (dropPos_ != null) {
+                subBuilder = dropPos_.toBuilder();
+              }
+              dropPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dropPos_);
+                dropPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (treePos_ != null) {
+                subBuilder = treePos_.toBuilder();
+              }
+              treePos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(treePos_);
+                treePos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HitTreeNotifyOuterClass.internal_static_HitTreeNotify_descriptor;
@@ -106,7 +174,7 @@ public final class HitTreeNotifyOuterClass {
     }
 
     public static final int TREE_TYPE_FIELD_NUMBER = 8;
-    private int treeType_ = 0;
+    private int treeType_;
     /**
      * <code>uint32 tree_type = 8;</code>
      * @return The treeType.
@@ -139,7 +207,7 @@ public final class HitTreeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getDropPosOrBuilder() {
-      return dropPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : dropPos_;
+      return getDropPos();
     }
 
     public static final int TREE_POS_FIELD_NUMBER = 15;
@@ -165,7 +233,7 @@ public final class HitTreeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getTreePosOrBuilder() {
-      return treePos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : treePos_;
+      return getTreePos();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,7 +259,7 @@ public final class HitTreeNotifyOuterClass {
       if (treePos_ != null) {
         output.writeMessage(15, getTreePos());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -212,7 +280,7 @@ public final class HitTreeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getTreePos());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -239,7 +307,7 @@ public final class HitTreeNotifyOuterClass {
         if (!getTreePos()
             .equals(other.getTreePos())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -260,7 +328,7 @@ public final class HitTreeNotifyOuterClass {
         hash = (37 * hash) + TREE_POS_FIELD_NUMBER;
         hash = (53 * hash) + getTreePos().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -388,27 +456,34 @@ public final class HitTreeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.HitTreeNotifyOuterClass.HitTreeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         treeType_ = 0;
-        dropPos_ = null;
-        if (dropPosBuilder_ != null) {
-          dropPosBuilder_.dispose();
+
+        if (dropPosBuilder_ == null) {
+          dropPos_ = null;
+        } else {
+          dropPos_ = null;
           dropPosBuilder_ = null;
         }
-        treePos_ = null;
-        if (treePosBuilder_ != null) {
-          treePosBuilder_.dispose();
+        if (treePosBuilder_ == null) {
+          treePos_ = null;
+        } else {
+          treePos_ = null;
           treePosBuilder_ = null;
         }
         return this;
@@ -437,26 +512,19 @@ public final class HitTreeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HitTreeNotifyOuterClass.HitTreeNotify buildPartial() {
         emu.gingerps.net.proto.HitTreeNotifyOuterClass.HitTreeNotify result = new emu.gingerps.net.proto.HitTreeNotifyOuterClass.HitTreeNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.treeType_ = treeType_;
+        if (dropPosBuilder_ == null) {
+          result.dropPos_ = dropPos_;
+        } else {
+          result.dropPos_ = dropPosBuilder_.build();
+        }
+        if (treePosBuilder_ == null) {
+          result.treePos_ = treePos_;
+        } else {
+          result.treePos_ = treePosBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HitTreeNotifyOuterClass.HitTreeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.treeType_ = treeType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.dropPos_ = dropPosBuilder_ == null
-              ? dropPos_
-              : dropPosBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.treePos_ = treePosBuilder_ == null
-              ? treePos_
-              : treePosBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -512,7 +580,7 @@ public final class HitTreeNotifyOuterClass {
         if (other.hasTreePos()) {
           mergeTreePos(other.getTreePos());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -527,52 +595,19 @@ public final class HitTreeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HitTreeNotifyOuterClass.HitTreeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                treeType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 98: {
-                input.readMessage(
-                    getDropPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 98
-              case 122: {
-                input.readMessage(
-                    getTreePosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HitTreeNotifyOuterClass.HitTreeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int treeType_ ;
       /**
@@ -591,7 +626,6 @@ public final class HitTreeNotifyOuterClass {
       public Builder setTreeType(int value) {
         
         treeType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -600,7 +634,7 @@ public final class HitTreeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTreeType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         treeType_ = 0;
         onChanged();
         return this;
@@ -614,7 +648,7 @@ public final class HitTreeNotifyOuterClass {
        * @return Whether the dropPos field is set.
        */
       public boolean hasDropPos() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return dropPosBuilder_ != null || dropPos_ != null;
       }
       /**
        * <code>.Vector drop_pos = 12;</code>
@@ -636,11 +670,11 @@ public final class HitTreeNotifyOuterClass {
             throw new NullPointerException();
           }
           dropPos_ = value;
+          onChanged();
         } else {
           dropPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -650,11 +684,11 @@ public final class HitTreeNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (dropPosBuilder_ == null) {
           dropPos_ = builderForValue.build();
+          onChanged();
         } else {
           dropPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -662,38 +696,38 @@ public final class HitTreeNotifyOuterClass {
        */
       public Builder mergeDropPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (dropPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            dropPos_ != null &&
-            dropPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getDropPosBuilder().mergeFrom(value);
+          if (dropPos_ != null) {
+            dropPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(dropPos_).mergeFrom(value).buildPartial();
           } else {
             dropPos_ = value;
           }
+          onChanged();
         } else {
           dropPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector drop_pos = 12;</code>
        */
       public Builder clearDropPos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        dropPos_ = null;
-        if (dropPosBuilder_ != null) {
-          dropPosBuilder_.dispose();
+        if (dropPosBuilder_ == null) {
+          dropPos_ = null;
+          onChanged();
+        } else {
+          dropPos_ = null;
           dropPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector drop_pos = 12;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getDropPosBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getDropPosFieldBuilder().getBuilder();
       }
@@ -733,7 +767,7 @@ public final class HitTreeNotifyOuterClass {
        * @return Whether the treePos field is set.
        */
       public boolean hasTreePos() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return treePosBuilder_ != null || treePos_ != null;
       }
       /**
        * <code>.Vector tree_pos = 15;</code>
@@ -755,11 +789,11 @@ public final class HitTreeNotifyOuterClass {
             throw new NullPointerException();
           }
           treePos_ = value;
+          onChanged();
         } else {
           treePosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -769,11 +803,11 @@ public final class HitTreeNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (treePosBuilder_ == null) {
           treePos_ = builderForValue.build();
+          onChanged();
         } else {
           treePosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -781,38 +815,38 @@ public final class HitTreeNotifyOuterClass {
        */
       public Builder mergeTreePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (treePosBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            treePos_ != null &&
-            treePos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getTreePosBuilder().mergeFrom(value);
+          if (treePos_ != null) {
+            treePos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(treePos_).mergeFrom(value).buildPartial();
           } else {
             treePos_ = value;
           }
+          onChanged();
         } else {
           treePosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector tree_pos = 15;</code>
        */
       public Builder clearTreePos() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        treePos_ = null;
-        if (treePosBuilder_ != null) {
-          treePosBuilder_.dispose();
+        if (treePosBuilder_ == null) {
+          treePos_ = null;
+          onChanged();
+        } else {
+          treePos_ = null;
           treePosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector tree_pos = 15;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getTreePosBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getTreePosFieldBuilder().getBuilder();
       }
@@ -876,18 +910,7 @@ public final class HitTreeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HitTreeNotify(input, extensionRegistry);
       }
     };
 

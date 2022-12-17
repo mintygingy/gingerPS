@@ -99,6 +99,71 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RogueDiaryTiredAvatarNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              unk3300DMEMBBPEIGK_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                optionalTiredAvatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              optionalTiredAvatarList_.add(
+                  input.readMessage(emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.parser(), extensionRegistry));
+              break;
+            }
+            case 88: {
+
+              isNeedShow_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              unk3300BGEJGLBMFII_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          optionalTiredAvatarList_ = java.util.Collections.unmodifiableList(optionalTiredAvatarList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RogueDiaryTiredAvatarNotifyOuterClass.internal_static_RogueDiaryTiredAvatarNotify_descriptor;
@@ -113,7 +178,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
     }
 
     public static final int UNK3300_DMEMBBPEIGK_FIELD_NUMBER = 1;
-    private int unk3300DMEMBBPEIGK_ = 0;
+    private int unk3300DMEMBBPEIGK_;
     /**
      * <code>uint32 Unk3300_DMEMBBPEIGK = 1;</code>
      * @return The unk3300DMEMBBPEIGK.
@@ -124,7 +189,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
     }
 
     public static final int UNK3300_BGEJGLBMFII_FIELD_NUMBER = 14;
-    private int unk3300BGEJGLBMFII_ = 0;
+    private int unk3300BGEJGLBMFII_;
     /**
      * <code>uint32 Unk3300_BGEJGLBMFII = 14;</code>
      * @return The unk3300BGEJGLBMFII.
@@ -135,7 +200,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
     }
 
     public static final int IS_NEED_SHOW_FIELD_NUMBER = 11;
-    private boolean isNeedShow_ = false;
+    private boolean isNeedShow_;
     /**
      * <code>bool is_need_show = 11;</code>
      * @return The isNeedShow.
@@ -146,7 +211,6 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
     }
 
     public static final int OPTIONAL_TIRED_AVATAR_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> optionalTiredAvatarList_;
     /**
      * <code>repeated .RogueDiaryAvatar optional_tired_avatar_list = 5;</code>
@@ -212,7 +276,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
       if (unk3300BGEJGLBMFII_ != 0) {
         output.writeUInt32(14, unk3300BGEJGLBMFII_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -237,7 +301,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, unk3300BGEJGLBMFII_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -260,7 +324,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
           != other.getIsNeedShow()) return false;
       if (!getOptionalTiredAvatarListList()
           .equals(other.getOptionalTiredAvatarListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -282,7 +346,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
         hash = (37 * hash) + OPTIONAL_TIRED_AVATAR_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getOptionalTiredAvatarListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -410,28 +474,35 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.RogueDiaryTiredAvatarNotifyOuterClass.RogueDiaryTiredAvatarNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getOptionalTiredAvatarListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300DMEMBBPEIGK_ = 0;
+
         unk3300BGEJGLBMFII_ = 0;
+
         isNeedShow_ = false;
+
         if (optionalTiredAvatarListBuilder_ == null) {
           optionalTiredAvatarList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          optionalTiredAvatarList_ = null;
           optionalTiredAvatarListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -458,35 +529,21 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RogueDiaryTiredAvatarNotifyOuterClass.RogueDiaryTiredAvatarNotify buildPartial() {
         emu.gingerps.net.proto.RogueDiaryTiredAvatarNotifyOuterClass.RogueDiaryTiredAvatarNotify result = new emu.gingerps.net.proto.RogueDiaryTiredAvatarNotifyOuterClass.RogueDiaryTiredAvatarNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.RogueDiaryTiredAvatarNotifyOuterClass.RogueDiaryTiredAvatarNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.unk3300DMEMBBPEIGK_ = unk3300DMEMBBPEIGK_;
+        result.unk3300BGEJGLBMFII_ = unk3300BGEJGLBMFII_;
+        result.isNeedShow_ = isNeedShow_;
         if (optionalTiredAvatarListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             optionalTiredAvatarList_ = java.util.Collections.unmodifiableList(optionalTiredAvatarList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.optionalTiredAvatarList_ = optionalTiredAvatarList_;
         } else {
           result.optionalTiredAvatarList_ = optionalTiredAvatarListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RogueDiaryTiredAvatarNotifyOuterClass.RogueDiaryTiredAvatarNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300DMEMBBPEIGK_ = unk3300DMEMBBPEIGK_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300BGEJGLBMFII_ = unk3300BGEJGLBMFII_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isNeedShow_ = isNeedShow_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -546,7 +603,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
           if (!other.optionalTiredAvatarList_.isEmpty()) {
             if (optionalTiredAvatarList_.isEmpty()) {
               optionalTiredAvatarList_ = other.optionalTiredAvatarList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureOptionalTiredAvatarListIsMutable();
               optionalTiredAvatarList_.addAll(other.optionalTiredAvatarList_);
@@ -559,7 +616,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
               optionalTiredAvatarListBuilder_.dispose();
               optionalTiredAvatarListBuilder_ = null;
               optionalTiredAvatarList_ = other.optionalTiredAvatarList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               optionalTiredAvatarListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOptionalTiredAvatarListFieldBuilder() : null;
@@ -568,7 +625,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -583,58 +640,17 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RogueDiaryTiredAvatarNotifyOuterClass.RogueDiaryTiredAvatarNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                unk3300DMEMBBPEIGK_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 42: {
-                emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.parser(),
-                        extensionRegistry);
-                if (optionalTiredAvatarListBuilder_ == null) {
-                  ensureOptionalTiredAvatarListIsMutable();
-                  optionalTiredAvatarList_.add(m);
-                } else {
-                  optionalTiredAvatarListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 88: {
-                isNeedShow_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              case 112: {
-                unk3300BGEJGLBMFII_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RogueDiaryTiredAvatarNotifyOuterClass.RogueDiaryTiredAvatarNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -656,7 +672,6 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
       public Builder setUnk3300DMEMBBPEIGK(int value) {
         
         unk3300DMEMBBPEIGK_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -665,7 +680,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DMEMBBPEIGK() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300DMEMBBPEIGK_ = 0;
         onChanged();
         return this;
@@ -688,7 +703,6 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
       public Builder setUnk3300BGEJGLBMFII(int value) {
         
         unk3300BGEJGLBMFII_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -697,7 +711,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BGEJGLBMFII() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300BGEJGLBMFII_ = 0;
         onChanged();
         return this;
@@ -720,7 +734,6 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
       public Builder setIsNeedShow(boolean value) {
         
         isNeedShow_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -729,7 +742,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNeedShow() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isNeedShow_ = false;
         onChanged();
         return this;
@@ -738,9 +751,9 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> optionalTiredAvatarList_ =
         java.util.Collections.emptyList();
       private void ensureOptionalTiredAvatarListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           optionalTiredAvatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar>(optionalTiredAvatarList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -890,7 +903,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
       public Builder clearOptionalTiredAvatarList() {
         if (optionalTiredAvatarListBuilder_ == null) {
           optionalTiredAvatarList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           optionalTiredAvatarListBuilder_.clear();
@@ -967,7 +980,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
           optionalTiredAvatarListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar, emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.Builder, emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatarOrBuilder>(
                   optionalTiredAvatarList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           optionalTiredAvatarList_ = null;
@@ -1007,18 +1020,7 @@ public final class RogueDiaryTiredAvatarNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RogueDiaryTiredAvatarNotify(input, extensionRegistry);
       }
     };
 

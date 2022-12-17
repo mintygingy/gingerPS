@@ -75,6 +75,68 @@ public final class InferenceWordInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private InferenceWordInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              wordId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              isInterpret_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              isAssociate_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              unlockByWordId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              isSubmit_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InferenceWordInfoOuterClass.internal_static_InferenceWordInfo_descriptor;
@@ -89,7 +151,7 @@ public final class InferenceWordInfoOuterClass {
     }
 
     public static final int IS_SUBMIT_FIELD_NUMBER = 12;
-    private boolean isSubmit_ = false;
+    private boolean isSubmit_;
     /**
      * <code>bool is_submit = 12;</code>
      * @return The isSubmit.
@@ -100,7 +162,7 @@ public final class InferenceWordInfoOuterClass {
     }
 
     public static final int UNLOCK_BY_WORD_ID_FIELD_NUMBER = 11;
-    private int unlockByWordId_ = 0;
+    private int unlockByWordId_;
     /**
      * <code>uint32 unlock_by_word_id = 11;</code>
      * @return The unlockByWordId.
@@ -111,7 +173,7 @@ public final class InferenceWordInfoOuterClass {
     }
 
     public static final int IS_ASSOCIATE_FIELD_NUMBER = 10;
-    private boolean isAssociate_ = false;
+    private boolean isAssociate_;
     /**
      * <code>bool is_associate = 10;</code>
      * @return The isAssociate.
@@ -122,7 +184,7 @@ public final class InferenceWordInfoOuterClass {
     }
 
     public static final int WORD_ID_FIELD_NUMBER = 2;
-    private int wordId_ = 0;
+    private int wordId_;
     /**
      * <code>uint32 word_id = 2;</code>
      * @return The wordId.
@@ -133,7 +195,7 @@ public final class InferenceWordInfoOuterClass {
     }
 
     public static final int IS_INTERPRET_FIELD_NUMBER = 3;
-    private boolean isInterpret_ = false;
+    private boolean isInterpret_;
     /**
      * <code>bool is_interpret = 3;</code>
      * @return The isInterpret.
@@ -172,7 +234,7 @@ public final class InferenceWordInfoOuterClass {
       if (isSubmit_ != false) {
         output.writeBool(12, isSubmit_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -201,7 +263,7 @@ public final class InferenceWordInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, isSubmit_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +288,7 @@ public final class InferenceWordInfoOuterClass {
           != other.getWordId()) return false;
       if (getIsInterpret()
           != other.getIsInterpret()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -250,7 +312,7 @@ public final class InferenceWordInfoOuterClass {
       hash = (37 * hash) + IS_INTERPRET_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsInterpret());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -367,23 +429,32 @@ public final class InferenceWordInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isSubmit_ = false;
+
         unlockByWordId_ = 0;
+
         isAssociate_ = false;
+
         wordId_ = 0;
+
         isInterpret_ = false;
+
         return this;
       }
 
@@ -410,28 +481,13 @@ public final class InferenceWordInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo buildPartial() {
         emu.gingerps.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo result = new emu.gingerps.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isSubmit_ = isSubmit_;
+        result.unlockByWordId_ = unlockByWordId_;
+        result.isAssociate_ = isAssociate_;
+        result.wordId_ = wordId_;
+        result.isInterpret_ = isInterpret_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isSubmit_ = isSubmit_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unlockByWordId_ = unlockByWordId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isAssociate_ = isAssociate_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.wordId_ = wordId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.isInterpret_ = isInterpret_;
-        }
       }
 
       @java.lang.Override
@@ -493,7 +549,7 @@ public final class InferenceWordInfoOuterClass {
         if (other.getIsInterpret() != false) {
           setIsInterpret(other.getIsInterpret());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -508,58 +564,19 @@ public final class InferenceWordInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                wordId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 16
-              case 24: {
-                isInterpret_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 24
-              case 80: {
-                isAssociate_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              case 88: {
-                unlockByWordId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              case 96: {
-                isSubmit_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isSubmit_ ;
       /**
@@ -578,7 +595,6 @@ public final class InferenceWordInfoOuterClass {
       public Builder setIsSubmit(boolean value) {
         
         isSubmit_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -587,7 +603,7 @@ public final class InferenceWordInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSubmit() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isSubmit_ = false;
         onChanged();
         return this;
@@ -610,7 +626,6 @@ public final class InferenceWordInfoOuterClass {
       public Builder setUnlockByWordId(int value) {
         
         unlockByWordId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -619,7 +634,7 @@ public final class InferenceWordInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnlockByWordId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unlockByWordId_ = 0;
         onChanged();
         return this;
@@ -642,7 +657,6 @@ public final class InferenceWordInfoOuterClass {
       public Builder setIsAssociate(boolean value) {
         
         isAssociate_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -651,7 +665,7 @@ public final class InferenceWordInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAssociate() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isAssociate_ = false;
         onChanged();
         return this;
@@ -674,7 +688,6 @@ public final class InferenceWordInfoOuterClass {
       public Builder setWordId(int value) {
         
         wordId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -683,7 +696,7 @@ public final class InferenceWordInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWordId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         wordId_ = 0;
         onChanged();
         return this;
@@ -706,7 +719,6 @@ public final class InferenceWordInfoOuterClass {
       public Builder setIsInterpret(boolean value) {
         
         isInterpret_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -715,7 +727,7 @@ public final class InferenceWordInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsInterpret() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         isInterpret_ = false;
         onChanged();
         return this;
@@ -753,18 +765,7 @@ public final class InferenceWordInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InferenceWordInfo(input, extensionRegistry);
       }
     };
 

@@ -67,6 +67,53 @@ public final class MpPlayInviteResultNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MpPlayInviteResultNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              mpPlayId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              allAgree_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MpPlayInviteResultNotifyOuterClass.internal_static_MpPlayInviteResultNotify_descriptor;
@@ -81,7 +128,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
     }
 
     public static final int ALL_AGREE_FIELD_NUMBER = 14;
-    private boolean allAgree_ = false;
+    private boolean allAgree_;
     /**
      * <code>bool all_agree = 14;</code>
      * @return The allAgree.
@@ -92,7 +139,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
     }
 
     public static final int MP_PLAY_ID_FIELD_NUMBER = 2;
-    private int mpPlayId_ = 0;
+    private int mpPlayId_;
     /**
      * <code>uint32 mp_play_id = 2;</code>
      * @return The mpPlayId.
@@ -122,7 +169,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
       if (allAgree_ != false) {
         output.writeBool(14, allAgree_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, allAgree_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
           != other.getAllAgree()) return false;
       if (getMpPlayId()
           != other.getMpPlayId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
           getAllAgree());
       hash = (37 * hash) + MP_PLAY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMpPlayId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -301,20 +348,26 @@ public final class MpPlayInviteResultNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         allAgree_ = false;
+
         mpPlayId_ = 0;
+
         return this;
       }
 
@@ -341,19 +394,10 @@ public final class MpPlayInviteResultNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify buildPartial() {
         emu.gingerps.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify result = new emu.gingerps.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.allAgree_ = allAgree_;
+        result.mpPlayId_ = mpPlayId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.allAgree_ = allAgree_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.mpPlayId_ = mpPlayId_;
-        }
       }
 
       @java.lang.Override
@@ -406,7 +450,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
         if (other.getMpPlayId() != 0) {
           setMpPlayId(other.getMpPlayId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -421,43 +465,19 @@ public final class MpPlayInviteResultNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                mpPlayId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 112: {
-                allAgree_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean allAgree_ ;
       /**
@@ -476,7 +496,6 @@ public final class MpPlayInviteResultNotifyOuterClass {
       public Builder setAllAgree(boolean value) {
         
         allAgree_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -485,7 +504,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAllAgree() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         allAgree_ = false;
         onChanged();
         return this;
@@ -508,7 +527,6 @@ public final class MpPlayInviteResultNotifyOuterClass {
       public Builder setMpPlayId(int value) {
         
         mpPlayId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -517,7 +535,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMpPlayId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         mpPlayId_ = 0;
         onChanged();
         return this;
@@ -555,18 +573,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MpPlayInviteResultNotify(input, extensionRegistry);
       }
     };
 

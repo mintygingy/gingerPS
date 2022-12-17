@@ -81,6 +81,79 @@ public final class GCGMsgCostDiceOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGMsgCostDice(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 56: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                selectDiceIndexList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              selectDiceIndexList_.addInt(input.readUInt32());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                selectDiceIndexList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                selectDiceIndexList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          selectDiceIndexList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.internal_static_GCGMsgCostDice_descriptor;
@@ -95,7 +168,7 @@ public final class GCGMsgCostDiceOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 1;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.GCGReason reason = 1;</code>
      * @return The enum numeric value on the wire for reason.
@@ -108,12 +181,12 @@ public final class GCGMsgCostDiceOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason getReason() {
-      emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
     }
 
     public static final int SELECT_DICE_INDEX_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList selectDiceIndexList_;
     /**
      * <code>repeated uint32 select_dice_index_list = 12;</code>
@@ -142,7 +215,7 @@ public final class GCGMsgCostDiceOuterClass {
     private int selectDiceIndexListMemoizedSerializedSize = -1;
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 7;
-    private int controllerId_ = 0;
+    private int controllerId_;
     /**
      * <code>uint32 controller_id = 7;</code>
      * @return The controllerId.
@@ -180,7 +253,7 @@ public final class GCGMsgCostDiceOuterClass {
       for (int i = 0; i < selectDiceIndexList_.size(); i++) {
         output.writeUInt32NoTag(selectDiceIndexList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -211,7 +284,7 @@ public final class GCGMsgCostDiceOuterClass {
         }
         selectDiceIndexListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -231,7 +304,7 @@ public final class GCGMsgCostDiceOuterClass {
           .equals(other.getSelectDiceIndexListList())) return false;
       if (getControllerId()
           != other.getControllerId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -250,7 +323,7 @@ public final class GCGMsgCostDiceOuterClass {
       }
       hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getControllerId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -367,21 +440,28 @@ public final class GCGMsgCostDiceOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         reason_ = 0;
+
         selectDiceIndexList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         controllerId_ = 0;
+
         return this;
       }
 
@@ -408,28 +488,16 @@ public final class GCGMsgCostDiceOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice buildPartial() {
         emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice result = new emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.reason_ = reason_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           selectDiceIndexList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.selectDiceIndexList_ = selectDiceIndexList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.controllerId_ = controllerId_;
-        }
+        result.controllerId_ = controllerId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -482,7 +550,7 @@ public final class GCGMsgCostDiceOuterClass {
         if (!other.selectDiceIndexList_.isEmpty()) {
           if (selectDiceIndexList_.isEmpty()) {
             selectDiceIndexList_ = other.selectDiceIndexList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSelectDiceIndexListIsMutable();
             selectDiceIndexList_.addAll(other.selectDiceIndexList_);
@@ -492,7 +560,7 @@ public final class GCGMsgCostDiceOuterClass {
         if (other.getControllerId() != 0) {
           setControllerId(other.getControllerId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -507,56 +575,17 @@ public final class GCGMsgCostDiceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 56: {
-                controllerId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              case 96: {
-                int v = input.readUInt32();
-                ensureSelectDiceIndexListIsMutable();
-                selectDiceIndexList_.addInt(v);
-                break;
-              } // case 96
-              case 98: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureSelectDiceIndexListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  selectDiceIndexList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -575,8 +604,8 @@ public final class GCGMsgCostDiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -586,7 +615,8 @@ public final class GCGMsgCostDiceOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason getReason() {
-        emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
       }
       /**
@@ -598,7 +628,7 @@ public final class GCGMsgCostDiceOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -608,7 +638,7 @@ public final class GCGMsgCostDiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -616,10 +646,10 @@ public final class GCGMsgCostDiceOuterClass {
 
       private com.google.protobuf.Internal.IntList selectDiceIndexList_ = emptyIntList();
       private void ensureSelectDiceIndexListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           selectDiceIndexList_ = mutableCopy(selectDiceIndexList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 select_dice_index_list = 12;</code>
@@ -627,7 +657,7 @@ public final class GCGMsgCostDiceOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSelectDiceIndexListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(selectDiceIndexList_) : selectDiceIndexList_;
       }
       /**
@@ -653,7 +683,6 @@ public final class GCGMsgCostDiceOuterClass {
        */
       public Builder setSelectDiceIndexList(
           int index, int value) {
-        
         ensureSelectDiceIndexListIsMutable();
         selectDiceIndexList_.setInt(index, value);
         onChanged();
@@ -665,7 +694,6 @@ public final class GCGMsgCostDiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSelectDiceIndexList(int value) {
-        
         ensureSelectDiceIndexListIsMutable();
         selectDiceIndexList_.addInt(value);
         onChanged();
@@ -690,7 +718,7 @@ public final class GCGMsgCostDiceOuterClass {
        */
       public Builder clearSelectDiceIndexList() {
         selectDiceIndexList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -712,7 +740,6 @@ public final class GCGMsgCostDiceOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -721,7 +748,7 @@ public final class GCGMsgCostDiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         controllerId_ = 0;
         onChanged();
         return this;
@@ -759,18 +786,7 @@ public final class GCGMsgCostDiceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGMsgCostDice(input, extensionRegistry);
       }
     };
 

@@ -129,6 +129,99 @@ public final class BlessingRecvPicRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BlessingRecvPicRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              isRecv_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickname_ = s;
+              break;
+            }
+            case 48: {
+
+              avatarId_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              remarkName_ = s;
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
+              if (profilePicture_ != null) {
+                subBuilder = profilePicture_.toBuilder();
+              }
+              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(profilePicture_);
+                profilePicture_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              signature_ = s;
+              break;
+            }
+            case 88: {
+
+              index_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              picId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.internal_static_BlessingRecvPicRecord_descriptor;
@@ -143,7 +236,7 @@ public final class BlessingRecvPicRecordOuterClass {
     }
 
     public static final int IS_RECV_FIELD_NUMBER = 2;
-    private boolean isRecv_ = false;
+    private boolean isRecv_;
     /**
      * <code>bool is_recv = 2;</code>
      * @return The isRecv.
@@ -154,8 +247,7 @@ public final class BlessingRecvPicRecordOuterClass {
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object nickname_ = "";
+    private volatile java.lang.Object nickname_;
     /**
      * <code>string nickname = 5;</code>
      * @return The nickname.
@@ -193,7 +285,7 @@ public final class BlessingRecvPicRecordOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 6;
-    private int avatarId_ = 0;
+    private int avatarId_;
     /**
      * <code>uint32 avatar_id = 6;</code>
      * @return The avatarId.
@@ -226,12 +318,11 @@ public final class BlessingRecvPicRecordOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+      return getProfilePicture();
     }
 
     public static final int SIGNATURE_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object signature_ = "";
+    private volatile java.lang.Object signature_;
     /**
      * <code>string signature = 10;</code>
      * @return The signature.
@@ -269,8 +360,7 @@ public final class BlessingRecvPicRecordOuterClass {
     }
 
     public static final int REMARK_NAME_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object remarkName_ = "";
+    private volatile java.lang.Object remarkName_;
     /**
      * <code>string remark_name = 8;</code>
      * @return The remarkName.
@@ -308,7 +398,7 @@ public final class BlessingRecvPicRecordOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 3;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 3;</code>
      * @return The uid.
@@ -319,7 +409,7 @@ public final class BlessingRecvPicRecordOuterClass {
     }
 
     public static final int PIC_ID_FIELD_NUMBER = 12;
-    private int picId_ = 0;
+    private int picId_;
     /**
      * <code>uint32 pic_id = 12;</code>
      * @return The picId.
@@ -330,7 +420,7 @@ public final class BlessingRecvPicRecordOuterClass {
     }
 
     public static final int INDEX_FIELD_NUMBER = 11;
-    private int index_ = 0;
+    private int index_;
     /**
      * <code>uint32 index = 11;</code>
      * @return The index.
@@ -381,7 +471,7 @@ public final class BlessingRecvPicRecordOuterClass {
       if (picId_ != 0) {
         output.writeUInt32(12, picId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -423,7 +513,7 @@ public final class BlessingRecvPicRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, picId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -459,7 +549,7 @@ public final class BlessingRecvPicRecordOuterClass {
           != other.getPicId()) return false;
       if (getIndex()
           != other.getIndex()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -491,7 +581,7 @@ public final class BlessingRecvPicRecordOuterClass {
       hash = (53 * hash) + getPicId();
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getIndex();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -608,31 +698,44 @@ public final class BlessingRecvPicRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isRecv_ = false;
+
         nickname_ = "";
+
         avatarId_ = 0;
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
         signature_ = "";
+
         remarkName_ = "";
+
         uid_ = 0;
+
         picId_ = 0;
+
         index_ = 0;
+
         return this;
       }
 
@@ -659,42 +762,21 @@ public final class BlessingRecvPicRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord buildPartial() {
         emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord result = new emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isRecv_ = isRecv_;
+        result.nickname_ = nickname_;
+        result.avatarId_ = avatarId_;
+        if (profilePictureBuilder_ == null) {
+          result.profilePicture_ = profilePicture_;
+        } else {
+          result.profilePicture_ = profilePictureBuilder_.build();
+        }
+        result.signature_ = signature_;
+        result.remarkName_ = remarkName_;
+        result.uid_ = uid_;
+        result.picId_ = picId_;
+        result.index_ = index_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isRecv_ = isRecv_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.nickname_ = nickname_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.avatarId_ = avatarId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.profilePicture_ = profilePictureBuilder_ == null
-              ? profilePicture_
-              : profilePictureBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.signature_ = signature_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.remarkName_ = remarkName_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.uid_ = uid_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.picId_ = picId_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.index_ = index_;
-        }
       }
 
       @java.lang.Override
@@ -746,7 +828,6 @@ public final class BlessingRecvPicRecordOuterClass {
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getAvatarId() != 0) {
@@ -757,12 +838,10 @@ public final class BlessingRecvPicRecordOuterClass {
         }
         if (!other.getSignature().isEmpty()) {
           signature_ = other.signature_;
-          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (!other.getRemarkName().isEmpty()) {
           remarkName_ = other.remarkName_;
-          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (other.getUid() != 0) {
@@ -774,7 +853,7 @@ public final class BlessingRecvPicRecordOuterClass {
         if (other.getIndex() != 0) {
           setIndex(other.getIndex());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -789,80 +868,19 @@ public final class BlessingRecvPicRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                isRecv_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 24: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 24
-              case 42: {
-                nickname_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 42
-              case 48: {
-                avatarId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 48
-              case 66: {
-                remarkName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 66
-              case 74: {
-                input.readMessage(
-                    getProfilePictureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 74
-              case 82: {
-                signature_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 82
-              case 88: {
-                index_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 88
-              case 96: {
-                picId_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BlessingRecvPicRecordOuterClass.BlessingRecvPicRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isRecv_ ;
       /**
@@ -881,7 +899,6 @@ public final class BlessingRecvPicRecordOuterClass {
       public Builder setIsRecv(boolean value) {
         
         isRecv_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -890,7 +907,7 @@ public final class BlessingRecvPicRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsRecv() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isRecv_ = false;
         onChanged();
         return this;
@@ -937,9 +954,11 @@ public final class BlessingRecvPicRecordOuterClass {
        */
       public Builder setNickname(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         nickname_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -948,8 +967,8 @@ public final class BlessingRecvPicRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickname() {
+        
         nickname_ = getDefaultInstance().getNickname();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -960,10 +979,12 @@ public final class BlessingRecvPicRecordOuterClass {
        */
       public Builder setNicknameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         nickname_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -985,7 +1006,6 @@ public final class BlessingRecvPicRecordOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -994,7 +1014,7 @@ public final class BlessingRecvPicRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         avatarId_ = 0;
         onChanged();
         return this;
@@ -1008,7 +1028,7 @@ public final class BlessingRecvPicRecordOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
        * <code>.ProfilePicture profile_picture = 9;</code>
@@ -1030,11 +1050,11 @@ public final class BlessingRecvPicRecordOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1044,11 +1064,11 @@ public final class BlessingRecvPicRecordOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1056,38 +1076,38 @@ public final class BlessingRecvPicRecordOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            profilePicture_ != null &&
-            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
-            getProfilePictureBuilder().mergeFrom(value);
+          if (profilePicture_ != null) {
+            profilePicture_ =
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
           } else {
             profilePicture_ = value;
           }
+          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 9;</code>
        */
       public Builder clearProfilePicture() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+          onChanged();
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 9;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -1160,9 +1180,11 @@ public final class BlessingRecvPicRecordOuterClass {
        */
       public Builder setSignature(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         signature_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1171,8 +1193,8 @@ public final class BlessingRecvPicRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSignature() {
+        
         signature_ = getDefaultInstance().getSignature();
-        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1183,10 +1205,12 @@ public final class BlessingRecvPicRecordOuterClass {
        */
       public Builder setSignatureBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         signature_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1232,9 +1256,11 @@ public final class BlessingRecvPicRecordOuterClass {
        */
       public Builder setRemarkName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         remarkName_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1243,8 +1269,8 @@ public final class BlessingRecvPicRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemarkName() {
+        
         remarkName_ = getDefaultInstance().getRemarkName();
-        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1255,10 +1281,12 @@ public final class BlessingRecvPicRecordOuterClass {
        */
       public Builder setRemarkNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         remarkName_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1280,7 +1308,6 @@ public final class BlessingRecvPicRecordOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1289,7 +1316,7 @@ public final class BlessingRecvPicRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -1312,7 +1339,6 @@ public final class BlessingRecvPicRecordOuterClass {
       public Builder setPicId(int value) {
         
         picId_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1321,7 +1347,7 @@ public final class BlessingRecvPicRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPicId() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         picId_ = 0;
         onChanged();
         return this;
@@ -1344,7 +1370,6 @@ public final class BlessingRecvPicRecordOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1353,7 +1378,7 @@ public final class BlessingRecvPicRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         index_ = 0;
         onChanged();
         return this;
@@ -1391,18 +1416,7 @@ public final class BlessingRecvPicRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BlessingRecvPicRecord(input, extensionRegistry);
       }
     };
 

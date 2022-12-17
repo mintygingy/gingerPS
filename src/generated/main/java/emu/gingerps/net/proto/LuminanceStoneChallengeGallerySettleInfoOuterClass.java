@@ -87,6 +87,74 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private LuminanceStoneChallengeGallerySettleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              killMonsterCount_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              killSpecialMonsterCount_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              cleanMudCount_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              finalScore_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.internal_static_LuminanceStoneChallengeGallerySettleInfo_descriptor;
@@ -101,7 +169,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
     }
 
     public static final int FINAL_SCORE_FIELD_NUMBER = 12;
-    private int finalScore_ = 0;
+    private int finalScore_;
     /**
      * <code>uint32 final_score = 12;</code>
      * @return The finalScore.
@@ -112,7 +180,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
     }
 
     public static final int CLEAN_MUD_COUNT_FIELD_NUMBER = 8;
-    private int cleanMudCount_ = 0;
+    private int cleanMudCount_;
     /**
      * <code>uint32 clean_mud_count = 8;</code>
      * @return The cleanMudCount.
@@ -123,7 +191,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 15;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.GalleryStopReason reason = 15;</code>
      * @return The enum numeric value on the wire for reason.
@@ -136,12 +204,13 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 11;
-    private int galleryId_ = 0;
+    private int galleryId_;
     /**
      * <code>uint32 gallery_id = 11;</code>
      * @return The galleryId.
@@ -152,7 +221,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
     }
 
     public static final int KILL_SPECIAL_MONSTER_COUNT_FIELD_NUMBER = 4;
-    private int killSpecialMonsterCount_ = 0;
+    private int killSpecialMonsterCount_;
     /**
      * <code>uint32 kill_special_monster_count = 4;</code>
      * @return The killSpecialMonsterCount.
@@ -163,7 +232,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
     }
 
     public static final int KILL_MONSTER_COUNT_FIELD_NUMBER = 1;
-    private int killMonsterCount_ = 0;
+    private int killMonsterCount_;
     /**
      * <code>uint32 kill_monster_count = 1;</code>
      * @return The killMonsterCount.
@@ -205,7 +274,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
       if (reason_ != emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.GALLERY_STOP_REASON_NONE.getNumber()) {
         output.writeEnum(15, reason_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -238,7 +307,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(15, reason_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -264,7 +333,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
           != other.getKillSpecialMonsterCount()) return false;
       if (getKillMonsterCount()
           != other.getKillMonsterCount()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -287,7 +356,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
       hash = (53 * hash) + getKillSpecialMonsterCount();
       hash = (37 * hash) + KILL_MONSTER_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getKillMonsterCount();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -404,24 +473,34 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         finalScore_ = 0;
+
         cleanMudCount_ = 0;
+
         reason_ = 0;
+
         galleryId_ = 0;
+
         killSpecialMonsterCount_ = 0;
+
         killMonsterCount_ = 0;
+
         return this;
       }
 
@@ -448,31 +527,14 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo buildPartial() {
         emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo result = new emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.finalScore_ = finalScore_;
+        result.cleanMudCount_ = cleanMudCount_;
+        result.reason_ = reason_;
+        result.galleryId_ = galleryId_;
+        result.killSpecialMonsterCount_ = killSpecialMonsterCount_;
+        result.killMonsterCount_ = killMonsterCount_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.finalScore_ = finalScore_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cleanMudCount_ = cleanMudCount_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.galleryId_ = galleryId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.killSpecialMonsterCount_ = killSpecialMonsterCount_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.killMonsterCount_ = killMonsterCount_;
-        }
       }
 
       @java.lang.Override
@@ -537,7 +599,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
         if (other.getKillMonsterCount() != 0) {
           setKillMonsterCount(other.getKillMonsterCount());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -552,63 +614,19 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                killMonsterCount_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 8
-              case 32: {
-                killSpecialMonsterCount_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 32
-              case 64: {
-                cleanMudCount_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 88: {
-                galleryId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 88
-              case 96: {
-                finalScore_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              case 120: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int finalScore_ ;
       /**
@@ -627,7 +645,6 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
       public Builder setFinalScore(int value) {
         
         finalScore_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -636,7 +653,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinalScore() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         finalScore_ = 0;
         onChanged();
         return this;
@@ -659,7 +676,6 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
       public Builder setCleanMudCount(int value) {
         
         cleanMudCount_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -668,7 +684,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCleanMudCount() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         cleanMudCount_ = 0;
         onChanged();
         return this;
@@ -688,8 +704,8 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -699,7 +715,8 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
       }
       /**
@@ -711,7 +728,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -721,7 +738,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -744,7 +761,6 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -753,7 +769,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         galleryId_ = 0;
         onChanged();
         return this;
@@ -776,7 +792,6 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
       public Builder setKillSpecialMonsterCount(int value) {
         
         killSpecialMonsterCount_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -785,7 +800,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKillSpecialMonsterCount() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         killSpecialMonsterCount_ = 0;
         onChanged();
         return this;
@@ -808,7 +823,6 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
       public Builder setKillMonsterCount(int value) {
         
         killMonsterCount_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -817,7 +831,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKillMonsterCount() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         killMonsterCount_ = 0;
         onChanged();
         return this;
@@ -855,18 +869,7 @@ public final class LuminanceStoneChallengeGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new LuminanceStoneChallengeGallerySettleInfo(input, extensionRegistry);
       }
     };
 

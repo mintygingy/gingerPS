@@ -57,6 +57,53 @@ public final class SalvageScoreChallengeInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SalvageScoreChallengeInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+
+              maxScore_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              salvageChallengeId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.internal_static_SalvageScoreChallengeInfo_descriptor;
@@ -71,7 +118,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
     }
 
     public static final int MAX_SCORE_FIELD_NUMBER = 8;
-    private int maxScore_ = 0;
+    private int maxScore_;
     /**
      * <code>uint32 max_score = 8;</code>
      * @return The maxScore.
@@ -82,7 +129,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
     }
 
     public static final int SALVAGE_CHALLENGE_ID_FIELD_NUMBER = 10;
-    private int salvageChallengeId_ = 0;
+    private int salvageChallengeId_;
     /**
      * <code>uint32 salvage_challenge_id = 10;</code>
      * @return The salvageChallengeId.
@@ -112,7 +159,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
       if (salvageChallengeId_ != 0) {
         output.writeUInt32(10, salvageChallengeId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +176,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, salvageChallengeId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -148,7 +195,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
           != other.getMaxScore()) return false;
       if (getSalvageChallengeId()
           != other.getSalvageChallengeId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -163,7 +210,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
       hash = (53 * hash) + getMaxScore();
       hash = (37 * hash) + SALVAGE_CHALLENGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSalvageChallengeId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -280,20 +327,26 @@ public final class SalvageScoreChallengeInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         maxScore_ = 0;
+
         salvageChallengeId_ = 0;
+
         return this;
       }
 
@@ -320,19 +373,10 @@ public final class SalvageScoreChallengeInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo buildPartial() {
         emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo result = new emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.maxScore_ = maxScore_;
+        result.salvageChallengeId_ = salvageChallengeId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.maxScore_ = maxScore_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.salvageChallengeId_ = salvageChallengeId_;
-        }
       }
 
       @java.lang.Override
@@ -385,7 +429,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
         if (other.getSalvageChallengeId() != 0) {
           setSalvageChallengeId(other.getSalvageChallengeId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -400,43 +444,19 @@ public final class SalvageScoreChallengeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                maxScore_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 80: {
-                salvageChallengeId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int maxScore_ ;
       /**
@@ -455,7 +475,6 @@ public final class SalvageScoreChallengeInfoOuterClass {
       public Builder setMaxScore(int value) {
         
         maxScore_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +483,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         maxScore_ = 0;
         onChanged();
         return this;
@@ -487,7 +506,6 @@ public final class SalvageScoreChallengeInfoOuterClass {
       public Builder setSalvageChallengeId(int value) {
         
         salvageChallengeId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -496,7 +514,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSalvageChallengeId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         salvageChallengeId_ = 0;
         onChanged();
         return this;
@@ -534,18 +552,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SalvageScoreChallengeInfo(input, extensionRegistry);
       }
     };
 

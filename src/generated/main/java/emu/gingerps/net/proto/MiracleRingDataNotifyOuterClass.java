@@ -85,6 +85,68 @@ public final class MiracleRingDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MiracleRingDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              gadgetEntityId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              lastDeliverItemTime_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              miracleRingCd_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              lastTakeRewardTime_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              isGadgetCreated_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MiracleRingDataNotifyOuterClass.internal_static_MiracleRingDataNotify_descriptor;
@@ -99,7 +161,7 @@ public final class MiracleRingDataNotifyOuterClass {
     }
 
     public static final int IS_GADGET_CREATED_FIELD_NUMBER = 15;
-    private boolean isGadgetCreated_ = false;
+    private boolean isGadgetCreated_;
     /**
      * <code>bool is_gadget_created = 15;</code>
      * @return The isGadgetCreated.
@@ -110,7 +172,7 @@ public final class MiracleRingDataNotifyOuterClass {
     }
 
     public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 7;
-    private int gadgetEntityId_ = 0;
+    private int gadgetEntityId_;
     /**
      * <code>uint32 gadget_entity_id = 7;</code>
      * @return The gadgetEntityId.
@@ -121,7 +183,7 @@ public final class MiracleRingDataNotifyOuterClass {
     }
 
     public static final int MIRACLE_RING_CD_FIELD_NUMBER = 9;
-    private int miracleRingCd_ = 0;
+    private int miracleRingCd_;
     /**
      * <code>uint32 miracle_ring_cd = 9;</code>
      * @return The miracleRingCd.
@@ -132,7 +194,7 @@ public final class MiracleRingDataNotifyOuterClass {
     }
 
     public static final int LAST_DELIVER_ITEM_TIME_FIELD_NUMBER = 8;
-    private int lastDeliverItemTime_ = 0;
+    private int lastDeliverItemTime_;
     /**
      * <code>uint32 last_deliver_item_time = 8;</code>
      * @return The lastDeliverItemTime.
@@ -143,7 +205,7 @@ public final class MiracleRingDataNotifyOuterClass {
     }
 
     public static final int LAST_TAKE_REWARD_TIME_FIELD_NUMBER = 12;
-    private int lastTakeRewardTime_ = 0;
+    private int lastTakeRewardTime_;
     /**
      * <code>uint32 last_take_reward_time = 12;</code>
      * @return The lastTakeRewardTime.
@@ -182,7 +244,7 @@ public final class MiracleRingDataNotifyOuterClass {
       if (isGadgetCreated_ != false) {
         output.writeBool(15, isGadgetCreated_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -211,7 +273,7 @@ public final class MiracleRingDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isGadgetCreated_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +298,7 @@ public final class MiracleRingDataNotifyOuterClass {
           != other.getLastDeliverItemTime()) return false;
       if (getLastTakeRewardTime()
           != other.getLastTakeRewardTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -258,7 +320,7 @@ public final class MiracleRingDataNotifyOuterClass {
       hash = (53 * hash) + getLastDeliverItemTime();
       hash = (37 * hash) + LAST_TAKE_REWARD_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastTakeRewardTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -385,23 +447,32 @@ public final class MiracleRingDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MiracleRingDataNotifyOuterClass.MiracleRingDataNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isGadgetCreated_ = false;
+
         gadgetEntityId_ = 0;
+
         miracleRingCd_ = 0;
+
         lastDeliverItemTime_ = 0;
+
         lastTakeRewardTime_ = 0;
+
         return this;
       }
 
@@ -428,28 +499,13 @@ public final class MiracleRingDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MiracleRingDataNotifyOuterClass.MiracleRingDataNotify buildPartial() {
         emu.gingerps.net.proto.MiracleRingDataNotifyOuterClass.MiracleRingDataNotify result = new emu.gingerps.net.proto.MiracleRingDataNotifyOuterClass.MiracleRingDataNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isGadgetCreated_ = isGadgetCreated_;
+        result.gadgetEntityId_ = gadgetEntityId_;
+        result.miracleRingCd_ = miracleRingCd_;
+        result.lastDeliverItemTime_ = lastDeliverItemTime_;
+        result.lastTakeRewardTime_ = lastTakeRewardTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MiracleRingDataNotifyOuterClass.MiracleRingDataNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isGadgetCreated_ = isGadgetCreated_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.gadgetEntityId_ = gadgetEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.miracleRingCd_ = miracleRingCd_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.lastDeliverItemTime_ = lastDeliverItemTime_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.lastTakeRewardTime_ = lastTakeRewardTime_;
-        }
       }
 
       @java.lang.Override
@@ -511,7 +567,7 @@ public final class MiracleRingDataNotifyOuterClass {
         if (other.getLastTakeRewardTime() != 0) {
           setLastTakeRewardTime(other.getLastTakeRewardTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -526,58 +582,19 @@ public final class MiracleRingDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MiracleRingDataNotifyOuterClass.MiracleRingDataNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                gadgetEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 64: {
-                lastDeliverItemTime_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 64
-              case 72: {
-                miracleRingCd_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 72
-              case 96: {
-                lastTakeRewardTime_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 96
-              case 120: {
-                isGadgetCreated_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MiracleRingDataNotifyOuterClass.MiracleRingDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isGadgetCreated_ ;
       /**
@@ -596,7 +613,6 @@ public final class MiracleRingDataNotifyOuterClass {
       public Builder setIsGadgetCreated(boolean value) {
         
         isGadgetCreated_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -605,7 +621,7 @@ public final class MiracleRingDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsGadgetCreated() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isGadgetCreated_ = false;
         onChanged();
         return this;
@@ -628,7 +644,6 @@ public final class MiracleRingDataNotifyOuterClass {
       public Builder setGadgetEntityId(int value) {
         
         gadgetEntityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -637,7 +652,7 @@ public final class MiracleRingDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         gadgetEntityId_ = 0;
         onChanged();
         return this;
@@ -660,7 +675,6 @@ public final class MiracleRingDataNotifyOuterClass {
       public Builder setMiracleRingCd(int value) {
         
         miracleRingCd_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -669,7 +683,7 @@ public final class MiracleRingDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMiracleRingCd() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         miracleRingCd_ = 0;
         onChanged();
         return this;
@@ -692,7 +706,6 @@ public final class MiracleRingDataNotifyOuterClass {
       public Builder setLastDeliverItemTime(int value) {
         
         lastDeliverItemTime_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -701,7 +714,7 @@ public final class MiracleRingDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastDeliverItemTime() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         lastDeliverItemTime_ = 0;
         onChanged();
         return this;
@@ -724,7 +737,6 @@ public final class MiracleRingDataNotifyOuterClass {
       public Builder setLastTakeRewardTime(int value) {
         
         lastTakeRewardTime_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -733,7 +745,7 @@ public final class MiracleRingDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastTakeRewardTime() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         lastTakeRewardTime_ = 0;
         onChanged();
         return this;
@@ -771,18 +783,7 @@ public final class MiracleRingDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MiracleRingDataNotify(input, extensionRegistry);
       }
     };
 

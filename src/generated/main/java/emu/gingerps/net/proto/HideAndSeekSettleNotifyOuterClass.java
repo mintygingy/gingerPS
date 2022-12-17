@@ -159,6 +159,118 @@ public final class HideAndSeekSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HideAndSeekSettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                winnerList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              winnerList_.addInt(input.readUInt32());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                winnerList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                winnerList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                settleInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              settleInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+
+              isRecordScore_ = input.readBool();
+              break;
+            }
+            case 48: {
+
+              playIndex_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              stageType_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                scoreList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              scoreList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
+
+              costTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          winnerList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          settleInfoList_ = java.util.Collections.unmodifiableList(settleInfoList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          scoreList_ = java.util.Collections.unmodifiableList(scoreList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.internal_static_HideAndSeekSettleNotify_descriptor;
@@ -290,7 +402,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
     }
 
     public static final int PLAY_INDEX_FIELD_NUMBER = 6;
-    private int playIndex_ = 0;
+    private int playIndex_;
     /**
      * <code>uint32 play_index = 6;</code>
      * @return The playIndex.
@@ -301,7 +413,6 @@ public final class HideAndSeekSettleNotifyOuterClass {
     }
 
     public static final int SCORE_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> scoreList_;
     /**
      * <code>repeated .ExhibitionDisplayInfo score_list = 11;</code>
@@ -342,7 +453,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 1;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.HideAndSeekSettleNotify.SettleReason reason = 1;</code>
      * @return The enum numeric value on the wire for reason.
@@ -355,12 +466,12 @@ public final class HideAndSeekSettleNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason getReason() {
-      emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason result = emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason result = emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason.UNRECOGNIZED : result;
     }
 
     public static final int WINNER_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList winnerList_;
     /**
      * <code>repeated uint32 winner_list = 2;</code>
@@ -389,7 +500,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
     private int winnerListMemoizedSerializedSize = -1;
 
     public static final int COST_TIME_FIELD_NUMBER = 15;
-    private int costTime_ = 0;
+    private int costTime_;
     /**
      * <code>uint32 cost_time = 15;</code>
      * @return The costTime.
@@ -400,7 +511,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
     }
 
     public static final int STAGE_TYPE_FIELD_NUMBER = 7;
-    private int stageType_ = 0;
+    private int stageType_;
     /**
      * <code>uint32 stage_type = 7;</code>
      * @return The stageType.
@@ -411,7 +522,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
     }
 
     public static final int IS_RECORD_SCORE_FIELD_NUMBER = 5;
-    private boolean isRecordScore_ = false;
+    private boolean isRecordScore_;
     /**
      * <code>bool is_record_score = 5;</code>
      * @return The isRecordScore.
@@ -422,7 +533,6 @@ public final class HideAndSeekSettleNotifyOuterClass {
     }
 
     public static final int SETTLE_INFO_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo> settleInfoList_;
     /**
      * <code>repeated .HideAndSeekSettleInfo settle_info_list = 4;</code>
@@ -505,7 +615,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
       if (costTime_ != 0) {
         output.writeUInt32(15, costTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -556,7 +666,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, costTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -586,7 +696,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
           != other.getIsRecordScore()) return false;
       if (!getSettleInfoListList()
           .equals(other.getSettleInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -620,7 +730,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
         hash = (37 * hash) + SETTLE_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSettleInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -747,38 +857,48 @@ public final class HideAndSeekSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getScoreListFieldBuilder();
+          getSettleInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         playIndex_ = 0;
+
         if (scoreListBuilder_ == null) {
           scoreList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          scoreList_ = null;
           scoreListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         reason_ = 0;
+
         winnerList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         costTime_ = 0;
+
         stageType_ = 0;
+
         isRecordScore_ = false;
+
         if (settleInfoListBuilder_ == null) {
           settleInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          settleInfoList_ = null;
           settleInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -805,55 +925,37 @@ public final class HideAndSeekSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify buildPartial() {
         emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify result = new emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.playIndex_ = playIndex_;
         if (scoreListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             scoreList_ = java.util.Collections.unmodifiableList(scoreList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.scoreList_ = scoreList_;
         } else {
           result.scoreList_ = scoreListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
+        result.reason_ = reason_;
+        if (((bitField0_ & 0x00000002) != 0)) {
           winnerList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.winnerList_ = winnerList_;
+        result.costTime_ = costTime_;
+        result.stageType_ = stageType_;
+        result.isRecordScore_ = isRecordScore_;
         if (settleInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             settleInfoList_ = java.util.Collections.unmodifiableList(settleInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.settleInfoList_ = settleInfoList_;
         } else {
           result.settleInfoList_ = settleInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.playIndex_ = playIndex_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.costTime_ = costTime_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.stageType_ = stageType_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.isRecordScore_ = isRecordScore_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -907,7 +1009,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
           if (!other.scoreList_.isEmpty()) {
             if (scoreList_.isEmpty()) {
               scoreList_ = other.scoreList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureScoreListIsMutable();
               scoreList_.addAll(other.scoreList_);
@@ -920,7 +1022,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
               scoreListBuilder_.dispose();
               scoreListBuilder_ = null;
               scoreList_ = other.scoreList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               scoreListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getScoreListFieldBuilder() : null;
@@ -935,7 +1037,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
         if (!other.winnerList_.isEmpty()) {
           if (winnerList_.isEmpty()) {
             winnerList_ = other.winnerList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureWinnerListIsMutable();
             winnerList_.addAll(other.winnerList_);
@@ -955,7 +1057,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
           if (!other.settleInfoList_.isEmpty()) {
             if (settleInfoList_.isEmpty()) {
               settleInfoList_ = other.settleInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureSettleInfoListIsMutable();
               settleInfoList_.addAll(other.settleInfoList_);
@@ -968,7 +1070,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
               settleInfoListBuilder_.dispose();
               settleInfoListBuilder_ = null;
               settleInfoList_ = other.settleInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000004);
               settleInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSettleInfoListFieldBuilder() : null;
@@ -977,7 +1079,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -992,97 +1094,17 @@ public final class HideAndSeekSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 8
-              case 16: {
-                int v = input.readUInt32();
-                ensureWinnerListIsMutable();
-                winnerList_.addInt(v);
-                break;
-              } // case 16
-              case 18: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureWinnerListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  winnerList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 18
-              case 34: {
-                emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo.parser(),
-                        extensionRegistry);
-                if (settleInfoListBuilder_ == null) {
-                  ensureSettleInfoListIsMutable();
-                  settleInfoList_.add(m);
-                } else {
-                  settleInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 40: {
-                isRecordScore_ = input.readBool();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 40
-              case 48: {
-                playIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 56: {
-                stageType_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 56
-              case 90: {
-                emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(),
-                        extensionRegistry);
-                if (scoreListBuilder_ == null) {
-                  ensureScoreListIsMutable();
-                  scoreList_.add(m);
-                } else {
-                  scoreListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              case 120: {
-                costTime_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1104,7 +1126,6 @@ public final class HideAndSeekSettleNotifyOuterClass {
       public Builder setPlayIndex(int value) {
         
         playIndex_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1113,7 +1134,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayIndex() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         playIndex_ = 0;
         onChanged();
         return this;
@@ -1122,9 +1143,9 @@ public final class HideAndSeekSettleNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> scoreList_ =
         java.util.Collections.emptyList();
       private void ensureScoreListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           scoreList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>(scoreList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1274,7 +1295,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
       public Builder clearScoreList() {
         if (scoreListBuilder_ == null) {
           scoreList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           scoreListBuilder_.clear();
@@ -1351,7 +1372,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
           scoreListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder>(
                   scoreList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           scoreList_ = null;
@@ -1373,8 +1394,8 @@ public final class HideAndSeekSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1384,7 +1405,8 @@ public final class HideAndSeekSettleNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason getReason() {
-        emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason result = emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason result = emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.HideAndSeekSettleNotifyOuterClass.HideAndSeekSettleNotify.SettleReason.UNRECOGNIZED : result;
       }
       /**
@@ -1396,7 +1418,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -1406,7 +1428,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -1414,10 +1436,10 @@ public final class HideAndSeekSettleNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList winnerList_ = emptyIntList();
       private void ensureWinnerListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           winnerList_ = mutableCopy(winnerList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 winner_list = 2;</code>
@@ -1425,7 +1447,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getWinnerListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(winnerList_) : winnerList_;
       }
       /**
@@ -1451,7 +1473,6 @@ public final class HideAndSeekSettleNotifyOuterClass {
        */
       public Builder setWinnerList(
           int index, int value) {
-        
         ensureWinnerListIsMutable();
         winnerList_.setInt(index, value);
         onChanged();
@@ -1463,7 +1484,6 @@ public final class HideAndSeekSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addWinnerList(int value) {
-        
         ensureWinnerListIsMutable();
         winnerList_.addInt(value);
         onChanged();
@@ -1488,7 +1508,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
        */
       public Builder clearWinnerList() {
         winnerList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1510,7 +1530,6 @@ public final class HideAndSeekSettleNotifyOuterClass {
       public Builder setCostTime(int value) {
         
         costTime_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1519,7 +1538,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCostTime() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         costTime_ = 0;
         onChanged();
         return this;
@@ -1542,7 +1561,6 @@ public final class HideAndSeekSettleNotifyOuterClass {
       public Builder setStageType(int value) {
         
         stageType_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1551,7 +1569,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageType() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         stageType_ = 0;
         onChanged();
         return this;
@@ -1574,7 +1592,6 @@ public final class HideAndSeekSettleNotifyOuterClass {
       public Builder setIsRecordScore(boolean value) {
         
         isRecordScore_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1583,7 +1600,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsRecordScore() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         isRecordScore_ = false;
         onChanged();
         return this;
@@ -1592,9 +1609,9 @@ public final class HideAndSeekSettleNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo> settleInfoList_ =
         java.util.Collections.emptyList();
       private void ensureSettleInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           settleInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo>(settleInfoList_);
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1744,7 +1761,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
       public Builder clearSettleInfoList() {
         if (settleInfoListBuilder_ == null) {
           settleInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           settleInfoListBuilder_.clear();
@@ -1821,7 +1838,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
           settleInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo, emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo.Builder, emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfoOrBuilder>(
                   settleInfoList_,
-                  ((bitField0_ & 0x00000080) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           settleInfoList_ = null;
@@ -1861,18 +1878,7 @@ public final class HideAndSeekSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HideAndSeekSettleNotify(input, extensionRegistry);
       }
     };
 

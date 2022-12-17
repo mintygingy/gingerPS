@@ -83,6 +83,62 @@ public final class EvtAnimatorParameterNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtAnimatorParameterNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+              int rawValue = input.readEnum();
+
+              forwardType_ = rawValue;
+              break;
+            }
+            case 106: {
+              emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo.Builder subBuilder = null;
+              if (animatorParamInfo_ != null) {
+                subBuilder = animatorParamInfo_.toBuilder();
+              }
+              animatorParamInfo_ = input.readMessage(emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(animatorParamInfo_);
+                animatorParamInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtAnimatorParameterNotifyOuterClass.internal_static_EvtAnimatorParameterNotify_descriptor;
@@ -97,7 +153,7 @@ public final class EvtAnimatorParameterNotifyOuterClass {
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 9;
-    private int forwardType_ = 0;
+    private int forwardType_;
     /**
      * <code>.ForwardType forward_type = 9;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -110,7 +166,8 @@ public final class EvtAnimatorParameterNotifyOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
@@ -137,7 +194,7 @@ public final class EvtAnimatorParameterNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfoOrBuilder getAnimatorParamInfoOrBuilder() {
-      return animatorParamInfo_ == null ? emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo.getDefaultInstance() : animatorParamInfo_;
+      return getAnimatorParamInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -160,7 +217,7 @@ public final class EvtAnimatorParameterNotifyOuterClass {
       if (animatorParamInfo_ != null) {
         output.writeMessage(13, getAnimatorParamInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class EvtAnimatorParameterNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getAnimatorParamInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -198,7 +255,7 @@ public final class EvtAnimatorParameterNotifyOuterClass {
         if (!getAnimatorParamInfo()
             .equals(other.getAnimatorParamInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -215,7 +272,7 @@ public final class EvtAnimatorParameterNotifyOuterClass {
         hash = (37 * hash) + ANIMATOR_PARAM_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getAnimatorParamInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -343,22 +400,28 @@ public final class EvtAnimatorParameterNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtAnimatorParameterNotifyOuterClass.EvtAnimatorParameterNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         forwardType_ = 0;
-        animatorParamInfo_ = null;
-        if (animatorParamInfoBuilder_ != null) {
-          animatorParamInfoBuilder_.dispose();
+
+        if (animatorParamInfoBuilder_ == null) {
+          animatorParamInfo_ = null;
+        } else {
+          animatorParamInfo_ = null;
           animatorParamInfoBuilder_ = null;
         }
         return this;
@@ -387,21 +450,14 @@ public final class EvtAnimatorParameterNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtAnimatorParameterNotifyOuterClass.EvtAnimatorParameterNotify buildPartial() {
         emu.gingerps.net.proto.EvtAnimatorParameterNotifyOuterClass.EvtAnimatorParameterNotify result = new emu.gingerps.net.proto.EvtAnimatorParameterNotifyOuterClass.EvtAnimatorParameterNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.forwardType_ = forwardType_;
+        if (animatorParamInfoBuilder_ == null) {
+          result.animatorParamInfo_ = animatorParamInfo_;
+        } else {
+          result.animatorParamInfo_ = animatorParamInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtAnimatorParameterNotifyOuterClass.EvtAnimatorParameterNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.forwardType_ = forwardType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.animatorParamInfo_ = animatorParamInfoBuilder_ == null
-              ? animatorParamInfo_
-              : animatorParamInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -454,7 +510,7 @@ public final class EvtAnimatorParameterNotifyOuterClass {
         if (other.hasAnimatorParamInfo()) {
           mergeAnimatorParamInfo(other.getAnimatorParamInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -469,45 +525,19 @@ public final class EvtAnimatorParameterNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtAnimatorParameterNotifyOuterClass.EvtAnimatorParameterNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                forwardType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 106: {
-                input.readMessage(
-                    getAnimatorParamInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtAnimatorParameterNotifyOuterClass.EvtAnimatorParameterNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int forwardType_ = 0;
       /**
@@ -523,8 +553,8 @@ public final class EvtAnimatorParameterNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
+        
         forwardType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -534,7 +564,8 @@ public final class EvtAnimatorParameterNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -546,7 +577,7 @@ public final class EvtAnimatorParameterNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -556,7 +587,7 @@ public final class EvtAnimatorParameterNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         forwardType_ = 0;
         onChanged();
         return this;
@@ -570,7 +601,7 @@ public final class EvtAnimatorParameterNotifyOuterClass {
        * @return Whether the animatorParamInfo field is set.
        */
       public boolean hasAnimatorParamInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return animatorParamInfoBuilder_ != null || animatorParamInfo_ != null;
       }
       /**
        * <code>.EvtAnimatorParameterInfo animator_param_info = 13;</code>
@@ -592,11 +623,11 @@ public final class EvtAnimatorParameterNotifyOuterClass {
             throw new NullPointerException();
           }
           animatorParamInfo_ = value;
+          onChanged();
         } else {
           animatorParamInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -606,11 +637,11 @@ public final class EvtAnimatorParameterNotifyOuterClass {
           emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo.Builder builderForValue) {
         if (animatorParamInfoBuilder_ == null) {
           animatorParamInfo_ = builderForValue.build();
+          onChanged();
         } else {
           animatorParamInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -618,38 +649,38 @@ public final class EvtAnimatorParameterNotifyOuterClass {
        */
       public Builder mergeAnimatorParamInfo(emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo value) {
         if (animatorParamInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            animatorParamInfo_ != null &&
-            animatorParamInfo_ != emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo.getDefaultInstance()) {
-            getAnimatorParamInfoBuilder().mergeFrom(value);
+          if (animatorParamInfo_ != null) {
+            animatorParamInfo_ =
+              emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo.newBuilder(animatorParamInfo_).mergeFrom(value).buildPartial();
           } else {
             animatorParamInfo_ = value;
           }
+          onChanged();
         } else {
           animatorParamInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EvtAnimatorParameterInfo animator_param_info = 13;</code>
        */
       public Builder clearAnimatorParamInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        animatorParamInfo_ = null;
-        if (animatorParamInfoBuilder_ != null) {
-          animatorParamInfoBuilder_.dispose();
+        if (animatorParamInfoBuilder_ == null) {
+          animatorParamInfo_ = null;
+          onChanged();
+        } else {
+          animatorParamInfo_ = null;
           animatorParamInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EvtAnimatorParameterInfo animator_param_info = 13;</code>
        */
       public emu.gingerps.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo.Builder getAnimatorParamInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getAnimatorParamInfoFieldBuilder().getBuilder();
       }
@@ -713,18 +744,7 @@ public final class EvtAnimatorParameterNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtAnimatorParameterNotify(input, extensionRegistry);
       }
     };
 

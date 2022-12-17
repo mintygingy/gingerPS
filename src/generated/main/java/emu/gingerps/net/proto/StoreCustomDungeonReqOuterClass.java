@@ -68,6 +68,53 @@ public final class StoreCustomDungeonReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private StoreCustomDungeonReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 88: {
+
+              isCancelStore_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              dungeonGuid_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.StoreCustomDungeonReqOuterClass.internal_static_StoreCustomDungeonReq_descriptor;
@@ -82,7 +129,7 @@ public final class StoreCustomDungeonReqOuterClass {
     }
 
     public static final int DUNGEON_GUID_FIELD_NUMBER = 12;
-    private long dungeonGuid_ = 0L;
+    private long dungeonGuid_;
     /**
      * <code>uint64 dungeon_guid = 12;</code>
      * @return The dungeonGuid.
@@ -93,7 +140,7 @@ public final class StoreCustomDungeonReqOuterClass {
     }
 
     public static final int IS_CANCEL_STORE_FIELD_NUMBER = 11;
-    private boolean isCancelStore_ = false;
+    private boolean isCancelStore_;
     /**
      * <code>bool is_cancel_store = 11;</code>
      * @return The isCancelStore.
@@ -123,7 +170,7 @@ public final class StoreCustomDungeonReqOuterClass {
       if (dungeonGuid_ != 0L) {
         output.writeUInt64(12, dungeonGuid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class StoreCustomDungeonReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(12, dungeonGuid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class StoreCustomDungeonReqOuterClass {
           != other.getDungeonGuid()) return false;
       if (getIsCancelStore()
           != other.getIsCancelStore()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -176,7 +223,7 @@ public final class StoreCustomDungeonReqOuterClass {
       hash = (37 * hash) + IS_CANCEL_STORE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCancelStore());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -304,20 +351,26 @@ public final class StoreCustomDungeonReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         dungeonGuid_ = 0L;
+
         isCancelStore_ = false;
+
         return this;
       }
 
@@ -344,19 +397,10 @@ public final class StoreCustomDungeonReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq buildPartial() {
         emu.gingerps.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq result = new emu.gingerps.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.dungeonGuid_ = dungeonGuid_;
+        result.isCancelStore_ = isCancelStore_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.dungeonGuid_ = dungeonGuid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isCancelStore_ = isCancelStore_;
-        }
       }
 
       @java.lang.Override
@@ -409,7 +453,7 @@ public final class StoreCustomDungeonReqOuterClass {
         if (other.getIsCancelStore() != false) {
           setIsCancelStore(other.getIsCancelStore());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -424,43 +468,19 @@ public final class StoreCustomDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 88: {
-                isCancelStore_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              case 96: {
-                dungeonGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long dungeonGuid_ ;
       /**
@@ -479,7 +499,6 @@ public final class StoreCustomDungeonReqOuterClass {
       public Builder setDungeonGuid(long value) {
         
         dungeonGuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -488,7 +507,7 @@ public final class StoreCustomDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonGuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         dungeonGuid_ = 0L;
         onChanged();
         return this;
@@ -511,7 +530,6 @@ public final class StoreCustomDungeonReqOuterClass {
       public Builder setIsCancelStore(boolean value) {
         
         isCancelStore_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -520,7 +538,7 @@ public final class StoreCustomDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCancelStore() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isCancelStore_ = false;
         onChanged();
         return this;
@@ -558,18 +576,7 @@ public final class StoreCustomDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new StoreCustomDungeonReq(input, extensionRegistry);
       }
     };
 

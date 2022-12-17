@@ -81,6 +81,74 @@ public final class EvtSyncTransformOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtSyncTransform(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 74: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (unk3300PMHFLCOPFBC_ != null) {
+                subBuilder = unk3300PMHFLCOPFBC_.toBuilder();
+              }
+              unk3300PMHFLCOPFBC_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300PMHFLCOPFBC_);
+                unk3300PMHFLCOPFBC_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 104: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (unk3300JAMKLNFBBAD_ != null) {
+                subBuilder = unk3300JAMKLNFBBAD_.toBuilder();
+              }
+              unk3300JAMKLNFBBAD_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300JAMKLNFBBAD_);
+                unk3300JAMKLNFBBAD_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtSyncTransformOuterClass.internal_static_EvtSyncTransform_descriptor;
@@ -117,11 +185,11 @@ public final class EvtSyncTransformOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getUnk3300JAMKLNFBBADOrBuilder() {
-      return unk3300JAMKLNFBBAD_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : unk3300JAMKLNFBBAD_;
+      return getUnk3300JAMKLNFBBAD();
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 13;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 13;</code>
      * @return The entityId.
@@ -154,7 +222,7 @@ public final class EvtSyncTransformOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getUnk3300PMHFLCOPFBCOrBuilder() {
-      return unk3300PMHFLCOPFBC_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : unk3300PMHFLCOPFBC_;
+      return getUnk3300PMHFLCOPFBC();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,7 +248,7 @@ public final class EvtSyncTransformOuterClass {
       if (unk3300JAMKLNFBBAD_ != null) {
         output.writeMessage(15, getUnk3300JAMKLNFBBAD());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -201,7 +269,7 @@ public final class EvtSyncTransformOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getUnk3300JAMKLNFBBAD());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -228,7 +296,7 @@ public final class EvtSyncTransformOuterClass {
         if (!getUnk3300PMHFLCOPFBC()
             .equals(other.getUnk3300PMHFLCOPFBC())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -249,7 +317,7 @@ public final class EvtSyncTransformOuterClass {
         hash = (37 * hash) + UNK3300_PMHFLCOPFBC_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300PMHFLCOPFBC().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -366,27 +434,34 @@ public final class EvtSyncTransformOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtSyncTransformOuterClass.EvtSyncTransform.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        unk3300JAMKLNFBBAD_ = null;
-        if (unk3300JAMKLNFBBADBuilder_ != null) {
-          unk3300JAMKLNFBBADBuilder_.dispose();
+        if (unk3300JAMKLNFBBADBuilder_ == null) {
+          unk3300JAMKLNFBBAD_ = null;
+        } else {
+          unk3300JAMKLNFBBAD_ = null;
           unk3300JAMKLNFBBADBuilder_ = null;
         }
         entityId_ = 0;
-        unk3300PMHFLCOPFBC_ = null;
-        if (unk3300PMHFLCOPFBCBuilder_ != null) {
-          unk3300PMHFLCOPFBCBuilder_.dispose();
+
+        if (unk3300PMHFLCOPFBCBuilder_ == null) {
+          unk3300PMHFLCOPFBC_ = null;
+        } else {
+          unk3300PMHFLCOPFBC_ = null;
           unk3300PMHFLCOPFBCBuilder_ = null;
         }
         return this;
@@ -415,26 +490,19 @@ public final class EvtSyncTransformOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtSyncTransformOuterClass.EvtSyncTransform buildPartial() {
         emu.gingerps.net.proto.EvtSyncTransformOuterClass.EvtSyncTransform result = new emu.gingerps.net.proto.EvtSyncTransformOuterClass.EvtSyncTransform(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (unk3300JAMKLNFBBADBuilder_ == null) {
+          result.unk3300JAMKLNFBBAD_ = unk3300JAMKLNFBBAD_;
+        } else {
+          result.unk3300JAMKLNFBBAD_ = unk3300JAMKLNFBBADBuilder_.build();
+        }
+        result.entityId_ = entityId_;
+        if (unk3300PMHFLCOPFBCBuilder_ == null) {
+          result.unk3300PMHFLCOPFBC_ = unk3300PMHFLCOPFBC_;
+        } else {
+          result.unk3300PMHFLCOPFBC_ = unk3300PMHFLCOPFBCBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtSyncTransformOuterClass.EvtSyncTransform result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300JAMKLNFBBAD_ = unk3300JAMKLNFBBADBuilder_ == null
-              ? unk3300JAMKLNFBBAD_
-              : unk3300JAMKLNFBBADBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300PMHFLCOPFBC_ = unk3300PMHFLCOPFBCBuilder_ == null
-              ? unk3300PMHFLCOPFBC_
-              : unk3300PMHFLCOPFBCBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -490,7 +558,7 @@ public final class EvtSyncTransformOuterClass {
         if (other.hasUnk3300PMHFLCOPFBC()) {
           mergeUnk3300PMHFLCOPFBC(other.getUnk3300PMHFLCOPFBC());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -505,52 +573,19 @@ public final class EvtSyncTransformOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtSyncTransformOuterClass.EvtSyncTransform parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 74: {
-                input.readMessage(
-                    getUnk3300PMHFLCOPFBCFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 74
-              case 104: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              case 122: {
-                input.readMessage(
-                    getUnk3300JAMKLNFBBADFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtSyncTransformOuterClass.EvtSyncTransform) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector unk3300JAMKLNFBBAD_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -560,7 +595,7 @@ public final class EvtSyncTransformOuterClass {
        * @return Whether the unk3300JAMKLNFBBAD field is set.
        */
       public boolean hasUnk3300JAMKLNFBBAD() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return unk3300JAMKLNFBBADBuilder_ != null || unk3300JAMKLNFBBAD_ != null;
       }
       /**
        * <code>.Vector Unk3300_JAMKLNFBBAD = 15;</code>
@@ -582,11 +617,11 @@ public final class EvtSyncTransformOuterClass {
             throw new NullPointerException();
           }
           unk3300JAMKLNFBBAD_ = value;
+          onChanged();
         } else {
           unk3300JAMKLNFBBADBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -596,11 +631,11 @@ public final class EvtSyncTransformOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (unk3300JAMKLNFBBADBuilder_ == null) {
           unk3300JAMKLNFBBAD_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300JAMKLNFBBADBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -608,38 +643,38 @@ public final class EvtSyncTransformOuterClass {
        */
       public Builder mergeUnk3300JAMKLNFBBAD(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (unk3300JAMKLNFBBADBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            unk3300JAMKLNFBBAD_ != null &&
-            unk3300JAMKLNFBBAD_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getUnk3300JAMKLNFBBADBuilder().mergeFrom(value);
+          if (unk3300JAMKLNFBBAD_ != null) {
+            unk3300JAMKLNFBBAD_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(unk3300JAMKLNFBBAD_).mergeFrom(value).buildPartial();
           } else {
             unk3300JAMKLNFBBAD_ = value;
           }
+          onChanged();
         } else {
           unk3300JAMKLNFBBADBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector Unk3300_JAMKLNFBBAD = 15;</code>
        */
       public Builder clearUnk3300JAMKLNFBBAD() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        unk3300JAMKLNFBBAD_ = null;
-        if (unk3300JAMKLNFBBADBuilder_ != null) {
-          unk3300JAMKLNFBBADBuilder_.dispose();
+        if (unk3300JAMKLNFBBADBuilder_ == null) {
+          unk3300JAMKLNFBBAD_ = null;
+          onChanged();
+        } else {
+          unk3300JAMKLNFBBAD_ = null;
           unk3300JAMKLNFBBADBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector Unk3300_JAMKLNFBBAD = 15;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getUnk3300JAMKLNFBBADBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getUnk3300JAMKLNFBBADFieldBuilder().getBuilder();
       }
@@ -688,7 +723,6 @@ public final class EvtSyncTransformOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -697,7 +731,7 @@ public final class EvtSyncTransformOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -711,7 +745,7 @@ public final class EvtSyncTransformOuterClass {
        * @return Whether the unk3300PMHFLCOPFBC field is set.
        */
       public boolean hasUnk3300PMHFLCOPFBC() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return unk3300PMHFLCOPFBCBuilder_ != null || unk3300PMHFLCOPFBC_ != null;
       }
       /**
        * <code>.Vector Unk3300_PMHFLCOPFBC = 9;</code>
@@ -733,11 +767,11 @@ public final class EvtSyncTransformOuterClass {
             throw new NullPointerException();
           }
           unk3300PMHFLCOPFBC_ = value;
+          onChanged();
         } else {
           unk3300PMHFLCOPFBCBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -747,11 +781,11 @@ public final class EvtSyncTransformOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (unk3300PMHFLCOPFBCBuilder_ == null) {
           unk3300PMHFLCOPFBC_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300PMHFLCOPFBCBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -759,38 +793,38 @@ public final class EvtSyncTransformOuterClass {
        */
       public Builder mergeUnk3300PMHFLCOPFBC(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (unk3300PMHFLCOPFBCBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            unk3300PMHFLCOPFBC_ != null &&
-            unk3300PMHFLCOPFBC_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getUnk3300PMHFLCOPFBCBuilder().mergeFrom(value);
+          if (unk3300PMHFLCOPFBC_ != null) {
+            unk3300PMHFLCOPFBC_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(unk3300PMHFLCOPFBC_).mergeFrom(value).buildPartial();
           } else {
             unk3300PMHFLCOPFBC_ = value;
           }
+          onChanged();
         } else {
           unk3300PMHFLCOPFBCBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector Unk3300_PMHFLCOPFBC = 9;</code>
        */
       public Builder clearUnk3300PMHFLCOPFBC() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        unk3300PMHFLCOPFBC_ = null;
-        if (unk3300PMHFLCOPFBCBuilder_ != null) {
-          unk3300PMHFLCOPFBCBuilder_.dispose();
+        if (unk3300PMHFLCOPFBCBuilder_ == null) {
+          unk3300PMHFLCOPFBC_ = null;
+          onChanged();
+        } else {
+          unk3300PMHFLCOPFBC_ = null;
           unk3300PMHFLCOPFBCBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector Unk3300_PMHFLCOPFBC = 9;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getUnk3300PMHFLCOPFBCBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getUnk3300PMHFLCOPFBCFieldBuilder().getBuilder();
       }
@@ -854,18 +888,7 @@ public final class EvtSyncTransformOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtSyncTransform(input, extensionRegistry);
       }
     };
 

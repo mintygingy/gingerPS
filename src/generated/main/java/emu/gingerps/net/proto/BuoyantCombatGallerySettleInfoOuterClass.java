@@ -87,6 +87,78 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BuoyantCombatGallerySettleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              killMonsterCount_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              unk3300HLFHLPEKOML_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              killSpecialMonsterCount_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              unk3300KPCJBOOGEMG_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              galleryLevel_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              finalScore_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BuoyantCombatGallerySettleInfoOuterClass.internal_static_BuoyantCombatGallerySettleInfo_descriptor;
@@ -101,7 +173,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
     }
 
     public static final int GALLERY_LEVEL_FIELD_NUMBER = 11;
-    private int galleryLevel_ = 0;
+    private int galleryLevel_;
     /**
      * <code>uint32 gallery_level = 11;</code>
      * @return The galleryLevel.
@@ -112,7 +184,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
     }
 
     public static final int KILL_MONSTER_COUNT_FIELD_NUMBER = 1;
-    private int killMonsterCount_ = 0;
+    private int killMonsterCount_;
     /**
      * <code>uint32 kill_monster_count = 1;</code>
      * @return The killMonsterCount.
@@ -123,7 +195,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
     }
 
     public static final int KILL_SPECIAL_MONSTER_COUNT_FIELD_NUMBER = 9;
-    private int killSpecialMonsterCount_ = 0;
+    private int killSpecialMonsterCount_;
     /**
      * <code>uint32 kill_special_monster_count = 9;</code>
      * @return The killSpecialMonsterCount.
@@ -134,7 +206,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
     }
 
     public static final int UNK3300_HLFHLPEKOML_FIELD_NUMBER = 7;
-    private int unk3300HLFHLPEKOML_ = 0;
+    private int unk3300HLFHLPEKOML_;
     /**
      * <code>uint32 Unk3300_HLFHLPEKOML = 7;</code>
      * @return The unk3300HLFHLPEKOML.
@@ -145,7 +217,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 2;
-    private int galleryId_ = 0;
+    private int galleryId_;
     /**
      * <code>uint32 gallery_id = 2;</code>
      * @return The galleryId.
@@ -156,7 +228,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
     }
 
     public static final int UNK3300_KPCJBOOGEMG_FIELD_NUMBER = 10;
-    private int unk3300KPCJBOOGEMG_ = 0;
+    private int unk3300KPCJBOOGEMG_;
     /**
      * <code>uint32 Unk3300_KPCJBOOGEMG = 10;</code>
      * @return The unk3300KPCJBOOGEMG.
@@ -167,7 +239,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
     }
 
     public static final int FINAL_SCORE_FIELD_NUMBER = 12;
-    private int finalScore_ = 0;
+    private int finalScore_;
     /**
      * <code>uint32 final_score = 12;</code>
      * @return The finalScore.
@@ -212,7 +284,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
       if (finalScore_ != 0) {
         output.writeUInt32(12, finalScore_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -249,7 +321,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, finalScore_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -278,7 +350,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
           != other.getUnk3300KPCJBOOGEMG()) return false;
       if (getFinalScore()
           != other.getFinalScore()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -303,7 +375,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
       hash = (53 * hash) + getUnk3300KPCJBOOGEMG();
       hash = (37 * hash) + FINAL_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getFinalScore();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -420,25 +492,36 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BuoyantCombatGallerySettleInfoOuterClass.BuoyantCombatGallerySettleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         galleryLevel_ = 0;
+
         killMonsterCount_ = 0;
+
         killSpecialMonsterCount_ = 0;
+
         unk3300HLFHLPEKOML_ = 0;
+
         galleryId_ = 0;
+
         unk3300KPCJBOOGEMG_ = 0;
+
         finalScore_ = 0;
+
         return this;
       }
 
@@ -465,34 +548,15 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BuoyantCombatGallerySettleInfoOuterClass.BuoyantCombatGallerySettleInfo buildPartial() {
         emu.gingerps.net.proto.BuoyantCombatGallerySettleInfoOuterClass.BuoyantCombatGallerySettleInfo result = new emu.gingerps.net.proto.BuoyantCombatGallerySettleInfoOuterClass.BuoyantCombatGallerySettleInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.galleryLevel_ = galleryLevel_;
+        result.killMonsterCount_ = killMonsterCount_;
+        result.killSpecialMonsterCount_ = killSpecialMonsterCount_;
+        result.unk3300HLFHLPEKOML_ = unk3300HLFHLPEKOML_;
+        result.galleryId_ = galleryId_;
+        result.unk3300KPCJBOOGEMG_ = unk3300KPCJBOOGEMG_;
+        result.finalScore_ = finalScore_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BuoyantCombatGallerySettleInfoOuterClass.BuoyantCombatGallerySettleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.galleryLevel_ = galleryLevel_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.killMonsterCount_ = killMonsterCount_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.killSpecialMonsterCount_ = killSpecialMonsterCount_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300HLFHLPEKOML_ = unk3300HLFHLPEKOML_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.galleryId_ = galleryId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.unk3300KPCJBOOGEMG_ = unk3300KPCJBOOGEMG_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.finalScore_ = finalScore_;
-        }
       }
 
       @java.lang.Override
@@ -560,7 +624,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
         if (other.getFinalScore() != 0) {
           setFinalScore(other.getFinalScore());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -575,68 +639,19 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BuoyantCombatGallerySettleInfoOuterClass.BuoyantCombatGallerySettleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                killMonsterCount_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 8
-              case 16: {
-                galleryId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 16
-              case 56: {
-                unk3300HLFHLPEKOML_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 72: {
-                killSpecialMonsterCount_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 72
-              case 80: {
-                unk3300KPCJBOOGEMG_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 80
-              case 88: {
-                galleryLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 96: {
-                finalScore_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BuoyantCombatGallerySettleInfoOuterClass.BuoyantCombatGallerySettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int galleryLevel_ ;
       /**
@@ -655,7 +670,6 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
       public Builder setGalleryLevel(int value) {
         
         galleryLevel_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -664,7 +678,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryLevel() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         galleryLevel_ = 0;
         onChanged();
         return this;
@@ -687,7 +701,6 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
       public Builder setKillMonsterCount(int value) {
         
         killMonsterCount_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -696,7 +709,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKillMonsterCount() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         killMonsterCount_ = 0;
         onChanged();
         return this;
@@ -719,7 +732,6 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
       public Builder setKillSpecialMonsterCount(int value) {
         
         killSpecialMonsterCount_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -728,7 +740,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKillSpecialMonsterCount() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         killSpecialMonsterCount_ = 0;
         onChanged();
         return this;
@@ -751,7 +763,6 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
       public Builder setUnk3300HLFHLPEKOML(int value) {
         
         unk3300HLFHLPEKOML_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -760,7 +771,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300HLFHLPEKOML() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300HLFHLPEKOML_ = 0;
         onChanged();
         return this;
@@ -783,7 +794,6 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -792,7 +802,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         galleryId_ = 0;
         onChanged();
         return this;
@@ -815,7 +825,6 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
       public Builder setUnk3300KPCJBOOGEMG(int value) {
         
         unk3300KPCJBOOGEMG_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -824,7 +833,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KPCJBOOGEMG() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         unk3300KPCJBOOGEMG_ = 0;
         onChanged();
         return this;
@@ -847,7 +856,6 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
       public Builder setFinalScore(int value) {
         
         finalScore_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -856,7 +864,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinalScore() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         finalScore_ = 0;
         onChanged();
         return this;
@@ -894,18 +902,7 @@ public final class BuoyantCombatGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BuoyantCombatGallerySettleInfo(input, extensionRegistry);
       }
     };
 

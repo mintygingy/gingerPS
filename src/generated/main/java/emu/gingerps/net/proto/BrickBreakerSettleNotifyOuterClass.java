@@ -140,6 +140,102 @@ public final class BrickBreakerSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BrickBreakerSettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 16: {
+
+              isDungeon_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                updateSkillList_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              updateSkillList_.add(
+                  input.readMessage(emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+
+              time_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              score_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              combo_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              isSingleMode_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          updateSkillList_ = java.util.Collections.unmodifiableList(updateSkillList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.internal_static_BrickBreakerSettleNotify_descriptor;
@@ -280,7 +376,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
     }
 
     public static final int TIME_FIELD_NUMBER = 5;
-    private int time_ = 0;
+    private int time_;
     /**
      * <code>uint32 time = 5;</code>
      * @return The time.
@@ -291,7 +387,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
     }
 
     public static final int IS_SINGLE_MODE_FIELD_NUMBER = 15;
-    private boolean isSingleMode_ = false;
+    private boolean isSingleMode_;
     /**
      * <code>bool is_single_mode = 15;</code>
      * @return The isSingleMode.
@@ -302,7 +398,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
     }
 
     public static final int IS_DUNGEON_FIELD_NUMBER = 2;
-    private boolean isDungeon_ = false;
+    private boolean isDungeon_;
     /**
      * <code>bool is_dungeon = 2;</code>
      * @return The isDungeon.
@@ -313,7 +409,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 7;
-    private int score_ = 0;
+    private int score_;
     /**
      * <code>uint32 score = 7;</code>
      * @return The score.
@@ -324,7 +420,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
     }
 
     public static final int COMBO_FIELD_NUMBER = 12;
-    private int combo_ = 0;
+    private int combo_;
     /**
      * <code>uint32 combo = 12;</code>
      * @return The combo.
@@ -335,7 +431,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 11;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 11;</code>
      * @return The levelId.
@@ -346,7 +442,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 1;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.BrickBreakerSettleNotify.SettleReason reason = 1;</code>
      * @return The enum numeric value on the wire for reason.
@@ -359,12 +455,13 @@ public final class BrickBreakerSettleNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason getReason() {
-      emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason result = emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason result = emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.UNRECOGNIZED : result;
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 3;
-    private boolean isNewRecord_ = false;
+    private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 3;</code>
      * @return The isNewRecord.
@@ -375,7 +472,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 13;
-    private int galleryId_ = 0;
+    private int galleryId_;
     /**
      * <code>uint32 gallery_id = 13;</code>
      * @return The galleryId.
@@ -386,7 +483,6 @@ public final class BrickBreakerSettleNotifyOuterClass {
     }
 
     public static final int UPDATE_SKILL_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> updateSkillList_;
     /**
      * <code>repeated .Uint32Pair update_skill_list = 4;</code>
@@ -470,7 +566,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
       if (isSingleMode_ != false) {
         output.writeBool(15, isSingleMode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -519,7 +615,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isSingleMode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -553,7 +649,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
           != other.getGalleryId()) return false;
       if (!getUpdateSkillListList()
           .equals(other.getUpdateSkillListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -589,7 +685,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         hash = (37 * hash) + UPDATE_SKILL_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getUpdateSkillListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -716,34 +812,47 @@ public final class BrickBreakerSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getUpdateSkillListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         time_ = 0;
+
         isSingleMode_ = false;
+
         isDungeon_ = false;
+
         score_ = 0;
+
         combo_ = 0;
+
         levelId_ = 0;
+
         reason_ = 0;
+
         isNewRecord_ = false;
+
         galleryId_ = 0;
+
         if (updateSkillListBuilder_ == null) {
           updateSkillList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          updateSkillList_ = null;
           updateSkillListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -770,53 +879,27 @@ public final class BrickBreakerSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify buildPartial() {
         emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify result = new emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.time_ = time_;
+        result.isSingleMode_ = isSingleMode_;
+        result.isDungeon_ = isDungeon_;
+        result.score_ = score_;
+        result.combo_ = combo_;
+        result.levelId_ = levelId_;
+        result.reason_ = reason_;
+        result.isNewRecord_ = isNewRecord_;
+        result.galleryId_ = galleryId_;
         if (updateSkillListBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             updateSkillList_ = java.util.Collections.unmodifiableList(updateSkillList_);
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.updateSkillList_ = updateSkillList_;
         } else {
           result.updateSkillList_ = updateSkillListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.time_ = time_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isSingleMode_ = isSingleMode_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isDungeon_ = isDungeon_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.score_ = score_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.combo_ = combo_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.levelId_ = levelId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.isNewRecord_ = isNewRecord_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.galleryId_ = galleryId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -894,7 +977,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
           if (!other.updateSkillList_.isEmpty()) {
             if (updateSkillList_.isEmpty()) {
               updateSkillList_ = other.updateSkillList_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureUpdateSkillListIsMutable();
               updateSkillList_.addAll(other.updateSkillList_);
@@ -907,7 +990,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
               updateSkillListBuilder_.dispose();
               updateSkillListBuilder_ = null;
               updateSkillList_ = other.updateSkillList_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000001);
               updateSkillListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUpdateSkillListFieldBuilder() : null;
@@ -916,7 +999,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -931,88 +1014,17 @@ public final class BrickBreakerSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 8
-              case 16: {
-                isDungeon_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 24: {
-                isNewRecord_ = input.readBool();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 24
-              case 34: {
-                emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(),
-                        extensionRegistry);
-                if (updateSkillListBuilder_ == null) {
-                  ensureUpdateSkillListIsMutable();
-                  updateSkillList_.add(m);
-                } else {
-                  updateSkillListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 40: {
-                time_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              case 56: {
-                score_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 88: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 88
-              case 96: {
-                combo_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 96
-              case 104: {
-                galleryId_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 104
-              case 120: {
-                isSingleMode_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1034,7 +1046,6 @@ public final class BrickBreakerSettleNotifyOuterClass {
       public Builder setTime(int value) {
         
         time_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1043,7 +1054,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         time_ = 0;
         onChanged();
         return this;
@@ -1066,7 +1077,6 @@ public final class BrickBreakerSettleNotifyOuterClass {
       public Builder setIsSingleMode(boolean value) {
         
         isSingleMode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1075,7 +1085,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSingleMode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isSingleMode_ = false;
         onChanged();
         return this;
@@ -1098,7 +1108,6 @@ public final class BrickBreakerSettleNotifyOuterClass {
       public Builder setIsDungeon(boolean value) {
         
         isDungeon_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1107,7 +1116,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsDungeon() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isDungeon_ = false;
         onChanged();
         return this;
@@ -1130,7 +1139,6 @@ public final class BrickBreakerSettleNotifyOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1139,7 +1147,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         score_ = 0;
         onChanged();
         return this;
@@ -1162,7 +1170,6 @@ public final class BrickBreakerSettleNotifyOuterClass {
       public Builder setCombo(int value) {
         
         combo_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1171,7 +1178,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCombo() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         combo_ = 0;
         onChanged();
         return this;
@@ -1194,7 +1201,6 @@ public final class BrickBreakerSettleNotifyOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1203,7 +1209,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -1223,8 +1229,8 @@ public final class BrickBreakerSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1234,7 +1240,8 @@ public final class BrickBreakerSettleNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason getReason() {
-        emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason result = emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason result = emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.UNRECOGNIZED : result;
       }
       /**
@@ -1246,7 +1253,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000040;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -1256,7 +1263,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -1279,7 +1286,6 @@ public final class BrickBreakerSettleNotifyOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1288,7 +1294,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -1311,7 +1317,6 @@ public final class BrickBreakerSettleNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1320,7 +1325,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         galleryId_ = 0;
         onChanged();
         return this;
@@ -1329,9 +1334,9 @@ public final class BrickBreakerSettleNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> updateSkillList_ =
         java.util.Collections.emptyList();
       private void ensureUpdateSkillListIsMutable() {
-        if (!((bitField0_ & 0x00000200) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           updateSkillList_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>(updateSkillList_);
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1481,7 +1486,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
       public Builder clearUpdateSkillList() {
         if (updateSkillListBuilder_ == null) {
           updateSkillList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           updateSkillListBuilder_.clear();
@@ -1558,7 +1563,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
           updateSkillListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
                   updateSkillList_,
-                  ((bitField0_ & 0x00000200) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           updateSkillList_ = null;
@@ -1598,18 +1603,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BrickBreakerSettleNotify(input, extensionRegistry);
       }
     };
 

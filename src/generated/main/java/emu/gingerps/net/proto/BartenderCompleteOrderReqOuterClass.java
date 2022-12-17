@@ -129,6 +129,105 @@ public final class BartenderCompleteOrderReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BartenderCompleteOrderReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              unk3300LONHKJFDOND_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              unk3300NKMHHHHGHIF_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isViewFormula_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              unk3300POEGPFJLNGB_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              itemList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+
+              questId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                optionalOrderList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              optionalOrderList_.addInt(input.readUInt32());
+              break;
+            }
+            case 122: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                optionalOrderList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                optionalOrderList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          itemList_ = java.util.Collections.unmodifiableList(itemList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          optionalOrderList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BartenderCompleteOrderReqOuterClass.internal_static_BartenderCompleteOrderReq_descriptor;
@@ -143,7 +242,7 @@ public final class BartenderCompleteOrderReqOuterClass {
     }
 
     public static final int QUEST_ID_FIELD_NUMBER = 14;
-    private int questId_ = 0;
+    private int questId_;
     /**
      * <code>uint32 quest_id = 14;</code>
      * @return The questId.
@@ -154,7 +253,6 @@ public final class BartenderCompleteOrderReqOuterClass {
     }
 
     public static final int OPTIONAL_ORDER_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList optionalOrderList_;
     /**
      * <code>repeated uint32 optional_order_list = 15;</code>
@@ -183,7 +281,7 @@ public final class BartenderCompleteOrderReqOuterClass {
     private int optionalOrderListMemoizedSerializedSize = -1;
 
     public static final int UNK3300_NKMHHHHGHIF_FIELD_NUMBER = 6;
-    private int unk3300NKMHHHHGHIF_ = 0;
+    private int unk3300NKMHHHHGHIF_;
     /**
      * <code>uint32 Unk3300_NKMHHHHGHIF = 6;</code>
      * @return The unk3300NKMHHHHGHIF.
@@ -194,7 +292,7 @@ public final class BartenderCompleteOrderReqOuterClass {
     }
 
     public static final int UNK3300_LONHKJFDOND_FIELD_NUMBER = 5;
-    private int unk3300LONHKJFDOND_ = 0;
+    private int unk3300LONHKJFDOND_;
     /**
      * <code>uint32 Unk3300_LONHKJFDOND = 5;</code>
      * @return The unk3300LONHKJFDOND.
@@ -205,7 +303,7 @@ public final class BartenderCompleteOrderReqOuterClass {
     }
 
     public static final int UNK3300_POEGPFJLNGB_FIELD_NUMBER = 11;
-    private int unk3300POEGPFJLNGB_ = 0;
+    private int unk3300POEGPFJLNGB_;
     /**
      * <code>uint32 Unk3300_POEGPFJLNGB = 11;</code>
      * @return The unk3300POEGPFJLNGB.
@@ -216,7 +314,7 @@ public final class BartenderCompleteOrderReqOuterClass {
     }
 
     public static final int IS_VIEW_FORMULA_FIELD_NUMBER = 8;
-    private boolean isViewFormula_ = false;
+    private boolean isViewFormula_;
     /**
      * <code>bool is_view_formula = 8;</code>
      * @return The isViewFormula.
@@ -227,7 +325,6 @@ public final class BartenderCompleteOrderReqOuterClass {
     }
 
     public static final int ITEM_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
      * <code>repeated .ItemParam item_list = 12;</code>
@@ -307,7 +404,7 @@ public final class BartenderCompleteOrderReqOuterClass {
       for (int i = 0; i < optionalOrderList_.size(); i++) {
         output.writeUInt32NoTag(optionalOrderList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -354,7 +451,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         }
         optionalOrderListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -383,7 +480,7 @@ public final class BartenderCompleteOrderReqOuterClass {
           != other.getIsViewFormula()) return false;
       if (!getItemListList()
           .equals(other.getItemListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -413,7 +510,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -541,31 +638,41 @@ public final class BartenderCompleteOrderReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getItemListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         questId_ = 0;
+
         optionalOrderList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300NKMHHHHGHIF_ = 0;
+
         unk3300LONHKJFDOND_ = 0;
+
         unk3300POEGPFJLNGB_ = 0;
+
         isViewFormula_ = false;
+
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          itemList_ = null;
           itemListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -592,46 +699,28 @@ public final class BartenderCompleteOrderReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq buildPartial() {
         emu.gingerps.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq result = new emu.gingerps.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.questId_ = questId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           optionalOrderList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.optionalOrderList_ = optionalOrderList_;
+        result.unk3300NKMHHHHGHIF_ = unk3300NKMHHHHGHIF_;
+        result.unk3300LONHKJFDOND_ = unk3300LONHKJFDOND_;
+        result.unk3300POEGPFJLNGB_ = unk3300POEGPFJLNGB_;
+        result.isViewFormula_ = isViewFormula_;
         if (itemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.itemList_ = itemList_;
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.questId_ = questId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300NKMHHHHGHIF_ = unk3300NKMHHHHGHIF_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300LONHKJFDOND_ = unk3300LONHKJFDOND_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300POEGPFJLNGB_ = unk3300POEGPFJLNGB_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isViewFormula_ = isViewFormula_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -684,7 +773,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         if (!other.optionalOrderList_.isEmpty()) {
           if (optionalOrderList_.isEmpty()) {
             optionalOrderList_ = other.optionalOrderList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureOptionalOrderListIsMutable();
             optionalOrderList_.addAll(other.optionalOrderList_);
@@ -707,7 +796,7 @@ public final class BartenderCompleteOrderReqOuterClass {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureItemListIsMutable();
               itemList_.addAll(other.itemList_);
@@ -720,7 +809,7 @@ public final class BartenderCompleteOrderReqOuterClass {
               itemListBuilder_.dispose();
               itemListBuilder_ = null;
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000002);
               itemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemListFieldBuilder() : null;
@@ -729,7 +818,7 @@ public final class BartenderCompleteOrderReqOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -744,84 +833,17 @@ public final class BartenderCompleteOrderReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                unk3300LONHKJFDOND_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 40
-              case 48: {
-                unk3300NKMHHHHGHIF_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 48
-              case 64: {
-                isViewFormula_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 64
-              case 88: {
-                unk3300POEGPFJLNGB_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 88
-              case 98: {
-                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
-                        extensionRegistry);
-                if (itemListBuilder_ == null) {
-                  ensureItemListIsMutable();
-                  itemList_.add(m);
-                } else {
-                  itemListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              case 112: {
-                questId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              case 120: {
-                int v = input.readUInt32();
-                ensureOptionalOrderListIsMutable();
-                optionalOrderList_.addInt(v);
-                break;
-              } // case 120
-              case 122: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureOptionalOrderListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  optionalOrderList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -843,7 +865,6 @@ public final class BartenderCompleteOrderReqOuterClass {
       public Builder setQuestId(int value) {
         
         questId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -852,7 +873,7 @@ public final class BartenderCompleteOrderReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         questId_ = 0;
         onChanged();
         return this;
@@ -860,10 +881,10 @@ public final class BartenderCompleteOrderReqOuterClass {
 
       private com.google.protobuf.Internal.IntList optionalOrderList_ = emptyIntList();
       private void ensureOptionalOrderListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           optionalOrderList_ = mutableCopy(optionalOrderList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 optional_order_list = 15;</code>
@@ -871,7 +892,7 @@ public final class BartenderCompleteOrderReqOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getOptionalOrderListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(optionalOrderList_) : optionalOrderList_;
       }
       /**
@@ -897,7 +918,6 @@ public final class BartenderCompleteOrderReqOuterClass {
        */
       public Builder setOptionalOrderList(
           int index, int value) {
-        
         ensureOptionalOrderListIsMutable();
         optionalOrderList_.setInt(index, value);
         onChanged();
@@ -909,7 +929,6 @@ public final class BartenderCompleteOrderReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addOptionalOrderList(int value) {
-        
         ensureOptionalOrderListIsMutable();
         optionalOrderList_.addInt(value);
         onChanged();
@@ -934,7 +953,7 @@ public final class BartenderCompleteOrderReqOuterClass {
        */
       public Builder clearOptionalOrderList() {
         optionalOrderList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -956,7 +975,6 @@ public final class BartenderCompleteOrderReqOuterClass {
       public Builder setUnk3300NKMHHHHGHIF(int value) {
         
         unk3300NKMHHHHGHIF_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -965,7 +983,7 @@ public final class BartenderCompleteOrderReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NKMHHHHGHIF() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300NKMHHHHGHIF_ = 0;
         onChanged();
         return this;
@@ -988,7 +1006,6 @@ public final class BartenderCompleteOrderReqOuterClass {
       public Builder setUnk3300LONHKJFDOND(int value) {
         
         unk3300LONHKJFDOND_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -997,7 +1014,7 @@ public final class BartenderCompleteOrderReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LONHKJFDOND() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300LONHKJFDOND_ = 0;
         onChanged();
         return this;
@@ -1020,7 +1037,6 @@ public final class BartenderCompleteOrderReqOuterClass {
       public Builder setUnk3300POEGPFJLNGB(int value) {
         
         unk3300POEGPFJLNGB_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1029,7 +1045,7 @@ public final class BartenderCompleteOrderReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300POEGPFJLNGB() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300POEGPFJLNGB_ = 0;
         onChanged();
         return this;
@@ -1052,7 +1068,6 @@ public final class BartenderCompleteOrderReqOuterClass {
       public Builder setIsViewFormula(boolean value) {
         
         isViewFormula_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1061,7 +1076,7 @@ public final class BartenderCompleteOrderReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsViewFormula() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isViewFormula_ = false;
         onChanged();
         return this;
@@ -1070,9 +1085,9 @@ public final class BartenderCompleteOrderReqOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemList_ =
         java.util.Collections.emptyList();
       private void ensureItemListIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(itemList_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1222,7 +1237,7 @@ public final class BartenderCompleteOrderReqOuterClass {
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           itemListBuilder_.clear();
@@ -1299,7 +1314,7 @@ public final class BartenderCompleteOrderReqOuterClass {
           itemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   itemList_,
-                  ((bitField0_ & 0x00000040) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           itemList_ = null;
@@ -1339,18 +1354,7 @@ public final class BartenderCompleteOrderReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BartenderCompleteOrderReq(input, extensionRegistry);
       }
     };
 

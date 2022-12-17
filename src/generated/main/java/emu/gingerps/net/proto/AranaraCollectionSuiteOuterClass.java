@@ -41,11 +41,9 @@ public final class AranaraCollectionSuiteOuterClass {
     /**
      * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getCollectionIdStateMapOrDefault(
+    emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getCollectionIdStateMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState         defaultValue);
+        emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState defaultValue);
     /**
      * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
      */
@@ -65,12 +63,14 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState  
     /**
      * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
      */
+
     int getCollectionIdStateMapValueOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
      */
+
     int getCollectionIdStateMapValueOrThrow(
         int key);
 
@@ -106,6 +106,62 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState  
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private AranaraCollectionSuite(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                collectionIdStateMap_ = com.google.protobuf.MapField.newMapField(
+                    CollectionIdStateMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              collectionIdStateMap__ = input.readMessage(
+                  CollectionIdStateMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              collectionIdStateMap_.getMutableMap().put(
+                  collectionIdStateMap__.getKey(), collectionIdStateMap__.getValue());
+              break;
+            }
+            case 96: {
+
+              collectionType_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -144,7 +200,6 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState  
                   com.google.protobuf.WireFormat.FieldType.ENUM,
                   emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.ARANARA_COLLECTION_STATE_NONE.getNumber());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> collectionIdStateMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -168,12 +223,14 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState  
           java.lang.Integer, emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState, java.lang.Integer>(
               map, collectionIdStateMapValueConverter);
     }
+
     public int getCollectionIdStateMapCount() {
       return internalGetCollectionIdStateMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
      */
+
     @java.lang.Override
     public boolean containsCollectionIdStateMap(
         int key) {
@@ -193,6 +250,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState  
      * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState>
     getCollectionIdStateMapMap() {
       return internalGetAdaptedCollectionIdStateMapMap(
@@ -201,11 +259,10 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState  
      * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getCollectionIdStateMapOrDefault(
+
+    public emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getCollectionIdStateMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState defaultValue) {
+        emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState defaultValue) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
           internalGetCollectionIdStateMap().getMap();
@@ -217,6 +274,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
      * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getCollectionIdStateMapOrThrow(
         int key) {
       
@@ -240,6 +298,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
      * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer>
     getCollectionIdStateMapValueMap() {
       return internalGetCollectionIdStateMap().getMap();
@@ -248,6 +307,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
      * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
      */
     @java.lang.Override
+
     public int getCollectionIdStateMapValueOrDefault(
         int key,
         int defaultValue) {
@@ -260,6 +320,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
      * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
      */
     @java.lang.Override
+
     public int getCollectionIdStateMapValueOrThrow(
         int key) {
       
@@ -272,7 +333,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
     }
 
     public static final int COLLECTION_TYPE_FIELD_NUMBER = 12;
-    private int collectionType_ = 0;
+    private int collectionType_;
     /**
      * <code>uint32 collection_type = 12;</code>
      * @return The collectionType.
@@ -305,7 +366,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
       if (collectionType_ != 0) {
         output.writeUInt32(12, collectionType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -328,7 +389,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, collectionType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -347,7 +408,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
           other.internalGetCollectionIdStateMap())) return false;
       if (getCollectionType()
           != other.getCollectionType()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -364,7 +425,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
       }
       hash = (37 * hash) + COLLECTION_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getCollectionType();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -503,20 +564,25 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
 
       // Construct using emu.gingerps.net.proto.AranaraCollectionSuiteOuterClass.AranaraCollectionSuite.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableCollectionIdStateMap().clear();
         collectionType_ = 0;
+
         return this;
       }
 
@@ -543,20 +609,12 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
       @java.lang.Override
       public emu.gingerps.net.proto.AranaraCollectionSuiteOuterClass.AranaraCollectionSuite buildPartial() {
         emu.gingerps.net.proto.AranaraCollectionSuiteOuterClass.AranaraCollectionSuite result = new emu.gingerps.net.proto.AranaraCollectionSuiteOuterClass.AranaraCollectionSuite(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.collectionIdStateMap_ = internalGetCollectionIdStateMap();
+        result.collectionIdStateMap_.makeImmutable();
+        result.collectionType_ = collectionType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AranaraCollectionSuiteOuterClass.AranaraCollectionSuite result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.collectionIdStateMap_ = internalGetCollectionIdStateMap();
-          result.collectionIdStateMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.collectionType_ = collectionType_;
-        }
       }
 
       @java.lang.Override
@@ -605,11 +663,10 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
         if (other == emu.gingerps.net.proto.AranaraCollectionSuiteOuterClass.AranaraCollectionSuite.getDefaultInstance()) return this;
         internalGetMutableCollectionIdStateMap().mergeFrom(
             other.internalGetCollectionIdStateMap());
-        bitField0_ |= 0x00000001;
         if (other.getCollectionType() != 0) {
           setCollectionType(other.getCollectionType());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -624,44 +681,17 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AranaraCollectionSuiteOuterClass.AranaraCollectionSuite parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 42: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                collectionIdStateMap__ = input.readMessage(
-                    CollectionIdStateMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableCollectionIdStateMap().getMutableMap().put(
-                    collectionIdStateMap__.getKey(), collectionIdStateMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 42
-              case 96: {
-                collectionType_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AranaraCollectionSuiteOuterClass.AranaraCollectionSuite) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -669,7 +699,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> collectionIdStateMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetCollectionIdStateMap() {
+      internalGetCollectionIdStateMap() {
         if (collectionIdStateMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               CollectionIdStateMapDefaultEntryHolder.defaultEntry);
@@ -677,7 +707,8 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
         return collectionIdStateMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableCollectionIdStateMap() {
+      internalGetMutableCollectionIdStateMap() {
+        onChanged();;
         if (collectionIdStateMap_ == null) {
           collectionIdStateMap_ = com.google.protobuf.MapField.newMapField(
               CollectionIdStateMapDefaultEntryHolder.defaultEntry);
@@ -685,16 +716,16 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
         if (!collectionIdStateMap_.isMutable()) {
           collectionIdStateMap_ = collectionIdStateMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return collectionIdStateMap_;
       }
+
       public int getCollectionIdStateMapCount() {
         return internalGetCollectionIdStateMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
        */
+
       @java.lang.Override
       public boolean containsCollectionIdStateMap(
           int key) {
@@ -714,6 +745,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
        * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState>
       getCollectionIdStateMapMap() {
         return internalGetAdaptedCollectionIdStateMapMap(
@@ -722,11 +754,10 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
        * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getCollectionIdStateMapOrDefault(
+
+      public emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getCollectionIdStateMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState defaultValue) {
+          emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState defaultValue) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
             internalGetCollectionIdStateMap().getMap();
@@ -738,6 +769,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
        * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getCollectionIdStateMapOrThrow(
           int key) {
         
@@ -761,6 +793,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
        * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer>
       getCollectionIdStateMapValueMap() {
         return internalGetCollectionIdStateMap().getMap();
@@ -769,6 +802,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
        * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
        */
       @java.lang.Override
+
       public int getCollectionIdStateMapValueOrDefault(
           int key,
           int defaultValue) {
@@ -781,6 +815,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
        * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
        */
       @java.lang.Override
+
       public int getCollectionIdStateMapValueOrThrow(
           int key) {
         
@@ -791,8 +826,8 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
         }
         return map.get(key);
       }
+
       public Builder clearCollectionIdStateMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableCollectionIdStateMap().getMutableMap()
             .clear();
         return this;
@@ -800,6 +835,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
       /**
        * <code>map&lt;uint32, .AranaraCollectionState&gt; collection_id_state_map = 5;</code>
        */
+
       public Builder removeCollectionIdStateMap(
           int key) {
         
@@ -812,8 +848,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState>
-          getMutableCollectionIdStateMap() {
-        bitField0_ |= 0x00000001;
+      getMutableCollectionIdStateMap() {
         return internalGetAdaptedCollectionIdStateMapMap(
              internalGetMutableCollectionIdStateMap().getMutableMap());
       }
@@ -824,10 +859,9 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
           int key,
           emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState value) {
         
-        
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableCollectionIdStateMap().getMutableMap()
             .put(key, collectionIdStateMapValueConverter.doBackward(value));
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -838,7 +872,6 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
         internalGetAdaptedCollectionIdStateMapMap(
             internalGetMutableCollectionIdStateMap().getMutableMap())
                 .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -847,7 +880,6 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
       getMutableCollectionIdStateMapValue() {
-        bitField0_ |= 0x00000001;
         return internalGetMutableCollectionIdStateMap().getMutableMap();
       }
       /**
@@ -857,10 +889,8 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
           int key,
           int value) {
         
-        
         internalGetMutableCollectionIdStateMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -870,7 +900,6 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableCollectionIdStateMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -891,7 +920,6 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
       public Builder setCollectionType(int value) {
         
         collectionType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -900,7 +928,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
        * @return This builder for chaining.
        */
       public Builder clearCollectionType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         collectionType_ = 0;
         onChanged();
         return this;
@@ -938,18 +966,7 @@ emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState d
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AranaraCollectionSuite(input, extensionRegistry);
       }
     };
 

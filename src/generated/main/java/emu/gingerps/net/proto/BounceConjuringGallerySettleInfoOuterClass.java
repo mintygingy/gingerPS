@@ -53,12 +53,14 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
      */
+
     int getGadgetCountMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
      */
+
     int getGadgetCountMapOrThrow(
         int key);
 
@@ -153,6 +155,112 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BounceConjuringGallerySettleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              unk3300NKGFKLGDFAC_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = null;
+              if (playerInfo_ != null) {
+                subBuilder = playerInfo_.toBuilder();
+              }
+              playerInfo_ = input.readMessage(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(playerInfo_);
+                playerInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                gadgetCountMap_ = com.google.protobuf.MapField.newMapField(
+                    GadgetCountMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              gadgetCountMap__ = input.readMessage(
+                  GadgetCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              gadgetCountMap_.getMutableMap().put(
+                  gadgetCountMap__.getKey(), gadgetCountMap__.getValue());
+              break;
+            }
+            case 48: {
+
+              unk3300PELHBJDMKAE_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              unk3300BJHCDKNFDFN_ = input.readUInt32();
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              cardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 88: {
+
+              unk3300CNGOBOFDEOE_ = input.readUInt32();
+              break;
+            }
+            case 101: {
+
+              damage_ = input.readFloat();
+              break;
+            }
+            case 120: {
+
+              score_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          cardList_ = java.util.Collections.unmodifiableList(cardList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BounceConjuringGallerySettleInfoOuterClass.internal_static_BounceConjuringGallerySettleInfo_descriptor;
@@ -179,7 +287,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
     }
 
     public static final int UNK3300_PELHBJDMKAE_FIELD_NUMBER = 6;
-    private int unk3300PELHBJDMKAE_ = 0;
+    private int unk3300PELHBJDMKAE_;
     /**
      * <code>uint32 Unk3300_PELHBJDMKAE = 6;</code>
      * @return The unk3300PELHBJDMKAE.
@@ -190,7 +298,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 15;
-    private int score_ = 0;
+    private int score_;
     /**
      * <code>uint32 score = 15;</code>
      * @return The score.
@@ -212,7 +320,6 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> gadgetCountMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -223,12 +330,14 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       }
       return gadgetCountMap_;
     }
+
     public int getGadgetCountMapCount() {
       return internalGetGadgetCountMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
      */
+
     @java.lang.Override
     public boolean containsGadgetCountMap(
         int key) {
@@ -247,6 +356,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getGadgetCountMapMap() {
       return internalGetGadgetCountMap().getMap();
     }
@@ -254,6 +364,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
      */
     @java.lang.Override
+
     public int getGadgetCountMapOrDefault(
         int key,
         int defaultValue) {
@@ -266,6 +377,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
      */
     @java.lang.Override
+
     public int getGadgetCountMapOrThrow(
         int key) {
       
@@ -278,7 +390,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
     }
 
     public static final int UNK3300_CNGOBOFDEOE_FIELD_NUMBER = 11;
-    private int unk3300CNGOBOFDEOE_ = 0;
+    private int unk3300CNGOBOFDEOE_;
     /**
      * <code>uint32 Unk3300_CNGOBOFDEOE = 11;</code>
      * @return The unk3300CNGOBOFDEOE.
@@ -289,7 +401,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
     }
 
     public static final int UNK3300_NKGFKLGDFAC_FIELD_NUMBER = 1;
-    private int unk3300NKGFKLGDFAC_ = 0;
+    private int unk3300NKGFKLGDFAC_;
     /**
      * <code>uint32 Unk3300_NKGFKLGDFAC = 1;</code>
      * @return The unk3300NKGFKLGDFAC.
@@ -322,11 +434,11 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
-      return playerInfo_ == null ? emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : playerInfo_;
+      return getPlayerInfo();
     }
 
     public static final int DAMAGE_FIELD_NUMBER = 12;
-    private float damage_ = 0F;
+    private float damage_;
     /**
      * <code>float damage = 12;</code>
      * @return The damage.
@@ -337,7 +449,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
     }
 
     public static final int UNK3300_BJHCDKNFDFN_FIELD_NUMBER = 7;
-    private int unk3300BJHCDKNFDFN_ = 0;
+    private int unk3300BJHCDKNFDFN_;
     /**
      * <code>uint32 Unk3300_BJHCDKNFDFN = 7;</code>
      * @return The unk3300BJHCDKNFDFN.
@@ -348,7 +460,6 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
     }
 
     public static final int CARD_LIST_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_;
     /**
      * <code>repeated .ExhibitionDisplayInfo card_list = 9;</code>
@@ -426,13 +537,13 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       if (unk3300CNGOBOFDEOE_ != 0) {
         output.writeUInt32(11, unk3300CNGOBOFDEOE_);
       }
-      if (java.lang.Float.floatToRawIntBits(damage_) != 0) {
+      if (damage_ != 0F) {
         output.writeFloat(12, damage_);
       }
       if (score_ != 0) {
         output.writeUInt32(15, score_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -475,7 +586,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, unk3300CNGOBOFDEOE_);
       }
-      if (java.lang.Float.floatToRawIntBits(damage_) != 0) {
+      if (damage_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(12, damage_);
       }
@@ -483,7 +594,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, score_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -520,7 +631,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
           != other.getUnk3300BJHCDKNFDFN()) return false;
       if (!getCardListList()
           .equals(other.getCardListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -556,7 +667,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
         hash = (37 * hash) + CARD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCardListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -695,37 +806,48 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BounceConjuringGallerySettleInfoOuterClass.BounceConjuringGallerySettleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCardListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300PELHBJDMKAE_ = 0;
+
         score_ = 0;
+
         internalGetMutableGadgetCountMap().clear();
         unk3300CNGOBOFDEOE_ = 0;
+
         unk3300NKGFKLGDFAC_ = 0;
-        playerInfo_ = null;
-        if (playerInfoBuilder_ != null) {
-          playerInfoBuilder_.dispose();
+
+        if (playerInfoBuilder_ == null) {
+          playerInfo_ = null;
+        } else {
+          playerInfo_ = null;
           playerInfoBuilder_ = null;
         }
         damage_ = 0F;
+
         unk3300BJHCDKNFDFN_ = 0;
+
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          cardList_ = null;
           cardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -752,53 +874,31 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BounceConjuringGallerySettleInfoOuterClass.BounceConjuringGallerySettleInfo buildPartial() {
         emu.gingerps.net.proto.BounceConjuringGallerySettleInfoOuterClass.BounceConjuringGallerySettleInfo result = new emu.gingerps.net.proto.BounceConjuringGallerySettleInfoOuterClass.BounceConjuringGallerySettleInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BounceConjuringGallerySettleInfoOuterClass.BounceConjuringGallerySettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.unk3300PELHBJDMKAE_ = unk3300PELHBJDMKAE_;
+        result.score_ = score_;
+        result.gadgetCountMap_ = internalGetGadgetCountMap();
+        result.gadgetCountMap_.makeImmutable();
+        result.unk3300CNGOBOFDEOE_ = unk3300CNGOBOFDEOE_;
+        result.unk3300NKGFKLGDFAC_ = unk3300NKGFKLGDFAC_;
+        if (playerInfoBuilder_ == null) {
+          result.playerInfo_ = playerInfo_;
+        } else {
+          result.playerInfo_ = playerInfoBuilder_.build();
+        }
+        result.damage_ = damage_;
+        result.unk3300BJHCDKNFDFN_ = unk3300BJHCDKNFDFN_;
         if (cardListBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             cardList_ = java.util.Collections.unmodifiableList(cardList_);
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.cardList_ = cardList_;
         } else {
           result.cardList_ = cardListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BounceConjuringGallerySettleInfoOuterClass.BounceConjuringGallerySettleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300PELHBJDMKAE_ = unk3300PELHBJDMKAE_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.score_ = score_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.gadgetCountMap_ = internalGetGadgetCountMap();
-          result.gadgetCountMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300CNGOBOFDEOE_ = unk3300CNGOBOFDEOE_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300NKGFKLGDFAC_ = unk3300NKGFKLGDFAC_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.playerInfo_ = playerInfoBuilder_ == null
-              ? playerInfo_
-              : playerInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.damage_ = damage_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.unk3300BJHCDKNFDFN_ = unk3300BJHCDKNFDFN_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -853,7 +953,6 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
         }
         internalGetMutableGadgetCountMap().mergeFrom(
             other.internalGetGadgetCountMap());
-        bitField0_ |= 0x00000004;
         if (other.getUnk3300CNGOBOFDEOE() != 0) {
           setUnk3300CNGOBOFDEOE(other.getUnk3300CNGOBOFDEOE());
         }
@@ -873,7 +972,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
           if (!other.cardList_.isEmpty()) {
             if (cardList_.isEmpty()) {
               cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureCardListIsMutable();
               cardList_.addAll(other.cardList_);
@@ -886,7 +985,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
               cardListBuilder_.dispose();
               cardListBuilder_ = null;
               cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000002);
               cardListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCardListFieldBuilder() : null;
@@ -895,7 +994,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -910,89 +1009,17 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BounceConjuringGallerySettleInfoOuterClass.BounceConjuringGallerySettleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                unk3300NKGFKLGDFAC_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getPlayerInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 18
-              case 26: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                gadgetCountMap__ = input.readMessage(
-                    GadgetCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableGadgetCountMap().getMutableMap().put(
-                    gadgetCountMap__.getKey(), gadgetCountMap__.getValue());
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 48: {
-                unk3300PELHBJDMKAE_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 56: {
-                unk3300BJHCDKNFDFN_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 56
-              case 74: {
-                emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(),
-                        extensionRegistry);
-                if (cardListBuilder_ == null) {
-                  ensureCardListIsMutable();
-                  cardList_.add(m);
-                } else {
-                  cardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 74
-              case 88: {
-                unk3300CNGOBOFDEOE_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 88
-              case 101: {
-                damage_ = input.readFloat();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 101
-              case 120: {
-                score_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BounceConjuringGallerySettleInfoOuterClass.BounceConjuringGallerySettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1014,7 +1041,6 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       public Builder setUnk3300PELHBJDMKAE(int value) {
         
         unk3300PELHBJDMKAE_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1023,7 +1049,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PELHBJDMKAE() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300PELHBJDMKAE_ = 0;
         onChanged();
         return this;
@@ -1046,7 +1072,6 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1055,7 +1080,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         score_ = 0;
         onChanged();
         return this;
@@ -1064,7 +1089,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> gadgetCountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetGadgetCountMap() {
+      internalGetGadgetCountMap() {
         if (gadgetCountMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               GadgetCountMapDefaultEntryHolder.defaultEntry);
@@ -1072,7 +1097,8 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
         return gadgetCountMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableGadgetCountMap() {
+      internalGetMutableGadgetCountMap() {
+        onChanged();;
         if (gadgetCountMap_ == null) {
           gadgetCountMap_ = com.google.protobuf.MapField.newMapField(
               GadgetCountMapDefaultEntryHolder.defaultEntry);
@@ -1080,16 +1106,16 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
         if (!gadgetCountMap_.isMutable()) {
           gadgetCountMap_ = gadgetCountMap_.copy();
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
         return gadgetCountMap_;
       }
+
       public int getGadgetCountMapCount() {
         return internalGetGadgetCountMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
        */
+
       @java.lang.Override
       public boolean containsGadgetCountMap(
           int key) {
@@ -1108,6 +1134,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getGadgetCountMapMap() {
         return internalGetGadgetCountMap().getMap();
       }
@@ -1115,6 +1142,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
        */
       @java.lang.Override
+
       public int getGadgetCountMapOrDefault(
           int key,
           int defaultValue) {
@@ -1127,6 +1155,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
        */
       @java.lang.Override
+
       public int getGadgetCountMapOrThrow(
           int key) {
         
@@ -1137,8 +1166,8 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearGadgetCountMap() {
-        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableGadgetCountMap().getMutableMap()
             .clear();
         return this;
@@ -1146,6 +1175,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
        */
+
       public Builder removeGadgetCountMap(
           int key) {
         
@@ -1158,8 +1188,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableGadgetCountMap() {
-        bitField0_ |= 0x00000004;
+      getMutableGadgetCountMap() {
         return internalGetMutableGadgetCountMap().getMutableMap();
       }
       /**
@@ -1172,17 +1201,16 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
         
         internalGetMutableGadgetCountMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; gadget_count_map = 3;</code>
        */
+
       public Builder putAllGadgetCountMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableGadgetCountMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000004;
         return this;
       }
 
@@ -1203,7 +1231,6 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       public Builder setUnk3300CNGOBOFDEOE(int value) {
         
         unk3300CNGOBOFDEOE_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1212,7 +1239,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CNGOBOFDEOE() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300CNGOBOFDEOE_ = 0;
         onChanged();
         return this;
@@ -1235,7 +1262,6 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       public Builder setUnk3300NKGFKLGDFAC(int value) {
         
         unk3300NKGFKLGDFAC_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1244,7 +1270,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NKGFKLGDFAC() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300NKGFKLGDFAC_ = 0;
         onChanged();
         return this;
@@ -1258,7 +1284,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        * @return Whether the playerInfo field is set.
        */
       public boolean hasPlayerInfo() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return playerInfoBuilder_ != null || playerInfo_ != null;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 2;</code>
@@ -1280,11 +1306,11 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
             throw new NullPointerException();
           }
           playerInfo_ = value;
+          onChanged();
         } else {
           playerInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1294,11 +1320,11 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
           emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder builderForValue) {
         if (playerInfoBuilder_ == null) {
           playerInfo_ = builderForValue.build();
+          onChanged();
         } else {
           playerInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1306,38 +1332,38 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        */
       public Builder mergePlayerInfo(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
         if (playerInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            playerInfo_ != null &&
-            playerInfo_ != emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance()) {
-            getPlayerInfoBuilder().mergeFrom(value);
+          if (playerInfo_ != null) {
+            playerInfo_ =
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.newBuilder(playerInfo_).mergeFrom(value).buildPartial();
           } else {
             playerInfo_ = value;
           }
+          onChanged();
         } else {
           playerInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 2;</code>
        */
       public Builder clearPlayerInfo() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        playerInfo_ = null;
-        if (playerInfoBuilder_ != null) {
-          playerInfoBuilder_.dispose();
+        if (playerInfoBuilder_ == null) {
+          playerInfo_ = null;
+          onChanged();
+        } else {
+          playerInfo_ = null;
           playerInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 2;</code>
        */
       public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder getPlayerInfoBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getPlayerInfoFieldBuilder().getBuilder();
       }
@@ -1386,7 +1412,6 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       public Builder setDamage(float value) {
         
         damage_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1395,7 +1420,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDamage() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         damage_ = 0F;
         onChanged();
         return this;
@@ -1418,7 +1443,6 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       public Builder setUnk3300BJHCDKNFDFN(int value) {
         
         unk3300BJHCDKNFDFN_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1427,7 +1451,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BJHCDKNFDFN() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         unk3300BJHCDKNFDFN_ = 0;
         onChanged();
         return this;
@@ -1436,9 +1460,9 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_ =
         java.util.Collections.emptyList();
       private void ensureCardListIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>(cardList_);
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1588,7 +1612,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
       public Builder clearCardList() {
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           cardListBuilder_.clear();
@@ -1665,7 +1689,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
           cardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder>(
                   cardList_,
-                  ((bitField0_ & 0x00000100) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           cardList_ = null;
@@ -1705,18 +1729,7 @@ public final class BounceConjuringGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BounceConjuringGallerySettleInfo(input, extensionRegistry);
       }
     };
 

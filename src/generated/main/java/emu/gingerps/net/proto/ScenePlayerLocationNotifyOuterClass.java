@@ -111,6 +111,73 @@ public final class ScenePlayerLocationNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ScenePlayerLocationNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                playerLocList_ = new java.util.ArrayList<emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              playerLocList_.add(
+                  input.readMessage(emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                vehicleLocList_ = new java.util.ArrayList<emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              vehicleLocList_.add(
+                  input.readMessage(emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 88: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          playerLocList_ = java.util.Collections.unmodifiableList(playerLocList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          vehicleLocList_ = java.util.Collections.unmodifiableList(vehicleLocList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayerLocationNotifyOuterClass.internal_static_ScenePlayerLocationNotify_descriptor;
@@ -125,7 +192,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 11;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 11;</code>
      * @return The sceneId.
@@ -136,7 +203,6 @@ public final class ScenePlayerLocationNotifyOuterClass {
     }
 
     public static final int VEHICLE_LOC_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo> vehicleLocList_;
     /**
      * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
@@ -177,7 +243,6 @@ public final class ScenePlayerLocationNotifyOuterClass {
     }
 
     public static final int PLAYER_LOC_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> playerLocList_;
     /**
      * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
@@ -240,7 +305,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
       if (sceneId_ != 0) {
         output.writeUInt32(11, sceneId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -261,7 +326,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, sceneId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -282,7 +347,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
           .equals(other.getVehicleLocListList())) return false;
       if (!getPlayerLocListList()
           .equals(other.getPlayerLocListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -303,7 +368,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         hash = (37 * hash) + PLAYER_LOC_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerLocListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -430,33 +495,38 @@ public final class ScenePlayerLocationNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getVehicleLocListFieldBuilder();
+          getPlayerLocListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         sceneId_ = 0;
+
         if (vehicleLocListBuilder_ == null) {
           vehicleLocList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          vehicleLocList_ = null;
           vehicleLocListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (playerLocListBuilder_ == null) {
           playerLocList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          playerLocList_ = null;
           playerLocListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -483,38 +553,28 @@ public final class ScenePlayerLocationNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify buildPartial() {
         emu.gingerps.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify result = new emu.gingerps.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.sceneId_ = sceneId_;
         if (vehicleLocListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             vehicleLocList_ = java.util.Collections.unmodifiableList(vehicleLocList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.vehicleLocList_ = vehicleLocList_;
         } else {
           result.vehicleLocList_ = vehicleLocListBuilder_.build();
         }
         if (playerLocListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             playerLocList_ = java.util.Collections.unmodifiableList(playerLocList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.playerLocList_ = playerLocList_;
         } else {
           result.playerLocList_ = playerLocListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -568,7 +628,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
           if (!other.vehicleLocList_.isEmpty()) {
             if (vehicleLocList_.isEmpty()) {
               vehicleLocList_ = other.vehicleLocList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureVehicleLocListIsMutable();
               vehicleLocList_.addAll(other.vehicleLocList_);
@@ -581,7 +641,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
               vehicleLocListBuilder_.dispose();
               vehicleLocListBuilder_ = null;
               vehicleLocList_ = other.vehicleLocList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               vehicleLocListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getVehicleLocListFieldBuilder() : null;
@@ -594,7 +654,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
           if (!other.playerLocList_.isEmpty()) {
             if (playerLocList_.isEmpty()) {
               playerLocList_ = other.playerLocList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensurePlayerLocListIsMutable();
               playerLocList_.addAll(other.playerLocList_);
@@ -607,7 +667,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
               playerLocListBuilder_.dispose();
               playerLocListBuilder_ = null;
               playerLocList_ = other.playerLocList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               playerLocListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayerLocListFieldBuilder() : null;
@@ -616,7 +676,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -631,61 +691,17 @@ public final class ScenePlayerLocationNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 34: {
-                emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(),
-                        extensionRegistry);
-                if (playerLocListBuilder_ == null) {
-                  ensurePlayerLocListIsMutable();
-                  playerLocList_.add(m);
-                } else {
-                  playerLocListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 50: {
-                emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.parser(),
-                        extensionRegistry);
-                if (vehicleLocListBuilder_ == null) {
-                  ensureVehicleLocListIsMutable();
-                  vehicleLocList_.add(m);
-                } else {
-                  vehicleLocListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 88: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -707,7 +723,6 @@ public final class ScenePlayerLocationNotifyOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -716,7 +731,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -725,9 +740,9 @@ public final class ScenePlayerLocationNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo> vehicleLocList_ =
         java.util.Collections.emptyList();
       private void ensureVehicleLocListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           vehicleLocList_ = new java.util.ArrayList<emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo>(vehicleLocList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -877,7 +892,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
       public Builder clearVehicleLocList() {
         if (vehicleLocListBuilder_ == null) {
           vehicleLocList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           vehicleLocListBuilder_.clear();
@@ -954,7 +969,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
           vehicleLocListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo, emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.Builder, emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfoOrBuilder>(
                   vehicleLocList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           vehicleLocList_ = null;
@@ -965,9 +980,9 @@ public final class ScenePlayerLocationNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> playerLocList_ =
         java.util.Collections.emptyList();
       private void ensurePlayerLocListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           playerLocList_ = new java.util.ArrayList<emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo>(playerLocList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1117,7 +1132,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
       public Builder clearPlayerLocList() {
         if (playerLocListBuilder_ == null) {
           playerLocList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           playerLocListBuilder_.clear();
@@ -1194,7 +1209,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
           playerLocListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo, emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder, emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder>(
                   playerLocList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           playerLocList_ = null;
@@ -1234,18 +1249,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ScenePlayerLocationNotify(input, extensionRegistry);
       }
     };
 

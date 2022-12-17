@@ -130,6 +130,124 @@ public final class MechanicusInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MechanicusInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              mechanicusId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300KJLGFEPIENG_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unk3300KJLGFEPIENG_.addInt(input.readUInt32());
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300KJLGFEPIENG_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300KJLGFEPIENG_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 56: {
+
+              isFinishTeachDungeon_ = input.readBool();
+              break;
+            }
+            case 72: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300EEBEOCMAIKN_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unk3300EEBEOCMAIKN_.addInt(input.readUInt32());
+              break;
+            }
+            case 74: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300EEBEOCMAIKN_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300EEBEOCMAIKN_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 80: {
+
+              coin_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              punishOverTime_ = input.readUInt32();
+              break;
+            }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                gearLevelPairList_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              gearLevelPairList_.add(
+                  input.readMessage(emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unk3300KJLGFEPIENG_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          unk3300EEBEOCMAIKN_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          gearLevelPairList_ = java.util.Collections.unmodifiableList(gearLevelPairList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MechanicusInfoOuterClass.internal_static_MechanicusInfo_descriptor;
@@ -144,7 +262,7 @@ public final class MechanicusInfoOuterClass {
     }
 
     public static final int MECHANICUS_ID_FIELD_NUMBER = 1;
-    private int mechanicusId_ = 0;
+    private int mechanicusId_;
     /**
      * <code>uint32 mechanicus_id = 1;</code>
      * @return The mechanicusId.
@@ -155,7 +273,7 @@ public final class MechanicusInfoOuterClass {
     }
 
     public static final int PUNISH_OVER_TIME_FIELD_NUMBER = 11;
-    private int punishOverTime_ = 0;
+    private int punishOverTime_;
     /**
      * <code>uint32 punish_over_time = 11;</code>
      * @return The punishOverTime.
@@ -166,7 +284,7 @@ public final class MechanicusInfoOuterClass {
     }
 
     public static final int IS_FINISH_TEACH_DUNGEON_FIELD_NUMBER = 7;
-    private boolean isFinishTeachDungeon_ = false;
+    private boolean isFinishTeachDungeon_;
     /**
      * <code>bool is_finish_teach_dungeon = 7;</code>
      * @return The isFinishTeachDungeon.
@@ -177,7 +295,6 @@ public final class MechanicusInfoOuterClass {
     }
 
     public static final int UNK3300_KJLGFEPIENG_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300KJLGFEPIENG_;
     /**
      * <code>repeated uint32 Unk3300_KJLGFEPIENG = 6;</code>
@@ -206,7 +323,6 @@ public final class MechanicusInfoOuterClass {
     private int unk3300KJLGFEPIENGMemoizedSerializedSize = -1;
 
     public static final int UNK3300_EEBEOCMAIKN_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300EEBEOCMAIKN_;
     /**
      * <code>repeated uint32 Unk3300_EEBEOCMAIKN = 9;</code>
@@ -235,7 +351,7 @@ public final class MechanicusInfoOuterClass {
     private int unk3300EEBEOCMAIKNMemoizedSerializedSize = -1;
 
     public static final int COIN_FIELD_NUMBER = 10;
-    private int coin_ = 0;
+    private int coin_;
     /**
      * <code>uint32 coin = 10;</code>
      * @return The coin.
@@ -246,7 +362,6 @@ public final class MechanicusInfoOuterClass {
     }
 
     public static final int GEAR_LEVEL_PAIR_LIST_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> gearLevelPairList_;
     /**
      * <code>repeated .Uint32Pair gear_level_pair_list = 13;</code>
@@ -330,7 +445,7 @@ public final class MechanicusInfoOuterClass {
       for (int i = 0; i < gearLevelPairList_.size(); i++) {
         output.writeMessage(13, gearLevelPairList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -387,7 +502,7 @@ public final class MechanicusInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, gearLevelPairList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -416,7 +531,7 @@ public final class MechanicusInfoOuterClass {
           != other.getCoin()) return false;
       if (!getGearLevelPairListList()
           .equals(other.getGearLevelPairListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -448,7 +563,7 @@ public final class MechanicusInfoOuterClass {
         hash = (37 * hash) + GEAR_LEVEL_PAIR_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getGearLevelPairListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -565,31 +680,41 @@ public final class MechanicusInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MechanicusInfoOuterClass.MechanicusInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getGearLevelPairListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         mechanicusId_ = 0;
+
         punishOverTime_ = 0;
+
         isFinishTeachDungeon_ = false;
+
         unk3300KJLGFEPIENG_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300EEBEOCMAIKN_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         coin_ = 0;
+
         if (gearLevelPairListBuilder_ == null) {
           gearLevelPairList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          gearLevelPairList_ = null;
           gearLevelPairListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -616,48 +741,32 @@ public final class MechanicusInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MechanicusInfoOuterClass.MechanicusInfo buildPartial() {
         emu.gingerps.net.proto.MechanicusInfoOuterClass.MechanicusInfo result = new emu.gingerps.net.proto.MechanicusInfoOuterClass.MechanicusInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MechanicusInfoOuterClass.MechanicusInfo result) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.mechanicusId_ = mechanicusId_;
+        result.punishOverTime_ = punishOverTime_;
+        result.isFinishTeachDungeon_ = isFinishTeachDungeon_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           unk3300KJLGFEPIENG_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.unk3300KJLGFEPIENG_ = unk3300KJLGFEPIENG_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           unk3300EEBEOCMAIKN_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.unk3300EEBEOCMAIKN_ = unk3300EEBEOCMAIKN_;
+        result.coin_ = coin_;
         if (gearLevelPairListBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             gearLevelPairList_ = java.util.Collections.unmodifiableList(gearLevelPairList_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.gearLevelPairList_ = gearLevelPairList_;
         } else {
           result.gearLevelPairList_ = gearLevelPairListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MechanicusInfoOuterClass.MechanicusInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.mechanicusId_ = mechanicusId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.punishOverTime_ = punishOverTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isFinishTeachDungeon_ = isFinishTeachDungeon_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.coin_ = coin_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -716,7 +825,7 @@ public final class MechanicusInfoOuterClass {
         if (!other.unk3300KJLGFEPIENG_.isEmpty()) {
           if (unk3300KJLGFEPIENG_.isEmpty()) {
             unk3300KJLGFEPIENG_ = other.unk3300KJLGFEPIENG_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureUnk3300KJLGFEPIENGIsMutable();
             unk3300KJLGFEPIENG_.addAll(other.unk3300KJLGFEPIENG_);
@@ -726,7 +835,7 @@ public final class MechanicusInfoOuterClass {
         if (!other.unk3300EEBEOCMAIKN_.isEmpty()) {
           if (unk3300EEBEOCMAIKN_.isEmpty()) {
             unk3300EEBEOCMAIKN_ = other.unk3300EEBEOCMAIKN_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureUnk3300EEBEOCMAIKNIsMutable();
             unk3300EEBEOCMAIKN_.addAll(other.unk3300EEBEOCMAIKN_);
@@ -740,7 +849,7 @@ public final class MechanicusInfoOuterClass {
           if (!other.gearLevelPairList_.isEmpty()) {
             if (gearLevelPairList_.isEmpty()) {
               gearLevelPairList_ = other.gearLevelPairList_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureGearLevelPairListIsMutable();
               gearLevelPairList_.addAll(other.gearLevelPairList_);
@@ -753,7 +862,7 @@ public final class MechanicusInfoOuterClass {
               gearLevelPairListBuilder_.dispose();
               gearLevelPairListBuilder_ = null;
               gearLevelPairList_ = other.gearLevelPairList_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000004);
               gearLevelPairListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getGearLevelPairListFieldBuilder() : null;
@@ -762,7 +871,7 @@ public final class MechanicusInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -777,95 +886,17 @@ public final class MechanicusInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MechanicusInfoOuterClass.MechanicusInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                mechanicusId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 48: {
-                int v = input.readUInt32();
-                ensureUnk3300KJLGFEPIENGIsMutable();
-                unk3300KJLGFEPIENG_.addInt(v);
-                break;
-              } // case 48
-              case 50: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300KJLGFEPIENGIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300KJLGFEPIENG_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 50
-              case 56: {
-                isFinishTeachDungeon_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              case 72: {
-                int v = input.readUInt32();
-                ensureUnk3300EEBEOCMAIKNIsMutable();
-                unk3300EEBEOCMAIKN_.addInt(v);
-                break;
-              } // case 72
-              case 74: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300EEBEOCMAIKNIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300EEBEOCMAIKN_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 74
-              case 80: {
-                coin_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 80
-              case 88: {
-                punishOverTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              case 106: {
-                emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(),
-                        extensionRegistry);
-                if (gearLevelPairListBuilder_ == null) {
-                  ensureGearLevelPairListIsMutable();
-                  gearLevelPairList_.add(m);
-                } else {
-                  gearLevelPairListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MechanicusInfoOuterClass.MechanicusInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -887,7 +918,6 @@ public final class MechanicusInfoOuterClass {
       public Builder setMechanicusId(int value) {
         
         mechanicusId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -896,7 +926,7 @@ public final class MechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMechanicusId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         mechanicusId_ = 0;
         onChanged();
         return this;
@@ -919,7 +949,6 @@ public final class MechanicusInfoOuterClass {
       public Builder setPunishOverTime(int value) {
         
         punishOverTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -928,7 +957,7 @@ public final class MechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPunishOverTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         punishOverTime_ = 0;
         onChanged();
         return this;
@@ -951,7 +980,6 @@ public final class MechanicusInfoOuterClass {
       public Builder setIsFinishTeachDungeon(boolean value) {
         
         isFinishTeachDungeon_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -960,7 +988,7 @@ public final class MechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinishTeachDungeon() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isFinishTeachDungeon_ = false;
         onChanged();
         return this;
@@ -968,10 +996,10 @@ public final class MechanicusInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300KJLGFEPIENG_ = emptyIntList();
       private void ensureUnk3300KJLGFEPIENGIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           unk3300KJLGFEPIENG_ = mutableCopy(unk3300KJLGFEPIENG_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_KJLGFEPIENG = 6;</code>
@@ -979,7 +1007,7 @@ public final class MechanicusInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300KJLGFEPIENGList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300KJLGFEPIENG_) : unk3300KJLGFEPIENG_;
       }
       /**
@@ -1005,7 +1033,6 @@ public final class MechanicusInfoOuterClass {
        */
       public Builder setUnk3300KJLGFEPIENG(
           int index, int value) {
-        
         ensureUnk3300KJLGFEPIENGIsMutable();
         unk3300KJLGFEPIENG_.setInt(index, value);
         onChanged();
@@ -1017,7 +1044,6 @@ public final class MechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300KJLGFEPIENG(int value) {
-        
         ensureUnk3300KJLGFEPIENGIsMutable();
         unk3300KJLGFEPIENG_.addInt(value);
         onChanged();
@@ -1042,17 +1068,17 @@ public final class MechanicusInfoOuterClass {
        */
       public Builder clearUnk3300KJLGFEPIENG() {
         unk3300KJLGFEPIENG_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList unk3300EEBEOCMAIKN_ = emptyIntList();
       private void ensureUnk3300EEBEOCMAIKNIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           unk3300EEBEOCMAIKN_ = mutableCopy(unk3300EEBEOCMAIKN_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_EEBEOCMAIKN = 9;</code>
@@ -1060,7 +1086,7 @@ public final class MechanicusInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300EEBEOCMAIKNList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300EEBEOCMAIKN_) : unk3300EEBEOCMAIKN_;
       }
       /**
@@ -1086,7 +1112,6 @@ public final class MechanicusInfoOuterClass {
        */
       public Builder setUnk3300EEBEOCMAIKN(
           int index, int value) {
-        
         ensureUnk3300EEBEOCMAIKNIsMutable();
         unk3300EEBEOCMAIKN_.setInt(index, value);
         onChanged();
@@ -1098,7 +1123,6 @@ public final class MechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300EEBEOCMAIKN(int value) {
-        
         ensureUnk3300EEBEOCMAIKNIsMutable();
         unk3300EEBEOCMAIKN_.addInt(value);
         onChanged();
@@ -1123,7 +1147,7 @@ public final class MechanicusInfoOuterClass {
        */
       public Builder clearUnk3300EEBEOCMAIKN() {
         unk3300EEBEOCMAIKN_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1145,7 +1169,6 @@ public final class MechanicusInfoOuterClass {
       public Builder setCoin(int value) {
         
         coin_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1154,7 +1177,7 @@ public final class MechanicusInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoin() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         coin_ = 0;
         onChanged();
         return this;
@@ -1163,9 +1186,9 @@ public final class MechanicusInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> gearLevelPairList_ =
         java.util.Collections.emptyList();
       private void ensureGearLevelPairListIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           gearLevelPairList_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>(gearLevelPairList_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1315,7 +1338,7 @@ public final class MechanicusInfoOuterClass {
       public Builder clearGearLevelPairList() {
         if (gearLevelPairListBuilder_ == null) {
           gearLevelPairList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           gearLevelPairListBuilder_.clear();
@@ -1392,7 +1415,7 @@ public final class MechanicusInfoOuterClass {
           gearLevelPairListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
                   gearLevelPairList_,
-                  ((bitField0_ & 0x00000040) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           gearLevelPairList_ = null;
@@ -1432,18 +1455,7 @@ public final class MechanicusInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MechanicusInfo(input, extensionRegistry);
       }
     };
 

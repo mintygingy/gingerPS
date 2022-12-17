@@ -101,6 +101,80 @@ public final class ShopMcoinProductOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ShopMcoinProduct(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              productId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              priceTier_ = s;
+              break;
+            }
+            case 24: {
+
+              mcoinBase_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              mcoinNonFirst_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              mcoinFirst_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              boughtNum_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              isAudit_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ShopMcoinProductOuterClass.internal_static_ShopMcoinProduct_descriptor;
@@ -115,8 +189,7 @@ public final class ShopMcoinProductOuterClass {
     }
 
     public static final int PRODUCT_ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object productId_ = "";
+    private volatile java.lang.Object productId_;
     /**
      * <code>string product_id = 1;</code>
      * @return The productId.
@@ -154,8 +227,7 @@ public final class ShopMcoinProductOuterClass {
     }
 
     public static final int PRICE_TIER_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object priceTier_ = "";
+    private volatile java.lang.Object priceTier_;
     /**
      * <code>string price_tier = 2;</code>
      * @return The priceTier.
@@ -193,7 +265,7 @@ public final class ShopMcoinProductOuterClass {
     }
 
     public static final int MCOIN_BASE_FIELD_NUMBER = 3;
-    private int mcoinBase_ = 0;
+    private int mcoinBase_;
     /**
      * <code>uint32 mcoin_base = 3;</code>
      * @return The mcoinBase.
@@ -204,7 +276,7 @@ public final class ShopMcoinProductOuterClass {
     }
 
     public static final int MCOIN_NON_FIRST_FIELD_NUMBER = 4;
-    private int mcoinNonFirst_ = 0;
+    private int mcoinNonFirst_;
     /**
      * <code>uint32 mcoin_non_first = 4;</code>
      * @return The mcoinNonFirst.
@@ -215,7 +287,7 @@ public final class ShopMcoinProductOuterClass {
     }
 
     public static final int MCOIN_FIRST_FIELD_NUMBER = 5;
-    private int mcoinFirst_ = 0;
+    private int mcoinFirst_;
     /**
      * <code>uint32 mcoin_first = 5;</code>
      * @return The mcoinFirst.
@@ -226,7 +298,7 @@ public final class ShopMcoinProductOuterClass {
     }
 
     public static final int BOUGHT_NUM_FIELD_NUMBER = 6;
-    private int boughtNum_ = 0;
+    private int boughtNum_;
     /**
      * <code>uint32 bought_num = 6;</code>
      * @return The boughtNum.
@@ -237,7 +309,7 @@ public final class ShopMcoinProductOuterClass {
     }
 
     public static final int IS_AUDIT_FIELD_NUMBER = 7;
-    private boolean isAudit_ = false;
+    private boolean isAudit_;
     /**
      * <code>bool is_audit = 7;</code>
      * @return The isAudit.
@@ -282,7 +354,7 @@ public final class ShopMcoinProductOuterClass {
       if (isAudit_ != false) {
         output.writeBool(7, isAudit_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -317,7 +389,7 @@ public final class ShopMcoinProductOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, isAudit_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -346,7 +418,7 @@ public final class ShopMcoinProductOuterClass {
           != other.getBoughtNum()) return false;
       if (getIsAudit()
           != other.getIsAudit()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -372,7 +444,7 @@ public final class ShopMcoinProductOuterClass {
       hash = (37 * hash) + IS_AUDIT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAudit());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -489,25 +561,36 @@ public final class ShopMcoinProductOuterClass {
 
       // Construct using emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         productId_ = "";
+
         priceTier_ = "";
+
         mcoinBase_ = 0;
+
         mcoinNonFirst_ = 0;
+
         mcoinFirst_ = 0;
+
         boughtNum_ = 0;
+
         isAudit_ = false;
+
         return this;
       }
 
@@ -534,34 +617,15 @@ public final class ShopMcoinProductOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct buildPartial() {
         emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct result = new emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.productId_ = productId_;
+        result.priceTier_ = priceTier_;
+        result.mcoinBase_ = mcoinBase_;
+        result.mcoinNonFirst_ = mcoinNonFirst_;
+        result.mcoinFirst_ = mcoinFirst_;
+        result.boughtNum_ = boughtNum_;
+        result.isAudit_ = isAudit_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.productId_ = productId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.priceTier_ = priceTier_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.mcoinBase_ = mcoinBase_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.mcoinNonFirst_ = mcoinNonFirst_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.mcoinFirst_ = mcoinFirst_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.boughtNum_ = boughtNum_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.isAudit_ = isAudit_;
-        }
       }
 
       @java.lang.Override
@@ -610,12 +674,10 @@ public final class ShopMcoinProductOuterClass {
         if (other == emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.getDefaultInstance()) return this;
         if (!other.getProductId().isEmpty()) {
           productId_ = other.productId_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getPriceTier().isEmpty()) {
           priceTier_ = other.priceTier_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getMcoinBase() != 0) {
@@ -633,7 +695,7 @@ public final class ShopMcoinProductOuterClass {
         if (other.getIsAudit() != false) {
           setIsAudit(other.getIsAudit());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -648,68 +710,19 @@ public final class ShopMcoinProductOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                productId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                priceTier_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 24: {
-                mcoinBase_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                mcoinNonFirst_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                mcoinFirst_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 48: {
-                boughtNum_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 56: {
-                isAudit_ = input.readBool();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object productId_ = "";
       /**
@@ -752,9 +765,11 @@ public final class ShopMcoinProductOuterClass {
        */
       public Builder setProductId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         productId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -763,8 +778,8 @@ public final class ShopMcoinProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProductId() {
+        
         productId_ = getDefaultInstance().getProductId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -775,10 +790,12 @@ public final class ShopMcoinProductOuterClass {
        */
       public Builder setProductIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         productId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -824,9 +841,11 @@ public final class ShopMcoinProductOuterClass {
        */
       public Builder setPriceTier(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         priceTier_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -835,8 +854,8 @@ public final class ShopMcoinProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPriceTier() {
+        
         priceTier_ = getDefaultInstance().getPriceTier();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -847,10 +866,12 @@ public final class ShopMcoinProductOuterClass {
        */
       public Builder setPriceTierBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         priceTier_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -872,7 +893,6 @@ public final class ShopMcoinProductOuterClass {
       public Builder setMcoinBase(int value) {
         
         mcoinBase_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -881,7 +901,7 @@ public final class ShopMcoinProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMcoinBase() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         mcoinBase_ = 0;
         onChanged();
         return this;
@@ -904,7 +924,6 @@ public final class ShopMcoinProductOuterClass {
       public Builder setMcoinNonFirst(int value) {
         
         mcoinNonFirst_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -913,7 +932,7 @@ public final class ShopMcoinProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMcoinNonFirst() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         mcoinNonFirst_ = 0;
         onChanged();
         return this;
@@ -936,7 +955,6 @@ public final class ShopMcoinProductOuterClass {
       public Builder setMcoinFirst(int value) {
         
         mcoinFirst_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -945,7 +963,7 @@ public final class ShopMcoinProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMcoinFirst() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         mcoinFirst_ = 0;
         onChanged();
         return this;
@@ -968,7 +986,6 @@ public final class ShopMcoinProductOuterClass {
       public Builder setBoughtNum(int value) {
         
         boughtNum_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -977,7 +994,7 @@ public final class ShopMcoinProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBoughtNum() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         boughtNum_ = 0;
         onChanged();
         return this;
@@ -1000,7 +1017,6 @@ public final class ShopMcoinProductOuterClass {
       public Builder setIsAudit(boolean value) {
         
         isAudit_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1009,7 +1025,7 @@ public final class ShopMcoinProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAudit() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         isAudit_ = false;
         onChanged();
         return this;
@@ -1047,18 +1063,7 @@ public final class ShopMcoinProductOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ShopMcoinProduct(input, extensionRegistry);
       }
     };
 

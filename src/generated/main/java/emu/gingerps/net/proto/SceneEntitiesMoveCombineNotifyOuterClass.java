@@ -79,6 +79,56 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneEntitiesMoveCombineNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                entityMoveInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              entityMoveInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          entityMoveInfoList_ = java.util.Collections.unmodifiableList(entityMoveInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneEntitiesMoveCombineNotifyOuterClass.internal_static_SceneEntitiesMoveCombineNotify_descriptor;
@@ -93,7 +143,6 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
     }
 
     public static final int ENTITY_MOVE_INFO_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo> entityMoveInfoList_;
     /**
      * <code>repeated .EntityMoveInfo entity_move_info_list = 14;</code>
@@ -150,7 +199,7 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
       for (int i = 0; i < entityMoveInfoList_.size(); i++) {
         output.writeMessage(14, entityMoveInfoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +212,7 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, entityMoveInfoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -180,7 +229,7 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
 
       if (!getEntityMoveInfoListList()
           .equals(other.getEntityMoveInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -195,7 +244,7 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
         hash = (37 * hash) + ENTITY_MOVE_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEntityMoveInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -321,25 +370,29 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneEntitiesMoveCombineNotifyOuterClass.SceneEntitiesMoveCombineNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getEntityMoveInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (entityMoveInfoListBuilder_ == null) {
           entityMoveInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          entityMoveInfoList_ = null;
           entityMoveInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -366,13 +419,7 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneEntitiesMoveCombineNotifyOuterClass.SceneEntitiesMoveCombineNotify buildPartial() {
         emu.gingerps.net.proto.SceneEntitiesMoveCombineNotifyOuterClass.SceneEntitiesMoveCombineNotify result = new emu.gingerps.net.proto.SceneEntitiesMoveCombineNotifyOuterClass.SceneEntitiesMoveCombineNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SceneEntitiesMoveCombineNotifyOuterClass.SceneEntitiesMoveCombineNotify result) {
+        int from_bitField0_ = bitField0_;
         if (entityMoveInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             entityMoveInfoList_ = java.util.Collections.unmodifiableList(entityMoveInfoList_);
@@ -382,10 +429,8 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
         } else {
           result.entityMoveInfoList_ = entityMoveInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneEntitiesMoveCombineNotifyOuterClass.SceneEntitiesMoveCombineNotify result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -458,7 +503,7 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -473,43 +518,17 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneEntitiesMoveCombineNotifyOuterClass.SceneEntitiesMoveCombineNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 114: {
-                emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo.parser(),
-                        extensionRegistry);
-                if (entityMoveInfoListBuilder_ == null) {
-                  ensureEntityMoveInfoListIsMutable();
-                  entityMoveInfoList_.add(m);
-                } else {
-                  entityMoveInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneEntitiesMoveCombineNotifyOuterClass.SceneEntitiesMoveCombineNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -786,18 +805,7 @@ public final class SceneEntitiesMoveCombineNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneEntitiesMoveCombineNotify(input, extensionRegistry);
       }
     };
 

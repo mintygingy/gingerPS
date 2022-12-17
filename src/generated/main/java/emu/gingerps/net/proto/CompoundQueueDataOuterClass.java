@@ -69,6 +69,63 @@ public final class CompoundQueueDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CompoundQueueData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              waitCount_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              outputCount_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              compoundId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              outputTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CompoundQueueDataOuterClass.internal_static_CompoundQueueData_descriptor;
@@ -83,7 +140,7 @@ public final class CompoundQueueDataOuterClass {
     }
 
     public static final int WAIT_COUNT_FIELD_NUMBER = 5;
-    private int waitCount_ = 0;
+    private int waitCount_;
     /**
      * <code>uint32 wait_count = 5;</code>
      * @return The waitCount.
@@ -94,7 +151,7 @@ public final class CompoundQueueDataOuterClass {
     }
 
     public static final int OUTPUT_TIME_FIELD_NUMBER = 14;
-    private int outputTime_ = 0;
+    private int outputTime_;
     /**
      * <code>uint32 output_time = 14;</code>
      * @return The outputTime.
@@ -105,7 +162,7 @@ public final class CompoundQueueDataOuterClass {
     }
 
     public static final int OUTPUT_COUNT_FIELD_NUMBER = 10;
-    private int outputCount_ = 0;
+    private int outputCount_;
     /**
      * <code>uint32 output_count = 10;</code>
      * @return The outputCount.
@@ -116,7 +173,7 @@ public final class CompoundQueueDataOuterClass {
     }
 
     public static final int COMPOUND_ID_FIELD_NUMBER = 12;
-    private int compoundId_ = 0;
+    private int compoundId_;
     /**
      * <code>uint32 compound_id = 12;</code>
      * @return The compoundId.
@@ -152,7 +209,7 @@ public final class CompoundQueueDataOuterClass {
       if (outputTime_ != 0) {
         output.writeUInt32(14, outputTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class CompoundQueueDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, outputTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -200,7 +257,7 @@ public final class CompoundQueueDataOuterClass {
           != other.getOutputCount()) return false;
       if (getCompoundId()
           != other.getCompoundId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -219,7 +276,7 @@ public final class CompoundQueueDataOuterClass {
       hash = (53 * hash) + getOutputCount();
       hash = (37 * hash) + COMPOUND_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCompoundId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -336,22 +393,30 @@ public final class CompoundQueueDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         waitCount_ = 0;
+
         outputTime_ = 0;
+
         outputCount_ = 0;
+
         compoundId_ = 0;
+
         return this;
       }
 
@@ -378,25 +443,12 @@ public final class CompoundQueueDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData buildPartial() {
         emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData result = new emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.waitCount_ = waitCount_;
+        result.outputTime_ = outputTime_;
+        result.outputCount_ = outputCount_;
+        result.compoundId_ = compoundId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.waitCount_ = waitCount_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.outputTime_ = outputTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.outputCount_ = outputCount_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.compoundId_ = compoundId_;
-        }
       }
 
       @java.lang.Override
@@ -455,7 +507,7 @@ public final class CompoundQueueDataOuterClass {
         if (other.getCompoundId() != 0) {
           setCompoundId(other.getCompoundId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -470,53 +522,19 @@ public final class CompoundQueueDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                waitCount_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              case 80: {
-                outputCount_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              case 96: {
-                compoundId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              case 112: {
-                outputTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int waitCount_ ;
       /**
@@ -535,7 +553,6 @@ public final class CompoundQueueDataOuterClass {
       public Builder setWaitCount(int value) {
         
         waitCount_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +561,7 @@ public final class CompoundQueueDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWaitCount() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         waitCount_ = 0;
         onChanged();
         return this;
@@ -567,7 +584,6 @@ public final class CompoundQueueDataOuterClass {
       public Builder setOutputTime(int value) {
         
         outputTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -576,7 +592,7 @@ public final class CompoundQueueDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOutputTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         outputTime_ = 0;
         onChanged();
         return this;
@@ -599,7 +615,6 @@ public final class CompoundQueueDataOuterClass {
       public Builder setOutputCount(int value) {
         
         outputCount_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -608,7 +623,7 @@ public final class CompoundQueueDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOutputCount() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         outputCount_ = 0;
         onChanged();
         return this;
@@ -631,7 +646,6 @@ public final class CompoundQueueDataOuterClass {
       public Builder setCompoundId(int value) {
         
         compoundId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -640,7 +654,7 @@ public final class CompoundQueueDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCompoundId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         compoundId_ = 0;
         onChanged();
         return this;
@@ -678,18 +692,7 @@ public final class CompoundQueueDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CompoundQueueData(input, extensionRegistry);
       }
     };
 

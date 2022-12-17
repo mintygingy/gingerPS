@@ -67,6 +67,53 @@ public final class PrivateChatRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PrivateChatRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              chatForbiddenEndtime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PrivateChatRspOuterClass.internal_static_PrivateChatRsp_descriptor;
@@ -81,7 +128,7 @@ public final class PrivateChatRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -92,7 +139,7 @@ public final class PrivateChatRspOuterClass {
     }
 
     public static final int CHAT_FORBIDDEN_ENDTIME_FIELD_NUMBER = 6;
-    private int chatForbiddenEndtime_ = 0;
+    private int chatForbiddenEndtime_;
     /**
      * <code>uint32 chat_forbidden_endtime = 6;</code>
      * @return The chatForbiddenEndtime.
@@ -122,7 +169,7 @@ public final class PrivateChatRspOuterClass {
       if (chatForbiddenEndtime_ != 0) {
         output.writeUInt32(6, chatForbiddenEndtime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class PrivateChatRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, chatForbiddenEndtime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class PrivateChatRspOuterClass {
           != other.getRetcode()) return false;
       if (getChatForbiddenEndtime()
           != other.getChatForbiddenEndtime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -173,7 +220,7 @@ public final class PrivateChatRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + CHAT_FORBIDDEN_ENDTIME_FIELD_NUMBER;
       hash = (53 * hash) + getChatForbiddenEndtime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -300,20 +347,26 @@ public final class PrivateChatRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.PrivateChatRspOuterClass.PrivateChatRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         chatForbiddenEndtime_ = 0;
+
         return this;
       }
 
@@ -340,19 +393,10 @@ public final class PrivateChatRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PrivateChatRspOuterClass.PrivateChatRsp buildPartial() {
         emu.gingerps.net.proto.PrivateChatRspOuterClass.PrivateChatRsp result = new emu.gingerps.net.proto.PrivateChatRspOuterClass.PrivateChatRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        result.chatForbiddenEndtime_ = chatForbiddenEndtime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PrivateChatRspOuterClass.PrivateChatRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.chatForbiddenEndtime_ = chatForbiddenEndtime_;
-        }
       }
 
       @java.lang.Override
@@ -405,7 +449,7 @@ public final class PrivateChatRspOuterClass {
         if (other.getChatForbiddenEndtime() != 0) {
           setChatForbiddenEndtime(other.getChatForbiddenEndtime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,43 +464,19 @@ public final class PrivateChatRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PrivateChatRspOuterClass.PrivateChatRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 48: {
-                chatForbiddenEndtime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PrivateChatRspOuterClass.PrivateChatRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -475,7 +495,6 @@ public final class PrivateChatRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -484,7 +503,7 @@ public final class PrivateChatRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -507,7 +526,6 @@ public final class PrivateChatRspOuterClass {
       public Builder setChatForbiddenEndtime(int value) {
         
         chatForbiddenEndtime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -516,7 +534,7 @@ public final class PrivateChatRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChatForbiddenEndtime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         chatForbiddenEndtime_ = 0;
         onChanged();
         return this;
@@ -554,18 +572,7 @@ public final class PrivateChatRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PrivateChatRsp(input, extensionRegistry);
       }
     };
 

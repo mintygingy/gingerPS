@@ -69,6 +69,59 @@ public final class GCGMsgSelectOnStageOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGMsgSelectOnStage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              cardGuid_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 96: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.internal_static_GCGMsgSelectOnStage_descriptor;
@@ -83,7 +136,7 @@ public final class GCGMsgSelectOnStageOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 11;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.GCGReason reason = 11;</code>
      * @return The enum numeric value on the wire for reason.
@@ -96,12 +149,13 @@ public final class GCGMsgSelectOnStageOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason getReason() {
-      emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 12;
-    private int controllerId_ = 0;
+    private int controllerId_;
     /**
      * <code>uint32 controller_id = 12;</code>
      * @return The controllerId.
@@ -112,7 +166,7 @@ public final class GCGMsgSelectOnStageOuterClass {
     }
 
     public static final int CARD_GUID_FIELD_NUMBER = 4;
-    private int cardGuid_ = 0;
+    private int cardGuid_;
     /**
      * <code>uint32 card_guid = 4;</code>
      * @return The cardGuid.
@@ -145,7 +199,7 @@ public final class GCGMsgSelectOnStageOuterClass {
       if (controllerId_ != 0) {
         output.writeUInt32(12, controllerId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -166,7 +220,7 @@ public final class GCGMsgSelectOnStageOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, controllerId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -186,7 +240,7 @@ public final class GCGMsgSelectOnStageOuterClass {
           != other.getControllerId()) return false;
       if (getCardGuid()
           != other.getCardGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -203,7 +257,7 @@ public final class GCGMsgSelectOnStageOuterClass {
       hash = (53 * hash) + getControllerId();
       hash = (37 * hash) + CARD_GUID_FIELD_NUMBER;
       hash = (53 * hash) + getCardGuid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -320,21 +374,28 @@ public final class GCGMsgSelectOnStageOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.GCGMsgSelectOnStage.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         reason_ = 0;
+
         controllerId_ = 0;
+
         cardGuid_ = 0;
+
         return this;
       }
 
@@ -361,22 +422,11 @@ public final class GCGMsgSelectOnStageOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.GCGMsgSelectOnStage buildPartial() {
         emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.GCGMsgSelectOnStage result = new emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.GCGMsgSelectOnStage(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.reason_ = reason_;
+        result.controllerId_ = controllerId_;
+        result.cardGuid_ = cardGuid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.GCGMsgSelectOnStage result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.controllerId_ = controllerId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.cardGuid_ = cardGuid_;
-        }
       }
 
       @java.lang.Override
@@ -432,7 +482,7 @@ public final class GCGMsgSelectOnStageOuterClass {
         if (other.getCardGuid() != 0) {
           setCardGuid(other.getCardGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -447,48 +497,19 @@ public final class GCGMsgSelectOnStageOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.GCGMsgSelectOnStage parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                cardGuid_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 88: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 96: {
-                controllerId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.GCGMsgSelectOnStage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int reason_ = 0;
       /**
@@ -504,8 +525,8 @@ public final class GCGMsgSelectOnStageOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -515,7 +536,8 @@ public final class GCGMsgSelectOnStageOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason getReason() {
-        emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
       }
       /**
@@ -527,7 +549,7 @@ public final class GCGMsgSelectOnStageOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -537,7 +559,7 @@ public final class GCGMsgSelectOnStageOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -560,7 +582,6 @@ public final class GCGMsgSelectOnStageOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -569,7 +590,7 @@ public final class GCGMsgSelectOnStageOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         controllerId_ = 0;
         onChanged();
         return this;
@@ -592,7 +613,6 @@ public final class GCGMsgSelectOnStageOuterClass {
       public Builder setCardGuid(int value) {
         
         cardGuid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -601,7 +621,7 @@ public final class GCGMsgSelectOnStageOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardGuid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         cardGuid_ = 0;
         onChanged();
         return this;
@@ -639,18 +659,7 @@ public final class GCGMsgSelectOnStageOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGMsgSelectOnStage(input, extensionRegistry);
       }
     };
 

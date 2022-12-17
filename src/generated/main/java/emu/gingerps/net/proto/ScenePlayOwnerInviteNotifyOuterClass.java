@@ -73,6 +73,58 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ScenePlayOwnerInviteNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              playId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              inviteCd_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              isRemainReward_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayOwnerInviteNotifyOuterClass.internal_static_ScenePlayOwnerInviteNotify_descriptor;
@@ -87,7 +139,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
     }
 
     public static final int INVITE_CD_FIELD_NUMBER = 12;
-    private int inviteCd_ = 0;
+    private int inviteCd_;
     /**
      * <code>uint32 invite_cd = 12;</code>
      * @return The inviteCd.
@@ -98,7 +150,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
     }
 
     public static final int PLAY_ID_FIELD_NUMBER = 6;
-    private int playId_ = 0;
+    private int playId_;
     /**
      * <code>uint32 play_id = 6;</code>
      * @return The playId.
@@ -109,7 +161,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
     }
 
     public static final int IS_REMAIN_REWARD_FIELD_NUMBER = 14;
-    private boolean isRemainReward_ = false;
+    private boolean isRemainReward_;
     /**
      * <code>bool is_remain_reward = 14;</code>
      * @return The isRemainReward.
@@ -142,7 +194,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       if (isRemainReward_ != false) {
         output.writeBool(14, isRemainReward_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +215,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isRemainReward_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -184,7 +236,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
           != other.getPlayId()) return false;
       if (getIsRemainReward()
           != other.getIsRemainReward()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +254,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       hash = (37 * hash) + IS_REMAIN_REWARD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsRemainReward());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,21 +381,28 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         inviteCd_ = 0;
+
         playId_ = 0;
+
         isRemainReward_ = false;
+
         return this;
       }
 
@@ -370,22 +429,11 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify buildPartial() {
         emu.gingerps.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify result = new emu.gingerps.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.inviteCd_ = inviteCd_;
+        result.playId_ = playId_;
+        result.isRemainReward_ = isRemainReward_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.inviteCd_ = inviteCd_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.playId_ = playId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isRemainReward_ = isRemainReward_;
-        }
       }
 
       @java.lang.Override
@@ -441,7 +489,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
         if (other.getIsRemainReward() != false) {
           setIsRemainReward(other.getIsRemainReward());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -456,48 +504,19 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                playId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 96: {
-                inviteCd_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              case 112: {
-                isRemainReward_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int inviteCd_ ;
       /**
@@ -516,7 +535,6 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       public Builder setInviteCd(int value) {
         
         inviteCd_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -525,7 +543,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInviteCd() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         inviteCd_ = 0;
         onChanged();
         return this;
@@ -548,7 +566,6 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       public Builder setPlayId(int value) {
         
         playId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -557,7 +574,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         playId_ = 0;
         onChanged();
         return this;
@@ -580,7 +597,6 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       public Builder setIsRemainReward(boolean value) {
         
         isRemainReward_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -589,7 +605,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsRemainReward() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isRemainReward_ = false;
         onChanged();
         return this;
@@ -627,18 +643,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ScenePlayOwnerInviteNotify(input, extensionRegistry);
       }
     };
 

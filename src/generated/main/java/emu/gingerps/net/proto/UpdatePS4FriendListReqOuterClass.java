@@ -82,6 +82,56 @@ public final class UpdatePS4FriendListReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private UpdatePS4FriendListReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                psnIdList_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              psnIdList_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          psnIdList_ = psnIdList_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.UpdatePS4FriendListReqOuterClass.internal_static_UpdatePS4FriendListReq_descriptor;
@@ -96,7 +146,6 @@ public final class UpdatePS4FriendListReqOuterClass {
     }
 
     public static final int PSN_ID_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList psnIdList_;
     /**
      * <code>repeated string psn_id_list = 3;</code>
@@ -148,7 +197,7 @@ public final class UpdatePS4FriendListReqOuterClass {
       for (int i = 0; i < psnIdList_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, psnIdList_.getRaw(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -165,7 +214,7 @@ public final class UpdatePS4FriendListReqOuterClass {
         size += dataSize;
         size += 1 * getPsnIdListList().size();
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -182,7 +231,7 @@ public final class UpdatePS4FriendListReqOuterClass {
 
       if (!getPsnIdListList()
           .equals(other.getPsnIdListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -197,7 +246,7 @@ public final class UpdatePS4FriendListReqOuterClass {
         hash = (37 * hash) + PSN_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPsnIdListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -325,18 +374,22 @@ public final class UpdatePS4FriendListReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.UpdatePS4FriendListReqOuterClass.UpdatePS4FriendListReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         psnIdList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -365,22 +418,14 @@ public final class UpdatePS4FriendListReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.UpdatePS4FriendListReqOuterClass.UpdatePS4FriendListReq buildPartial() {
         emu.gingerps.net.proto.UpdatePS4FriendListReqOuterClass.UpdatePS4FriendListReq result = new emu.gingerps.net.proto.UpdatePS4FriendListReqOuterClass.UpdatePS4FriendListReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.UpdatePS4FriendListReqOuterClass.UpdatePS4FriendListReq result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           psnIdList_ = psnIdList_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.psnIdList_ = psnIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.UpdatePS4FriendListReqOuterClass.UpdatePS4FriendListReq result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -437,7 +482,7 @@ public final class UpdatePS4FriendListReqOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -452,36 +497,17 @@ public final class UpdatePS4FriendListReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.UpdatePS4FriendListReqOuterClass.UpdatePS4FriendListReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensurePsnIdListIsMutable();
-                psnIdList_.add(s);
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.UpdatePS4FriendListReqOuterClass.UpdatePS4FriendListReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -533,8 +559,10 @@ public final class UpdatePS4FriendListReqOuterClass {
        */
       public Builder setPsnIdList(
           int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensurePsnIdListIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePsnIdListIsMutable();
         psnIdList_.set(index, value);
         onChanged();
         return this;
@@ -546,8 +574,10 @@ public final class UpdatePS4FriendListReqOuterClass {
        */
       public Builder addPsnIdList(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensurePsnIdListIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePsnIdListIsMutable();
         psnIdList_.add(value);
         onChanged();
         return this;
@@ -582,8 +612,10 @@ public final class UpdatePS4FriendListReqOuterClass {
        */
       public Builder addPsnIdListBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         ensurePsnIdListIsMutable();
         psnIdList_.add(value);
         onChanged();
@@ -622,18 +654,7 @@ public final class UpdatePS4FriendListReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new UpdatePS4FriendListReq(input, extensionRegistry);
       }
     };
 

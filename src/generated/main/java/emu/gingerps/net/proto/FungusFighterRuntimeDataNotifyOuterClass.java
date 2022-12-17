@@ -70,6 +70,56 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FungusFighterRuntimeDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 58: {
+              emu.gingerps.net.proto.FungusTrainingProgressDetailOuterClass.FungusTrainingProgressDetail.Builder subBuilder = null;
+              if (progressDetail_ != null) {
+                subBuilder = progressDetail_.toBuilder();
+              }
+              progressDetail_ = input.readMessage(emu.gingerps.net.proto.FungusTrainingProgressDetailOuterClass.FungusTrainingProgressDetail.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(progressDetail_);
+                progressDetail_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FungusFighterRuntimeDataNotifyOuterClass.internal_static_FungusFighterRuntimeDataNotify_descriptor;
@@ -106,7 +156,7 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.FungusTrainingProgressDetailOuterClass.FungusTrainingProgressDetailOrBuilder getProgressDetailOrBuilder() {
-      return progressDetail_ == null ? emu.gingerps.net.proto.FungusTrainingProgressDetailOuterClass.FungusTrainingProgressDetail.getDefaultInstance() : progressDetail_;
+      return getProgressDetail();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -126,7 +176,7 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
       if (progressDetail_ != null) {
         output.writeMessage(7, getProgressDetail());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +189,7 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getProgressDetail());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +209,7 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
         if (!getProgressDetail()
             .equals(other.getProgressDetail())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +224,7 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
         hash = (37 * hash) + PROGRESS_DETAIL_FIELD_NUMBER;
         hash = (53 * hash) + getProgressDetail().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -301,21 +351,26 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.FungusFighterRuntimeDataNotifyOuterClass.FungusFighterRuntimeDataNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        progressDetail_ = null;
-        if (progressDetailBuilder_ != null) {
-          progressDetailBuilder_.dispose();
+        if (progressDetailBuilder_ == null) {
+          progressDetail_ = null;
+        } else {
+          progressDetail_ = null;
           progressDetailBuilder_ = null;
         }
         return this;
@@ -344,18 +399,13 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FungusFighterRuntimeDataNotifyOuterClass.FungusFighterRuntimeDataNotify buildPartial() {
         emu.gingerps.net.proto.FungusFighterRuntimeDataNotifyOuterClass.FungusFighterRuntimeDataNotify result = new emu.gingerps.net.proto.FungusFighterRuntimeDataNotifyOuterClass.FungusFighterRuntimeDataNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (progressDetailBuilder_ == null) {
+          result.progressDetail_ = progressDetail_;
+        } else {
+          result.progressDetail_ = progressDetailBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FungusFighterRuntimeDataNotifyOuterClass.FungusFighterRuntimeDataNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.progressDetail_ = progressDetailBuilder_ == null
-              ? progressDetail_
-              : progressDetailBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -405,7 +455,7 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
         if (other.hasProgressDetail()) {
           mergeProgressDetail(other.getProgressDetail());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,40 +470,19 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FungusFighterRuntimeDataNotifyOuterClass.FungusFighterRuntimeDataNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 58: {
-                input.readMessage(
-                    getProgressDetailFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FungusFighterRuntimeDataNotifyOuterClass.FungusFighterRuntimeDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.FungusTrainingProgressDetailOuterClass.FungusTrainingProgressDetail progressDetail_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -463,7 +492,7 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
        * @return Whether the progressDetail field is set.
        */
       public boolean hasProgressDetail() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return progressDetailBuilder_ != null || progressDetail_ != null;
       }
       /**
        * <code>.FungusTrainingProgressDetail progress_detail = 7;</code>
@@ -485,11 +514,11 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
             throw new NullPointerException();
           }
           progressDetail_ = value;
+          onChanged();
         } else {
           progressDetailBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -499,11 +528,11 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
           emu.gingerps.net.proto.FungusTrainingProgressDetailOuterClass.FungusTrainingProgressDetail.Builder builderForValue) {
         if (progressDetailBuilder_ == null) {
           progressDetail_ = builderForValue.build();
+          onChanged();
         } else {
           progressDetailBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -511,38 +540,38 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
        */
       public Builder mergeProgressDetail(emu.gingerps.net.proto.FungusTrainingProgressDetailOuterClass.FungusTrainingProgressDetail value) {
         if (progressDetailBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            progressDetail_ != null &&
-            progressDetail_ != emu.gingerps.net.proto.FungusTrainingProgressDetailOuterClass.FungusTrainingProgressDetail.getDefaultInstance()) {
-            getProgressDetailBuilder().mergeFrom(value);
+          if (progressDetail_ != null) {
+            progressDetail_ =
+              emu.gingerps.net.proto.FungusTrainingProgressDetailOuterClass.FungusTrainingProgressDetail.newBuilder(progressDetail_).mergeFrom(value).buildPartial();
           } else {
             progressDetail_ = value;
           }
+          onChanged();
         } else {
           progressDetailBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.FungusTrainingProgressDetail progress_detail = 7;</code>
        */
       public Builder clearProgressDetail() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        progressDetail_ = null;
-        if (progressDetailBuilder_ != null) {
-          progressDetailBuilder_.dispose();
+        if (progressDetailBuilder_ == null) {
+          progressDetail_ = null;
+          onChanged();
+        } else {
+          progressDetail_ = null;
           progressDetailBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.FungusTrainingProgressDetail progress_detail = 7;</code>
        */
       public emu.gingerps.net.proto.FungusTrainingProgressDetailOuterClass.FungusTrainingProgressDetail.Builder getProgressDetailBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getProgressDetailFieldBuilder().getBuilder();
       }
@@ -606,18 +635,7 @@ public final class FungusFighterRuntimeDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FungusFighterRuntimeDataNotify(input, extensionRegistry);
       }
     };
 

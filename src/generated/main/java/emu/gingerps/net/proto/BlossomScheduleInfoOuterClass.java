@@ -81,6 +81,73 @@ public final class BlossomScheduleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BlossomScheduleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              progress_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              circleCampId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              state_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              finishProgress_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              refreshId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              round_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BlossomScheduleInfoOuterClass.internal_static_BlossomScheduleInfo_descriptor;
@@ -95,7 +162,7 @@ public final class BlossomScheduleInfoOuterClass {
     }
 
     public static final int PROGRESS_FIELD_NUMBER = 1;
-    private int progress_ = 0;
+    private int progress_;
     /**
      * <code>uint32 progress = 1;</code>
      * @return The progress.
@@ -106,7 +173,7 @@ public final class BlossomScheduleInfoOuterClass {
     }
 
     public static final int STATE_FIELD_NUMBER = 5;
-    private int state_ = 0;
+    private int state_;
     /**
      * <code>uint32 state = 5;</code>
      * @return The state.
@@ -117,7 +184,7 @@ public final class BlossomScheduleInfoOuterClass {
     }
 
     public static final int FINISH_PROGRESS_FIELD_NUMBER = 10;
-    private int finishProgress_ = 0;
+    private int finishProgress_;
     /**
      * <code>uint32 finish_progress = 10;</code>
      * @return The finishProgress.
@@ -128,7 +195,7 @@ public final class BlossomScheduleInfoOuterClass {
     }
 
     public static final int REFRESH_ID_FIELD_NUMBER = 12;
-    private int refreshId_ = 0;
+    private int refreshId_;
     /**
      * <code>uint32 refresh_id = 12;</code>
      * @return The refreshId.
@@ -139,7 +206,7 @@ public final class BlossomScheduleInfoOuterClass {
     }
 
     public static final int CIRCLE_CAMP_ID_FIELD_NUMBER = 2;
-    private int circleCampId_ = 0;
+    private int circleCampId_;
     /**
      * <code>uint32 circle_camp_id = 2;</code>
      * @return The circleCampId.
@@ -150,7 +217,7 @@ public final class BlossomScheduleInfoOuterClass {
     }
 
     public static final int ROUND_FIELD_NUMBER = 14;
-    private int round_ = 0;
+    private int round_;
     /**
      * <code>uint32 round = 14;</code>
      * @return The round.
@@ -192,7 +259,7 @@ public final class BlossomScheduleInfoOuterClass {
       if (round_ != 0) {
         output.writeUInt32(14, round_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -225,7 +292,7 @@ public final class BlossomScheduleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, round_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -252,7 +319,7 @@ public final class BlossomScheduleInfoOuterClass {
           != other.getCircleCampId()) return false;
       if (getRound()
           != other.getRound()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -275,7 +342,7 @@ public final class BlossomScheduleInfoOuterClass {
       hash = (53 * hash) + getCircleCampId();
       hash = (37 * hash) + ROUND_FIELD_NUMBER;
       hash = (53 * hash) + getRound();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -392,24 +459,34 @@ public final class BlossomScheduleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         progress_ = 0;
+
         state_ = 0;
+
         finishProgress_ = 0;
+
         refreshId_ = 0;
+
         circleCampId_ = 0;
+
         round_ = 0;
+
         return this;
       }
 
@@ -436,31 +513,14 @@ public final class BlossomScheduleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo buildPartial() {
         emu.gingerps.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo result = new emu.gingerps.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.progress_ = progress_;
+        result.state_ = state_;
+        result.finishProgress_ = finishProgress_;
+        result.refreshId_ = refreshId_;
+        result.circleCampId_ = circleCampId_;
+        result.round_ = round_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.progress_ = progress_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.state_ = state_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.finishProgress_ = finishProgress_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.refreshId_ = refreshId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.circleCampId_ = circleCampId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.round_ = round_;
-        }
       }
 
       @java.lang.Override
@@ -525,7 +585,7 @@ public final class BlossomScheduleInfoOuterClass {
         if (other.getRound() != 0) {
           setRound(other.getRound());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -540,63 +600,19 @@ public final class BlossomScheduleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                progress_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                circleCampId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 16
-              case 40: {
-                state_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 80: {
-                finishProgress_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              case 96: {
-                refreshId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              case 112: {
-                round_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int progress_ ;
       /**
@@ -615,7 +631,6 @@ public final class BlossomScheduleInfoOuterClass {
       public Builder setProgress(int value) {
         
         progress_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -624,7 +639,7 @@ public final class BlossomScheduleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProgress() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         progress_ = 0;
         onChanged();
         return this;
@@ -647,7 +662,6 @@ public final class BlossomScheduleInfoOuterClass {
       public Builder setState(int value) {
         
         state_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -656,7 +670,7 @@ public final class BlossomScheduleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         state_ = 0;
         onChanged();
         return this;
@@ -679,7 +693,6 @@ public final class BlossomScheduleInfoOuterClass {
       public Builder setFinishProgress(int value) {
         
         finishProgress_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -688,7 +701,7 @@ public final class BlossomScheduleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishProgress() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         finishProgress_ = 0;
         onChanged();
         return this;
@@ -711,7 +724,6 @@ public final class BlossomScheduleInfoOuterClass {
       public Builder setRefreshId(int value) {
         
         refreshId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -720,7 +732,7 @@ public final class BlossomScheduleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRefreshId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         refreshId_ = 0;
         onChanged();
         return this;
@@ -743,7 +755,6 @@ public final class BlossomScheduleInfoOuterClass {
       public Builder setCircleCampId(int value) {
         
         circleCampId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -752,7 +763,7 @@ public final class BlossomScheduleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCircleCampId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         circleCampId_ = 0;
         onChanged();
         return this;
@@ -775,7 +786,6 @@ public final class BlossomScheduleInfoOuterClass {
       public Builder setRound(int value) {
         
         round_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -784,7 +794,7 @@ public final class BlossomScheduleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRound() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         round_ = 0;
         onChanged();
         return this;
@@ -822,18 +832,7 @@ public final class BlossomScheduleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BlossomScheduleInfo(input, extensionRegistry);
       }
     };
 

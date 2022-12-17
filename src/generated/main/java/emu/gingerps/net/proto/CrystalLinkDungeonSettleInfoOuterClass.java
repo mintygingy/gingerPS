@@ -81,6 +81,73 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CrystalLinkDungeonSettleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              killEliteMonsterNum_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              difficultyId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              killNormalMonsterNum_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              finalScore_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.internal_static_CrystalLinkDungeonSettleInfo_descriptor;
@@ -95,7 +162,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 9;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 9;</code>
      * @return The levelId.
@@ -106,7 +173,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
     }
 
     public static final int FINAL_SCORE_FIELD_NUMBER = 12;
-    private int finalScore_ = 0;
+    private int finalScore_;
     /**
      * <code>uint32 final_score = 12;</code>
      * @return The finalScore.
@@ -117,7 +184,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
     }
 
     public static final int KILL_NORMAL_MONSTER_NUM_FIELD_NUMBER = 8;
-    private int killNormalMonsterNum_ = 0;
+    private int killNormalMonsterNum_;
     /**
      * <code>uint32 kill_normal_monster_num = 8;</code>
      * @return The killNormalMonsterNum.
@@ -128,7 +195,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
     }
 
     public static final int DIFFICULTY_ID_FIELD_NUMBER = 3;
-    private int difficultyId_ = 0;
+    private int difficultyId_;
     /**
      * <code>uint32 difficulty_id = 3;</code>
      * @return The difficultyId.
@@ -139,7 +206,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
     }
 
     public static final int KILL_ELITE_MONSTER_NUM_FIELD_NUMBER = 2;
-    private int killEliteMonsterNum_ = 0;
+    private int killEliteMonsterNum_;
     /**
      * <code>uint32 kill_elite_monster_num = 2;</code>
      * @return The killEliteMonsterNum.
@@ -150,7 +217,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 10;
-    private boolean isNewRecord_ = false;
+    private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 10;</code>
      * @return The isNewRecord.
@@ -192,7 +259,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       if (finalScore_ != 0) {
         output.writeUInt32(12, finalScore_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -225,7 +292,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, finalScore_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -252,7 +319,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
           != other.getKillEliteMonsterNum()) return false;
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -276,7 +343,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,24 +460,34 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.CrystalLinkDungeonSettleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         levelId_ = 0;
+
         finalScore_ = 0;
+
         killNormalMonsterNum_ = 0;
+
         difficultyId_ = 0;
+
         killEliteMonsterNum_ = 0;
+
         isNewRecord_ = false;
+
         return this;
       }
 
@@ -437,31 +514,14 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.CrystalLinkDungeonSettleInfo buildPartial() {
         emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.CrystalLinkDungeonSettleInfo result = new emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.CrystalLinkDungeonSettleInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.levelId_ = levelId_;
+        result.finalScore_ = finalScore_;
+        result.killNormalMonsterNum_ = killNormalMonsterNum_;
+        result.difficultyId_ = difficultyId_;
+        result.killEliteMonsterNum_ = killEliteMonsterNum_;
+        result.isNewRecord_ = isNewRecord_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.CrystalLinkDungeonSettleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.levelId_ = levelId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.finalScore_ = finalScore_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.killNormalMonsterNum_ = killNormalMonsterNum_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.difficultyId_ = difficultyId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.killEliteMonsterNum_ = killEliteMonsterNum_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isNewRecord_ = isNewRecord_;
-        }
       }
 
       @java.lang.Override
@@ -526,7 +586,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -541,63 +601,19 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.CrystalLinkDungeonSettleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                killEliteMonsterNum_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 16
-              case 24: {
-                difficultyId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 24
-              case 64: {
-                killNormalMonsterNum_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 72: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 80: {
-                isNewRecord_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 80
-              case 96: {
-                finalScore_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CrystalLinkDungeonSettleInfoOuterClass.CrystalLinkDungeonSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int levelId_ ;
       /**
@@ -616,7 +632,6 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -625,7 +640,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -648,7 +663,6 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       public Builder setFinalScore(int value) {
         
         finalScore_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -657,7 +671,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinalScore() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         finalScore_ = 0;
         onChanged();
         return this;
@@ -680,7 +694,6 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       public Builder setKillNormalMonsterNum(int value) {
         
         killNormalMonsterNum_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -689,7 +702,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKillNormalMonsterNum() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         killNormalMonsterNum_ = 0;
         onChanged();
         return this;
@@ -712,7 +725,6 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       public Builder setDifficultyId(int value) {
         
         difficultyId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -721,7 +733,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficultyId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         difficultyId_ = 0;
         onChanged();
         return this;
@@ -744,7 +756,6 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       public Builder setKillEliteMonsterNum(int value) {
         
         killEliteMonsterNum_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -753,7 +764,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKillEliteMonsterNum() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         killEliteMonsterNum_ = 0;
         onChanged();
         return this;
@@ -776,7 +787,6 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -785,7 +795,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -823,18 +833,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CrystalLinkDungeonSettleInfo(input, extensionRegistry);
       }
     };
 

@@ -101,6 +101,77 @@ public final class CoinCollectPlayerInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CoinCollectPlayerInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                avatarInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              avatarInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              playerName_ = s;
+              break;
+            }
+            case 56: {
+
+              isPrepare_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              chooseSkillNo_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              playerUid_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          avatarInfoList_ = java.util.Collections.unmodifiableList(avatarInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.internal_static_CoinCollectPlayerInfo_descriptor;
@@ -115,7 +186,7 @@ public final class CoinCollectPlayerInfoOuterClass {
     }
 
     public static final int PLAYER_UID_FIELD_NUMBER = 15;
-    private int playerUid_ = 0;
+    private int playerUid_;
     /**
      * <code>uint32 player_uid = 15;</code>
      * @return The playerUid.
@@ -126,7 +197,7 @@ public final class CoinCollectPlayerInfoOuterClass {
     }
 
     public static final int IS_PREPARE_FIELD_NUMBER = 7;
-    private boolean isPrepare_ = false;
+    private boolean isPrepare_;
     /**
      * <code>bool is_prepare = 7;</code>
      * @return The isPrepare.
@@ -137,7 +208,7 @@ public final class CoinCollectPlayerInfoOuterClass {
     }
 
     public static final int CHOOSE_SKILL_NO_FIELD_NUMBER = 10;
-    private int chooseSkillNo_ = 0;
+    private int chooseSkillNo_;
     /**
      * <code>uint32 choose_skill_no = 10;</code>
      * @return The chooseSkillNo.
@@ -148,7 +219,6 @@ public final class CoinCollectPlayerInfoOuterClass {
     }
 
     public static final int AVATAR_INFO_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo> avatarInfoList_;
     /**
      * <code>repeated .CoinCollectTeamAvatarInfo avatar_info_list = 2;</code>
@@ -189,8 +259,7 @@ public final class CoinCollectPlayerInfoOuterClass {
     }
 
     public static final int PLAYER_NAME_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object playerName_ = "";
+    private volatile java.lang.Object playerName_;
     /**
      * <code>string player_name = 6;</code>
      * @return The playerName.
@@ -256,7 +325,7 @@ public final class CoinCollectPlayerInfoOuterClass {
       if (playerUid_ != 0) {
         output.writeUInt32(15, playerUid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -284,7 +353,7 @@ public final class CoinCollectPlayerInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, playerUid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -309,7 +378,7 @@ public final class CoinCollectPlayerInfoOuterClass {
           .equals(other.getAvatarInfoListList())) return false;
       if (!getPlayerName()
           .equals(other.getPlayerName())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -333,7 +402,7 @@ public final class CoinCollectPlayerInfoOuterClass {
       }
       hash = (37 * hash) + PLAYER_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getPlayerName().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -450,29 +519,37 @@ public final class CoinCollectPlayerInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAvatarInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         playerUid_ = 0;
+
         isPrepare_ = false;
+
         chooseSkillNo_ = 0;
+
         if (avatarInfoListBuilder_ == null) {
           avatarInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          avatarInfoList_ = null;
           avatarInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         playerName_ = "";
+
         return this;
       }
 
@@ -499,38 +576,22 @@ public final class CoinCollectPlayerInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo buildPartial() {
         emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo result = new emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.playerUid_ = playerUid_;
+        result.isPrepare_ = isPrepare_;
+        result.chooseSkillNo_ = chooseSkillNo_;
         if (avatarInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             avatarInfoList_ = java.util.Collections.unmodifiableList(avatarInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.avatarInfoList_ = avatarInfoList_;
         } else {
           result.avatarInfoList_ = avatarInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.playerUid_ = playerUid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isPrepare_ = isPrepare_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.chooseSkillNo_ = chooseSkillNo_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.playerName_ = playerName_;
-        }
+        result.playerName_ = playerName_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -590,7 +651,7 @@ public final class CoinCollectPlayerInfoOuterClass {
           if (!other.avatarInfoList_.isEmpty()) {
             if (avatarInfoList_.isEmpty()) {
               avatarInfoList_ = other.avatarInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureAvatarInfoListIsMutable();
               avatarInfoList_.addAll(other.avatarInfoList_);
@@ -603,7 +664,7 @@ public final class CoinCollectPlayerInfoOuterClass {
               avatarInfoListBuilder_.dispose();
               avatarInfoListBuilder_ = null;
               avatarInfoList_ = other.avatarInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               avatarInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAvatarInfoListFieldBuilder() : null;
@@ -614,10 +675,9 @@ public final class CoinCollectPlayerInfoOuterClass {
         }
         if (!other.getPlayerName().isEmpty()) {
           playerName_ = other.playerName_;
-          bitField0_ |= 0x00000010;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -632,63 +692,17 @@ public final class CoinCollectPlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                emu.gingerps.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo.parser(),
-                        extensionRegistry);
-                if (avatarInfoListBuilder_ == null) {
-                  ensureAvatarInfoListIsMutable();
-                  avatarInfoList_.add(m);
-                } else {
-                  avatarInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 50: {
-                playerName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 50
-              case 56: {
-                isPrepare_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 80: {
-                chooseSkillNo_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              case 120: {
-                playerUid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -710,7 +724,6 @@ public final class CoinCollectPlayerInfoOuterClass {
       public Builder setPlayerUid(int value) {
         
         playerUid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -719,7 +732,7 @@ public final class CoinCollectPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         playerUid_ = 0;
         onChanged();
         return this;
@@ -742,7 +755,6 @@ public final class CoinCollectPlayerInfoOuterClass {
       public Builder setIsPrepare(boolean value) {
         
         isPrepare_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -751,7 +763,7 @@ public final class CoinCollectPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsPrepare() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isPrepare_ = false;
         onChanged();
         return this;
@@ -774,7 +786,6 @@ public final class CoinCollectPlayerInfoOuterClass {
       public Builder setChooseSkillNo(int value) {
         
         chooseSkillNo_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -783,7 +794,7 @@ public final class CoinCollectPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChooseSkillNo() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         chooseSkillNo_ = 0;
         onChanged();
         return this;
@@ -792,9 +803,9 @@ public final class CoinCollectPlayerInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo> avatarInfoList_ =
         java.util.Collections.emptyList();
       private void ensureAvatarInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           avatarInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo>(avatarInfoList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -944,7 +955,7 @@ public final class CoinCollectPlayerInfoOuterClass {
       public Builder clearAvatarInfoList() {
         if (avatarInfoListBuilder_ == null) {
           avatarInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           avatarInfoListBuilder_.clear();
@@ -1021,7 +1032,7 @@ public final class CoinCollectPlayerInfoOuterClass {
           avatarInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo, emu.gingerps.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo.Builder, emu.gingerps.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfoOrBuilder>(
                   avatarInfoList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           avatarInfoList_ = null;
@@ -1070,9 +1081,11 @@ public final class CoinCollectPlayerInfoOuterClass {
        */
       public Builder setPlayerName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         playerName_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1081,8 +1094,8 @@ public final class CoinCollectPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerName() {
+        
         playerName_ = getDefaultInstance().getPlayerName();
-        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1093,10 +1106,12 @@ public final class CoinCollectPlayerInfoOuterClass {
        */
       public Builder setPlayerNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         playerName_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1133,18 +1148,7 @@ public final class CoinCollectPlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CoinCollectPlayerInfo(input, extensionRegistry);
       }
     };
 

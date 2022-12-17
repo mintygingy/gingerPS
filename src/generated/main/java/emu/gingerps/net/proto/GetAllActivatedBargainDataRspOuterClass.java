@@ -86,6 +86,61 @@ public final class GetAllActivatedBargainDataRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetAllActivatedBargainDataRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                snapshotList_ = new java.util.ArrayList<emu.gingerps.net.proto.BargainSnapshotOuterClass.BargainSnapshot>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              snapshotList_.add(
+                  input.readMessage(emu.gingerps.net.proto.BargainSnapshotOuterClass.BargainSnapshot.parser(), extensionRegistry));
+              break;
+            }
+            case 96: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          snapshotList_ = java.util.Collections.unmodifiableList(snapshotList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetAllActivatedBargainDataRspOuterClass.internal_static_GetAllActivatedBargainDataRsp_descriptor;
@@ -100,7 +155,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
@@ -111,7 +166,6 @@ public final class GetAllActivatedBargainDataRspOuterClass {
     }
 
     public static final int SNAPSHOT_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.BargainSnapshotOuterClass.BargainSnapshot> snapshotList_;
     /**
      * <code>repeated .BargainSnapshot snapshot_list = 6;</code>
@@ -171,7 +225,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(12, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
           != other.getRetcode()) return false;
       if (!getSnapshotListList()
           .equals(other.getSnapshotListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
         hash = (37 * hash) + SNAPSHOT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSnapshotListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +405,31 @@ public final class GetAllActivatedBargainDataRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetAllActivatedBargainDataRspOuterClass.GetAllActivatedBargainDataRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSnapshotListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         if (snapshotListBuilder_ == null) {
           snapshotList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          snapshotList_ = null;
           snapshotListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -397,29 +456,19 @@ public final class GetAllActivatedBargainDataRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetAllActivatedBargainDataRspOuterClass.GetAllActivatedBargainDataRsp buildPartial() {
         emu.gingerps.net.proto.GetAllActivatedBargainDataRspOuterClass.GetAllActivatedBargainDataRsp result = new emu.gingerps.net.proto.GetAllActivatedBargainDataRspOuterClass.GetAllActivatedBargainDataRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetAllActivatedBargainDataRspOuterClass.GetAllActivatedBargainDataRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         if (snapshotListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             snapshotList_ = java.util.Collections.unmodifiableList(snapshotList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.snapshotList_ = snapshotList_;
         } else {
           result.snapshotList_ = snapshotListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetAllActivatedBargainDataRspOuterClass.GetAllActivatedBargainDataRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -473,7 +522,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
           if (!other.snapshotList_.isEmpty()) {
             if (snapshotList_.isEmpty()) {
               snapshotList_ = other.snapshotList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureSnapshotListIsMutable();
               snapshotList_.addAll(other.snapshotList_);
@@ -486,7 +535,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
               snapshotListBuilder_.dispose();
               snapshotListBuilder_ = null;
               snapshotList_ = other.snapshotList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               snapshotListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSnapshotListFieldBuilder() : null;
@@ -495,7 +544,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -510,48 +559,17 @@ public final class GetAllActivatedBargainDataRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetAllActivatedBargainDataRspOuterClass.GetAllActivatedBargainDataRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 50: {
-                emu.gingerps.net.proto.BargainSnapshotOuterClass.BargainSnapshot m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.BargainSnapshotOuterClass.BargainSnapshot.parser(),
-                        extensionRegistry);
-                if (snapshotListBuilder_ == null) {
-                  ensureSnapshotListIsMutable();
-                  snapshotList_.add(m);
-                } else {
-                  snapshotListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 96: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetAllActivatedBargainDataRspOuterClass.GetAllActivatedBargainDataRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -573,7 +591,6 @@ public final class GetAllActivatedBargainDataRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +599,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -591,9 +608,9 @@ public final class GetAllActivatedBargainDataRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.BargainSnapshotOuterClass.BargainSnapshot> snapshotList_ =
         java.util.Collections.emptyList();
       private void ensureSnapshotListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           snapshotList_ = new java.util.ArrayList<emu.gingerps.net.proto.BargainSnapshotOuterClass.BargainSnapshot>(snapshotList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -743,7 +760,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
       public Builder clearSnapshotList() {
         if (snapshotListBuilder_ == null) {
           snapshotList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           snapshotListBuilder_.clear();
@@ -820,7 +837,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
           snapshotListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.BargainSnapshotOuterClass.BargainSnapshot, emu.gingerps.net.proto.BargainSnapshotOuterClass.BargainSnapshot.Builder, emu.gingerps.net.proto.BargainSnapshotOuterClass.BargainSnapshotOrBuilder>(
                   snapshotList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           snapshotList_ = null;
@@ -860,18 +877,7 @@ public final class GetAllActivatedBargainDataRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetAllActivatedBargainDataRsp(input, extensionRegistry);
       }
     };
 

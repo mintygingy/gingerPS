@@ -87,6 +87,61 @@ public final class GetRecentMpPlayerListRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetRecentMpPlayerListRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                recentMpPlayerBriefList_ = new java.util.ArrayList<emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              recentMpPlayerBriefList_.add(
+                  input.readMessage(emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.parser(), extensionRegistry));
+              break;
+            }
+            case 104: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          recentMpPlayerBriefList_ = java.util.Collections.unmodifiableList(recentMpPlayerBriefList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetRecentMpPlayerListRspOuterClass.internal_static_GetRecentMpPlayerListRsp_descriptor;
@@ -101,7 +156,6 @@ public final class GetRecentMpPlayerListRspOuterClass {
     }
 
     public static final int RECENT_MP_PLAYER_BRIEF_LIST_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief> recentMpPlayerBriefList_;
     /**
      * <code>repeated .FriendBrief recent_mp_player_brief_list = 9;</code>
@@ -142,7 +196,7 @@ public final class GetRecentMpPlayerListRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 13;</code>
      * @return The retcode.
@@ -172,7 +226,7 @@ public final class GetRecentMpPlayerListRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(13, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +243,7 @@ public final class GetRecentMpPlayerListRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -208,7 +262,7 @@ public final class GetRecentMpPlayerListRspOuterClass {
           .equals(other.getRecentMpPlayerBriefListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -225,7 +279,7 @@ public final class GetRecentMpPlayerListRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -353,26 +407,31 @@ public final class GetRecentMpPlayerListRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetRecentMpPlayerListRspOuterClass.GetRecentMpPlayerListRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRecentMpPlayerBriefListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (recentMpPlayerBriefListBuilder_ == null) {
           recentMpPlayerBriefList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          recentMpPlayerBriefList_ = null;
           recentMpPlayerBriefListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
+
         return this;
       }
 
@@ -399,13 +458,7 @@ public final class GetRecentMpPlayerListRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetRecentMpPlayerListRspOuterClass.GetRecentMpPlayerListRsp buildPartial() {
         emu.gingerps.net.proto.GetRecentMpPlayerListRspOuterClass.GetRecentMpPlayerListRsp result = new emu.gingerps.net.proto.GetRecentMpPlayerListRspOuterClass.GetRecentMpPlayerListRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetRecentMpPlayerListRspOuterClass.GetRecentMpPlayerListRsp result) {
+        int from_bitField0_ = bitField0_;
         if (recentMpPlayerBriefListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             recentMpPlayerBriefList_ = java.util.Collections.unmodifiableList(recentMpPlayerBriefList_);
@@ -415,13 +468,9 @@ public final class GetRecentMpPlayerListRspOuterClass {
         } else {
           result.recentMpPlayerBriefList_ = recentMpPlayerBriefListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetRecentMpPlayerListRspOuterClass.GetRecentMpPlayerListRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        result.retcode_ = retcode_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -497,7 +546,7 @@ public final class GetRecentMpPlayerListRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -512,48 +561,17 @@ public final class GetRecentMpPlayerListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetRecentMpPlayerListRspOuterClass.GetRecentMpPlayerListRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 74: {
-                emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.parser(),
-                        extensionRegistry);
-                if (recentMpPlayerBriefListBuilder_ == null) {
-                  ensureRecentMpPlayerBriefListIsMutable();
-                  recentMpPlayerBriefList_.add(m);
-                } else {
-                  recentMpPlayerBriefListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 74
-              case 104: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetRecentMpPlayerListRspOuterClass.GetRecentMpPlayerListRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -815,7 +833,6 @@ public final class GetRecentMpPlayerListRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -824,7 +841,7 @@ public final class GetRecentMpPlayerListRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -862,18 +879,7 @@ public final class GetRecentMpPlayerListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetRecentMpPlayerListRsp(input, extensionRegistry);
       }
     };
 

@@ -76,6 +76,61 @@ public final class HomeCustomFurnitureInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeCustomFurnitureInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              guid_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                subFurnitureList_ = new java.util.ArrayList<emu.gingerps.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              subFurnitureList_.add(
+                  input.readMessage(emu.gingerps.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          subFurnitureList_ = java.util.Collections.unmodifiableList(subFurnitureList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeCustomFurnitureInfoOuterClass.internal_static_HomeCustomFurnitureInfo_descriptor;
@@ -90,7 +145,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
     }
 
     public static final int GUID_FIELD_NUMBER = 7;
-    private int guid_ = 0;
+    private int guid_;
     /**
      * <code>uint32 guid = 7;</code>
      * @return The guid.
@@ -101,7 +156,6 @@ public final class HomeCustomFurnitureInfoOuterClass {
     }
 
     public static final int SUB_FURNITURE_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo> subFurnitureList_;
     /**
      * <code>repeated .CustomCommonNodeInfo sub_furniture_list = 11;</code>
@@ -161,7 +215,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
       for (int i = 0; i < subFurnitureList_.size(); i++) {
         output.writeMessage(11, subFurnitureList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -178,7 +232,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, subFurnitureList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +251,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
           != other.getGuid()) return false;
       if (!getSubFurnitureListList()
           .equals(other.getSubFurnitureListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -214,7 +268,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
         hash = (37 * hash) + SUB_FURNITURE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSubFurnitureListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +385,31 @@ public final class HomeCustomFurnitureInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSubFurnitureListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         guid_ = 0;
+
         if (subFurnitureListBuilder_ == null) {
           subFurnitureList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          subFurnitureList_ = null;
           subFurnitureListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -377,29 +436,19 @@ public final class HomeCustomFurnitureInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo buildPartial() {
         emu.gingerps.net.proto.HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo result = new emu.gingerps.net.proto.HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.guid_ = guid_;
         if (subFurnitureListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             subFurnitureList_ = java.util.Collections.unmodifiableList(subFurnitureList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.subFurnitureList_ = subFurnitureList_;
         } else {
           result.subFurnitureList_ = subFurnitureListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.guid_ = guid_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -453,7 +502,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
           if (!other.subFurnitureList_.isEmpty()) {
             if (subFurnitureList_.isEmpty()) {
               subFurnitureList_ = other.subFurnitureList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureSubFurnitureListIsMutable();
               subFurnitureList_.addAll(other.subFurnitureList_);
@@ -466,7 +515,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
               subFurnitureListBuilder_.dispose();
               subFurnitureListBuilder_ = null;
               subFurnitureList_ = other.subFurnitureList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               subFurnitureListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSubFurnitureListFieldBuilder() : null;
@@ -475,7 +524,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,48 +539,17 @@ public final class HomeCustomFurnitureInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                guid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 90: {
-                emu.gingerps.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo.parser(),
-                        extensionRegistry);
-                if (subFurnitureListBuilder_ == null) {
-                  ensureSubFurnitureListIsMutable();
-                  subFurnitureList_.add(m);
-                } else {
-                  subFurnitureListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -553,7 +571,6 @@ public final class HomeCustomFurnitureInfoOuterClass {
       public Builder setGuid(int value) {
         
         guid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +579,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         guid_ = 0;
         onChanged();
         return this;
@@ -571,9 +588,9 @@ public final class HomeCustomFurnitureInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo> subFurnitureList_ =
         java.util.Collections.emptyList();
       private void ensureSubFurnitureListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           subFurnitureList_ = new java.util.ArrayList<emu.gingerps.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo>(subFurnitureList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -723,7 +740,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
       public Builder clearSubFurnitureList() {
         if (subFurnitureListBuilder_ == null) {
           subFurnitureList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           subFurnitureListBuilder_.clear();
@@ -800,7 +817,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
           subFurnitureListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo, emu.gingerps.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo.Builder, emu.gingerps.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfoOrBuilder>(
                   subFurnitureList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           subFurnitureList_ = null;
@@ -840,18 +857,7 @@ public final class HomeCustomFurnitureInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeCustomFurnitureInfo(input, extensionRegistry);
       }
     };
 

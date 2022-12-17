@@ -99,6 +99,74 @@ public final class ExecuteGroupTriggerReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ExecuteGroupTriggerReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              param2_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              param3_ = input.readInt32();
+              break;
+            }
+            case 56: {
+
+              sourceEntityId_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sourceName_ = s;
+              break;
+            }
+            case 72: {
+
+              param1_ = input.readInt32();
+              break;
+            }
+            case 120: {
+
+              targetEntityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ExecuteGroupTriggerReqOuterClass.internal_static_ExecuteGroupTriggerReq_descriptor;
@@ -113,7 +181,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
     }
 
     public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 7;
-    private int sourceEntityId_ = 0;
+    private int sourceEntityId_;
     /**
      * <code>uint32 source_entity_id = 7;</code>
      * @return The sourceEntityId.
@@ -124,7 +192,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
     }
 
     public static final int PARAM3_FIELD_NUMBER = 6;
-    private int param3_ = 0;
+    private int param3_;
     /**
      * <code>int32 param3 = 6;</code>
      * @return The param3.
@@ -135,7 +203,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
     }
 
     public static final int PARAM1_FIELD_NUMBER = 9;
-    private int param1_ = 0;
+    private int param1_;
     /**
      * <code>int32 param1 = 9;</code>
      * @return The param1.
@@ -146,8 +214,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
     }
 
     public static final int SOURCE_NAME_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object sourceName_ = "";
+    private volatile java.lang.Object sourceName_;
     /**
      * <code>string source_name = 8;</code>
      * @return The sourceName.
@@ -185,7 +252,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
     }
 
     public static final int TARGET_ENTITY_ID_FIELD_NUMBER = 15;
-    private int targetEntityId_ = 0;
+    private int targetEntityId_;
     /**
      * <code>uint32 target_entity_id = 15;</code>
      * @return The targetEntityId.
@@ -196,7 +263,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
     }
 
     public static final int PARAM2_FIELD_NUMBER = 4;
-    private int param2_ = 0;
+    private int param2_;
     /**
      * <code>int32 param2 = 4;</code>
      * @return The param2.
@@ -238,7 +305,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
       if (targetEntityId_ != 0) {
         output.writeUInt32(15, targetEntityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -270,7 +337,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, targetEntityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -297,7 +364,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
           != other.getTargetEntityId()) return false;
       if (getParam2()
           != other.getParam2()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -320,7 +387,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
       hash = (53 * hash) + getTargetEntityId();
       hash = (37 * hash) + PARAM2_FIELD_NUMBER;
       hash = (53 * hash) + getParam2();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -448,24 +515,34 @@ public final class ExecuteGroupTriggerReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ExecuteGroupTriggerReqOuterClass.ExecuteGroupTriggerReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         sourceEntityId_ = 0;
+
         param3_ = 0;
+
         param1_ = 0;
+
         sourceName_ = "";
+
         targetEntityId_ = 0;
+
         param2_ = 0;
+
         return this;
       }
 
@@ -492,31 +569,14 @@ public final class ExecuteGroupTriggerReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ExecuteGroupTriggerReqOuterClass.ExecuteGroupTriggerReq buildPartial() {
         emu.gingerps.net.proto.ExecuteGroupTriggerReqOuterClass.ExecuteGroupTriggerReq result = new emu.gingerps.net.proto.ExecuteGroupTriggerReqOuterClass.ExecuteGroupTriggerReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.sourceEntityId_ = sourceEntityId_;
+        result.param3_ = param3_;
+        result.param1_ = param1_;
+        result.sourceName_ = sourceName_;
+        result.targetEntityId_ = targetEntityId_;
+        result.param2_ = param2_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ExecuteGroupTriggerReqOuterClass.ExecuteGroupTriggerReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sourceEntityId_ = sourceEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.param3_ = param3_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.param1_ = param1_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.sourceName_ = sourceName_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.targetEntityId_ = targetEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.param2_ = param2_;
-        }
       }
 
       @java.lang.Override
@@ -574,7 +634,6 @@ public final class ExecuteGroupTriggerReqOuterClass {
         }
         if (!other.getSourceName().isEmpty()) {
           sourceName_ = other.sourceName_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.getTargetEntityId() != 0) {
@@ -583,7 +642,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
         if (other.getParam2() != 0) {
           setParam2(other.getParam2());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -598,63 +657,19 @@ public final class ExecuteGroupTriggerReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ExecuteGroupTriggerReqOuterClass.ExecuteGroupTriggerReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                param2_ = input.readInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 32
-              case 48: {
-                param3_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 56: {
-                sourceEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 66: {
-                sourceName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 66
-              case 72: {
-                param1_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 72
-              case 120: {
-                targetEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ExecuteGroupTriggerReqOuterClass.ExecuteGroupTriggerReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int sourceEntityId_ ;
       /**
@@ -673,7 +688,6 @@ public final class ExecuteGroupTriggerReqOuterClass {
       public Builder setSourceEntityId(int value) {
         
         sourceEntityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -682,7 +696,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSourceEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         sourceEntityId_ = 0;
         onChanged();
         return this;
@@ -705,7 +719,6 @@ public final class ExecuteGroupTriggerReqOuterClass {
       public Builder setParam3(int value) {
         
         param3_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -714,7 +727,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam3() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         param3_ = 0;
         onChanged();
         return this;
@@ -737,7 +750,6 @@ public final class ExecuteGroupTriggerReqOuterClass {
       public Builder setParam1(int value) {
         
         param1_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -746,7 +758,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam1() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         param1_ = 0;
         onChanged();
         return this;
@@ -793,9 +805,11 @@ public final class ExecuteGroupTriggerReqOuterClass {
        */
       public Builder setSourceName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         sourceName_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -804,8 +818,8 @@ public final class ExecuteGroupTriggerReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSourceName() {
+        
         sourceName_ = getDefaultInstance().getSourceName();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -816,10 +830,12 @@ public final class ExecuteGroupTriggerReqOuterClass {
        */
       public Builder setSourceNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         sourceName_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -841,7 +857,6 @@ public final class ExecuteGroupTriggerReqOuterClass {
       public Builder setTargetEntityId(int value) {
         
         targetEntityId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -850,7 +865,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         targetEntityId_ = 0;
         onChanged();
         return this;
@@ -873,7 +888,6 @@ public final class ExecuteGroupTriggerReqOuterClass {
       public Builder setParam2(int value) {
         
         param2_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -882,7 +896,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam2() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         param2_ = 0;
         onChanged();
         return this;
@@ -920,18 +934,7 @@ public final class ExecuteGroupTriggerReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ExecuteGroupTriggerReq(input, extensionRegistry);
       }
     };
 

@@ -76,6 +76,61 @@ public final class AskAddFriendNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AskAddFriendNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.Builder subBuilder = null;
+              if (targetFriendBrief_ != null) {
+                subBuilder = targetFriendBrief_.toBuilder();
+              }
+              targetFriendBrief_ = input.readMessage(emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetFriendBrief_);
+                targetFriendBrief_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
+
+              targetUid_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AskAddFriendNotifyOuterClass.internal_static_AskAddFriendNotify_descriptor;
@@ -90,7 +145,7 @@ public final class AskAddFriendNotifyOuterClass {
     }
 
     public static final int TARGET_UID_FIELD_NUMBER = 5;
-    private int targetUid_ = 0;
+    private int targetUid_;
     /**
      * <code>uint32 target_uid = 5;</code>
      * @return The targetUid.
@@ -123,7 +178,7 @@ public final class AskAddFriendNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.FriendBriefOuterClass.FriendBriefOrBuilder getTargetFriendBriefOrBuilder() {
-      return targetFriendBrief_ == null ? emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.getDefaultInstance() : targetFriendBrief_;
+      return getTargetFriendBrief();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -146,7 +201,7 @@ public final class AskAddFriendNotifyOuterClass {
       if (targetUid_ != 0) {
         output.writeUInt32(5, targetUid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class AskAddFriendNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, targetUid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class AskAddFriendNotifyOuterClass {
         if (!getTargetFriendBrief()
             .equals(other.getTargetFriendBrief())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +257,7 @@ public final class AskAddFriendNotifyOuterClass {
         hash = (37 * hash) + TARGET_FRIEND_BRIEF_FIELD_NUMBER;
         hash = (53 * hash) + getTargetFriendBrief().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,22 +384,28 @@ public final class AskAddFriendNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AskAddFriendNotifyOuterClass.AskAddFriendNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         targetUid_ = 0;
-        targetFriendBrief_ = null;
-        if (targetFriendBriefBuilder_ != null) {
-          targetFriendBriefBuilder_.dispose();
+
+        if (targetFriendBriefBuilder_ == null) {
+          targetFriendBrief_ = null;
+        } else {
+          targetFriendBrief_ = null;
           targetFriendBriefBuilder_ = null;
         }
         return this;
@@ -373,21 +434,14 @@ public final class AskAddFriendNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AskAddFriendNotifyOuterClass.AskAddFriendNotify buildPartial() {
         emu.gingerps.net.proto.AskAddFriendNotifyOuterClass.AskAddFriendNotify result = new emu.gingerps.net.proto.AskAddFriendNotifyOuterClass.AskAddFriendNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.targetUid_ = targetUid_;
+        if (targetFriendBriefBuilder_ == null) {
+          result.targetFriendBrief_ = targetFriendBrief_;
+        } else {
+          result.targetFriendBrief_ = targetFriendBriefBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AskAddFriendNotifyOuterClass.AskAddFriendNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.targetUid_ = targetUid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.targetFriendBrief_ = targetFriendBriefBuilder_ == null
-              ? targetFriendBrief_
-              : targetFriendBriefBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -440,7 +494,7 @@ public final class AskAddFriendNotifyOuterClass {
         if (other.hasTargetFriendBrief()) {
           mergeTargetFriendBrief(other.getTargetFriendBrief());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,45 +509,19 @@ public final class AskAddFriendNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AskAddFriendNotifyOuterClass.AskAddFriendNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getTargetFriendBriefFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 10
-              case 40: {
-                targetUid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AskAddFriendNotifyOuterClass.AskAddFriendNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int targetUid_ ;
       /**
@@ -512,7 +540,6 @@ public final class AskAddFriendNotifyOuterClass {
       public Builder setTargetUid(int value) {
         
         targetUid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -521,7 +548,7 @@ public final class AskAddFriendNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         targetUid_ = 0;
         onChanged();
         return this;
@@ -535,7 +562,7 @@ public final class AskAddFriendNotifyOuterClass {
        * @return Whether the targetFriendBrief field is set.
        */
       public boolean hasTargetFriendBrief() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return targetFriendBriefBuilder_ != null || targetFriendBrief_ != null;
       }
       /**
        * <code>.FriendBrief target_friend_brief = 1;</code>
@@ -557,11 +584,11 @@ public final class AskAddFriendNotifyOuterClass {
             throw new NullPointerException();
           }
           targetFriendBrief_ = value;
+          onChanged();
         } else {
           targetFriendBriefBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -571,11 +598,11 @@ public final class AskAddFriendNotifyOuterClass {
           emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.Builder builderForValue) {
         if (targetFriendBriefBuilder_ == null) {
           targetFriendBrief_ = builderForValue.build();
+          onChanged();
         } else {
           targetFriendBriefBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -583,38 +610,38 @@ public final class AskAddFriendNotifyOuterClass {
        */
       public Builder mergeTargetFriendBrief(emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief value) {
         if (targetFriendBriefBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            targetFriendBrief_ != null &&
-            targetFriendBrief_ != emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.getDefaultInstance()) {
-            getTargetFriendBriefBuilder().mergeFrom(value);
+          if (targetFriendBrief_ != null) {
+            targetFriendBrief_ =
+              emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.newBuilder(targetFriendBrief_).mergeFrom(value).buildPartial();
           } else {
             targetFriendBrief_ = value;
           }
+          onChanged();
         } else {
           targetFriendBriefBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.FriendBrief target_friend_brief = 1;</code>
        */
       public Builder clearTargetFriendBrief() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        targetFriendBrief_ = null;
-        if (targetFriendBriefBuilder_ != null) {
-          targetFriendBriefBuilder_.dispose();
+        if (targetFriendBriefBuilder_ == null) {
+          targetFriendBrief_ = null;
+          onChanged();
+        } else {
+          targetFriendBrief_ = null;
           targetFriendBriefBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.FriendBrief target_friend_brief = 1;</code>
        */
       public emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.Builder getTargetFriendBriefBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getTargetFriendBriefFieldBuilder().getBuilder();
       }
@@ -678,18 +705,7 @@ public final class AskAddFriendNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AskAddFriendNotify(input, extensionRegistry);
       }
     };
 

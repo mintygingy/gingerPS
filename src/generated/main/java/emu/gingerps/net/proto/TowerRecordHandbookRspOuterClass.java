@@ -86,6 +86,61 @@ public final class TowerRecordHandbookRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TowerRecordHandbookRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                monthlyDetailList_ = new java.util.ArrayList<emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              monthlyDetailList_.add(
+                  input.readMessage(emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          monthlyDetailList_ = java.util.Collections.unmodifiableList(monthlyDetailList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerRecordHandbookRspOuterClass.internal_static_TowerRecordHandbookRsp_descriptor;
@@ -100,7 +155,7 @@ public final class TowerRecordHandbookRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -111,7 +166,6 @@ public final class TowerRecordHandbookRspOuterClass {
     }
 
     public static final int MONTHLY_DETAIL_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail> monthlyDetailList_;
     /**
      * <code>repeated .TowerMonthlyDetail monthly_detail_list = 4;</code>
@@ -171,7 +225,7 @@ public final class TowerRecordHandbookRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(8, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class TowerRecordHandbookRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(8, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class TowerRecordHandbookRspOuterClass {
           != other.getRetcode()) return false;
       if (!getMonthlyDetailListList()
           .equals(other.getMonthlyDetailListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class TowerRecordHandbookRspOuterClass {
         hash = (37 * hash) + MONTHLY_DETAIL_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMonthlyDetailListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +405,31 @@ public final class TowerRecordHandbookRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerRecordHandbookRspOuterClass.TowerRecordHandbookRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMonthlyDetailListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         if (monthlyDetailListBuilder_ == null) {
           monthlyDetailList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          monthlyDetailList_ = null;
           monthlyDetailListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -397,29 +456,19 @@ public final class TowerRecordHandbookRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerRecordHandbookRspOuterClass.TowerRecordHandbookRsp buildPartial() {
         emu.gingerps.net.proto.TowerRecordHandbookRspOuterClass.TowerRecordHandbookRsp result = new emu.gingerps.net.proto.TowerRecordHandbookRspOuterClass.TowerRecordHandbookRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TowerRecordHandbookRspOuterClass.TowerRecordHandbookRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         if (monthlyDetailListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             monthlyDetailList_ = java.util.Collections.unmodifiableList(monthlyDetailList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.monthlyDetailList_ = monthlyDetailList_;
         } else {
           result.monthlyDetailList_ = monthlyDetailListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TowerRecordHandbookRspOuterClass.TowerRecordHandbookRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -473,7 +522,7 @@ public final class TowerRecordHandbookRspOuterClass {
           if (!other.monthlyDetailList_.isEmpty()) {
             if (monthlyDetailList_.isEmpty()) {
               monthlyDetailList_ = other.monthlyDetailList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureMonthlyDetailListIsMutable();
               monthlyDetailList_.addAll(other.monthlyDetailList_);
@@ -486,7 +535,7 @@ public final class TowerRecordHandbookRspOuterClass {
               monthlyDetailListBuilder_.dispose();
               monthlyDetailListBuilder_ = null;
               monthlyDetailList_ = other.monthlyDetailList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               monthlyDetailListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMonthlyDetailListFieldBuilder() : null;
@@ -495,7 +544,7 @@ public final class TowerRecordHandbookRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -510,48 +559,17 @@ public final class TowerRecordHandbookRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TowerRecordHandbookRspOuterClass.TowerRecordHandbookRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 34: {
-                emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail.parser(),
-                        extensionRegistry);
-                if (monthlyDetailListBuilder_ == null) {
-                  ensureMonthlyDetailListIsMutable();
-                  monthlyDetailList_.add(m);
-                } else {
-                  monthlyDetailListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 64: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TowerRecordHandbookRspOuterClass.TowerRecordHandbookRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -573,7 +591,6 @@ public final class TowerRecordHandbookRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +599,7 @@ public final class TowerRecordHandbookRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -591,9 +608,9 @@ public final class TowerRecordHandbookRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail> monthlyDetailList_ =
         java.util.Collections.emptyList();
       private void ensureMonthlyDetailListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           monthlyDetailList_ = new java.util.ArrayList<emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail>(monthlyDetailList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -743,7 +760,7 @@ public final class TowerRecordHandbookRspOuterClass {
       public Builder clearMonthlyDetailList() {
         if (monthlyDetailListBuilder_ == null) {
           monthlyDetailList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           monthlyDetailListBuilder_.clear();
@@ -820,7 +837,7 @@ public final class TowerRecordHandbookRspOuterClass {
           monthlyDetailListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail, emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail.Builder, emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetailOrBuilder>(
                   monthlyDetailList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           monthlyDetailList_ = null;
@@ -860,18 +877,7 @@ public final class TowerRecordHandbookRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TowerRecordHandbookRsp(input, extensionRegistry);
       }
     };
 

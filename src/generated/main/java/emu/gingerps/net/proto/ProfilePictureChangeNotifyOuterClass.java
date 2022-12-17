@@ -71,6 +71,56 @@ public final class ProfilePictureChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ProfilePictureChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 98: {
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
+              if (profilePicture_ != null) {
+                subBuilder = profilePicture_.toBuilder();
+              }
+              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(profilePicture_);
+                profilePicture_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ProfilePictureChangeNotifyOuterClass.internal_static_ProfilePictureChangeNotify_descriptor;
@@ -107,7 +157,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+      return getProfilePicture();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -127,7 +177,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
       if (profilePicture_ != null) {
         output.writeMessage(12, getProfilePicture());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +190,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getProfilePicture());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -160,7 +210,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
         if (!getProfilePicture()
             .equals(other.getProfilePicture())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -175,7 +225,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
         hash = (37 * hash) + PROFILE_PICTURE_FIELD_NUMBER;
         hash = (53 * hash) + getProfilePicture().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -303,21 +353,26 @@ public final class ProfilePictureChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ProfilePictureChangeNotifyOuterClass.ProfilePictureChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
         return this;
@@ -346,18 +401,13 @@ public final class ProfilePictureChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ProfilePictureChangeNotifyOuterClass.ProfilePictureChangeNotify buildPartial() {
         emu.gingerps.net.proto.ProfilePictureChangeNotifyOuterClass.ProfilePictureChangeNotify result = new emu.gingerps.net.proto.ProfilePictureChangeNotifyOuterClass.ProfilePictureChangeNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (profilePictureBuilder_ == null) {
+          result.profilePicture_ = profilePicture_;
+        } else {
+          result.profilePicture_ = profilePictureBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ProfilePictureChangeNotifyOuterClass.ProfilePictureChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.profilePicture_ = profilePictureBuilder_ == null
-              ? profilePicture_
-              : profilePictureBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -407,7 +457,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
         if (other.hasProfilePicture()) {
           mergeProfilePicture(other.getProfilePicture());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -422,40 +472,19 @@ public final class ProfilePictureChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ProfilePictureChangeNotifyOuterClass.ProfilePictureChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 98: {
-                input.readMessage(
-                    getProfilePictureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ProfilePictureChangeNotifyOuterClass.ProfilePictureChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -465,7 +494,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
        * <code>.ProfilePicture profile_picture = 12;</code>
@@ -487,11 +516,11 @@ public final class ProfilePictureChangeNotifyOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -501,11 +530,11 @@ public final class ProfilePictureChangeNotifyOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -513,38 +542,38 @@ public final class ProfilePictureChangeNotifyOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            profilePicture_ != null &&
-            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
-            getProfilePictureBuilder().mergeFrom(value);
+          if (profilePicture_ != null) {
+            profilePicture_ =
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
           } else {
             profilePicture_ = value;
           }
+          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 12;</code>
        */
       public Builder clearProfilePicture() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+          onChanged();
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 12;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -608,18 +637,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ProfilePictureChangeNotify(input, extensionRegistry);
       }
     };
 

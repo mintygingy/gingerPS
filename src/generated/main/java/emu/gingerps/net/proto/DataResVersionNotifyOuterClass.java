@@ -152,6 +152,101 @@ public final class DataResVersionNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DataResVersionNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientMd5_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientSilenceVersionSuffix_ = s;
+              break;
+            }
+            case 40: {
+
+              clientDataVersion_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              opType_ = rawValue;
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder subBuilder = null;
+              if (resVersionConfig_ != null) {
+                subBuilder = resVersionConfig_.toBuilder();
+              }
+              resVersionConfig_ = input.readMessage(emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resVersionConfig_);
+                resVersionConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientVersionSuffix_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientSilenceMd5_ = s;
+              break;
+            }
+            case 104: {
+
+              clientSilenceDataVersion_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              isDataNeedRelogin_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DataResVersionNotifyOuterClass.internal_static_DataResVersionNotify_descriptor;
@@ -283,7 +378,7 @@ public final class DataResVersionNotifyOuterClass {
     }
 
     public static final int CLIENT_SILENCE_DATA_VERSION_FIELD_NUMBER = 13;
-    private int clientSilenceDataVersion_ = 0;
+    private int clientSilenceDataVersion_;
     /**
      * <code>uint32 client_silence_data_version = 13;</code>
      * @return The clientSilenceDataVersion.
@@ -294,7 +389,7 @@ public final class DataResVersionNotifyOuterClass {
     }
 
     public static final int OP_TYPE_FIELD_NUMBER = 6;
-    private int opType_ = 0;
+    private int opType_;
     /**
      * <code>.DataResVersionNotify.DataResVersionOpType op_type = 6;</code>
      * @return The enum numeric value on the wire for opType.
@@ -307,13 +402,13 @@ public final class DataResVersionNotifyOuterClass {
      * @return The opType.
      */
     @java.lang.Override public emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType getOpType() {
-      emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType result = emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType.forNumber(opType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType result = emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType.valueOf(opType_);
       return result == null ? emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType.UNRECOGNIZED : result;
     }
 
     public static final int CLIENT_SILENCE_VERSION_SUFFIX_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object clientSilenceVersionSuffix_ = "";
+    private volatile java.lang.Object clientSilenceVersionSuffix_;
     /**
      * <code>string client_silence_version_suffix = 3;</code>
      * @return The clientSilenceVersionSuffix.
@@ -351,8 +446,7 @@ public final class DataResVersionNotifyOuterClass {
     }
 
     public static final int CLIENT_VERSION_SUFFIX_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object clientVersionSuffix_ = "";
+    private volatile java.lang.Object clientVersionSuffix_;
     /**
      * <code>string client_version_suffix = 9;</code>
      * @return The clientVersionSuffix.
@@ -390,7 +484,7 @@ public final class DataResVersionNotifyOuterClass {
     }
 
     public static final int IS_DATA_NEED_RELOGIN_FIELD_NUMBER = 15;
-    private boolean isDataNeedRelogin_ = false;
+    private boolean isDataNeedRelogin_;
     /**
      * <code>bool is_data_need_relogin = 15;</code>
      * @return The isDataNeedRelogin.
@@ -401,8 +495,7 @@ public final class DataResVersionNotifyOuterClass {
     }
 
     public static final int CLIENT_SILENCE_MD5_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object clientSilenceMd5_ = "";
+    private volatile java.lang.Object clientSilenceMd5_;
     /**
      * <code>string client_silence_md5 = 12;</code>
      * @return The clientSilenceMd5.
@@ -440,7 +533,7 @@ public final class DataResVersionNotifyOuterClass {
     }
 
     public static final int CLIENT_DATA_VERSION_FIELD_NUMBER = 5;
-    private int clientDataVersion_ = 0;
+    private int clientDataVersion_;
     /**
      * <code>uint32 client_data_version = 5;</code>
      * @return The clientDataVersion.
@@ -451,8 +544,7 @@ public final class DataResVersionNotifyOuterClass {
     }
 
     public static final int CLIENT_MD5_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object clientMd5_ = "";
+    private volatile java.lang.Object clientMd5_;
     /**
      * <code>string client_md5 = 2;</code>
      * @return The clientMd5.
@@ -512,7 +604,7 @@ public final class DataResVersionNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfigOrBuilder getResVersionConfigOrBuilder() {
-      return resVersionConfig_ == null ? emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.getDefaultInstance() : resVersionConfig_;
+      return getResVersionConfig();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -556,7 +648,7 @@ public final class DataResVersionNotifyOuterClass {
       if (isDataNeedRelogin_ != false) {
         output.writeBool(15, isDataNeedRelogin_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -597,7 +689,7 @@ public final class DataResVersionNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isDataNeedRelogin_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -632,7 +724,7 @@ public final class DataResVersionNotifyOuterClass {
         if (!getResVersionConfig()
             .equals(other.getResVersionConfig())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -664,7 +756,7 @@ public final class DataResVersionNotifyOuterClass {
         hash = (37 * hash) + RES_VERSION_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getResVersionConfig().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -791,29 +883,42 @@ public final class DataResVersionNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         clientSilenceDataVersion_ = 0;
+
         opType_ = 0;
+
         clientSilenceVersionSuffix_ = "";
+
         clientVersionSuffix_ = "";
+
         isDataNeedRelogin_ = false;
+
         clientSilenceMd5_ = "";
+
         clientDataVersion_ = 0;
+
         clientMd5_ = "";
-        resVersionConfig_ = null;
-        if (resVersionConfigBuilder_ != null) {
-          resVersionConfigBuilder_.dispose();
+
+        if (resVersionConfigBuilder_ == null) {
+          resVersionConfig_ = null;
+        } else {
+          resVersionConfig_ = null;
           resVersionConfigBuilder_ = null;
         }
         return this;
@@ -842,42 +947,21 @@ public final class DataResVersionNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify buildPartial() {
         emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify result = new emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.clientSilenceDataVersion_ = clientSilenceDataVersion_;
+        result.opType_ = opType_;
+        result.clientSilenceVersionSuffix_ = clientSilenceVersionSuffix_;
+        result.clientVersionSuffix_ = clientVersionSuffix_;
+        result.isDataNeedRelogin_ = isDataNeedRelogin_;
+        result.clientSilenceMd5_ = clientSilenceMd5_;
+        result.clientDataVersion_ = clientDataVersion_;
+        result.clientMd5_ = clientMd5_;
+        if (resVersionConfigBuilder_ == null) {
+          result.resVersionConfig_ = resVersionConfig_;
+        } else {
+          result.resVersionConfig_ = resVersionConfigBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.clientSilenceDataVersion_ = clientSilenceDataVersion_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.opType_ = opType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.clientSilenceVersionSuffix_ = clientSilenceVersionSuffix_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.clientVersionSuffix_ = clientVersionSuffix_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.isDataNeedRelogin_ = isDataNeedRelogin_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.clientSilenceMd5_ = clientSilenceMd5_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.clientDataVersion_ = clientDataVersion_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.clientMd5_ = clientMd5_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.resVersionConfig_ = resVersionConfigBuilder_ == null
-              ? resVersionConfig_
-              : resVersionConfigBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -932,12 +1016,10 @@ public final class DataResVersionNotifyOuterClass {
         }
         if (!other.getClientSilenceVersionSuffix().isEmpty()) {
           clientSilenceVersionSuffix_ = other.clientSilenceVersionSuffix_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getClientVersionSuffix().isEmpty()) {
           clientVersionSuffix_ = other.clientVersionSuffix_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.getIsDataNeedRelogin() != false) {
@@ -945,7 +1027,6 @@ public final class DataResVersionNotifyOuterClass {
         }
         if (!other.getClientSilenceMd5().isEmpty()) {
           clientSilenceMd5_ = other.clientSilenceMd5_;
-          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (other.getClientDataVersion() != 0) {
@@ -953,13 +1034,12 @@ public final class DataResVersionNotifyOuterClass {
         }
         if (!other.getClientMd5().isEmpty()) {
           clientMd5_ = other.clientMd5_;
-          bitField0_ |= 0x00000080;
           onChanged();
         }
         if (other.hasResVersionConfig()) {
           mergeResVersionConfig(other.getResVersionConfig());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -974,80 +1054,19 @@ public final class DataResVersionNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                clientMd5_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 18
-              case 26: {
-                clientSilenceVersionSuffix_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 40: {
-                clientDataVersion_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 40
-              case 48: {
-                opType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 58: {
-                input.readMessage(
-                    getResVersionConfigFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 58
-              case 74: {
-                clientVersionSuffix_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 74
-              case 98: {
-                clientSilenceMd5_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 98
-              case 104: {
-                clientSilenceDataVersion_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              case 120: {
-                isDataNeedRelogin_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int clientSilenceDataVersion_ ;
       /**
@@ -1066,7 +1085,6 @@ public final class DataResVersionNotifyOuterClass {
       public Builder setClientSilenceDataVersion(int value) {
         
         clientSilenceDataVersion_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1075,7 +1093,7 @@ public final class DataResVersionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientSilenceDataVersion() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         clientSilenceDataVersion_ = 0;
         onChanged();
         return this;
@@ -1095,8 +1113,8 @@ public final class DataResVersionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOpTypeValue(int value) {
+        
         opType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1106,7 +1124,8 @@ public final class DataResVersionNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType getOpType() {
-        emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType result = emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType.forNumber(opType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType result = emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType.valueOf(opType_);
         return result == null ? emu.gingerps.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.DataResVersionOpType.UNRECOGNIZED : result;
       }
       /**
@@ -1118,7 +1137,7 @@ public final class DataResVersionNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         opType_ = value.getNumber();
         onChanged();
         return this;
@@ -1128,7 +1147,7 @@ public final class DataResVersionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         opType_ = 0;
         onChanged();
         return this;
@@ -1175,9 +1194,11 @@ public final class DataResVersionNotifyOuterClass {
        */
       public Builder setClientSilenceVersionSuffix(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         clientSilenceVersionSuffix_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1186,8 +1207,8 @@ public final class DataResVersionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientSilenceVersionSuffix() {
+        
         clientSilenceVersionSuffix_ = getDefaultInstance().getClientSilenceVersionSuffix();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1198,10 +1219,12 @@ public final class DataResVersionNotifyOuterClass {
        */
       public Builder setClientSilenceVersionSuffixBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         clientSilenceVersionSuffix_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1247,9 +1270,11 @@ public final class DataResVersionNotifyOuterClass {
        */
       public Builder setClientVersionSuffix(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         clientVersionSuffix_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1258,8 +1283,8 @@ public final class DataResVersionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientVersionSuffix() {
+        
         clientVersionSuffix_ = getDefaultInstance().getClientVersionSuffix();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1270,10 +1295,12 @@ public final class DataResVersionNotifyOuterClass {
        */
       public Builder setClientVersionSuffixBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         clientVersionSuffix_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1295,7 +1322,6 @@ public final class DataResVersionNotifyOuterClass {
       public Builder setIsDataNeedRelogin(boolean value) {
         
         isDataNeedRelogin_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1304,7 +1330,7 @@ public final class DataResVersionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsDataNeedRelogin() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         isDataNeedRelogin_ = false;
         onChanged();
         return this;
@@ -1351,9 +1377,11 @@ public final class DataResVersionNotifyOuterClass {
        */
       public Builder setClientSilenceMd5(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         clientSilenceMd5_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1362,8 +1390,8 @@ public final class DataResVersionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientSilenceMd5() {
+        
         clientSilenceMd5_ = getDefaultInstance().getClientSilenceMd5();
-        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1374,10 +1402,12 @@ public final class DataResVersionNotifyOuterClass {
        */
       public Builder setClientSilenceMd5Bytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         clientSilenceMd5_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1399,7 +1429,6 @@ public final class DataResVersionNotifyOuterClass {
       public Builder setClientDataVersion(int value) {
         
         clientDataVersion_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1408,7 +1437,7 @@ public final class DataResVersionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientDataVersion() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         clientDataVersion_ = 0;
         onChanged();
         return this;
@@ -1455,9 +1484,11 @@ public final class DataResVersionNotifyOuterClass {
        */
       public Builder setClientMd5(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         clientMd5_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1466,8 +1497,8 @@ public final class DataResVersionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientMd5() {
+        
         clientMd5_ = getDefaultInstance().getClientMd5();
-        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -1478,10 +1509,12 @@ public final class DataResVersionNotifyOuterClass {
        */
       public Builder setClientMd5Bytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         clientMd5_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1494,7 +1527,7 @@ public final class DataResVersionNotifyOuterClass {
        * @return Whether the resVersionConfig field is set.
        */
       public boolean hasResVersionConfig() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return resVersionConfigBuilder_ != null || resVersionConfig_ != null;
       }
       /**
        * <code>.ResVersionConfig res_version_config = 7;</code>
@@ -1516,11 +1549,11 @@ public final class DataResVersionNotifyOuterClass {
             throw new NullPointerException();
           }
           resVersionConfig_ = value;
+          onChanged();
         } else {
           resVersionConfigBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000100;
-        onChanged();
+
         return this;
       }
       /**
@@ -1530,11 +1563,11 @@ public final class DataResVersionNotifyOuterClass {
           emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder builderForValue) {
         if (resVersionConfigBuilder_ == null) {
           resVersionConfig_ = builderForValue.build();
+          onChanged();
         } else {
           resVersionConfigBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000100;
-        onChanged();
+
         return this;
       }
       /**
@@ -1542,38 +1575,38 @@ public final class DataResVersionNotifyOuterClass {
        */
       public Builder mergeResVersionConfig(emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig value) {
         if (resVersionConfigBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0) &&
-            resVersionConfig_ != null &&
-            resVersionConfig_ != emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.getDefaultInstance()) {
-            getResVersionConfigBuilder().mergeFrom(value);
+          if (resVersionConfig_ != null) {
+            resVersionConfig_ =
+              emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.newBuilder(resVersionConfig_).mergeFrom(value).buildPartial();
           } else {
             resVersionConfig_ = value;
           }
+          onChanged();
         } else {
           resVersionConfigBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000100;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ResVersionConfig res_version_config = 7;</code>
        */
       public Builder clearResVersionConfig() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        resVersionConfig_ = null;
-        if (resVersionConfigBuilder_ != null) {
-          resVersionConfigBuilder_.dispose();
+        if (resVersionConfigBuilder_ == null) {
+          resVersionConfig_ = null;
+          onChanged();
+        } else {
+          resVersionConfig_ = null;
           resVersionConfigBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ResVersionConfig res_version_config = 7;</code>
        */
       public emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder getResVersionConfigBuilder() {
-        bitField0_ |= 0x00000100;
+        
         onChanged();
         return getResVersionConfigFieldBuilder().getBuilder();
       }
@@ -1637,18 +1670,7 @@ public final class DataResVersionNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DataResVersionNotify(input, extensionRegistry);
       }
     };
 

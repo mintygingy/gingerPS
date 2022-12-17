@@ -47,12 +47,14 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
      */
+
     int getFallCountMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
      */
+
     int getFallCountMapOrThrow(
         int key);
   }
@@ -83,6 +85,62 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneGalleryBrokenFloorInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 80: {
+
+              endTime_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                fallCountMap_ = com.google.protobuf.MapField.newMapField(
+                    FallCountMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              fallCountMap__ = input.readMessage(
+                  FallCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              fallCountMap_.getMutableMap().put(
+                  fallCountMap__.getKey(), fallCountMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.internal_static_SceneGalleryBrokenFloorInfo_descriptor;
@@ -109,7 +167,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 10;
-    private int endTime_ = 0;
+    private int endTime_;
     /**
      * <code>uint32 end_time = 10;</code>
      * @return The endTime.
@@ -131,7 +189,6 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> fallCountMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -142,12 +199,14 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       }
       return fallCountMap_;
     }
+
     public int getFallCountMapCount() {
       return internalGetFallCountMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
      */
+
     @java.lang.Override
     public boolean containsFallCountMap(
         int key) {
@@ -166,6 +225,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getFallCountMapMap() {
       return internalGetFallCountMap().getMap();
     }
@@ -173,6 +233,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
      */
     @java.lang.Override
+
     public int getFallCountMapOrDefault(
         int key,
         int defaultValue) {
@@ -185,6 +246,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
      */
     @java.lang.Override
+
     public int getFallCountMapOrThrow(
         int key) {
       
@@ -219,7 +281,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
           internalGetFallCountMap(),
           FallCountMapDefaultEntryHolder.defaultEntry,
           15);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -242,7 +304,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(15, fallCountMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -261,7 +323,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
           != other.getEndTime()) return false;
       if (!internalGetFallCountMap().equals(
           other.internalGetFallCountMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -278,7 +340,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         hash = (37 * hash) + FALL_COUNT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetFallCountMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -417,19 +479,24 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         endTime_ = 0;
+
         internalGetMutableFallCountMap().clear();
         return this;
       }
@@ -457,20 +524,12 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo result = new emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.endTime_ = endTime_;
+        result.fallCountMap_ = internalGetFallCountMap();
+        result.fallCountMap_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.endTime_ = endTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.fallCountMap_ = internalGetFallCountMap();
-          result.fallCountMap_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -522,8 +581,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         }
         internalGetMutableFallCountMap().mergeFrom(
             other.internalGetFallCountMap());
-        bitField0_ |= 0x00000002;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -538,44 +596,17 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 80: {
-                endTime_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 122: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                fallCountMap__ = input.readMessage(
-                    FallCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableFallCountMap().getMutableMap().put(
-                    fallCountMap__.getKey(), fallCountMap__.getValue());
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -597,7 +628,6 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -606,7 +636,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         endTime_ = 0;
         onChanged();
         return this;
@@ -615,7 +645,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> fallCountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetFallCountMap() {
+      internalGetFallCountMap() {
         if (fallCountMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               FallCountMapDefaultEntryHolder.defaultEntry);
@@ -623,7 +653,8 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         return fallCountMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableFallCountMap() {
+      internalGetMutableFallCountMap() {
+        onChanged();;
         if (fallCountMap_ == null) {
           fallCountMap_ = com.google.protobuf.MapField.newMapField(
               FallCountMapDefaultEntryHolder.defaultEntry);
@@ -631,16 +662,16 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         if (!fallCountMap_.isMutable()) {
           fallCountMap_ = fallCountMap_.copy();
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
         return fallCountMap_;
       }
+
       public int getFallCountMapCount() {
         return internalGetFallCountMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
        */
+
       @java.lang.Override
       public boolean containsFallCountMap(
           int key) {
@@ -659,6 +690,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getFallCountMapMap() {
         return internalGetFallCountMap().getMap();
       }
@@ -666,6 +698,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
        */
       @java.lang.Override
+
       public int getFallCountMapOrDefault(
           int key,
           int defaultValue) {
@@ -678,6 +711,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
        */
       @java.lang.Override
+
       public int getFallCountMapOrThrow(
           int key) {
         
@@ -688,8 +722,8 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearFallCountMap() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableFallCountMap().getMutableMap()
             .clear();
         return this;
@@ -697,6 +731,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
        */
+
       public Builder removeFallCountMap(
           int key) {
         
@@ -709,8 +744,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableFallCountMap() {
-        bitField0_ |= 0x00000002;
+      getMutableFallCountMap() {
         return internalGetMutableFallCountMap().getMutableMap();
       }
       /**
@@ -723,17 +757,16 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         
         internalGetMutableFallCountMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; fall_count_map = 15;</code>
        */
+
       public Builder putAllFallCountMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableFallCountMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000002;
         return this;
       }
       @java.lang.Override
@@ -769,18 +802,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneGalleryBrokenFloorInfo(input, extensionRegistry);
       }
     };
 

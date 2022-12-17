@@ -108,6 +108,115 @@ public final class GadgetGeneralRewardInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GadgetGeneralRewardInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              resin_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              deadTime_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                remainUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              remainUidList_.addInt(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                remainUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                remainUidList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                qualifyUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              qualifyUidList_.addInt(input.readUInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                qualifyUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                qualifyUidList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 42: {
+              emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder subBuilder = null;
+              if (itemParam_ != null) {
+                subBuilder = itemParam_.toBuilder();
+              }
+              itemParam_ = input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(itemParam_);
+                itemParam_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          remainUidList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          qualifyUidList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.internal_static_GadgetGeneralRewardInfo_descriptor;
@@ -122,7 +231,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
     }
 
     public static final int RESIN_FIELD_NUMBER = 1;
-    private int resin_ = 0;
+    private int resin_;
     /**
      * <code>uint32 resin = 1;</code>
      * @return The resin.
@@ -133,7 +242,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
     }
 
     public static final int DEAD_TIME_FIELD_NUMBER = 2;
-    private int deadTime_ = 0;
+    private int deadTime_;
     /**
      * <code>uint32 dead_time = 2;</code>
      * @return The deadTime.
@@ -144,7 +253,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
     }
 
     public static final int REMAIN_UID_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList remainUidList_;
     /**
      * <code>repeated uint32 remain_uid_list = 3;</code>
@@ -173,7 +281,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
     private int remainUidListMemoizedSerializedSize = -1;
 
     public static final int QUALIFY_UID_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList qualifyUidList_;
     /**
      * <code>repeated uint32 qualify_uid_list = 4;</code>
@@ -224,7 +331,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemParamOrBuilder() {
-      return itemParam_ == null ? emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance() : itemParam_;
+      return getItemParam();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -265,7 +372,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
       if (itemParam_ != null) {
         output.writeMessage(5, getItemParam());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -314,7 +421,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getItemParam());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -342,7 +449,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
         if (!getItemParam()
             .equals(other.getItemParam())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -369,7 +476,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
         hash = (37 * hash) + ITEM_PARAM_FIELD_NUMBER;
         hash = (53 * hash) + getItemParam().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -486,25 +593,34 @@ public final class GadgetGeneralRewardInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         resin_ = 0;
+
         deadTime_ = 0;
+
         remainUidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         qualifyUidList_ = emptyIntList();
-        itemParam_ = null;
-        if (itemParamBuilder_ != null) {
-          itemParamBuilder_.dispose();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (itemParamBuilder_ == null) {
+          itemParam_ = null;
+        } else {
+          itemParam_ = null;
           itemParamBuilder_ = null;
         }
         return this;
@@ -533,38 +649,26 @@ public final class GadgetGeneralRewardInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo buildPartial() {
         emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo result = new emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.resin_ = resin_;
+        result.deadTime_ = deadTime_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           remainUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.remainUidList_ = remainUidList_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           qualifyUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.qualifyUidList_ = qualifyUidList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.resin_ = resin_;
+        if (itemParamBuilder_ == null) {
+          result.itemParam_ = itemParam_;
+        } else {
+          result.itemParam_ = itemParamBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.deadTime_ = deadTime_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.itemParam_ = itemParamBuilder_ == null
-              ? itemParam_
-              : itemParamBuilder_.build();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -620,7 +724,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
         if (!other.remainUidList_.isEmpty()) {
           if (remainUidList_.isEmpty()) {
             remainUidList_ = other.remainUidList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureRemainUidListIsMutable();
             remainUidList_.addAll(other.remainUidList_);
@@ -630,7 +734,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
         if (!other.qualifyUidList_.isEmpty()) {
           if (qualifyUidList_.isEmpty()) {
             qualifyUidList_ = other.qualifyUidList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureQualifyUidListIsMutable();
             qualifyUidList_.addAll(other.qualifyUidList_);
@@ -640,7 +744,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
         if (other.hasItemParam()) {
           mergeItemParam(other.getItemParam());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -655,79 +759,17 @@ public final class GadgetGeneralRewardInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                resin_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                deadTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                int v = input.readUInt32();
-                ensureRemainUidListIsMutable();
-                remainUidList_.addInt(v);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureRemainUidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  remainUidList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 26
-              case 32: {
-                int v = input.readUInt32();
-                ensureQualifyUidListIsMutable();
-                qualifyUidList_.addInt(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureQualifyUidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  qualifyUidList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getItemParamFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -749,7 +791,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
       public Builder setResin(int value) {
         
         resin_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -758,7 +799,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearResin() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         resin_ = 0;
         onChanged();
         return this;
@@ -781,7 +822,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
       public Builder setDeadTime(int value) {
         
         deadTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -790,7 +830,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDeadTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         deadTime_ = 0;
         onChanged();
         return this;
@@ -798,10 +838,10 @@ public final class GadgetGeneralRewardInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList remainUidList_ = emptyIntList();
       private void ensureRemainUidListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           remainUidList_ = mutableCopy(remainUidList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 remain_uid_list = 3;</code>
@@ -809,7 +849,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getRemainUidListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(remainUidList_) : remainUidList_;
       }
       /**
@@ -835,7 +875,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
        */
       public Builder setRemainUidList(
           int index, int value) {
-        
         ensureRemainUidListIsMutable();
         remainUidList_.setInt(index, value);
         onChanged();
@@ -847,7 +886,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addRemainUidList(int value) {
-        
         ensureRemainUidListIsMutable();
         remainUidList_.addInt(value);
         onChanged();
@@ -872,17 +910,17 @@ public final class GadgetGeneralRewardInfoOuterClass {
        */
       public Builder clearRemainUidList() {
         remainUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList qualifyUidList_ = emptyIntList();
       private void ensureQualifyUidListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           qualifyUidList_ = mutableCopy(qualifyUidList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 qualify_uid_list = 4;</code>
@@ -890,7 +928,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getQualifyUidListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(qualifyUidList_) : qualifyUidList_;
       }
       /**
@@ -916,7 +954,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
        */
       public Builder setQualifyUidList(
           int index, int value) {
-        
         ensureQualifyUidListIsMutable();
         qualifyUidList_.setInt(index, value);
         onChanged();
@@ -928,7 +965,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addQualifyUidList(int value) {
-        
         ensureQualifyUidListIsMutable();
         qualifyUidList_.addInt(value);
         onChanged();
@@ -953,7 +989,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
        */
       public Builder clearQualifyUidList() {
         qualifyUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -966,7 +1002,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
        * @return Whether the itemParam field is set.
        */
       public boolean hasItemParam() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return itemParamBuilder_ != null || itemParam_ != null;
       }
       /**
        * <code>.ItemParam item_param = 5;</code>
@@ -988,11 +1024,11 @@ public final class GadgetGeneralRewardInfoOuterClass {
             throw new NullPointerException();
           }
           itemParam_ = value;
+          onChanged();
         } else {
           itemParamBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1002,11 +1038,11 @@ public final class GadgetGeneralRewardInfoOuterClass {
           emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
         if (itemParamBuilder_ == null) {
           itemParam_ = builderForValue.build();
+          onChanged();
         } else {
           itemParamBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1014,38 +1050,38 @@ public final class GadgetGeneralRewardInfoOuterClass {
        */
       public Builder mergeItemParam(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam value) {
         if (itemParamBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            itemParam_ != null &&
-            itemParam_ != emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance()) {
-            getItemParamBuilder().mergeFrom(value);
+          if (itemParam_ != null) {
+            itemParam_ =
+              emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.newBuilder(itemParam_).mergeFrom(value).buildPartial();
           } else {
             itemParam_ = value;
           }
+          onChanged();
         } else {
           itemParamBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ItemParam item_param = 5;</code>
        */
       public Builder clearItemParam() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        itemParam_ = null;
-        if (itemParamBuilder_ != null) {
-          itemParamBuilder_.dispose();
+        if (itemParamBuilder_ == null) {
+          itemParam_ = null;
+          onChanged();
+        } else {
+          itemParam_ = null;
           itemParamBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ItemParam item_param = 5;</code>
        */
       public emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder getItemParamBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getItemParamFieldBuilder().getBuilder();
       }
@@ -1109,18 +1145,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GadgetGeneralRewardInfo(input, extensionRegistry);
       }
     };
 

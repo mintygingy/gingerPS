@@ -65,14 +65,14 @@ public final class PlayerDataNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
+
+    emu.gingerps.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
+        emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
     /**
      * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
      */
+
     emu.gingerps.net.proto.PropValueOuterClass.PropValue getPropMapOrThrow(
         int key);
 
@@ -120,6 +120,78 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              serverTime_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              regionId_ = input.readUInt32();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                propMap_ = com.google.protobuf.MapField.newMapField(
+                    PropMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
+              propMap__ = input.readMessage(
+                  PropMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              propMap_.getMutableMap().put(
+                  propMap__.getKey(), propMap__.getValue());
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickName_ = s;
+              break;
+            }
+            case 96: {
+
+              isFirstLoginToday_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerDataNotifyOuterClass.internal_static_PlayerDataNotify_descriptor;
@@ -146,7 +218,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
     }
 
     public static final int IS_FIRST_LOGIN_TODAY_FIELD_NUMBER = 12;
-    private boolean isFirstLoginToday_ = false;
+    private boolean isFirstLoginToday_;
     /**
      * <code>bool is_first_login_today = 12;</code>
      * @return The isFirstLoginToday.
@@ -157,8 +229,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
     }
 
     public static final int NICK_NAME_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object nickName_ = "";
+    private volatile java.lang.Object nickName_;
     /**
      * <code>string nick_name = 9;</code>
      * @return The nickName.
@@ -196,7 +267,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
     }
 
     public static final int SERVER_TIME_FIELD_NUMBER = 1;
-    private long serverTime_ = 0L;
+    private long serverTime_;
     /**
      * <code>uint64 server_time = 1;</code>
      * @return The serverTime.
@@ -218,7 +289,6 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.PropValueOuterClass.PropValue.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> propMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
@@ -229,12 +299,14 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
       }
       return propMap_;
     }
+
     public int getPropMapCount() {
       return internalGetPropMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
      */
+
     @java.lang.Override
     public boolean containsPropMap(
         int key) {
@@ -253,6 +325,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
      * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> getPropMapMap() {
       return internalGetPropMap().getMap();
     }
@@ -260,11 +333,10 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
      * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
+
+    public emu.gingerps.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
+        emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> map =
           internalGetPropMap().getMap();
@@ -274,6 +346,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
      * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.PropValueOuterClass.PropValue getPropMapOrThrow(
         int key) {
       
@@ -286,7 +359,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
     }
 
     public static final int REGION_ID_FIELD_NUMBER = 2;
-    private int regionId_ = 0;
+    private int regionId_;
     /**
      * <code>uint32 region_id = 2;</code>
      * @return The regionId.
@@ -328,7 +401,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       if (isFirstLoginToday_ != false) {
         output.writeBool(12, isFirstLoginToday_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -362,7 +435,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, isFirstLoginToday_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -387,7 +460,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
           other.internalGetPropMap())) return false;
       if (getRegionId()
           != other.getRegionId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -412,7 +485,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       }
       hash = (37 * hash) + REGION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRegionId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -561,23 +634,31 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
 
       // Construct using emu.gingerps.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isFirstLoginToday_ = false;
+
         nickName_ = "";
+
         serverTime_ = 0L;
+
         internalGetMutablePropMap().clear();
         regionId_ = 0;
+
         return this;
       }
 
@@ -604,29 +685,15 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotify buildPartial() {
         emu.gingerps.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotify result = new emu.gingerps.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.isFirstLoginToday_ = isFirstLoginToday_;
+        result.nickName_ = nickName_;
+        result.serverTime_ = serverTime_;
+        result.propMap_ = internalGetPropMap();
+        result.propMap_.makeImmutable();
+        result.regionId_ = regionId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isFirstLoginToday_ = isFirstLoginToday_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.nickName_ = nickName_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.serverTime_ = serverTime_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.propMap_ = internalGetPropMap();
-          result.propMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.regionId_ = regionId_;
-        }
       }
 
       @java.lang.Override
@@ -678,7 +745,6 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         }
         if (!other.getNickName().isEmpty()) {
           nickName_ = other.nickName_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getServerTime() != 0L) {
@@ -686,11 +752,10 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         }
         internalGetMutablePropMap().mergeFrom(
             other.internalGetPropMap());
-        bitField0_ |= 0x00000008;
         if (other.getRegionId() != 0) {
           setRegionId(other.getRegionId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -705,59 +770,17 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                serverTime_ = input.readUInt64();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 8
-              case 16: {
-                regionId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 16
-              case 34: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
-                propMap__ = input.readMessage(
-                    PropMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutablePropMap().getMutableMap().put(
-                    propMap__.getKey(), propMap__.getValue());
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 74: {
-                nickName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 74
-              case 96: {
-                isFirstLoginToday_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -779,7 +802,6 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       public Builder setIsFirstLoginToday(boolean value) {
         
         isFirstLoginToday_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -788,7 +810,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearIsFirstLoginToday() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isFirstLoginToday_ = false;
         onChanged();
         return this;
@@ -835,9 +857,11 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        */
       public Builder setNickName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         nickName_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -846,8 +870,8 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearNickName() {
+        
         nickName_ = getDefaultInstance().getNickName();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -858,10 +882,12 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        */
       public Builder setNickNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         nickName_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -883,7 +909,6 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       public Builder setServerTime(long value) {
         
         serverTime_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -892,7 +917,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearServerTime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         serverTime_ = 0L;
         onChanged();
         return this;
@@ -901,7 +926,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> propMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
-          internalGetPropMap() {
+      internalGetPropMap() {
         if (propMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               PropMapDefaultEntryHolder.defaultEntry);
@@ -909,7 +934,8 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         return propMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
-          internalGetMutablePropMap() {
+      internalGetMutablePropMap() {
+        onChanged();;
         if (propMap_ == null) {
           propMap_ = com.google.protobuf.MapField.newMapField(
               PropMapDefaultEntryHolder.defaultEntry);
@@ -917,16 +943,16 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         if (!propMap_.isMutable()) {
           propMap_ = propMap_.copy();
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
         return propMap_;
       }
+
       public int getPropMapCount() {
         return internalGetPropMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
        */
+
       @java.lang.Override
       public boolean containsPropMap(
           int key) {
@@ -945,6 +971,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> getPropMapMap() {
         return internalGetPropMap().getMap();
       }
@@ -952,11 +979,10 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
+
+      public emu.gingerps.net.proto.PropValueOuterClass.PropValue getPropMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
+          emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> map =
             internalGetPropMap().getMap();
@@ -966,6 +992,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.PropValueOuterClass.PropValue getPropMapOrThrow(
           int key) {
         
@@ -976,8 +1003,8 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearPropMap() {
-        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutablePropMap().getMutableMap()
             .clear();
         return this;
@@ -985,6 +1012,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       /**
        * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
        */
+
       public Builder removePropMap(
           int key) {
         
@@ -997,8 +1025,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
-          getMutablePropMap() {
-        bitField0_ |= 0x00000008;
+      getMutablePropMap() {
         return internalGetMutablePropMap().getMutableMap();
       }
       /**
@@ -1008,20 +1035,19 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
           int key,
           emu.gingerps.net.proto.PropValueOuterClass.PropValue value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutablePropMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000008;
         return this;
       }
       /**
        * <code>map&lt;uint32, .PropValue&gt; prop_map = 4;</code>
        */
+
       public Builder putAllPropMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> values) {
         internalGetMutablePropMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000008;
         return this;
       }
 
@@ -1042,7 +1068,6 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       public Builder setRegionId(int value) {
         
         regionId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1051,7 +1076,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearRegionId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         regionId_ = 0;
         onChanged();
         return this;
@@ -1089,18 +1114,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerDataNotify(input, extensionRegistry);
       }
     };
 

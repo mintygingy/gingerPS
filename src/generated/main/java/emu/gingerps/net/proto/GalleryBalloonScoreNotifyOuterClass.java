@@ -41,12 +41,14 @@ public final class GalleryBalloonScoreNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
      */
+
     int getUidScoreMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
      */
+
     int getUidScoreMapOrThrow(
         int key);
 
@@ -93,6 +95,62 @@ public final class GalleryBalloonScoreNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GalleryBalloonScoreNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 88: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                uidScoreMap_ = com.google.protobuf.MapField.newMapField(
+                    UidScoreMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              uidScoreMap__ = input.readMessage(
+                  UidScoreMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              uidScoreMap_.getMutableMap().put(
+                  uidScoreMap__.getKey(), uidScoreMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GalleryBalloonScoreNotifyOuterClass.internal_static_GalleryBalloonScoreNotify_descriptor;
@@ -130,7 +188,6 @@ public final class GalleryBalloonScoreNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> uidScoreMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -141,12 +198,14 @@ public final class GalleryBalloonScoreNotifyOuterClass {
       }
       return uidScoreMap_;
     }
+
     public int getUidScoreMapCount() {
       return internalGetUidScoreMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
      */
+
     @java.lang.Override
     public boolean containsUidScoreMap(
         int key) {
@@ -165,6 +224,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getUidScoreMapMap() {
       return internalGetUidScoreMap().getMap();
     }
@@ -172,6 +232,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
      */
     @java.lang.Override
+
     public int getUidScoreMapOrDefault(
         int key,
         int defaultValue) {
@@ -184,6 +245,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
      */
     @java.lang.Override
+
     public int getUidScoreMapOrThrow(
         int key) {
       
@@ -196,7 +258,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 11;
-    private int galleryId_ = 0;
+    private int galleryId_;
     /**
      * <code>uint32 gallery_id = 11;</code>
      * @return The galleryId.
@@ -229,7 +291,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
           internalGetUidScoreMap(),
           UidScoreMapDefaultEntryHolder.defaultEntry,
           12);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -252,7 +314,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(12, uidScoreMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -271,7 +333,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
           other.internalGetUidScoreMap())) return false;
       if (getGalleryId()
           != other.getGalleryId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -288,7 +350,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
       }
       hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGalleryId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -437,20 +499,25 @@ public final class GalleryBalloonScoreNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GalleryBalloonScoreNotifyOuterClass.GalleryBalloonScoreNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableUidScoreMap().clear();
         galleryId_ = 0;
+
         return this;
       }
 
@@ -477,20 +544,12 @@ public final class GalleryBalloonScoreNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryBalloonScoreNotifyOuterClass.GalleryBalloonScoreNotify buildPartial() {
         emu.gingerps.net.proto.GalleryBalloonScoreNotifyOuterClass.GalleryBalloonScoreNotify result = new emu.gingerps.net.proto.GalleryBalloonScoreNotifyOuterClass.GalleryBalloonScoreNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.uidScoreMap_ = internalGetUidScoreMap();
+        result.uidScoreMap_.makeImmutable();
+        result.galleryId_ = galleryId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GalleryBalloonScoreNotifyOuterClass.GalleryBalloonScoreNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.uidScoreMap_ = internalGetUidScoreMap();
-          result.uidScoreMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.galleryId_ = galleryId_;
-        }
       }
 
       @java.lang.Override
@@ -539,11 +598,10 @@ public final class GalleryBalloonScoreNotifyOuterClass {
         if (other == emu.gingerps.net.proto.GalleryBalloonScoreNotifyOuterClass.GalleryBalloonScoreNotify.getDefaultInstance()) return this;
         internalGetMutableUidScoreMap().mergeFrom(
             other.internalGetUidScoreMap());
-        bitField0_ |= 0x00000001;
         if (other.getGalleryId() != 0) {
           setGalleryId(other.getGalleryId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -558,44 +616,17 @@ public final class GalleryBalloonScoreNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GalleryBalloonScoreNotifyOuterClass.GalleryBalloonScoreNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 88: {
-                galleryId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              case 98: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                uidScoreMap__ = input.readMessage(
-                    UidScoreMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableUidScoreMap().getMutableMap().put(
-                    uidScoreMap__.getKey(), uidScoreMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GalleryBalloonScoreNotifyOuterClass.GalleryBalloonScoreNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -603,7 +634,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> uidScoreMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetUidScoreMap() {
+      internalGetUidScoreMap() {
         if (uidScoreMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               UidScoreMapDefaultEntryHolder.defaultEntry);
@@ -611,7 +642,8 @@ public final class GalleryBalloonScoreNotifyOuterClass {
         return uidScoreMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableUidScoreMap() {
+      internalGetMutableUidScoreMap() {
+        onChanged();;
         if (uidScoreMap_ == null) {
           uidScoreMap_ = com.google.protobuf.MapField.newMapField(
               UidScoreMapDefaultEntryHolder.defaultEntry);
@@ -619,16 +651,16 @@ public final class GalleryBalloonScoreNotifyOuterClass {
         if (!uidScoreMap_.isMutable()) {
           uidScoreMap_ = uidScoreMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return uidScoreMap_;
       }
+
       public int getUidScoreMapCount() {
         return internalGetUidScoreMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
        */
+
       @java.lang.Override
       public boolean containsUidScoreMap(
           int key) {
@@ -647,6 +679,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getUidScoreMapMap() {
         return internalGetUidScoreMap().getMap();
       }
@@ -654,6 +687,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
        */
       @java.lang.Override
+
       public int getUidScoreMapOrDefault(
           int key,
           int defaultValue) {
@@ -666,6 +700,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
        */
       @java.lang.Override
+
       public int getUidScoreMapOrThrow(
           int key) {
         
@@ -676,8 +711,8 @@ public final class GalleryBalloonScoreNotifyOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearUidScoreMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableUidScoreMap().getMutableMap()
             .clear();
         return this;
@@ -685,6 +720,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
        */
+
       public Builder removeUidScoreMap(
           int key) {
         
@@ -697,8 +733,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableUidScoreMap() {
-        bitField0_ |= 0x00000001;
+      getMutableUidScoreMap() {
         return internalGetMutableUidScoreMap().getMutableMap();
       }
       /**
@@ -711,17 +746,16 @@ public final class GalleryBalloonScoreNotifyOuterClass {
         
         internalGetMutableUidScoreMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; uid_score_map = 12;</code>
        */
+
       public Builder putAllUidScoreMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableUidScoreMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -742,7 +776,6 @@ public final class GalleryBalloonScoreNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -751,7 +784,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         galleryId_ = 0;
         onChanged();
         return this;
@@ -789,18 +822,7 @@ public final class GalleryBalloonScoreNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GalleryBalloonScoreNotify(input, extensionRegistry);
       }
     };
 

@@ -98,6 +98,97 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RoguelikeSelectAvatarAndEnterDungeonReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                backstageAvatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              backstageAvatarGuidList_.addLong(input.readUInt64());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                backstageAvatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                backstageAvatarGuidList_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                onstageAvatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              onstageAvatarGuidList_.addLong(input.readUInt64());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                onstageAvatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                onstageAvatarGuidList_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          backstageAvatarGuidList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          onstageAvatarGuidList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RoguelikeSelectAvatarAndEnterDungeonReqOuterClass.internal_static_RoguelikeSelectAvatarAndEnterDungeonReq_descriptor;
@@ -112,7 +203,7 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 1;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 1;</code>
      * @return The stageId.
@@ -123,7 +214,6 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
     }
 
     public static final int ONSTAGE_AVATAR_GUID_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList onstageAvatarGuidList_;
     /**
      * <code>repeated uint64 onstage_avatar_guid_list = 12;</code>
@@ -152,7 +242,6 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
     private int onstageAvatarGuidListMemoizedSerializedSize = -1;
 
     public static final int BACKSTAGE_AVATAR_GUID_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList backstageAvatarGuidList_;
     /**
      * <code>repeated uint64 backstage_avatar_guid_list = 4;</code>
@@ -212,7 +301,7 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
       for (int i = 0; i < onstageAvatarGuidList_.size(); i++) {
         output.writeUInt64NoTag(onstageAvatarGuidList_.getLong(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -253,7 +342,7 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
         }
         onstageAvatarGuidListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -274,7 +363,7 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
           .equals(other.getOnstageAvatarGuidListList())) return false;
       if (!getBackstageAvatarGuidListList()
           .equals(other.getBackstageAvatarGuidListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -295,7 +384,7 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
         hash = (37 * hash) + BACKSTAGE_AVATAR_GUID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBackstageAvatarGuidListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -423,21 +512,28 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.RoguelikeSelectAvatarAndEnterDungeonReqOuterClass.RoguelikeSelectAvatarAndEnterDungeonReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         stageId_ = 0;
+
         onstageAvatarGuidList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         backstageAvatarGuidList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -464,30 +560,20 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RoguelikeSelectAvatarAndEnterDungeonReqOuterClass.RoguelikeSelectAvatarAndEnterDungeonReq buildPartial() {
         emu.gingerps.net.proto.RoguelikeSelectAvatarAndEnterDungeonReqOuterClass.RoguelikeSelectAvatarAndEnterDungeonReq result = new emu.gingerps.net.proto.RoguelikeSelectAvatarAndEnterDungeonReqOuterClass.RoguelikeSelectAvatarAndEnterDungeonReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.RoguelikeSelectAvatarAndEnterDungeonReqOuterClass.RoguelikeSelectAvatarAndEnterDungeonReq result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.stageId_ = stageId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           onstageAvatarGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.onstageAvatarGuidList_ = onstageAvatarGuidList_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           backstageAvatarGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.backstageAvatarGuidList_ = backstageAvatarGuidList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RoguelikeSelectAvatarAndEnterDungeonReqOuterClass.RoguelikeSelectAvatarAndEnterDungeonReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.stageId_ = stageId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -540,7 +626,7 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
         if (!other.onstageAvatarGuidList_.isEmpty()) {
           if (onstageAvatarGuidList_.isEmpty()) {
             onstageAvatarGuidList_ = other.onstageAvatarGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureOnstageAvatarGuidListIsMutable();
             onstageAvatarGuidList_.addAll(other.onstageAvatarGuidList_);
@@ -550,14 +636,14 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
         if (!other.backstageAvatarGuidList_.isEmpty()) {
           if (backstageAvatarGuidList_.isEmpty()) {
             backstageAvatarGuidList_ = other.backstageAvatarGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureBackstageAvatarGuidListIsMutable();
             backstageAvatarGuidList_.addAll(other.backstageAvatarGuidList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -572,67 +658,17 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RoguelikeSelectAvatarAndEnterDungeonReqOuterClass.RoguelikeSelectAvatarAndEnterDungeonReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 32: {
-                long v = input.readUInt64();
-                ensureBackstageAvatarGuidListIsMutable();
-                backstageAvatarGuidList_.addLong(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureBackstageAvatarGuidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  backstageAvatarGuidList_.addLong(input.readUInt64());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              case 96: {
-                long v = input.readUInt64();
-                ensureOnstageAvatarGuidListIsMutable();
-                onstageAvatarGuidList_.addLong(v);
-                break;
-              } // case 96
-              case 98: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureOnstageAvatarGuidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  onstageAvatarGuidList_.addLong(input.readUInt64());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RoguelikeSelectAvatarAndEnterDungeonReqOuterClass.RoguelikeSelectAvatarAndEnterDungeonReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -654,7 +690,6 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -663,7 +698,7 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -671,10 +706,10 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
 
       private com.google.protobuf.Internal.LongList onstageAvatarGuidList_ = emptyLongList();
       private void ensureOnstageAvatarGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           onstageAvatarGuidList_ = mutableCopy(onstageAvatarGuidList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint64 onstage_avatar_guid_list = 12;</code>
@@ -682,7 +717,7 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
        */
       public java.util.List<java.lang.Long>
           getOnstageAvatarGuidListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(onstageAvatarGuidList_) : onstageAvatarGuidList_;
       }
       /**
@@ -708,7 +743,6 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
        */
       public Builder setOnstageAvatarGuidList(
           int index, long value) {
-        
         ensureOnstageAvatarGuidListIsMutable();
         onstageAvatarGuidList_.setLong(index, value);
         onChanged();
@@ -720,7 +754,6 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addOnstageAvatarGuidList(long value) {
-        
         ensureOnstageAvatarGuidListIsMutable();
         onstageAvatarGuidList_.addLong(value);
         onChanged();
@@ -745,17 +778,17 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
        */
       public Builder clearOnstageAvatarGuidList() {
         onstageAvatarGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.LongList backstageAvatarGuidList_ = emptyLongList();
       private void ensureBackstageAvatarGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           backstageAvatarGuidList_ = mutableCopy(backstageAvatarGuidList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint64 backstage_avatar_guid_list = 4;</code>
@@ -763,7 +796,7 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
        */
       public java.util.List<java.lang.Long>
           getBackstageAvatarGuidListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(backstageAvatarGuidList_) : backstageAvatarGuidList_;
       }
       /**
@@ -789,7 +822,6 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
        */
       public Builder setBackstageAvatarGuidList(
           int index, long value) {
-        
         ensureBackstageAvatarGuidListIsMutable();
         backstageAvatarGuidList_.setLong(index, value);
         onChanged();
@@ -801,7 +833,6 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addBackstageAvatarGuidList(long value) {
-        
         ensureBackstageAvatarGuidListIsMutable();
         backstageAvatarGuidList_.addLong(value);
         onChanged();
@@ -826,7 +857,7 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
        */
       public Builder clearBackstageAvatarGuidList() {
         backstageAvatarGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -863,18 +894,7 @@ public final class RoguelikeSelectAvatarAndEnterDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RoguelikeSelectAvatarAndEnterDungeonReq(input, extensionRegistry);
       }
     };
 

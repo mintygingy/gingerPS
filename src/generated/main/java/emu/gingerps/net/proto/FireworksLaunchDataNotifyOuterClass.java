@@ -86,6 +86,61 @@ public final class FireworksLaunchDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FireworksLaunchDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                schemeDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              schemeDataList_.add(
+                  input.readMessage(emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
+
+              lastUseSchemeId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          schemeDataList_ = java.util.Collections.unmodifiableList(schemeDataList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FireworksLaunchDataNotifyOuterClass.internal_static_FireworksLaunchDataNotify_descriptor;
@@ -100,7 +155,6 @@ public final class FireworksLaunchDataNotifyOuterClass {
     }
 
     public static final int SCHEME_DATA_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData> schemeDataList_;
     /**
      * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 8;</code>
@@ -141,7 +195,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
     }
 
     public static final int LAST_USE_SCHEME_ID_FIELD_NUMBER = 15;
-    private int lastUseSchemeId_ = 0;
+    private int lastUseSchemeId_;
     /**
      * <code>uint32 last_use_scheme_id = 15;</code>
      * @return The lastUseSchemeId.
@@ -171,7 +225,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
       if (lastUseSchemeId_ != 0) {
         output.writeUInt32(15, lastUseSchemeId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, lastUseSchemeId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
           .equals(other.getSchemeDataListList())) return false;
       if (getLastUseSchemeId()
           != other.getLastUseSchemeId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
       }
       hash = (37 * hash) + LAST_USE_SCHEME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLastUseSchemeId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +405,31 @@ public final class FireworksLaunchDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSchemeDataListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (schemeDataListBuilder_ == null) {
           schemeDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          schemeDataList_ = null;
           schemeDataListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         lastUseSchemeId_ = 0;
+
         return this;
       }
 
@@ -397,13 +456,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify buildPartial() {
         emu.gingerps.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify result = new emu.gingerps.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify result) {
+        int from_bitField0_ = bitField0_;
         if (schemeDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             schemeDataList_ = java.util.Collections.unmodifiableList(schemeDataList_);
@@ -413,13 +466,9 @@ public final class FireworksLaunchDataNotifyOuterClass {
         } else {
           result.schemeDataList_ = schemeDataListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.lastUseSchemeId_ = lastUseSchemeId_;
-        }
+        result.lastUseSchemeId_ = lastUseSchemeId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -495,7 +544,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         if (other.getLastUseSchemeId() != 0) {
           setLastUseSchemeId(other.getLastUseSchemeId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -510,48 +559,17 @@ public final class FireworksLaunchDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 66: {
-                emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.parser(),
-                        extensionRegistry);
-                if (schemeDataListBuilder_ == null) {
-                  ensureSchemeDataListIsMutable();
-                  schemeDataList_.add(m);
-                } else {
-                  schemeDataListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 66
-              case 120: {
-                lastUseSchemeId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -813,7 +831,6 @@ public final class FireworksLaunchDataNotifyOuterClass {
       public Builder setLastUseSchemeId(int value) {
         
         lastUseSchemeId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -822,7 +839,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastUseSchemeId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         lastUseSchemeId_ = 0;
         onChanged();
         return this;
@@ -860,18 +877,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FireworksLaunchDataNotify(input, extensionRegistry);
       }
     };
 

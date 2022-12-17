@@ -98,6 +98,71 @@ public final class BattlePassBuySuccNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BattlePassBuySuccNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              unk3300PJODFJKAFLG_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              unk3300IJOIKKDNKDE_ = input.readUInt32();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              itemList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 88: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          itemList_ = java.util.Collections.unmodifiableList(itemList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BattlePassBuySuccNotifyOuterClass.internal_static_BattlePassBuySuccNotify_descriptor;
@@ -112,7 +177,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
     }
 
     public static final int UNK3300_PJODFJKAFLG_FIELD_NUMBER = 4;
-    private int unk3300PJODFJKAFLG_ = 0;
+    private int unk3300PJODFJKAFLG_;
     /**
      * <code>uint32 Unk3300_PJODFJKAFLG = 4;</code>
      * @return The unk3300PJODFJKAFLG.
@@ -123,7 +188,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
     }
 
     public static final int UNK3300_IJOIKKDNKDE_FIELD_NUMBER = 9;
-    private int unk3300IJOIKKDNKDE_ = 0;
+    private int unk3300IJOIKKDNKDE_;
     /**
      * <code>uint32 Unk3300_IJOIKKDNKDE = 9;</code>
      * @return The unk3300IJOIKKDNKDE.
@@ -134,7 +199,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 11;
-    private int scheduleId_ = 0;
+    private int scheduleId_;
     /**
      * <code>uint32 schedule_id = 11;</code>
      * @return The scheduleId.
@@ -145,7 +210,6 @@ public final class BattlePassBuySuccNotifyOuterClass {
     }
 
     public static final int ITEM_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
      * <code>repeated .ItemParam item_list = 10;</code>
@@ -211,7 +275,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
       if (scheduleId_ != 0) {
         output.writeUInt32(11, scheduleId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -236,7 +300,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, scheduleId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -259,7 +323,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
           != other.getScheduleId()) return false;
       if (!getItemListList()
           .equals(other.getItemListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -280,7 +344,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
         hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -407,28 +471,35 @@ public final class BattlePassBuySuccNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.BattlePassBuySuccNotifyOuterClass.BattlePassBuySuccNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getItemListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300PJODFJKAFLG_ = 0;
+
         unk3300IJOIKKDNKDE_ = 0;
+
         scheduleId_ = 0;
+
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          itemList_ = null;
           itemListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -455,35 +526,21 @@ public final class BattlePassBuySuccNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BattlePassBuySuccNotifyOuterClass.BattlePassBuySuccNotify buildPartial() {
         emu.gingerps.net.proto.BattlePassBuySuccNotifyOuterClass.BattlePassBuySuccNotify result = new emu.gingerps.net.proto.BattlePassBuySuccNotifyOuterClass.BattlePassBuySuccNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BattlePassBuySuccNotifyOuterClass.BattlePassBuySuccNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.unk3300PJODFJKAFLG_ = unk3300PJODFJKAFLG_;
+        result.unk3300IJOIKKDNKDE_ = unk3300IJOIKKDNKDE_;
+        result.scheduleId_ = scheduleId_;
         if (itemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.itemList_ = itemList_;
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BattlePassBuySuccNotifyOuterClass.BattlePassBuySuccNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300PJODFJKAFLG_ = unk3300PJODFJKAFLG_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300IJOIKKDNKDE_ = unk3300IJOIKKDNKDE_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.scheduleId_ = scheduleId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -543,7 +600,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureItemListIsMutable();
               itemList_.addAll(other.itemList_);
@@ -556,7 +613,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
               itemListBuilder_.dispose();
               itemListBuilder_ = null;
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               itemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemListFieldBuilder() : null;
@@ -565,7 +622,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -580,58 +637,17 @@ public final class BattlePassBuySuccNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BattlePassBuySuccNotifyOuterClass.BattlePassBuySuccNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                unk3300PJODFJKAFLG_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 72: {
-                unk3300IJOIKKDNKDE_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 82: {
-                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
-                        extensionRegistry);
-                if (itemListBuilder_ == null) {
-                  ensureItemListIsMutable();
-                  itemList_.add(m);
-                } else {
-                  itemListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              case 88: {
-                scheduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BattlePassBuySuccNotifyOuterClass.BattlePassBuySuccNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -653,7 +669,6 @@ public final class BattlePassBuySuccNotifyOuterClass {
       public Builder setUnk3300PJODFJKAFLG(int value) {
         
         unk3300PJODFJKAFLG_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -662,7 +677,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PJODFJKAFLG() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300PJODFJKAFLG_ = 0;
         onChanged();
         return this;
@@ -685,7 +700,6 @@ public final class BattlePassBuySuccNotifyOuterClass {
       public Builder setUnk3300IJOIKKDNKDE(int value) {
         
         unk3300IJOIKKDNKDE_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -694,7 +708,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IJOIKKDNKDE() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300IJOIKKDNKDE_ = 0;
         onChanged();
         return this;
@@ -717,7 +731,6 @@ public final class BattlePassBuySuccNotifyOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -726,7 +739,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -735,9 +748,9 @@ public final class BattlePassBuySuccNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemList_ =
         java.util.Collections.emptyList();
       private void ensureItemListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(itemList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -887,7 +900,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           itemListBuilder_.clear();
@@ -964,7 +977,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
           itemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   itemList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           itemList_ = null;
@@ -1004,18 +1017,7 @@ public final class BattlePassBuySuccNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BattlePassBuySuccNotify(input, extensionRegistry);
       }
     };
 

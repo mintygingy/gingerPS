@@ -68,6 +68,53 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private IrodoriMasterStartGalleryReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              difficulty_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IrodoriMasterStartGalleryReqOuterClass.internal_static_IrodoriMasterStartGalleryReq_descriptor;
@@ -82,7 +129,7 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
     }
 
     public static final int DIFFICULTY_FIELD_NUMBER = 15;
-    private int difficulty_ = 0;
+    private int difficulty_;
     /**
      * <code>uint32 difficulty = 15;</code>
      * @return The difficulty.
@@ -93,7 +140,7 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 7;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 7;</code>
      * @return The levelId.
@@ -123,7 +170,7 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
       if (difficulty_ != 0) {
         output.writeUInt32(15, difficulty_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, difficulty_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
           != other.getDifficulty()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
       hash = (53 * hash) + getDifficulty();
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -302,20 +349,26 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.IrodoriMasterStartGalleryReqOuterClass.IrodoriMasterStartGalleryReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         difficulty_ = 0;
+
         levelId_ = 0;
+
         return this;
       }
 
@@ -342,19 +395,10 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IrodoriMasterStartGalleryReqOuterClass.IrodoriMasterStartGalleryReq buildPartial() {
         emu.gingerps.net.proto.IrodoriMasterStartGalleryReqOuterClass.IrodoriMasterStartGalleryReq result = new emu.gingerps.net.proto.IrodoriMasterStartGalleryReqOuterClass.IrodoriMasterStartGalleryReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.difficulty_ = difficulty_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.IrodoriMasterStartGalleryReqOuterClass.IrodoriMasterStartGalleryReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.difficulty_ = difficulty_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.levelId_ = levelId_;
-        }
       }
 
       @java.lang.Override
@@ -407,7 +451,7 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -422,43 +466,19 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.IrodoriMasterStartGalleryReqOuterClass.IrodoriMasterStartGalleryReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 120: {
-                difficulty_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.IrodoriMasterStartGalleryReqOuterClass.IrodoriMasterStartGalleryReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int difficulty_ ;
       /**
@@ -477,7 +497,6 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
       public Builder setDifficulty(int value) {
         
         difficulty_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -486,7 +505,7 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficulty() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         difficulty_ = 0;
         onChanged();
         return this;
@@ -509,7 +528,6 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -518,7 +536,7 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -556,18 +574,7 @@ public final class IrodoriMasterStartGalleryReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new IrodoriMasterStartGalleryReq(input, extensionRegistry);
       }
     };
 

@@ -73,6 +73,58 @@ public final class GCGDSChangeFieldRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGDSChangeFieldRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              fieldId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              deckId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGDSChangeFieldRspOuterClass.internal_static_GCGDSChangeFieldRsp_descriptor;
@@ -87,7 +139,7 @@ public final class GCGDSChangeFieldRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 14;</code>
      * @return The retcode.
@@ -98,7 +150,7 @@ public final class GCGDSChangeFieldRspOuterClass {
     }
 
     public static final int DECK_ID_FIELD_NUMBER = 6;
-    private int deckId_ = 0;
+    private int deckId_;
     /**
      * <code>uint32 deck_id = 6;</code>
      * @return The deckId.
@@ -109,7 +161,7 @@ public final class GCGDSChangeFieldRspOuterClass {
     }
 
     public static final int FIELD_ID_FIELD_NUMBER = 1;
-    private int fieldId_ = 0;
+    private int fieldId_;
     /**
      * <code>uint32 field_id = 1;</code>
      * @return The fieldId.
@@ -142,7 +194,7 @@ public final class GCGDSChangeFieldRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(14, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +215,7 @@ public final class GCGDSChangeFieldRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -184,7 +236,7 @@ public final class GCGDSChangeFieldRspOuterClass {
           != other.getDeckId()) return false;
       if (getFieldId()
           != other.getFieldId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -201,7 +253,7 @@ public final class GCGDSChangeFieldRspOuterClass {
       hash = (53 * hash) + getDeckId();
       hash = (37 * hash) + FIELD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFieldId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -328,21 +380,28 @@ public final class GCGDSChangeFieldRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGDSChangeFieldRspOuterClass.GCGDSChangeFieldRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         deckId_ = 0;
+
         fieldId_ = 0;
+
         return this;
       }
 
@@ -369,22 +428,11 @@ public final class GCGDSChangeFieldRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGDSChangeFieldRspOuterClass.GCGDSChangeFieldRsp buildPartial() {
         emu.gingerps.net.proto.GCGDSChangeFieldRspOuterClass.GCGDSChangeFieldRsp result = new emu.gingerps.net.proto.GCGDSChangeFieldRspOuterClass.GCGDSChangeFieldRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        result.deckId_ = deckId_;
+        result.fieldId_ = fieldId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGDSChangeFieldRspOuterClass.GCGDSChangeFieldRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.deckId_ = deckId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.fieldId_ = fieldId_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +488,7 @@ public final class GCGDSChangeFieldRspOuterClass {
         if (other.getFieldId() != 0) {
           setFieldId(other.getFieldId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,48 +503,19 @@ public final class GCGDSChangeFieldRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGDSChangeFieldRspOuterClass.GCGDSChangeFieldRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                fieldId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 8
-              case 48: {
-                deckId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 112: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGDSChangeFieldRspOuterClass.GCGDSChangeFieldRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -515,7 +534,6 @@ public final class GCGDSChangeFieldRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +542,7 @@ public final class GCGDSChangeFieldRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -547,7 +565,6 @@ public final class GCGDSChangeFieldRspOuterClass {
       public Builder setDeckId(int value) {
         
         deckId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -556,7 +573,7 @@ public final class GCGDSChangeFieldRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDeckId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         deckId_ = 0;
         onChanged();
         return this;
@@ -579,7 +596,6 @@ public final class GCGDSChangeFieldRspOuterClass {
       public Builder setFieldId(int value) {
         
         fieldId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -588,7 +604,7 @@ public final class GCGDSChangeFieldRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFieldId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         fieldId_ = 0;
         onChanged();
         return this;
@@ -626,18 +642,7 @@ public final class GCGDSChangeFieldRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGDSChangeFieldRsp(input, extensionRegistry);
       }
     };
 

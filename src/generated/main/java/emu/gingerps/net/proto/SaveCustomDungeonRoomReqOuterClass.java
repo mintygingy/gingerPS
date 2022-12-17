@@ -92,6 +92,74 @@ public final class SaveCustomDungeonRoomReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SaveCustomDungeonRoomReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder subBuilder = null;
+              if (setting_ != null) {
+                subBuilder = setting_.toBuilder();
+              }
+              setting_ = input.readMessage(emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(setting_);
+                setting_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.Builder subBuilder = null;
+              if (customDungeonRoom_ != null) {
+                subBuilder = customDungeonRoom_.toBuilder();
+              }
+              customDungeonRoom_ = input.readMessage(emu.gingerps.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(customDungeonRoom_);
+                customDungeonRoom_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 96: {
+
+              isUpdateSetting_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SaveCustomDungeonRoomReqOuterClass.internal_static_SaveCustomDungeonRoomReq_descriptor;
@@ -128,7 +196,7 @@ public final class SaveCustomDungeonRoomReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSettingOrBuilder getSettingOrBuilder() {
-      return setting_ == null ? emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.getDefaultInstance() : setting_;
+      return getSetting();
     }
 
     public static final int CUSTOM_DUNGEON_ROOM_FIELD_NUMBER = 4;
@@ -154,11 +222,11 @@ public final class SaveCustomDungeonRoomReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoomOrBuilder getCustomDungeonRoomOrBuilder() {
-      return customDungeonRoom_ == null ? emu.gingerps.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.getDefaultInstance() : customDungeonRoom_;
+      return getCustomDungeonRoom();
     }
 
     public static final int IS_UPDATE_SETTING_FIELD_NUMBER = 12;
-    private boolean isUpdateSetting_ = false;
+    private boolean isUpdateSetting_;
     /**
      * <code>bool is_update_setting = 12;</code>
      * @return The isUpdateSetting.
@@ -191,7 +259,7 @@ public final class SaveCustomDungeonRoomReqOuterClass {
       if (isUpdateSetting_ != false) {
         output.writeBool(12, isUpdateSetting_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -212,7 +280,7 @@ public final class SaveCustomDungeonRoomReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, isUpdateSetting_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -239,7 +307,7 @@ public final class SaveCustomDungeonRoomReqOuterClass {
       }
       if (getIsUpdateSetting()
           != other.getIsUpdateSetting()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -261,7 +329,7 @@ public final class SaveCustomDungeonRoomReqOuterClass {
       hash = (37 * hash) + IS_UPDATE_SETTING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsUpdateSetting());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -389,29 +457,36 @@ public final class SaveCustomDungeonRoomReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SaveCustomDungeonRoomReqOuterClass.SaveCustomDungeonRoomReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        setting_ = null;
-        if (settingBuilder_ != null) {
-          settingBuilder_.dispose();
+        if (settingBuilder_ == null) {
+          setting_ = null;
+        } else {
+          setting_ = null;
           settingBuilder_ = null;
         }
-        customDungeonRoom_ = null;
-        if (customDungeonRoomBuilder_ != null) {
-          customDungeonRoomBuilder_.dispose();
+        if (customDungeonRoomBuilder_ == null) {
+          customDungeonRoom_ = null;
+        } else {
+          customDungeonRoom_ = null;
           customDungeonRoomBuilder_ = null;
         }
         isUpdateSetting_ = false;
+
         return this;
       }
 
@@ -438,26 +513,19 @@ public final class SaveCustomDungeonRoomReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SaveCustomDungeonRoomReqOuterClass.SaveCustomDungeonRoomReq buildPartial() {
         emu.gingerps.net.proto.SaveCustomDungeonRoomReqOuterClass.SaveCustomDungeonRoomReq result = new emu.gingerps.net.proto.SaveCustomDungeonRoomReqOuterClass.SaveCustomDungeonRoomReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (settingBuilder_ == null) {
+          result.setting_ = setting_;
+        } else {
+          result.setting_ = settingBuilder_.build();
+        }
+        if (customDungeonRoomBuilder_ == null) {
+          result.customDungeonRoom_ = customDungeonRoom_;
+        } else {
+          result.customDungeonRoom_ = customDungeonRoomBuilder_.build();
+        }
+        result.isUpdateSetting_ = isUpdateSetting_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SaveCustomDungeonRoomReqOuterClass.SaveCustomDungeonRoomReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.setting_ = settingBuilder_ == null
-              ? setting_
-              : settingBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.customDungeonRoom_ = customDungeonRoomBuilder_ == null
-              ? customDungeonRoom_
-              : customDungeonRoomBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isUpdateSetting_ = isUpdateSetting_;
-        }
       }
 
       @java.lang.Override
@@ -513,7 +581,7 @@ public final class SaveCustomDungeonRoomReqOuterClass {
         if (other.getIsUpdateSetting() != false) {
           setIsUpdateSetting(other.getIsUpdateSetting());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -528,52 +596,19 @@ public final class SaveCustomDungeonRoomReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SaveCustomDungeonRoomReqOuterClass.SaveCustomDungeonRoomReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getSettingFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 34: {
-                input.readMessage(
-                    getCustomDungeonRoomFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 34
-              case 96: {
-                isUpdateSetting_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SaveCustomDungeonRoomReqOuterClass.SaveCustomDungeonRoomReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting setting_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -583,7 +618,7 @@ public final class SaveCustomDungeonRoomReqOuterClass {
        * @return Whether the setting field is set.
        */
       public boolean hasSetting() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return settingBuilder_ != null || setting_ != null;
       }
       /**
        * <code>.CustomDungeonSetting setting = 1;</code>
@@ -605,11 +640,11 @@ public final class SaveCustomDungeonRoomReqOuterClass {
             throw new NullPointerException();
           }
           setting_ = value;
+          onChanged();
         } else {
           settingBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -619,11 +654,11 @@ public final class SaveCustomDungeonRoomReqOuterClass {
           emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder builderForValue) {
         if (settingBuilder_ == null) {
           setting_ = builderForValue.build();
+          onChanged();
         } else {
           settingBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -631,38 +666,38 @@ public final class SaveCustomDungeonRoomReqOuterClass {
        */
       public Builder mergeSetting(emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting value) {
         if (settingBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            setting_ != null &&
-            setting_ != emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.getDefaultInstance()) {
-            getSettingBuilder().mergeFrom(value);
+          if (setting_ != null) {
+            setting_ =
+              emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.newBuilder(setting_).mergeFrom(value).buildPartial();
           } else {
             setting_ = value;
           }
+          onChanged();
         } else {
           settingBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CustomDungeonSetting setting = 1;</code>
        */
       public Builder clearSetting() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        setting_ = null;
-        if (settingBuilder_ != null) {
-          settingBuilder_.dispose();
+        if (settingBuilder_ == null) {
+          setting_ = null;
+          onChanged();
+        } else {
+          setting_ = null;
           settingBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CustomDungeonSetting setting = 1;</code>
        */
       public emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder getSettingBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getSettingFieldBuilder().getBuilder();
       }
@@ -702,7 +737,7 @@ public final class SaveCustomDungeonRoomReqOuterClass {
        * @return Whether the customDungeonRoom field is set.
        */
       public boolean hasCustomDungeonRoom() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return customDungeonRoomBuilder_ != null || customDungeonRoom_ != null;
       }
       /**
        * <code>.CustomDungeonRoom custom_dungeon_room = 4;</code>
@@ -724,11 +759,11 @@ public final class SaveCustomDungeonRoomReqOuterClass {
             throw new NullPointerException();
           }
           customDungeonRoom_ = value;
+          onChanged();
         } else {
           customDungeonRoomBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -738,11 +773,11 @@ public final class SaveCustomDungeonRoomReqOuterClass {
           emu.gingerps.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.Builder builderForValue) {
         if (customDungeonRoomBuilder_ == null) {
           customDungeonRoom_ = builderForValue.build();
+          onChanged();
         } else {
           customDungeonRoomBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -750,38 +785,38 @@ public final class SaveCustomDungeonRoomReqOuterClass {
        */
       public Builder mergeCustomDungeonRoom(emu.gingerps.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom value) {
         if (customDungeonRoomBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            customDungeonRoom_ != null &&
-            customDungeonRoom_ != emu.gingerps.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.getDefaultInstance()) {
-            getCustomDungeonRoomBuilder().mergeFrom(value);
+          if (customDungeonRoom_ != null) {
+            customDungeonRoom_ =
+              emu.gingerps.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.newBuilder(customDungeonRoom_).mergeFrom(value).buildPartial();
           } else {
             customDungeonRoom_ = value;
           }
+          onChanged();
         } else {
           customDungeonRoomBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CustomDungeonRoom custom_dungeon_room = 4;</code>
        */
       public Builder clearCustomDungeonRoom() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        customDungeonRoom_ = null;
-        if (customDungeonRoomBuilder_ != null) {
-          customDungeonRoomBuilder_.dispose();
+        if (customDungeonRoomBuilder_ == null) {
+          customDungeonRoom_ = null;
+          onChanged();
+        } else {
+          customDungeonRoom_ = null;
           customDungeonRoomBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CustomDungeonRoom custom_dungeon_room = 4;</code>
        */
       public emu.gingerps.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.Builder getCustomDungeonRoomBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getCustomDungeonRoomFieldBuilder().getBuilder();
       }
@@ -830,7 +865,6 @@ public final class SaveCustomDungeonRoomReqOuterClass {
       public Builder setIsUpdateSetting(boolean value) {
         
         isUpdateSetting_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -839,7 +873,7 @@ public final class SaveCustomDungeonRoomReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsUpdateSetting() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isUpdateSetting_ = false;
         onChanged();
         return this;
@@ -877,18 +911,7 @@ public final class SaveCustomDungeonRoomReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SaveCustomDungeonRoomReq(input, extensionRegistry);
       }
     };
 

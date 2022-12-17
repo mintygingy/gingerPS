@@ -121,6 +121,113 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGStartChallengeByCheckRewardRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+              int rawValue = input.readEnum();
+
+              levelType_ = rawValue;
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                exceededItemTypeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              exceededItemTypeList_.addInt(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                exceededItemTypeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                exceededItemTypeList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 40: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                exceededItemList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              exceededItemList_.addInt(input.readUInt32());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                exceededItemList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                exceededItemList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
+
+              configId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          exceededItemTypeList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          exceededItemList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGStartChallengeByCheckRewardRspOuterClass.internal_static_GCGStartChallengeByCheckRewardRsp_descriptor;
@@ -135,7 +242,6 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
     }
 
     public static final int EXCEEDED_ITEM_TYPE_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList exceededItemTypeList_;
     /**
      * <code>repeated uint32 exceeded_item_type_list = 3;</code>
@@ -164,7 +270,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
     private int exceededItemTypeListMemoizedSerializedSize = -1;
 
     public static final int LEVEL_ID_FIELD_NUMBER = 5;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 5;</code>
      * @return The levelId.
@@ -175,7 +281,6 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
     }
 
     public static final int EXCEEDED_ITEM_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList exceededItemList_;
     /**
      * <code>repeated uint32 exceeded_item_list = 8;</code>
@@ -204,7 +309,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
     private int exceededItemListMemoizedSerializedSize = -1;
 
     public static final int LEVEL_TYPE_FIELD_NUMBER = 2;
-    private int levelType_ = 0;
+    private int levelType_;
     /**
      * <code>.GCGLevelType level_type = 2;</code>
      * @return The enum numeric value on the wire for levelType.
@@ -217,12 +322,13 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
      * @return The levelType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType getLevelType() {
-      emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.forNumber(levelType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.valueOf(levelType_);
       return result == null ? emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.UNRECOGNIZED : result;
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 9;
-    private int configId_ = 0;
+    private int configId_;
     /**
      * <code>uint32 config_id = 9;</code>
      * @return The configId.
@@ -233,7 +339,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
@@ -284,7 +390,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(12, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -337,7 +443,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -363,7 +469,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
           != other.getConfigId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -390,7 +496,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
       hash = (53 * hash) + getConfigId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -517,24 +623,34 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGStartChallengeByCheckRewardRspOuterClass.GCGStartChallengeByCheckRewardRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         exceededItemTypeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         levelId_ = 0;
+
         exceededItemList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         levelType_ = 0;
+
         configId_ = 0;
+
         retcode_ = 0;
+
         return this;
       }
 
@@ -561,39 +677,23 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGStartChallengeByCheckRewardRspOuterClass.GCGStartChallengeByCheckRewardRsp buildPartial() {
         emu.gingerps.net.proto.GCGStartChallengeByCheckRewardRspOuterClass.GCGStartChallengeByCheckRewardRsp result = new emu.gingerps.net.proto.GCGStartChallengeByCheckRewardRspOuterClass.GCGStartChallengeByCheckRewardRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGStartChallengeByCheckRewardRspOuterClass.GCGStartChallengeByCheckRewardRsp result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           exceededItemTypeList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.exceededItemTypeList_ = exceededItemTypeList_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        result.levelId_ = levelId_;
+        if (((bitField0_ & 0x00000002) != 0)) {
           exceededItemList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.exceededItemList_ = exceededItemList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGStartChallengeByCheckRewardRspOuterClass.GCGStartChallengeByCheckRewardRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.levelId_ = levelId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.levelType_ = levelType_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.configId_ = configId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        result.levelType_ = levelType_;
+        result.configId_ = configId_;
+        result.retcode_ = retcode_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -656,7 +756,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
         if (!other.exceededItemList_.isEmpty()) {
           if (exceededItemList_.isEmpty()) {
             exceededItemList_ = other.exceededItemList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureExceededItemListIsMutable();
             exceededItemList_.addAll(other.exceededItemList_);
@@ -672,7 +772,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -687,82 +787,17 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGStartChallengeByCheckRewardRspOuterClass.GCGStartChallengeByCheckRewardRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                levelType_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 16
-              case 24: {
-                int v = input.readUInt32();
-                ensureExceededItemTypeListIsMutable();
-                exceededItemTypeList_.addInt(v);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureExceededItemTypeListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  exceededItemTypeList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 26
-              case 40: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 64: {
-                int v = input.readUInt32();
-                ensureExceededItemListIsMutable();
-                exceededItemList_.addInt(v);
-                break;
-              } // case 64
-              case 66: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureExceededItemListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  exceededItemList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 66
-              case 72: {
-                configId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 72
-              case 96: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGStartChallengeByCheckRewardRspOuterClass.GCGStartChallengeByCheckRewardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -772,7 +807,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           exceededItemTypeList_ = mutableCopy(exceededItemTypeList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 exceeded_item_type_list = 3;</code>
@@ -806,7 +841,6 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        */
       public Builder setExceededItemTypeList(
           int index, int value) {
-        
         ensureExceededItemTypeListIsMutable();
         exceededItemTypeList_.setInt(index, value);
         onChanged();
@@ -818,7 +852,6 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addExceededItemTypeList(int value) {
-        
         ensureExceededItemTypeListIsMutable();
         exceededItemTypeList_.addInt(value);
         onChanged();
@@ -865,7 +898,6 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -874,7 +906,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -882,10 +914,10 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
 
       private com.google.protobuf.Internal.IntList exceededItemList_ = emptyIntList();
       private void ensureExceededItemListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           exceededItemList_ = mutableCopy(exceededItemList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 exceeded_item_list = 8;</code>
@@ -893,7 +925,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getExceededItemListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(exceededItemList_) : exceededItemList_;
       }
       /**
@@ -919,7 +951,6 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        */
       public Builder setExceededItemList(
           int index, int value) {
-        
         ensureExceededItemListIsMutable();
         exceededItemList_.setInt(index, value);
         onChanged();
@@ -931,7 +962,6 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addExceededItemList(int value) {
-        
         ensureExceededItemListIsMutable();
         exceededItemList_.addInt(value);
         onChanged();
@@ -956,7 +986,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        */
       public Builder clearExceededItemList() {
         exceededItemList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -975,8 +1005,8 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setLevelTypeValue(int value) {
+        
         levelType_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -986,7 +1016,8 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType getLevelType() {
-        emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.forNumber(levelType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.valueOf(levelType_);
         return result == null ? emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.UNRECOGNIZED : result;
       }
       /**
@@ -998,7 +1029,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        
         levelType_ = value.getNumber();
         onChanged();
         return this;
@@ -1008,7 +1039,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         levelType_ = 0;
         onChanged();
         return this;
@@ -1031,7 +1062,6 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1040,7 +1070,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         configId_ = 0;
         onChanged();
         return this;
@@ -1063,7 +1093,6 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1072,7 +1101,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -1110,18 +1139,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGStartChallengeByCheckRewardRsp(input, extensionRegistry);
       }
     };
 

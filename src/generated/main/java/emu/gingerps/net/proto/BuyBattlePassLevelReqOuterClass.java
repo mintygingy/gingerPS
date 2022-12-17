@@ -62,6 +62,48 @@ public final class BuyBattlePassLevelReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BuyBattlePassLevelReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 120: {
+
+              buyLevel_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BuyBattlePassLevelReqOuterClass.internal_static_BuyBattlePassLevelReq_descriptor;
@@ -76,7 +118,7 @@ public final class BuyBattlePassLevelReqOuterClass {
     }
 
     public static final int BUY_LEVEL_FIELD_NUMBER = 15;
-    private int buyLevel_ = 0;
+    private int buyLevel_;
     /**
      * <code>uint32 buy_level = 15;</code>
      * @return The buyLevel.
@@ -103,7 +145,7 @@ public final class BuyBattlePassLevelReqOuterClass {
       if (buyLevel_ != 0) {
         output.writeUInt32(15, buyLevel_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -116,7 +158,7 @@ public final class BuyBattlePassLevelReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, buyLevel_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -133,7 +175,7 @@ public final class BuyBattlePassLevelReqOuterClass {
 
       if (getBuyLevel()
           != other.getBuyLevel()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -146,7 +188,7 @@ public final class BuyBattlePassLevelReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BUY_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getBuyLevel();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -274,19 +316,24 @@ public final class BuyBattlePassLevelReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.BuyBattlePassLevelReqOuterClass.BuyBattlePassLevelReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         buyLevel_ = 0;
+
         return this;
       }
 
@@ -313,16 +360,9 @@ public final class BuyBattlePassLevelReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BuyBattlePassLevelReqOuterClass.BuyBattlePassLevelReq buildPartial() {
         emu.gingerps.net.proto.BuyBattlePassLevelReqOuterClass.BuyBattlePassLevelReq result = new emu.gingerps.net.proto.BuyBattlePassLevelReqOuterClass.BuyBattlePassLevelReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.buyLevel_ = buyLevel_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BuyBattlePassLevelReqOuterClass.BuyBattlePassLevelReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.buyLevel_ = buyLevel_;
-        }
       }
 
       @java.lang.Override
@@ -372,7 +412,7 @@ public final class BuyBattlePassLevelReqOuterClass {
         if (other.getBuyLevel() != 0) {
           setBuyLevel(other.getBuyLevel());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -387,38 +427,19 @@ public final class BuyBattlePassLevelReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BuyBattlePassLevelReqOuterClass.BuyBattlePassLevelReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 120: {
-                buyLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BuyBattlePassLevelReqOuterClass.BuyBattlePassLevelReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int buyLevel_ ;
       /**
@@ -437,7 +458,6 @@ public final class BuyBattlePassLevelReqOuterClass {
       public Builder setBuyLevel(int value) {
         
         buyLevel_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -446,7 +466,7 @@ public final class BuyBattlePassLevelReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuyLevel() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         buyLevel_ = 0;
         onChanged();
         return this;
@@ -484,18 +504,7 @@ public final class BuyBattlePassLevelReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BuyBattlePassLevelReq(input, extensionRegistry);
       }
     };
 

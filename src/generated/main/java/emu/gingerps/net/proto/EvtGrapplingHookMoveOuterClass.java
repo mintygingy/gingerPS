@@ -127,6 +127,117 @@ public final class EvtGrapplingHookMoveOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtGrapplingHookMove(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              unk3300BGOLPLHGGPO_ = input.readBool();
+              break;
+            }
+            case 21: {
+
+              speed_ = input.readFloat();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              overrideCollider_ = s;
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (targetPos_ != null) {
+                subBuilder = targetPos_.toBuilder();
+              }
+              targetPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetPos_);
+                targetPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 45: {
+
+              unk3300NDMHKNFMPCJ_ = input.readFloat();
+              break;
+            }
+            case 77: {
+
+              unk3300MJAOALPCJML_ = input.readFloat();
+              break;
+            }
+            case 80: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                animatorStateIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              animatorStateIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                animatorStateIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                animatorStateIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 120: {
+
+              unk3300BKEELCGOLLN_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          animatorStateIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtGrapplingHookMoveOuterClass.internal_static_EvtGrapplingHookMove_descriptor;
@@ -163,11 +274,11 @@ public final class EvtGrapplingHookMoveOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getTargetPosOrBuilder() {
-      return targetPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : targetPos_;
+      return getTargetPos();
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 10;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 10;</code>
      * @return The entityId.
@@ -178,7 +289,7 @@ public final class EvtGrapplingHookMoveOuterClass {
     }
 
     public static final int SPEED_FIELD_NUMBER = 2;
-    private float speed_ = 0F;
+    private float speed_;
     /**
      * <code>float speed = 2;</code>
      * @return The speed.
@@ -189,7 +300,7 @@ public final class EvtGrapplingHookMoveOuterClass {
     }
 
     public static final int UNK3300_NDMHKNFMPCJ_FIELD_NUMBER = 5;
-    private float unk3300NDMHKNFMPCJ_ = 0F;
+    private float unk3300NDMHKNFMPCJ_;
     /**
      * <code>float Unk3300_NDMHKNFMPCJ = 5;</code>
      * @return The unk3300NDMHKNFMPCJ.
@@ -200,7 +311,6 @@ public final class EvtGrapplingHookMoveOuterClass {
     }
 
     public static final int ANIMATOR_STATE_ID_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList animatorStateIdList_;
     /**
      * <code>repeated uint32 animator_state_id_list = 11;</code>
@@ -229,7 +339,7 @@ public final class EvtGrapplingHookMoveOuterClass {
     private int animatorStateIdListMemoizedSerializedSize = -1;
 
     public static final int UNK3300_BGOLPLHGGPO_FIELD_NUMBER = 1;
-    private boolean unk3300BGOLPLHGGPO_ = false;
+    private boolean unk3300BGOLPLHGGPO_;
     /**
      * <code>bool Unk3300_BGOLPLHGGPO = 1;</code>
      * @return The unk3300BGOLPLHGGPO.
@@ -240,7 +350,7 @@ public final class EvtGrapplingHookMoveOuterClass {
     }
 
     public static final int UNK3300_MJAOALPCJML_FIELD_NUMBER = 9;
-    private float unk3300MJAOALPCJML_ = 0F;
+    private float unk3300MJAOALPCJML_;
     /**
      * <code>float Unk3300_MJAOALPCJML = 9;</code>
      * @return The unk3300MJAOALPCJML.
@@ -251,7 +361,7 @@ public final class EvtGrapplingHookMoveOuterClass {
     }
 
     public static final int UNK3300_BKEELCGOLLN_FIELD_NUMBER = 15;
-    private boolean unk3300BKEELCGOLLN_ = false;
+    private boolean unk3300BKEELCGOLLN_;
     /**
      * <code>bool Unk3300_BKEELCGOLLN = 15;</code>
      * @return The unk3300BKEELCGOLLN.
@@ -262,8 +372,7 @@ public final class EvtGrapplingHookMoveOuterClass {
     }
 
     public static final int OVERRIDE_COLLIDER_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object overrideCollider_ = "";
+    private volatile java.lang.Object overrideCollider_;
     /**
      * <code>string override_collider = 3;</code>
      * @return The overrideCollider.
@@ -318,7 +427,7 @@ public final class EvtGrapplingHookMoveOuterClass {
       if (unk3300BGOLPLHGGPO_ != false) {
         output.writeBool(1, unk3300BGOLPLHGGPO_);
       }
-      if (java.lang.Float.floatToRawIntBits(speed_) != 0) {
+      if (speed_ != 0F) {
         output.writeFloat(2, speed_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(overrideCollider_)) {
@@ -327,10 +436,10 @@ public final class EvtGrapplingHookMoveOuterClass {
       if (targetPos_ != null) {
         output.writeMessage(4, getTargetPos());
       }
-      if (java.lang.Float.floatToRawIntBits(unk3300NDMHKNFMPCJ_) != 0) {
+      if (unk3300NDMHKNFMPCJ_ != 0F) {
         output.writeFloat(5, unk3300NDMHKNFMPCJ_);
       }
-      if (java.lang.Float.floatToRawIntBits(unk3300MJAOALPCJML_) != 0) {
+      if (unk3300MJAOALPCJML_ != 0F) {
         output.writeFloat(9, unk3300MJAOALPCJML_);
       }
       if (entityId_ != 0) {
@@ -346,7 +455,7 @@ public final class EvtGrapplingHookMoveOuterClass {
       if (unk3300BKEELCGOLLN_ != false) {
         output.writeBool(15, unk3300BKEELCGOLLN_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -359,7 +468,7 @@ public final class EvtGrapplingHookMoveOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, unk3300BGOLPLHGGPO_);
       }
-      if (java.lang.Float.floatToRawIntBits(speed_) != 0) {
+      if (speed_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, speed_);
       }
@@ -370,11 +479,11 @@ public final class EvtGrapplingHookMoveOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getTargetPos());
       }
-      if (java.lang.Float.floatToRawIntBits(unk3300NDMHKNFMPCJ_) != 0) {
+      if (unk3300NDMHKNFMPCJ_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, unk3300NDMHKNFMPCJ_);
       }
-      if (java.lang.Float.floatToRawIntBits(unk3300MJAOALPCJML_) != 0) {
+      if (unk3300MJAOALPCJML_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(9, unk3300MJAOALPCJML_);
       }
@@ -400,7 +509,7 @@ public final class EvtGrapplingHookMoveOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, unk3300BKEELCGOLLN_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -439,7 +548,7 @@ public final class EvtGrapplingHookMoveOuterClass {
           != other.getUnk3300BKEELCGOLLN()) return false;
       if (!getOverrideCollider()
           .equals(other.getOverrideCollider())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -477,7 +586,7 @@ public final class EvtGrapplingHookMoveOuterClass {
           getUnk3300BKEELCGOLLN());
       hash = (37 * hash) + OVERRIDE_COLLIDER_FIELD_NUMBER;
       hash = (53 * hash) + getOverrideCollider().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -594,31 +703,44 @@ public final class EvtGrapplingHookMoveOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtGrapplingHookMoveOuterClass.EvtGrapplingHookMove.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        targetPos_ = null;
-        if (targetPosBuilder_ != null) {
-          targetPosBuilder_.dispose();
+        if (targetPosBuilder_ == null) {
+          targetPos_ = null;
+        } else {
+          targetPos_ = null;
           targetPosBuilder_ = null;
         }
         entityId_ = 0;
+
         speed_ = 0F;
+
         unk3300NDMHKNFMPCJ_ = 0F;
+
         animatorStateIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300BGOLPLHGGPO_ = false;
+
         unk3300MJAOALPCJML_ = 0F;
+
         unk3300BKEELCGOLLN_ = false;
+
         overrideCollider_ = "";
+
         return this;
       }
 
@@ -645,48 +767,26 @@ public final class EvtGrapplingHookMoveOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtGrapplingHookMoveOuterClass.EvtGrapplingHookMove buildPartial() {
         emu.gingerps.net.proto.EvtGrapplingHookMoveOuterClass.EvtGrapplingHookMove result = new emu.gingerps.net.proto.EvtGrapplingHookMoveOuterClass.EvtGrapplingHookMove(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EvtGrapplingHookMoveOuterClass.EvtGrapplingHookMove result) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        int from_bitField0_ = bitField0_;
+        if (targetPosBuilder_ == null) {
+          result.targetPos_ = targetPos_;
+        } else {
+          result.targetPos_ = targetPosBuilder_.build();
+        }
+        result.entityId_ = entityId_;
+        result.speed_ = speed_;
+        result.unk3300NDMHKNFMPCJ_ = unk3300NDMHKNFMPCJ_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           animatorStateIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.animatorStateIdList_ = animatorStateIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtGrapplingHookMoveOuterClass.EvtGrapplingHookMove result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.targetPos_ = targetPosBuilder_ == null
-              ? targetPos_
-              : targetPosBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.speed_ = speed_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300NDMHKNFMPCJ_ = unk3300NDMHKNFMPCJ_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.unk3300BGOLPLHGGPO_ = unk3300BGOLPLHGGPO_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.unk3300MJAOALPCJML_ = unk3300MJAOALPCJML_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.unk3300BKEELCGOLLN_ = unk3300BKEELCGOLLN_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.overrideCollider_ = overrideCollider_;
-        }
+        result.unk3300BGOLPLHGGPO_ = unk3300BGOLPLHGGPO_;
+        result.unk3300MJAOALPCJML_ = unk3300MJAOALPCJML_;
+        result.unk3300BKEELCGOLLN_ = unk3300BKEELCGOLLN_;
+        result.overrideCollider_ = overrideCollider_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -748,7 +848,7 @@ public final class EvtGrapplingHookMoveOuterClass {
         if (!other.animatorStateIdList_.isEmpty()) {
           if (animatorStateIdList_.isEmpty()) {
             animatorStateIdList_ = other.animatorStateIdList_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAnimatorStateIdListIsMutable();
             animatorStateIdList_.addAll(other.animatorStateIdList_);
@@ -766,10 +866,9 @@ public final class EvtGrapplingHookMoveOuterClass {
         }
         if (!other.getOverrideCollider().isEmpty()) {
           overrideCollider_ = other.overrideCollider_;
-          bitField0_ |= 0x00000100;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -784,88 +883,17 @@ public final class EvtGrapplingHookMoveOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtGrapplingHookMoveOuterClass.EvtGrapplingHookMove parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                unk3300BGOLPLHGGPO_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 8
-              case 21: {
-                speed_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 21
-              case 26: {
-                overrideCollider_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getTargetPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 34
-              case 45: {
-                unk3300NDMHKNFMPCJ_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 45
-              case 77: {
-                unk3300MJAOALPCJML_ = input.readFloat();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 77
-              case 80: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 88: {
-                int v = input.readUInt32();
-                ensureAnimatorStateIdListIsMutable();
-                animatorStateIdList_.addInt(v);
-                break;
-              } // case 88
-              case 90: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureAnimatorStateIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  animatorStateIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 90
-              case 120: {
-                unk3300BKEELCGOLLN_ = input.readBool();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtGrapplingHookMoveOuterClass.EvtGrapplingHookMove) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -878,7 +906,7 @@ public final class EvtGrapplingHookMoveOuterClass {
        * @return Whether the targetPos field is set.
        */
       public boolean hasTargetPos() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return targetPosBuilder_ != null || targetPos_ != null;
       }
       /**
        * <code>.Vector target_pos = 4;</code>
@@ -900,11 +928,11 @@ public final class EvtGrapplingHookMoveOuterClass {
             throw new NullPointerException();
           }
           targetPos_ = value;
+          onChanged();
         } else {
           targetPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -914,11 +942,11 @@ public final class EvtGrapplingHookMoveOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (targetPosBuilder_ == null) {
           targetPos_ = builderForValue.build();
+          onChanged();
         } else {
           targetPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -926,38 +954,38 @@ public final class EvtGrapplingHookMoveOuterClass {
        */
       public Builder mergeTargetPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (targetPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            targetPos_ != null &&
-            targetPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getTargetPosBuilder().mergeFrom(value);
+          if (targetPos_ != null) {
+            targetPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(targetPos_).mergeFrom(value).buildPartial();
           } else {
             targetPos_ = value;
           }
+          onChanged();
         } else {
           targetPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector target_pos = 4;</code>
        */
       public Builder clearTargetPos() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        targetPos_ = null;
-        if (targetPosBuilder_ != null) {
-          targetPosBuilder_.dispose();
+        if (targetPosBuilder_ == null) {
+          targetPos_ = null;
+          onChanged();
+        } else {
+          targetPos_ = null;
           targetPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector target_pos = 4;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getTargetPosBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getTargetPosFieldBuilder().getBuilder();
       }
@@ -1006,7 +1034,6 @@ public final class EvtGrapplingHookMoveOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1015,7 +1042,7 @@ public final class EvtGrapplingHookMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -1038,7 +1065,6 @@ public final class EvtGrapplingHookMoveOuterClass {
       public Builder setSpeed(float value) {
         
         speed_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1047,7 +1073,7 @@ public final class EvtGrapplingHookMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSpeed() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         speed_ = 0F;
         onChanged();
         return this;
@@ -1070,7 +1096,6 @@ public final class EvtGrapplingHookMoveOuterClass {
       public Builder setUnk3300NDMHKNFMPCJ(float value) {
         
         unk3300NDMHKNFMPCJ_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1079,7 +1104,7 @@ public final class EvtGrapplingHookMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NDMHKNFMPCJ() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300NDMHKNFMPCJ_ = 0F;
         onChanged();
         return this;
@@ -1087,10 +1112,10 @@ public final class EvtGrapplingHookMoveOuterClass {
 
       private com.google.protobuf.Internal.IntList animatorStateIdList_ = emptyIntList();
       private void ensureAnimatorStateIdListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           animatorStateIdList_ = mutableCopy(animatorStateIdList_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 animator_state_id_list = 11;</code>
@@ -1098,7 +1123,7 @@ public final class EvtGrapplingHookMoveOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getAnimatorStateIdListList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(animatorStateIdList_) : animatorStateIdList_;
       }
       /**
@@ -1124,7 +1149,6 @@ public final class EvtGrapplingHookMoveOuterClass {
        */
       public Builder setAnimatorStateIdList(
           int index, int value) {
-        
         ensureAnimatorStateIdListIsMutable();
         animatorStateIdList_.setInt(index, value);
         onChanged();
@@ -1136,7 +1160,6 @@ public final class EvtGrapplingHookMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAnimatorStateIdList(int value) {
-        
         ensureAnimatorStateIdListIsMutable();
         animatorStateIdList_.addInt(value);
         onChanged();
@@ -1161,7 +1184,7 @@ public final class EvtGrapplingHookMoveOuterClass {
        */
       public Builder clearAnimatorStateIdList() {
         animatorStateIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1183,7 +1206,6 @@ public final class EvtGrapplingHookMoveOuterClass {
       public Builder setUnk3300BGOLPLHGGPO(boolean value) {
         
         unk3300BGOLPLHGGPO_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1192,7 +1214,7 @@ public final class EvtGrapplingHookMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BGOLPLHGGPO() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         unk3300BGOLPLHGGPO_ = false;
         onChanged();
         return this;
@@ -1215,7 +1237,6 @@ public final class EvtGrapplingHookMoveOuterClass {
       public Builder setUnk3300MJAOALPCJML(float value) {
         
         unk3300MJAOALPCJML_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1224,7 +1245,7 @@ public final class EvtGrapplingHookMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MJAOALPCJML() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         unk3300MJAOALPCJML_ = 0F;
         onChanged();
         return this;
@@ -1247,7 +1268,6 @@ public final class EvtGrapplingHookMoveOuterClass {
       public Builder setUnk3300BKEELCGOLLN(boolean value) {
         
         unk3300BKEELCGOLLN_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1256,7 +1276,7 @@ public final class EvtGrapplingHookMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BKEELCGOLLN() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         unk3300BKEELCGOLLN_ = false;
         onChanged();
         return this;
@@ -1303,9 +1323,11 @@ public final class EvtGrapplingHookMoveOuterClass {
        */
       public Builder setOverrideCollider(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         overrideCollider_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1314,8 +1336,8 @@ public final class EvtGrapplingHookMoveOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOverrideCollider() {
+        
         overrideCollider_ = getDefaultInstance().getOverrideCollider();
-        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
@@ -1326,10 +1348,12 @@ public final class EvtGrapplingHookMoveOuterClass {
        */
       public Builder setOverrideColliderBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         overrideCollider_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1366,18 +1390,7 @@ public final class EvtGrapplingHookMoveOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtGrapplingHookMove(input, extensionRegistry);
       }
     };
 

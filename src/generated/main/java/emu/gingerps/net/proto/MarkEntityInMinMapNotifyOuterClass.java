@@ -82,6 +82,66 @@ public final class MarkEntityInMinMapNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MarkEntityInMinMapNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (position_ != null) {
+                subBuilder = position_.toBuilder();
+              }
+              position_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(position_);
+                position_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 112: {
+
+              monsterId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MarkEntityInMinMapNotifyOuterClass.internal_static_MarkEntityInMinMapNotify_descriptor;
@@ -118,11 +178,11 @@ public final class MarkEntityInMinMapNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder() {
-      return position_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : position_;
+      return getPosition();
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 3;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 3;</code>
      * @return The entityId.
@@ -133,7 +193,7 @@ public final class MarkEntityInMinMapNotifyOuterClass {
     }
 
     public static final int MONSTER_ID_FIELD_NUMBER = 14;
-    private int monsterId_ = 0;
+    private int monsterId_;
     /**
      * <code>uint32 monster_id = 14;</code>
      * @return The monsterId.
@@ -166,7 +226,7 @@ public final class MarkEntityInMinMapNotifyOuterClass {
       if (monsterId_ != 0) {
         output.writeUInt32(14, monsterId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +247,7 @@ public final class MarkEntityInMinMapNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, monsterId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -211,7 +271,7 @@ public final class MarkEntityInMinMapNotifyOuterClass {
           != other.getEntityId()) return false;
       if (getMonsterId()
           != other.getMonsterId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -230,7 +290,7 @@ public final class MarkEntityInMinMapNotifyOuterClass {
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + MONSTER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMonsterId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -357,25 +417,32 @@ public final class MarkEntityInMinMapNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MarkEntityInMinMapNotifyOuterClass.MarkEntityInMinMapNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        position_ = null;
-        if (positionBuilder_ != null) {
-          positionBuilder_.dispose();
+        if (positionBuilder_ == null) {
+          position_ = null;
+        } else {
+          position_ = null;
           positionBuilder_ = null;
         }
         entityId_ = 0;
+
         monsterId_ = 0;
+
         return this;
       }
 
@@ -402,24 +469,15 @@ public final class MarkEntityInMinMapNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MarkEntityInMinMapNotifyOuterClass.MarkEntityInMinMapNotify buildPartial() {
         emu.gingerps.net.proto.MarkEntityInMinMapNotifyOuterClass.MarkEntityInMinMapNotify result = new emu.gingerps.net.proto.MarkEntityInMinMapNotifyOuterClass.MarkEntityInMinMapNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (positionBuilder_ == null) {
+          result.position_ = position_;
+        } else {
+          result.position_ = positionBuilder_.build();
+        }
+        result.entityId_ = entityId_;
+        result.monsterId_ = monsterId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MarkEntityInMinMapNotifyOuterClass.MarkEntityInMinMapNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.position_ = positionBuilder_ == null
-              ? position_
-              : positionBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.monsterId_ = monsterId_;
-        }
       }
 
       @java.lang.Override
@@ -475,7 +533,7 @@ public final class MarkEntityInMinMapNotifyOuterClass {
         if (other.getMonsterId() != 0) {
           setMonsterId(other.getMonsterId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,50 +548,19 @@ public final class MarkEntityInMinMapNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MarkEntityInMinMapNotifyOuterClass.MarkEntityInMinMapNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 34: {
-                input.readMessage(
-                    getPositionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 34
-              case 112: {
-                monsterId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MarkEntityInMinMapNotifyOuterClass.MarkEntityInMinMapNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector position_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -543,7 +570,7 @@ public final class MarkEntityInMinMapNotifyOuterClass {
        * @return Whether the position field is set.
        */
       public boolean hasPosition() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return positionBuilder_ != null || position_ != null;
       }
       /**
        * <code>.Vector position = 4;</code>
@@ -565,11 +592,11 @@ public final class MarkEntityInMinMapNotifyOuterClass {
             throw new NullPointerException();
           }
           position_ = value;
+          onChanged();
         } else {
           positionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -579,11 +606,11 @@ public final class MarkEntityInMinMapNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (positionBuilder_ == null) {
           position_ = builderForValue.build();
+          onChanged();
         } else {
           positionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -591,38 +618,38 @@ public final class MarkEntityInMinMapNotifyOuterClass {
        */
       public Builder mergePosition(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (positionBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            position_ != null &&
-            position_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getPositionBuilder().mergeFrom(value);
+          if (position_ != null) {
+            position_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(position_).mergeFrom(value).buildPartial();
           } else {
             position_ = value;
           }
+          onChanged();
         } else {
           positionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector position = 4;</code>
        */
       public Builder clearPosition() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        position_ = null;
-        if (positionBuilder_ != null) {
-          positionBuilder_.dispose();
+        if (positionBuilder_ == null) {
+          position_ = null;
+          onChanged();
+        } else {
+          position_ = null;
           positionBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector position = 4;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPositionBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getPositionFieldBuilder().getBuilder();
       }
@@ -671,7 +698,6 @@ public final class MarkEntityInMinMapNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -680,7 +706,7 @@ public final class MarkEntityInMinMapNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -703,7 +729,6 @@ public final class MarkEntityInMinMapNotifyOuterClass {
       public Builder setMonsterId(int value) {
         
         monsterId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -712,7 +737,7 @@ public final class MarkEntityInMinMapNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMonsterId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         monsterId_ = 0;
         onChanged();
         return this;
@@ -750,18 +775,7 @@ public final class MarkEntityInMinMapNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MarkEntityInMinMapNotify(input, extensionRegistry);
       }
     };
 

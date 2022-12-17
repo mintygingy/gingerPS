@@ -114,6 +114,95 @@ public final class QuickUseWidgetRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private QuickUseWidgetRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 82: {
+              emu.gingerps.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder subBuilder = null;
+              if (paramCase_ == 10) {
+                subBuilder = ((emu.gingerps.net.proto.ClientCollectorDataOuterClass.ClientCollectorData) param_).toBuilder();
+              }
+              param_ =
+                  input.readMessage(emu.gingerps.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.ClientCollectorDataOuterClass.ClientCollectorData) param_);
+                param_ = subBuilder.buildPartial();
+              }
+              paramCase_ = 10;
+              break;
+            }
+            case 88: {
+
+              materialId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder subBuilder = null;
+              if (paramCase_ == 14) {
+                subBuilder = ((emu.gingerps.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData) param_).toBuilder();
+              }
+              param_ =
+                  input.readMessage(emu.gingerps.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData) param_);
+                param_ = subBuilder.buildPartial();
+              }
+              paramCase_ = 14;
+              break;
+            }
+            case 1378578: {
+              emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult.Builder subBuilder = null;
+              if (paramCase_ == 172322) {
+                subBuilder = ((emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult) param_).toBuilder();
+              }
+              param_ =
+                  input.readMessage(emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult) param_);
+                param_ = subBuilder.buildPartial();
+              }
+              paramCase_ = 172322;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.QuickUseWidgetRspOuterClass.internal_static_QuickUseWidgetRsp_descriptor;
@@ -171,7 +260,7 @@ public final class QuickUseWidgetRspOuterClass {
     }
 
     public static final int MATERIAL_ID_FIELD_NUMBER = 11;
-    private int materialId_ = 0;
+    private int materialId_;
     /**
      * <code>uint32 material_id = 11;</code>
      * @return The materialId.
@@ -182,7 +271,7 @@ public final class QuickUseWidgetRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
@@ -314,7 +403,7 @@ public final class QuickUseWidgetRspOuterClass {
       if (paramCase_ == 172322) {
         output.writeMessage(172322, (emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult) param_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -343,7 +432,7 @@ public final class QuickUseWidgetRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(172322, (emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult) param_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -379,7 +468,7 @@ public final class QuickUseWidgetRspOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -410,7 +499,7 @@ public final class QuickUseWidgetRspOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -537,29 +626,26 @@ public final class QuickUseWidgetRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.QuickUseWidgetRspOuterClass.QuickUseWidgetRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         materialId_ = 0;
+
         retcode_ = 0;
-        if (detectorDataBuilder_ != null) {
-          detectorDataBuilder_.clear();
-        }
-        if (clientCollectorDataBuilder_ != null) {
-          clientCollectorDataBuilder_.clear();
-        }
-        if (skyCrystalDetectorQuickUseResultBuilder_ != null) {
-          skyCrystalDetectorQuickUseResultBuilder_.clear();
-        }
+
         paramCase_ = 0;
         param_ = null;
         return this;
@@ -588,37 +674,32 @@ public final class QuickUseWidgetRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.QuickUseWidgetRspOuterClass.QuickUseWidgetRsp buildPartial() {
         emu.gingerps.net.proto.QuickUseWidgetRspOuterClass.QuickUseWidgetRsp result = new emu.gingerps.net.proto.QuickUseWidgetRspOuterClass.QuickUseWidgetRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        result.materialId_ = materialId_;
+        result.retcode_ = retcode_;
+        if (paramCase_ == 14) {
+          if (detectorDataBuilder_ == null) {
+            result.param_ = param_;
+          } else {
+            result.param_ = detectorDataBuilder_.build();
+          }
+        }
+        if (paramCase_ == 10) {
+          if (clientCollectorDataBuilder_ == null) {
+            result.param_ = param_;
+          } else {
+            result.param_ = clientCollectorDataBuilder_.build();
+          }
+        }
+        if (paramCase_ == 172322) {
+          if (skyCrystalDetectorQuickUseResultBuilder_ == null) {
+            result.param_ = param_;
+          } else {
+            result.param_ = skyCrystalDetectorQuickUseResultBuilder_.build();
+          }
+        }
+        result.paramCase_ = paramCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.QuickUseWidgetRspOuterClass.QuickUseWidgetRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.materialId_ = materialId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.QuickUseWidgetRspOuterClass.QuickUseWidgetRsp result) {
-        result.paramCase_ = paramCase_;
-        result.param_ = this.param_;
-        if (paramCase_ == 14 &&
-            detectorDataBuilder_ != null) {
-          result.param_ = detectorDataBuilder_.build();
-        }
-        if (paramCase_ == 10 &&
-            clientCollectorDataBuilder_ != null) {
-          result.param_ = clientCollectorDataBuilder_.build();
-        }
-        if (paramCase_ == 172322 &&
-            skyCrystalDetectorQuickUseResultBuilder_ != null) {
-          result.param_ = skyCrystalDetectorQuickUseResultBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -688,7 +769,7 @@ public final class QuickUseWidgetRspOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -703,61 +784,17 @@ public final class QuickUseWidgetRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.QuickUseWidgetRspOuterClass.QuickUseWidgetRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 82: {
-                input.readMessage(
-                    getClientCollectorDataFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                paramCase_ = 10;
-                break;
-              } // case 82
-              case 88: {
-                materialId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 96: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              case 114: {
-                input.readMessage(
-                    getDetectorDataFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                paramCase_ = 14;
-                break;
-              } // case 114
-              case 1378578: {
-                input.readMessage(
-                    getSkyCrystalDetectorQuickUseResultFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                paramCase_ = 172322;
-                break;
-              } // case 1378578
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.QuickUseWidgetRspOuterClass.QuickUseWidgetRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int paramCase_ = 0;
@@ -775,7 +812,6 @@ public final class QuickUseWidgetRspOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private int materialId_ ;
       /**
@@ -794,7 +830,6 @@ public final class QuickUseWidgetRspOuterClass {
       public Builder setMaterialId(int value) {
         
         materialId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -803,7 +838,7 @@ public final class QuickUseWidgetRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         materialId_ = 0;
         onChanged();
         return this;
@@ -826,7 +861,6 @@ public final class QuickUseWidgetRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -835,7 +869,7 @@ public final class QuickUseWidgetRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -915,9 +949,8 @@ public final class QuickUseWidgetRspOuterClass {
         } else {
           if (paramCase_ == 14) {
             detectorDataBuilder_.mergeFrom(value);
-          } else {
-            detectorDataBuilder_.setMessage(value);
           }
+          detectorDataBuilder_.setMessage(value);
         }
         paramCase_ = 14;
         return this;
@@ -979,7 +1012,7 @@ public final class QuickUseWidgetRspOuterClass {
           param_ = null;
         }
         paramCase_ = 14;
-        onChanged();
+        onChanged();;
         return detectorDataBuilder_;
       }
 
@@ -1057,9 +1090,8 @@ public final class QuickUseWidgetRspOuterClass {
         } else {
           if (paramCase_ == 10) {
             clientCollectorDataBuilder_.mergeFrom(value);
-          } else {
-            clientCollectorDataBuilder_.setMessage(value);
           }
+          clientCollectorDataBuilder_.setMessage(value);
         }
         paramCase_ = 10;
         return this;
@@ -1121,7 +1153,7 @@ public final class QuickUseWidgetRspOuterClass {
           param_ = null;
         }
         paramCase_ = 10;
-        onChanged();
+        onChanged();;
         return clientCollectorDataBuilder_;
       }
 
@@ -1199,9 +1231,8 @@ public final class QuickUseWidgetRspOuterClass {
         } else {
           if (paramCase_ == 172322) {
             skyCrystalDetectorQuickUseResultBuilder_.mergeFrom(value);
-          } else {
-            skyCrystalDetectorQuickUseResultBuilder_.setMessage(value);
           }
+          skyCrystalDetectorQuickUseResultBuilder_.setMessage(value);
         }
         paramCase_ = 172322;
         return this;
@@ -1263,7 +1294,7 @@ public final class QuickUseWidgetRspOuterClass {
           param_ = null;
         }
         paramCase_ = 172322;
-        onChanged();
+        onChanged();;
         return skyCrystalDetectorQuickUseResultBuilder_;
       }
       @java.lang.Override
@@ -1299,18 +1330,7 @@ public final class QuickUseWidgetRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new QuickUseWidgetRsp(input, extensionRegistry);
       }
     };
 

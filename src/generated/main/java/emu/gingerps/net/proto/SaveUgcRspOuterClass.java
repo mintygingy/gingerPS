@@ -79,6 +79,59 @@ public final class SaveUgcRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SaveUgcRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+              int rawValue = input.readEnum();
+
+              ugcType_ = rawValue;
+              break;
+            }
+            case 64: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              ugcGuid_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SaveUgcRspOuterClass.internal_static_SaveUgcRsp_descriptor;
@@ -93,7 +146,7 @@ public final class SaveUgcRspOuterClass {
     }
 
     public static final int UGC_GUID_FIELD_NUMBER = 9;
-    private long ugcGuid_ = 0L;
+    private long ugcGuid_;
     /**
      * <code>uint64 ugc_guid = 9;</code>
      * @return The ugcGuid.
@@ -104,7 +157,7 @@ public final class SaveUgcRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -115,7 +168,7 @@ public final class SaveUgcRspOuterClass {
     }
 
     public static final int UGC_TYPE_FIELD_NUMBER = 2;
-    private int ugcType_ = 0;
+    private int ugcType_;
     /**
      * <code>.UgcType ugc_type = 2;</code>
      * @return The enum numeric value on the wire for ugcType.
@@ -128,7 +181,8 @@ public final class SaveUgcRspOuterClass {
      * @return The ugcType.
      */
     @java.lang.Override public emu.gingerps.net.proto.UgcTypeOuterClass.UgcType getUgcType() {
-      emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.forNumber(ugcType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.valueOf(ugcType_);
       return result == null ? emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
     }
 
@@ -155,7 +209,7 @@ public final class SaveUgcRspOuterClass {
       if (ugcGuid_ != 0L) {
         output.writeUInt64(9, ugcGuid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +230,7 @@ public final class SaveUgcRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(9, ugcGuid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -196,7 +250,7 @@ public final class SaveUgcRspOuterClass {
       if (getRetcode()
           != other.getRetcode()) return false;
       if (ugcType_ != other.ugcType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -214,7 +268,7 @@ public final class SaveUgcRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + UGC_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + ugcType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -341,21 +395,28 @@ public final class SaveUgcRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SaveUgcRspOuterClass.SaveUgcRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         ugcGuid_ = 0L;
+
         retcode_ = 0;
+
         ugcType_ = 0;
+
         return this;
       }
 
@@ -382,22 +443,11 @@ public final class SaveUgcRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SaveUgcRspOuterClass.SaveUgcRsp buildPartial() {
         emu.gingerps.net.proto.SaveUgcRspOuterClass.SaveUgcRsp result = new emu.gingerps.net.proto.SaveUgcRspOuterClass.SaveUgcRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.ugcGuid_ = ugcGuid_;
+        result.retcode_ = retcode_;
+        result.ugcType_ = ugcType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SaveUgcRspOuterClass.SaveUgcRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.ugcGuid_ = ugcGuid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.ugcType_ = ugcType_;
-        }
       }
 
       @java.lang.Override
@@ -453,7 +503,7 @@ public final class SaveUgcRspOuterClass {
         if (other.ugcType_ != 0) {
           setUgcTypeValue(other.getUgcTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -468,48 +518,19 @@ public final class SaveUgcRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SaveUgcRspOuterClass.SaveUgcRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                ugcType_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 64: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 72: {
-                ugcGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SaveUgcRspOuterClass.SaveUgcRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long ugcGuid_ ;
       /**
@@ -528,7 +549,6 @@ public final class SaveUgcRspOuterClass {
       public Builder setUgcGuid(long value) {
         
         ugcGuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -537,7 +557,7 @@ public final class SaveUgcRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUgcGuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         ugcGuid_ = 0L;
         onChanged();
         return this;
@@ -560,7 +580,6 @@ public final class SaveUgcRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -569,7 +588,7 @@ public final class SaveUgcRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -589,8 +608,8 @@ public final class SaveUgcRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUgcTypeValue(int value) {
+        
         ugcType_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -600,7 +619,8 @@ public final class SaveUgcRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.UgcTypeOuterClass.UgcType getUgcType() {
-        emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.forNumber(ugcType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.valueOf(ugcType_);
         return result == null ? emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
       }
       /**
@@ -612,7 +632,7 @@ public final class SaveUgcRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         ugcType_ = value.getNumber();
         onChanged();
         return this;
@@ -622,7 +642,7 @@ public final class SaveUgcRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUgcType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         ugcType_ = 0;
         onChanged();
         return this;
@@ -660,18 +680,7 @@ public final class SaveUgcRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SaveUgcRsp(input, extensionRegistry);
       }
     };
 

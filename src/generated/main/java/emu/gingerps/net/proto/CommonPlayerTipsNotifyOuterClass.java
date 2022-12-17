@@ -87,6 +87,61 @@ public final class CommonPlayerTipsNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CommonPlayerTipsNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                textMapIdList_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              textMapIdList_.add(s);
+              break;
+            }
+            case 120: {
+
+              notifyType_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          textMapIdList_ = textMapIdList_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CommonPlayerTipsNotifyOuterClass.internal_static_CommonPlayerTipsNotify_descriptor;
@@ -101,7 +156,7 @@ public final class CommonPlayerTipsNotifyOuterClass {
     }
 
     public static final int NOTIFY_TYPE_FIELD_NUMBER = 15;
-    private int notifyType_ = 0;
+    private int notifyType_;
     /**
      * <code>uint32 notify_type = 15;</code>
      * @return The notifyType.
@@ -112,7 +167,6 @@ public final class CommonPlayerTipsNotifyOuterClass {
     }
 
     public static final int TEXT_MAP_ID_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList textMapIdList_;
     /**
      * <code>repeated string text_map_id_list = 8;</code>
@@ -167,7 +221,7 @@ public final class CommonPlayerTipsNotifyOuterClass {
       if (notifyType_ != 0) {
         output.writeUInt32(15, notifyType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class CommonPlayerTipsNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, notifyType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class CommonPlayerTipsNotifyOuterClass {
           != other.getNotifyType()) return false;
       if (!getTextMapIdListList()
           .equals(other.getTextMapIdListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class CommonPlayerTipsNotifyOuterClass {
         hash = (37 * hash) + TEXT_MAP_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTextMapIdListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,21 +405,26 @@ public final class CommonPlayerTipsNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CommonPlayerTipsNotifyOuterClass.CommonPlayerTipsNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         notifyType_ = 0;
+
         textMapIdList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -392,25 +451,15 @@ public final class CommonPlayerTipsNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CommonPlayerTipsNotifyOuterClass.CommonPlayerTipsNotify buildPartial() {
         emu.gingerps.net.proto.CommonPlayerTipsNotifyOuterClass.CommonPlayerTipsNotify result = new emu.gingerps.net.proto.CommonPlayerTipsNotifyOuterClass.CommonPlayerTipsNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CommonPlayerTipsNotifyOuterClass.CommonPlayerTipsNotify result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.notifyType_ = notifyType_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           textMapIdList_ = textMapIdList_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.textMapIdList_ = textMapIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CommonPlayerTipsNotifyOuterClass.CommonPlayerTipsNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.notifyType_ = notifyType_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -463,14 +512,14 @@ public final class CommonPlayerTipsNotifyOuterClass {
         if (!other.textMapIdList_.isEmpty()) {
           if (textMapIdList_.isEmpty()) {
             textMapIdList_ = other.textMapIdList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTextMapIdListIsMutable();
             textMapIdList_.addAll(other.textMapIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -485,41 +534,17 @@ public final class CommonPlayerTipsNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CommonPlayerTipsNotifyOuterClass.CommonPlayerTipsNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 66: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureTextMapIdListIsMutable();
-                textMapIdList_.add(s);
-                break;
-              } // case 66
-              case 120: {
-                notifyType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CommonPlayerTipsNotifyOuterClass.CommonPlayerTipsNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -541,7 +566,6 @@ public final class CommonPlayerTipsNotifyOuterClass {
       public Builder setNotifyType(int value) {
         
         notifyType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -550,7 +574,7 @@ public final class CommonPlayerTipsNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNotifyType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         notifyType_ = 0;
         onChanged();
         return this;
@@ -558,9 +582,9 @@ public final class CommonPlayerTipsNotifyOuterClass {
 
       private com.google.protobuf.LazyStringList textMapIdList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTextMapIdListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           textMapIdList_ = new com.google.protobuf.LazyStringArrayList(textMapIdList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -603,8 +627,10 @@ public final class CommonPlayerTipsNotifyOuterClass {
        */
       public Builder setTextMapIdList(
           int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTextMapIdListIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTextMapIdListIsMutable();
         textMapIdList_.set(index, value);
         onChanged();
         return this;
@@ -616,8 +642,10 @@ public final class CommonPlayerTipsNotifyOuterClass {
        */
       public Builder addTextMapIdList(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTextMapIdListIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTextMapIdListIsMutable();
         textMapIdList_.add(value);
         onChanged();
         return this;
@@ -641,7 +669,7 @@ public final class CommonPlayerTipsNotifyOuterClass {
        */
       public Builder clearTextMapIdList() {
         textMapIdList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -652,8 +680,10 @@ public final class CommonPlayerTipsNotifyOuterClass {
        */
       public Builder addTextMapIdListBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         ensureTextMapIdListIsMutable();
         textMapIdList_.add(value);
         onChanged();
@@ -692,18 +722,7 @@ public final class CommonPlayerTipsNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CommonPlayerTipsNotify(input, extensionRegistry);
       }
     };
 

@@ -83,6 +83,62 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtAnimatorStateChangedNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo.Builder subBuilder = null;
+              if (evtAnimatorStateChangedInfo_ != null) {
+                subBuilder = evtAnimatorStateChangedInfo_.toBuilder();
+              }
+              evtAnimatorStateChangedInfo_ = input.readMessage(emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(evtAnimatorStateChangedInfo_);
+                evtAnimatorStateChangedInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+
+              forwardType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtAnimatorStateChangedNotifyOuterClass.internal_static_EvtAnimatorStateChangedNotify_descriptor;
@@ -97,7 +153,7 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 14;
-    private int forwardType_ = 0;
+    private int forwardType_;
     /**
      * <code>.ForwardType forward_type = 14;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -110,7 +166,8 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
@@ -137,7 +194,7 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfoOrBuilder getEvtAnimatorStateChangedInfoOrBuilder() {
-      return evtAnimatorStateChangedInfo_ == null ? emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo.getDefaultInstance() : evtAnimatorStateChangedInfo_;
+      return getEvtAnimatorStateChangedInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -160,7 +217,7 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
       if (forwardType_ != emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
         output.writeEnum(14, forwardType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, forwardType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -198,7 +255,7 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
         if (!getEvtAnimatorStateChangedInfo()
             .equals(other.getEvtAnimatorStateChangedInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -215,7 +272,7 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
         hash = (37 * hash) + EVT_ANIMATOR_STATE_CHANGED_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getEvtAnimatorStateChangedInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -343,22 +400,28 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtAnimatorStateChangedNotifyOuterClass.EvtAnimatorStateChangedNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         forwardType_ = 0;
-        evtAnimatorStateChangedInfo_ = null;
-        if (evtAnimatorStateChangedInfoBuilder_ != null) {
-          evtAnimatorStateChangedInfoBuilder_.dispose();
+
+        if (evtAnimatorStateChangedInfoBuilder_ == null) {
+          evtAnimatorStateChangedInfo_ = null;
+        } else {
+          evtAnimatorStateChangedInfo_ = null;
           evtAnimatorStateChangedInfoBuilder_ = null;
         }
         return this;
@@ -387,21 +450,14 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtAnimatorStateChangedNotifyOuterClass.EvtAnimatorStateChangedNotify buildPartial() {
         emu.gingerps.net.proto.EvtAnimatorStateChangedNotifyOuterClass.EvtAnimatorStateChangedNotify result = new emu.gingerps.net.proto.EvtAnimatorStateChangedNotifyOuterClass.EvtAnimatorStateChangedNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.forwardType_ = forwardType_;
+        if (evtAnimatorStateChangedInfoBuilder_ == null) {
+          result.evtAnimatorStateChangedInfo_ = evtAnimatorStateChangedInfo_;
+        } else {
+          result.evtAnimatorStateChangedInfo_ = evtAnimatorStateChangedInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtAnimatorStateChangedNotifyOuterClass.EvtAnimatorStateChangedNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.forwardType_ = forwardType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.evtAnimatorStateChangedInfo_ = evtAnimatorStateChangedInfoBuilder_ == null
-              ? evtAnimatorStateChangedInfo_
-              : evtAnimatorStateChangedInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -454,7 +510,7 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
         if (other.hasEvtAnimatorStateChangedInfo()) {
           mergeEvtAnimatorStateChangedInfo(other.getEvtAnimatorStateChangedInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -469,45 +525,19 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtAnimatorStateChangedNotifyOuterClass.EvtAnimatorStateChangedNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                input.readMessage(
-                    getEvtAnimatorStateChangedInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 112: {
-                forwardType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtAnimatorStateChangedNotifyOuterClass.EvtAnimatorStateChangedNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int forwardType_ = 0;
       /**
@@ -523,8 +553,8 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
+        
         forwardType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -534,7 +564,8 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -546,7 +577,7 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -556,7 +587,7 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         forwardType_ = 0;
         onChanged();
         return this;
@@ -570,7 +601,7 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
        * @return Whether the evtAnimatorStateChangedInfo field is set.
        */
       public boolean hasEvtAnimatorStateChangedInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return evtAnimatorStateChangedInfoBuilder_ != null || evtAnimatorStateChangedInfo_ != null;
       }
       /**
        * <code>.EvtAnimatorStateChangedInfo evt_animator_state_changed_info = 2;</code>
@@ -592,11 +623,11 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
             throw new NullPointerException();
           }
           evtAnimatorStateChangedInfo_ = value;
+          onChanged();
         } else {
           evtAnimatorStateChangedInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -606,11 +637,11 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
           emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo.Builder builderForValue) {
         if (evtAnimatorStateChangedInfoBuilder_ == null) {
           evtAnimatorStateChangedInfo_ = builderForValue.build();
+          onChanged();
         } else {
           evtAnimatorStateChangedInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -618,38 +649,38 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
        */
       public Builder mergeEvtAnimatorStateChangedInfo(emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo value) {
         if (evtAnimatorStateChangedInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            evtAnimatorStateChangedInfo_ != null &&
-            evtAnimatorStateChangedInfo_ != emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo.getDefaultInstance()) {
-            getEvtAnimatorStateChangedInfoBuilder().mergeFrom(value);
+          if (evtAnimatorStateChangedInfo_ != null) {
+            evtAnimatorStateChangedInfo_ =
+              emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo.newBuilder(evtAnimatorStateChangedInfo_).mergeFrom(value).buildPartial();
           } else {
             evtAnimatorStateChangedInfo_ = value;
           }
+          onChanged();
         } else {
           evtAnimatorStateChangedInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EvtAnimatorStateChangedInfo evt_animator_state_changed_info = 2;</code>
        */
       public Builder clearEvtAnimatorStateChangedInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        evtAnimatorStateChangedInfo_ = null;
-        if (evtAnimatorStateChangedInfoBuilder_ != null) {
-          evtAnimatorStateChangedInfoBuilder_.dispose();
+        if (evtAnimatorStateChangedInfoBuilder_ == null) {
+          evtAnimatorStateChangedInfo_ = null;
+          onChanged();
+        } else {
+          evtAnimatorStateChangedInfo_ = null;
           evtAnimatorStateChangedInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EvtAnimatorStateChangedInfo evt_animator_state_changed_info = 2;</code>
        */
       public emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo.Builder getEvtAnimatorStateChangedInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getEvtAnimatorStateChangedInfoFieldBuilder().getBuilder();
       }
@@ -713,18 +744,7 @@ public final class EvtAnimatorStateChangedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtAnimatorStateChangedNotify(input, extensionRegistry);
       }
     };
 

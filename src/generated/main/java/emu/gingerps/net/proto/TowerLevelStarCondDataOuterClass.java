@@ -69,6 +69,63 @@ public final class TowerLevelStarCondDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TowerLevelStarCondData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              unk3300CPBCNACKAAK_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              unk3300JGOLBFMJBCL_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              condValue_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              unk3300KBCFDFOAJMM_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.internal_static_TowerLevelStarCondData_descriptor;
@@ -83,7 +140,7 @@ public final class TowerLevelStarCondDataOuterClass {
     }
 
     public static final int UNK3300_KBCFDFOAJMM_FIELD_NUMBER = 14;
-    private boolean unk3300KBCFDFOAJMM_ = false;
+    private boolean unk3300KBCFDFOAJMM_;
     /**
      * <code>bool Unk3300_KBCFDFOAJMM = 14;</code>
      * @return The unk3300KBCFDFOAJMM.
@@ -94,7 +151,7 @@ public final class TowerLevelStarCondDataOuterClass {
     }
 
     public static final int UNK3300_CPBCNACKAAK_FIELD_NUMBER = 5;
-    private boolean unk3300CPBCNACKAAK_ = false;
+    private boolean unk3300CPBCNACKAAK_;
     /**
      * <code>bool Unk3300_CPBCNACKAAK = 5;</code>
      * @return The unk3300CPBCNACKAAK.
@@ -105,7 +162,7 @@ public final class TowerLevelStarCondDataOuterClass {
     }
 
     public static final int UNK3300_JGOLBFMJBCL_FIELD_NUMBER = 11;
-    private int unk3300JGOLBFMJBCL_ = 0;
+    private int unk3300JGOLBFMJBCL_;
     /**
      * <code>uint32 Unk3300_JGOLBFMJBCL = 11;</code>
      * @return The unk3300JGOLBFMJBCL.
@@ -116,7 +173,7 @@ public final class TowerLevelStarCondDataOuterClass {
     }
 
     public static final int COND_VALUE_FIELD_NUMBER = 12;
-    private int condValue_ = 0;
+    private int condValue_;
     /**
      * <code>uint32 cond_value = 12;</code>
      * @return The condValue.
@@ -152,7 +209,7 @@ public final class TowerLevelStarCondDataOuterClass {
       if (unk3300KBCFDFOAJMM_ != false) {
         output.writeBool(14, unk3300KBCFDFOAJMM_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class TowerLevelStarCondDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, unk3300KBCFDFOAJMM_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -200,7 +257,7 @@ public final class TowerLevelStarCondDataOuterClass {
           != other.getUnk3300JGOLBFMJBCL()) return false;
       if (getCondValue()
           != other.getCondValue()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -221,7 +278,7 @@ public final class TowerLevelStarCondDataOuterClass {
       hash = (53 * hash) + getUnk3300JGOLBFMJBCL();
       hash = (37 * hash) + COND_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getCondValue();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -338,22 +395,30 @@ public final class TowerLevelStarCondDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300KBCFDFOAJMM_ = false;
+
         unk3300CPBCNACKAAK_ = false;
+
         unk3300JGOLBFMJBCL_ = 0;
+
         condValue_ = 0;
+
         return this;
       }
 
@@ -380,25 +445,12 @@ public final class TowerLevelStarCondDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData buildPartial() {
         emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData result = new emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.unk3300KBCFDFOAJMM_ = unk3300KBCFDFOAJMM_;
+        result.unk3300CPBCNACKAAK_ = unk3300CPBCNACKAAK_;
+        result.unk3300JGOLBFMJBCL_ = unk3300JGOLBFMJBCL_;
+        result.condValue_ = condValue_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300KBCFDFOAJMM_ = unk3300KBCFDFOAJMM_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300CPBCNACKAAK_ = unk3300CPBCNACKAAK_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300JGOLBFMJBCL_ = unk3300JGOLBFMJBCL_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.condValue_ = condValue_;
-        }
       }
 
       @java.lang.Override
@@ -457,7 +509,7 @@ public final class TowerLevelStarCondDataOuterClass {
         if (other.getCondValue() != 0) {
           setCondValue(other.getCondValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -472,53 +524,19 @@ public final class TowerLevelStarCondDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                unk3300CPBCNACKAAK_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 88: {
-                unk3300JGOLBFMJBCL_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              case 96: {
-                condValue_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              case 112: {
-                unk3300KBCFDFOAJMM_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean unk3300KBCFDFOAJMM_ ;
       /**
@@ -537,7 +555,6 @@ public final class TowerLevelStarCondDataOuterClass {
       public Builder setUnk3300KBCFDFOAJMM(boolean value) {
         
         unk3300KBCFDFOAJMM_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -546,7 +563,7 @@ public final class TowerLevelStarCondDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KBCFDFOAJMM() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300KBCFDFOAJMM_ = false;
         onChanged();
         return this;
@@ -569,7 +586,6 @@ public final class TowerLevelStarCondDataOuterClass {
       public Builder setUnk3300CPBCNACKAAK(boolean value) {
         
         unk3300CPBCNACKAAK_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -578,7 +594,7 @@ public final class TowerLevelStarCondDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CPBCNACKAAK() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300CPBCNACKAAK_ = false;
         onChanged();
         return this;
@@ -601,7 +617,6 @@ public final class TowerLevelStarCondDataOuterClass {
       public Builder setUnk3300JGOLBFMJBCL(int value) {
         
         unk3300JGOLBFMJBCL_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -610,7 +625,7 @@ public final class TowerLevelStarCondDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300JGOLBFMJBCL() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300JGOLBFMJBCL_ = 0;
         onChanged();
         return this;
@@ -633,7 +648,6 @@ public final class TowerLevelStarCondDataOuterClass {
       public Builder setCondValue(int value) {
         
         condValue_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -642,7 +656,7 @@ public final class TowerLevelStarCondDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCondValue() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         condValue_ = 0;
         onChanged();
         return this;
@@ -680,18 +694,7 @@ public final class TowerLevelStarCondDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TowerLevelStarCondData(input, extensionRegistry);
       }
     };
 

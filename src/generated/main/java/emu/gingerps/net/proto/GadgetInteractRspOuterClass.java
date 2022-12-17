@@ -97,6 +97,70 @@ public final class GadgetInteractRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GadgetInteractRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              gadgetEntityId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              interactType_ = rawValue;
+              break;
+            }
+            case 56: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              opType_ = rawValue;
+              break;
+            }
+            case 88: {
+
+              gadgetId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GadgetInteractRspOuterClass.internal_static_GadgetInteractRsp_descriptor;
@@ -111,7 +175,7 @@ public final class GadgetInteractRspOuterClass {
     }
 
     public static final int INTERACT_TYPE_FIELD_NUMBER = 2;
-    private int interactType_ = 0;
+    private int interactType_;
     /**
      * <code>.InteractType interact_type = 2;</code>
      * @return The enum numeric value on the wire for interactType.
@@ -124,12 +188,13 @@ public final class GadgetInteractRspOuterClass {
      * @return The interactType.
      */
     @java.lang.Override public emu.gingerps.net.proto.InteractTypeOuterClass.InteractType getInteractType() {
-      emu.gingerps.net.proto.InteractTypeOuterClass.InteractType result = emu.gingerps.net.proto.InteractTypeOuterClass.InteractType.forNumber(interactType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.InteractTypeOuterClass.InteractType result = emu.gingerps.net.proto.InteractTypeOuterClass.InteractType.valueOf(interactType_);
       return result == null ? emu.gingerps.net.proto.InteractTypeOuterClass.InteractType.UNRECOGNIZED : result;
     }
 
     public static final int GADGET_ID_FIELD_NUMBER = 11;
-    private int gadgetId_ = 0;
+    private int gadgetId_;
     /**
      * <code>uint32 gadget_id = 11;</code>
      * @return The gadgetId.
@@ -140,7 +205,7 @@ public final class GadgetInteractRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
@@ -151,7 +216,7 @@ public final class GadgetInteractRspOuterClass {
     }
 
     public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 1;
-    private int gadgetEntityId_ = 0;
+    private int gadgetEntityId_;
     /**
      * <code>uint32 gadget_entity_id = 1;</code>
      * @return The gadgetEntityId.
@@ -162,7 +227,7 @@ public final class GadgetInteractRspOuterClass {
     }
 
     public static final int OP_TYPE_FIELD_NUMBER = 8;
-    private int opType_ = 0;
+    private int opType_;
     /**
      * <code>.InterOpType op_type = 8;</code>
      * @return The enum numeric value on the wire for opType.
@@ -175,7 +240,8 @@ public final class GadgetInteractRspOuterClass {
      * @return The opType.
      */
     @java.lang.Override public emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType getOpType() {
-      emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType result = emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.forNumber(opType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType result = emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.valueOf(opType_);
       return result == null ? emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
     }
 
@@ -208,7 +274,7 @@ public final class GadgetInteractRspOuterClass {
       if (gadgetId_ != 0) {
         output.writeUInt32(11, gadgetId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -237,7 +303,7 @@ public final class GadgetInteractRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, gadgetId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -260,7 +326,7 @@ public final class GadgetInteractRspOuterClass {
       if (getGadgetEntityId()
           != other.getGadgetEntityId()) return false;
       if (opType_ != other.opType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -281,7 +347,7 @@ public final class GadgetInteractRspOuterClass {
       hash = (53 * hash) + getGadgetEntityId();
       hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + opType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -408,23 +474,32 @@ public final class GadgetInteractRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         interactType_ = 0;
+
         gadgetId_ = 0;
+
         retcode_ = 0;
+
         gadgetEntityId_ = 0;
+
         opType_ = 0;
+
         return this;
       }
 
@@ -451,28 +526,13 @@ public final class GadgetInteractRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp buildPartial() {
         emu.gingerps.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp result = new emu.gingerps.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.interactType_ = interactType_;
+        result.gadgetId_ = gadgetId_;
+        result.retcode_ = retcode_;
+        result.gadgetEntityId_ = gadgetEntityId_;
+        result.opType_ = opType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.interactType_ = interactType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.gadgetId_ = gadgetId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.gadgetEntityId_ = gadgetEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.opType_ = opType_;
-        }
       }
 
       @java.lang.Override
@@ -534,7 +594,7 @@ public final class GadgetInteractRspOuterClass {
         if (other.opType_ != 0) {
           setOpTypeValue(other.getOpTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -549,58 +609,19 @@ public final class GadgetInteractRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                gadgetEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 8
-              case 16: {
-                interactType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 56: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              case 64: {
-                opType_ = input.readEnum();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 64
-              case 88: {
-                gadgetId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int interactType_ = 0;
       /**
@@ -616,8 +637,8 @@ public final class GadgetInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setInteractTypeValue(int value) {
+        
         interactType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -627,7 +648,8 @@ public final class GadgetInteractRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.InteractTypeOuterClass.InteractType getInteractType() {
-        emu.gingerps.net.proto.InteractTypeOuterClass.InteractType result = emu.gingerps.net.proto.InteractTypeOuterClass.InteractType.forNumber(interactType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.InteractTypeOuterClass.InteractType result = emu.gingerps.net.proto.InteractTypeOuterClass.InteractType.valueOf(interactType_);
         return result == null ? emu.gingerps.net.proto.InteractTypeOuterClass.InteractType.UNRECOGNIZED : result;
       }
       /**
@@ -639,7 +661,7 @@ public final class GadgetInteractRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         interactType_ = value.getNumber();
         onChanged();
         return this;
@@ -649,7 +671,7 @@ public final class GadgetInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInteractType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         interactType_ = 0;
         onChanged();
         return this;
@@ -672,7 +694,6 @@ public final class GadgetInteractRspOuterClass {
       public Builder setGadgetId(int value) {
         
         gadgetId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -681,7 +702,7 @@ public final class GadgetInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         gadgetId_ = 0;
         onChanged();
         return this;
@@ -704,7 +725,6 @@ public final class GadgetInteractRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -713,7 +733,7 @@ public final class GadgetInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -736,7 +756,6 @@ public final class GadgetInteractRspOuterClass {
       public Builder setGadgetEntityId(int value) {
         
         gadgetEntityId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -745,7 +764,7 @@ public final class GadgetInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         gadgetEntityId_ = 0;
         onChanged();
         return this;
@@ -765,8 +784,8 @@ public final class GadgetInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOpTypeValue(int value) {
+        
         opType_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -776,7 +795,8 @@ public final class GadgetInteractRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType getOpType() {
-        emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType result = emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.forNumber(opType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType result = emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.valueOf(opType_);
         return result == null ? emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
       }
       /**
@@ -788,7 +808,7 @@ public final class GadgetInteractRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000010;
+        
         opType_ = value.getNumber();
         onChanged();
         return this;
@@ -798,7 +818,7 @@ public final class GadgetInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         opType_ = 0;
         onChanged();
         return this;
@@ -836,18 +856,7 @@ public final class GadgetInteractRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GadgetInteractRsp(input, extensionRegistry);
       }
     };
 

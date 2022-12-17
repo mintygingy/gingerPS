@@ -60,6 +60,56 @@ public final class EntityClientExtraInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EntityClientExtraInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (skillAnchorPosition_ != null) {
+                subBuilder = skillAnchorPosition_.toBuilder();
+              }
+              skillAnchorPosition_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(skillAnchorPosition_);
+                skillAnchorPosition_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.internal_static_EntityClientExtraInfo_descriptor;
@@ -96,7 +146,7 @@ public final class EntityClientExtraInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSkillAnchorPositionOrBuilder() {
-      return skillAnchorPosition_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : skillAnchorPosition_;
+      return getSkillAnchorPosition();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -116,7 +166,7 @@ public final class EntityClientExtraInfoOuterClass {
       if (skillAnchorPosition_ != null) {
         output.writeMessage(1, getSkillAnchorPosition());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +179,7 @@ public final class EntityClientExtraInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getSkillAnchorPosition());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -149,7 +199,7 @@ public final class EntityClientExtraInfoOuterClass {
         if (!getSkillAnchorPosition()
             .equals(other.getSkillAnchorPosition())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -164,7 +214,7 @@ public final class EntityClientExtraInfoOuterClass {
         hash = (37 * hash) + SKILL_ANCHOR_POSITION_FIELD_NUMBER;
         hash = (53 * hash) + getSkillAnchorPosition().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -281,21 +331,26 @@ public final class EntityClientExtraInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        skillAnchorPosition_ = null;
-        if (skillAnchorPositionBuilder_ != null) {
-          skillAnchorPositionBuilder_.dispose();
+        if (skillAnchorPositionBuilder_ == null) {
+          skillAnchorPosition_ = null;
+        } else {
+          skillAnchorPosition_ = null;
           skillAnchorPositionBuilder_ = null;
         }
         return this;
@@ -324,18 +379,13 @@ public final class EntityClientExtraInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo buildPartial() {
         emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo result = new emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (skillAnchorPositionBuilder_ == null) {
+          result.skillAnchorPosition_ = skillAnchorPosition_;
+        } else {
+          result.skillAnchorPosition_ = skillAnchorPositionBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.skillAnchorPosition_ = skillAnchorPositionBuilder_ == null
-              ? skillAnchorPosition_
-              : skillAnchorPositionBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -385,7 +435,7 @@ public final class EntityClientExtraInfoOuterClass {
         if (other.hasSkillAnchorPosition()) {
           mergeSkillAnchorPosition(other.getSkillAnchorPosition());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -400,40 +450,19 @@ public final class EntityClientExtraInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getSkillAnchorPositionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector skillAnchorPosition_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -443,7 +472,7 @@ public final class EntityClientExtraInfoOuterClass {
        * @return Whether the skillAnchorPosition field is set.
        */
       public boolean hasSkillAnchorPosition() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return skillAnchorPositionBuilder_ != null || skillAnchorPosition_ != null;
       }
       /**
        * <code>.Vector skill_anchor_position = 1;</code>
@@ -465,11 +494,11 @@ public final class EntityClientExtraInfoOuterClass {
             throw new NullPointerException();
           }
           skillAnchorPosition_ = value;
+          onChanged();
         } else {
           skillAnchorPositionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -479,11 +508,11 @@ public final class EntityClientExtraInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (skillAnchorPositionBuilder_ == null) {
           skillAnchorPosition_ = builderForValue.build();
+          onChanged();
         } else {
           skillAnchorPositionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -491,38 +520,38 @@ public final class EntityClientExtraInfoOuterClass {
        */
       public Builder mergeSkillAnchorPosition(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (skillAnchorPositionBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            skillAnchorPosition_ != null &&
-            skillAnchorPosition_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getSkillAnchorPositionBuilder().mergeFrom(value);
+          if (skillAnchorPosition_ != null) {
+            skillAnchorPosition_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(skillAnchorPosition_).mergeFrom(value).buildPartial();
           } else {
             skillAnchorPosition_ = value;
           }
+          onChanged();
         } else {
           skillAnchorPositionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector skill_anchor_position = 1;</code>
        */
       public Builder clearSkillAnchorPosition() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        skillAnchorPosition_ = null;
-        if (skillAnchorPositionBuilder_ != null) {
-          skillAnchorPositionBuilder_.dispose();
+        if (skillAnchorPositionBuilder_ == null) {
+          skillAnchorPosition_ = null;
+          onChanged();
+        } else {
+          skillAnchorPosition_ = null;
           skillAnchorPositionBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector skill_anchor_position = 1;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSkillAnchorPositionBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getSkillAnchorPositionFieldBuilder().getBuilder();
       }
@@ -586,18 +615,7 @@ public final class EntityClientExtraInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EntityClientExtraInfo(input, extensionRegistry);
       }
     };
 

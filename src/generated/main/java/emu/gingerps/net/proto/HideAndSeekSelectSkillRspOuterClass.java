@@ -79,6 +79,73 @@ public final class HideAndSeekSelectSkillRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HideAndSeekSelectSkillRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                skillList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              skillList_.addInt(input.readUInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                skillList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                skillList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          skillList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HideAndSeekSelectSkillRspOuterClass.internal_static_HideAndSeekSelectSkillRsp_descriptor;
@@ -93,7 +160,7 @@ public final class HideAndSeekSelectSkillRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -104,7 +171,6 @@ public final class HideAndSeekSelectSkillRspOuterClass {
     }
 
     public static final int SKILL_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList skillList_;
     /**
      * <code>repeated uint32 skill_list = 4;</code>
@@ -157,7 +223,7 @@ public final class HideAndSeekSelectSkillRspOuterClass {
       for (int i = 0; i < skillList_.size(); i++) {
         output.writeUInt32NoTag(skillList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -184,7 +250,7 @@ public final class HideAndSeekSelectSkillRspOuterClass {
         }
         skillListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -203,7 +269,7 @@ public final class HideAndSeekSelectSkillRspOuterClass {
           != other.getRetcode()) return false;
       if (!getSkillListList()
           .equals(other.getSkillListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -220,7 +286,7 @@ public final class HideAndSeekSelectSkillRspOuterClass {
         hash = (37 * hash) + SKILL_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSkillListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,20 +413,26 @@ public final class HideAndSeekSelectSkillRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.HideAndSeekSelectSkillRspOuterClass.HideAndSeekSelectSkillRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         skillList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -387,25 +459,15 @@ public final class HideAndSeekSelectSkillRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HideAndSeekSelectSkillRspOuterClass.HideAndSeekSelectSkillRsp buildPartial() {
         emu.gingerps.net.proto.HideAndSeekSelectSkillRspOuterClass.HideAndSeekSelectSkillRsp result = new emu.gingerps.net.proto.HideAndSeekSelectSkillRspOuterClass.HideAndSeekSelectSkillRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HideAndSeekSelectSkillRspOuterClass.HideAndSeekSelectSkillRsp result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           skillList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.skillList_ = skillList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HideAndSeekSelectSkillRspOuterClass.HideAndSeekSelectSkillRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -458,14 +520,14 @@ public final class HideAndSeekSelectSkillRspOuterClass {
         if (!other.skillList_.isEmpty()) {
           if (skillList_.isEmpty()) {
             skillList_ = other.skillList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSkillListIsMutable();
             skillList_.addAll(other.skillList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -480,51 +542,17 @@ public final class HideAndSeekSelectSkillRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HideAndSeekSelectSkillRspOuterClass.HideAndSeekSelectSkillRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 32: {
-                int v = input.readUInt32();
-                ensureSkillListIsMutable();
-                skillList_.addInt(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureSkillListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  skillList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HideAndSeekSelectSkillRspOuterClass.HideAndSeekSelectSkillRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -546,7 +574,6 @@ public final class HideAndSeekSelectSkillRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -555,7 +582,7 @@ public final class HideAndSeekSelectSkillRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -563,10 +590,10 @@ public final class HideAndSeekSelectSkillRspOuterClass {
 
       private com.google.protobuf.Internal.IntList skillList_ = emptyIntList();
       private void ensureSkillListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           skillList_ = mutableCopy(skillList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 skill_list = 4;</code>
@@ -574,7 +601,7 @@ public final class HideAndSeekSelectSkillRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSkillListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(skillList_) : skillList_;
       }
       /**
@@ -600,7 +627,6 @@ public final class HideAndSeekSelectSkillRspOuterClass {
        */
       public Builder setSkillList(
           int index, int value) {
-        
         ensureSkillListIsMutable();
         skillList_.setInt(index, value);
         onChanged();
@@ -612,7 +638,6 @@ public final class HideAndSeekSelectSkillRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSkillList(int value) {
-        
         ensureSkillListIsMutable();
         skillList_.addInt(value);
         onChanged();
@@ -637,7 +662,7 @@ public final class HideAndSeekSelectSkillRspOuterClass {
        */
       public Builder clearSkillList() {
         skillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -674,18 +699,7 @@ public final class HideAndSeekSelectSkillRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HideAndSeekSelectSkillRsp(input, extensionRegistry);
       }
     };
 

@@ -105,6 +105,85 @@ public final class ReliquaryUpgradeReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ReliquaryUpgradeReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                foodReliquaryGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              foodReliquaryGuidList_.addLong(input.readUInt64());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                foodReliquaryGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                foodReliquaryGuidList_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              targetReliquaryGuid_ = input.readUInt64();
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                itemParamList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              itemParamList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          foodReliquaryGuidList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          itemParamList_ = java.util.Collections.unmodifiableList(itemParamList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ReliquaryUpgradeReqOuterClass.internal_static_ReliquaryUpgradeReq_descriptor;
@@ -119,7 +198,6 @@ public final class ReliquaryUpgradeReqOuterClass {
     }
 
     public static final int FOOD_RELIQUARY_GUID_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList foodReliquaryGuidList_;
     /**
      * <code>repeated uint64 food_reliquary_guid_list = 3;</code>
@@ -148,7 +226,6 @@ public final class ReliquaryUpgradeReqOuterClass {
     private int foodReliquaryGuidListMemoizedSerializedSize = -1;
 
     public static final int ITEM_PARAM_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemParamList_;
     /**
      * <code>repeated .ItemParam item_param_list = 15;</code>
@@ -189,7 +266,7 @@ public final class ReliquaryUpgradeReqOuterClass {
     }
 
     public static final int TARGET_RELIQUARY_GUID_FIELD_NUMBER = 8;
-    private long targetReliquaryGuid_ = 0L;
+    private long targetReliquaryGuid_;
     /**
      * <code>uint64 target_reliquary_guid = 8;</code>
      * @return The targetReliquaryGuid.
@@ -227,7 +304,7 @@ public final class ReliquaryUpgradeReqOuterClass {
       for (int i = 0; i < itemParamList_.size(); i++) {
         output.writeMessage(15, itemParamList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -258,7 +335,7 @@ public final class ReliquaryUpgradeReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, itemParamList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -279,7 +356,7 @@ public final class ReliquaryUpgradeReqOuterClass {
           .equals(other.getItemParamListList())) return false;
       if (getTargetReliquaryGuid()
           != other.getTargetReliquaryGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -301,7 +378,7 @@ public final class ReliquaryUpgradeReqOuterClass {
       hash = (37 * hash) + TARGET_RELIQUARY_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTargetReliquaryGuid());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -429,27 +506,33 @@ public final class ReliquaryUpgradeReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ReliquaryUpgradeReqOuterClass.ReliquaryUpgradeReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getItemParamListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         foodReliquaryGuidList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (itemParamListBuilder_ == null) {
           itemParamList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          itemParamList_ = null;
           itemParamListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         targetReliquaryGuid_ = 0L;
+
         return this;
       }
 
@@ -476,13 +559,7 @@ public final class ReliquaryUpgradeReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ReliquaryUpgradeReqOuterClass.ReliquaryUpgradeReq buildPartial() {
         emu.gingerps.net.proto.ReliquaryUpgradeReqOuterClass.ReliquaryUpgradeReq result = new emu.gingerps.net.proto.ReliquaryUpgradeReqOuterClass.ReliquaryUpgradeReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ReliquaryUpgradeReqOuterClass.ReliquaryUpgradeReq result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           foodReliquaryGuidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -497,13 +574,9 @@ public final class ReliquaryUpgradeReqOuterClass {
         } else {
           result.itemParamList_ = itemParamListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ReliquaryUpgradeReqOuterClass.ReliquaryUpgradeReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.targetReliquaryGuid_ = targetReliquaryGuid_;
-        }
+        result.targetReliquaryGuid_ = targetReliquaryGuid_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -589,7 +662,7 @@ public final class ReliquaryUpgradeReqOuterClass {
         if (other.getTargetReliquaryGuid() != 0L) {
           setTargetReliquaryGuid(other.getTargetReliquaryGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -604,64 +677,17 @@ public final class ReliquaryUpgradeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ReliquaryUpgradeReqOuterClass.ReliquaryUpgradeReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                long v = input.readUInt64();
-                ensureFoodReliquaryGuidListIsMutable();
-                foodReliquaryGuidList_.addLong(v);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureFoodReliquaryGuidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  foodReliquaryGuidList_.addLong(input.readUInt64());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 26
-              case 64: {
-                targetReliquaryGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 122: {
-                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
-                        extensionRegistry);
-                if (itemParamListBuilder_ == null) {
-                  ensureItemParamListIsMutable();
-                  itemParamList_.add(m);
-                } else {
-                  itemParamListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ReliquaryUpgradeReqOuterClass.ReliquaryUpgradeReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -671,7 +697,7 @@ public final class ReliquaryUpgradeReqOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           foodReliquaryGuidList_ = mutableCopy(foodReliquaryGuidList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint64 food_reliquary_guid_list = 3;</code>
@@ -705,7 +731,6 @@ public final class ReliquaryUpgradeReqOuterClass {
        */
       public Builder setFoodReliquaryGuidList(
           int index, long value) {
-        
         ensureFoodReliquaryGuidListIsMutable();
         foodReliquaryGuidList_.setLong(index, value);
         onChanged();
@@ -717,7 +742,6 @@ public final class ReliquaryUpgradeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFoodReliquaryGuidList(long value) {
-        
         ensureFoodReliquaryGuidListIsMutable();
         foodReliquaryGuidList_.addLong(value);
         onChanged();
@@ -1004,7 +1028,6 @@ public final class ReliquaryUpgradeReqOuterClass {
       public Builder setTargetReliquaryGuid(long value) {
         
         targetReliquaryGuid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1013,7 +1036,7 @@ public final class ReliquaryUpgradeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetReliquaryGuid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         targetReliquaryGuid_ = 0L;
         onChanged();
         return this;
@@ -1051,18 +1074,7 @@ public final class ReliquaryUpgradeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ReliquaryUpgradeReq(input, extensionRegistry);
       }
     };
 

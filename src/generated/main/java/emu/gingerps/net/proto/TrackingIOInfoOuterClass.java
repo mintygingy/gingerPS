@@ -136,6 +136,85 @@ public final class TrackingIOInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TrackingIOInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300DJHKHEFPCDK_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300CNPIGDOEJPB_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rydevicetype_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300NMDNLHLAKAM_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300CCOGBICMHKG_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientTz_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300PIBFPDAMJLE_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TrackingIOInfoOuterClass.internal_static_TrackingIOInfo_descriptor;
@@ -150,8 +229,7 @@ public final class TrackingIOInfoOuterClass {
     }
 
     public static final int CLIENT_TZ_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object clientTz_ = "";
+    private volatile java.lang.Object clientTz_;
     /**
      * <code>string client_tz = 10;</code>
      * @return The clientTz.
@@ -189,8 +267,7 @@ public final class TrackingIOInfoOuterClass {
     }
 
     public static final int UNK3300_PIBFPDAMJLE_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object unk3300PIBFPDAMJLE_ = "";
+    private volatile java.lang.Object unk3300PIBFPDAMJLE_;
     /**
      * <code>string Unk3300_PIBFPDAMJLE = 12;</code>
      * @return The unk3300PIBFPDAMJLE.
@@ -228,8 +305,7 @@ public final class TrackingIOInfoOuterClass {
     }
 
     public static final int UNK3300_NMDNLHLAKAM_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object unk3300NMDNLHLAKAM_ = "";
+    private volatile java.lang.Object unk3300NMDNLHLAKAM_;
     /**
      * <code>string Unk3300_NMDNLHLAKAM = 7;</code>
      * @return The unk3300NMDNLHLAKAM.
@@ -267,8 +343,7 @@ public final class TrackingIOInfoOuterClass {
     }
 
     public static final int RYDEVICETYPE_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object rydevicetype_ = "";
+    private volatile java.lang.Object rydevicetype_;
     /**
      * <code>string rydevicetype = 5;</code>
      * @return The rydevicetype.
@@ -306,8 +381,7 @@ public final class TrackingIOInfoOuterClass {
     }
 
     public static final int UNK3300_CNPIGDOEJPB_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object unk3300CNPIGDOEJPB_ = "";
+    private volatile java.lang.Object unk3300CNPIGDOEJPB_;
     /**
      * <code>string Unk3300_CNPIGDOEJPB = 2;</code>
      * @return The unk3300CNPIGDOEJPB.
@@ -345,8 +419,7 @@ public final class TrackingIOInfoOuterClass {
     }
 
     public static final int UNK3300_CCOGBICMHKG_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object unk3300CCOGBICMHKG_ = "";
+    private volatile java.lang.Object unk3300CCOGBICMHKG_;
     /**
      * <code>string Unk3300_CCOGBICMHKG = 9;</code>
      * @return The unk3300CCOGBICMHKG.
@@ -384,8 +457,7 @@ public final class TrackingIOInfoOuterClass {
     }
 
     public static final int UNK3300_DJHKHEFPCDK_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object unk3300DJHKHEFPCDK_ = "";
+    private volatile java.lang.Object unk3300DJHKHEFPCDK_;
     /**
      * <code>string Unk3300_DJHKHEFPCDK = 1;</code>
      * @return The unk3300DJHKHEFPCDK.
@@ -457,7 +529,7 @@ public final class TrackingIOInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300PIBFPDAMJLE_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, unk3300PIBFPDAMJLE_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -487,7 +559,7 @@ public final class TrackingIOInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300PIBFPDAMJLE_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, unk3300PIBFPDAMJLE_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -516,7 +588,7 @@ public final class TrackingIOInfoOuterClass {
           .equals(other.getUnk3300CCOGBICMHKG())) return false;
       if (!getUnk3300DJHKHEFPCDK()
           .equals(other.getUnk3300DJHKHEFPCDK())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -541,7 +613,7 @@ public final class TrackingIOInfoOuterClass {
       hash = (53 * hash) + getUnk3300CCOGBICMHKG().hashCode();
       hash = (37 * hash) + UNK3300_DJHKHEFPCDK_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300DJHKHEFPCDK().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -658,25 +730,36 @@ public final class TrackingIOInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         clientTz_ = "";
+
         unk3300PIBFPDAMJLE_ = "";
+
         unk3300NMDNLHLAKAM_ = "";
+
         rydevicetype_ = "";
+
         unk3300CNPIGDOEJPB_ = "";
+
         unk3300CCOGBICMHKG_ = "";
+
         unk3300DJHKHEFPCDK_ = "";
+
         return this;
       }
 
@@ -703,34 +786,15 @@ public final class TrackingIOInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo buildPartial() {
         emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo result = new emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.clientTz_ = clientTz_;
+        result.unk3300PIBFPDAMJLE_ = unk3300PIBFPDAMJLE_;
+        result.unk3300NMDNLHLAKAM_ = unk3300NMDNLHLAKAM_;
+        result.rydevicetype_ = rydevicetype_;
+        result.unk3300CNPIGDOEJPB_ = unk3300CNPIGDOEJPB_;
+        result.unk3300CCOGBICMHKG_ = unk3300CCOGBICMHKG_;
+        result.unk3300DJHKHEFPCDK_ = unk3300DJHKHEFPCDK_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.clientTz_ = clientTz_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300PIBFPDAMJLE_ = unk3300PIBFPDAMJLE_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300NMDNLHLAKAM_ = unk3300NMDNLHLAKAM_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.rydevicetype_ = rydevicetype_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300CNPIGDOEJPB_ = unk3300CNPIGDOEJPB_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.unk3300CCOGBICMHKG_ = unk3300CCOGBICMHKG_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.unk3300DJHKHEFPCDK_ = unk3300DJHKHEFPCDK_;
-        }
       }
 
       @java.lang.Override
@@ -779,40 +843,33 @@ public final class TrackingIOInfoOuterClass {
         if (other == emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo.getDefaultInstance()) return this;
         if (!other.getClientTz().isEmpty()) {
           clientTz_ = other.clientTz_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getUnk3300PIBFPDAMJLE().isEmpty()) {
           unk3300PIBFPDAMJLE_ = other.unk3300PIBFPDAMJLE_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getUnk3300NMDNLHLAKAM().isEmpty()) {
           unk3300NMDNLHLAKAM_ = other.unk3300NMDNLHLAKAM_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getRydevicetype().isEmpty()) {
           rydevicetype_ = other.rydevicetype_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getUnk3300CNPIGDOEJPB().isEmpty()) {
           unk3300CNPIGDOEJPB_ = other.unk3300CNPIGDOEJPB_;
-          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (!other.getUnk3300CCOGBICMHKG().isEmpty()) {
           unk3300CCOGBICMHKG_ = other.unk3300CCOGBICMHKG_;
-          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getUnk3300DJHKHEFPCDK().isEmpty()) {
           unk3300DJHKHEFPCDK_ = other.unk3300DJHKHEFPCDK_;
-          bitField0_ |= 0x00000040;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -827,68 +884,19 @@ public final class TrackingIOInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                unk3300DJHKHEFPCDK_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 10
-              case 18: {
-                unk3300CNPIGDOEJPB_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 18
-              case 42: {
-                rydevicetype_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 42
-              case 58: {
-                unk3300NMDNLHLAKAM_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 58
-              case 74: {
-                unk3300CCOGBICMHKG_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 74
-              case 82: {
-                clientTz_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 82
-              case 98: {
-                unk3300PIBFPDAMJLE_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TrackingIOInfoOuterClass.TrackingIOInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object clientTz_ = "";
       /**
@@ -931,9 +939,11 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setClientTz(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         clientTz_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -942,8 +952,8 @@ public final class TrackingIOInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientTz() {
+        
         clientTz_ = getDefaultInstance().getClientTz();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -954,10 +964,12 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setClientTzBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         clientTz_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1003,9 +1015,11 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setUnk3300PIBFPDAMJLE(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         unk3300PIBFPDAMJLE_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1014,8 +1028,8 @@ public final class TrackingIOInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PIBFPDAMJLE() {
+        
         unk3300PIBFPDAMJLE_ = getDefaultInstance().getUnk3300PIBFPDAMJLE();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1026,10 +1040,12 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setUnk3300PIBFPDAMJLEBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         unk3300PIBFPDAMJLE_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1075,9 +1091,11 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setUnk3300NMDNLHLAKAM(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         unk3300NMDNLHLAKAM_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1086,8 +1104,8 @@ public final class TrackingIOInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NMDNLHLAKAM() {
+        
         unk3300NMDNLHLAKAM_ = getDefaultInstance().getUnk3300NMDNLHLAKAM();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1098,10 +1116,12 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setUnk3300NMDNLHLAKAMBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         unk3300NMDNLHLAKAM_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1147,9 +1167,11 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setRydevicetype(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         rydevicetype_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1158,8 +1180,8 @@ public final class TrackingIOInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRydevicetype() {
+        
         rydevicetype_ = getDefaultInstance().getRydevicetype();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1170,10 +1192,12 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setRydevicetypeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         rydevicetype_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1219,9 +1243,11 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setUnk3300CNPIGDOEJPB(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         unk3300CNPIGDOEJPB_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1230,8 +1256,8 @@ public final class TrackingIOInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CNPIGDOEJPB() {
+        
         unk3300CNPIGDOEJPB_ = getDefaultInstance().getUnk3300CNPIGDOEJPB();
-        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1242,10 +1268,12 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setUnk3300CNPIGDOEJPBBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         unk3300CNPIGDOEJPB_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1291,9 +1319,11 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setUnk3300CCOGBICMHKG(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         unk3300CCOGBICMHKG_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1302,8 +1332,8 @@ public final class TrackingIOInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CCOGBICMHKG() {
+        
         unk3300CCOGBICMHKG_ = getDefaultInstance().getUnk3300CCOGBICMHKG();
-        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1314,10 +1344,12 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setUnk3300CCOGBICMHKGBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         unk3300CCOGBICMHKG_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1363,9 +1395,11 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setUnk3300DJHKHEFPCDK(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         unk3300DJHKHEFPCDK_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1374,8 +1408,8 @@ public final class TrackingIOInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DJHKHEFPCDK() {
+        
         unk3300DJHKHEFPCDK_ = getDefaultInstance().getUnk3300DJHKHEFPCDK();
-        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -1386,10 +1420,12 @@ public final class TrackingIOInfoOuterClass {
        */
       public Builder setUnk3300DJHKHEFPCDKBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         unk3300DJHKHEFPCDK_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1426,18 +1462,7 @@ public final class TrackingIOInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TrackingIOInfo(input, extensionRegistry);
       }
     };
 

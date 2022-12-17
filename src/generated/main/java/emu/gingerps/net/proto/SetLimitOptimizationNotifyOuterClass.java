@@ -61,6 +61,48 @@ public final class SetLimitOptimizationNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SetLimitOptimizationNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 80: {
+
+              isActive_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SetLimitOptimizationNotifyOuterClass.internal_static_SetLimitOptimizationNotify_descriptor;
@@ -75,7 +117,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
     }
 
     public static final int IS_ACTIVE_FIELD_NUMBER = 10;
-    private boolean isActive_ = false;
+    private boolean isActive_;
     /**
      * <code>bool is_active = 10;</code>
      * @return The isActive.
@@ -102,7 +144,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
       if (isActive_ != false) {
         output.writeBool(10, isActive_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -115,7 +157,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, isActive_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -132,7 +174,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
 
       if (getIsActive()
           != other.getIsActive()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -146,7 +188,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
       hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsActive());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -273,19 +315,24 @@ public final class SetLimitOptimizationNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.SetLimitOptimizationNotifyOuterClass.SetLimitOptimizationNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isActive_ = false;
+
         return this;
       }
 
@@ -312,16 +359,9 @@ public final class SetLimitOptimizationNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SetLimitOptimizationNotifyOuterClass.SetLimitOptimizationNotify buildPartial() {
         emu.gingerps.net.proto.SetLimitOptimizationNotifyOuterClass.SetLimitOptimizationNotify result = new emu.gingerps.net.proto.SetLimitOptimizationNotifyOuterClass.SetLimitOptimizationNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isActive_ = isActive_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SetLimitOptimizationNotifyOuterClass.SetLimitOptimizationNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isActive_ = isActive_;
-        }
       }
 
       @java.lang.Override
@@ -371,7 +411,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
         if (other.getIsActive() != false) {
           setIsActive(other.getIsActive());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -386,38 +426,19 @@ public final class SetLimitOptimizationNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SetLimitOptimizationNotifyOuterClass.SetLimitOptimizationNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 80: {
-                isActive_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SetLimitOptimizationNotifyOuterClass.SetLimitOptimizationNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isActive_ ;
       /**
@@ -436,7 +457,6 @@ public final class SetLimitOptimizationNotifyOuterClass {
       public Builder setIsActive(boolean value) {
         
         isActive_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -445,7 +465,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsActive() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isActive_ = false;
         onChanged();
         return this;
@@ -483,18 +503,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SetLimitOptimizationNotify(input, extensionRegistry);
       }
     };
 

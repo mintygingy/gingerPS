@@ -86,6 +86,61 @@ public final class GetPlayerAskFriendListRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetPlayerAskFriendListRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                askFriendList_ = new java.util.ArrayList<emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              askFriendList_.add(
+                  input.readMessage(emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.parser(), extensionRegistry));
+              break;
+            }
+            case 88: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          askFriendList_ = java.util.Collections.unmodifiableList(askFriendList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetPlayerAskFriendListRspOuterClass.internal_static_GetPlayerAskFriendListRsp_descriptor;
@@ -100,7 +155,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 11;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 11;</code>
      * @return The retcode.
@@ -111,7 +166,6 @@ public final class GetPlayerAskFriendListRspOuterClass {
     }
 
     public static final int ASK_FRIEND_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief> askFriendList_;
     /**
      * <code>repeated .FriendBrief ask_friend_list = 3;</code>
@@ -171,7 +225,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(11, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
           != other.getRetcode()) return false;
       if (!getAskFriendListList()
           .equals(other.getAskFriendListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
         hash = (37 * hash) + ASK_FRIEND_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAskFriendListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +405,31 @@ public final class GetPlayerAskFriendListRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetPlayerAskFriendListRspOuterClass.GetPlayerAskFriendListRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAskFriendListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         if (askFriendListBuilder_ == null) {
           askFriendList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          askFriendList_ = null;
           askFriendListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -397,29 +456,19 @@ public final class GetPlayerAskFriendListRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetPlayerAskFriendListRspOuterClass.GetPlayerAskFriendListRsp buildPartial() {
         emu.gingerps.net.proto.GetPlayerAskFriendListRspOuterClass.GetPlayerAskFriendListRsp result = new emu.gingerps.net.proto.GetPlayerAskFriendListRspOuterClass.GetPlayerAskFriendListRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetPlayerAskFriendListRspOuterClass.GetPlayerAskFriendListRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         if (askFriendListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             askFriendList_ = java.util.Collections.unmodifiableList(askFriendList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.askFriendList_ = askFriendList_;
         } else {
           result.askFriendList_ = askFriendListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetPlayerAskFriendListRspOuterClass.GetPlayerAskFriendListRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -473,7 +522,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
           if (!other.askFriendList_.isEmpty()) {
             if (askFriendList_.isEmpty()) {
               askFriendList_ = other.askFriendList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureAskFriendListIsMutable();
               askFriendList_.addAll(other.askFriendList_);
@@ -486,7 +535,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
               askFriendListBuilder_.dispose();
               askFriendListBuilder_ = null;
               askFriendList_ = other.askFriendList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               askFriendListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAskFriendListFieldBuilder() : null;
@@ -495,7 +544,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -510,48 +559,17 @@ public final class GetPlayerAskFriendListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetPlayerAskFriendListRspOuterClass.GetPlayerAskFriendListRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.parser(),
-                        extensionRegistry);
-                if (askFriendListBuilder_ == null) {
-                  ensureAskFriendListIsMutable();
-                  askFriendList_.add(m);
-                } else {
-                  askFriendListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 88: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetPlayerAskFriendListRspOuterClass.GetPlayerAskFriendListRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -573,7 +591,6 @@ public final class GetPlayerAskFriendListRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +599,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -591,9 +608,9 @@ public final class GetPlayerAskFriendListRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief> askFriendList_ =
         java.util.Collections.emptyList();
       private void ensureAskFriendListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           askFriendList_ = new java.util.ArrayList<emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief>(askFriendList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -743,7 +760,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
       public Builder clearAskFriendList() {
         if (askFriendListBuilder_ == null) {
           askFriendList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           askFriendListBuilder_.clear();
@@ -820,7 +837,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
           askFriendListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief, emu.gingerps.net.proto.FriendBriefOuterClass.FriendBrief.Builder, emu.gingerps.net.proto.FriendBriefOuterClass.FriendBriefOrBuilder>(
                   askFriendList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           askFriendList_ = null;
@@ -860,18 +877,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetPlayerAskFriendListRsp(input, extensionRegistry);
       }
     };
 

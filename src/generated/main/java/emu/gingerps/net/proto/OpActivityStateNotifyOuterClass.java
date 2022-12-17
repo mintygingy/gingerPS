@@ -98,6 +98,80 @@ public final class OpActivityStateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private OpActivityStateNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                finishedBonusActivityIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              finishedBonusActivityIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                finishedBonusActivityIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                finishedBonusActivityIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                openedOpActivityInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              openedOpActivityInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          finishedBonusActivityIdList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          openedOpActivityInfoList_ = java.util.Collections.unmodifiableList(openedOpActivityInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.OpActivityStateNotifyOuterClass.internal_static_OpActivityStateNotify_descriptor;
@@ -112,7 +186,6 @@ public final class OpActivityStateNotifyOuterClass {
     }
 
     public static final int FINISHED_BONUS_ACTIVITY_ID_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList finishedBonusActivityIdList_;
     /**
      * <code>repeated uint32 finished_bonus_activity_id_list = 6;</code>
@@ -141,7 +214,6 @@ public final class OpActivityStateNotifyOuterClass {
     private int finishedBonusActivityIdListMemoizedSerializedSize = -1;
 
     public static final int OPENED_OP_ACTIVITY_INFO_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo> openedOpActivityInfoList_;
     /**
      * <code>repeated .OpActivityTagBriefInfo opened_op_activity_info_list = 8;</code>
@@ -206,7 +278,7 @@ public final class OpActivityStateNotifyOuterClass {
       for (int i = 0; i < openedOpActivityInfoList_.size(); i++) {
         output.writeMessage(8, openedOpActivityInfoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -233,7 +305,7 @@ public final class OpActivityStateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, openedOpActivityInfoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -252,7 +324,7 @@ public final class OpActivityStateNotifyOuterClass {
           .equals(other.getFinishedBonusActivityIdListList())) return false;
       if (!getOpenedOpActivityInfoListList()
           .equals(other.getOpenedOpActivityInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -271,7 +343,7 @@ public final class OpActivityStateNotifyOuterClass {
         hash = (37 * hash) + OPENED_OP_ACTIVITY_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getOpenedOpActivityInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -398,26 +470,31 @@ public final class OpActivityStateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.OpActivityStateNotifyOuterClass.OpActivityStateNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getOpenedOpActivityInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         finishedBonusActivityIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (openedOpActivityInfoListBuilder_ == null) {
           openedOpActivityInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          openedOpActivityInfoList_ = null;
           openedOpActivityInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -444,13 +521,7 @@ public final class OpActivityStateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.OpActivityStateNotifyOuterClass.OpActivityStateNotify buildPartial() {
         emu.gingerps.net.proto.OpActivityStateNotifyOuterClass.OpActivityStateNotify result = new emu.gingerps.net.proto.OpActivityStateNotifyOuterClass.OpActivityStateNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.OpActivityStateNotifyOuterClass.OpActivityStateNotify result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           finishedBonusActivityIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -465,10 +536,8 @@ public final class OpActivityStateNotifyOuterClass {
         } else {
           result.openedOpActivityInfoList_ = openedOpActivityInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.OpActivityStateNotifyOuterClass.OpActivityStateNotify result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -551,7 +620,7 @@ public final class OpActivityStateNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -566,59 +635,17 @@ public final class OpActivityStateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.OpActivityStateNotifyOuterClass.OpActivityStateNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                int v = input.readUInt32();
-                ensureFinishedBonusActivityIdListIsMutable();
-                finishedBonusActivityIdList_.addInt(v);
-                break;
-              } // case 48
-              case 50: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureFinishedBonusActivityIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  finishedBonusActivityIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 50
-              case 66: {
-                emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo.parser(),
-                        extensionRegistry);
-                if (openedOpActivityInfoListBuilder_ == null) {
-                  ensureOpenedOpActivityInfoListIsMutable();
-                  openedOpActivityInfoList_.add(m);
-                } else {
-                  openedOpActivityInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 66
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.OpActivityStateNotifyOuterClass.OpActivityStateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -628,7 +655,7 @@ public final class OpActivityStateNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           finishedBonusActivityIdList_ = mutableCopy(finishedBonusActivityIdList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 finished_bonus_activity_id_list = 6;</code>
@@ -662,7 +689,6 @@ public final class OpActivityStateNotifyOuterClass {
        */
       public Builder setFinishedBonusActivityIdList(
           int index, int value) {
-        
         ensureFinishedBonusActivityIdListIsMutable();
         finishedBonusActivityIdList_.setInt(index, value);
         onChanged();
@@ -674,7 +700,6 @@ public final class OpActivityStateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFinishedBonusActivityIdList(int value) {
-        
         ensureFinishedBonusActivityIdListIsMutable();
         finishedBonusActivityIdList_.addInt(value);
         onChanged();
@@ -976,18 +1001,7 @@ public final class OpActivityStateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new OpActivityStateNotify(input, extensionRegistry);
       }
     };
 

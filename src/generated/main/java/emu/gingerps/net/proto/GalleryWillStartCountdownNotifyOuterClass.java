@@ -85,6 +85,64 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GalleryWillStartCountdownNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              isEnd_ = input.readBool();
+              break;
+            }
+            case 104: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+
+              startSource_ = rawValue;
+              break;
+            }
+            case 120: {
+
+              endTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GalleryWillStartCountdownNotifyOuterClass.internal_static_GalleryWillStartCountdownNotify_descriptor;
@@ -99,7 +157,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 13;
-    private int galleryId_ = 0;
+    private int galleryId_;
     /**
      * <code>uint32 gallery_id = 13;</code>
      * @return The galleryId.
@@ -110,7 +168,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
     }
 
     public static final int START_SOURCE_FIELD_NUMBER = 14;
-    private int startSource_ = 0;
+    private int startSource_;
     /**
      * <code>.GalleryStartSource start_source = 14;</code>
      * @return The enum numeric value on the wire for startSource.
@@ -123,12 +181,13 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
      * @return The startSource.
      */
     @java.lang.Override public emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource getStartSource() {
-      emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.forNumber(startSource_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.valueOf(startSource_);
       return result == null ? emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.UNRECOGNIZED : result;
     }
 
     public static final int END_TIME_FIELD_NUMBER = 15;
-    private int endTime_ = 0;
+    private int endTime_;
     /**
      * <code>uint32 end_time = 15;</code>
      * @return The endTime.
@@ -139,7 +198,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
     }
 
     public static final int IS_END_FIELD_NUMBER = 6;
-    private boolean isEnd_ = false;
+    private boolean isEnd_;
     /**
      * <code>bool is_end = 6;</code>
      * @return The isEnd.
@@ -175,7 +234,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
       if (endTime_ != 0) {
         output.writeUInt32(15, endTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -200,7 +259,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, endTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -222,7 +281,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
           != other.getEndTime()) return false;
       if (getIsEnd()
           != other.getIsEnd()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -242,7 +301,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
       hash = (37 * hash) + IS_END_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsEnd());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -369,22 +428,30 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GalleryWillStartCountdownNotifyOuterClass.GalleryWillStartCountdownNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         galleryId_ = 0;
+
         startSource_ = 0;
+
         endTime_ = 0;
+
         isEnd_ = false;
+
         return this;
       }
 
@@ -411,25 +478,12 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryWillStartCountdownNotifyOuterClass.GalleryWillStartCountdownNotify buildPartial() {
         emu.gingerps.net.proto.GalleryWillStartCountdownNotifyOuterClass.GalleryWillStartCountdownNotify result = new emu.gingerps.net.proto.GalleryWillStartCountdownNotifyOuterClass.GalleryWillStartCountdownNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.galleryId_ = galleryId_;
+        result.startSource_ = startSource_;
+        result.endTime_ = endTime_;
+        result.isEnd_ = isEnd_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GalleryWillStartCountdownNotifyOuterClass.GalleryWillStartCountdownNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.galleryId_ = galleryId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.startSource_ = startSource_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.endTime_ = endTime_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isEnd_ = isEnd_;
-        }
       }
 
       @java.lang.Override
@@ -488,7 +542,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
         if (other.getIsEnd() != false) {
           setIsEnd(other.getIsEnd());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -503,53 +557,19 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GalleryWillStartCountdownNotifyOuterClass.GalleryWillStartCountdownNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                isEnd_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 48
-              case 104: {
-                galleryId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              case 112: {
-                startSource_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 112
-              case 120: {
-                endTime_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GalleryWillStartCountdownNotifyOuterClass.GalleryWillStartCountdownNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int galleryId_ ;
       /**
@@ -568,7 +588,6 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -577,7 +596,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         galleryId_ = 0;
         onChanged();
         return this;
@@ -597,8 +616,8 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStartSourceValue(int value) {
+        
         startSource_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -608,7 +627,8 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource getStartSource() {
-        emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.forNumber(startSource_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.valueOf(startSource_);
         return result == null ? emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.UNRECOGNIZED : result;
       }
       /**
@@ -620,7 +640,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         startSource_ = value.getNumber();
         onChanged();
         return this;
@@ -630,7 +650,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartSource() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         startSource_ = 0;
         onChanged();
         return this;
@@ -653,7 +673,6 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -662,7 +681,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         endTime_ = 0;
         onChanged();
         return this;
@@ -685,7 +704,6 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
       public Builder setIsEnd(boolean value) {
         
         isEnd_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -694,7 +712,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsEnd() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isEnd_ = false;
         onChanged();
         return this;
@@ -732,18 +750,7 @@ public final class GalleryWillStartCountdownNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GalleryWillStartCountdownNotify(input, extensionRegistry);
       }
     };
 

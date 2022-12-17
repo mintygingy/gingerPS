@@ -75,6 +75,68 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneGalleryCharAmusementInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+
+              curScore_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              isLastLevel_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              maxScore_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              isSuccess_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              isFinish_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.internal_static_SceneGalleryCharAmusementInfo_descriptor;
@@ -89,7 +151,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 13;
-    private boolean isSuccess_ = false;
+    private boolean isSuccess_;
     /**
      * <code>bool is_success = 13;</code>
      * @return The isSuccess.
@@ -100,7 +162,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
     }
 
     public static final int MAX_SCORE_FIELD_NUMBER = 11;
-    private int maxScore_ = 0;
+    private int maxScore_;
     /**
      * <code>uint32 max_score = 11;</code>
      * @return The maxScore.
@@ -111,7 +173,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
     }
 
     public static final int CUR_SCORE_FIELD_NUMBER = 9;
-    private int curScore_ = 0;
+    private int curScore_;
     /**
      * <code>uint32 cur_score = 9;</code>
      * @return The curScore.
@@ -122,7 +184,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
     }
 
     public static final int IS_LAST_LEVEL_FIELD_NUMBER = 10;
-    private boolean isLastLevel_ = false;
+    private boolean isLastLevel_;
     /**
      * <code>bool is_last_level = 10;</code>
      * @return The isLastLevel.
@@ -133,7 +195,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
     }
 
     public static final int IS_FINISH_FIELD_NUMBER = 14;
-    private boolean isFinish_ = false;
+    private boolean isFinish_;
     /**
      * <code>bool is_finish = 14;</code>
      * @return The isFinish.
@@ -172,7 +234,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
       if (isFinish_ != false) {
         output.writeBool(14, isFinish_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -201,7 +263,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isFinish_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +288,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
           != other.getIsLastLevel()) return false;
       if (getIsFinish()
           != other.getIsFinish()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -250,7 +312,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
       hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinish());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -367,23 +429,32 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.SceneGalleryCharAmusementInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isSuccess_ = false;
+
         maxScore_ = 0;
+
         curScore_ = 0;
+
         isLastLevel_ = false;
+
         isFinish_ = false;
+
         return this;
       }
 
@@ -410,28 +481,13 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.SceneGalleryCharAmusementInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.SceneGalleryCharAmusementInfo result = new emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.SceneGalleryCharAmusementInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isSuccess_ = isSuccess_;
+        result.maxScore_ = maxScore_;
+        result.curScore_ = curScore_;
+        result.isLastLevel_ = isLastLevel_;
+        result.isFinish_ = isFinish_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.SceneGalleryCharAmusementInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isSuccess_ = isSuccess_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.maxScore_ = maxScore_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curScore_ = curScore_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isLastLevel_ = isLastLevel_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.isFinish_ = isFinish_;
-        }
       }
 
       @java.lang.Override
@@ -493,7 +549,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
         if (other.getIsFinish() != false) {
           setIsFinish(other.getIsFinish());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -508,58 +564,19 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.SceneGalleryCharAmusementInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                curScore_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 72
-              case 80: {
-                isLastLevel_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 80
-              case 88: {
-                maxScore_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              case 104: {
-                isSuccess_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              case 112: {
-                isFinish_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.SceneGalleryCharAmusementInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isSuccess_ ;
       /**
@@ -578,7 +595,6 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -587,7 +603,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isSuccess_ = false;
         onChanged();
         return this;
@@ -610,7 +626,6 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
       public Builder setMaxScore(int value) {
         
         maxScore_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -619,7 +634,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         maxScore_ = 0;
         onChanged();
         return this;
@@ -642,7 +657,6 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
       public Builder setCurScore(int value) {
         
         curScore_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -651,7 +665,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurScore() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curScore_ = 0;
         onChanged();
         return this;
@@ -674,7 +688,6 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
       public Builder setIsLastLevel(boolean value) {
         
         isLastLevel_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -683,7 +696,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsLastLevel() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isLastLevel_ = false;
         onChanged();
         return this;
@@ -706,7 +719,6 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
       public Builder setIsFinish(boolean value) {
         
         isFinish_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -715,7 +727,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         isFinish_ = false;
         onChanged();
         return this;
@@ -753,18 +765,7 @@ public final class SceneGalleryCharAmusementInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneGalleryCharAmusementInfo(input, extensionRegistry);
       }
     };
 

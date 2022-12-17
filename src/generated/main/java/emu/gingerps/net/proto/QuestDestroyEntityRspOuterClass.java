@@ -79,6 +79,63 @@ public final class QuestDestroyEntityRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private QuestDestroyEntityRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              questId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.QuestDestroyEntityRspOuterClass.internal_static_QuestDestroyEntityRsp_descriptor;
@@ -93,7 +150,7 @@ public final class QuestDestroyEntityRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 3;</code>
      * @return The retcode.
@@ -104,7 +161,7 @@ public final class QuestDestroyEntityRspOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 6;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 6;</code>
      * @return The sceneId.
@@ -115,7 +172,7 @@ public final class QuestDestroyEntityRspOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 8;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 8;</code>
      * @return The entityId.
@@ -126,7 +183,7 @@ public final class QuestDestroyEntityRspOuterClass {
     }
 
     public static final int QUEST_ID_FIELD_NUMBER = 9;
-    private int questId_ = 0;
+    private int questId_;
     /**
      * <code>uint32 quest_id = 9;</code>
      * @return The questId.
@@ -162,7 +219,7 @@ public final class QuestDestroyEntityRspOuterClass {
       if (questId_ != 0) {
         output.writeUInt32(9, questId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +244,7 @@ public final class QuestDestroyEntityRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, questId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +267,7 @@ public final class QuestDestroyEntityRspOuterClass {
           != other.getEntityId()) return false;
       if (getQuestId()
           != other.getQuestId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -229,7 +286,7 @@ public final class QuestDestroyEntityRspOuterClass {
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + QUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getQuestId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -356,22 +413,30 @@ public final class QuestDestroyEntityRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.QuestDestroyEntityRspOuterClass.QuestDestroyEntityRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         sceneId_ = 0;
+
         entityId_ = 0;
+
         questId_ = 0;
+
         return this;
       }
 
@@ -398,25 +463,12 @@ public final class QuestDestroyEntityRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.QuestDestroyEntityRspOuterClass.QuestDestroyEntityRsp buildPartial() {
         emu.gingerps.net.proto.QuestDestroyEntityRspOuterClass.QuestDestroyEntityRsp result = new emu.gingerps.net.proto.QuestDestroyEntityRspOuterClass.QuestDestroyEntityRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        result.sceneId_ = sceneId_;
+        result.entityId_ = entityId_;
+        result.questId_ = questId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.QuestDestroyEntityRspOuterClass.QuestDestroyEntityRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.questId_ = questId_;
-        }
       }
 
       @java.lang.Override
@@ -475,7 +527,7 @@ public final class QuestDestroyEntityRspOuterClass {
         if (other.getQuestId() != 0) {
           setQuestId(other.getQuestId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,53 +542,19 @@ public final class QuestDestroyEntityRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.QuestDestroyEntityRspOuterClass.QuestDestroyEntityRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 48: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 64: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 72: {
-                questId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.QuestDestroyEntityRspOuterClass.QuestDestroyEntityRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -555,7 +573,6 @@ public final class QuestDestroyEntityRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -564,7 +581,7 @@ public final class QuestDestroyEntityRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -587,7 +604,6 @@ public final class QuestDestroyEntityRspOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -596,7 +612,7 @@ public final class QuestDestroyEntityRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -619,7 +635,6 @@ public final class QuestDestroyEntityRspOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -628,7 +643,7 @@ public final class QuestDestroyEntityRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -651,7 +666,6 @@ public final class QuestDestroyEntityRspOuterClass {
       public Builder setQuestId(int value) {
         
         questId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -660,7 +674,7 @@ public final class QuestDestroyEntityRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         questId_ = 0;
         onChanged();
         return this;
@@ -698,18 +712,7 @@ public final class QuestDestroyEntityRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new QuestDestroyEntityRsp(input, extensionRegistry);
       }
     };
 

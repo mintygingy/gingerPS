@@ -123,6 +123,91 @@ public final class HideAndSeekSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HideAndSeekSettleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              onlineId_ = s;
+              break;
+            }
+            case 48: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              headImage_ = input.readUInt32();
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
+              if (profilePicture_ != null) {
+                subBuilder = profilePicture_.toBuilder();
+              }
+              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(profilePicture_);
+                profilePicture_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickname_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cardList_ = java.util.Collections.unmodifiableList(cardList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.internal_static_HideAndSeekSettleInfo_descriptor;
@@ -137,7 +222,6 @@ public final class HideAndSeekSettleInfoOuterClass {
     }
 
     public static final int CARD_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_;
     /**
      * <code>repeated .ExhibitionDisplayInfo card_list = 2;</code>
@@ -178,8 +262,7 @@ public final class HideAndSeekSettleInfoOuterClass {
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object nickname_ = "";
+    private volatile java.lang.Object nickname_;
     /**
      * <code>string nickname = 15;</code>
      * @return The nickname.
@@ -217,7 +300,7 @@ public final class HideAndSeekSettleInfoOuterClass {
     }
 
     public static final int HEAD_IMAGE_FIELD_NUMBER = 9;
-    private int headImage_ = 0;
+    private int headImage_;
     /**
      * <code>uint32 head_image = 9;</code>
      * @return The headImage.
@@ -228,7 +311,7 @@ public final class HideAndSeekSettleInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 6;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 6;</code>
      * @return The uid.
@@ -239,8 +322,7 @@ public final class HideAndSeekSettleInfoOuterClass {
     }
 
     public static final int ONLINE_ID_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object onlineId_ = "";
+    private volatile java.lang.Object onlineId_;
     /**
      * <code>string online_id = 5;</code>
      * @return The onlineId.
@@ -300,7 +382,7 @@ public final class HideAndSeekSettleInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+      return getProfilePicture();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -335,7 +417,7 @@ public final class HideAndSeekSettleInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickname_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, nickname_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -366,7 +448,7 @@ public final class HideAndSeekSettleInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickname_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, nickname_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -396,7 +478,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         if (!getProfilePicture()
             .equals(other.getProfilePicture())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -423,7 +505,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         hash = (37 * hash) + PROFILE_PICTURE_FIELD_NUMBER;
         hash = (53 * hash) + getProfilePicture().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -540,32 +622,41 @@ public final class HideAndSeekSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCardListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          cardList_ = null;
           cardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         nickname_ = "";
+
         headImage_ = 0;
+
         uid_ = 0;
+
         onlineId_ = "";
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
         return this;
@@ -594,13 +685,7 @@ public final class HideAndSeekSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo buildPartial() {
         emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo result = new emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo result) {
+        int from_bitField0_ = bitField0_;
         if (cardListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             cardList_ = java.util.Collections.unmodifiableList(cardList_);
@@ -610,27 +695,17 @@ public final class HideAndSeekSettleInfoOuterClass {
         } else {
           result.cardList_ = cardListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.nickname_ = nickname_;
+        result.nickname_ = nickname_;
+        result.headImage_ = headImage_;
+        result.uid_ = uid_;
+        result.onlineId_ = onlineId_;
+        if (profilePictureBuilder_ == null) {
+          result.profilePicture_ = profilePicture_;
+        } else {
+          result.profilePicture_ = profilePictureBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.headImage_ = headImage_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.uid_ = uid_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.onlineId_ = onlineId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.profilePicture_ = profilePictureBuilder_ == null
-              ? profilePicture_
-              : profilePictureBuilder_.build();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -705,7 +780,6 @@ public final class HideAndSeekSettleInfoOuterClass {
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getHeadImage() != 0) {
@@ -716,13 +790,12 @@ public final class HideAndSeekSettleInfoOuterClass {
         }
         if (!other.getOnlineId().isEmpty()) {
           onlineId_ = other.onlineId_;
-          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (other.hasProfilePicture()) {
           mergeProfilePicture(other.getProfilePicture());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -737,70 +810,17 @@ public final class HideAndSeekSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(),
-                        extensionRegistry);
-                if (cardListBuilder_ == null) {
-                  ensureCardListIsMutable();
-                  cardList_.add(m);
-                } else {
-                  cardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 42: {
-                onlineId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              case 48: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 48
-              case 72: {
-                headImage_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 72
-              case 114: {
-                input.readMessage(
-                    getProfilePictureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 114
-              case 122: {
-                nickname_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1086,9 +1106,11 @@ public final class HideAndSeekSettleInfoOuterClass {
        */
       public Builder setNickname(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         nickname_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1097,8 +1119,8 @@ public final class HideAndSeekSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickname() {
+        
         nickname_ = getDefaultInstance().getNickname();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1109,10 +1131,12 @@ public final class HideAndSeekSettleInfoOuterClass {
        */
       public Builder setNicknameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         nickname_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1134,7 +1158,6 @@ public final class HideAndSeekSettleInfoOuterClass {
       public Builder setHeadImage(int value) {
         
         headImage_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1143,7 +1166,7 @@ public final class HideAndSeekSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHeadImage() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         headImage_ = 0;
         onChanged();
         return this;
@@ -1166,7 +1189,6 @@ public final class HideAndSeekSettleInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1175,7 +1197,7 @@ public final class HideAndSeekSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -1222,9 +1244,11 @@ public final class HideAndSeekSettleInfoOuterClass {
        */
       public Builder setOnlineId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         onlineId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1233,8 +1257,8 @@ public final class HideAndSeekSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
+        
         onlineId_ = getDefaultInstance().getOnlineId();
-        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1245,10 +1269,12 @@ public final class HideAndSeekSettleInfoOuterClass {
        */
       public Builder setOnlineIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         onlineId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1261,7 +1287,7 @@ public final class HideAndSeekSettleInfoOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
        * <code>.ProfilePicture profile_picture = 14;</code>
@@ -1283,11 +1309,11 @@ public final class HideAndSeekSettleInfoOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1297,11 +1323,11 @@ public final class HideAndSeekSettleInfoOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1309,38 +1335,38 @@ public final class HideAndSeekSettleInfoOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            profilePicture_ != null &&
-            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
-            getProfilePictureBuilder().mergeFrom(value);
+          if (profilePicture_ != null) {
+            profilePicture_ =
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
           } else {
             profilePicture_ = value;
           }
+          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 14;</code>
        */
       public Builder clearProfilePicture() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+          onChanged();
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 14;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -1404,18 +1430,7 @@ public final class HideAndSeekSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HideAndSeekSettleInfo(input, extensionRegistry);
       }
     };
 

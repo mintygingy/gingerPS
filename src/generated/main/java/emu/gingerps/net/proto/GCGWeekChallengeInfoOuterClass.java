@@ -63,6 +63,58 @@ public final class GCGWeekChallengeInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGWeekChallengeInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+
+              unlockTime_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              npcId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              isFinished_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGWeekChallengeInfoOuterClass.internal_static_GCGWeekChallengeInfo_descriptor;
@@ -77,7 +129,7 @@ public final class GCGWeekChallengeInfoOuterClass {
     }
 
     public static final int NPC_ID_FIELD_NUMBER = 9;
-    private int npcId_ = 0;
+    private int npcId_;
     /**
      * <code>uint32 npc_id = 9;</code>
      * @return The npcId.
@@ -88,7 +140,7 @@ public final class GCGWeekChallengeInfoOuterClass {
     }
 
     public static final int UNLOCK_TIME_FIELD_NUMBER = 8;
-    private int unlockTime_ = 0;
+    private int unlockTime_;
     /**
      * <code>uint32 unlock_time = 8;</code>
      * @return The unlockTime.
@@ -99,7 +151,7 @@ public final class GCGWeekChallengeInfoOuterClass {
     }
 
     public static final int IS_FINISHED_FIELD_NUMBER = 12;
-    private boolean isFinished_ = false;
+    private boolean isFinished_;
     /**
      * <code>bool is_finished = 12;</code>
      * @return The isFinished.
@@ -132,7 +184,7 @@ public final class GCGWeekChallengeInfoOuterClass {
       if (isFinished_ != false) {
         output.writeBool(12, isFinished_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +205,7 @@ public final class GCGWeekChallengeInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, isFinished_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +226,7 @@ public final class GCGWeekChallengeInfoOuterClass {
           != other.getUnlockTime()) return false;
       if (getIsFinished()
           != other.getIsFinished()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -192,7 +244,7 @@ public final class GCGWeekChallengeInfoOuterClass {
       hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinished());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -309,21 +361,28 @@ public final class GCGWeekChallengeInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGWeekChallengeInfoOuterClass.GCGWeekChallengeInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         npcId_ = 0;
+
         unlockTime_ = 0;
+
         isFinished_ = false;
+
         return this;
       }
 
@@ -350,22 +409,11 @@ public final class GCGWeekChallengeInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGWeekChallengeInfoOuterClass.GCGWeekChallengeInfo buildPartial() {
         emu.gingerps.net.proto.GCGWeekChallengeInfoOuterClass.GCGWeekChallengeInfo result = new emu.gingerps.net.proto.GCGWeekChallengeInfoOuterClass.GCGWeekChallengeInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.npcId_ = npcId_;
+        result.unlockTime_ = unlockTime_;
+        result.isFinished_ = isFinished_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGWeekChallengeInfoOuterClass.GCGWeekChallengeInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.npcId_ = npcId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unlockTime_ = unlockTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isFinished_ = isFinished_;
-        }
       }
 
       @java.lang.Override
@@ -421,7 +469,7 @@ public final class GCGWeekChallengeInfoOuterClass {
         if (other.getIsFinished() != false) {
           setIsFinished(other.getIsFinished());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -436,48 +484,19 @@ public final class GCGWeekChallengeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGWeekChallengeInfoOuterClass.GCGWeekChallengeInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                unlockTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 72: {
-                npcId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 96: {
-                isFinished_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGWeekChallengeInfoOuterClass.GCGWeekChallengeInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int npcId_ ;
       /**
@@ -496,7 +515,6 @@ public final class GCGWeekChallengeInfoOuterClass {
       public Builder setNpcId(int value) {
         
         npcId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +523,7 @@ public final class GCGWeekChallengeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNpcId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         npcId_ = 0;
         onChanged();
         return this;
@@ -528,7 +546,6 @@ public final class GCGWeekChallengeInfoOuterClass {
       public Builder setUnlockTime(int value) {
         
         unlockTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -537,7 +554,7 @@ public final class GCGWeekChallengeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnlockTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unlockTime_ = 0;
         onChanged();
         return this;
@@ -560,7 +577,6 @@ public final class GCGWeekChallengeInfoOuterClass {
       public Builder setIsFinished(boolean value) {
         
         isFinished_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -569,7 +585,7 @@ public final class GCGWeekChallengeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isFinished_ = false;
         onChanged();
         return this;
@@ -607,18 +623,7 @@ public final class GCGWeekChallengeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGWeekChallengeInfo(input, extensionRegistry);
       }
     };
 

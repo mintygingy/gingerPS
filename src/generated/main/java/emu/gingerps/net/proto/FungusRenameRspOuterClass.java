@@ -73,6 +73,58 @@ public final class FungusRenameRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FungusRenameRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              fungusId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              nameId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FungusRenameRspOuterClass.internal_static_FungusRenameRsp_descriptor;
@@ -87,7 +139,7 @@ public final class FungusRenameRspOuterClass {
     }
 
     public static final int FUNGUS_ID_FIELD_NUMBER = 1;
-    private int fungusId_ = 0;
+    private int fungusId_;
     /**
      * <code>uint32 fungus_id = 1;</code>
      * @return The fungusId.
@@ -98,7 +150,7 @@ public final class FungusRenameRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
@@ -109,7 +161,7 @@ public final class FungusRenameRspOuterClass {
     }
 
     public static final int NAME_ID_FIELD_NUMBER = 6;
-    private int nameId_ = 0;
+    private int nameId_;
     /**
      * <code>uint32 name_id = 6;</code>
      * @return The nameId.
@@ -142,7 +194,7 @@ public final class FungusRenameRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(7, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +215,7 @@ public final class FungusRenameRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -184,7 +236,7 @@ public final class FungusRenameRspOuterClass {
           != other.getRetcode()) return false;
       if (getNameId()
           != other.getNameId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -201,7 +253,7 @@ public final class FungusRenameRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + NAME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNameId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -328,21 +380,28 @@ public final class FungusRenameRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.FungusRenameRspOuterClass.FungusRenameRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         fungusId_ = 0;
+
         retcode_ = 0;
+
         nameId_ = 0;
+
         return this;
       }
 
@@ -369,22 +428,11 @@ public final class FungusRenameRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FungusRenameRspOuterClass.FungusRenameRsp buildPartial() {
         emu.gingerps.net.proto.FungusRenameRspOuterClass.FungusRenameRsp result = new emu.gingerps.net.proto.FungusRenameRspOuterClass.FungusRenameRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.fungusId_ = fungusId_;
+        result.retcode_ = retcode_;
+        result.nameId_ = nameId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FungusRenameRspOuterClass.FungusRenameRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.fungusId_ = fungusId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.nameId_ = nameId_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +488,7 @@ public final class FungusRenameRspOuterClass {
         if (other.getNameId() != 0) {
           setNameId(other.getNameId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,48 +503,19 @@ public final class FungusRenameRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FungusRenameRspOuterClass.FungusRenameRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                fungusId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 48: {
-                nameId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 48
-              case 56: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FungusRenameRspOuterClass.FungusRenameRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int fungusId_ ;
       /**
@@ -515,7 +534,6 @@ public final class FungusRenameRspOuterClass {
       public Builder setFungusId(int value) {
         
         fungusId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +542,7 @@ public final class FungusRenameRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFungusId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         fungusId_ = 0;
         onChanged();
         return this;
@@ -547,7 +565,6 @@ public final class FungusRenameRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -556,7 +573,7 @@ public final class FungusRenameRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -579,7 +596,6 @@ public final class FungusRenameRspOuterClass {
       public Builder setNameId(int value) {
         
         nameId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -588,7 +604,7 @@ public final class FungusRenameRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNameId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         nameId_ = 0;
         onChanged();
         return this;
@@ -626,18 +642,7 @@ public final class FungusRenameRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FungusRenameRsp(input, extensionRegistry);
       }
     };
 

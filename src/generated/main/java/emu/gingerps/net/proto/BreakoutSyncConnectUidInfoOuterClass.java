@@ -87,6 +87,97 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BreakoutSyncConnectUidInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                skillIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              skillIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                skillIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                skillIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                skillLevelList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              skillLevelList_.addInt(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                skillLevelList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                skillLevelList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          skillIdList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          skillLevelList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BreakoutSyncConnectUidInfoOuterClass.internal_static_BreakoutSyncConnectUidInfo_descriptor;
@@ -101,7 +192,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 1;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 1;</code>
      * @return The uid.
@@ -112,7 +203,6 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
     }
 
     public static final int SKILL_ID_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList skillIdList_;
     /**
      * <code>repeated uint32 skill_id_list = 2;</code>
@@ -141,7 +231,6 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
     private int skillIdListMemoizedSerializedSize = -1;
 
     public static final int SKILL_LEVEL_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList skillLevelList_;
     /**
      * <code>repeated uint32 skill_level_list = 3;</code>
@@ -201,7 +290,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
       for (int i = 0; i < skillLevelList_.size(); i++) {
         output.writeUInt32NoTag(skillLevelList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -242,7 +331,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
         }
         skillLevelListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -263,7 +352,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
           .equals(other.getSkillIdListList())) return false;
       if (!getSkillLevelListList()
           .equals(other.getSkillLevelListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -284,7 +373,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
         hash = (37 * hash) + SKILL_LEVEL_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSkillLevelListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -401,21 +490,28 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         uid_ = 0;
+
         skillIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         skillLevelList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -442,30 +538,20 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo buildPartial() {
         emu.gingerps.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo result = new emu.gingerps.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.uid_ = uid_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           skillIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.skillIdList_ = skillIdList_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           skillLevelList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.skillLevelList_ = skillLevelList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.uid_ = uid_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -518,7 +604,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
         if (!other.skillIdList_.isEmpty()) {
           if (skillIdList_.isEmpty()) {
             skillIdList_ = other.skillIdList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSkillIdListIsMutable();
             skillIdList_.addAll(other.skillIdList_);
@@ -528,14 +614,14 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
         if (!other.skillLevelList_.isEmpty()) {
           if (skillLevelList_.isEmpty()) {
             skillLevelList_ = other.skillLevelList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSkillLevelListIsMutable();
             skillLevelList_.addAll(other.skillLevelList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -550,67 +636,17 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                int v = input.readUInt32();
-                ensureSkillIdListIsMutable();
-                skillIdList_.addInt(v);
-                break;
-              } // case 16
-              case 18: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureSkillIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  skillIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 18
-              case 24: {
-                int v = input.readUInt32();
-                ensureSkillLevelListIsMutable();
-                skillLevelList_.addInt(v);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureSkillLevelListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  skillLevelList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -632,7 +668,6 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -641,7 +676,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -649,10 +684,10 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList skillIdList_ = emptyIntList();
       private void ensureSkillIdListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           skillIdList_ = mutableCopy(skillIdList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 skill_id_list = 2;</code>
@@ -660,7 +695,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSkillIdListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(skillIdList_) : skillIdList_;
       }
       /**
@@ -686,7 +721,6 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
        */
       public Builder setSkillIdList(
           int index, int value) {
-        
         ensureSkillIdListIsMutable();
         skillIdList_.setInt(index, value);
         onChanged();
@@ -698,7 +732,6 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSkillIdList(int value) {
-        
         ensureSkillIdListIsMutable();
         skillIdList_.addInt(value);
         onChanged();
@@ -723,17 +756,17 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
        */
       public Builder clearSkillIdList() {
         skillIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList skillLevelList_ = emptyIntList();
       private void ensureSkillLevelListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           skillLevelList_ = mutableCopy(skillLevelList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 skill_level_list = 3;</code>
@@ -741,7 +774,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSkillLevelListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(skillLevelList_) : skillLevelList_;
       }
       /**
@@ -767,7 +800,6 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
        */
       public Builder setSkillLevelList(
           int index, int value) {
-        
         ensureSkillLevelListIsMutable();
         skillLevelList_.setInt(index, value);
         onChanged();
@@ -779,7 +811,6 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSkillLevelList(int value) {
-        
         ensureSkillLevelListIsMutable();
         skillLevelList_.addInt(value);
         onChanged();
@@ -804,7 +835,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
        */
       public Builder clearSkillLevelList() {
         skillLevelList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -841,18 +872,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BreakoutSyncConnectUidInfo(input, extensionRegistry);
       }
     };
 

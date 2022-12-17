@@ -98,6 +98,71 @@ public final class TakeOfferingLevelRewardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TakeOfferingLevelRewardRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              itemList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 80: {
+
+              takeLevel_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              offeringId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          itemList_ = java.util.Collections.unmodifiableList(itemList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TakeOfferingLevelRewardRspOuterClass.internal_static_TakeOfferingLevelRewardRsp_descriptor;
@@ -112,7 +177,6 @@ public final class TakeOfferingLevelRewardRspOuterClass {
     }
 
     public static final int ITEM_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
      * <code>repeated .ItemParam item_list = 4;</code>
@@ -153,7 +217,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
     }
 
     public static final int OFFERING_ID_FIELD_NUMBER = 12;
-    private int offeringId_ = 0;
+    private int offeringId_;
     /**
      * <code>uint32 offering_id = 12;</code>
      * @return The offeringId.
@@ -164,7 +228,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
     }
 
     public static final int TAKE_LEVEL_FIELD_NUMBER = 10;
-    private int takeLevel_ = 0;
+    private int takeLevel_;
     /**
      * <code>uint32 take_level = 10;</code>
      * @return The takeLevel.
@@ -175,7 +239,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 3;</code>
      * @return The retcode.
@@ -211,7 +275,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
       if (offeringId_ != 0) {
         output.writeUInt32(12, offeringId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -236,7 +300,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, offeringId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -259,7 +323,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
           != other.getTakeLevel()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -280,7 +344,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
       hash = (53 * hash) + getTakeLevel();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -407,28 +471,35 @@ public final class TakeOfferingLevelRewardRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getItemListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          itemList_ = null;
           itemListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         offeringId_ = 0;
+
         takeLevel_ = 0;
+
         retcode_ = 0;
+
         return this;
       }
 
@@ -455,13 +526,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp buildPartial() {
         emu.gingerps.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp result = new emu.gingerps.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp result) {
+        int from_bitField0_ = bitField0_;
         if (itemListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
@@ -471,19 +536,11 @@ public final class TakeOfferingLevelRewardRspOuterClass {
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.offeringId_ = offeringId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.takeLevel_ = takeLevel_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        result.offeringId_ = offeringId_;
+        result.takeLevel_ = takeLevel_;
+        result.retcode_ = retcode_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -565,7 +622,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -580,58 +637,17 @@ public final class TakeOfferingLevelRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 24
-              case 34: {
-                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
-                        extensionRegistry);
-                if (itemListBuilder_ == null) {
-                  ensureItemListIsMutable();
-                  itemList_.add(m);
-                } else {
-                  itemListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 80: {
-                takeLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              case 96: {
-                offeringId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -893,7 +909,6 @@ public final class TakeOfferingLevelRewardRspOuterClass {
       public Builder setOfferingId(int value) {
         
         offeringId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -902,7 +917,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOfferingId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         offeringId_ = 0;
         onChanged();
         return this;
@@ -925,7 +940,6 @@ public final class TakeOfferingLevelRewardRspOuterClass {
       public Builder setTakeLevel(int value) {
         
         takeLevel_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -934,7 +948,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTakeLevel() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         takeLevel_ = 0;
         onChanged();
         return this;
@@ -957,7 +971,6 @@ public final class TakeOfferingLevelRewardRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -966,7 +979,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -1004,18 +1017,7 @@ public final class TakeOfferingLevelRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TakeOfferingLevelRewardRsp(input, extensionRegistry);
       }
     };
 

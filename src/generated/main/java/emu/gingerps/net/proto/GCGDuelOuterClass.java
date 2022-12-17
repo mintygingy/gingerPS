@@ -365,6 +365,255 @@ public final class GCGDuelOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGDuel(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGCardOuterClass.GCGCard>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              cardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                intentionList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              intentionList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention.parser(), extensionRegistry));
+              break;
+            }
+            case 24: {
+
+              serverSeq_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              gameId_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                fieldList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              fieldList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField.parser(), extensionRegistry));
+              break;
+            }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+                cardIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              cardIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000200) != 0) && input.getBytesUntilLimit() > 0) {
+                cardIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                cardIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                showInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              showInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.Builder subBuilder = null;
+              if (costRevise_ != null) {
+                subBuilder = costRevise_.toBuilder();
+              }
+              costRevise_ = input.readMessage(emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(costRevise_);
+                costRevise_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 72: {
+
+              unk3300BIANMOPDEHO_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              unk3300JHDDNKFPINA_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              round_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+
+              businessType_ = rawValue;
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase.Builder subBuilder = null;
+              if (phase_ != null) {
+                subBuilder = phase_.toBuilder();
+              }
+              phase_ = input.readMessage(emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(phase_);
+                phase_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 120: {
+
+              unk3300JBBMBKGOONO_ = input.readUInt32();
+              break;
+            }
+            case 1536: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                forbidFinishChallengeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              forbidFinishChallengeList_.addInt(input.readUInt32());
+              break;
+            }
+            case 1538: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                forbidFinishChallengeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                forbidFinishChallengeList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 6378: {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                historyMsgPackList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGMessagePackOuterClass.GCGMessagePack>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              historyMsgPackList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGMessagePackOuterClass.GCGMessagePack.parser(), extensionRegistry));
+              break;
+            }
+            case 12938: {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                challengeList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              challengeList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge.parser(), extensionRegistry));
+              break;
+            }
+            case 14978: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                historyCardList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGCardOuterClass.GCGCard>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              historyCardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.parser(), extensionRegistry));
+              break;
+            }
+            case 15898: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                unk3300CDCMBOKBLAK_ = new java.util.ArrayList<emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              unk3300CDCMBOKBLAK_.add(
+                  input.readMessage(emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          cardList_ = java.util.Collections.unmodifiableList(cardList_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          intentionList_ = java.util.Collections.unmodifiableList(intentionList_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          fieldList_ = java.util.Collections.unmodifiableList(fieldList_);
+        }
+        if (((mutable_bitField0_ & 0x00000200) != 0)) {
+          cardIdList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          showInfoList_ = java.util.Collections.unmodifiableList(showInfoList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          forbidFinishChallengeList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000100) != 0)) {
+          historyMsgPackList_ = java.util.Collections.unmodifiableList(historyMsgPackList_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
+          challengeList_ = java.util.Collections.unmodifiableList(challengeList_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+          historyCardList_ = java.util.Collections.unmodifiableList(historyCardList_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          unk3300CDCMBOKBLAK_ = java.util.Collections.unmodifiableList(unk3300CDCMBOKBLAK_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGDuelOuterClass.internal_static_GCGDuel_descriptor;
@@ -379,7 +628,7 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int SERVER_SEQ_FIELD_NUMBER = 3;
-    private int serverSeq_ = 0;
+    private int serverSeq_;
     /**
      * <code>uint32 server_seq = 3;</code>
      * @return The serverSeq.
@@ -390,7 +639,6 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int SHOW_INFO_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo> showInfoList_;
     /**
      * <code>repeated .GCGControllerShowInfo show_info_list = 7;</code>
@@ -431,7 +679,6 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int FORBID_FINISH_CHALLENGE_LIST_FIELD_NUMBER = 192;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList forbidFinishChallengeList_;
     /**
      * <code>repeated uint32 forbid_finish_challenge_list = 192;</code>
@@ -460,7 +707,6 @@ public final class GCGDuelOuterClass {
     private int forbidFinishChallengeListMemoizedSerializedSize = -1;
 
     public static final int CARD_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGCardOuterClass.GCGCard> cardList_;
     /**
      * <code>repeated .GCGCard card_list = 1;</code>
@@ -501,7 +747,7 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int UNK3300_BIANMOPDEHO_FIELD_NUMBER = 9;
-    private int unk3300BIANMOPDEHO_ = 0;
+    private int unk3300BIANMOPDEHO_;
     /**
      * <code>uint32 Unk3300_BIANMOPDEHO = 9;</code>
      * @return The unk3300BIANMOPDEHO.
@@ -534,11 +780,11 @@ public final class GCGDuelOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfoOrBuilder getCostReviseOrBuilder() {
-      return costRevise_ == null ? emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.getDefaultInstance() : costRevise_;
+      return getCostRevise();
     }
 
     public static final int GAME_ID_FIELD_NUMBER = 4;
-    private int gameId_ = 0;
+    private int gameId_;
     /**
      * <code>uint32 game_id = 4;</code>
      * @return The gameId.
@@ -549,7 +795,6 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int FIELD_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField> fieldList_;
     /**
      * <code>repeated .GCGPlayerField field_list = 5;</code>
@@ -590,7 +835,6 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int UNK3300_CDCMBOKBLAK_FIELD_NUMBER = 1987;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI> unk3300CDCMBOKBLAK_;
     /**
      * <code>repeated .Unk3300_ADHENCIFKNI Unk3300_CDCMBOKBLAK = 1987;</code>
@@ -631,7 +875,7 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int BUSINESS_TYPE_FIELD_NUMBER = 13;
-    private int businessType_ = 0;
+    private int businessType_;
     /**
      * <code>.GCGGameBusinessType business_type = 13;</code>
      * @return The enum numeric value on the wire for businessType.
@@ -644,12 +888,12 @@ public final class GCGDuelOuterClass {
      * @return The businessType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType getBusinessType() {
-      emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType result = emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.forNumber(businessType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType result = emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.valueOf(businessType_);
       return result == null ? emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.UNRECOGNIZED : result;
     }
 
     public static final int INTENTION_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention> intentionList_;
     /**
      * <code>repeated .GCGPVEIntention intention_list = 2;</code>
@@ -690,7 +934,6 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int CHALLENGE_LIST_FIELD_NUMBER = 1617;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge> challengeList_;
     /**
      * <code>repeated .GCGDuelChallenge challenge_list = 1617;</code>
@@ -731,7 +974,6 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int HISTORY_CARD_LIST_FIELD_NUMBER = 1872;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGCardOuterClass.GCGCard> historyCardList_;
     /**
      * <code>repeated .GCGCard history_card_list = 1872;</code>
@@ -772,7 +1014,7 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int ROUND_FIELD_NUMBER = 11;
-    private int round_ = 0;
+    private int round_;
     /**
      * <code>uint32 round = 11;</code>
      * @return The round.
@@ -783,7 +1025,7 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 12;
-    private int controllerId_ = 0;
+    private int controllerId_;
     /**
      * <code>uint32 controller_id = 12;</code>
      * @return The controllerId.
@@ -794,7 +1036,6 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int HISTORY_MSG_PACK_LIST_FIELD_NUMBER = 797;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGMessagePackOuterClass.GCGMessagePack> historyMsgPackList_;
     /**
      * <code>repeated .GCGMessagePack history_msg_pack_list = 797;</code>
@@ -835,7 +1076,7 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int UNK3300_JHDDNKFPINA_FIELD_NUMBER = 10;
-    private int unk3300JHDDNKFPINA_ = 0;
+    private int unk3300JHDDNKFPINA_;
     /**
      * <code>uint32 Unk3300_JHDDNKFPINA = 10;</code>
      * @return The unk3300JHDDNKFPINA.
@@ -846,7 +1087,6 @@ public final class GCGDuelOuterClass {
     }
 
     public static final int CARD_ID_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList cardIdList_;
     /**
      * <code>repeated uint32 card_id_list = 6;</code>
@@ -875,7 +1115,7 @@ public final class GCGDuelOuterClass {
     private int cardIdListMemoizedSerializedSize = -1;
 
     public static final int UNK3300_JBBMBKGOONO_FIELD_NUMBER = 15;
-    private int unk3300JBBMBKGOONO_ = 0;
+    private int unk3300JBBMBKGOONO_;
     /**
      * <code>uint32 Unk3300_JBBMBKGOONO = 15;</code>
      * @return The unk3300JBBMBKGOONO.
@@ -908,7 +1148,7 @@ public final class GCGDuelOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhaseOrBuilder getPhaseOrBuilder() {
-      return phase_ == null ? emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase.getDefaultInstance() : phase_;
+      return getPhase();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -994,7 +1234,7 @@ public final class GCGDuelOuterClass {
       for (int i = 0; i < unk3300CDCMBOKBLAK_.size(); i++) {
         output.writeMessage(1987, unk3300CDCMBOKBLAK_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1103,7 +1343,7 @@ public final class GCGDuelOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1987, unk3300CDCMBOKBLAK_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1163,7 +1403,7 @@ public final class GCGDuelOuterClass {
         if (!getPhase()
             .equals(other.getPhase())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1238,7 +1478,7 @@ public final class GCGDuelOuterClass {
         hash = (37 * hash) + PHASE_FIELD_NUMBER;
         hash = (53 * hash) + getPhase().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1355,92 +1595,108 @@ public final class GCGDuelOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getShowInfoListFieldBuilder();
+          getCardListFieldBuilder();
+          getFieldListFieldBuilder();
+          getUnk3300CDCMBOKBLAKFieldBuilder();
+          getIntentionListFieldBuilder();
+          getChallengeListFieldBuilder();
+          getHistoryCardListFieldBuilder();
+          getHistoryMsgPackListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         serverSeq_ = 0;
+
         if (showInfoListBuilder_ == null) {
           showInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          showInfoList_ = null;
           showInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         forbidFinishChallengeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          cardList_ = null;
           cardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300BIANMOPDEHO_ = 0;
-        costRevise_ = null;
-        if (costReviseBuilder_ != null) {
-          costReviseBuilder_.dispose();
+
+        if (costReviseBuilder_ == null) {
+          costRevise_ = null;
+        } else {
+          costRevise_ = null;
           costReviseBuilder_ = null;
         }
         gameId_ = 0;
+
         if (fieldListBuilder_ == null) {
           fieldList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          fieldList_ = null;
           fieldListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
         if (unk3300CDCMBOKBLAKBuilder_ == null) {
           unk3300CDCMBOKBLAK_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          unk3300CDCMBOKBLAK_ = null;
           unk3300CDCMBOKBLAKBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
         businessType_ = 0;
+
         if (intentionListBuilder_ == null) {
           intentionList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
-          intentionList_ = null;
           intentionListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000400);
         if (challengeListBuilder_ == null) {
           challengeList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
-          challengeList_ = null;
           challengeListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000800);
         if (historyCardListBuilder_ == null) {
           historyCardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
-          historyCardList_ = null;
           historyCardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00001000);
         round_ = 0;
+
         controllerId_ = 0;
+
         if (historyMsgPackListBuilder_ == null) {
           historyMsgPackList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
-          historyMsgPackList_ = null;
           historyMsgPackListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00008000);
         unk3300JHDDNKFPINA_ = 0;
+
         cardIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000200);
         unk3300JBBMBKGOONO_ = 0;
-        phase_ = null;
-        if (phaseBuilder_ != null) {
-          phaseBuilder_.dispose();
+
+        if (phaseBuilder_ == null) {
+          phase_ = null;
+        } else {
+          phase_ = null;
           phaseBuilder_ = null;
         }
         return this;
@@ -1469,133 +1725,109 @@ public final class GCGDuelOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel buildPartial() {
         emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel result = new emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel result) {
+        int from_bitField0_ = bitField0_;
+        result.serverSeq_ = serverSeq_;
         if (showInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             showInfoList_ = java.util.Collections.unmodifiableList(showInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.showInfoList_ = showInfoList_;
         } else {
           result.showInfoList_ = showInfoListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           forbidFinishChallengeList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.forbidFinishChallengeList_ = forbidFinishChallengeList_;
         if (cardListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             cardList_ = java.util.Collections.unmodifiableList(cardList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.cardList_ = cardList_;
         } else {
           result.cardList_ = cardListBuilder_.build();
         }
+        result.unk3300BIANMOPDEHO_ = unk3300BIANMOPDEHO_;
+        if (costReviseBuilder_ == null) {
+          result.costRevise_ = costRevise_;
+        } else {
+          result.costRevise_ = costReviseBuilder_.build();
+        }
+        result.gameId_ = gameId_;
         if (fieldListBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             fieldList_ = java.util.Collections.unmodifiableList(fieldList_);
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.fieldList_ = fieldList_;
         } else {
           result.fieldList_ = fieldListBuilder_.build();
         }
         if (unk3300CDCMBOKBLAKBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             unk3300CDCMBOKBLAK_ = java.util.Collections.unmodifiableList(unk3300CDCMBOKBLAK_);
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.unk3300CDCMBOKBLAK_ = unk3300CDCMBOKBLAK_;
         } else {
           result.unk3300CDCMBOKBLAK_ = unk3300CDCMBOKBLAKBuilder_.build();
         }
+        result.businessType_ = businessType_;
         if (intentionListBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             intentionList_ = java.util.Collections.unmodifiableList(intentionList_);
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.intentionList_ = intentionList_;
         } else {
           result.intentionList_ = intentionListBuilder_.build();
         }
         if (challengeListBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             challengeList_ = java.util.Collections.unmodifiableList(challengeList_);
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.challengeList_ = challengeList_;
         } else {
           result.challengeList_ = challengeListBuilder_.build();
         }
         if (historyCardListBuilder_ == null) {
-          if (((bitField0_ & 0x00001000) != 0)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             historyCardList_ = java.util.Collections.unmodifiableList(historyCardList_);
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.historyCardList_ = historyCardList_;
         } else {
           result.historyCardList_ = historyCardListBuilder_.build();
         }
+        result.round_ = round_;
+        result.controllerId_ = controllerId_;
         if (historyMsgPackListBuilder_ == null) {
-          if (((bitField0_ & 0x00008000) != 0)) {
+          if (((bitField0_ & 0x00000100) != 0)) {
             historyMsgPackList_ = java.util.Collections.unmodifiableList(historyMsgPackList_);
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00000100);
           }
           result.historyMsgPackList_ = historyMsgPackList_;
         } else {
           result.historyMsgPackList_ = historyMsgPackListBuilder_.build();
         }
-        if (((bitField0_ & 0x00020000) != 0)) {
+        result.unk3300JHDDNKFPINA_ = unk3300JHDDNKFPINA_;
+        if (((bitField0_ & 0x00000200) != 0)) {
           cardIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.cardIdList_ = cardIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.serverSeq_ = serverSeq_;
+        result.unk3300JBBMBKGOONO_ = unk3300JBBMBKGOONO_;
+        if (phaseBuilder_ == null) {
+          result.phase_ = phase_;
+        } else {
+          result.phase_ = phaseBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300BIANMOPDEHO_ = unk3300BIANMOPDEHO_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.costRevise_ = costReviseBuilder_ == null
-              ? costRevise_
-              : costReviseBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.gameId_ = gameId_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.businessType_ = businessType_;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.round_ = round_;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.controllerId_ = controllerId_;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.unk3300JHDDNKFPINA_ = unk3300JHDDNKFPINA_;
-        }
-        if (((from_bitField0_ & 0x00040000) != 0)) {
-          result.unk3300JBBMBKGOONO_ = unk3300JBBMBKGOONO_;
-        }
-        if (((from_bitField0_ & 0x00080000) != 0)) {
-          result.phase_ = phaseBuilder_ == null
-              ? phase_
-              : phaseBuilder_.build();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -1649,7 +1881,7 @@ public final class GCGDuelOuterClass {
           if (!other.showInfoList_.isEmpty()) {
             if (showInfoList_.isEmpty()) {
               showInfoList_ = other.showInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureShowInfoListIsMutable();
               showInfoList_.addAll(other.showInfoList_);
@@ -1662,7 +1894,7 @@ public final class GCGDuelOuterClass {
               showInfoListBuilder_.dispose();
               showInfoListBuilder_ = null;
               showInfoList_ = other.showInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               showInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getShowInfoListFieldBuilder() : null;
@@ -1674,7 +1906,7 @@ public final class GCGDuelOuterClass {
         if (!other.forbidFinishChallengeList_.isEmpty()) {
           if (forbidFinishChallengeList_.isEmpty()) {
             forbidFinishChallengeList_ = other.forbidFinishChallengeList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureForbidFinishChallengeListIsMutable();
             forbidFinishChallengeList_.addAll(other.forbidFinishChallengeList_);
@@ -1685,7 +1917,7 @@ public final class GCGDuelOuterClass {
           if (!other.cardList_.isEmpty()) {
             if (cardList_.isEmpty()) {
               cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureCardListIsMutable();
               cardList_.addAll(other.cardList_);
@@ -1698,7 +1930,7 @@ public final class GCGDuelOuterClass {
               cardListBuilder_.dispose();
               cardListBuilder_ = null;
               cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
               cardListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCardListFieldBuilder() : null;
@@ -1720,7 +1952,7 @@ public final class GCGDuelOuterClass {
           if (!other.fieldList_.isEmpty()) {
             if (fieldList_.isEmpty()) {
               fieldList_ = other.fieldList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureFieldListIsMutable();
               fieldList_.addAll(other.fieldList_);
@@ -1733,7 +1965,7 @@ public final class GCGDuelOuterClass {
               fieldListBuilder_.dispose();
               fieldListBuilder_ = null;
               fieldList_ = other.fieldList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000008);
               fieldListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFieldListFieldBuilder() : null;
@@ -1746,7 +1978,7 @@ public final class GCGDuelOuterClass {
           if (!other.unk3300CDCMBOKBLAK_.isEmpty()) {
             if (unk3300CDCMBOKBLAK_.isEmpty()) {
               unk3300CDCMBOKBLAK_ = other.unk3300CDCMBOKBLAK_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureUnk3300CDCMBOKBLAKIsMutable();
               unk3300CDCMBOKBLAK_.addAll(other.unk3300CDCMBOKBLAK_);
@@ -1759,7 +1991,7 @@ public final class GCGDuelOuterClass {
               unk3300CDCMBOKBLAKBuilder_.dispose();
               unk3300CDCMBOKBLAKBuilder_ = null;
               unk3300CDCMBOKBLAK_ = other.unk3300CDCMBOKBLAK_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000010);
               unk3300CDCMBOKBLAKBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUnk3300CDCMBOKBLAKFieldBuilder() : null;
@@ -1775,7 +2007,7 @@ public final class GCGDuelOuterClass {
           if (!other.intentionList_.isEmpty()) {
             if (intentionList_.isEmpty()) {
               intentionList_ = other.intentionList_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureIntentionListIsMutable();
               intentionList_.addAll(other.intentionList_);
@@ -1788,7 +2020,7 @@ public final class GCGDuelOuterClass {
               intentionListBuilder_.dispose();
               intentionListBuilder_ = null;
               intentionList_ = other.intentionList_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000020);
               intentionListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getIntentionListFieldBuilder() : null;
@@ -1801,7 +2033,7 @@ public final class GCGDuelOuterClass {
           if (!other.challengeList_.isEmpty()) {
             if (challengeList_.isEmpty()) {
               challengeList_ = other.challengeList_;
-              bitField0_ = (bitField0_ & ~0x00000800);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureChallengeListIsMutable();
               challengeList_.addAll(other.challengeList_);
@@ -1814,7 +2046,7 @@ public final class GCGDuelOuterClass {
               challengeListBuilder_.dispose();
               challengeListBuilder_ = null;
               challengeList_ = other.challengeList_;
-              bitField0_ = (bitField0_ & ~0x00000800);
+              bitField0_ = (bitField0_ & ~0x00000040);
               challengeListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChallengeListFieldBuilder() : null;
@@ -1827,7 +2059,7 @@ public final class GCGDuelOuterClass {
           if (!other.historyCardList_.isEmpty()) {
             if (historyCardList_.isEmpty()) {
               historyCardList_ = other.historyCardList_;
-              bitField0_ = (bitField0_ & ~0x00001000);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureHistoryCardListIsMutable();
               historyCardList_.addAll(other.historyCardList_);
@@ -1840,7 +2072,7 @@ public final class GCGDuelOuterClass {
               historyCardListBuilder_.dispose();
               historyCardListBuilder_ = null;
               historyCardList_ = other.historyCardList_;
-              bitField0_ = (bitField0_ & ~0x00001000);
+              bitField0_ = (bitField0_ & ~0x00000080);
               historyCardListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getHistoryCardListFieldBuilder() : null;
@@ -1859,7 +2091,7 @@ public final class GCGDuelOuterClass {
           if (!other.historyMsgPackList_.isEmpty()) {
             if (historyMsgPackList_.isEmpty()) {
               historyMsgPackList_ = other.historyMsgPackList_;
-              bitField0_ = (bitField0_ & ~0x00008000);
+              bitField0_ = (bitField0_ & ~0x00000100);
             } else {
               ensureHistoryMsgPackListIsMutable();
               historyMsgPackList_.addAll(other.historyMsgPackList_);
@@ -1872,7 +2104,7 @@ public final class GCGDuelOuterClass {
               historyMsgPackListBuilder_.dispose();
               historyMsgPackListBuilder_ = null;
               historyMsgPackList_ = other.historyMsgPackList_;
-              bitField0_ = (bitField0_ & ~0x00008000);
+              bitField0_ = (bitField0_ & ~0x00000100);
               historyMsgPackListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getHistoryMsgPackListFieldBuilder() : null;
@@ -1887,7 +2119,7 @@ public final class GCGDuelOuterClass {
         if (!other.cardIdList_.isEmpty()) {
           if (cardIdList_.isEmpty()) {
             cardIdList_ = other.cardIdList_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureCardIdListIsMutable();
             cardIdList_.addAll(other.cardIdList_);
@@ -1900,7 +2132,7 @@ public final class GCGDuelOuterClass {
         if (other.hasPhase()) {
           mergePhase(other.getPhase());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1915,220 +2147,17 @@ public final class GCGDuelOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                emu.gingerps.net.proto.GCGCardOuterClass.GCGCard m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.parser(),
-                        extensionRegistry);
-                if (cardListBuilder_ == null) {
-                  ensureCardListIsMutable();
-                  cardList_.add(m);
-                } else {
-                  cardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 18: {
-                emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention.parser(),
-                        extensionRegistry);
-                if (intentionListBuilder_ == null) {
-                  ensureIntentionListIsMutable();
-                  intentionList_.add(m);
-                } else {
-                  intentionListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 24: {
-                serverSeq_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 32: {
-                gameId_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 32
-              case 42: {
-                emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField.parser(),
-                        extensionRegistry);
-                if (fieldListBuilder_ == null) {
-                  ensureFieldListIsMutable();
-                  fieldList_.add(m);
-                } else {
-                  fieldListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 48: {
-                int v = input.readUInt32();
-                ensureCardIdListIsMutable();
-                cardIdList_.addInt(v);
-                break;
-              } // case 48
-              case 50: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureCardIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  cardIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 50
-              case 58: {
-                emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo.parser(),
-                        extensionRegistry);
-                if (showInfoListBuilder_ == null) {
-                  ensureShowInfoListIsMutable();
-                  showInfoList_.add(m);
-                } else {
-                  showInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              case 66: {
-                input.readMessage(
-                    getCostReviseFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 66
-              case 72: {
-                unk3300BIANMOPDEHO_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 72
-              case 80: {
-                unk3300JHDDNKFPINA_ = input.readUInt32();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 80
-              case 88: {
-                round_ = input.readUInt32();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 88
-              case 96: {
-                controllerId_ = input.readUInt32();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 96
-              case 104: {
-                businessType_ = input.readEnum();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 104
-              case 114: {
-                input.readMessage(
-                    getPhaseFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00080000;
-                break;
-              } // case 114
-              case 120: {
-                unk3300JBBMBKGOONO_ = input.readUInt32();
-                bitField0_ |= 0x00040000;
-                break;
-              } // case 120
-              case 1536: {
-                int v = input.readUInt32();
-                ensureForbidFinishChallengeListIsMutable();
-                forbidFinishChallengeList_.addInt(v);
-                break;
-              } // case 1536
-              case 1538: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureForbidFinishChallengeListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  forbidFinishChallengeList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 1538
-              case 6378: {
-                emu.gingerps.net.proto.GCGMessagePackOuterClass.GCGMessagePack m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGMessagePackOuterClass.GCGMessagePack.parser(),
-                        extensionRegistry);
-                if (historyMsgPackListBuilder_ == null) {
-                  ensureHistoryMsgPackListIsMutable();
-                  historyMsgPackList_.add(m);
-                } else {
-                  historyMsgPackListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 6378
-              case 12938: {
-                emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge.parser(),
-                        extensionRegistry);
-                if (challengeListBuilder_ == null) {
-                  ensureChallengeListIsMutable();
-                  challengeList_.add(m);
-                } else {
-                  challengeListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 12938
-              case 14978: {
-                emu.gingerps.net.proto.GCGCardOuterClass.GCGCard m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.parser(),
-                        extensionRegistry);
-                if (historyCardListBuilder_ == null) {
-                  ensureHistoryCardListIsMutable();
-                  historyCardList_.add(m);
-                } else {
-                  historyCardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 14978
-              case 15898: {
-                emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI.parser(),
-                        extensionRegistry);
-                if (unk3300CDCMBOKBLAKBuilder_ == null) {
-                  ensureUnk3300CDCMBOKBLAKIsMutable();
-                  unk3300CDCMBOKBLAK_.add(m);
-                } else {
-                  unk3300CDCMBOKBLAKBuilder_.addMessage(m);
-                }
-                break;
-              } // case 15898
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2150,7 +2179,6 @@ public final class GCGDuelOuterClass {
       public Builder setServerSeq(int value) {
         
         serverSeq_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2159,7 +2187,7 @@ public final class GCGDuelOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearServerSeq() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         serverSeq_ = 0;
         onChanged();
         return this;
@@ -2168,9 +2196,9 @@ public final class GCGDuelOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo> showInfoList_ =
         java.util.Collections.emptyList();
       private void ensureShowInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           showInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo>(showInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -2320,7 +2348,7 @@ public final class GCGDuelOuterClass {
       public Builder clearShowInfoList() {
         if (showInfoListBuilder_ == null) {
           showInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           showInfoListBuilder_.clear();
@@ -2397,7 +2425,7 @@ public final class GCGDuelOuterClass {
           showInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo, emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo.Builder, emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfoOrBuilder>(
                   showInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           showInfoList_ = null;
@@ -2407,10 +2435,10 @@ public final class GCGDuelOuterClass {
 
       private com.google.protobuf.Internal.IntList forbidFinishChallengeList_ = emptyIntList();
       private void ensureForbidFinishChallengeListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           forbidFinishChallengeList_ = mutableCopy(forbidFinishChallengeList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 forbid_finish_challenge_list = 192;</code>
@@ -2418,7 +2446,7 @@ public final class GCGDuelOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getForbidFinishChallengeListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(forbidFinishChallengeList_) : forbidFinishChallengeList_;
       }
       /**
@@ -2444,7 +2472,6 @@ public final class GCGDuelOuterClass {
        */
       public Builder setForbidFinishChallengeList(
           int index, int value) {
-        
         ensureForbidFinishChallengeListIsMutable();
         forbidFinishChallengeList_.setInt(index, value);
         onChanged();
@@ -2456,7 +2483,6 @@ public final class GCGDuelOuterClass {
        * @return This builder for chaining.
        */
       public Builder addForbidFinishChallengeList(int value) {
-        
         ensureForbidFinishChallengeListIsMutable();
         forbidFinishChallengeList_.addInt(value);
         onChanged();
@@ -2481,7 +2507,7 @@ public final class GCGDuelOuterClass {
        */
       public Builder clearForbidFinishChallengeList() {
         forbidFinishChallengeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2489,9 +2515,9 @@ public final class GCGDuelOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGCardOuterClass.GCGCard> cardList_ =
         java.util.Collections.emptyList();
       private void ensureCardListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGCardOuterClass.GCGCard>(cardList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -2641,7 +2667,7 @@ public final class GCGDuelOuterClass {
       public Builder clearCardList() {
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           cardListBuilder_.clear();
@@ -2718,7 +2744,7 @@ public final class GCGDuelOuterClass {
           cardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGCardOuterClass.GCGCard, emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.Builder, emu.gingerps.net.proto.GCGCardOuterClass.GCGCardOrBuilder>(
                   cardList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           cardList_ = null;
@@ -2743,7 +2769,6 @@ public final class GCGDuelOuterClass {
       public Builder setUnk3300BIANMOPDEHO(int value) {
         
         unk3300BIANMOPDEHO_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2752,7 +2777,7 @@ public final class GCGDuelOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BIANMOPDEHO() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300BIANMOPDEHO_ = 0;
         onChanged();
         return this;
@@ -2766,7 +2791,7 @@ public final class GCGDuelOuterClass {
        * @return Whether the costRevise field is set.
        */
       public boolean hasCostRevise() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return costReviseBuilder_ != null || costRevise_ != null;
       }
       /**
        * <code>.GCGCostReviseInfo cost_revise = 8;</code>
@@ -2788,11 +2813,11 @@ public final class GCGDuelOuterClass {
             throw new NullPointerException();
           }
           costRevise_ = value;
+          onChanged();
         } else {
           costReviseBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -2802,11 +2827,11 @@ public final class GCGDuelOuterClass {
           emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.Builder builderForValue) {
         if (costReviseBuilder_ == null) {
           costRevise_ = builderForValue.build();
+          onChanged();
         } else {
           costReviseBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -2814,38 +2839,38 @@ public final class GCGDuelOuterClass {
        */
       public Builder mergeCostRevise(emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo value) {
         if (costReviseBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            costRevise_ != null &&
-            costRevise_ != emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.getDefaultInstance()) {
-            getCostReviseBuilder().mergeFrom(value);
+          if (costRevise_ != null) {
+            costRevise_ =
+              emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.newBuilder(costRevise_).mergeFrom(value).buildPartial();
           } else {
             costRevise_ = value;
           }
+          onChanged();
         } else {
           costReviseBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGCostReviseInfo cost_revise = 8;</code>
        */
       public Builder clearCostRevise() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        costRevise_ = null;
-        if (costReviseBuilder_ != null) {
-          costReviseBuilder_.dispose();
+        if (costReviseBuilder_ == null) {
+          costRevise_ = null;
+          onChanged();
+        } else {
+          costRevise_ = null;
           costReviseBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGCostReviseInfo cost_revise = 8;</code>
        */
       public emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.Builder getCostReviseBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getCostReviseFieldBuilder().getBuilder();
       }
@@ -2894,7 +2919,6 @@ public final class GCGDuelOuterClass {
       public Builder setGameId(int value) {
         
         gameId_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2903,7 +2927,7 @@ public final class GCGDuelOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGameId() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         gameId_ = 0;
         onChanged();
         return this;
@@ -2912,9 +2936,9 @@ public final class GCGDuelOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField> fieldList_ =
         java.util.Collections.emptyList();
       private void ensureFieldListIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           fieldList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField>(fieldList_);
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -3064,7 +3088,7 @@ public final class GCGDuelOuterClass {
       public Builder clearFieldList() {
         if (fieldListBuilder_ == null) {
           fieldList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           fieldListBuilder_.clear();
@@ -3141,7 +3165,7 @@ public final class GCGDuelOuterClass {
           fieldListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField, emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField.Builder, emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerFieldOrBuilder>(
                   fieldList_,
-                  ((bitField0_ & 0x00000080) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           fieldList_ = null;
@@ -3152,9 +3176,9 @@ public final class GCGDuelOuterClass {
       private java.util.List<emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI> unk3300CDCMBOKBLAK_ =
         java.util.Collections.emptyList();
       private void ensureUnk3300CDCMBOKBLAKIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           unk3300CDCMBOKBLAK_ = new java.util.ArrayList<emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI>(unk3300CDCMBOKBLAK_);
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -3304,7 +3328,7 @@ public final class GCGDuelOuterClass {
       public Builder clearUnk3300CDCMBOKBLAK() {
         if (unk3300CDCMBOKBLAKBuilder_ == null) {
           unk3300CDCMBOKBLAK_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           unk3300CDCMBOKBLAKBuilder_.clear();
@@ -3381,7 +3405,7 @@ public final class GCGDuelOuterClass {
           unk3300CDCMBOKBLAKBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI, emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI.Builder, emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNIOrBuilder>(
                   unk3300CDCMBOKBLAK_,
-                  ((bitField0_ & 0x00000100) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           unk3300CDCMBOKBLAK_ = null;
@@ -3403,8 +3427,8 @@ public final class GCGDuelOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBusinessTypeValue(int value) {
+        
         businessType_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -3414,7 +3438,8 @@ public final class GCGDuelOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType getBusinessType() {
-        emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType result = emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.forNumber(businessType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType result = emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.valueOf(businessType_);
         return result == null ? emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.UNRECOGNIZED : result;
       }
       /**
@@ -3426,7 +3451,7 @@ public final class GCGDuelOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000200;
+        
         businessType_ = value.getNumber();
         onChanged();
         return this;
@@ -3436,7 +3461,7 @@ public final class GCGDuelOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBusinessType() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         businessType_ = 0;
         onChanged();
         return this;
@@ -3445,9 +3470,9 @@ public final class GCGDuelOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention> intentionList_ =
         java.util.Collections.emptyList();
       private void ensureIntentionListIsMutable() {
-        if (!((bitField0_ & 0x00000400) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           intentionList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention>(intentionList_);
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -3597,7 +3622,7 @@ public final class GCGDuelOuterClass {
       public Builder clearIntentionList() {
         if (intentionListBuilder_ == null) {
           intentionList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           intentionListBuilder_.clear();
@@ -3674,7 +3699,7 @@ public final class GCGDuelOuterClass {
           intentionListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention, emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention.Builder, emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntentionOrBuilder>(
                   intentionList_,
-                  ((bitField0_ & 0x00000400) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           intentionList_ = null;
@@ -3685,9 +3710,9 @@ public final class GCGDuelOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge> challengeList_ =
         java.util.Collections.emptyList();
       private void ensureChallengeListIsMutable() {
-        if (!((bitField0_ & 0x00000800) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           challengeList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge>(challengeList_);
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -3837,7 +3862,7 @@ public final class GCGDuelOuterClass {
       public Builder clearChallengeList() {
         if (challengeListBuilder_ == null) {
           challengeList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           challengeListBuilder_.clear();
@@ -3914,7 +3939,7 @@ public final class GCGDuelOuterClass {
           challengeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge, emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge.Builder, emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallengeOrBuilder>(
                   challengeList_,
-                  ((bitField0_ & 0x00000800) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           challengeList_ = null;
@@ -3925,9 +3950,9 @@ public final class GCGDuelOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGCardOuterClass.GCGCard> historyCardList_ =
         java.util.Collections.emptyList();
       private void ensureHistoryCardListIsMutable() {
-        if (!((bitField0_ & 0x00001000) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           historyCardList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGCardOuterClass.GCGCard>(historyCardList_);
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00000080;
          }
       }
 
@@ -4077,7 +4102,7 @@ public final class GCGDuelOuterClass {
       public Builder clearHistoryCardList() {
         if (historyCardListBuilder_ == null) {
           historyCardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           historyCardListBuilder_.clear();
@@ -4154,7 +4179,7 @@ public final class GCGDuelOuterClass {
           historyCardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGCardOuterClass.GCGCard, emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.Builder, emu.gingerps.net.proto.GCGCardOuterClass.GCGCardOrBuilder>(
                   historyCardList_,
-                  ((bitField0_ & 0x00001000) != 0),
+                  ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
           historyCardList_ = null;
@@ -4179,7 +4204,6 @@ public final class GCGDuelOuterClass {
       public Builder setRound(int value) {
         
         round_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -4188,7 +4212,7 @@ public final class GCGDuelOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRound() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        
         round_ = 0;
         onChanged();
         return this;
@@ -4211,7 +4235,6 @@ public final class GCGDuelOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
-        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -4220,7 +4243,7 @@ public final class GCGDuelOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        
         controllerId_ = 0;
         onChanged();
         return this;
@@ -4229,9 +4252,9 @@ public final class GCGDuelOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGMessagePackOuterClass.GCGMessagePack> historyMsgPackList_ =
         java.util.Collections.emptyList();
       private void ensureHistoryMsgPackListIsMutable() {
-        if (!((bitField0_ & 0x00008000) != 0)) {
+        if (!((bitField0_ & 0x00000100) != 0)) {
           historyMsgPackList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGMessagePackOuterClass.GCGMessagePack>(historyMsgPackList_);
-          bitField0_ |= 0x00008000;
+          bitField0_ |= 0x00000100;
          }
       }
 
@@ -4381,7 +4404,7 @@ public final class GCGDuelOuterClass {
       public Builder clearHistoryMsgPackList() {
         if (historyMsgPackListBuilder_ == null) {
           historyMsgPackList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
         } else {
           historyMsgPackListBuilder_.clear();
@@ -4458,7 +4481,7 @@ public final class GCGDuelOuterClass {
           historyMsgPackListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGMessagePackOuterClass.GCGMessagePack, emu.gingerps.net.proto.GCGMessagePackOuterClass.GCGMessagePack.Builder, emu.gingerps.net.proto.GCGMessagePackOuterClass.GCGMessagePackOrBuilder>(
                   historyMsgPackList_,
-                  ((bitField0_ & 0x00008000) != 0),
+                  ((bitField0_ & 0x00000100) != 0),
                   getParentForChildren(),
                   isClean());
           historyMsgPackList_ = null;
@@ -4483,7 +4506,6 @@ public final class GCGDuelOuterClass {
       public Builder setUnk3300JHDDNKFPINA(int value) {
         
         unk3300JHDDNKFPINA_ = value;
-        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -4492,7 +4514,7 @@ public final class GCGDuelOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300JHDDNKFPINA() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        
         unk3300JHDDNKFPINA_ = 0;
         onChanged();
         return this;
@@ -4500,10 +4522,10 @@ public final class GCGDuelOuterClass {
 
       private com.google.protobuf.Internal.IntList cardIdList_ = emptyIntList();
       private void ensureCardIdListIsMutable() {
-        if (!((bitField0_ & 0x00020000) != 0)) {
+        if (!((bitField0_ & 0x00000200) != 0)) {
           cardIdList_ = mutableCopy(cardIdList_);
-          bitField0_ |= 0x00020000;
-        }
+          bitField0_ |= 0x00000200;
+         }
       }
       /**
        * <code>repeated uint32 card_id_list = 6;</code>
@@ -4511,7 +4533,7 @@ public final class GCGDuelOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getCardIdListList() {
-        return ((bitField0_ & 0x00020000) != 0) ?
+        return ((bitField0_ & 0x00000200) != 0) ?
                  java.util.Collections.unmodifiableList(cardIdList_) : cardIdList_;
       }
       /**
@@ -4537,7 +4559,6 @@ public final class GCGDuelOuterClass {
        */
       public Builder setCardIdList(
           int index, int value) {
-        
         ensureCardIdListIsMutable();
         cardIdList_.setInt(index, value);
         onChanged();
@@ -4549,7 +4570,6 @@ public final class GCGDuelOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCardIdList(int value) {
-        
         ensureCardIdListIsMutable();
         cardIdList_.addInt(value);
         onChanged();
@@ -4574,7 +4594,7 @@ public final class GCGDuelOuterClass {
        */
       public Builder clearCardIdList() {
         cardIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
@@ -4596,7 +4616,6 @@ public final class GCGDuelOuterClass {
       public Builder setUnk3300JBBMBKGOONO(int value) {
         
         unk3300JBBMBKGOONO_ = value;
-        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -4605,7 +4624,7 @@ public final class GCGDuelOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300JBBMBKGOONO() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        
         unk3300JBBMBKGOONO_ = 0;
         onChanged();
         return this;
@@ -4619,7 +4638,7 @@ public final class GCGDuelOuterClass {
        * @return Whether the phase field is set.
        */
       public boolean hasPhase() {
-        return ((bitField0_ & 0x00080000) != 0);
+        return phaseBuilder_ != null || phase_ != null;
       }
       /**
        * <code>.GCGPhase phase = 14;</code>
@@ -4641,11 +4660,11 @@ public final class GCGDuelOuterClass {
             throw new NullPointerException();
           }
           phase_ = value;
+          onChanged();
         } else {
           phaseBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00080000;
-        onChanged();
+
         return this;
       }
       /**
@@ -4655,11 +4674,11 @@ public final class GCGDuelOuterClass {
           emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase.Builder builderForValue) {
         if (phaseBuilder_ == null) {
           phase_ = builderForValue.build();
+          onChanged();
         } else {
           phaseBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00080000;
-        onChanged();
+
         return this;
       }
       /**
@@ -4667,38 +4686,38 @@ public final class GCGDuelOuterClass {
        */
       public Builder mergePhase(emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase value) {
         if (phaseBuilder_ == null) {
-          if (((bitField0_ & 0x00080000) != 0) &&
-            phase_ != null &&
-            phase_ != emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase.getDefaultInstance()) {
-            getPhaseBuilder().mergeFrom(value);
+          if (phase_ != null) {
+            phase_ =
+              emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase.newBuilder(phase_).mergeFrom(value).buildPartial();
           } else {
             phase_ = value;
           }
+          onChanged();
         } else {
           phaseBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00080000;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGPhase phase = 14;</code>
        */
       public Builder clearPhase() {
-        bitField0_ = (bitField0_ & ~0x00080000);
-        phase_ = null;
-        if (phaseBuilder_ != null) {
-          phaseBuilder_.dispose();
+        if (phaseBuilder_ == null) {
+          phase_ = null;
+          onChanged();
+        } else {
+          phase_ = null;
           phaseBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGPhase phase = 14;</code>
        */
       public emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase.Builder getPhaseBuilder() {
-        bitField0_ |= 0x00080000;
+        
         onChanged();
         return getPhaseFieldBuilder().getBuilder();
       }
@@ -4762,18 +4781,7 @@ public final class GCGDuelOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGDuel(input, extensionRegistry);
       }
     };
 

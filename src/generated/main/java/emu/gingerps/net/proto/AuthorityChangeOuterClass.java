@@ -72,6 +72,66 @@ public final class AuthorityChangeOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AuthorityChange(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo.Builder subBuilder = null;
+              if (entityAuthorityInfo_ != null) {
+                subBuilder = entityAuthorityInfo_.toBuilder();
+              }
+              entityAuthorityInfo_ = input.readMessage(emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(entityAuthorityInfo_);
+                entityAuthorityInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              authorityPeerId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AuthorityChangeOuterClass.internal_static_AuthorityChange_descriptor;
@@ -86,7 +146,7 @@ public final class AuthorityChangeOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 8;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 8;</code>
      * @return The entityId.
@@ -119,11 +179,11 @@ public final class AuthorityChangeOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfoOrBuilder getEntityAuthorityInfoOrBuilder() {
-      return entityAuthorityInfo_ == null ? emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo.getDefaultInstance() : entityAuthorityInfo_;
+      return getEntityAuthorityInfo();
     }
 
     public static final int AUTHORITY_PEER_ID_FIELD_NUMBER = 2;
-    private int authorityPeerId_ = 0;
+    private int authorityPeerId_;
     /**
      * <code>uint32 authority_peer_id = 2;</code>
      * @return The authorityPeerId.
@@ -156,7 +216,7 @@ public final class AuthorityChangeOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(8, entityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +237,7 @@ public final class AuthorityChangeOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, entityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -201,7 +261,7 @@ public final class AuthorityChangeOuterClass {
       }
       if (getAuthorityPeerId()
           != other.getAuthorityPeerId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -220,7 +280,7 @@ public final class AuthorityChangeOuterClass {
       }
       hash = (37 * hash) + AUTHORITY_PEER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAuthorityPeerId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -337,25 +397,32 @@ public final class AuthorityChangeOuterClass {
 
       // Construct using emu.gingerps.net.proto.AuthorityChangeOuterClass.AuthorityChange.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         entityId_ = 0;
-        entityAuthorityInfo_ = null;
-        if (entityAuthorityInfoBuilder_ != null) {
-          entityAuthorityInfoBuilder_.dispose();
+
+        if (entityAuthorityInfoBuilder_ == null) {
+          entityAuthorityInfo_ = null;
+        } else {
+          entityAuthorityInfo_ = null;
           entityAuthorityInfoBuilder_ = null;
         }
         authorityPeerId_ = 0;
+
         return this;
       }
 
@@ -382,24 +449,15 @@ public final class AuthorityChangeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AuthorityChangeOuterClass.AuthorityChange buildPartial() {
         emu.gingerps.net.proto.AuthorityChangeOuterClass.AuthorityChange result = new emu.gingerps.net.proto.AuthorityChangeOuterClass.AuthorityChange(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.entityId_ = entityId_;
+        if (entityAuthorityInfoBuilder_ == null) {
+          result.entityAuthorityInfo_ = entityAuthorityInfo_;
+        } else {
+          result.entityAuthorityInfo_ = entityAuthorityInfoBuilder_.build();
+        }
+        result.authorityPeerId_ = authorityPeerId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AuthorityChangeOuterClass.AuthorityChange result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entityAuthorityInfo_ = entityAuthorityInfoBuilder_ == null
-              ? entityAuthorityInfo_
-              : entityAuthorityInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.authorityPeerId_ = authorityPeerId_;
-        }
       }
 
       @java.lang.Override
@@ -455,7 +513,7 @@ public final class AuthorityChangeOuterClass {
         if (other.getAuthorityPeerId() != 0) {
           setAuthorityPeerId(other.getAuthorityPeerId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -470,50 +528,19 @@ public final class AuthorityChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AuthorityChangeOuterClass.AuthorityChange parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getEntityAuthorityInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 10
-              case 16: {
-                authorityPeerId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 64: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AuthorityChangeOuterClass.AuthorityChange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -532,7 +559,6 @@ public final class AuthorityChangeOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -541,7 +567,7 @@ public final class AuthorityChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -555,7 +581,7 @@ public final class AuthorityChangeOuterClass {
        * @return Whether the entityAuthorityInfo field is set.
        */
       public boolean hasEntityAuthorityInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return entityAuthorityInfoBuilder_ != null || entityAuthorityInfo_ != null;
       }
       /**
        * <code>.EntityAuthorityInfo entity_authority_info = 1;</code>
@@ -577,11 +603,11 @@ public final class AuthorityChangeOuterClass {
             throw new NullPointerException();
           }
           entityAuthorityInfo_ = value;
+          onChanged();
         } else {
           entityAuthorityInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -591,11 +617,11 @@ public final class AuthorityChangeOuterClass {
           emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo.Builder builderForValue) {
         if (entityAuthorityInfoBuilder_ == null) {
           entityAuthorityInfo_ = builderForValue.build();
+          onChanged();
         } else {
           entityAuthorityInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -603,38 +629,38 @@ public final class AuthorityChangeOuterClass {
        */
       public Builder mergeEntityAuthorityInfo(emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo value) {
         if (entityAuthorityInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            entityAuthorityInfo_ != null &&
-            entityAuthorityInfo_ != emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo.getDefaultInstance()) {
-            getEntityAuthorityInfoBuilder().mergeFrom(value);
+          if (entityAuthorityInfo_ != null) {
+            entityAuthorityInfo_ =
+              emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo.newBuilder(entityAuthorityInfo_).mergeFrom(value).buildPartial();
           } else {
             entityAuthorityInfo_ = value;
           }
+          onChanged();
         } else {
           entityAuthorityInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EntityAuthorityInfo entity_authority_info = 1;</code>
        */
       public Builder clearEntityAuthorityInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        entityAuthorityInfo_ = null;
-        if (entityAuthorityInfoBuilder_ != null) {
-          entityAuthorityInfoBuilder_.dispose();
+        if (entityAuthorityInfoBuilder_ == null) {
+          entityAuthorityInfo_ = null;
+          onChanged();
+        } else {
+          entityAuthorityInfo_ = null;
           entityAuthorityInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EntityAuthorityInfo entity_authority_info = 1;</code>
        */
       public emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo.Builder getEntityAuthorityInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getEntityAuthorityInfoFieldBuilder().getBuilder();
       }
@@ -683,7 +709,6 @@ public final class AuthorityChangeOuterClass {
       public Builder setAuthorityPeerId(int value) {
         
         authorityPeerId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -692,7 +717,7 @@ public final class AuthorityChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAuthorityPeerId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         authorityPeerId_ = 0;
         onChanged();
         return this;
@@ -730,18 +755,7 @@ public final class AuthorityChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AuthorityChange(input, extensionRegistry);
       }
     };
 

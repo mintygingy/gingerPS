@@ -83,6 +83,62 @@ public final class EvtFaceToDirNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtFaceToDirNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              emu.gingerps.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.Builder subBuilder = null;
+              if (evtFaceToDirInfo_ != null) {
+                subBuilder = evtFaceToDirInfo_.toBuilder();
+              }
+              evtFaceToDirInfo_ = input.readMessage(emu.gingerps.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(evtFaceToDirInfo_);
+                evtFaceToDirInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              forwardType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtFaceToDirNotifyOuterClass.internal_static_EvtFaceToDirNotify_descriptor;
@@ -119,11 +175,11 @@ public final class EvtFaceToDirNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfoOrBuilder getEvtFaceToDirInfoOrBuilder() {
-      return evtFaceToDirInfo_ == null ? emu.gingerps.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.getDefaultInstance() : evtFaceToDirInfo_;
+      return getEvtFaceToDirInfo();
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 9;
-    private int forwardType_ = 0;
+    private int forwardType_;
     /**
      * <code>.ForwardType forward_type = 9;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -136,7 +192,8 @@ public final class EvtFaceToDirNotifyOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
@@ -160,7 +217,7 @@ public final class EvtFaceToDirNotifyOuterClass {
       if (forwardType_ != emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
         output.writeEnum(9, forwardType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class EvtFaceToDirNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, forwardType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -198,7 +255,7 @@ public final class EvtFaceToDirNotifyOuterClass {
             .equals(other.getEvtFaceToDirInfo())) return false;
       }
       if (forwardType_ != other.forwardType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -215,7 +272,7 @@ public final class EvtFaceToDirNotifyOuterClass {
       }
       hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + forwardType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -343,24 +400,30 @@ public final class EvtFaceToDirNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        evtFaceToDirInfo_ = null;
-        if (evtFaceToDirInfoBuilder_ != null) {
-          evtFaceToDirInfoBuilder_.dispose();
+        if (evtFaceToDirInfoBuilder_ == null) {
+          evtFaceToDirInfo_ = null;
+        } else {
+          evtFaceToDirInfo_ = null;
           evtFaceToDirInfoBuilder_ = null;
         }
         forwardType_ = 0;
+
         return this;
       }
 
@@ -387,21 +450,14 @@ public final class EvtFaceToDirNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify buildPartial() {
         emu.gingerps.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify result = new emu.gingerps.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (evtFaceToDirInfoBuilder_ == null) {
+          result.evtFaceToDirInfo_ = evtFaceToDirInfo_;
+        } else {
+          result.evtFaceToDirInfo_ = evtFaceToDirInfoBuilder_.build();
+        }
+        result.forwardType_ = forwardType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.evtFaceToDirInfo_ = evtFaceToDirInfoBuilder_ == null
-              ? evtFaceToDirInfo_
-              : evtFaceToDirInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.forwardType_ = forwardType_;
-        }
       }
 
       @java.lang.Override
@@ -454,7 +510,7 @@ public final class EvtFaceToDirNotifyOuterClass {
         if (other.forwardType_ != 0) {
           setForwardTypeValue(other.getForwardTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -469,45 +525,19 @@ public final class EvtFaceToDirNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                input.readMessage(
-                    getEvtFaceToDirInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 18
-              case 72: {
-                forwardType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo evtFaceToDirInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -517,7 +547,7 @@ public final class EvtFaceToDirNotifyOuterClass {
        * @return Whether the evtFaceToDirInfo field is set.
        */
       public boolean hasEvtFaceToDirInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return evtFaceToDirInfoBuilder_ != null || evtFaceToDirInfo_ != null;
       }
       /**
        * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 2;</code>
@@ -539,11 +569,11 @@ public final class EvtFaceToDirNotifyOuterClass {
             throw new NullPointerException();
           }
           evtFaceToDirInfo_ = value;
+          onChanged();
         } else {
           evtFaceToDirInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -553,11 +583,11 @@ public final class EvtFaceToDirNotifyOuterClass {
           emu.gingerps.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.Builder builderForValue) {
         if (evtFaceToDirInfoBuilder_ == null) {
           evtFaceToDirInfo_ = builderForValue.build();
+          onChanged();
         } else {
           evtFaceToDirInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -565,38 +595,38 @@ public final class EvtFaceToDirNotifyOuterClass {
        */
       public Builder mergeEvtFaceToDirInfo(emu.gingerps.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo value) {
         if (evtFaceToDirInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            evtFaceToDirInfo_ != null &&
-            evtFaceToDirInfo_ != emu.gingerps.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.getDefaultInstance()) {
-            getEvtFaceToDirInfoBuilder().mergeFrom(value);
+          if (evtFaceToDirInfo_ != null) {
+            evtFaceToDirInfo_ =
+              emu.gingerps.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.newBuilder(evtFaceToDirInfo_).mergeFrom(value).buildPartial();
           } else {
             evtFaceToDirInfo_ = value;
           }
+          onChanged();
         } else {
           evtFaceToDirInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 2;</code>
        */
       public Builder clearEvtFaceToDirInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        evtFaceToDirInfo_ = null;
-        if (evtFaceToDirInfoBuilder_ != null) {
-          evtFaceToDirInfoBuilder_.dispose();
+        if (evtFaceToDirInfoBuilder_ == null) {
+          evtFaceToDirInfo_ = null;
+          onChanged();
+        } else {
+          evtFaceToDirInfo_ = null;
           evtFaceToDirInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 2;</code>
        */
       public emu.gingerps.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.Builder getEvtFaceToDirInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getEvtFaceToDirInfoFieldBuilder().getBuilder();
       }
@@ -642,8 +672,8 @@ public final class EvtFaceToDirNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
+        
         forwardType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -653,7 +683,8 @@ public final class EvtFaceToDirNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -665,7 +696,7 @@ public final class EvtFaceToDirNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -675,7 +706,7 @@ public final class EvtFaceToDirNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         forwardType_ = 0;
         onChanged();
         return this;
@@ -713,18 +744,7 @@ public final class EvtFaceToDirNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtFaceToDirNotify(input, extensionRegistry);
       }
     };
 

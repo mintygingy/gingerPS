@@ -57,6 +57,53 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GameplayRecommendationReliquaryMainPropData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              permillage_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              mainPropId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.internal_static_GameplayRecommendationReliquaryMainPropData_descriptor;
@@ -71,7 +118,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
     }
 
     public static final int PERMILLAGE_FIELD_NUMBER = 5;
-    private int permillage_ = 0;
+    private int permillage_;
     /**
      * <code>uint32 permillage = 5;</code>
      * @return The permillage.
@@ -82,7 +129,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
     }
 
     public static final int MAIN_PROP_ID_FIELD_NUMBER = 10;
-    private int mainPropId_ = 0;
+    private int mainPropId_;
     /**
      * <code>uint32 main_prop_id = 10;</code>
      * @return The mainPropId.
@@ -112,7 +159,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
       if (mainPropId_ != 0) {
         output.writeUInt32(10, mainPropId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +176,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, mainPropId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -148,7 +195,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
           != other.getPermillage()) return false;
       if (getMainPropId()
           != other.getMainPropId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -163,7 +210,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
       hash = (53 * hash) + getPermillage();
       hash = (37 * hash) + MAIN_PROP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMainPropId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -280,20 +327,26 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         permillage_ = 0;
+
         mainPropId_ = 0;
+
         return this;
       }
 
@@ -320,19 +373,10 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData buildPartial() {
         emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData result = new emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.permillage_ = permillage_;
+        result.mainPropId_ = mainPropId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.permillage_ = permillage_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.mainPropId_ = mainPropId_;
-        }
       }
 
       @java.lang.Override
@@ -385,7 +429,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
         if (other.getMainPropId() != 0) {
           setMainPropId(other.getMainPropId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -400,43 +444,19 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                permillage_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              case 80: {
-                mainPropId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int permillage_ ;
       /**
@@ -455,7 +475,6 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
       public Builder setPermillage(int value) {
         
         permillage_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +483,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPermillage() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         permillage_ = 0;
         onChanged();
         return this;
@@ -487,7 +506,6 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
       public Builder setMainPropId(int value) {
         
         mainPropId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -496,7 +514,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMainPropId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         mainPropId_ = 0;
         onChanged();
         return this;
@@ -534,18 +552,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GameplayRecommendationReliquaryMainPropData(input, extensionRegistry);
       }
     };
 

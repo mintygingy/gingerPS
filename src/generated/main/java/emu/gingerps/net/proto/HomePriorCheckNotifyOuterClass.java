@@ -61,6 +61,48 @@ public final class HomePriorCheckNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomePriorCheckNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 29: {
+
+              endTime_ = input.readFixed32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomePriorCheckNotifyOuterClass.internal_static_HomePriorCheckNotify_descriptor;
@@ -75,7 +117,7 @@ public final class HomePriorCheckNotifyOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 3;
-    private int endTime_ = 0;
+    private int endTime_;
     /**
      * <code>fixed32 end_time = 3;</code>
      * @return The endTime.
@@ -102,7 +144,7 @@ public final class HomePriorCheckNotifyOuterClass {
       if (endTime_ != 0) {
         output.writeFixed32(3, endTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -115,7 +157,7 @@ public final class HomePriorCheckNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeFixed32Size(3, endTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -132,7 +174,7 @@ public final class HomePriorCheckNotifyOuterClass {
 
       if (getEndTime()
           != other.getEndTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -145,7 +187,7 @@ public final class HomePriorCheckNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -272,19 +314,24 @@ public final class HomePriorCheckNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         endTime_ = 0;
+
         return this;
       }
 
@@ -311,16 +358,9 @@ public final class HomePriorCheckNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify buildPartial() {
         emu.gingerps.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify result = new emu.gingerps.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.endTime_ = endTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.endTime_ = endTime_;
-        }
       }
 
       @java.lang.Override
@@ -370,7 +410,7 @@ public final class HomePriorCheckNotifyOuterClass {
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -385,38 +425,19 @@ public final class HomePriorCheckNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 29: {
-                endTime_ = input.readFixed32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 29
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int endTime_ ;
       /**
@@ -435,7 +456,6 @@ public final class HomePriorCheckNotifyOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -444,7 +464,7 @@ public final class HomePriorCheckNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         endTime_ = 0;
         onChanged();
         return this;
@@ -482,18 +502,7 @@ public final class HomePriorCheckNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomePriorCheckNotify(input, extensionRegistry);
       }
     };
 

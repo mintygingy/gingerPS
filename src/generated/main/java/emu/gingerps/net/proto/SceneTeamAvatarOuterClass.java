@@ -214,6 +214,179 @@ public final class SceneTeamAvatarOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneTeamAvatar(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              playerUid_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder subBuilder = null;
+              if (abilityControlBlock_ != null) {
+                subBuilder = abilityControlBlock_.toBuilder();
+              }
+              abilityControlBlock_ = input.readMessage(emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(abilityControlBlock_);
+                abilityControlBlock_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+
+              avatarGuid_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = null;
+              if (avatarAbilityInfo_ != null) {
+                subBuilder = avatarAbilityInfo_.toBuilder();
+              }
+              avatarAbilityInfo_ = input.readMessage(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(avatarAbilityInfo_);
+                avatarAbilityInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
+
+              weaponEntityId_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = null;
+              if (weaponAbilityInfo_ != null) {
+                subBuilder = weaponAbilityInfo_.toBuilder();
+              }
+              weaponAbilityInfo_ = input.readMessage(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(weaponAbilityInfo_);
+                weaponAbilityInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                serverBuffList_ = new java.util.ArrayList<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              serverBuffList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+
+              isReconnect_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder subBuilder = null;
+              if (sceneEntityInfo_ != null) {
+                subBuilder = sceneEntityInfo_.toBuilder();
+              }
+              sceneEntityInfo_ = input.readMessage(emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sceneEntityInfo_);
+                sceneEntityInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 96: {
+
+              weaponGuid_ = input.readUInt64();
+              break;
+            }
+            case 104: {
+
+              isPlayerCurAvatar_ = input.readBool();
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder subBuilder = null;
+              if (sceneAvatarInfo_ != null) {
+                subBuilder = sceneAvatarInfo_.toBuilder();
+              }
+              sceneAvatarInfo_ = input.readMessage(emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sceneAvatarInfo_);
+                sceneAvatarInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder subBuilder = null;
+              if (avatarInfo_ != null) {
+                subBuilder = avatarInfo_.toBuilder();
+              }
+              avatarInfo_ = input.readMessage(emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(avatarInfo_);
+                avatarInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 5000: {
+
+              isOnScene_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneTeamAvatarOuterClass.internal_static_SceneTeamAvatar_descriptor;
@@ -250,7 +423,7 @@ public final class SceneTeamAvatarOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder getSceneAvatarInfoOrBuilder() {
-      return sceneAvatarInfo_ == null ? emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance() : sceneAvatarInfo_;
+      return getSceneAvatarInfo();
     }
 
     public static final int AVATAR_INFO_FIELD_NUMBER = 15;
@@ -276,11 +449,11 @@ public final class SceneTeamAvatarOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfoOrBuilder getAvatarInfoOrBuilder() {
-      return avatarInfo_ == null ? emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.getDefaultInstance() : avatarInfo_;
+      return getAvatarInfo();
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 10;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 10;</code>
      * @return The entityId.
@@ -313,7 +486,7 @@ public final class SceneTeamAvatarOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getWeaponAbilityInfoOrBuilder() {
-      return weaponAbilityInfo_ == null ? emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : weaponAbilityInfo_;
+      return getWeaponAbilityInfo();
     }
 
     public static final int ABILITY_CONTROL_BLOCK_FIELD_NUMBER = 2;
@@ -339,11 +512,11 @@ public final class SceneTeamAvatarOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlockOrBuilder getAbilityControlBlockOrBuilder() {
-      return abilityControlBlock_ == null ? emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.getDefaultInstance() : abilityControlBlock_;
+      return getAbilityControlBlock();
     }
 
     public static final int IS_RECONNECT_FIELD_NUMBER = 8;
-    private boolean isReconnect_ = false;
+    private boolean isReconnect_;
     /**
      * <code>bool is_reconnect = 8;</code>
      * @return The isReconnect.
@@ -376,11 +549,11 @@ public final class SceneTeamAvatarOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getAvatarAbilityInfoOrBuilder() {
-      return avatarAbilityInfo_ == null ? emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : avatarAbilityInfo_;
+      return getAvatarAbilityInfo();
     }
 
     public static final int WEAPON_GUID_FIELD_NUMBER = 12;
-    private long weaponGuid_ = 0L;
+    private long weaponGuid_;
     /**
      * <code>uint64 weapon_guid = 12;</code>
      * @return The weaponGuid.
@@ -391,7 +564,7 @@ public final class SceneTeamAvatarOuterClass {
     }
 
     public static final int PLAYER_UID_FIELD_NUMBER = 1;
-    private int playerUid_ = 0;
+    private int playerUid_;
     /**
      * <code>uint32 player_uid = 1;</code>
      * @return The playerUid.
@@ -424,11 +597,11 @@ public final class SceneTeamAvatarOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder getSceneEntityInfoOrBuilder() {
-      return sceneEntityInfo_ == null ? emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.getDefaultInstance() : sceneEntityInfo_;
+      return getSceneEntityInfo();
     }
 
     public static final int WEAPON_ENTITY_ID_FIELD_NUMBER = 5;
-    private int weaponEntityId_ = 0;
+    private int weaponEntityId_;
     /**
      * <code>uint32 weapon_entity_id = 5;</code>
      * @return The weaponEntityId.
@@ -439,7 +612,7 @@ public final class SceneTeamAvatarOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 9;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 9;</code>
      * @return The sceneId.
@@ -450,7 +623,7 @@ public final class SceneTeamAvatarOuterClass {
     }
 
     public static final int IS_ON_SCENE_FIELD_NUMBER = 625;
-    private boolean isOnScene_ = false;
+    private boolean isOnScene_;
     /**
      * <code>bool is_on_scene = 625;</code>
      * @return The isOnScene.
@@ -461,7 +634,7 @@ public final class SceneTeamAvatarOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 3;
-    private long avatarGuid_ = 0L;
+    private long avatarGuid_;
     /**
      * <code>uint64 avatar_guid = 3;</code>
      * @return The avatarGuid.
@@ -472,7 +645,7 @@ public final class SceneTeamAvatarOuterClass {
     }
 
     public static final int IS_PLAYER_CUR_AVATAR_FIELD_NUMBER = 13;
-    private boolean isPlayerCurAvatar_ = false;
+    private boolean isPlayerCurAvatar_;
     /**
      * <code>bool is_player_cur_avatar = 13;</code>
      * @return The isPlayerCurAvatar.
@@ -483,7 +656,6 @@ public final class SceneTeamAvatarOuterClass {
     }
 
     public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_;
     /**
      * <code>repeated .ServerBuff server_buff_list = 7;</code>
@@ -585,7 +757,7 @@ public final class SceneTeamAvatarOuterClass {
       if (isOnScene_ != false) {
         output.writeBool(625, isOnScene_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -658,7 +830,7 @@ public final class SceneTeamAvatarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(625, isOnScene_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -723,7 +895,7 @@ public final class SceneTeamAvatarOuterClass {
           != other.getIsPlayerCurAvatar()) return false;
       if (!getServerBuffListList()
           .equals(other.getServerBuffListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -785,7 +957,7 @@ public final class SceneTeamAvatarOuterClass {
         hash = (37 * hash) + SERVER_BUFF_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getServerBuffListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -902,64 +1074,83 @@ public final class SceneTeamAvatarOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getServerBuffListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        sceneAvatarInfo_ = null;
-        if (sceneAvatarInfoBuilder_ != null) {
-          sceneAvatarInfoBuilder_.dispose();
+        if (sceneAvatarInfoBuilder_ == null) {
+          sceneAvatarInfo_ = null;
+        } else {
+          sceneAvatarInfo_ = null;
           sceneAvatarInfoBuilder_ = null;
         }
-        avatarInfo_ = null;
-        if (avatarInfoBuilder_ != null) {
-          avatarInfoBuilder_.dispose();
+        if (avatarInfoBuilder_ == null) {
+          avatarInfo_ = null;
+        } else {
+          avatarInfo_ = null;
           avatarInfoBuilder_ = null;
         }
         entityId_ = 0;
-        weaponAbilityInfo_ = null;
-        if (weaponAbilityInfoBuilder_ != null) {
-          weaponAbilityInfoBuilder_.dispose();
+
+        if (weaponAbilityInfoBuilder_ == null) {
+          weaponAbilityInfo_ = null;
+        } else {
+          weaponAbilityInfo_ = null;
           weaponAbilityInfoBuilder_ = null;
         }
-        abilityControlBlock_ = null;
-        if (abilityControlBlockBuilder_ != null) {
-          abilityControlBlockBuilder_.dispose();
+        if (abilityControlBlockBuilder_ == null) {
+          abilityControlBlock_ = null;
+        } else {
+          abilityControlBlock_ = null;
           abilityControlBlockBuilder_ = null;
         }
         isReconnect_ = false;
-        avatarAbilityInfo_ = null;
-        if (avatarAbilityInfoBuilder_ != null) {
-          avatarAbilityInfoBuilder_.dispose();
+
+        if (avatarAbilityInfoBuilder_ == null) {
+          avatarAbilityInfo_ = null;
+        } else {
+          avatarAbilityInfo_ = null;
           avatarAbilityInfoBuilder_ = null;
         }
         weaponGuid_ = 0L;
+
         playerUid_ = 0;
-        sceneEntityInfo_ = null;
-        if (sceneEntityInfoBuilder_ != null) {
-          sceneEntityInfoBuilder_.dispose();
+
+        if (sceneEntityInfoBuilder_ == null) {
+          sceneEntityInfo_ = null;
+        } else {
+          sceneEntityInfo_ = null;
           sceneEntityInfoBuilder_ = null;
         }
         weaponEntityId_ = 0;
+
         sceneId_ = 0;
+
         isOnScene_ = false;
+
         avatarGuid_ = 0L;
+
         isPlayerCurAvatar_ = false;
+
         if (serverBuffListBuilder_ == null) {
           serverBuffList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          serverBuffList_ = null;
           serverBuffListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00008000);
         return this;
       }
 
@@ -986,83 +1177,57 @@ public final class SceneTeamAvatarOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar buildPartial() {
         emu.gingerps.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar result = new emu.gingerps.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar result) {
+        int from_bitField0_ = bitField0_;
+        if (sceneAvatarInfoBuilder_ == null) {
+          result.sceneAvatarInfo_ = sceneAvatarInfo_;
+        } else {
+          result.sceneAvatarInfo_ = sceneAvatarInfoBuilder_.build();
+        }
+        if (avatarInfoBuilder_ == null) {
+          result.avatarInfo_ = avatarInfo_;
+        } else {
+          result.avatarInfo_ = avatarInfoBuilder_.build();
+        }
+        result.entityId_ = entityId_;
+        if (weaponAbilityInfoBuilder_ == null) {
+          result.weaponAbilityInfo_ = weaponAbilityInfo_;
+        } else {
+          result.weaponAbilityInfo_ = weaponAbilityInfoBuilder_.build();
+        }
+        if (abilityControlBlockBuilder_ == null) {
+          result.abilityControlBlock_ = abilityControlBlock_;
+        } else {
+          result.abilityControlBlock_ = abilityControlBlockBuilder_.build();
+        }
+        result.isReconnect_ = isReconnect_;
+        if (avatarAbilityInfoBuilder_ == null) {
+          result.avatarAbilityInfo_ = avatarAbilityInfo_;
+        } else {
+          result.avatarAbilityInfo_ = avatarAbilityInfoBuilder_.build();
+        }
+        result.weaponGuid_ = weaponGuid_;
+        result.playerUid_ = playerUid_;
+        if (sceneEntityInfoBuilder_ == null) {
+          result.sceneEntityInfo_ = sceneEntityInfo_;
+        } else {
+          result.sceneEntityInfo_ = sceneEntityInfoBuilder_.build();
+        }
+        result.weaponEntityId_ = weaponEntityId_;
+        result.sceneId_ = sceneId_;
+        result.isOnScene_ = isOnScene_;
+        result.avatarGuid_ = avatarGuid_;
+        result.isPlayerCurAvatar_ = isPlayerCurAvatar_;
         if (serverBuffListBuilder_ == null) {
-          if (((bitField0_ & 0x00008000) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.serverBuffList_ = serverBuffList_;
         } else {
           result.serverBuffList_ = serverBuffListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sceneAvatarInfo_ = sceneAvatarInfoBuilder_ == null
-              ? sceneAvatarInfo_
-              : sceneAvatarInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.avatarInfo_ = avatarInfoBuilder_ == null
-              ? avatarInfo_
-              : avatarInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.weaponAbilityInfo_ = weaponAbilityInfoBuilder_ == null
-              ? weaponAbilityInfo_
-              : weaponAbilityInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.abilityControlBlock_ = abilityControlBlockBuilder_ == null
-              ? abilityControlBlock_
-              : abilityControlBlockBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isReconnect_ = isReconnect_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.avatarAbilityInfo_ = avatarAbilityInfoBuilder_ == null
-              ? avatarAbilityInfo_
-              : avatarAbilityInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.weaponGuid_ = weaponGuid_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.playerUid_ = playerUid_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.sceneEntityInfo_ = sceneEntityInfoBuilder_ == null
-              ? sceneEntityInfo_
-              : sceneEntityInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.weaponEntityId_ = weaponEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.isOnScene_ = isOnScene_;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.avatarGuid_ = avatarGuid_;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.isPlayerCurAvatar_ = isPlayerCurAvatar_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -1158,7 +1323,7 @@ public final class SceneTeamAvatarOuterClass {
           if (!other.serverBuffList_.isEmpty()) {
             if (serverBuffList_.isEmpty()) {
               serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00008000);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureServerBuffListIsMutable();
               serverBuffList_.addAll(other.serverBuffList_);
@@ -1171,7 +1336,7 @@ public final class SceneTeamAvatarOuterClass {
               serverBuffListBuilder_.dispose();
               serverBuffListBuilder_ = null;
               serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00008000);
+              bitField0_ = (bitField0_ & ~0x00000001);
               serverBuffListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getServerBuffListFieldBuilder() : null;
@@ -1180,7 +1345,7 @@ public final class SceneTeamAvatarOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1195,130 +1360,17 @@ public final class SceneTeamAvatarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                playerUid_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getAbilityControlBlockFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 18
-              case 24: {
-                avatarGuid_ = input.readUInt64();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 24
-              case 34: {
-                input.readMessage(
-                    getAvatarAbilityInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 34
-              case 40: {
-                weaponEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 40
-              case 50: {
-                input.readMessage(
-                    getWeaponAbilityInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 50
-              case 58: {
-                emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(),
-                        extensionRegistry);
-                if (serverBuffListBuilder_ == null) {
-                  ensureServerBuffListIsMutable();
-                  serverBuffList_.add(m);
-                } else {
-                  serverBuffListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              case 64: {
-                isReconnect_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 64
-              case 72: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 72
-              case 80: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              case 90: {
-                input.readMessage(
-                    getSceneEntityInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 90
-              case 96: {
-                weaponGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 96
-              case 104: {
-                isPlayerCurAvatar_ = input.readBool();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 104
-              case 114: {
-                input.readMessage(
-                    getSceneAvatarInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 114
-              case 122: {
-                input.readMessage(
-                    getAvatarInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 122
-              case 5000: {
-                isOnScene_ = input.readBool();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 5000
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1331,7 +1383,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return Whether the sceneAvatarInfo field is set.
        */
       public boolean hasSceneAvatarInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return sceneAvatarInfoBuilder_ != null || sceneAvatarInfo_ != null;
       }
       /**
        * <code>.SceneAvatarInfo scene_avatar_info = 14;</code>
@@ -1353,11 +1405,11 @@ public final class SceneTeamAvatarOuterClass {
             throw new NullPointerException();
           }
           sceneAvatarInfo_ = value;
+          onChanged();
         } else {
           sceneAvatarInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -1367,11 +1419,11 @@ public final class SceneTeamAvatarOuterClass {
           emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder builderForValue) {
         if (sceneAvatarInfoBuilder_ == null) {
           sceneAvatarInfo_ = builderForValue.build();
+          onChanged();
         } else {
           sceneAvatarInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -1379,38 +1431,38 @@ public final class SceneTeamAvatarOuterClass {
        */
       public Builder mergeSceneAvatarInfo(emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo value) {
         if (sceneAvatarInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            sceneAvatarInfo_ != null &&
-            sceneAvatarInfo_ != emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance()) {
-            getSceneAvatarInfoBuilder().mergeFrom(value);
+          if (sceneAvatarInfo_ != null) {
+            sceneAvatarInfo_ =
+              emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.newBuilder(sceneAvatarInfo_).mergeFrom(value).buildPartial();
           } else {
             sceneAvatarInfo_ = value;
           }
+          onChanged();
         } else {
           sceneAvatarInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.SceneAvatarInfo scene_avatar_info = 14;</code>
        */
       public Builder clearSceneAvatarInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        sceneAvatarInfo_ = null;
-        if (sceneAvatarInfoBuilder_ != null) {
-          sceneAvatarInfoBuilder_.dispose();
+        if (sceneAvatarInfoBuilder_ == null) {
+          sceneAvatarInfo_ = null;
+          onChanged();
+        } else {
+          sceneAvatarInfo_ = null;
           sceneAvatarInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.SceneAvatarInfo scene_avatar_info = 14;</code>
        */
       public emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder getSceneAvatarInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getSceneAvatarInfoFieldBuilder().getBuilder();
       }
@@ -1450,7 +1502,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return Whether the avatarInfo field is set.
        */
       public boolean hasAvatarInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return avatarInfoBuilder_ != null || avatarInfo_ != null;
       }
       /**
        * <code>.AvatarInfo avatar_info = 15;</code>
@@ -1472,11 +1524,11 @@ public final class SceneTeamAvatarOuterClass {
             throw new NullPointerException();
           }
           avatarInfo_ = value;
+          onChanged();
         } else {
           avatarInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1486,11 +1538,11 @@ public final class SceneTeamAvatarOuterClass {
           emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder builderForValue) {
         if (avatarInfoBuilder_ == null) {
           avatarInfo_ = builderForValue.build();
+          onChanged();
         } else {
           avatarInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1498,38 +1550,38 @@ public final class SceneTeamAvatarOuterClass {
        */
       public Builder mergeAvatarInfo(emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo value) {
         if (avatarInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            avatarInfo_ != null &&
-            avatarInfo_ != emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.getDefaultInstance()) {
-            getAvatarInfoBuilder().mergeFrom(value);
+          if (avatarInfo_ != null) {
+            avatarInfo_ =
+              emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.newBuilder(avatarInfo_).mergeFrom(value).buildPartial();
           } else {
             avatarInfo_ = value;
           }
+          onChanged();
         } else {
           avatarInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AvatarInfo avatar_info = 15;</code>
        */
       public Builder clearAvatarInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        avatarInfo_ = null;
-        if (avatarInfoBuilder_ != null) {
-          avatarInfoBuilder_.dispose();
+        if (avatarInfoBuilder_ == null) {
+          avatarInfo_ = null;
+          onChanged();
+        } else {
+          avatarInfo_ = null;
           avatarInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AvatarInfo avatar_info = 15;</code>
        */
       public emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder getAvatarInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getAvatarInfoFieldBuilder().getBuilder();
       }
@@ -1578,7 +1630,6 @@ public final class SceneTeamAvatarOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1587,7 +1638,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -1601,7 +1652,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return Whether the weaponAbilityInfo field is set.
        */
       public boolean hasWeaponAbilityInfo() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return weaponAbilityInfoBuilder_ != null || weaponAbilityInfo_ != null;
       }
       /**
        * <code>.AbilitySyncStateInfo weapon_ability_info = 6;</code>
@@ -1623,11 +1674,11 @@ public final class SceneTeamAvatarOuterClass {
             throw new NullPointerException();
           }
           weaponAbilityInfo_ = value;
+          onChanged();
         } else {
           weaponAbilityInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1637,11 +1688,11 @@ public final class SceneTeamAvatarOuterClass {
           emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
         if (weaponAbilityInfoBuilder_ == null) {
           weaponAbilityInfo_ = builderForValue.build();
+          onChanged();
         } else {
           weaponAbilityInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1649,38 +1700,38 @@ public final class SceneTeamAvatarOuterClass {
        */
       public Builder mergeWeaponAbilityInfo(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
         if (weaponAbilityInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            weaponAbilityInfo_ != null &&
-            weaponAbilityInfo_ != emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance()) {
-            getWeaponAbilityInfoBuilder().mergeFrom(value);
+          if (weaponAbilityInfo_ != null) {
+            weaponAbilityInfo_ =
+              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(weaponAbilityInfo_).mergeFrom(value).buildPartial();
           } else {
             weaponAbilityInfo_ = value;
           }
+          onChanged();
         } else {
           weaponAbilityInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo weapon_ability_info = 6;</code>
        */
       public Builder clearWeaponAbilityInfo() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        weaponAbilityInfo_ = null;
-        if (weaponAbilityInfoBuilder_ != null) {
-          weaponAbilityInfoBuilder_.dispose();
+        if (weaponAbilityInfoBuilder_ == null) {
+          weaponAbilityInfo_ = null;
+          onChanged();
+        } else {
+          weaponAbilityInfo_ = null;
           weaponAbilityInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo weapon_ability_info = 6;</code>
        */
       public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getWeaponAbilityInfoBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getWeaponAbilityInfoFieldBuilder().getBuilder();
       }
@@ -1720,7 +1771,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return Whether the abilityControlBlock field is set.
        */
       public boolean hasAbilityControlBlock() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return abilityControlBlockBuilder_ != null || abilityControlBlock_ != null;
       }
       /**
        * <code>.AbilityControlBlock ability_control_block = 2;</code>
@@ -1742,11 +1793,11 @@ public final class SceneTeamAvatarOuterClass {
             throw new NullPointerException();
           }
           abilityControlBlock_ = value;
+          onChanged();
         } else {
           abilityControlBlockBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1756,11 +1807,11 @@ public final class SceneTeamAvatarOuterClass {
           emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder builderForValue) {
         if (abilityControlBlockBuilder_ == null) {
           abilityControlBlock_ = builderForValue.build();
+          onChanged();
         } else {
           abilityControlBlockBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1768,38 +1819,38 @@ public final class SceneTeamAvatarOuterClass {
        */
       public Builder mergeAbilityControlBlock(emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock value) {
         if (abilityControlBlockBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            abilityControlBlock_ != null &&
-            abilityControlBlock_ != emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.getDefaultInstance()) {
-            getAbilityControlBlockBuilder().mergeFrom(value);
+          if (abilityControlBlock_ != null) {
+            abilityControlBlock_ =
+              emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.newBuilder(abilityControlBlock_).mergeFrom(value).buildPartial();
           } else {
             abilityControlBlock_ = value;
           }
+          onChanged();
         } else {
           abilityControlBlockBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilityControlBlock ability_control_block = 2;</code>
        */
       public Builder clearAbilityControlBlock() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        abilityControlBlock_ = null;
-        if (abilityControlBlockBuilder_ != null) {
-          abilityControlBlockBuilder_.dispose();
+        if (abilityControlBlockBuilder_ == null) {
+          abilityControlBlock_ = null;
+          onChanged();
+        } else {
+          abilityControlBlock_ = null;
           abilityControlBlockBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilityControlBlock ability_control_block = 2;</code>
        */
       public emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder getAbilityControlBlockBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getAbilityControlBlockFieldBuilder().getBuilder();
       }
@@ -1848,7 +1899,6 @@ public final class SceneTeamAvatarOuterClass {
       public Builder setIsReconnect(boolean value) {
         
         isReconnect_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1857,7 +1907,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsReconnect() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isReconnect_ = false;
         onChanged();
         return this;
@@ -1871,7 +1921,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return Whether the avatarAbilityInfo field is set.
        */
       public boolean hasAvatarAbilityInfo() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return avatarAbilityInfoBuilder_ != null || avatarAbilityInfo_ != null;
       }
       /**
        * <code>.AbilitySyncStateInfo avatar_ability_info = 4;</code>
@@ -1893,11 +1943,11 @@ public final class SceneTeamAvatarOuterClass {
             throw new NullPointerException();
           }
           avatarAbilityInfo_ = value;
+          onChanged();
         } else {
           avatarAbilityInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1907,11 +1957,11 @@ public final class SceneTeamAvatarOuterClass {
           emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
         if (avatarAbilityInfoBuilder_ == null) {
           avatarAbilityInfo_ = builderForValue.build();
+          onChanged();
         } else {
           avatarAbilityInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1919,38 +1969,38 @@ public final class SceneTeamAvatarOuterClass {
        */
       public Builder mergeAvatarAbilityInfo(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
         if (avatarAbilityInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0) &&
-            avatarAbilityInfo_ != null &&
-            avatarAbilityInfo_ != emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance()) {
-            getAvatarAbilityInfoBuilder().mergeFrom(value);
+          if (avatarAbilityInfo_ != null) {
+            avatarAbilityInfo_ =
+              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(avatarAbilityInfo_).mergeFrom(value).buildPartial();
           } else {
             avatarAbilityInfo_ = value;
           }
+          onChanged();
         } else {
           avatarAbilityInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo avatar_ability_info = 4;</code>
        */
       public Builder clearAvatarAbilityInfo() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        avatarAbilityInfo_ = null;
-        if (avatarAbilityInfoBuilder_ != null) {
-          avatarAbilityInfoBuilder_.dispose();
+        if (avatarAbilityInfoBuilder_ == null) {
+          avatarAbilityInfo_ = null;
+          onChanged();
+        } else {
+          avatarAbilityInfo_ = null;
           avatarAbilityInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo avatar_ability_info = 4;</code>
        */
       public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getAvatarAbilityInfoBuilder() {
-        bitField0_ |= 0x00000040;
+        
         onChanged();
         return getAvatarAbilityInfoFieldBuilder().getBuilder();
       }
@@ -1999,7 +2049,6 @@ public final class SceneTeamAvatarOuterClass {
       public Builder setWeaponGuid(long value) {
         
         weaponGuid_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2008,7 +2057,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWeaponGuid() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         weaponGuid_ = 0L;
         onChanged();
         return this;
@@ -2031,7 +2080,6 @@ public final class SceneTeamAvatarOuterClass {
       public Builder setPlayerUid(int value) {
         
         playerUid_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2040,7 +2088,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerUid() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         playerUid_ = 0;
         onChanged();
         return this;
@@ -2054,7 +2102,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return Whether the sceneEntityInfo field is set.
        */
       public boolean hasSceneEntityInfo() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return sceneEntityInfoBuilder_ != null || sceneEntityInfo_ != null;
       }
       /**
        * <code>.SceneEntityInfo scene_entity_info = 11;</code>
@@ -2076,11 +2124,11 @@ public final class SceneTeamAvatarOuterClass {
             throw new NullPointerException();
           }
           sceneEntityInfo_ = value;
+          onChanged();
         } else {
           sceneEntityInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000200;
-        onChanged();
+
         return this;
       }
       /**
@@ -2090,11 +2138,11 @@ public final class SceneTeamAvatarOuterClass {
           emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder builderForValue) {
         if (sceneEntityInfoBuilder_ == null) {
           sceneEntityInfo_ = builderForValue.build();
+          onChanged();
         } else {
           sceneEntityInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000200;
-        onChanged();
+
         return this;
       }
       /**
@@ -2102,38 +2150,38 @@ public final class SceneTeamAvatarOuterClass {
        */
       public Builder mergeSceneEntityInfo(emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo value) {
         if (sceneEntityInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) != 0) &&
-            sceneEntityInfo_ != null &&
-            sceneEntityInfo_ != emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.getDefaultInstance()) {
-            getSceneEntityInfoBuilder().mergeFrom(value);
+          if (sceneEntityInfo_ != null) {
+            sceneEntityInfo_ =
+              emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.newBuilder(sceneEntityInfo_).mergeFrom(value).buildPartial();
           } else {
             sceneEntityInfo_ = value;
           }
+          onChanged();
         } else {
           sceneEntityInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000200;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.SceneEntityInfo scene_entity_info = 11;</code>
        */
       public Builder clearSceneEntityInfo() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        sceneEntityInfo_ = null;
-        if (sceneEntityInfoBuilder_ != null) {
-          sceneEntityInfoBuilder_.dispose();
+        if (sceneEntityInfoBuilder_ == null) {
+          sceneEntityInfo_ = null;
+          onChanged();
+        } else {
+          sceneEntityInfo_ = null;
           sceneEntityInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.SceneEntityInfo scene_entity_info = 11;</code>
        */
       public emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder getSceneEntityInfoBuilder() {
-        bitField0_ |= 0x00000200;
+        
         onChanged();
         return getSceneEntityInfoFieldBuilder().getBuilder();
       }
@@ -2182,7 +2230,6 @@ public final class SceneTeamAvatarOuterClass {
       public Builder setWeaponEntityId(int value) {
         
         weaponEntityId_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2191,7 +2238,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWeaponEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         weaponEntityId_ = 0;
         onChanged();
         return this;
@@ -2214,7 +2261,6 @@ public final class SceneTeamAvatarOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2223,7 +2269,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -2246,7 +2292,6 @@ public final class SceneTeamAvatarOuterClass {
       public Builder setIsOnScene(boolean value) {
         
         isOnScene_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2255,7 +2300,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOnScene() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         isOnScene_ = false;
         onChanged();
         return this;
@@ -2278,7 +2323,6 @@ public final class SceneTeamAvatarOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -2287,7 +2331,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -2310,7 +2354,6 @@ public final class SceneTeamAvatarOuterClass {
       public Builder setIsPlayerCurAvatar(boolean value) {
         
         isPlayerCurAvatar_ = value;
-        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -2319,7 +2362,7 @@ public final class SceneTeamAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsPlayerCurAvatar() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        
         isPlayerCurAvatar_ = false;
         onChanged();
         return this;
@@ -2328,9 +2371,9 @@ public final class SceneTeamAvatarOuterClass {
       private java.util.List<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_ =
         java.util.Collections.emptyList();
       private void ensureServerBuffListIsMutable() {
-        if (!((bitField0_ & 0x00008000) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           serverBuffList_ = new java.util.ArrayList<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff>(serverBuffList_);
-          bitField0_ |= 0x00008000;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -2480,7 +2523,7 @@ public final class SceneTeamAvatarOuterClass {
       public Builder clearServerBuffList() {
         if (serverBuffListBuilder_ == null) {
           serverBuffList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           serverBuffListBuilder_.clear();
@@ -2557,7 +2600,7 @@ public final class SceneTeamAvatarOuterClass {
           serverBuffListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff, emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>(
                   serverBuffList_,
-                  ((bitField0_ & 0x00008000) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           serverBuffList_ = null;
@@ -2597,18 +2640,7 @@ public final class SceneTeamAvatarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneTeamAvatar(input, extensionRegistry);
       }
     };
 

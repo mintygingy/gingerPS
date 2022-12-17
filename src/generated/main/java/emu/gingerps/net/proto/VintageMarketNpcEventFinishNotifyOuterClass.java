@@ -85,6 +85,78 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private VintageMarketNpcEventFinishNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              coinA_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              coinC_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unlockStrategyList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unlockStrategyList_.addInt(input.readUInt32());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                unlockStrategyList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unlockStrategyList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unlockStrategyList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.internal_static_VintageMarketNpcEventFinishNotify_descriptor;
@@ -99,7 +171,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
     }
 
     public static final int COIN_A_FIELD_NUMBER = 3;
-    private int coinA_ = 0;
+    private int coinA_;
     /**
      * <code>uint32 coin_a = 3;</code>
      * @return The coinA.
@@ -110,7 +182,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
     }
 
     public static final int COIN_C_FIELD_NUMBER = 9;
-    private int coinC_ = 0;
+    private int coinC_;
     /**
      * <code>uint32 coin_c = 9;</code>
      * @return The coinC.
@@ -121,7 +193,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
     }
 
     public static final int UNLOCK_STRATEGY_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unlockStrategyList_;
     /**
      * <code>repeated uint32 unlock_strategy_list = 12;</code>
@@ -177,7 +248,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
       for (int i = 0; i < unlockStrategyList_.size(); i++) {
         output.writeUInt32NoTag(unlockStrategyList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -208,7 +279,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
         }
         unlockStrategyListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -229,7 +300,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
           != other.getCoinC()) return false;
       if (!getUnlockStrategyListList()
           .equals(other.getUnlockStrategyListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -248,7 +319,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
         hash = (37 * hash) + UNLOCK_STRATEGY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getUnlockStrategyListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -375,21 +446,28 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         coinA_ = 0;
+
         coinC_ = 0;
+
         unlockStrategyList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -416,28 +494,16 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify buildPartial() {
         emu.gingerps.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify result = new emu.gingerps.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.coinA_ = coinA_;
+        result.coinC_ = coinC_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           unlockStrategyList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.unlockStrategyList_ = unlockStrategyList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.coinA_ = coinA_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.coinC_ = coinC_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -493,14 +559,14 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
         if (!other.unlockStrategyList_.isEmpty()) {
           if (unlockStrategyList_.isEmpty()) {
             unlockStrategyList_ = other.unlockStrategyList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureUnlockStrategyListIsMutable();
             unlockStrategyList_.addAll(other.unlockStrategyList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -515,56 +581,17 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                coinA_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 72: {
-                coinC_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 96: {
-                int v = input.readUInt32();
-                ensureUnlockStrategyListIsMutable();
-                unlockStrategyList_.addInt(v);
-                break;
-              } // case 96
-              case 98: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnlockStrategyListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unlockStrategyList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -586,7 +613,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
       public Builder setCoinA(int value) {
         
         coinA_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -595,7 +621,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoinA() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         coinA_ = 0;
         onChanged();
         return this;
@@ -618,7 +644,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
       public Builder setCoinC(int value) {
         
         coinC_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -627,7 +652,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoinC() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         coinC_ = 0;
         onChanged();
         return this;
@@ -635,10 +660,10 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList unlockStrategyList_ = emptyIntList();
       private void ensureUnlockStrategyListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           unlockStrategyList_ = mutableCopy(unlockStrategyList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 unlock_strategy_list = 12;</code>
@@ -646,7 +671,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnlockStrategyListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(unlockStrategyList_) : unlockStrategyList_;
       }
       /**
@@ -672,7 +697,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
        */
       public Builder setUnlockStrategyList(
           int index, int value) {
-        
         ensureUnlockStrategyListIsMutable();
         unlockStrategyList_.setInt(index, value);
         onChanged();
@@ -684,7 +708,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnlockStrategyList(int value) {
-        
         ensureUnlockStrategyListIsMutable();
         unlockStrategyList_.addInt(value);
         onChanged();
@@ -709,7 +732,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
        */
       public Builder clearUnlockStrategyList() {
         unlockStrategyList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -746,18 +769,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new VintageMarketNpcEventFinishNotify(input, extensionRegistry);
       }
     };
 

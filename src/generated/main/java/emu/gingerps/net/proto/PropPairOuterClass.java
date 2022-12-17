@@ -66,6 +66,61 @@ public final class PropPairOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PropPair(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              type_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              emu.gingerps.net.proto.PropValueOuterClass.PropValue.Builder subBuilder = null;
+              if (propValue_ != null) {
+                subBuilder = propValue_.toBuilder();
+              }
+              propValue_ = input.readMessage(emu.gingerps.net.proto.PropValueOuterClass.PropValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(propValue_);
+                propValue_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PropPairOuterClass.internal_static_PropPair_descriptor;
@@ -80,7 +135,7 @@ public final class PropPairOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_ = 0;
+    private int type_;
     /**
      * <code>uint32 type = 1;</code>
      * @return The type.
@@ -113,7 +168,7 @@ public final class PropPairOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.PropValueOuterClass.PropValueOrBuilder getPropValueOrBuilder() {
-      return propValue_ == null ? emu.gingerps.net.proto.PropValueOuterClass.PropValue.getDefaultInstance() : propValue_;
+      return getPropValue();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -136,7 +191,7 @@ public final class PropPairOuterClass {
       if (propValue_ != null) {
         output.writeMessage(2, getPropValue());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +208,7 @@ public final class PropPairOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPropValue());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +230,7 @@ public final class PropPairOuterClass {
         if (!getPropValue()
             .equals(other.getPropValue())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -192,7 +247,7 @@ public final class PropPairOuterClass {
         hash = (37 * hash) + PROP_VALUE_FIELD_NUMBER;
         hash = (53 * hash) + getPropValue().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -309,22 +364,28 @@ public final class PropPairOuterClass {
 
       // Construct using emu.gingerps.net.proto.PropPairOuterClass.PropPair.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         type_ = 0;
-        propValue_ = null;
-        if (propValueBuilder_ != null) {
-          propValueBuilder_.dispose();
+
+        if (propValueBuilder_ == null) {
+          propValue_ = null;
+        } else {
+          propValue_ = null;
           propValueBuilder_ = null;
         }
         return this;
@@ -353,21 +414,14 @@ public final class PropPairOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PropPairOuterClass.PropPair buildPartial() {
         emu.gingerps.net.proto.PropPairOuterClass.PropPair result = new emu.gingerps.net.proto.PropPairOuterClass.PropPair(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.type_ = type_;
+        if (propValueBuilder_ == null) {
+          result.propValue_ = propValue_;
+        } else {
+          result.propValue_ = propValueBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PropPairOuterClass.PropPair result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.type_ = type_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.propValue_ = propValueBuilder_ == null
-              ? propValue_
-              : propValueBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -420,7 +474,7 @@ public final class PropPairOuterClass {
         if (other.hasPropValue()) {
           mergePropValue(other.getPropValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -435,45 +489,19 @@ public final class PropPairOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PropPairOuterClass.PropPair parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                type_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getPropValueFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PropPairOuterClass.PropPair) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int type_ ;
       /**
@@ -492,7 +520,6 @@ public final class PropPairOuterClass {
       public Builder setType(int value) {
         
         type_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -501,7 +528,7 @@ public final class PropPairOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         type_ = 0;
         onChanged();
         return this;
@@ -515,7 +542,7 @@ public final class PropPairOuterClass {
        * @return Whether the propValue field is set.
        */
       public boolean hasPropValue() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return propValueBuilder_ != null || propValue_ != null;
       }
       /**
        * <code>.PropValue prop_value = 2;</code>
@@ -537,11 +564,11 @@ public final class PropPairOuterClass {
             throw new NullPointerException();
           }
           propValue_ = value;
+          onChanged();
         } else {
           propValueBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -551,11 +578,11 @@ public final class PropPairOuterClass {
           emu.gingerps.net.proto.PropValueOuterClass.PropValue.Builder builderForValue) {
         if (propValueBuilder_ == null) {
           propValue_ = builderForValue.build();
+          onChanged();
         } else {
           propValueBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -563,38 +590,38 @@ public final class PropPairOuterClass {
        */
       public Builder mergePropValue(emu.gingerps.net.proto.PropValueOuterClass.PropValue value) {
         if (propValueBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            propValue_ != null &&
-            propValue_ != emu.gingerps.net.proto.PropValueOuterClass.PropValue.getDefaultInstance()) {
-            getPropValueBuilder().mergeFrom(value);
+          if (propValue_ != null) {
+            propValue_ =
+              emu.gingerps.net.proto.PropValueOuterClass.PropValue.newBuilder(propValue_).mergeFrom(value).buildPartial();
           } else {
             propValue_ = value;
           }
+          onChanged();
         } else {
           propValueBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PropValue prop_value = 2;</code>
        */
       public Builder clearPropValue() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        propValue_ = null;
-        if (propValueBuilder_ != null) {
-          propValueBuilder_.dispose();
+        if (propValueBuilder_ == null) {
+          propValue_ = null;
+          onChanged();
+        } else {
+          propValue_ = null;
           propValueBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PropValue prop_value = 2;</code>
        */
       public emu.gingerps.net.proto.PropValueOuterClass.PropValue.Builder getPropValueBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getPropValueFieldBuilder().getBuilder();
       }
@@ -658,18 +685,7 @@ public final class PropPairOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PropPair(input, extensionRegistry);
       }
     };
 

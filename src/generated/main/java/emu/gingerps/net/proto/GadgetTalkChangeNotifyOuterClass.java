@@ -67,6 +67,53 @@ public final class GadgetTalkChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GadgetTalkChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 96: {
+
+              curGadgetTalkState_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              gadgetEntityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GadgetTalkChangeNotifyOuterClass.internal_static_GadgetTalkChangeNotify_descriptor;
@@ -81,7 +128,7 @@ public final class GadgetTalkChangeNotifyOuterClass {
     }
 
     public static final int CUR_GADGET_TALK_STATE_FIELD_NUMBER = 12;
-    private int curGadgetTalkState_ = 0;
+    private int curGadgetTalkState_;
     /**
      * <code>uint32 cur_gadget_talk_state = 12;</code>
      * @return The curGadgetTalkState.
@@ -92,7 +139,7 @@ public final class GadgetTalkChangeNotifyOuterClass {
     }
 
     public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 13;
-    private int gadgetEntityId_ = 0;
+    private int gadgetEntityId_;
     /**
      * <code>uint32 gadget_entity_id = 13;</code>
      * @return The gadgetEntityId.
@@ -122,7 +169,7 @@ public final class GadgetTalkChangeNotifyOuterClass {
       if (gadgetEntityId_ != 0) {
         output.writeUInt32(13, gadgetEntityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class GadgetTalkChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, gadgetEntityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class GadgetTalkChangeNotifyOuterClass {
           != other.getCurGadgetTalkState()) return false;
       if (getGadgetEntityId()
           != other.getGadgetEntityId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -173,7 +220,7 @@ public final class GadgetTalkChangeNotifyOuterClass {
       hash = (53 * hash) + getCurGadgetTalkState();
       hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGadgetEntityId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -300,20 +347,26 @@ public final class GadgetTalkChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GadgetTalkChangeNotifyOuterClass.GadgetTalkChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         curGadgetTalkState_ = 0;
+
         gadgetEntityId_ = 0;
+
         return this;
       }
 
@@ -340,19 +393,10 @@ public final class GadgetTalkChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GadgetTalkChangeNotifyOuterClass.GadgetTalkChangeNotify buildPartial() {
         emu.gingerps.net.proto.GadgetTalkChangeNotifyOuterClass.GadgetTalkChangeNotify result = new emu.gingerps.net.proto.GadgetTalkChangeNotifyOuterClass.GadgetTalkChangeNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.curGadgetTalkState_ = curGadgetTalkState_;
+        result.gadgetEntityId_ = gadgetEntityId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GadgetTalkChangeNotifyOuterClass.GadgetTalkChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.curGadgetTalkState_ = curGadgetTalkState_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.gadgetEntityId_ = gadgetEntityId_;
-        }
       }
 
       @java.lang.Override
@@ -405,7 +449,7 @@ public final class GadgetTalkChangeNotifyOuterClass {
         if (other.getGadgetEntityId() != 0) {
           setGadgetEntityId(other.getGadgetEntityId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,43 +464,19 @@ public final class GadgetTalkChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GadgetTalkChangeNotifyOuterClass.GadgetTalkChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 96: {
-                curGadgetTalkState_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              case 104: {
-                gadgetEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GadgetTalkChangeNotifyOuterClass.GadgetTalkChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int curGadgetTalkState_ ;
       /**
@@ -475,7 +495,6 @@ public final class GadgetTalkChangeNotifyOuterClass {
       public Builder setCurGadgetTalkState(int value) {
         
         curGadgetTalkState_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -484,7 +503,7 @@ public final class GadgetTalkChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurGadgetTalkState() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         curGadgetTalkState_ = 0;
         onChanged();
         return this;
@@ -507,7 +526,6 @@ public final class GadgetTalkChangeNotifyOuterClass {
       public Builder setGadgetEntityId(int value) {
         
         gadgetEntityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -516,7 +534,7 @@ public final class GadgetTalkChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         gadgetEntityId_ = 0;
         onChanged();
         return this;
@@ -554,18 +572,7 @@ public final class GadgetTalkChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GadgetTalkChangeNotify(input, extensionRegistry);
       }
     };
 

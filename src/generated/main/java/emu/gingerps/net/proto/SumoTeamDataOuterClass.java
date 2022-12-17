@@ -88,6 +88,80 @@ public final class SumoTeamDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SumoTeamData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                avatarInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              avatarInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                skillIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              skillIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                skillIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                skillIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          avatarInfoList_ = java.util.Collections.unmodifiableList(avatarInfoList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          skillIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SumoTeamDataOuterClass.internal_static_SumoTeamData_descriptor;
@@ -102,7 +176,6 @@ public final class SumoTeamDataOuterClass {
     }
 
     public static final int SKILL_ID_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList skillIdList_;
     /**
      * <code>repeated uint32 skill_id_list = 12;</code>
@@ -131,7 +204,6 @@ public final class SumoTeamDataOuterClass {
     private int skillIdListMemoizedSerializedSize = -1;
 
     public static final int AVATAR_INFO_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo> avatarInfoList_;
     /**
      * <code>repeated .SumoAvatarInfo avatar_info_list = 4;</code>
@@ -196,7 +268,7 @@ public final class SumoTeamDataOuterClass {
       for (int i = 0; i < skillIdList_.size(); i++) {
         output.writeUInt32NoTag(skillIdList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -223,7 +295,7 @@ public final class SumoTeamDataOuterClass {
         }
         skillIdListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -242,7 +314,7 @@ public final class SumoTeamDataOuterClass {
           .equals(other.getSkillIdListList())) return false;
       if (!getAvatarInfoListList()
           .equals(other.getAvatarInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -261,7 +333,7 @@ public final class SumoTeamDataOuterClass {
         hash = (37 * hash) + AVATAR_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -378,26 +450,31 @@ public final class SumoTeamDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAvatarInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         skillIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (avatarInfoListBuilder_ == null) {
           avatarInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          avatarInfoList_ = null;
           avatarInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -424,13 +501,7 @@ public final class SumoTeamDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData buildPartial() {
         emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData result = new emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           skillIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -445,10 +516,8 @@ public final class SumoTeamDataOuterClass {
         } else {
           result.avatarInfoList_ = avatarInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -531,7 +600,7 @@ public final class SumoTeamDataOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -546,59 +615,17 @@ public final class SumoTeamDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 34: {
-                emu.gingerps.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo.parser(),
-                        extensionRegistry);
-                if (avatarInfoListBuilder_ == null) {
-                  ensureAvatarInfoListIsMutable();
-                  avatarInfoList_.add(m);
-                } else {
-                  avatarInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 96: {
-                int v = input.readUInt32();
-                ensureSkillIdListIsMutable();
-                skillIdList_.addInt(v);
-                break;
-              } // case 96
-              case 98: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureSkillIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  skillIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -608,7 +635,7 @@ public final class SumoTeamDataOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           skillIdList_ = mutableCopy(skillIdList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 skill_id_list = 12;</code>
@@ -642,7 +669,6 @@ public final class SumoTeamDataOuterClass {
        */
       public Builder setSkillIdList(
           int index, int value) {
-        
         ensureSkillIdListIsMutable();
         skillIdList_.setInt(index, value);
         onChanged();
@@ -654,7 +680,6 @@ public final class SumoTeamDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSkillIdList(int value) {
-        
         ensureSkillIdListIsMutable();
         skillIdList_.addInt(value);
         onChanged();
@@ -956,18 +981,7 @@ public final class SumoTeamDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SumoTeamData(input, extensionRegistry);
       }
     };
 

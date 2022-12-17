@@ -82,6 +82,66 @@ public final class HomeGetGroupRecordRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeGetGroupRecordRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 50: {
+              emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.Builder subBuilder = null;
+              if (groupRecord_ != null) {
+                subBuilder = groupRecord_.toBuilder();
+              }
+              groupRecord_ = input.readMessage(emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(groupRecord_);
+                groupRecord_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 56: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 120: {
+
+              recordType_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeGetGroupRecordRspOuterClass.internal_static_HomeGetGroupRecordRsp_descriptor;
@@ -118,11 +178,11 @@ public final class HomeGetGroupRecordRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecordOrBuilder getGroupRecordOrBuilder() {
-      return groupRecord_ == null ? emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.getDefaultInstance() : groupRecord_;
+      return getGroupRecord();
     }
 
     public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
@@ -133,7 +193,7 @@ public final class HomeGetGroupRecordRspOuterClass {
     }
 
     public static final int RECORD_TYPE_FIELD_NUMBER = 15;
-    private int recordType_ = 0;
+    private int recordType_;
     /**
      * <code>uint32 record_type = 15;</code>
      * @return The recordType.
@@ -166,7 +226,7 @@ public final class HomeGetGroupRecordRspOuterClass {
       if (recordType_ != 0) {
         output.writeUInt32(15, recordType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +247,7 @@ public final class HomeGetGroupRecordRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, recordType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -211,7 +271,7 @@ public final class HomeGetGroupRecordRspOuterClass {
           != other.getRetcode()) return false;
       if (getRecordType()
           != other.getRecordType()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -230,7 +290,7 @@ public final class HomeGetGroupRecordRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + RECORD_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getRecordType();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -357,25 +417,32 @@ public final class HomeGetGroupRecordRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        groupRecord_ = null;
-        if (groupRecordBuilder_ != null) {
-          groupRecordBuilder_.dispose();
+        if (groupRecordBuilder_ == null) {
+          groupRecord_ = null;
+        } else {
+          groupRecord_ = null;
           groupRecordBuilder_ = null;
         }
         retcode_ = 0;
+
         recordType_ = 0;
+
         return this;
       }
 
@@ -402,24 +469,15 @@ public final class HomeGetGroupRecordRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp buildPartial() {
         emu.gingerps.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp result = new emu.gingerps.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (groupRecordBuilder_ == null) {
+          result.groupRecord_ = groupRecord_;
+        } else {
+          result.groupRecord_ = groupRecordBuilder_.build();
+        }
+        result.retcode_ = retcode_;
+        result.recordType_ = recordType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.groupRecord_ = groupRecordBuilder_ == null
-              ? groupRecord_
-              : groupRecordBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.recordType_ = recordType_;
-        }
       }
 
       @java.lang.Override
@@ -475,7 +533,7 @@ public final class HomeGetGroupRecordRspOuterClass {
         if (other.getRecordType() != 0) {
           setRecordType(other.getRecordType());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,50 +548,19 @@ public final class HomeGetGroupRecordRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 50: {
-                input.readMessage(
-                    getGroupRecordFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 50
-              case 56: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 120: {
-                recordType_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord groupRecord_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -543,7 +570,7 @@ public final class HomeGetGroupRecordRspOuterClass {
        * @return Whether the groupRecord field is set.
        */
       public boolean hasGroupRecord() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return groupRecordBuilder_ != null || groupRecord_ != null;
       }
       /**
        * <code>.HomeGroupRecord group_record = 6;</code>
@@ -565,11 +592,11 @@ public final class HomeGetGroupRecordRspOuterClass {
             throw new NullPointerException();
           }
           groupRecord_ = value;
+          onChanged();
         } else {
           groupRecordBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -579,11 +606,11 @@ public final class HomeGetGroupRecordRspOuterClass {
           emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.Builder builderForValue) {
         if (groupRecordBuilder_ == null) {
           groupRecord_ = builderForValue.build();
+          onChanged();
         } else {
           groupRecordBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -591,38 +618,38 @@ public final class HomeGetGroupRecordRspOuterClass {
        */
       public Builder mergeGroupRecord(emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord value) {
         if (groupRecordBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            groupRecord_ != null &&
-            groupRecord_ != emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.getDefaultInstance()) {
-            getGroupRecordBuilder().mergeFrom(value);
+          if (groupRecord_ != null) {
+            groupRecord_ =
+              emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.newBuilder(groupRecord_).mergeFrom(value).buildPartial();
           } else {
             groupRecord_ = value;
           }
+          onChanged();
         } else {
           groupRecordBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeGroupRecord group_record = 6;</code>
        */
       public Builder clearGroupRecord() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        groupRecord_ = null;
-        if (groupRecordBuilder_ != null) {
-          groupRecordBuilder_.dispose();
+        if (groupRecordBuilder_ == null) {
+          groupRecord_ = null;
+          onChanged();
+        } else {
+          groupRecord_ = null;
           groupRecordBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeGroupRecord group_record = 6;</code>
        */
       public emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.Builder getGroupRecordBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getGroupRecordFieldBuilder().getBuilder();
       }
@@ -671,7 +698,6 @@ public final class HomeGetGroupRecordRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -680,7 +706,7 @@ public final class HomeGetGroupRecordRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -703,7 +729,6 @@ public final class HomeGetGroupRecordRspOuterClass {
       public Builder setRecordType(int value) {
         
         recordType_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -712,7 +737,7 @@ public final class HomeGetGroupRecordRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRecordType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         recordType_ = 0;
         onChanged();
         return this;
@@ -750,18 +775,7 @@ public final class HomeGetGroupRecordRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeGetGroupRecordRsp(input, extensionRegistry);
       }
     };
 

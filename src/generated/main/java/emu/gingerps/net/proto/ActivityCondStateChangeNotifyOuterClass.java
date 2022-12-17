@@ -146,6 +146,138 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ActivityCondStateChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300HKKNIHNBHAE_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unk3300HKKNIHNBHAE_.addInt(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300HKKNIHNBHAE_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300HKKNIHNBHAE_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300BGNIBLKCPCA_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unk3300BGNIBLKCPCA_.addInt(input.readUInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300BGNIBLKCPCA_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300BGNIBLKCPCA_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 40: {
+
+              activityId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                activatedSaleIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              activatedSaleIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                activatedSaleIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                activatedSaleIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                disableTransferPointInteractionList_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              disableTransferPointInteractionList_.add(
+                  input.readMessage(emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unk3300HKKNIHNBHAE_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          unk3300BGNIBLKCPCA_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          activatedSaleIdList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          disableTransferPointInteractionList_ = java.util.Collections.unmodifiableList(disableTransferPointInteractionList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityCondStateChangeNotifyOuterClass.internal_static_ActivityCondStateChangeNotify_descriptor;
@@ -160,7 +292,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     }
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 5;
-    private int activityId_ = 0;
+    private int activityId_;
     /**
      * <code>uint32 activity_id = 5;</code>
      * @return The activityId.
@@ -171,7 +303,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 14;
-    private int scheduleId_ = 0;
+    private int scheduleId_;
     /**
      * <code>uint32 schedule_id = 14;</code>
      * @return The scheduleId.
@@ -182,7 +314,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     }
 
     public static final int UNK3300_HKKNIHNBHAE_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300HKKNIHNBHAE_;
     /**
      * <code>repeated uint32 Unk3300_HKKNIHNBHAE = 1;</code>
@@ -211,7 +342,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     private int unk3300HKKNIHNBHAEMemoizedSerializedSize = -1;
 
     public static final int UNK3300_BGNIBLKCPCA_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300BGNIBLKCPCA_;
     /**
      * <code>repeated uint32 Unk3300_BGNIBLKCPCA = 4;</code>
@@ -240,7 +370,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     private int unk3300BGNIBLKCPCAMemoizedSerializedSize = -1;
 
     public static final int ACTIVATED_SALE_ID_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList activatedSaleIdList_;
     /**
      * <code>repeated uint32 activated_sale_id_list = 8;</code>
@@ -269,7 +398,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     private int activatedSaleIdListMemoizedSerializedSize = -1;
 
     public static final int DISABLE_TRANSFER_POINT_INTERACTION_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> disableTransferPointInteractionList_;
     /**
      * <code>repeated .Uint32Pair disable_transfer_point_interaction_list = 11;</code>
@@ -354,7 +482,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       if (scheduleId_ != 0) {
         output.writeUInt32(14, scheduleId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -417,7 +545,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, scheduleId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -444,7 +572,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
           .equals(other.getActivatedSaleIdListList())) return false;
       if (!getDisableTransferPointInteractionListList()
           .equals(other.getDisableTransferPointInteractionListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -475,7 +603,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         hash = (37 * hash) + DISABLE_TRANSFER_POINT_INTERACTION_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDisableTransferPointInteractionListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -602,30 +730,39 @@ public final class ActivityCondStateChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDisableTransferPointInteractionListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         activityId_ = 0;
+
         scheduleId_ = 0;
+
         unk3300HKKNIHNBHAE_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300BGNIBLKCPCA_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         activatedSaleIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (disableTransferPointInteractionListBuilder_ == null) {
           disableTransferPointInteractionList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          disableTransferPointInteractionList_ = null;
           disableTransferPointInteractionListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -652,47 +789,35 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify buildPartial() {
         emu.gingerps.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify result = new emu.gingerps.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.activityId_ = activityId_;
+        result.scheduleId_ = scheduleId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           unk3300HKKNIHNBHAE_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.unk3300HKKNIHNBHAE_ = unk3300HKKNIHNBHAE_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           unk3300BGNIBLKCPCA_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.unk3300BGNIBLKCPCA_ = unk3300BGNIBLKCPCA_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           activatedSaleIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.activatedSaleIdList_ = activatedSaleIdList_;
         if (disableTransferPointInteractionListBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             disableTransferPointInteractionList_ = java.util.Collections.unmodifiableList(disableTransferPointInteractionList_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.disableTransferPointInteractionList_ = disableTransferPointInteractionList_;
         } else {
           result.disableTransferPointInteractionList_ = disableTransferPointInteractionListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.activityId_ = activityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.scheduleId_ = scheduleId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -748,7 +873,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         if (!other.unk3300HKKNIHNBHAE_.isEmpty()) {
           if (unk3300HKKNIHNBHAE_.isEmpty()) {
             unk3300HKKNIHNBHAE_ = other.unk3300HKKNIHNBHAE_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureUnk3300HKKNIHNBHAEIsMutable();
             unk3300HKKNIHNBHAE_.addAll(other.unk3300HKKNIHNBHAE_);
@@ -758,7 +883,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         if (!other.unk3300BGNIBLKCPCA_.isEmpty()) {
           if (unk3300BGNIBLKCPCA_.isEmpty()) {
             unk3300BGNIBLKCPCA_ = other.unk3300BGNIBLKCPCA_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureUnk3300BGNIBLKCPCAIsMutable();
             unk3300BGNIBLKCPCA_.addAll(other.unk3300BGNIBLKCPCA_);
@@ -768,7 +893,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         if (!other.activatedSaleIdList_.isEmpty()) {
           if (activatedSaleIdList_.isEmpty()) {
             activatedSaleIdList_ = other.activatedSaleIdList_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureActivatedSaleIdListIsMutable();
             activatedSaleIdList_.addAll(other.activatedSaleIdList_);
@@ -779,7 +904,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
           if (!other.disableTransferPointInteractionList_.isEmpty()) {
             if (disableTransferPointInteractionList_.isEmpty()) {
               disableTransferPointInteractionList_ = other.disableTransferPointInteractionList_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureDisableTransferPointInteractionListIsMutable();
               disableTransferPointInteractionList_.addAll(other.disableTransferPointInteractionList_);
@@ -792,7 +917,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
               disableTransferPointInteractionListBuilder_.dispose();
               disableTransferPointInteractionListBuilder_ = null;
               disableTransferPointInteractionList_ = other.disableTransferPointInteractionList_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000008);
               disableTransferPointInteractionListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDisableTransferPointInteractionListFieldBuilder() : null;
@@ -801,7 +926,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -816,101 +941,17 @@ public final class ActivityCondStateChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int v = input.readUInt32();
-                ensureUnk3300HKKNIHNBHAEIsMutable();
-                unk3300HKKNIHNBHAE_.addInt(v);
-                break;
-              } // case 8
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300HKKNIHNBHAEIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300HKKNIHNBHAE_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 10
-              case 32: {
-                int v = input.readUInt32();
-                ensureUnk3300BGNIBLKCPCAIsMutable();
-                unk3300BGNIBLKCPCA_.addInt(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300BGNIBLKCPCAIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300BGNIBLKCPCA_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              case 40: {
-                activityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              case 64: {
-                int v = input.readUInt32();
-                ensureActivatedSaleIdListIsMutable();
-                activatedSaleIdList_.addInt(v);
-                break;
-              } // case 64
-              case 66: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureActivatedSaleIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  activatedSaleIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 66
-              case 90: {
-                emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(),
-                        extensionRegistry);
-                if (disableTransferPointInteractionListBuilder_ == null) {
-                  ensureDisableTransferPointInteractionListIsMutable();
-                  disableTransferPointInteractionList_.add(m);
-                } else {
-                  disableTransferPointInteractionListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              case 112: {
-                scheduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -932,7 +973,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       public Builder setActivityId(int value) {
         
         activityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -941,7 +981,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         activityId_ = 0;
         onChanged();
         return this;
@@ -964,7 +1004,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -973,7 +1012,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -981,10 +1020,10 @@ public final class ActivityCondStateChangeNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300HKKNIHNBHAE_ = emptyIntList();
       private void ensureUnk3300HKKNIHNBHAEIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           unk3300HKKNIHNBHAE_ = mutableCopy(unk3300HKKNIHNBHAE_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_HKKNIHNBHAE = 1;</code>
@@ -992,7 +1031,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300HKKNIHNBHAEList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300HKKNIHNBHAE_) : unk3300HKKNIHNBHAE_;
       }
       /**
@@ -1018,7 +1057,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        */
       public Builder setUnk3300HKKNIHNBHAE(
           int index, int value) {
-        
         ensureUnk3300HKKNIHNBHAEIsMutable();
         unk3300HKKNIHNBHAE_.setInt(index, value);
         onChanged();
@@ -1030,7 +1068,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300HKKNIHNBHAE(int value) {
-        
         ensureUnk3300HKKNIHNBHAEIsMutable();
         unk3300HKKNIHNBHAE_.addInt(value);
         onChanged();
@@ -1055,17 +1092,17 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        */
       public Builder clearUnk3300HKKNIHNBHAE() {
         unk3300HKKNIHNBHAE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList unk3300BGNIBLKCPCA_ = emptyIntList();
       private void ensureUnk3300BGNIBLKCPCAIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           unk3300BGNIBLKCPCA_ = mutableCopy(unk3300BGNIBLKCPCA_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_BGNIBLKCPCA = 4;</code>
@@ -1073,7 +1110,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300BGNIBLKCPCAList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300BGNIBLKCPCA_) : unk3300BGNIBLKCPCA_;
       }
       /**
@@ -1099,7 +1136,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        */
       public Builder setUnk3300BGNIBLKCPCA(
           int index, int value) {
-        
         ensureUnk3300BGNIBLKCPCAIsMutable();
         unk3300BGNIBLKCPCA_.setInt(index, value);
         onChanged();
@@ -1111,7 +1147,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300BGNIBLKCPCA(int value) {
-        
         ensureUnk3300BGNIBLKCPCAIsMutable();
         unk3300BGNIBLKCPCA_.addInt(value);
         onChanged();
@@ -1136,17 +1171,17 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        */
       public Builder clearUnk3300BGNIBLKCPCA() {
         unk3300BGNIBLKCPCA_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList activatedSaleIdList_ = emptyIntList();
       private void ensureActivatedSaleIdListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           activatedSaleIdList_ = mutableCopy(activatedSaleIdList_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated uint32 activated_sale_id_list = 8;</code>
@@ -1154,7 +1189,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getActivatedSaleIdListList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(activatedSaleIdList_) : activatedSaleIdList_;
       }
       /**
@@ -1180,7 +1215,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        */
       public Builder setActivatedSaleIdList(
           int index, int value) {
-        
         ensureActivatedSaleIdListIsMutable();
         activatedSaleIdList_.setInt(index, value);
         onChanged();
@@ -1192,7 +1226,6 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addActivatedSaleIdList(int value) {
-        
         ensureActivatedSaleIdListIsMutable();
         activatedSaleIdList_.addInt(value);
         onChanged();
@@ -1217,7 +1250,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
        */
       public Builder clearActivatedSaleIdList() {
         activatedSaleIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1225,9 +1258,9 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> disableTransferPointInteractionList_ =
         java.util.Collections.emptyList();
       private void ensureDisableTransferPointInteractionListIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           disableTransferPointInteractionList_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>(disableTransferPointInteractionList_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1377,7 +1410,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       public Builder clearDisableTransferPointInteractionList() {
         if (disableTransferPointInteractionListBuilder_ == null) {
           disableTransferPointInteractionList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           disableTransferPointInteractionListBuilder_.clear();
@@ -1454,7 +1487,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
           disableTransferPointInteractionListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
                   disableTransferPointInteractionList_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           disableTransferPointInteractionList_ = null;
@@ -1494,18 +1527,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ActivityCondStateChangeNotify(input, extensionRegistry);
       }
     };
 

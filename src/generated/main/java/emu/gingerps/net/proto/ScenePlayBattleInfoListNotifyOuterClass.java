@@ -80,6 +80,56 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ScenePlayBattleInfoListNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                battleInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              battleInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          battleInfoList_ = java.util.Collections.unmodifiableList(battleInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayBattleInfoListNotifyOuterClass.internal_static_ScenePlayBattleInfoListNotify_descriptor;
@@ -94,7 +144,6 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
     }
 
     public static final int BATTLE_INFO_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo> battleInfoList_;
     /**
      * <code>repeated .ScenePlayBattleInfo battle_info_list = 14;</code>
@@ -151,7 +200,7 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
       for (int i = 0; i < battleInfoList_.size(); i++) {
         output.writeMessage(14, battleInfoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -164,7 +213,7 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, battleInfoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -181,7 +230,7 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
 
       if (!getBattleInfoListList()
           .equals(other.getBattleInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -196,7 +245,7 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
         hash = (37 * hash) + BATTLE_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBattleInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -323,25 +372,29 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayBattleInfoListNotifyOuterClass.ScenePlayBattleInfoListNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBattleInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (battleInfoListBuilder_ == null) {
           battleInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          battleInfoList_ = null;
           battleInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -368,13 +421,7 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayBattleInfoListNotifyOuterClass.ScenePlayBattleInfoListNotify buildPartial() {
         emu.gingerps.net.proto.ScenePlayBattleInfoListNotifyOuterClass.ScenePlayBattleInfoListNotify result = new emu.gingerps.net.proto.ScenePlayBattleInfoListNotifyOuterClass.ScenePlayBattleInfoListNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ScenePlayBattleInfoListNotifyOuterClass.ScenePlayBattleInfoListNotify result) {
+        int from_bitField0_ = bitField0_;
         if (battleInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             battleInfoList_ = java.util.Collections.unmodifiableList(battleInfoList_);
@@ -384,10 +431,8 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
         } else {
           result.battleInfoList_ = battleInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ScenePlayBattleInfoListNotifyOuterClass.ScenePlayBattleInfoListNotify result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -460,7 +505,7 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -475,43 +520,17 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ScenePlayBattleInfoListNotifyOuterClass.ScenePlayBattleInfoListNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 114: {
-                emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo.parser(),
-                        extensionRegistry);
-                if (battleInfoListBuilder_ == null) {
-                  ensureBattleInfoListIsMutable();
-                  battleInfoList_.add(m);
-                } else {
-                  battleInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ScenePlayBattleInfoListNotifyOuterClass.ScenePlayBattleInfoListNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -788,18 +807,7 @@ public final class ScenePlayBattleInfoListNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ScenePlayBattleInfoListNotify(input, extensionRegistry);
       }
     };
 

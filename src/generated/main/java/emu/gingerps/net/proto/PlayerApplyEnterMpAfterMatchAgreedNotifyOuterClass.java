@@ -88,6 +88,67 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerApplyEnterMpAfterMatchAgreedNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              matchserverId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              matchType_ = rawValue;
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = null;
+              if (srcPlayerInfo_ != null) {
+                subBuilder = srcPlayerInfo_.toBuilder();
+              }
+              srcPlayerInfo_ = input.readMessage(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(srcPlayerInfo_);
+                srcPlayerInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass.internal_static_PlayerApplyEnterMpAfterMatchAgreedNotify_descriptor;
@@ -102,7 +163,7 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
     }
 
     public static final int MATCHSERVER_ID_FIELD_NUMBER = 3;
-    private int matchserverId_ = 0;
+    private int matchserverId_;
     /**
      * <code>uint32 matchserver_id = 3;</code>
      * @return The matchserverId.
@@ -135,11 +196,11 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getSrcPlayerInfoOrBuilder() {
-      return srcPlayerInfo_ == null ? emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : srcPlayerInfo_;
+      return getSrcPlayerInfo();
     }
 
     public static final int MATCH_TYPE_FIELD_NUMBER = 5;
-    private int matchType_ = 0;
+    private int matchType_;
     /**
      * <code>.MatchType match_type = 5;</code>
      * @return The enum numeric value on the wire for matchType.
@@ -152,7 +213,8 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
      * @return The matchType.
      */
     @java.lang.Override public emu.gingerps.net.proto.MatchTypeOuterClass.MatchType getMatchType() {
-      emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.forNumber(matchType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.valueOf(matchType_);
       return result == null ? emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
     }
 
@@ -179,7 +241,7 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
       if (srcPlayerInfo_ != null) {
         output.writeMessage(7, getSrcPlayerInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -200,7 +262,7 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getSrcPlayerInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -223,7 +285,7 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
             .equals(other.getSrcPlayerInfo())) return false;
       }
       if (matchType_ != other.matchType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -242,7 +304,7 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
       }
       hash = (37 * hash) + MATCH_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + matchType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -369,25 +431,32 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass.PlayerApplyEnterMpAfterMatchAgreedNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         matchserverId_ = 0;
-        srcPlayerInfo_ = null;
-        if (srcPlayerInfoBuilder_ != null) {
-          srcPlayerInfoBuilder_.dispose();
+
+        if (srcPlayerInfoBuilder_ == null) {
+          srcPlayerInfo_ = null;
+        } else {
+          srcPlayerInfo_ = null;
           srcPlayerInfoBuilder_ = null;
         }
         matchType_ = 0;
+
         return this;
       }
 
@@ -414,24 +483,15 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass.PlayerApplyEnterMpAfterMatchAgreedNotify buildPartial() {
         emu.gingerps.net.proto.PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass.PlayerApplyEnterMpAfterMatchAgreedNotify result = new emu.gingerps.net.proto.PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass.PlayerApplyEnterMpAfterMatchAgreedNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.matchserverId_ = matchserverId_;
+        if (srcPlayerInfoBuilder_ == null) {
+          result.srcPlayerInfo_ = srcPlayerInfo_;
+        } else {
+          result.srcPlayerInfo_ = srcPlayerInfoBuilder_.build();
+        }
+        result.matchType_ = matchType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass.PlayerApplyEnterMpAfterMatchAgreedNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.matchserverId_ = matchserverId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.srcPlayerInfo_ = srcPlayerInfoBuilder_ == null
-              ? srcPlayerInfo_
-              : srcPlayerInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.matchType_ = matchType_;
-        }
       }
 
       @java.lang.Override
@@ -487,7 +547,7 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
         if (other.matchType_ != 0) {
           setMatchTypeValue(other.getMatchTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -502,50 +562,19 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass.PlayerApplyEnterMpAfterMatchAgreedNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                matchserverId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 40: {
-                matchType_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 58: {
-                input.readMessage(
-                    getSrcPlayerInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass.PlayerApplyEnterMpAfterMatchAgreedNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int matchserverId_ ;
       /**
@@ -564,7 +593,6 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
       public Builder setMatchserverId(int value) {
         
         matchserverId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -573,7 +601,7 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMatchserverId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         matchserverId_ = 0;
         onChanged();
         return this;
@@ -587,7 +615,7 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
        * @return Whether the srcPlayerInfo field is set.
        */
       public boolean hasSrcPlayerInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return srcPlayerInfoBuilder_ != null || srcPlayerInfo_ != null;
       }
       /**
        * <code>.OnlinePlayerInfo src_player_info = 7;</code>
@@ -609,11 +637,11 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
             throw new NullPointerException();
           }
           srcPlayerInfo_ = value;
+          onChanged();
         } else {
           srcPlayerInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -623,11 +651,11 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
           emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder builderForValue) {
         if (srcPlayerInfoBuilder_ == null) {
           srcPlayerInfo_ = builderForValue.build();
+          onChanged();
         } else {
           srcPlayerInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -635,38 +663,38 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
        */
       public Builder mergeSrcPlayerInfo(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
         if (srcPlayerInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            srcPlayerInfo_ != null &&
-            srcPlayerInfo_ != emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance()) {
-            getSrcPlayerInfoBuilder().mergeFrom(value);
+          if (srcPlayerInfo_ != null) {
+            srcPlayerInfo_ =
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.newBuilder(srcPlayerInfo_).mergeFrom(value).buildPartial();
           } else {
             srcPlayerInfo_ = value;
           }
+          onChanged();
         } else {
           srcPlayerInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo src_player_info = 7;</code>
        */
       public Builder clearSrcPlayerInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        srcPlayerInfo_ = null;
-        if (srcPlayerInfoBuilder_ != null) {
-          srcPlayerInfoBuilder_.dispose();
+        if (srcPlayerInfoBuilder_ == null) {
+          srcPlayerInfo_ = null;
+          onChanged();
+        } else {
+          srcPlayerInfo_ = null;
           srcPlayerInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo src_player_info = 7;</code>
        */
       public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder getSrcPlayerInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getSrcPlayerInfoFieldBuilder().getBuilder();
       }
@@ -712,8 +740,8 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMatchTypeValue(int value) {
+        
         matchType_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -723,7 +751,8 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.MatchTypeOuterClass.MatchType getMatchType() {
-        emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.forNumber(matchType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.valueOf(matchType_);
         return result == null ? emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
       }
       /**
@@ -735,7 +764,7 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         matchType_ = value.getNumber();
         onChanged();
         return this;
@@ -745,7 +774,7 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMatchType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         matchType_ = 0;
         onChanged();
         return this;
@@ -783,18 +812,7 @@ public final class PlayerApplyEnterMpAfterMatchAgreedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerApplyEnterMpAfterMatchAgreedNotify(input, extensionRegistry);
       }
     };
 

@@ -69,6 +69,73 @@ public final class GCGReplayControllerDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGReplayControllerData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cardIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                cardIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                cardIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cardIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGReplayControllerDataOuterClass.internal_static_GCGReplayControllerData_descriptor;
@@ -83,7 +150,6 @@ public final class GCGReplayControllerDataOuterClass {
     }
 
     public static final int CARD_ID_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList cardIdList_;
     /**
      * <code>repeated uint32 card_id_list = 12;</code>
@@ -112,7 +178,7 @@ public final class GCGReplayControllerDataOuterClass {
     private int cardIdListMemoizedSerializedSize = -1;
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 6;
-    private int controllerId_ = 0;
+    private int controllerId_;
     /**
      * <code>uint32 controller_id = 6;</code>
      * @return The controllerId.
@@ -147,7 +213,7 @@ public final class GCGReplayControllerDataOuterClass {
       for (int i = 0; i < cardIdList_.size(); i++) {
         output.writeUInt32NoTag(cardIdList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -174,7 +240,7 @@ public final class GCGReplayControllerDataOuterClass {
         }
         cardIdListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -193,7 +259,7 @@ public final class GCGReplayControllerDataOuterClass {
           .equals(other.getCardIdListList())) return false;
       if (getControllerId()
           != other.getControllerId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -210,7 +276,7 @@ public final class GCGReplayControllerDataOuterClass {
       }
       hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getControllerId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,20 +393,26 @@ public final class GCGReplayControllerDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGReplayControllerDataOuterClass.GCGReplayControllerData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         cardIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         controllerId_ = 0;
+
         return this;
       }
 
@@ -367,25 +439,15 @@ public final class GCGReplayControllerDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGReplayControllerDataOuterClass.GCGReplayControllerData buildPartial() {
         emu.gingerps.net.proto.GCGReplayControllerDataOuterClass.GCGReplayControllerData result = new emu.gingerps.net.proto.GCGReplayControllerDataOuterClass.GCGReplayControllerData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGReplayControllerDataOuterClass.GCGReplayControllerData result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           cardIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.cardIdList_ = cardIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGReplayControllerDataOuterClass.GCGReplayControllerData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.controllerId_ = controllerId_;
-        }
+        result.controllerId_ = controllerId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -445,7 +507,7 @@ public final class GCGReplayControllerDataOuterClass {
         if (other.getControllerId() != 0) {
           setControllerId(other.getControllerId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -460,51 +522,17 @@ public final class GCGReplayControllerDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGReplayControllerDataOuterClass.GCGReplayControllerData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                controllerId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 96: {
-                int v = input.readUInt32();
-                ensureCardIdListIsMutable();
-                cardIdList_.addInt(v);
-                break;
-              } // case 96
-              case 98: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureCardIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  cardIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGReplayControllerDataOuterClass.GCGReplayControllerData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -514,7 +542,7 @@ public final class GCGReplayControllerDataOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           cardIdList_ = mutableCopy(cardIdList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 card_id_list = 12;</code>
@@ -548,7 +576,6 @@ public final class GCGReplayControllerDataOuterClass {
        */
       public Builder setCardIdList(
           int index, int value) {
-        
         ensureCardIdListIsMutable();
         cardIdList_.setInt(index, value);
         onChanged();
@@ -560,7 +587,6 @@ public final class GCGReplayControllerDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCardIdList(int value) {
-        
         ensureCardIdListIsMutable();
         cardIdList_.addInt(value);
         onChanged();
@@ -607,7 +633,6 @@ public final class GCGReplayControllerDataOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -616,7 +641,7 @@ public final class GCGReplayControllerDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         controllerId_ = 0;
         onChanged();
         return this;
@@ -654,18 +679,7 @@ public final class GCGReplayControllerDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGReplayControllerData(input, extensionRegistry);
       }
     };
 

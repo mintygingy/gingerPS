@@ -81,6 +81,56 @@ public final class CombatInvocationsNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CombatInvocationsNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                invokeList_ = new java.util.ArrayList<emu.gingerps.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              invokeList_.add(
+                  input.readMessage(emu.gingerps.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          invokeList_ = java.util.Collections.unmodifiableList(invokeList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CombatInvocationsNotifyOuterClass.internal_static_CombatInvocationsNotify_descriptor;
@@ -95,7 +145,6 @@ public final class CombatInvocationsNotifyOuterClass {
     }
 
     public static final int INVOKE_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry> invokeList_;
     /**
      * <code>repeated .CombatInvokeEntry invoke_list = 14;</code>
@@ -152,7 +201,7 @@ public final class CombatInvocationsNotifyOuterClass {
       for (int i = 0; i < invokeList_.size(); i++) {
         output.writeMessage(14, invokeList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -165,7 +214,7 @@ public final class CombatInvocationsNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, invokeList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -182,7 +231,7 @@ public final class CombatInvocationsNotifyOuterClass {
 
       if (!getInvokeListList()
           .equals(other.getInvokeListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -197,7 +246,7 @@ public final class CombatInvocationsNotifyOuterClass {
         hash = (37 * hash) + INVOKE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getInvokeListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -325,25 +374,29 @@ public final class CombatInvocationsNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getInvokeListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (invokeListBuilder_ == null) {
           invokeList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          invokeList_ = null;
           invokeListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -370,13 +423,7 @@ public final class CombatInvocationsNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify buildPartial() {
         emu.gingerps.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify result = new emu.gingerps.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify result) {
+        int from_bitField0_ = bitField0_;
         if (invokeListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             invokeList_ = java.util.Collections.unmodifiableList(invokeList_);
@@ -386,10 +433,8 @@ public final class CombatInvocationsNotifyOuterClass {
         } else {
           result.invokeList_ = invokeListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -462,7 +507,7 @@ public final class CombatInvocationsNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -477,43 +522,17 @@ public final class CombatInvocationsNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 114: {
-                emu.gingerps.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry.parser(),
-                        extensionRegistry);
-                if (invokeListBuilder_ == null) {
-                  ensureInvokeListIsMutable();
-                  invokeList_.add(m);
-                } else {
-                  invokeListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -790,18 +809,7 @@ public final class CombatInvocationsNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CombatInvocationsNotify(input, extensionRegistry);
       }
     };
 

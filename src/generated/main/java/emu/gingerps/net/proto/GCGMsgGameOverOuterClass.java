@@ -63,6 +63,54 @@ public final class GCGMsgGameOverOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGMsgGameOver(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              winControllerId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              endReason_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgGameOverOuterClass.internal_static_GCGMsgGameOver_descriptor;
@@ -77,7 +125,7 @@ public final class GCGMsgGameOverOuterClass {
     }
 
     public static final int END_REASON_FIELD_NUMBER = 6;
-    private int endReason_ = 0;
+    private int endReason_;
     /**
      * <code>.GCGEndReason end_reason = 6;</code>
      * @return The enum numeric value on the wire for endReason.
@@ -90,12 +138,13 @@ public final class GCGMsgGameOverOuterClass {
      * @return The endReason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason getEndReason() {
-      emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason result = emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.forNumber(endReason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason result = emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.valueOf(endReason_);
       return result == null ? emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.UNRECOGNIZED : result;
     }
 
     public static final int WIN_CONTROLLER_ID_FIELD_NUMBER = 3;
-    private int winControllerId_ = 0;
+    private int winControllerId_;
     /**
      * <code>uint32 win_controller_id = 3;</code>
      * @return The winControllerId.
@@ -125,7 +174,7 @@ public final class GCGMsgGameOverOuterClass {
       if (endReason_ != emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.GCG_END_REASON_DEFAULT.getNumber()) {
         output.writeEnum(6, endReason_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -142,7 +191,7 @@ public final class GCGMsgGameOverOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, endReason_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -160,7 +209,7 @@ public final class GCGMsgGameOverOuterClass {
       if (endReason_ != other.endReason_) return false;
       if (getWinControllerId()
           != other.getWinControllerId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -175,7 +224,7 @@ public final class GCGMsgGameOverOuterClass {
       hash = (53 * hash) + endReason_;
       hash = (37 * hash) + WIN_CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getWinControllerId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -292,20 +341,26 @@ public final class GCGMsgGameOverOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgGameOverOuterClass.GCGMsgGameOver.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         endReason_ = 0;
+
         winControllerId_ = 0;
+
         return this;
       }
 
@@ -332,19 +387,10 @@ public final class GCGMsgGameOverOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgGameOverOuterClass.GCGMsgGameOver buildPartial() {
         emu.gingerps.net.proto.GCGMsgGameOverOuterClass.GCGMsgGameOver result = new emu.gingerps.net.proto.GCGMsgGameOverOuterClass.GCGMsgGameOver(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.endReason_ = endReason_;
+        result.winControllerId_ = winControllerId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGMsgGameOverOuterClass.GCGMsgGameOver result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.endReason_ = endReason_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.winControllerId_ = winControllerId_;
-        }
       }
 
       @java.lang.Override
@@ -397,7 +443,7 @@ public final class GCGMsgGameOverOuterClass {
         if (other.getWinControllerId() != 0) {
           setWinControllerId(other.getWinControllerId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -412,43 +458,19 @@ public final class GCGMsgGameOverOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGMsgGameOverOuterClass.GCGMsgGameOver parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                winControllerId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 48: {
-                endReason_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGMsgGameOverOuterClass.GCGMsgGameOver) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int endReason_ = 0;
       /**
@@ -464,8 +486,8 @@ public final class GCGMsgGameOverOuterClass {
        * @return This builder for chaining.
        */
       public Builder setEndReasonValue(int value) {
+        
         endReason_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -475,7 +497,8 @@ public final class GCGMsgGameOverOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason getEndReason() {
-        emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason result = emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.forNumber(endReason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason result = emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.valueOf(endReason_);
         return result == null ? emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.UNRECOGNIZED : result;
       }
       /**
@@ -487,7 +510,7 @@ public final class GCGMsgGameOverOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         endReason_ = value.getNumber();
         onChanged();
         return this;
@@ -497,7 +520,7 @@ public final class GCGMsgGameOverOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndReason() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         endReason_ = 0;
         onChanged();
         return this;
@@ -520,7 +543,6 @@ public final class GCGMsgGameOverOuterClass {
       public Builder setWinControllerId(int value) {
         
         winControllerId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -529,7 +551,7 @@ public final class GCGMsgGameOverOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWinControllerId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         winControllerId_ = 0;
         onChanged();
         return this;
@@ -567,18 +589,7 @@ public final class GCGMsgGameOverOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGMsgGameOver(input, extensionRegistry);
       }
     };
 

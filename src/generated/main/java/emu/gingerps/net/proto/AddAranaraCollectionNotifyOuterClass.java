@@ -91,6 +91,65 @@ public final class AddAranaraCollectionNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AddAranaraCollectionNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              collectionType_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              unk3300AFBIBLNKCOD_ = rawValue;
+              break;
+            }
+            case 56: {
+
+              collectionId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              unk3300NJLJBBMJLBK_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AddAranaraCollectionNotifyOuterClass.internal_static_AddAranaraCollectionNotify_descriptor;
@@ -105,7 +164,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
     }
 
     public static final int UNK3300_NJLJBBMJLBK_FIELD_NUMBER = 10;
-    private int unk3300NJLJBBMJLBK_ = 0;
+    private int unk3300NJLJBBMJLBK_;
     /**
      * <code>.AranaraCollectionState Unk3300_NJLJBBMJLBK = 10;</code>
      * @return The enum numeric value on the wire for unk3300NJLJBBMJLBK.
@@ -118,12 +177,13 @@ public final class AddAranaraCollectionNotifyOuterClass {
      * @return The unk3300NJLJBBMJLBK.
      */
     @java.lang.Override public emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getUnk3300NJLJBBMJLBK() {
-      emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState result = emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.forNumber(unk3300NJLJBBMJLBK_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState result = emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.valueOf(unk3300NJLJBBMJLBK_);
       return result == null ? emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.UNRECOGNIZED : result;
     }
 
     public static final int COLLECTION_ID_FIELD_NUMBER = 7;
-    private int collectionId_ = 0;
+    private int collectionId_;
     /**
      * <code>uint32 collection_id = 7;</code>
      * @return The collectionId.
@@ -134,7 +194,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
     }
 
     public static final int UNK3300_AFBIBLNKCOD_FIELD_NUMBER = 4;
-    private int unk3300AFBIBLNKCOD_ = 0;
+    private int unk3300AFBIBLNKCOD_;
     /**
      * <code>.AranaraCollectionState Unk3300_AFBIBLNKCOD = 4;</code>
      * @return The enum numeric value on the wire for unk3300AFBIBLNKCOD.
@@ -147,12 +207,13 @@ public final class AddAranaraCollectionNotifyOuterClass {
      * @return The unk3300AFBIBLNKCOD.
      */
     @java.lang.Override public emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getUnk3300AFBIBLNKCOD() {
-      emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState result = emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.forNumber(unk3300AFBIBLNKCOD_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState result = emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.valueOf(unk3300AFBIBLNKCOD_);
       return result == null ? emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.UNRECOGNIZED : result;
     }
 
     public static final int COLLECTION_TYPE_FIELD_NUMBER = 2;
-    private int collectionType_ = 0;
+    private int collectionType_;
     /**
      * <code>uint32 collection_type = 2;</code>
      * @return The collectionType.
@@ -188,7 +249,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
       if (unk3300NJLJBBMJLBK_ != emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.ARANARA_COLLECTION_STATE_NONE.getNumber()) {
         output.writeEnum(10, unk3300NJLJBBMJLBK_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +274,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, unk3300NJLJBBMJLBK_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -234,7 +295,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
       if (unk3300AFBIBLNKCOD_ != other.unk3300AFBIBLNKCOD_) return false;
       if (getCollectionType()
           != other.getCollectionType()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -253,7 +314,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
       hash = (53 * hash) + unk3300AFBIBLNKCOD_;
       hash = (37 * hash) + COLLECTION_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getCollectionType();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,22 +441,30 @@ public final class AddAranaraCollectionNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AddAranaraCollectionNotifyOuterClass.AddAranaraCollectionNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300NJLJBBMJLBK_ = 0;
+
         collectionId_ = 0;
+
         unk3300AFBIBLNKCOD_ = 0;
+
         collectionType_ = 0;
+
         return this;
       }
 
@@ -422,25 +491,12 @@ public final class AddAranaraCollectionNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AddAranaraCollectionNotifyOuterClass.AddAranaraCollectionNotify buildPartial() {
         emu.gingerps.net.proto.AddAranaraCollectionNotifyOuterClass.AddAranaraCollectionNotify result = new emu.gingerps.net.proto.AddAranaraCollectionNotifyOuterClass.AddAranaraCollectionNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.unk3300NJLJBBMJLBK_ = unk3300NJLJBBMJLBK_;
+        result.collectionId_ = collectionId_;
+        result.unk3300AFBIBLNKCOD_ = unk3300AFBIBLNKCOD_;
+        result.collectionType_ = collectionType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AddAranaraCollectionNotifyOuterClass.AddAranaraCollectionNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300NJLJBBMJLBK_ = unk3300NJLJBBMJLBK_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.collectionId_ = collectionId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300AFBIBLNKCOD_ = unk3300AFBIBLNKCOD_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.collectionType_ = collectionType_;
-        }
       }
 
       @java.lang.Override
@@ -499,7 +555,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
         if (other.getCollectionType() != 0) {
           setCollectionType(other.getCollectionType());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -514,53 +570,19 @@ public final class AddAranaraCollectionNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AddAranaraCollectionNotifyOuterClass.AddAranaraCollectionNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                collectionType_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 16
-              case 32: {
-                unk3300AFBIBLNKCOD_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 56: {
-                collectionId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 80: {
-                unk3300NJLJBBMJLBK_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AddAranaraCollectionNotifyOuterClass.AddAranaraCollectionNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int unk3300NJLJBBMJLBK_ = 0;
       /**
@@ -576,8 +598,8 @@ public final class AddAranaraCollectionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUnk3300NJLJBBMJLBKValue(int value) {
+        
         unk3300NJLJBBMJLBK_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -587,7 +609,8 @@ public final class AddAranaraCollectionNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getUnk3300NJLJBBMJLBK() {
-        emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState result = emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.forNumber(unk3300NJLJBBMJLBK_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState result = emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.valueOf(unk3300NJLJBBMJLBK_);
         return result == null ? emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.UNRECOGNIZED : result;
       }
       /**
@@ -599,7 +622,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         unk3300NJLJBBMJLBK_ = value.getNumber();
         onChanged();
         return this;
@@ -609,7 +632,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NJLJBBMJLBK() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300NJLJBBMJLBK_ = 0;
         onChanged();
         return this;
@@ -632,7 +655,6 @@ public final class AddAranaraCollectionNotifyOuterClass {
       public Builder setCollectionId(int value) {
         
         collectionId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -641,7 +663,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCollectionId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         collectionId_ = 0;
         onChanged();
         return this;
@@ -661,8 +683,8 @@ public final class AddAranaraCollectionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUnk3300AFBIBLNKCODValue(int value) {
+        
         unk3300AFBIBLNKCOD_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -672,7 +694,8 @@ public final class AddAranaraCollectionNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState getUnk3300AFBIBLNKCOD() {
-        emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState result = emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.forNumber(unk3300AFBIBLNKCOD_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState result = emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.valueOf(unk3300AFBIBLNKCOD_);
         return result == null ? emu.gingerps.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.UNRECOGNIZED : result;
       }
       /**
@@ -684,7 +707,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         unk3300AFBIBLNKCOD_ = value.getNumber();
         onChanged();
         return this;
@@ -694,7 +717,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AFBIBLNKCOD() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300AFBIBLNKCOD_ = 0;
         onChanged();
         return this;
@@ -717,7 +740,6 @@ public final class AddAranaraCollectionNotifyOuterClass {
       public Builder setCollectionType(int value) {
         
         collectionType_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -726,7 +748,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCollectionType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         collectionType_ = 0;
         onChanged();
         return this;
@@ -764,18 +786,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AddAranaraCollectionNotify(input, extensionRegistry);
       }
     };
 

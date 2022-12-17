@@ -101,6 +101,77 @@ public final class AvatarFollowRouteNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AvatarFollowRouteNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.RouteOuterClass.Route.Builder subBuilder = null;
+              if (route_ != null) {
+                subBuilder = route_.toBuilder();
+              }
+              route_ = input.readMessage(emu.gingerps.net.proto.RouteOuterClass.Route.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(route_);
+                route_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+
+              startSceneTimeMs_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              templateId_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientParams_ = s;
+              break;
+            }
+            case 80: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarFollowRouteNotifyOuterClass.internal_static_AvatarFollowRouteNotify_descriptor;
@@ -115,8 +186,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
     }
 
     public static final int CLIENT_PARAMS_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object clientParams_ = "";
+    private volatile java.lang.Object clientParams_;
     /**
      * <code>string client_params = 5;</code>
      * @return The clientParams.
@@ -176,11 +246,11 @@ public final class AvatarFollowRouteNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.RouteOuterClass.RouteOrBuilder getRouteOrBuilder() {
-      return route_ == null ? emu.gingerps.net.proto.RouteOuterClass.Route.getDefaultInstance() : route_;
+      return getRoute();
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 10;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 10;</code>
      * @return The entityId.
@@ -191,7 +261,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
     }
 
     public static final int TEMPLATE_ID_FIELD_NUMBER = 4;
-    private int templateId_ = 0;
+    private int templateId_;
     /**
      * <code>uint32 template_id = 4;</code>
      * @return The templateId.
@@ -202,7 +272,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
     }
 
     public static final int START_SCENE_TIME_MS_FIELD_NUMBER = 3;
-    private int startSceneTimeMs_ = 0;
+    private int startSceneTimeMs_;
     /**
      * <code>uint32 start_scene_time_ms = 3;</code>
      * @return The startSceneTimeMs.
@@ -241,7 +311,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(10, entityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -269,7 +339,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, entityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -297,7 +367,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
           != other.getTemplateId()) return false;
       if (getStartSceneTimeMs()
           != other.getStartSceneTimeMs()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -320,7 +390,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
       hash = (53 * hash) + getTemplateId();
       hash = (37 * hash) + START_SCENE_TIME_MS_FIELD_NUMBER;
       hash = (53 * hash) + getStartSceneTimeMs();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -447,27 +517,36 @@ public final class AvatarFollowRouteNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarFollowRouteNotifyOuterClass.AvatarFollowRouteNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         clientParams_ = "";
-        route_ = null;
-        if (routeBuilder_ != null) {
-          routeBuilder_.dispose();
+
+        if (routeBuilder_ == null) {
+          route_ = null;
+        } else {
+          route_ = null;
           routeBuilder_ = null;
         }
         entityId_ = 0;
+
         templateId_ = 0;
+
         startSceneTimeMs_ = 0;
+
         return this;
       }
 
@@ -494,30 +573,17 @@ public final class AvatarFollowRouteNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarFollowRouteNotifyOuterClass.AvatarFollowRouteNotify buildPartial() {
         emu.gingerps.net.proto.AvatarFollowRouteNotifyOuterClass.AvatarFollowRouteNotify result = new emu.gingerps.net.proto.AvatarFollowRouteNotifyOuterClass.AvatarFollowRouteNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.clientParams_ = clientParams_;
+        if (routeBuilder_ == null) {
+          result.route_ = route_;
+        } else {
+          result.route_ = routeBuilder_.build();
+        }
+        result.entityId_ = entityId_;
+        result.templateId_ = templateId_;
+        result.startSceneTimeMs_ = startSceneTimeMs_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AvatarFollowRouteNotifyOuterClass.AvatarFollowRouteNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.clientParams_ = clientParams_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.route_ = routeBuilder_ == null
-              ? route_
-              : routeBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.templateId_ = templateId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.startSceneTimeMs_ = startSceneTimeMs_;
-        }
       }
 
       @java.lang.Override
@@ -566,7 +632,6 @@ public final class AvatarFollowRouteNotifyOuterClass {
         if (other == emu.gingerps.net.proto.AvatarFollowRouteNotifyOuterClass.AvatarFollowRouteNotify.getDefaultInstance()) return this;
         if (!other.getClientParams().isEmpty()) {
           clientParams_ = other.clientParams_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasRoute()) {
@@ -581,7 +646,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
         if (other.getStartSceneTimeMs() != 0) {
           setStartSceneTimeMs(other.getStartSceneTimeMs());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -596,60 +661,19 @@ public final class AvatarFollowRouteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AvatarFollowRouteNotifyOuterClass.AvatarFollowRouteNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getRouteFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 10
-              case 24: {
-                startSceneTimeMs_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 24
-              case 32: {
-                templateId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 42: {
-                clientParams_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 42
-              case 80: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AvatarFollowRouteNotifyOuterClass.AvatarFollowRouteNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object clientParams_ = "";
       /**
@@ -692,9 +716,11 @@ public final class AvatarFollowRouteNotifyOuterClass {
        */
       public Builder setClientParams(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         clientParams_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -703,8 +729,8 @@ public final class AvatarFollowRouteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientParams() {
+        
         clientParams_ = getDefaultInstance().getClientParams();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -715,10 +741,12 @@ public final class AvatarFollowRouteNotifyOuterClass {
        */
       public Builder setClientParamsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         clientParams_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -731,7 +759,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
        * @return Whether the route field is set.
        */
       public boolean hasRoute() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return routeBuilder_ != null || route_ != null;
       }
       /**
        * <code>.Route route = 1;</code>
@@ -753,11 +781,11 @@ public final class AvatarFollowRouteNotifyOuterClass {
             throw new NullPointerException();
           }
           route_ = value;
+          onChanged();
         } else {
           routeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -767,11 +795,11 @@ public final class AvatarFollowRouteNotifyOuterClass {
           emu.gingerps.net.proto.RouteOuterClass.Route.Builder builderForValue) {
         if (routeBuilder_ == null) {
           route_ = builderForValue.build();
+          onChanged();
         } else {
           routeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -779,38 +807,38 @@ public final class AvatarFollowRouteNotifyOuterClass {
        */
       public Builder mergeRoute(emu.gingerps.net.proto.RouteOuterClass.Route value) {
         if (routeBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            route_ != null &&
-            route_ != emu.gingerps.net.proto.RouteOuterClass.Route.getDefaultInstance()) {
-            getRouteBuilder().mergeFrom(value);
+          if (route_ != null) {
+            route_ =
+              emu.gingerps.net.proto.RouteOuterClass.Route.newBuilder(route_).mergeFrom(value).buildPartial();
           } else {
             route_ = value;
           }
+          onChanged();
         } else {
           routeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Route route = 1;</code>
        */
       public Builder clearRoute() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        route_ = null;
-        if (routeBuilder_ != null) {
-          routeBuilder_.dispose();
+        if (routeBuilder_ == null) {
+          route_ = null;
+          onChanged();
+        } else {
+          route_ = null;
           routeBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Route route = 1;</code>
        */
       public emu.gingerps.net.proto.RouteOuterClass.Route.Builder getRouteBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getRouteFieldBuilder().getBuilder();
       }
@@ -859,7 +887,6 @@ public final class AvatarFollowRouteNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -868,7 +895,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -891,7 +918,6 @@ public final class AvatarFollowRouteNotifyOuterClass {
       public Builder setTemplateId(int value) {
         
         templateId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -900,7 +926,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTemplateId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         templateId_ = 0;
         onChanged();
         return this;
@@ -923,7 +949,6 @@ public final class AvatarFollowRouteNotifyOuterClass {
       public Builder setStartSceneTimeMs(int value) {
         
         startSceneTimeMs_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -932,7 +957,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartSceneTimeMs() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         startSceneTimeMs_ = 0;
         onChanged();
         return this;
@@ -970,18 +995,7 @@ public final class AvatarFollowRouteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AvatarFollowRouteNotify(input, extensionRegistry);
       }
     };
 

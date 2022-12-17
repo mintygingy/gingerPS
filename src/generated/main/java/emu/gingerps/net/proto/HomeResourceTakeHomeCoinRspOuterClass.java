@@ -76,6 +76,61 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeResourceTakeHomeCoinRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 98: {
+              emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.Builder subBuilder = null;
+              if (homeCoin_ != null) {
+                subBuilder = homeCoin_.toBuilder();
+              }
+              homeCoin_ = input.readMessage(emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(homeCoin_);
+                homeCoin_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeResourceTakeHomeCoinRspOuterClass.internal_static_HomeResourceTakeHomeCoinRsp_descriptor;
@@ -90,7 +145,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -123,7 +178,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeResourceOuterClass.HomeResourceOrBuilder getHomeCoinOrBuilder() {
-      return homeCoin_ == null ? emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.getDefaultInstance() : homeCoin_;
+      return getHomeCoin();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -146,7 +201,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
       if (homeCoin_ != null) {
         output.writeMessage(12, getHomeCoin());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getHomeCoin());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
         if (!getHomeCoin()
             .equals(other.getHomeCoin())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +257,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
         hash = (37 * hash) + HOME_COIN_FIELD_NUMBER;
         hash = (53 * hash) + getHomeCoin().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,22 +384,28 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeResourceTakeHomeCoinRspOuterClass.HomeResourceTakeHomeCoinRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
-        homeCoin_ = null;
-        if (homeCoinBuilder_ != null) {
-          homeCoinBuilder_.dispose();
+
+        if (homeCoinBuilder_ == null) {
+          homeCoin_ = null;
+        } else {
+          homeCoin_ = null;
           homeCoinBuilder_ = null;
         }
         return this;
@@ -373,21 +434,14 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeResourceTakeHomeCoinRspOuterClass.HomeResourceTakeHomeCoinRsp buildPartial() {
         emu.gingerps.net.proto.HomeResourceTakeHomeCoinRspOuterClass.HomeResourceTakeHomeCoinRsp result = new emu.gingerps.net.proto.HomeResourceTakeHomeCoinRspOuterClass.HomeResourceTakeHomeCoinRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        if (homeCoinBuilder_ == null) {
+          result.homeCoin_ = homeCoin_;
+        } else {
+          result.homeCoin_ = homeCoinBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeResourceTakeHomeCoinRspOuterClass.HomeResourceTakeHomeCoinRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.homeCoin_ = homeCoinBuilder_ == null
-              ? homeCoin_
-              : homeCoinBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -440,7 +494,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
         if (other.hasHomeCoin()) {
           mergeHomeCoin(other.getHomeCoin());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,45 +509,19 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeResourceTakeHomeCoinRspOuterClass.HomeResourceTakeHomeCoinRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 98: {
-                input.readMessage(
-                    getHomeCoinFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeResourceTakeHomeCoinRspOuterClass.HomeResourceTakeHomeCoinRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -512,7 +540,6 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -521,7 +548,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -535,7 +562,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
        * @return Whether the homeCoin field is set.
        */
       public boolean hasHomeCoin() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return homeCoinBuilder_ != null || homeCoin_ != null;
       }
       /**
        * <code>.HomeResource home_coin = 12;</code>
@@ -557,11 +584,11 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
             throw new NullPointerException();
           }
           homeCoin_ = value;
+          onChanged();
         } else {
           homeCoinBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -571,11 +598,11 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
           emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.Builder builderForValue) {
         if (homeCoinBuilder_ == null) {
           homeCoin_ = builderForValue.build();
+          onChanged();
         } else {
           homeCoinBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -583,38 +610,38 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
        */
       public Builder mergeHomeCoin(emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource value) {
         if (homeCoinBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            homeCoin_ != null &&
-            homeCoin_ != emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.getDefaultInstance()) {
-            getHomeCoinBuilder().mergeFrom(value);
+          if (homeCoin_ != null) {
+            homeCoin_ =
+              emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.newBuilder(homeCoin_).mergeFrom(value).buildPartial();
           } else {
             homeCoin_ = value;
           }
+          onChanged();
         } else {
           homeCoinBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeResource home_coin = 12;</code>
        */
       public Builder clearHomeCoin() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        homeCoin_ = null;
-        if (homeCoinBuilder_ != null) {
-          homeCoinBuilder_.dispose();
+        if (homeCoinBuilder_ == null) {
+          homeCoin_ = null;
+          onChanged();
+        } else {
+          homeCoin_ = null;
           homeCoinBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeResource home_coin = 12;</code>
        */
       public emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.Builder getHomeCoinBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getHomeCoinFieldBuilder().getBuilder();
       }
@@ -678,18 +705,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeResourceTakeHomeCoinRsp(input, extensionRegistry);
       }
     };
 

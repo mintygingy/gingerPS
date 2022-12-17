@@ -57,6 +57,53 @@ public final class QueryFilterOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private QueryFilter(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              typeId_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              areaMask_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.QueryFilterOuterClass.internal_static_QueryFilter_descriptor;
@@ -71,7 +118,7 @@ public final class QueryFilterOuterClass {
     }
 
     public static final int AREA_MASK_FIELD_NUMBER = 4;
-    private int areaMask_ = 0;
+    private int areaMask_;
     /**
      * <code>int32 area_mask = 4;</code>
      * @return The areaMask.
@@ -82,7 +129,7 @@ public final class QueryFilterOuterClass {
     }
 
     public static final int TYPE_ID_FIELD_NUMBER = 3;
-    private int typeId_ = 0;
+    private int typeId_;
     /**
      * <code>int32 type_id = 3;</code>
      * @return The typeId.
@@ -112,7 +159,7 @@ public final class QueryFilterOuterClass {
       if (areaMask_ != 0) {
         output.writeInt32(4, areaMask_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +176,7 @@ public final class QueryFilterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, areaMask_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -148,7 +195,7 @@ public final class QueryFilterOuterClass {
           != other.getAreaMask()) return false;
       if (getTypeId()
           != other.getTypeId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -163,7 +210,7 @@ public final class QueryFilterOuterClass {
       hash = (53 * hash) + getAreaMask();
       hash = (37 * hash) + TYPE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTypeId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -280,20 +327,26 @@ public final class QueryFilterOuterClass {
 
       // Construct using emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         areaMask_ = 0;
+
         typeId_ = 0;
+
         return this;
       }
 
@@ -320,19 +373,10 @@ public final class QueryFilterOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter buildPartial() {
         emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter result = new emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.areaMask_ = areaMask_;
+        result.typeId_ = typeId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.areaMask_ = areaMask_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.typeId_ = typeId_;
-        }
       }
 
       @java.lang.Override
@@ -385,7 +429,7 @@ public final class QueryFilterOuterClass {
         if (other.getTypeId() != 0) {
           setTypeId(other.getTypeId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -400,43 +444,19 @@ public final class QueryFilterOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                typeId_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 32: {
-                areaMask_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.QueryFilterOuterClass.QueryFilter) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int areaMask_ ;
       /**
@@ -455,7 +475,6 @@ public final class QueryFilterOuterClass {
       public Builder setAreaMask(int value) {
         
         areaMask_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +483,7 @@ public final class QueryFilterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAreaMask() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         areaMask_ = 0;
         onChanged();
         return this;
@@ -487,7 +506,6 @@ public final class QueryFilterOuterClass {
       public Builder setTypeId(int value) {
         
         typeId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -496,7 +514,7 @@ public final class QueryFilterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTypeId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         typeId_ = 0;
         onChanged();
         return this;
@@ -534,18 +552,7 @@ public final class QueryFilterOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new QueryFilter(input, extensionRegistry);
       }
     };
 

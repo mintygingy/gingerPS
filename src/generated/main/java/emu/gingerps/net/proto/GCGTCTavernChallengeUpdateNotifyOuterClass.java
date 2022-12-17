@@ -70,6 +70,56 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGTCTavernChallengeUpdateNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 98: {
+              emu.gingerps.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData.Builder subBuilder = null;
+              if (tavernChallenge_ != null) {
+                subBuilder = tavernChallenge_.toBuilder();
+              }
+              tavernChallenge_ = input.readMessage(emu.gingerps.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tavernChallenge_);
+                tavernChallenge_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGTCTavernChallengeUpdateNotifyOuterClass.internal_static_GCGTCTavernChallengeUpdateNotify_descriptor;
@@ -106,7 +156,7 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeDataOrBuilder getTavernChallengeOrBuilder() {
-      return tavernChallenge_ == null ? emu.gingerps.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData.getDefaultInstance() : tavernChallenge_;
+      return getTavernChallenge();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -126,7 +176,7 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
       if (tavernChallenge_ != null) {
         output.writeMessage(12, getTavernChallenge());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +189,7 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getTavernChallenge());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +209,7 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
         if (!getTavernChallenge()
             .equals(other.getTavernChallenge())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +224,7 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
         hash = (37 * hash) + TAVERN_CHALLENGE_FIELD_NUMBER;
         hash = (53 * hash) + getTavernChallenge().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -301,21 +351,26 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGTCTavernChallengeUpdateNotifyOuterClass.GCGTCTavernChallengeUpdateNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        tavernChallenge_ = null;
-        if (tavernChallengeBuilder_ != null) {
-          tavernChallengeBuilder_.dispose();
+        if (tavernChallengeBuilder_ == null) {
+          tavernChallenge_ = null;
+        } else {
+          tavernChallenge_ = null;
           tavernChallengeBuilder_ = null;
         }
         return this;
@@ -344,18 +399,13 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGTCTavernChallengeUpdateNotifyOuterClass.GCGTCTavernChallengeUpdateNotify buildPartial() {
         emu.gingerps.net.proto.GCGTCTavernChallengeUpdateNotifyOuterClass.GCGTCTavernChallengeUpdateNotify result = new emu.gingerps.net.proto.GCGTCTavernChallengeUpdateNotifyOuterClass.GCGTCTavernChallengeUpdateNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (tavernChallengeBuilder_ == null) {
+          result.tavernChallenge_ = tavernChallenge_;
+        } else {
+          result.tavernChallenge_ = tavernChallengeBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGTCTavernChallengeUpdateNotifyOuterClass.GCGTCTavernChallengeUpdateNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.tavernChallenge_ = tavernChallengeBuilder_ == null
-              ? tavernChallenge_
-              : tavernChallengeBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -405,7 +455,7 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
         if (other.hasTavernChallenge()) {
           mergeTavernChallenge(other.getTavernChallenge());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,40 +470,19 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGTCTavernChallengeUpdateNotifyOuterClass.GCGTCTavernChallengeUpdateNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 98: {
-                input.readMessage(
-                    getTavernChallengeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGTCTavernChallengeUpdateNotifyOuterClass.GCGTCTavernChallengeUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData tavernChallenge_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -463,7 +492,7 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
        * @return Whether the tavernChallenge field is set.
        */
       public boolean hasTavernChallenge() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return tavernChallengeBuilder_ != null || tavernChallenge_ != null;
       }
       /**
        * <code>.GCGTCTavernChallengeData tavern_challenge = 12;</code>
@@ -485,11 +514,11 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
             throw new NullPointerException();
           }
           tavernChallenge_ = value;
+          onChanged();
         } else {
           tavernChallengeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -499,11 +528,11 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
           emu.gingerps.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData.Builder builderForValue) {
         if (tavernChallengeBuilder_ == null) {
           tavernChallenge_ = builderForValue.build();
+          onChanged();
         } else {
           tavernChallengeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -511,38 +540,38 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
        */
       public Builder mergeTavernChallenge(emu.gingerps.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData value) {
         if (tavernChallengeBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            tavernChallenge_ != null &&
-            tavernChallenge_ != emu.gingerps.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData.getDefaultInstance()) {
-            getTavernChallengeBuilder().mergeFrom(value);
+          if (tavernChallenge_ != null) {
+            tavernChallenge_ =
+              emu.gingerps.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData.newBuilder(tavernChallenge_).mergeFrom(value).buildPartial();
           } else {
             tavernChallenge_ = value;
           }
+          onChanged();
         } else {
           tavernChallengeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGTCTavernChallengeData tavern_challenge = 12;</code>
        */
       public Builder clearTavernChallenge() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        tavernChallenge_ = null;
-        if (tavernChallengeBuilder_ != null) {
-          tavernChallengeBuilder_.dispose();
+        if (tavernChallengeBuilder_ == null) {
+          tavernChallenge_ = null;
+          onChanged();
+        } else {
+          tavernChallenge_ = null;
           tavernChallengeBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGTCTavernChallengeData tavern_challenge = 12;</code>
        */
       public emu.gingerps.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData.Builder getTavernChallengeBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getTavernChallengeFieldBuilder().getBuilder();
       }
@@ -606,18 +635,7 @@ public final class GCGTCTavernChallengeUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGTCTavernChallengeUpdateNotify(input, extensionRegistry);
       }
     };
 

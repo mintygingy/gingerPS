@@ -87,6 +87,61 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private VintageMarketFinishStorePlayReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                storeOpList_ = new java.util.ArrayList<emu.gingerps.net.proto.VintageMarketStoreOpInfoOuterClass.VintageMarketStoreOpInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              storeOpList_.add(
+                  input.readMessage(emu.gingerps.net.proto.VintageMarketStoreOpInfoOuterClass.VintageMarketStoreOpInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 96: {
+
+              storeRound_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          storeOpList_ = java.util.Collections.unmodifiableList(storeOpList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageMarketFinishStorePlayReqOuterClass.internal_static_VintageMarketFinishStorePlayReq_descriptor;
@@ -101,7 +156,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
     }
 
     public static final int STORE_ROUND_FIELD_NUMBER = 12;
-    private int storeRound_ = 0;
+    private int storeRound_;
     /**
      * <code>uint32 store_round = 12;</code>
      * @return The storeRound.
@@ -112,7 +167,6 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
     }
 
     public static final int STORE_OP_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.VintageMarketStoreOpInfoOuterClass.VintageMarketStoreOpInfo> storeOpList_;
     /**
      * <code>repeated .VintageMarketStoreOpInfo store_op_list = 11;</code>
@@ -172,7 +226,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
       if (storeRound_ != 0) {
         output.writeUInt32(12, storeRound_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +243,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, storeRound_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -208,7 +262,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
           != other.getStoreRound()) return false;
       if (!getStoreOpListList()
           .equals(other.getStoreOpListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -225,7 +279,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
         hash = (37 * hash) + STORE_OP_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getStoreOpListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -353,26 +407,31 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageMarketFinishStorePlayReqOuterClass.VintageMarketFinishStorePlayReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getStoreOpListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         storeRound_ = 0;
+
         if (storeOpListBuilder_ == null) {
           storeOpList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          storeOpList_ = null;
           storeOpListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -399,29 +458,19 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageMarketFinishStorePlayReqOuterClass.VintageMarketFinishStorePlayReq buildPartial() {
         emu.gingerps.net.proto.VintageMarketFinishStorePlayReqOuterClass.VintageMarketFinishStorePlayReq result = new emu.gingerps.net.proto.VintageMarketFinishStorePlayReqOuterClass.VintageMarketFinishStorePlayReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.VintageMarketFinishStorePlayReqOuterClass.VintageMarketFinishStorePlayReq result) {
+        int from_bitField0_ = bitField0_;
+        result.storeRound_ = storeRound_;
         if (storeOpListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             storeOpList_ = java.util.Collections.unmodifiableList(storeOpList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.storeOpList_ = storeOpList_;
         } else {
           result.storeOpList_ = storeOpListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.VintageMarketFinishStorePlayReqOuterClass.VintageMarketFinishStorePlayReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.storeRound_ = storeRound_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -475,7 +524,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
           if (!other.storeOpList_.isEmpty()) {
             if (storeOpList_.isEmpty()) {
               storeOpList_ = other.storeOpList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureStoreOpListIsMutable();
               storeOpList_.addAll(other.storeOpList_);
@@ -488,7 +537,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
               storeOpListBuilder_.dispose();
               storeOpListBuilder_ = null;
               storeOpList_ = other.storeOpList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               storeOpListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getStoreOpListFieldBuilder() : null;
@@ -497,7 +546,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -512,48 +561,17 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.VintageMarketFinishStorePlayReqOuterClass.VintageMarketFinishStorePlayReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 90: {
-                emu.gingerps.net.proto.VintageMarketStoreOpInfoOuterClass.VintageMarketStoreOpInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.VintageMarketStoreOpInfoOuterClass.VintageMarketStoreOpInfo.parser(),
-                        extensionRegistry);
-                if (storeOpListBuilder_ == null) {
-                  ensureStoreOpListIsMutable();
-                  storeOpList_.add(m);
-                } else {
-                  storeOpListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              case 96: {
-                storeRound_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.VintageMarketFinishStorePlayReqOuterClass.VintageMarketFinishStorePlayReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -575,7 +593,6 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
       public Builder setStoreRound(int value) {
         
         storeRound_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -584,7 +601,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStoreRound() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         storeRound_ = 0;
         onChanged();
         return this;
@@ -593,9 +610,9 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
       private java.util.List<emu.gingerps.net.proto.VintageMarketStoreOpInfoOuterClass.VintageMarketStoreOpInfo> storeOpList_ =
         java.util.Collections.emptyList();
       private void ensureStoreOpListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           storeOpList_ = new java.util.ArrayList<emu.gingerps.net.proto.VintageMarketStoreOpInfoOuterClass.VintageMarketStoreOpInfo>(storeOpList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -745,7 +762,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
       public Builder clearStoreOpList() {
         if (storeOpListBuilder_ == null) {
           storeOpList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           storeOpListBuilder_.clear();
@@ -822,7 +839,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
           storeOpListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.VintageMarketStoreOpInfoOuterClass.VintageMarketStoreOpInfo, emu.gingerps.net.proto.VintageMarketStoreOpInfoOuterClass.VintageMarketStoreOpInfo.Builder, emu.gingerps.net.proto.VintageMarketStoreOpInfoOuterClass.VintageMarketStoreOpInfoOrBuilder>(
                   storeOpList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           storeOpList_ = null;
@@ -862,18 +879,7 @@ public final class VintageMarketFinishStorePlayReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new VintageMarketFinishStorePlayReq(input, extensionRegistry);
       }
     };
 

@@ -57,6 +57,53 @@ public final class MaterialInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MaterialInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              guid_ = input.readUInt64();
+              break;
+            }
+            case 104: {
+
+              count_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MaterialInfoOuterClass.internal_static_MaterialInfo_descriptor;
@@ -71,7 +118,7 @@ public final class MaterialInfoOuterClass {
     }
 
     public static final int GUID_FIELD_NUMBER = 1;
-    private long guid_ = 0L;
+    private long guid_;
     /**
      * <code>uint64 guid = 1;</code>
      * @return The guid.
@@ -82,7 +129,7 @@ public final class MaterialInfoOuterClass {
     }
 
     public static final int COUNT_FIELD_NUMBER = 13;
-    private int count_ = 0;
+    private int count_;
     /**
      * <code>uint32 count = 13;</code>
      * @return The count.
@@ -112,7 +159,7 @@ public final class MaterialInfoOuterClass {
       if (count_ != 0) {
         output.writeUInt32(13, count_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +176,7 @@ public final class MaterialInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, count_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -148,7 +195,7 @@ public final class MaterialInfoOuterClass {
           != other.getGuid()) return false;
       if (getCount()
           != other.getCount()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -164,7 +211,7 @@ public final class MaterialInfoOuterClass {
           getGuid());
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCount();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -281,20 +328,26 @@ public final class MaterialInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         guid_ = 0L;
+
         count_ = 0;
+
         return this;
       }
 
@@ -321,19 +374,10 @@ public final class MaterialInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo buildPartial() {
         emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo result = new emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.guid_ = guid_;
+        result.count_ = count_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.guid_ = guid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.count_ = count_;
-        }
       }
 
       @java.lang.Override
@@ -386,7 +430,7 @@ public final class MaterialInfoOuterClass {
         if (other.getCount() != 0) {
           setCount(other.getCount());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -401,43 +445,19 @@ public final class MaterialInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                guid_ = input.readUInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 104: {
-                count_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long guid_ ;
       /**
@@ -456,7 +476,6 @@ public final class MaterialInfoOuterClass {
       public Builder setGuid(long value) {
         
         guid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -465,7 +484,7 @@ public final class MaterialInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         guid_ = 0L;
         onChanged();
         return this;
@@ -488,7 +507,6 @@ public final class MaterialInfoOuterClass {
       public Builder setCount(int value) {
         
         count_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -497,7 +515,7 @@ public final class MaterialInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCount() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         count_ = 0;
         onChanged();
         return this;
@@ -535,18 +553,7 @@ public final class MaterialInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MaterialInfo(input, extensionRegistry);
       }
     };
 

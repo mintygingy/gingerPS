@@ -158,6 +158,131 @@ public final class GCGSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGSettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                finishedChallengeIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              finishedChallengeIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                finishedChallengeIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                finishedChallengeIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 16: {
+
+              isWin_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              gameId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              businessType_ = rawValue;
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                rewardItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              rewardItemList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 80: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                forbidFinishChallengeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              forbidFinishChallengeList_.addInt(input.readUInt32());
+              break;
+            }
+            case 82: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                forbidFinishChallengeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                forbidFinishChallengeList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 88: {
+
+              winControllerId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          finishedChallengeIdList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          rewardItemList_ = java.util.Collections.unmodifiableList(rewardItemList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          forbidFinishChallengeList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSettleNotifyOuterClass.internal_static_GCGSettleNotify_descriptor;
@@ -172,7 +297,6 @@ public final class GCGSettleNotifyOuterClass {
     }
 
     public static final int REWARD_ITEM_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> rewardItemList_;
     /**
      * <code>repeated .ItemParam reward_item_list = 8;</code>
@@ -213,7 +337,6 @@ public final class GCGSettleNotifyOuterClass {
     }
 
     public static final int FINISHED_CHALLENGE_ID_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList finishedChallengeIdList_;
     /**
      * <code>repeated uint32 finished_challenge_id_list = 1;</code>
@@ -242,7 +365,7 @@ public final class GCGSettleNotifyOuterClass {
     private int finishedChallengeIdListMemoizedSerializedSize = -1;
 
     public static final int GAME_ID_FIELD_NUMBER = 3;
-    private int gameId_ = 0;
+    private int gameId_;
     /**
      * <code>uint32 game_id = 3;</code>
      * @return The gameId.
@@ -253,7 +376,7 @@ public final class GCGSettleNotifyOuterClass {
     }
 
     public static final int IS_WIN_FIELD_NUMBER = 2;
-    private boolean isWin_ = false;
+    private boolean isWin_;
     /**
      * <code>bool is_win = 2;</code>
      * @return The isWin.
@@ -264,7 +387,7 @@ public final class GCGSettleNotifyOuterClass {
     }
 
     public static final int BUSINESS_TYPE_FIELD_NUMBER = 5;
-    private int businessType_ = 0;
+    private int businessType_;
     /**
      * <code>.GCGGameBusinessType business_type = 5;</code>
      * @return The enum numeric value on the wire for businessType.
@@ -277,12 +400,13 @@ public final class GCGSettleNotifyOuterClass {
      * @return The businessType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType getBusinessType() {
-      emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType result = emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.forNumber(businessType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType result = emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.valueOf(businessType_);
       return result == null ? emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.UNRECOGNIZED : result;
     }
 
     public static final int WIN_CONTROLLER_ID_FIELD_NUMBER = 11;
-    private int winControllerId_ = 0;
+    private int winControllerId_;
     /**
      * <code>uint32 win_controller_id = 11;</code>
      * @return The winControllerId.
@@ -293,7 +417,6 @@ public final class GCGSettleNotifyOuterClass {
     }
 
     public static final int FORBID_FINISH_CHALLENGE_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList forbidFinishChallengeList_;
     /**
      * <code>repeated uint32 forbid_finish_challenge_list = 10;</code>
@@ -322,7 +445,7 @@ public final class GCGSettleNotifyOuterClass {
     private int forbidFinishChallengeListMemoizedSerializedSize = -1;
 
     public static final int REASON_FIELD_NUMBER = 4;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.GCGEndReason reason = 4;</code>
      * @return The enum numeric value on the wire for reason.
@@ -335,7 +458,8 @@ public final class GCGSettleNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason getReason() {
-      emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason result = emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason result = emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.UNRECOGNIZED : result;
     }
 
@@ -386,7 +510,7 @@ public final class GCGSettleNotifyOuterClass {
       if (winControllerId_ != 0) {
         output.writeUInt32(11, winControllerId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -447,7 +571,7 @@ public final class GCGSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, winControllerId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -476,7 +600,7 @@ public final class GCGSettleNotifyOuterClass {
       if (!getForbidFinishChallengeListList()
           .equals(other.getForbidFinishChallengeListList())) return false;
       if (reason_ != other.reason_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -510,7 +634,7 @@ public final class GCGSettleNotifyOuterClass {
       }
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -637,32 +761,43 @@ public final class GCGSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSettleNotifyOuterClass.GCGSettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRewardItemListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (rewardItemListBuilder_ == null) {
           rewardItemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          rewardItemList_ = null;
           rewardItemListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         finishedChallengeIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         gameId_ = 0;
+
         isWin_ = false;
+
         businessType_ = 0;
+
         winControllerId_ = 0;
+
         forbidFinishChallengeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         reason_ = 0;
+
         return this;
       }
 
@@ -689,13 +824,7 @@ public final class GCGSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSettleNotifyOuterClass.GCGSettleNotify buildPartial() {
         emu.gingerps.net.proto.GCGSettleNotifyOuterClass.GCGSettleNotify result = new emu.gingerps.net.proto.GCGSettleNotifyOuterClass.GCGSettleNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGSettleNotifyOuterClass.GCGSettleNotify result) {
+        int from_bitField0_ = bitField0_;
         if (rewardItemListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             rewardItemList_ = java.util.Collections.unmodifiableList(rewardItemList_);
@@ -710,30 +839,18 @@ public final class GCGSettleNotifyOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.finishedChallengeIdList_ = finishedChallengeIdList_;
-        if (((bitField0_ & 0x00000040) != 0)) {
+        result.gameId_ = gameId_;
+        result.isWin_ = isWin_;
+        result.businessType_ = businessType_;
+        result.winControllerId_ = winControllerId_;
+        if (((bitField0_ & 0x00000004) != 0)) {
           forbidFinishChallengeList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.forbidFinishChallengeList_ = forbidFinishChallengeList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGSettleNotifyOuterClass.GCGSettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.gameId_ = gameId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isWin_ = isWin_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.businessType_ = businessType_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.winControllerId_ = winControllerId_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.reason_ = reason_;
-        }
+        result.reason_ = reason_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -831,7 +948,7 @@ public final class GCGSettleNotifyOuterClass {
         if (!other.forbidFinishChallengeList_.isEmpty()) {
           if (forbidFinishChallengeList_.isEmpty()) {
             forbidFinishChallengeList_ = other.forbidFinishChallengeList_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureForbidFinishChallengeListIsMutable();
             forbidFinishChallengeList_.addAll(other.forbidFinishChallengeList_);
@@ -841,7 +958,7 @@ public final class GCGSettleNotifyOuterClass {
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -856,100 +973,17 @@ public final class GCGSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGSettleNotifyOuterClass.GCGSettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int v = input.readUInt32();
-                ensureFinishedChallengeIdListIsMutable();
-                finishedChallengeIdList_.addInt(v);
-                break;
-              } // case 8
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureFinishedChallengeIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  finishedChallengeIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 10
-              case 16: {
-                isWin_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 16
-              case 24: {
-                gameId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 32
-              case 40: {
-                businessType_ = input.readEnum();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 66: {
-                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
-                        extensionRegistry);
-                if (rewardItemListBuilder_ == null) {
-                  ensureRewardItemListIsMutable();
-                  rewardItemList_.add(m);
-                } else {
-                  rewardItemListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 66
-              case 80: {
-                int v = input.readUInt32();
-                ensureForbidFinishChallengeListIsMutable();
-                forbidFinishChallengeList_.addInt(v);
-                break;
-              } // case 80
-              case 82: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureForbidFinishChallengeListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  forbidFinishChallengeList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 82
-              case 88: {
-                winControllerId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGSettleNotifyOuterClass.GCGSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1199,7 +1233,7 @@ public final class GCGSettleNotifyOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           finishedChallengeIdList_ = mutableCopy(finishedChallengeIdList_);
           bitField0_ |= 0x00000002;
-        }
+         }
       }
       /**
        * <code>repeated uint32 finished_challenge_id_list = 1;</code>
@@ -1233,7 +1267,6 @@ public final class GCGSettleNotifyOuterClass {
        */
       public Builder setFinishedChallengeIdList(
           int index, int value) {
-        
         ensureFinishedChallengeIdListIsMutable();
         finishedChallengeIdList_.setInt(index, value);
         onChanged();
@@ -1245,7 +1278,6 @@ public final class GCGSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFinishedChallengeIdList(int value) {
-        
         ensureFinishedChallengeIdListIsMutable();
         finishedChallengeIdList_.addInt(value);
         onChanged();
@@ -1292,7 +1324,6 @@ public final class GCGSettleNotifyOuterClass {
       public Builder setGameId(int value) {
         
         gameId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1301,7 +1332,7 @@ public final class GCGSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGameId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         gameId_ = 0;
         onChanged();
         return this;
@@ -1324,7 +1355,6 @@ public final class GCGSettleNotifyOuterClass {
       public Builder setIsWin(boolean value) {
         
         isWin_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1333,7 +1363,7 @@ public final class GCGSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsWin() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isWin_ = false;
         onChanged();
         return this;
@@ -1353,8 +1383,8 @@ public final class GCGSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBusinessTypeValue(int value) {
+        
         businessType_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1364,7 +1394,8 @@ public final class GCGSettleNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType getBusinessType() {
-        emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType result = emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.forNumber(businessType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType result = emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.valueOf(businessType_);
         return result == null ? emu.gingerps.net.proto.GCGGameBusinessTypeOuterClass.GCGGameBusinessType.UNRECOGNIZED : result;
       }
       /**
@@ -1376,7 +1407,7 @@ public final class GCGSettleNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000010;
+        
         businessType_ = value.getNumber();
         onChanged();
         return this;
@@ -1386,7 +1417,7 @@ public final class GCGSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBusinessType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         businessType_ = 0;
         onChanged();
         return this;
@@ -1409,7 +1440,6 @@ public final class GCGSettleNotifyOuterClass {
       public Builder setWinControllerId(int value) {
         
         winControllerId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1418,7 +1448,7 @@ public final class GCGSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWinControllerId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         winControllerId_ = 0;
         onChanged();
         return this;
@@ -1426,10 +1456,10 @@ public final class GCGSettleNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList forbidFinishChallengeList_ = emptyIntList();
       private void ensureForbidFinishChallengeListIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           forbidFinishChallengeList_ = mutableCopy(forbidFinishChallengeList_);
-          bitField0_ |= 0x00000040;
-        }
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated uint32 forbid_finish_challenge_list = 10;</code>
@@ -1437,7 +1467,7 @@ public final class GCGSettleNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getForbidFinishChallengeListList() {
-        return ((bitField0_ & 0x00000040) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(forbidFinishChallengeList_) : forbidFinishChallengeList_;
       }
       /**
@@ -1463,7 +1493,6 @@ public final class GCGSettleNotifyOuterClass {
        */
       public Builder setForbidFinishChallengeList(
           int index, int value) {
-        
         ensureForbidFinishChallengeListIsMutable();
         forbidFinishChallengeList_.setInt(index, value);
         onChanged();
@@ -1475,7 +1504,6 @@ public final class GCGSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addForbidFinishChallengeList(int value) {
-        
         ensureForbidFinishChallengeListIsMutable();
         forbidFinishChallengeList_.addInt(value);
         onChanged();
@@ -1500,7 +1528,7 @@ public final class GCGSettleNotifyOuterClass {
        */
       public Builder clearForbidFinishChallengeList() {
         forbidFinishChallengeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1519,8 +1547,8 @@ public final class GCGSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1530,7 +1558,8 @@ public final class GCGSettleNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason getReason() {
-        emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason result = emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason result = emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.GCGEndReasonOuterClass.GCGEndReason.UNRECOGNIZED : result;
       }
       /**
@@ -1542,7 +1571,7 @@ public final class GCGSettleNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000080;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -1552,7 +1581,7 @@ public final class GCGSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -1590,18 +1619,7 @@ public final class GCGSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGSettleNotify(input, extensionRegistry);
       }
     };
 

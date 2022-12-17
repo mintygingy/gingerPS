@@ -86,6 +86,61 @@ public final class BonusActivityInfoRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BonusActivityInfoRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                bonusActivityInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              bonusActivityInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          bonusActivityInfoList_ = java.util.Collections.unmodifiableList(bonusActivityInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BonusActivityInfoRspOuterClass.internal_static_BonusActivityInfoRsp_descriptor;
@@ -100,7 +155,7 @@ public final class BonusActivityInfoRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 6;</code>
      * @return The retcode.
@@ -111,7 +166,6 @@ public final class BonusActivityInfoRspOuterClass {
     }
 
     public static final int BONUS_ACTIVITY_INFO_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> bonusActivityInfoList_;
     /**
      * <code>repeated .BonusActivityInfo bonus_activity_info_list = 15;</code>
@@ -171,7 +225,7 @@ public final class BonusActivityInfoRspOuterClass {
       for (int i = 0; i < bonusActivityInfoList_.size(); i++) {
         output.writeMessage(15, bonusActivityInfoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class BonusActivityInfoRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, bonusActivityInfoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class BonusActivityInfoRspOuterClass {
           != other.getRetcode()) return false;
       if (!getBonusActivityInfoListList()
           .equals(other.getBonusActivityInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class BonusActivityInfoRspOuterClass {
         hash = (37 * hash) + BONUS_ACTIVITY_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBonusActivityInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +405,31 @@ public final class BonusActivityInfoRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBonusActivityInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         if (bonusActivityInfoListBuilder_ == null) {
           bonusActivityInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          bonusActivityInfoList_ = null;
           bonusActivityInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -397,29 +456,19 @@ public final class BonusActivityInfoRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp buildPartial() {
         emu.gingerps.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp result = new emu.gingerps.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         if (bonusActivityInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             bonusActivityInfoList_ = java.util.Collections.unmodifiableList(bonusActivityInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.bonusActivityInfoList_ = bonusActivityInfoList_;
         } else {
           result.bonusActivityInfoList_ = bonusActivityInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -473,7 +522,7 @@ public final class BonusActivityInfoRspOuterClass {
           if (!other.bonusActivityInfoList_.isEmpty()) {
             if (bonusActivityInfoList_.isEmpty()) {
               bonusActivityInfoList_ = other.bonusActivityInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureBonusActivityInfoListIsMutable();
               bonusActivityInfoList_.addAll(other.bonusActivityInfoList_);
@@ -486,7 +535,7 @@ public final class BonusActivityInfoRspOuterClass {
               bonusActivityInfoListBuilder_.dispose();
               bonusActivityInfoListBuilder_ = null;
               bonusActivityInfoList_ = other.bonusActivityInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               bonusActivityInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBonusActivityInfoListFieldBuilder() : null;
@@ -495,7 +544,7 @@ public final class BonusActivityInfoRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -510,48 +559,17 @@ public final class BonusActivityInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 122: {
-                emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.parser(),
-                        extensionRegistry);
-                if (bonusActivityInfoListBuilder_ == null) {
-                  ensureBonusActivityInfoListIsMutable();
-                  bonusActivityInfoList_.add(m);
-                } else {
-                  bonusActivityInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -573,7 +591,6 @@ public final class BonusActivityInfoRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +599,7 @@ public final class BonusActivityInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -591,9 +608,9 @@ public final class BonusActivityInfoRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> bonusActivityInfoList_ =
         java.util.Collections.emptyList();
       private void ensureBonusActivityInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           bonusActivityInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo>(bonusActivityInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -743,7 +760,7 @@ public final class BonusActivityInfoRspOuterClass {
       public Builder clearBonusActivityInfoList() {
         if (bonusActivityInfoListBuilder_ == null) {
           bonusActivityInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           bonusActivityInfoListBuilder_.clear();
@@ -820,7 +837,7 @@ public final class BonusActivityInfoRspOuterClass {
           bonusActivityInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo, emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder, emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder>(
                   bonusActivityInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           bonusActivityInfoList_ = null;
@@ -860,18 +877,7 @@ public final class BonusActivityInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BonusActivityInfoRsp(input, extensionRegistry);
       }
     };
 

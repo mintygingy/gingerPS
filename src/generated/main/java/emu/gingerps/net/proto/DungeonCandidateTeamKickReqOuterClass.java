@@ -62,6 +62,48 @@ public final class DungeonCandidateTeamKickReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DungeonCandidateTeamKickReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              playerUid_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonCandidateTeamKickReqOuterClass.internal_static_DungeonCandidateTeamKickReq_descriptor;
@@ -76,7 +118,7 @@ public final class DungeonCandidateTeamKickReqOuterClass {
     }
 
     public static final int PLAYER_UID_FIELD_NUMBER = 7;
-    private int playerUid_ = 0;
+    private int playerUid_;
     /**
      * <code>uint32 player_uid = 7;</code>
      * @return The playerUid.
@@ -103,7 +145,7 @@ public final class DungeonCandidateTeamKickReqOuterClass {
       if (playerUid_ != 0) {
         output.writeUInt32(7, playerUid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -116,7 +158,7 @@ public final class DungeonCandidateTeamKickReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, playerUid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -133,7 +175,7 @@ public final class DungeonCandidateTeamKickReqOuterClass {
 
       if (getPlayerUid()
           != other.getPlayerUid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -146,7 +188,7 @@ public final class DungeonCandidateTeamKickReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PLAYER_UID_FIELD_NUMBER;
       hash = (53 * hash) + getPlayerUid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -274,19 +316,24 @@ public final class DungeonCandidateTeamKickReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonCandidateTeamKickReqOuterClass.DungeonCandidateTeamKickReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         playerUid_ = 0;
+
         return this;
       }
 
@@ -313,16 +360,9 @@ public final class DungeonCandidateTeamKickReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonCandidateTeamKickReqOuterClass.DungeonCandidateTeamKickReq buildPartial() {
         emu.gingerps.net.proto.DungeonCandidateTeamKickReqOuterClass.DungeonCandidateTeamKickReq result = new emu.gingerps.net.proto.DungeonCandidateTeamKickReqOuterClass.DungeonCandidateTeamKickReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.playerUid_ = playerUid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DungeonCandidateTeamKickReqOuterClass.DungeonCandidateTeamKickReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.playerUid_ = playerUid_;
-        }
       }
 
       @java.lang.Override
@@ -372,7 +412,7 @@ public final class DungeonCandidateTeamKickReqOuterClass {
         if (other.getPlayerUid() != 0) {
           setPlayerUid(other.getPlayerUid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -387,38 +427,19 @@ public final class DungeonCandidateTeamKickReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DungeonCandidateTeamKickReqOuterClass.DungeonCandidateTeamKickReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                playerUid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DungeonCandidateTeamKickReqOuterClass.DungeonCandidateTeamKickReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int playerUid_ ;
       /**
@@ -437,7 +458,6 @@ public final class DungeonCandidateTeamKickReqOuterClass {
       public Builder setPlayerUid(int value) {
         
         playerUid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -446,7 +466,7 @@ public final class DungeonCandidateTeamKickReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         playerUid_ = 0;
         onChanged();
         return this;
@@ -484,18 +504,7 @@ public final class DungeonCandidateTeamKickReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DungeonCandidateTeamKickReq(input, extensionRegistry);
       }
     };
 

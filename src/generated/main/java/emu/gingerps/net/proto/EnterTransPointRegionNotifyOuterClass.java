@@ -68,6 +68,53 @@ public final class EnterTransPointRegionNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EnterTransPointRegionNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              pointId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EnterTransPointRegionNotifyOuterClass.internal_static_EnterTransPointRegionNotify_descriptor;
@@ -82,7 +129,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
     }
 
     public static final int POINT_ID_FIELD_NUMBER = 1;
-    private int pointId_ = 0;
+    private int pointId_;
     /**
      * <code>uint32 point_id = 1;</code>
      * @return The pointId.
@@ -93,7 +140,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 15;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 15;</code>
      * @return The sceneId.
@@ -123,7 +170,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
       if (sceneId_ != 0) {
         output.writeUInt32(15, sceneId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, sceneId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
           != other.getPointId()) return false;
       if (getSceneId()
           != other.getSceneId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
       hash = (53 * hash) + getPointId();
       hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -302,20 +349,26 @@ public final class EnterTransPointRegionNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         pointId_ = 0;
+
         sceneId_ = 0;
+
         return this;
       }
 
@@ -342,19 +395,10 @@ public final class EnterTransPointRegionNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify buildPartial() {
         emu.gingerps.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify result = new emu.gingerps.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.pointId_ = pointId_;
+        result.sceneId_ = sceneId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.pointId_ = pointId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
       }
 
       @java.lang.Override
@@ -407,7 +451,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
         if (other.getSceneId() != 0) {
           setSceneId(other.getSceneId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -422,43 +466,19 @@ public final class EnterTransPointRegionNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                pointId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 120: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int pointId_ ;
       /**
@@ -477,7 +497,6 @@ public final class EnterTransPointRegionNotifyOuterClass {
       public Builder setPointId(int value) {
         
         pointId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -486,7 +505,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         pointId_ = 0;
         onChanged();
         return this;
@@ -509,7 +528,6 @@ public final class EnterTransPointRegionNotifyOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -518,7 +536,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -556,18 +574,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EnterTransPointRegionNotify(input, extensionRegistry);
       }
     };
 

@@ -79,6 +79,59 @@ public final class CodexDataUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CodexDataUpdateNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              id_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 80: {
+
+              weaponMaxPromoteLevel_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CodexDataUpdateNotifyOuterClass.internal_static_CodexDataUpdateNotify_descriptor;
@@ -93,7 +146,7 @@ public final class CodexDataUpdateNotifyOuterClass {
     }
 
     public static final int WEAPON_MAX_PROMOTE_LEVEL_FIELD_NUMBER = 10;
-    private int weaponMaxPromoteLevel_ = 0;
+    private int weaponMaxPromoteLevel_;
     /**
      * <code>uint32 weapon_max_promote_level = 10;</code>
      * @return The weaponMaxPromoteLevel.
@@ -104,7 +157,7 @@ public final class CodexDataUpdateNotifyOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 5;
-    private int type_ = 0;
+    private int type_;
     /**
      * <code>.CodexType type = 5;</code>
      * @return The enum numeric value on the wire for type.
@@ -117,12 +170,13 @@ public final class CodexDataUpdateNotifyOuterClass {
      * @return The type.
      */
     @java.lang.Override public emu.gingerps.net.proto.CodexTypeOuterClass.CodexType getType() {
-      emu.gingerps.net.proto.CodexTypeOuterClass.CodexType result = emu.gingerps.net.proto.CodexTypeOuterClass.CodexType.forNumber(type_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.CodexTypeOuterClass.CodexType result = emu.gingerps.net.proto.CodexTypeOuterClass.CodexType.valueOf(type_);
       return result == null ? emu.gingerps.net.proto.CodexTypeOuterClass.CodexType.UNRECOGNIZED : result;
     }
 
     public static final int ID_FIELD_NUMBER = 3;
-    private int id_ = 0;
+    private int id_;
     /**
      * <code>uint32 id = 3;</code>
      * @return The id.
@@ -155,7 +209,7 @@ public final class CodexDataUpdateNotifyOuterClass {
       if (weaponMaxPromoteLevel_ != 0) {
         output.writeUInt32(10, weaponMaxPromoteLevel_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +230,7 @@ public final class CodexDataUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, weaponMaxPromoteLevel_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -196,7 +250,7 @@ public final class CodexDataUpdateNotifyOuterClass {
       if (type_ != other.type_) return false;
       if (getId()
           != other.getId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -213,7 +267,7 @@ public final class CodexDataUpdateNotifyOuterClass {
       hash = (53 * hash) + type_;
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -340,21 +394,28 @@ public final class CodexDataUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CodexDataUpdateNotifyOuterClass.CodexDataUpdateNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         weaponMaxPromoteLevel_ = 0;
+
         type_ = 0;
+
         id_ = 0;
+
         return this;
       }
 
@@ -381,22 +442,11 @@ public final class CodexDataUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CodexDataUpdateNotifyOuterClass.CodexDataUpdateNotify buildPartial() {
         emu.gingerps.net.proto.CodexDataUpdateNotifyOuterClass.CodexDataUpdateNotify result = new emu.gingerps.net.proto.CodexDataUpdateNotifyOuterClass.CodexDataUpdateNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.weaponMaxPromoteLevel_ = weaponMaxPromoteLevel_;
+        result.type_ = type_;
+        result.id_ = id_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CodexDataUpdateNotifyOuterClass.CodexDataUpdateNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.weaponMaxPromoteLevel_ = weaponMaxPromoteLevel_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.type_ = type_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.id_ = id_;
-        }
       }
 
       @java.lang.Override
@@ -452,7 +502,7 @@ public final class CodexDataUpdateNotifyOuterClass {
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -467,48 +517,19 @@ public final class CodexDataUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CodexDataUpdateNotifyOuterClass.CodexDataUpdateNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                id_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 40: {
-                type_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 80: {
-                weaponMaxPromoteLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CodexDataUpdateNotifyOuterClass.CodexDataUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int weaponMaxPromoteLevel_ ;
       /**
@@ -527,7 +548,6 @@ public final class CodexDataUpdateNotifyOuterClass {
       public Builder setWeaponMaxPromoteLevel(int value) {
         
         weaponMaxPromoteLevel_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -536,7 +556,7 @@ public final class CodexDataUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWeaponMaxPromoteLevel() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         weaponMaxPromoteLevel_ = 0;
         onChanged();
         return this;
@@ -556,8 +576,8 @@ public final class CodexDataUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+        
         type_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -567,7 +587,8 @@ public final class CodexDataUpdateNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.CodexTypeOuterClass.CodexType getType() {
-        emu.gingerps.net.proto.CodexTypeOuterClass.CodexType result = emu.gingerps.net.proto.CodexTypeOuterClass.CodexType.forNumber(type_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.CodexTypeOuterClass.CodexType result = emu.gingerps.net.proto.CodexTypeOuterClass.CodexType.valueOf(type_);
         return result == null ? emu.gingerps.net.proto.CodexTypeOuterClass.CodexType.UNRECOGNIZED : result;
       }
       /**
@@ -579,7 +600,7 @@ public final class CodexDataUpdateNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -589,7 +610,7 @@ public final class CodexDataUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         type_ = 0;
         onChanged();
         return this;
@@ -612,7 +633,6 @@ public final class CodexDataUpdateNotifyOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -621,7 +641,7 @@ public final class CodexDataUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         id_ = 0;
         onChanged();
         return this;
@@ -659,18 +679,7 @@ public final class CodexDataUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CodexDataUpdateNotify(input, extensionRegistry);
       }
     };
 

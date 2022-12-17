@@ -99,6 +99,80 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EnterRogueDiaryDungeonReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                chosenCardList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              chosenCardList_.addInt(input.readUInt32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                chosenCardList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                chosenCardList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                chosenAvatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              chosenAvatarList_.add(
+                  input.readMessage(emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          chosenCardList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          chosenAvatarList_ = java.util.Collections.unmodifiableList(chosenAvatarList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EnterRogueDiaryDungeonReqOuterClass.internal_static_EnterRogueDiaryDungeonReq_descriptor;
@@ -113,7 +187,6 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
     }
 
     public static final int CHOSEN_CARD_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList chosenCardList_;
     /**
      * <code>repeated uint32 chosen_card_list = 5;</code>
@@ -142,7 +215,6 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
     private int chosenCardListMemoizedSerializedSize = -1;
 
     public static final int CHOSEN_AVATAR_LIST_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> chosenAvatarList_;
     /**
      * <code>repeated .RogueDiaryAvatar chosen_avatar_list = 9;</code>
@@ -207,7 +279,7 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
       for (int i = 0; i < chosenAvatarList_.size(); i++) {
         output.writeMessage(9, chosenAvatarList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +306,7 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, chosenAvatarList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -253,7 +325,7 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
           .equals(other.getChosenCardListList())) return false;
       if (!getChosenAvatarListList()
           .equals(other.getChosenAvatarListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -272,7 +344,7 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
         hash = (37 * hash) + CHOSEN_AVATAR_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getChosenAvatarListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -400,26 +472,31 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getChosenAvatarListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         chosenCardList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (chosenAvatarListBuilder_ == null) {
           chosenAvatarList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          chosenAvatarList_ = null;
           chosenAvatarListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -446,13 +523,7 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq buildPartial() {
         emu.gingerps.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq result = new emu.gingerps.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           chosenCardList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -467,10 +538,8 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
         } else {
           result.chosenAvatarList_ = chosenAvatarListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -553,7 +622,7 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -568,59 +637,17 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                int v = input.readUInt32();
-                ensureChosenCardListIsMutable();
-                chosenCardList_.addInt(v);
-                break;
-              } // case 40
-              case 42: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureChosenCardListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  chosenCardList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 42
-              case 74: {
-                emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.parser(),
-                        extensionRegistry);
-                if (chosenAvatarListBuilder_ == null) {
-                  ensureChosenAvatarListIsMutable();
-                  chosenAvatarList_.add(m);
-                } else {
-                  chosenAvatarListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 74
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -630,7 +657,7 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           chosenCardList_ = mutableCopy(chosenCardList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 chosen_card_list = 5;</code>
@@ -664,7 +691,6 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
        */
       public Builder setChosenCardList(
           int index, int value) {
-        
         ensureChosenCardListIsMutable();
         chosenCardList_.setInt(index, value);
         onChanged();
@@ -676,7 +702,6 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addChosenCardList(int value) {
-        
         ensureChosenCardListIsMutable();
         chosenCardList_.addInt(value);
         onChanged();
@@ -978,18 +1003,7 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EnterRogueDiaryDungeonReq(input, extensionRegistry);
       }
     };
 

@@ -105,6 +105,112 @@ public final class BrickBreakerLevelInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BrickBreakerLevelInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              isCanStart_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                chosenAvatarList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              chosenAvatarList_.addInt(input.readUInt32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                chosenAvatarList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                chosenAvatarList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              maxScore_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              isFinish_ = input.readBool();
+              break;
+            }
+            case 112: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                chosenSkillList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              chosenSkillList_.addInt(input.readUInt32());
+              break;
+            }
+            case 114: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                chosenSkillList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                chosenSkillList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          chosenAvatarList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          chosenSkillList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BrickBreakerLevelInfoOuterClass.internal_static_BrickBreakerLevelInfo_descriptor;
@@ -119,7 +225,6 @@ public final class BrickBreakerLevelInfoOuterClass {
     }
 
     public static final int CHOSEN_AVATAR_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList chosenAvatarList_;
     /**
      * <code>repeated uint32 chosen_avatar_list = 5;</code>
@@ -148,7 +253,7 @@ public final class BrickBreakerLevelInfoOuterClass {
     private int chosenAvatarListMemoizedSerializedSize = -1;
 
     public static final int LEVEL_ID_FIELD_NUMBER = 3;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 3;</code>
      * @return The levelId.
@@ -159,7 +264,7 @@ public final class BrickBreakerLevelInfoOuterClass {
     }
 
     public static final int IS_FINISH_FIELD_NUMBER = 13;
-    private boolean isFinish_ = false;
+    private boolean isFinish_;
     /**
      * <code>bool is_finish = 13;</code>
      * @return The isFinish.
@@ -170,7 +275,7 @@ public final class BrickBreakerLevelInfoOuterClass {
     }
 
     public static final int MAX_SCORE_FIELD_NUMBER = 8;
-    private int maxScore_ = 0;
+    private int maxScore_;
     /**
      * <code>uint32 max_score = 8;</code>
      * @return The maxScore.
@@ -181,7 +286,6 @@ public final class BrickBreakerLevelInfoOuterClass {
     }
 
     public static final int CHOSEN_SKILL_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList chosenSkillList_;
     /**
      * <code>repeated uint32 chosen_skill_list = 14;</code>
@@ -210,7 +314,7 @@ public final class BrickBreakerLevelInfoOuterClass {
     private int chosenSkillListMemoizedSerializedSize = -1;
 
     public static final int IS_CAN_START_FIELD_NUMBER = 1;
-    private boolean isCanStart_ = false;
+    private boolean isCanStart_;
     /**
      * <code>bool is_can_start = 1;</code>
      * @return The isCanStart.
@@ -261,7 +365,7 @@ public final class BrickBreakerLevelInfoOuterClass {
       for (int i = 0; i < chosenSkillList_.size(); i++) {
         output.writeUInt32NoTag(chosenSkillList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -314,7 +418,7 @@ public final class BrickBreakerLevelInfoOuterClass {
         }
         chosenSkillListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -341,7 +445,7 @@ public final class BrickBreakerLevelInfoOuterClass {
           .equals(other.getChosenSkillListList())) return false;
       if (getIsCanStart()
           != other.getIsCanStart()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -370,7 +474,7 @@ public final class BrickBreakerLevelInfoOuterClass {
       hash = (37 * hash) + IS_CAN_START_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCanStart());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -487,24 +591,34 @@ public final class BrickBreakerLevelInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BrickBreakerLevelInfoOuterClass.BrickBreakerLevelInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         chosenAvatarList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         levelId_ = 0;
+
         isFinish_ = false;
+
         maxScore_ = 0;
+
         chosenSkillList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         isCanStart_ = false;
+
         return this;
       }
 
@@ -531,39 +645,23 @@ public final class BrickBreakerLevelInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BrickBreakerLevelInfoOuterClass.BrickBreakerLevelInfo buildPartial() {
         emu.gingerps.net.proto.BrickBreakerLevelInfoOuterClass.BrickBreakerLevelInfo result = new emu.gingerps.net.proto.BrickBreakerLevelInfoOuterClass.BrickBreakerLevelInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BrickBreakerLevelInfoOuterClass.BrickBreakerLevelInfo result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           chosenAvatarList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.chosenAvatarList_ = chosenAvatarList_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        result.levelId_ = levelId_;
+        result.isFinish_ = isFinish_;
+        result.maxScore_ = maxScore_;
+        if (((bitField0_ & 0x00000002) != 0)) {
           chosenSkillList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.chosenSkillList_ = chosenSkillList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BrickBreakerLevelInfoOuterClass.BrickBreakerLevelInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.levelId_ = levelId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isFinish_ = isFinish_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.maxScore_ = maxScore_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isCanStart_ = isCanStart_;
-        }
+        result.isCanStart_ = isCanStart_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -632,7 +730,7 @@ public final class BrickBreakerLevelInfoOuterClass {
         if (!other.chosenSkillList_.isEmpty()) {
           if (chosenSkillList_.isEmpty()) {
             chosenSkillList_ = other.chosenSkillList_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureChosenSkillListIsMutable();
             chosenSkillList_.addAll(other.chosenSkillList_);
@@ -642,7 +740,7 @@ public final class BrickBreakerLevelInfoOuterClass {
         if (other.getIsCanStart() != false) {
           setIsCanStart(other.getIsCanStart());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -657,82 +755,17 @@ public final class BrickBreakerLevelInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BrickBreakerLevelInfoOuterClass.BrickBreakerLevelInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                isCanStart_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 8
-              case 24: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 40: {
-                int v = input.readUInt32();
-                ensureChosenAvatarListIsMutable();
-                chosenAvatarList_.addInt(v);
-                break;
-              } // case 40
-              case 42: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureChosenAvatarListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  chosenAvatarList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 42
-              case 64: {
-                maxScore_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 64
-              case 104: {
-                isFinish_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              case 112: {
-                int v = input.readUInt32();
-                ensureChosenSkillListIsMutable();
-                chosenSkillList_.addInt(v);
-                break;
-              } // case 112
-              case 114: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureChosenSkillListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  chosenSkillList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BrickBreakerLevelInfoOuterClass.BrickBreakerLevelInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -742,7 +775,7 @@ public final class BrickBreakerLevelInfoOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           chosenAvatarList_ = mutableCopy(chosenAvatarList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 chosen_avatar_list = 5;</code>
@@ -776,7 +809,6 @@ public final class BrickBreakerLevelInfoOuterClass {
        */
       public Builder setChosenAvatarList(
           int index, int value) {
-        
         ensureChosenAvatarListIsMutable();
         chosenAvatarList_.setInt(index, value);
         onChanged();
@@ -788,7 +820,6 @@ public final class BrickBreakerLevelInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addChosenAvatarList(int value) {
-        
         ensureChosenAvatarListIsMutable();
         chosenAvatarList_.addInt(value);
         onChanged();
@@ -835,7 +866,6 @@ public final class BrickBreakerLevelInfoOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -844,7 +874,7 @@ public final class BrickBreakerLevelInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -867,7 +897,6 @@ public final class BrickBreakerLevelInfoOuterClass {
       public Builder setIsFinish(boolean value) {
         
         isFinish_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -876,7 +905,7 @@ public final class BrickBreakerLevelInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isFinish_ = false;
         onChanged();
         return this;
@@ -899,7 +928,6 @@ public final class BrickBreakerLevelInfoOuterClass {
       public Builder setMaxScore(int value) {
         
         maxScore_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -908,7 +936,7 @@ public final class BrickBreakerLevelInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         maxScore_ = 0;
         onChanged();
         return this;
@@ -916,10 +944,10 @@ public final class BrickBreakerLevelInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList chosenSkillList_ = emptyIntList();
       private void ensureChosenSkillListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           chosenSkillList_ = mutableCopy(chosenSkillList_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 chosen_skill_list = 14;</code>
@@ -927,7 +955,7 @@ public final class BrickBreakerLevelInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getChosenSkillListList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(chosenSkillList_) : chosenSkillList_;
       }
       /**
@@ -953,7 +981,6 @@ public final class BrickBreakerLevelInfoOuterClass {
        */
       public Builder setChosenSkillList(
           int index, int value) {
-        
         ensureChosenSkillListIsMutable();
         chosenSkillList_.setInt(index, value);
         onChanged();
@@ -965,7 +992,6 @@ public final class BrickBreakerLevelInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addChosenSkillList(int value) {
-        
         ensureChosenSkillListIsMutable();
         chosenSkillList_.addInt(value);
         onChanged();
@@ -990,7 +1016,7 @@ public final class BrickBreakerLevelInfoOuterClass {
        */
       public Builder clearChosenSkillList() {
         chosenSkillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1012,7 +1038,6 @@ public final class BrickBreakerLevelInfoOuterClass {
       public Builder setIsCanStart(boolean value) {
         
         isCanStart_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1021,7 +1046,7 @@ public final class BrickBreakerLevelInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCanStart() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isCanStart_ = false;
         onChanged();
         return this;
@@ -1059,18 +1084,7 @@ public final class BrickBreakerLevelInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BrickBreakerLevelInfo(input, extensionRegistry);
       }
     };
 

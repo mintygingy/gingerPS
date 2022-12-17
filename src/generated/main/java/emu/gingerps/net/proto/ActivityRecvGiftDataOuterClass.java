@@ -68,12 +68,14 @@ public final class ActivityRecvGiftDataOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
      */
+
     int getGiftNumMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
      */
+
     int getGiftNumMapOrThrow(
         int key);
 
@@ -124,6 +126,87 @@ public final class ActivityRecvGiftDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ActivityRecvGiftData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              remarkName_ = s;
+              break;
+            }
+            case 26: {
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
+              if (profilePicture_ != null) {
+                subBuilder = profilePicture_.toBuilder();
+              }
+              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(profilePicture_);
+                profilePicture_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                giftNumMap_ = com.google.protobuf.MapField.newMapField(
+                    GiftNumMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              giftNumMap__ = input.readMessage(
+                  GiftNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              giftNumMap_.getMutableMap().put(
+                  giftNumMap__.getKey(), giftNumMap__.getValue());
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickname_ = s;
+              break;
+            }
+            case 96: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.internal_static_ActivityRecvGiftData_descriptor;
@@ -172,12 +255,11 @@ public final class ActivityRecvGiftDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+      return getProfilePicture();
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object nickname_ = "";
+    private volatile java.lang.Object nickname_;
     /**
      * <code>string nickname = 7;</code>
      * @return The nickname.
@@ -226,7 +308,6 @@ public final class ActivityRecvGiftDataOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> giftNumMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -237,12 +318,14 @@ public final class ActivityRecvGiftDataOuterClass {
       }
       return giftNumMap_;
     }
+
     public int getGiftNumMapCount() {
       return internalGetGiftNumMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
      */
+
     @java.lang.Override
     public boolean containsGiftNumMap(
         int key) {
@@ -261,6 +344,7 @@ public final class ActivityRecvGiftDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getGiftNumMapMap() {
       return internalGetGiftNumMap().getMap();
     }
@@ -268,6 +352,7 @@ public final class ActivityRecvGiftDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
      */
     @java.lang.Override
+
     public int getGiftNumMapOrDefault(
         int key,
         int defaultValue) {
@@ -280,6 +365,7 @@ public final class ActivityRecvGiftDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
      */
     @java.lang.Override
+
     public int getGiftNumMapOrThrow(
         int key) {
       
@@ -292,8 +378,7 @@ public final class ActivityRecvGiftDataOuterClass {
     }
 
     public static final int REMARK_NAME_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object remarkName_ = "";
+    private volatile java.lang.Object remarkName_;
     /**
      * <code>string remark_name = 1;</code>
      * @return The remarkName.
@@ -331,7 +416,7 @@ public final class ActivityRecvGiftDataOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 12;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 12;</code>
      * @return The uid.
@@ -373,7 +458,7 @@ public final class ActivityRecvGiftDataOuterClass {
       if (uid_ != 0) {
         output.writeUInt32(12, uid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -406,7 +491,7 @@ public final class ActivityRecvGiftDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, uid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -434,7 +519,7 @@ public final class ActivityRecvGiftDataOuterClass {
           .equals(other.getRemarkName())) return false;
       if (getUid()
           != other.getUid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -459,7 +544,7 @@ public final class ActivityRecvGiftDataOuterClass {
       hash = (53 * hash) + getRemarkName().hashCode();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -598,27 +683,35 @@ public final class ActivityRecvGiftDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
         nickname_ = "";
+
         internalGetMutableGiftNumMap().clear();
         remarkName_ = "";
+
         uid_ = 0;
+
         return this;
       }
 
@@ -645,31 +738,19 @@ public final class ActivityRecvGiftDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData buildPartial() {
         emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData result = new emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        if (profilePictureBuilder_ == null) {
+          result.profilePicture_ = profilePicture_;
+        } else {
+          result.profilePicture_ = profilePictureBuilder_.build();
+        }
+        result.nickname_ = nickname_;
+        result.giftNumMap_ = internalGetGiftNumMap();
+        result.giftNumMap_.makeImmutable();
+        result.remarkName_ = remarkName_;
+        result.uid_ = uid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.profilePicture_ = profilePictureBuilder_ == null
-              ? profilePicture_
-              : profilePictureBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.nickname_ = nickname_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.giftNumMap_ = internalGetGiftNumMap();
-          result.giftNumMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.remarkName_ = remarkName_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.uid_ = uid_;
-        }
       }
 
       @java.lang.Override
@@ -721,21 +802,18 @@ public final class ActivityRecvGiftDataOuterClass {
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         internalGetMutableGiftNumMap().mergeFrom(
             other.internalGetGiftNumMap());
-        bitField0_ |= 0x00000004;
         if (!other.getRemarkName().isEmpty()) {
           remarkName_ = other.remarkName_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.getUid() != 0) {
           setUid(other.getUid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -750,61 +828,17 @@ public final class ActivityRecvGiftDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                remarkName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 10
-              case 26: {
-                input.readMessage(
-                    getProfilePictureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 26
-              case 50: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                giftNumMap__ = input.readMessage(
-                    GiftNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableGiftNumMap().getMutableMap().put(
-                    giftNumMap__.getKey(), giftNumMap__.getValue());
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 50
-              case 58: {
-                nickname_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 58
-              case 96: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ActivityRecvGiftDataOuterClass.ActivityRecvGiftData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -817,7 +851,7 @@ public final class ActivityRecvGiftDataOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
        * <code>.ProfilePicture profile_picture = 3;</code>
@@ -839,11 +873,11 @@ public final class ActivityRecvGiftDataOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -853,11 +887,11 @@ public final class ActivityRecvGiftDataOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -865,38 +899,38 @@ public final class ActivityRecvGiftDataOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            profilePicture_ != null &&
-            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
-            getProfilePictureBuilder().mergeFrom(value);
+          if (profilePicture_ != null) {
+            profilePicture_ =
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
           } else {
             profilePicture_ = value;
           }
+          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 3;</code>
        */
       public Builder clearProfilePicture() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+          onChanged();
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 3;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -969,9 +1003,11 @@ public final class ActivityRecvGiftDataOuterClass {
        */
       public Builder setNickname(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         nickname_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -980,8 +1016,8 @@ public final class ActivityRecvGiftDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickname() {
+        
         nickname_ = getDefaultInstance().getNickname();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -992,10 +1028,12 @@ public final class ActivityRecvGiftDataOuterClass {
        */
       public Builder setNicknameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         nickname_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1003,7 +1041,7 @@ public final class ActivityRecvGiftDataOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> giftNumMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetGiftNumMap() {
+      internalGetGiftNumMap() {
         if (giftNumMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               GiftNumMapDefaultEntryHolder.defaultEntry);
@@ -1011,7 +1049,8 @@ public final class ActivityRecvGiftDataOuterClass {
         return giftNumMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableGiftNumMap() {
+      internalGetMutableGiftNumMap() {
+        onChanged();;
         if (giftNumMap_ == null) {
           giftNumMap_ = com.google.protobuf.MapField.newMapField(
               GiftNumMapDefaultEntryHolder.defaultEntry);
@@ -1019,16 +1058,16 @@ public final class ActivityRecvGiftDataOuterClass {
         if (!giftNumMap_.isMutable()) {
           giftNumMap_ = giftNumMap_.copy();
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
         return giftNumMap_;
       }
+
       public int getGiftNumMapCount() {
         return internalGetGiftNumMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
        */
+
       @java.lang.Override
       public boolean containsGiftNumMap(
           int key) {
@@ -1047,6 +1086,7 @@ public final class ActivityRecvGiftDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getGiftNumMapMap() {
         return internalGetGiftNumMap().getMap();
       }
@@ -1054,6 +1094,7 @@ public final class ActivityRecvGiftDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
        */
       @java.lang.Override
+
       public int getGiftNumMapOrDefault(
           int key,
           int defaultValue) {
@@ -1066,6 +1107,7 @@ public final class ActivityRecvGiftDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
        */
       @java.lang.Override
+
       public int getGiftNumMapOrThrow(
           int key) {
         
@@ -1076,8 +1118,8 @@ public final class ActivityRecvGiftDataOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearGiftNumMap() {
-        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableGiftNumMap().getMutableMap()
             .clear();
         return this;
@@ -1085,6 +1127,7 @@ public final class ActivityRecvGiftDataOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
        */
+
       public Builder removeGiftNumMap(
           int key) {
         
@@ -1097,8 +1140,7 @@ public final class ActivityRecvGiftDataOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableGiftNumMap() {
-        bitField0_ |= 0x00000004;
+      getMutableGiftNumMap() {
         return internalGetMutableGiftNumMap().getMutableMap();
       }
       /**
@@ -1111,17 +1153,16 @@ public final class ActivityRecvGiftDataOuterClass {
         
         internalGetMutableGiftNumMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
        */
+
       public Builder putAllGiftNumMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableGiftNumMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000004;
         return this;
       }
 
@@ -1166,9 +1207,11 @@ public final class ActivityRecvGiftDataOuterClass {
        */
       public Builder setRemarkName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         remarkName_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1177,8 +1220,8 @@ public final class ActivityRecvGiftDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemarkName() {
+        
         remarkName_ = getDefaultInstance().getRemarkName();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1189,10 +1232,12 @@ public final class ActivityRecvGiftDataOuterClass {
        */
       public Builder setRemarkNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         remarkName_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1214,7 +1259,6 @@ public final class ActivityRecvGiftDataOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1223,7 +1267,7 @@ public final class ActivityRecvGiftDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -1261,18 +1305,7 @@ public final class ActivityRecvGiftDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ActivityRecvGiftData(input, extensionRegistry);
       }
     };
 

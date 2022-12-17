@@ -97,6 +97,64 @@ public final class WorldPlayerDieNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WorldPlayerDieNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              murdererEntityId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+              entityCase_ = 6;
+              entity_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              entityCase_ = 12;
+              entity_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+
+              dieType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WorldPlayerDieNotifyOuterClass.internal_static_WorldPlayerDieNotify_descriptor;
@@ -152,7 +210,7 @@ public final class WorldPlayerDieNotifyOuterClass {
     }
 
     public static final int MURDERER_ENTITY_ID_FIELD_NUMBER = 3;
-    private int murdererEntityId_ = 0;
+    private int murdererEntityId_;
     /**
      * <code>uint32 murderer_entity_id = 3;</code>
      * @return The murdererEntityId.
@@ -163,7 +221,7 @@ public final class WorldPlayerDieNotifyOuterClass {
     }
 
     public static final int DIE_TYPE_FIELD_NUMBER = 13;
-    private int dieType_ = 0;
+    private int dieType_;
     /**
      * <code>.PlayerDieType die_type = 13;</code>
      * @return The enum numeric value on the wire for dieType.
@@ -176,7 +234,8 @@ public final class WorldPlayerDieNotifyOuterClass {
      * @return The dieType.
      */
     @java.lang.Override public emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-      emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.forNumber(dieType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
       return result == null ? emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
     }
 
@@ -250,7 +309,7 @@ public final class WorldPlayerDieNotifyOuterClass {
       if (dieType_ != emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_NONE.getNumber()) {
         output.writeEnum(13, dieType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -277,7 +336,7 @@ public final class WorldPlayerDieNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, dieType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -308,7 +367,7 @@ public final class WorldPlayerDieNotifyOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -335,7 +394,7 @@ public final class WorldPlayerDieNotifyOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -462,20 +521,26 @@ public final class WorldPlayerDieNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WorldPlayerDieNotifyOuterClass.WorldPlayerDieNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         murdererEntityId_ = 0;
+
         dieType_ = 0;
+
         entityCase_ = 0;
         entity_ = null;
         return this;
@@ -504,25 +569,17 @@ public final class WorldPlayerDieNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WorldPlayerDieNotifyOuterClass.WorldPlayerDieNotify buildPartial() {
         emu.gingerps.net.proto.WorldPlayerDieNotifyOuterClass.WorldPlayerDieNotify result = new emu.gingerps.net.proto.WorldPlayerDieNotifyOuterClass.WorldPlayerDieNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        result.murdererEntityId_ = murdererEntityId_;
+        result.dieType_ = dieType_;
+        if (entityCase_ == 6) {
+          result.entity_ = entity_;
+        }
+        if (entityCase_ == 12) {
+          result.entity_ = entity_;
+        }
+        result.entityCase_ = entityCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WorldPlayerDieNotifyOuterClass.WorldPlayerDieNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.murdererEntityId_ = murdererEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.dieType_ = dieType_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.WorldPlayerDieNotifyOuterClass.WorldPlayerDieNotify result) {
-        result.entityCase_ = entityCase_;
-        result.entity_ = this.entity_;
       }
 
       @java.lang.Override
@@ -588,7 +645,7 @@ public final class WorldPlayerDieNotifyOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -603,50 +660,17 @@ public final class WorldPlayerDieNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WorldPlayerDieNotifyOuterClass.WorldPlayerDieNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                murdererEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 48: {
-                entity_ = input.readUInt32();
-                entityCase_ = 6;
-                break;
-              } // case 48
-              case 96: {
-                entity_ = input.readUInt32();
-                entityCase_ = 12;
-                break;
-              } // case 96
-              case 104: {
-                dieType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WorldPlayerDieNotifyOuterClass.WorldPlayerDieNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int entityCase_ = 0;
@@ -664,7 +688,6 @@ public final class WorldPlayerDieNotifyOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private int murdererEntityId_ ;
       /**
@@ -683,7 +706,6 @@ public final class WorldPlayerDieNotifyOuterClass {
       public Builder setMurdererEntityId(int value) {
         
         murdererEntityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -692,7 +714,7 @@ public final class WorldPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMurdererEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         murdererEntityId_ = 0;
         onChanged();
         return this;
@@ -712,8 +734,8 @@ public final class WorldPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setDieTypeValue(int value) {
+        
         dieType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -723,7 +745,8 @@ public final class WorldPlayerDieNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-        emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.forNumber(dieType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
         return result == null ? emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
       }
       /**
@@ -735,7 +758,7 @@ public final class WorldPlayerDieNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         dieType_ = value.getNumber();
         onChanged();
         return this;
@@ -745,7 +768,7 @@ public final class WorldPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDieType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         dieType_ = 0;
         onChanged();
         return this;
@@ -774,7 +797,6 @@ public final class WorldPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMonsterId(int value) {
-        
         entityCase_ = 6;
         entity_ = value;
         onChanged();
@@ -816,7 +838,6 @@ public final class WorldPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setGadgetId(int value) {
-        
         entityCase_ = 12;
         entity_ = value;
         onChanged();
@@ -867,18 +888,7 @@ public final class WorldPlayerDieNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WorldPlayerDieNotify(input, extensionRegistry);
       }
     };
 

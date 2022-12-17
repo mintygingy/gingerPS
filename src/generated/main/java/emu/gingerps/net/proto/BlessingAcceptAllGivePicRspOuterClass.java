@@ -64,12 +64,14 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
      */
+
     int getAcceptPicNumMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
      */
+
     int getAcceptPicNumMapOrThrow(
         int key);
   }
@@ -111,6 +113,86 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BlessingAcceptAllGivePicRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                acceptIndexList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              acceptIndexList_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                acceptIndexList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                acceptIndexList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                acceptPicNumMap_ = com.google.protobuf.MapField.newMapField(
+                    AcceptPicNumMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              acceptPicNumMap__ = input.readMessage(
+                  AcceptPicNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              acceptPicNumMap_.getMutableMap().put(
+                  acceptPicNumMap__.getKey(), acceptPicNumMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          acceptIndexList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BlessingAcceptAllGivePicRspOuterClass.internal_static_BlessingAcceptAllGivePicRsp_descriptor;
@@ -137,7 +219,6 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
     }
 
     public static final int ACCEPT_INDEX_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList acceptIndexList_;
     /**
      * <code>repeated uint32 accept_index_list = 11;</code>
@@ -166,7 +247,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
     private int acceptIndexListMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -188,7 +269,6 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> acceptPicNumMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -199,12 +279,14 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       }
       return acceptPicNumMap_;
     }
+
     public int getAcceptPicNumMapCount() {
       return internalGetAcceptPicNumMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
      */
+
     @java.lang.Override
     public boolean containsAcceptPicNumMap(
         int key) {
@@ -223,6 +305,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
      * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getAcceptPicNumMapMap() {
       return internalGetAcceptPicNumMap().getMap();
     }
@@ -230,6 +313,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
      * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
      */
     @java.lang.Override
+
     public int getAcceptPicNumMapOrDefault(
         int key,
         int defaultValue) {
@@ -242,6 +326,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
      * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
      */
     @java.lang.Override
+
     public int getAcceptPicNumMapOrThrow(
         int key) {
       
@@ -284,7 +369,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
           internalGetAcceptPicNumMap(),
           AcceptPicNumMapDefaultEntryHolder.defaultEntry,
           15);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -321,7 +406,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(15, acceptPicNumMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -342,7 +427,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
           != other.getRetcode()) return false;
       if (!internalGetAcceptPicNumMap().equals(
           other.internalGetAcceptPicNumMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -363,7 +448,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
         hash = (37 * hash) + ACCEPT_PIC_NUM_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAcceptPicNumMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -512,20 +597,26 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         acceptIndexList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
+
         internalGetMutableAcceptPicNumMap().clear();
         return this;
       }
@@ -553,29 +644,17 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp buildPartial() {
         emu.gingerps.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp result = new emu.gingerps.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           acceptIndexList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.acceptIndexList_ = acceptIndexList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.acceptPicNumMap_ = internalGetAcceptPicNumMap();
-          result.acceptPicNumMap_.makeImmutable();
-        }
+        result.retcode_ = retcode_;
+        result.acceptPicNumMap_ = internalGetAcceptPicNumMap();
+        result.acceptPicNumMap_.makeImmutable();
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -637,8 +716,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
         }
         internalGetMutableAcceptPicNumMap().mergeFrom(
             other.internalGetAcceptPicNumMap());
-        bitField0_ |= 0x00000004;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -653,60 +731,17 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 88: {
-                int v = input.readUInt32();
-                ensureAcceptIndexListIsMutable();
-                acceptIndexList_.addInt(v);
-                break;
-              } // case 88
-              case 90: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureAcceptIndexListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  acceptIndexList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 90
-              case 122: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                acceptPicNumMap__ = input.readMessage(
-                    AcceptPicNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableAcceptPicNumMap().getMutableMap().put(
-                    acceptPicNumMap__.getKey(), acceptPicNumMap__.getValue());
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -716,7 +751,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           acceptIndexList_ = mutableCopy(acceptIndexList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 accept_index_list = 11;</code>
@@ -750,7 +785,6 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
        */
       public Builder setAcceptIndexList(
           int index, int value) {
-        
         ensureAcceptIndexListIsMutable();
         acceptIndexList_.setInt(index, value);
         onChanged();
@@ -762,7 +796,6 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAcceptIndexList(int value) {
-        
         ensureAcceptIndexListIsMutable();
         acceptIndexList_.addInt(value);
         onChanged();
@@ -809,7 +842,6 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -818,7 +850,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -827,7 +859,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> acceptPicNumMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetAcceptPicNumMap() {
+      internalGetAcceptPicNumMap() {
         if (acceptPicNumMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               AcceptPicNumMapDefaultEntryHolder.defaultEntry);
@@ -835,7 +867,8 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
         return acceptPicNumMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableAcceptPicNumMap() {
+      internalGetMutableAcceptPicNumMap() {
+        onChanged();;
         if (acceptPicNumMap_ == null) {
           acceptPicNumMap_ = com.google.protobuf.MapField.newMapField(
               AcceptPicNumMapDefaultEntryHolder.defaultEntry);
@@ -843,16 +876,16 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
         if (!acceptPicNumMap_.isMutable()) {
           acceptPicNumMap_ = acceptPicNumMap_.copy();
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
         return acceptPicNumMap_;
       }
+
       public int getAcceptPicNumMapCount() {
         return internalGetAcceptPicNumMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
        */
+
       @java.lang.Override
       public boolean containsAcceptPicNumMap(
           int key) {
@@ -871,6 +904,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
        * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getAcceptPicNumMapMap() {
         return internalGetAcceptPicNumMap().getMap();
       }
@@ -878,6 +912,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
        * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
        */
       @java.lang.Override
+
       public int getAcceptPicNumMapOrDefault(
           int key,
           int defaultValue) {
@@ -890,6 +925,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
        * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
        */
       @java.lang.Override
+
       public int getAcceptPicNumMapOrThrow(
           int key) {
         
@@ -900,8 +936,8 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearAcceptPicNumMap() {
-        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableAcceptPicNumMap().getMutableMap()
             .clear();
         return this;
@@ -909,6 +945,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
        */
+
       public Builder removeAcceptPicNumMap(
           int key) {
         
@@ -921,8 +958,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableAcceptPicNumMap() {
-        bitField0_ |= 0x00000004;
+      getMutableAcceptPicNumMap() {
         return internalGetMutableAcceptPicNumMap().getMutableMap();
       }
       /**
@@ -935,17 +971,16 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
         
         internalGetMutableAcceptPicNumMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
        */
+
       public Builder putAllAcceptPicNumMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableAcceptPicNumMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000004;
         return this;
       }
       @java.lang.Override
@@ -981,18 +1016,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BlessingAcceptAllGivePicRsp(input, extensionRegistry);
       }
     };
 

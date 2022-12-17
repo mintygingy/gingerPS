@@ -87,6 +87,74 @@ public final class BattlePassMissionOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BattlePassMission(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+
+              missionType_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              curProgress_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              missionStatus_ = rawValue;
+              break;
+            }
+            case 96: {
+
+              totalProgress_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              rewardBattlePassPoint_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              missionId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BattlePassMissionOuterClass.internal_static_BattlePassMission_descriptor;
@@ -227,7 +295,7 @@ public final class BattlePassMissionOuterClass {
     }
 
     public static final int CUR_PROGRESS_FIELD_NUMBER = 10;
-    private int curProgress_ = 0;
+    private int curProgress_;
     /**
      * <code>uint32 cur_progress = 10;</code>
      * @return The curProgress.
@@ -238,7 +306,7 @@ public final class BattlePassMissionOuterClass {
     }
 
     public static final int MISSION_TYPE_FIELD_NUMBER = 9;
-    private int missionType_ = 0;
+    private int missionType_;
     /**
      * <code>uint32 mission_type = 9;</code>
      * @return The missionType.
@@ -249,7 +317,7 @@ public final class BattlePassMissionOuterClass {
     }
 
     public static final int REWARD_BATTLE_PASS_POINT_FIELD_NUMBER = 14;
-    private int rewardBattlePassPoint_ = 0;
+    private int rewardBattlePassPoint_;
     /**
      * <code>uint32 reward_battle_pass_point = 14;</code>
      * @return The rewardBattlePassPoint.
@@ -260,7 +328,7 @@ public final class BattlePassMissionOuterClass {
     }
 
     public static final int TOTAL_PROGRESS_FIELD_NUMBER = 12;
-    private int totalProgress_ = 0;
+    private int totalProgress_;
     /**
      * <code>uint32 total_progress = 12;</code>
      * @return The totalProgress.
@@ -271,7 +339,7 @@ public final class BattlePassMissionOuterClass {
     }
 
     public static final int MISSION_ID_FIELD_NUMBER = 15;
-    private int missionId_ = 0;
+    private int missionId_;
     /**
      * <code>uint32 mission_id = 15;</code>
      * @return The missionId.
@@ -282,7 +350,7 @@ public final class BattlePassMissionOuterClass {
     }
 
     public static final int MISSION_STATUS_FIELD_NUMBER = 11;
-    private int missionStatus_ = 0;
+    private int missionStatus_;
     /**
      * <code>.BattlePassMission.MissionStatus mission_status = 11;</code>
      * @return The enum numeric value on the wire for missionStatus.
@@ -295,7 +363,8 @@ public final class BattlePassMissionOuterClass {
      * @return The missionStatus.
      */
     @java.lang.Override public emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus getMissionStatus() {
-      emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus result = emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus.forNumber(missionStatus_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus result = emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus.valueOf(missionStatus_);
       return result == null ? emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus.UNRECOGNIZED : result;
     }
 
@@ -331,7 +400,7 @@ public final class BattlePassMissionOuterClass {
       if (missionId_ != 0) {
         output.writeUInt32(15, missionId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -364,7 +433,7 @@ public final class BattlePassMissionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, missionId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -390,7 +459,7 @@ public final class BattlePassMissionOuterClass {
       if (getMissionId()
           != other.getMissionId()) return false;
       if (missionStatus_ != other.missionStatus_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -413,7 +482,7 @@ public final class BattlePassMissionOuterClass {
       hash = (53 * hash) + getMissionId();
       hash = (37 * hash) + MISSION_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + missionStatus_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -530,24 +599,34 @@ public final class BattlePassMissionOuterClass {
 
       // Construct using emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         curProgress_ = 0;
+
         missionType_ = 0;
+
         rewardBattlePassPoint_ = 0;
+
         totalProgress_ = 0;
+
         missionId_ = 0;
+
         missionStatus_ = 0;
+
         return this;
       }
 
@@ -574,31 +653,14 @@ public final class BattlePassMissionOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission buildPartial() {
         emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission result = new emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.curProgress_ = curProgress_;
+        result.missionType_ = missionType_;
+        result.rewardBattlePassPoint_ = rewardBattlePassPoint_;
+        result.totalProgress_ = totalProgress_;
+        result.missionId_ = missionId_;
+        result.missionStatus_ = missionStatus_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.curProgress_ = curProgress_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.missionType_ = missionType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.rewardBattlePassPoint_ = rewardBattlePassPoint_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.totalProgress_ = totalProgress_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.missionId_ = missionId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.missionStatus_ = missionStatus_;
-        }
       }
 
       @java.lang.Override
@@ -663,7 +725,7 @@ public final class BattlePassMissionOuterClass {
         if (other.missionStatus_ != 0) {
           setMissionStatusValue(other.getMissionStatusValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -678,63 +740,19 @@ public final class BattlePassMissionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                missionType_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 80: {
-                curProgress_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 88: {
-                missionStatus_ = input.readEnum();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 88
-              case 96: {
-                totalProgress_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              case 112: {
-                rewardBattlePassPoint_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              case 120: {
-                missionId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int curProgress_ ;
       /**
@@ -753,7 +771,6 @@ public final class BattlePassMissionOuterClass {
       public Builder setCurProgress(int value) {
         
         curProgress_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -762,7 +779,7 @@ public final class BattlePassMissionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurProgress() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         curProgress_ = 0;
         onChanged();
         return this;
@@ -785,7 +802,6 @@ public final class BattlePassMissionOuterClass {
       public Builder setMissionType(int value) {
         
         missionType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -794,7 +810,7 @@ public final class BattlePassMissionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMissionType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         missionType_ = 0;
         onChanged();
         return this;
@@ -817,7 +833,6 @@ public final class BattlePassMissionOuterClass {
       public Builder setRewardBattlePassPoint(int value) {
         
         rewardBattlePassPoint_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -826,7 +841,7 @@ public final class BattlePassMissionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRewardBattlePassPoint() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         rewardBattlePassPoint_ = 0;
         onChanged();
         return this;
@@ -849,7 +864,6 @@ public final class BattlePassMissionOuterClass {
       public Builder setTotalProgress(int value) {
         
         totalProgress_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -858,7 +872,7 @@ public final class BattlePassMissionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalProgress() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         totalProgress_ = 0;
         onChanged();
         return this;
@@ -881,7 +895,6 @@ public final class BattlePassMissionOuterClass {
       public Builder setMissionId(int value) {
         
         missionId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -890,7 +903,7 @@ public final class BattlePassMissionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMissionId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         missionId_ = 0;
         onChanged();
         return this;
@@ -910,8 +923,8 @@ public final class BattlePassMissionOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMissionStatusValue(int value) {
+        
         missionStatus_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -921,7 +934,8 @@ public final class BattlePassMissionOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus getMissionStatus() {
-        emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus result = emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus.forNumber(missionStatus_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus result = emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus.valueOf(missionStatus_);
         return result == null ? emu.gingerps.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus.UNRECOGNIZED : result;
       }
       /**
@@ -933,7 +947,7 @@ public final class BattlePassMissionOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000020;
+        
         missionStatus_ = value.getNumber();
         onChanged();
         return this;
@@ -943,7 +957,7 @@ public final class BattlePassMissionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMissionStatus() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         missionStatus_ = 0;
         onChanged();
         return this;
@@ -981,18 +995,7 @@ public final class BattlePassMissionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BattlePassMission(input, extensionRegistry);
       }
     };
 

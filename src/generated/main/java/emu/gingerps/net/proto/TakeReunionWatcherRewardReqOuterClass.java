@@ -68,6 +68,53 @@ public final class TakeReunionWatcherRewardReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TakeReunionWatcherRewardReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              missionId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              watcherId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TakeReunionWatcherRewardReqOuterClass.internal_static_TakeReunionWatcherRewardReq_descriptor;
@@ -82,7 +129,7 @@ public final class TakeReunionWatcherRewardReqOuterClass {
     }
 
     public static final int WATCHER_ID_FIELD_NUMBER = 14;
-    private int watcherId_ = 0;
+    private int watcherId_;
     /**
      * <code>uint32 watcher_id = 14;</code>
      * @return The watcherId.
@@ -93,7 +140,7 @@ public final class TakeReunionWatcherRewardReqOuterClass {
     }
 
     public static final int MISSION_ID_FIELD_NUMBER = 7;
-    private int missionId_ = 0;
+    private int missionId_;
     /**
      * <code>uint32 mission_id = 7;</code>
      * @return The missionId.
@@ -123,7 +170,7 @@ public final class TakeReunionWatcherRewardReqOuterClass {
       if (watcherId_ != 0) {
         output.writeUInt32(14, watcherId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class TakeReunionWatcherRewardReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, watcherId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class TakeReunionWatcherRewardReqOuterClass {
           != other.getWatcherId()) return false;
       if (getMissionId()
           != other.getMissionId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class TakeReunionWatcherRewardReqOuterClass {
       hash = (53 * hash) + getWatcherId();
       hash = (37 * hash) + MISSION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMissionId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -302,20 +349,26 @@ public final class TakeReunionWatcherRewardReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.TakeReunionWatcherRewardReqOuterClass.TakeReunionWatcherRewardReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         watcherId_ = 0;
+
         missionId_ = 0;
+
         return this;
       }
 
@@ -342,19 +395,10 @@ public final class TakeReunionWatcherRewardReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TakeReunionWatcherRewardReqOuterClass.TakeReunionWatcherRewardReq buildPartial() {
         emu.gingerps.net.proto.TakeReunionWatcherRewardReqOuterClass.TakeReunionWatcherRewardReq result = new emu.gingerps.net.proto.TakeReunionWatcherRewardReqOuterClass.TakeReunionWatcherRewardReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.watcherId_ = watcherId_;
+        result.missionId_ = missionId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TakeReunionWatcherRewardReqOuterClass.TakeReunionWatcherRewardReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.watcherId_ = watcherId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.missionId_ = missionId_;
-        }
       }
 
       @java.lang.Override
@@ -407,7 +451,7 @@ public final class TakeReunionWatcherRewardReqOuterClass {
         if (other.getMissionId() != 0) {
           setMissionId(other.getMissionId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -422,43 +466,19 @@ public final class TakeReunionWatcherRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TakeReunionWatcherRewardReqOuterClass.TakeReunionWatcherRewardReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                missionId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 112: {
-                watcherId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TakeReunionWatcherRewardReqOuterClass.TakeReunionWatcherRewardReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int watcherId_ ;
       /**
@@ -477,7 +497,6 @@ public final class TakeReunionWatcherRewardReqOuterClass {
       public Builder setWatcherId(int value) {
         
         watcherId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -486,7 +505,7 @@ public final class TakeReunionWatcherRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWatcherId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         watcherId_ = 0;
         onChanged();
         return this;
@@ -509,7 +528,6 @@ public final class TakeReunionWatcherRewardReqOuterClass {
       public Builder setMissionId(int value) {
         
         missionId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -518,7 +536,7 @@ public final class TakeReunionWatcherRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMissionId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         missionId_ = 0;
         onChanged();
         return this;
@@ -556,18 +574,7 @@ public final class TakeReunionWatcherRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TakeReunionWatcherRewardReq(input, extensionRegistry);
       }
     };
 

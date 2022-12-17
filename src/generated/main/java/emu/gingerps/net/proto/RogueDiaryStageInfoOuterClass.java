@@ -72,6 +72,66 @@ public final class RogueDiaryStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RogueDiaryStageInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 74: {
+              emu.gingerps.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.Builder subBuilder = null;
+              if (bestRecord_ != null) {
+                subBuilder = bestRecord_.toBuilder();
+              }
+              bestRecord_ = input.readMessage(emu.gingerps.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(bestRecord_);
+                bestRecord_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 88: {
+
+              isHaveTry_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RogueDiaryStageInfoOuterClass.internal_static_RogueDiaryStageInfo_descriptor;
@@ -86,7 +146,7 @@ public final class RogueDiaryStageInfoOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 15;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 15;</code>
      * @return The stageId.
@@ -119,11 +179,11 @@ public final class RogueDiaryStageInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder getBestRecordOrBuilder() {
-      return bestRecord_ == null ? emu.gingerps.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.getDefaultInstance() : bestRecord_;
+      return getBestRecord();
     }
 
     public static final int IS_HAVE_TRY_FIELD_NUMBER = 11;
-    private boolean isHaveTry_ = false;
+    private boolean isHaveTry_;
     /**
      * <code>bool is_have_try = 11;</code>
      * @return The isHaveTry.
@@ -156,7 +216,7 @@ public final class RogueDiaryStageInfoOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(15, stageId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +237,7 @@ public final class RogueDiaryStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, stageId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -201,7 +261,7 @@ public final class RogueDiaryStageInfoOuterClass {
       }
       if (getIsHaveTry()
           != other.getIsHaveTry()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -221,7 +281,7 @@ public final class RogueDiaryStageInfoOuterClass {
       hash = (37 * hash) + IS_HAVE_TRY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsHaveTry());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -338,25 +398,32 @@ public final class RogueDiaryStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         stageId_ = 0;
-        bestRecord_ = null;
-        if (bestRecordBuilder_ != null) {
-          bestRecordBuilder_.dispose();
+
+        if (bestRecordBuilder_ == null) {
+          bestRecord_ = null;
+        } else {
+          bestRecord_ = null;
           bestRecordBuilder_ = null;
         }
         isHaveTry_ = false;
+
         return this;
       }
 
@@ -383,24 +450,15 @@ public final class RogueDiaryStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo buildPartial() {
         emu.gingerps.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo result = new emu.gingerps.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.stageId_ = stageId_;
+        if (bestRecordBuilder_ == null) {
+          result.bestRecord_ = bestRecord_;
+        } else {
+          result.bestRecord_ = bestRecordBuilder_.build();
+        }
+        result.isHaveTry_ = isHaveTry_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.stageId_ = stageId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.bestRecord_ = bestRecordBuilder_ == null
-              ? bestRecord_
-              : bestRecordBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isHaveTry_ = isHaveTry_;
-        }
       }
 
       @java.lang.Override
@@ -456,7 +514,7 @@ public final class RogueDiaryStageInfoOuterClass {
         if (other.getIsHaveTry() != false) {
           setIsHaveTry(other.getIsHaveTry());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -471,50 +529,19 @@ public final class RogueDiaryStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 74: {
-                input.readMessage(
-                    getBestRecordFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 74
-              case 88: {
-                isHaveTry_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              case 120: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int stageId_ ;
       /**
@@ -533,7 +560,6 @@ public final class RogueDiaryStageInfoOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +568,7 @@ public final class RogueDiaryStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -556,7 +582,7 @@ public final class RogueDiaryStageInfoOuterClass {
        * @return Whether the bestRecord field is set.
        */
       public boolean hasBestRecord() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return bestRecordBuilder_ != null || bestRecord_ != null;
       }
       /**
        * <code>.RogueDiaryDungeonRecord best_record = 9;</code>
@@ -578,11 +604,11 @@ public final class RogueDiaryStageInfoOuterClass {
             throw new NullPointerException();
           }
           bestRecord_ = value;
+          onChanged();
         } else {
           bestRecordBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -592,11 +618,11 @@ public final class RogueDiaryStageInfoOuterClass {
           emu.gingerps.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.Builder builderForValue) {
         if (bestRecordBuilder_ == null) {
           bestRecord_ = builderForValue.build();
+          onChanged();
         } else {
           bestRecordBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -604,38 +630,38 @@ public final class RogueDiaryStageInfoOuterClass {
        */
       public Builder mergeBestRecord(emu.gingerps.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord value) {
         if (bestRecordBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            bestRecord_ != null &&
-            bestRecord_ != emu.gingerps.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.getDefaultInstance()) {
-            getBestRecordBuilder().mergeFrom(value);
+          if (bestRecord_ != null) {
+            bestRecord_ =
+              emu.gingerps.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.newBuilder(bestRecord_).mergeFrom(value).buildPartial();
           } else {
             bestRecord_ = value;
           }
+          onChanged();
         } else {
           bestRecordBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.RogueDiaryDungeonRecord best_record = 9;</code>
        */
       public Builder clearBestRecord() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        bestRecord_ = null;
-        if (bestRecordBuilder_ != null) {
-          bestRecordBuilder_.dispose();
+        if (bestRecordBuilder_ == null) {
+          bestRecord_ = null;
+          onChanged();
+        } else {
+          bestRecord_ = null;
           bestRecordBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.RogueDiaryDungeonRecord best_record = 9;</code>
        */
       public emu.gingerps.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.Builder getBestRecordBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getBestRecordFieldBuilder().getBuilder();
       }
@@ -684,7 +710,6 @@ public final class RogueDiaryStageInfoOuterClass {
       public Builder setIsHaveTry(boolean value) {
         
         isHaveTry_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -693,7 +718,7 @@ public final class RogueDiaryStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsHaveTry() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isHaveTry_ = false;
         onChanged();
         return this;
@@ -731,18 +756,7 @@ public final class RogueDiaryStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RogueDiaryStageInfo(input, extensionRegistry);
       }
     };
 

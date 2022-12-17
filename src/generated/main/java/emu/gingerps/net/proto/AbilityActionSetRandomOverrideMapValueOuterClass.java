@@ -51,6 +51,48 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityActionSetRandomOverrideMapValue(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+
+              randomValue_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityActionSetRandomOverrideMapValueOuterClass.internal_static_AbilityActionSetRandomOverrideMapValue_descriptor;
@@ -65,7 +107,7 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
     }
 
     public static final int RANDOM_VALUE_FIELD_NUMBER = 1;
-    private float randomValue_ = 0F;
+    private float randomValue_;
     /**
      * <code>float random_value = 1;</code>
      * @return The randomValue.
@@ -89,10 +131,10 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Float.floatToRawIntBits(randomValue_) != 0) {
+      if (randomValue_ != 0F) {
         output.writeFloat(1, randomValue_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -101,11 +143,11 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Float.floatToRawIntBits(randomValue_) != 0) {
+      if (randomValue_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, randomValue_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -123,7 +165,7 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
       if (java.lang.Float.floatToIntBits(getRandomValue())
           != java.lang.Float.floatToIntBits(
               other.getRandomValue())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -137,7 +179,7 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
       hash = (37 * hash) + RANDOM_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getRandomValue());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -254,19 +296,24 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityActionSetRandomOverrideMapValueOuterClass.AbilityActionSetRandomOverrideMapValue.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         randomValue_ = 0F;
+
         return this;
       }
 
@@ -293,16 +340,9 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityActionSetRandomOverrideMapValueOuterClass.AbilityActionSetRandomOverrideMapValue buildPartial() {
         emu.gingerps.net.proto.AbilityActionSetRandomOverrideMapValueOuterClass.AbilityActionSetRandomOverrideMapValue result = new emu.gingerps.net.proto.AbilityActionSetRandomOverrideMapValueOuterClass.AbilityActionSetRandomOverrideMapValue(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.randomValue_ = randomValue_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityActionSetRandomOverrideMapValueOuterClass.AbilityActionSetRandomOverrideMapValue result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.randomValue_ = randomValue_;
-        }
       }
 
       @java.lang.Override
@@ -352,7 +392,7 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
         if (other.getRandomValue() != 0F) {
           setRandomValue(other.getRandomValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -367,38 +407,19 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityActionSetRandomOverrideMapValueOuterClass.AbilityActionSetRandomOverrideMapValue parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                randomValue_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityActionSetRandomOverrideMapValueOuterClass.AbilityActionSetRandomOverrideMapValue) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private float randomValue_ ;
       /**
@@ -417,7 +438,6 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
       public Builder setRandomValue(float value) {
         
         randomValue_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -426,7 +446,7 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRandomValue() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         randomValue_ = 0F;
         onChanged();
         return this;
@@ -464,18 +484,7 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityActionSetRandomOverrideMapValue(input, extensionRegistry);
       }
     };
 

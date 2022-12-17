@@ -88,6 +88,71 @@ public final class HomeSceneArrangementMuipDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeSceneArrangementMuipData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              moduleId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              isRoom_ = input.readBool();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                blockDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeBlockArrangementMuipDataOuterClass.HomeBlockArrangementMuipData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              blockDataList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeBlockArrangementMuipDataOuterClass.HomeBlockArrangementMuipData.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          blockDataList_ = java.util.Collections.unmodifiableList(blockDataList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeSceneArrangementMuipDataOuterClass.internal_static_HomeSceneArrangementMuipData_descriptor;
@@ -102,7 +167,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
     }
 
     public static final int MODULE_ID_FIELD_NUMBER = 1;
-    private int moduleId_ = 0;
+    private int moduleId_;
     /**
      * <code>uint32 module_id = 1;</code>
      * @return The moduleId.
@@ -113,7 +178,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 2;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 2;</code>
      * @return The sceneId.
@@ -124,7 +189,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
     }
 
     public static final int IS_ROOM_FIELD_NUMBER = 3;
-    private boolean isRoom_ = false;
+    private boolean isRoom_;
     /**
      * <code>bool is_room = 3;</code>
      * @return The isRoom.
@@ -135,7 +200,6 @@ public final class HomeSceneArrangementMuipDataOuterClass {
     }
 
     public static final int BLOCK_DATA_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeBlockArrangementMuipDataOuterClass.HomeBlockArrangementMuipData> blockDataList_;
     /**
      * <code>repeated .HomeBlockArrangementMuipData block_data_list = 4;</code>
@@ -201,7 +265,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
       for (int i = 0; i < blockDataList_.size(); i++) {
         output.writeMessage(4, blockDataList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -226,7 +290,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, blockDataList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -249,7 +313,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
           != other.getIsRoom()) return false;
       if (!getBlockDataListList()
           .equals(other.getBlockDataListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -271,7 +335,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
         hash = (37 * hash) + BLOCK_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBlockDataListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -388,28 +452,35 @@ public final class HomeSceneArrangementMuipDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeSceneArrangementMuipDataOuterClass.HomeSceneArrangementMuipData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBlockDataListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         moduleId_ = 0;
+
         sceneId_ = 0;
+
         isRoom_ = false;
+
         if (blockDataListBuilder_ == null) {
           blockDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          blockDataList_ = null;
           blockDataListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -436,35 +507,21 @@ public final class HomeSceneArrangementMuipDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeSceneArrangementMuipDataOuterClass.HomeSceneArrangementMuipData buildPartial() {
         emu.gingerps.net.proto.HomeSceneArrangementMuipDataOuterClass.HomeSceneArrangementMuipData result = new emu.gingerps.net.proto.HomeSceneArrangementMuipDataOuterClass.HomeSceneArrangementMuipData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomeSceneArrangementMuipDataOuterClass.HomeSceneArrangementMuipData result) {
+        int from_bitField0_ = bitField0_;
+        result.moduleId_ = moduleId_;
+        result.sceneId_ = sceneId_;
+        result.isRoom_ = isRoom_;
         if (blockDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             blockDataList_ = java.util.Collections.unmodifiableList(blockDataList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.blockDataList_ = blockDataList_;
         } else {
           result.blockDataList_ = blockDataListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeSceneArrangementMuipDataOuterClass.HomeSceneArrangementMuipData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.moduleId_ = moduleId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isRoom_ = isRoom_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -524,7 +581,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
           if (!other.blockDataList_.isEmpty()) {
             if (blockDataList_.isEmpty()) {
               blockDataList_ = other.blockDataList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureBlockDataListIsMutable();
               blockDataList_.addAll(other.blockDataList_);
@@ -537,7 +594,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
               blockDataListBuilder_.dispose();
               blockDataListBuilder_ = null;
               blockDataList_ = other.blockDataList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               blockDataListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBlockDataListFieldBuilder() : null;
@@ -546,7 +603,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -561,58 +618,17 @@ public final class HomeSceneArrangementMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeSceneArrangementMuipDataOuterClass.HomeSceneArrangementMuipData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                moduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                isRoom_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 34: {
-                emu.gingerps.net.proto.HomeBlockArrangementMuipDataOuterClass.HomeBlockArrangementMuipData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeBlockArrangementMuipDataOuterClass.HomeBlockArrangementMuipData.parser(),
-                        extensionRegistry);
-                if (blockDataListBuilder_ == null) {
-                  ensureBlockDataListIsMutable();
-                  blockDataList_.add(m);
-                } else {
-                  blockDataListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeSceneArrangementMuipDataOuterClass.HomeSceneArrangementMuipData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -634,7 +650,6 @@ public final class HomeSceneArrangementMuipDataOuterClass {
       public Builder setModuleId(int value) {
         
         moduleId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -643,7 +658,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearModuleId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         moduleId_ = 0;
         onChanged();
         return this;
@@ -666,7 +681,6 @@ public final class HomeSceneArrangementMuipDataOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -675,7 +689,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -698,7 +712,6 @@ public final class HomeSceneArrangementMuipDataOuterClass {
       public Builder setIsRoom(boolean value) {
         
         isRoom_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -707,7 +720,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsRoom() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isRoom_ = false;
         onChanged();
         return this;
@@ -716,9 +729,9 @@ public final class HomeSceneArrangementMuipDataOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomeBlockArrangementMuipDataOuterClass.HomeBlockArrangementMuipData> blockDataList_ =
         java.util.Collections.emptyList();
       private void ensureBlockDataListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           blockDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeBlockArrangementMuipDataOuterClass.HomeBlockArrangementMuipData>(blockDataList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -868,7 +881,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
       public Builder clearBlockDataList() {
         if (blockDataListBuilder_ == null) {
           blockDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           blockDataListBuilder_.clear();
@@ -945,7 +958,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
           blockDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomeBlockArrangementMuipDataOuterClass.HomeBlockArrangementMuipData, emu.gingerps.net.proto.HomeBlockArrangementMuipDataOuterClass.HomeBlockArrangementMuipData.Builder, emu.gingerps.net.proto.HomeBlockArrangementMuipDataOuterClass.HomeBlockArrangementMuipDataOrBuilder>(
                   blockDataList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           blockDataList_ = null;
@@ -985,18 +998,7 @@ public final class HomeSceneArrangementMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeSceneArrangementMuipData(input, extensionRegistry);
       }
     };
 

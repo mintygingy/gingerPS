@@ -123,6 +123,92 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerEnterSceneInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              enterSceneToken_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              curAvatarEntityId_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo.Builder subBuilder = null;
+              if (teamEnterInfo_ != null) {
+                subBuilder = teamEnterInfo_.toBuilder();
+              }
+              teamEnterInfo_ = input.readMessage(emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(teamEnterInfo_);
+                teamEnterInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                avatarEnterInfo_ = new java.util.ArrayList<emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              avatarEnterInfo_.add(
+                  input.readMessage(emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo.Builder subBuilder = null;
+              if (mpLevelEntityInfo_ != null) {
+                subBuilder = mpLevelEntityInfo_.toBuilder();
+              }
+              mpLevelEntityInfo_ = input.readMessage(emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mpLevelEntityInfo_);
+                mpLevelEntityInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          avatarEnterInfo_ = java.util.Collections.unmodifiableList(avatarEnterInfo_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerEnterSceneInfoNotifyOuterClass.internal_static_PlayerEnterSceneInfoNotify_descriptor;
@@ -159,11 +245,10 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder getTeamEnterInfoOrBuilder() {
-      return teamEnterInfo_ == null ? emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo.getDefaultInstance() : teamEnterInfo_;
+      return getTeamEnterInfo();
     }
 
     public static final int AVATAR_ENTER_INFO_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo> avatarEnterInfo_;
     /**
      * <code>repeated .AvatarEnterSceneInfo avatar_enter_info = 10;</code>
@@ -204,7 +289,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
     }
 
     public static final int CUR_AVATAR_ENTITY_ID_FIELD_NUMBER = 4;
-    private int curAvatarEntityId_ = 0;
+    private int curAvatarEntityId_;
     /**
      * <code>uint32 cur_avatar_entity_id = 4;</code>
      * @return The curAvatarEntityId.
@@ -237,11 +322,11 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfoOrBuilder getMpLevelEntityInfoOrBuilder() {
-      return mpLevelEntityInfo_ == null ? emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo.getDefaultInstance() : mpLevelEntityInfo_;
+      return getMpLevelEntityInfo();
     }
 
     public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 1;
-    private int enterSceneToken_ = 0;
+    private int enterSceneToken_;
     /**
      * <code>uint32 enter_scene_token = 1;</code>
      * @return The enterSceneToken.
@@ -280,7 +365,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
       if (mpLevelEntityInfo_ != null) {
         output.writeMessage(15, getMpLevelEntityInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -309,7 +394,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getMpLevelEntityInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -340,7 +425,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
       }
       if (getEnterSceneToken()
           != other.getEnterSceneToken()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -367,7 +452,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
       }
       hash = (37 * hash) + ENTER_SCENE_TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getEnterSceneToken();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -495,37 +580,45 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerEnterSceneInfoNotifyOuterClass.PlayerEnterSceneInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAvatarEnterInfoFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        teamEnterInfo_ = null;
-        if (teamEnterInfoBuilder_ != null) {
-          teamEnterInfoBuilder_.dispose();
+        if (teamEnterInfoBuilder_ == null) {
+          teamEnterInfo_ = null;
+        } else {
+          teamEnterInfo_ = null;
           teamEnterInfoBuilder_ = null;
         }
         if (avatarEnterInfoBuilder_ == null) {
           avatarEnterInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          avatarEnterInfo_ = null;
           avatarEnterInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         curAvatarEntityId_ = 0;
-        mpLevelEntityInfo_ = null;
-        if (mpLevelEntityInfoBuilder_ != null) {
-          mpLevelEntityInfoBuilder_.dispose();
+
+        if (mpLevelEntityInfoBuilder_ == null) {
+          mpLevelEntityInfo_ = null;
+        } else {
+          mpLevelEntityInfo_ = null;
           mpLevelEntityInfoBuilder_ = null;
         }
         enterSceneToken_ = 0;
+
         return this;
       }
 
@@ -552,42 +645,30 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerEnterSceneInfoNotifyOuterClass.PlayerEnterSceneInfoNotify buildPartial() {
         emu.gingerps.net.proto.PlayerEnterSceneInfoNotifyOuterClass.PlayerEnterSceneInfoNotify result = new emu.gingerps.net.proto.PlayerEnterSceneInfoNotifyOuterClass.PlayerEnterSceneInfoNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PlayerEnterSceneInfoNotifyOuterClass.PlayerEnterSceneInfoNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (teamEnterInfoBuilder_ == null) {
+          result.teamEnterInfo_ = teamEnterInfo_;
+        } else {
+          result.teamEnterInfo_ = teamEnterInfoBuilder_.build();
+        }
         if (avatarEnterInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             avatarEnterInfo_ = java.util.Collections.unmodifiableList(avatarEnterInfo_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.avatarEnterInfo_ = avatarEnterInfo_;
         } else {
           result.avatarEnterInfo_ = avatarEnterInfoBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerEnterSceneInfoNotifyOuterClass.PlayerEnterSceneInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.teamEnterInfo_ = teamEnterInfoBuilder_ == null
-              ? teamEnterInfo_
-              : teamEnterInfoBuilder_.build();
+        result.curAvatarEntityId_ = curAvatarEntityId_;
+        if (mpLevelEntityInfoBuilder_ == null) {
+          result.mpLevelEntityInfo_ = mpLevelEntityInfo_;
+        } else {
+          result.mpLevelEntityInfo_ = mpLevelEntityInfoBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curAvatarEntityId_ = curAvatarEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.mpLevelEntityInfo_ = mpLevelEntityInfoBuilder_ == null
-              ? mpLevelEntityInfo_
-              : mpLevelEntityInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.enterSceneToken_ = enterSceneToken_;
-        }
+        result.enterSceneToken_ = enterSceneToken_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -641,7 +722,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
           if (!other.avatarEnterInfo_.isEmpty()) {
             if (avatarEnterInfo_.isEmpty()) {
               avatarEnterInfo_ = other.avatarEnterInfo_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureAvatarEnterInfoIsMutable();
               avatarEnterInfo_.addAll(other.avatarEnterInfo_);
@@ -654,7 +735,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
               avatarEnterInfoBuilder_.dispose();
               avatarEnterInfoBuilder_ = null;
               avatarEnterInfo_ = other.avatarEnterInfo_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               avatarEnterInfoBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAvatarEnterInfoFieldBuilder() : null;
@@ -672,7 +753,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
         if (other.getEnterSceneToken() != 0) {
           setEnterSceneToken(other.getEnterSceneToken());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -687,67 +768,17 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerEnterSceneInfoNotifyOuterClass.PlayerEnterSceneInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                enterSceneToken_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 8
-              case 32: {
-                curAvatarEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 50: {
-                input.readMessage(
-                    getTeamEnterInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 50
-              case 82: {
-                emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo.parser(),
-                        extensionRegistry);
-                if (avatarEnterInfoBuilder_ == null) {
-                  ensureAvatarEnterInfoIsMutable();
-                  avatarEnterInfo_.add(m);
-                } else {
-                  avatarEnterInfoBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              case 122: {
-                input.readMessage(
-                    getMpLevelEntityInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerEnterSceneInfoNotifyOuterClass.PlayerEnterSceneInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -760,7 +791,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
        * @return Whether the teamEnterInfo field is set.
        */
       public boolean hasTeamEnterInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return teamEnterInfoBuilder_ != null || teamEnterInfo_ != null;
       }
       /**
        * <code>.TeamEnterSceneInfo team_enter_info = 6;</code>
@@ -782,11 +813,11 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
             throw new NullPointerException();
           }
           teamEnterInfo_ = value;
+          onChanged();
         } else {
           teamEnterInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -796,11 +827,11 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
           emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo.Builder builderForValue) {
         if (teamEnterInfoBuilder_ == null) {
           teamEnterInfo_ = builderForValue.build();
+          onChanged();
         } else {
           teamEnterInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -808,38 +839,38 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
        */
       public Builder mergeTeamEnterInfo(emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo value) {
         if (teamEnterInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            teamEnterInfo_ != null &&
-            teamEnterInfo_ != emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo.getDefaultInstance()) {
-            getTeamEnterInfoBuilder().mergeFrom(value);
+          if (teamEnterInfo_ != null) {
+            teamEnterInfo_ =
+              emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo.newBuilder(teamEnterInfo_).mergeFrom(value).buildPartial();
           } else {
             teamEnterInfo_ = value;
           }
+          onChanged();
         } else {
           teamEnterInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TeamEnterSceneInfo team_enter_info = 6;</code>
        */
       public Builder clearTeamEnterInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        teamEnterInfo_ = null;
-        if (teamEnterInfoBuilder_ != null) {
-          teamEnterInfoBuilder_.dispose();
+        if (teamEnterInfoBuilder_ == null) {
+          teamEnterInfo_ = null;
+          onChanged();
+        } else {
+          teamEnterInfo_ = null;
           teamEnterInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.TeamEnterSceneInfo team_enter_info = 6;</code>
        */
       public emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo.Builder getTeamEnterInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getTeamEnterInfoFieldBuilder().getBuilder();
       }
@@ -874,9 +905,9 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo> avatarEnterInfo_ =
         java.util.Collections.emptyList();
       private void ensureAvatarEnterInfoIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           avatarEnterInfo_ = new java.util.ArrayList<emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo>(avatarEnterInfo_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1026,7 +1057,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
       public Builder clearAvatarEnterInfo() {
         if (avatarEnterInfoBuilder_ == null) {
           avatarEnterInfo_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           avatarEnterInfoBuilder_.clear();
@@ -1103,7 +1134,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
           avatarEnterInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo, emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo.Builder, emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder>(
                   avatarEnterInfo_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           avatarEnterInfo_ = null;
@@ -1128,7 +1159,6 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
       public Builder setCurAvatarEntityId(int value) {
         
         curAvatarEntityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1137,7 +1167,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurAvatarEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curAvatarEntityId_ = 0;
         onChanged();
         return this;
@@ -1151,7 +1181,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
        * @return Whether the mpLevelEntityInfo field is set.
        */
       public boolean hasMpLevelEntityInfo() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return mpLevelEntityInfoBuilder_ != null || mpLevelEntityInfo_ != null;
       }
       /**
        * <code>.MPLevelEntityInfo mp_level_entity_info = 15;</code>
@@ -1173,11 +1203,11 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
             throw new NullPointerException();
           }
           mpLevelEntityInfo_ = value;
+          onChanged();
         } else {
           mpLevelEntityInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1187,11 +1217,11 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
           emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo.Builder builderForValue) {
         if (mpLevelEntityInfoBuilder_ == null) {
           mpLevelEntityInfo_ = builderForValue.build();
+          onChanged();
         } else {
           mpLevelEntityInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1199,38 +1229,38 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
        */
       public Builder mergeMpLevelEntityInfo(emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo value) {
         if (mpLevelEntityInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            mpLevelEntityInfo_ != null &&
-            mpLevelEntityInfo_ != emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo.getDefaultInstance()) {
-            getMpLevelEntityInfoBuilder().mergeFrom(value);
+          if (mpLevelEntityInfo_ != null) {
+            mpLevelEntityInfo_ =
+              emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo.newBuilder(mpLevelEntityInfo_).mergeFrom(value).buildPartial();
           } else {
             mpLevelEntityInfo_ = value;
           }
+          onChanged();
         } else {
           mpLevelEntityInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MPLevelEntityInfo mp_level_entity_info = 15;</code>
        */
       public Builder clearMpLevelEntityInfo() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        mpLevelEntityInfo_ = null;
-        if (mpLevelEntityInfoBuilder_ != null) {
-          mpLevelEntityInfoBuilder_.dispose();
+        if (mpLevelEntityInfoBuilder_ == null) {
+          mpLevelEntityInfo_ = null;
+          onChanged();
+        } else {
+          mpLevelEntityInfo_ = null;
           mpLevelEntityInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MPLevelEntityInfo mp_level_entity_info = 15;</code>
        */
       public emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo.Builder getMpLevelEntityInfoBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getMpLevelEntityInfoFieldBuilder().getBuilder();
       }
@@ -1279,7 +1309,6 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
       public Builder setEnterSceneToken(int value) {
         
         enterSceneToken_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1288,7 +1317,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEnterSceneToken() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         enterSceneToken_ = 0;
         onChanged();
         return this;
@@ -1326,18 +1355,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerEnterSceneInfoNotify(input, extensionRegistry);
       }
     };
 

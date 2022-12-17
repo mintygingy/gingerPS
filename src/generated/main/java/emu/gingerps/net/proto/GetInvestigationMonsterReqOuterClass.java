@@ -80,6 +80,73 @@ public final class GetInvestigationMonsterReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetInvestigationMonsterReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+
+              isForMark_ = input.readBool();
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cityIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cityIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                cityIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                cityIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cityIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetInvestigationMonsterReqOuterClass.internal_static_GetInvestigationMonsterReq_descriptor;
@@ -94,7 +161,7 @@ public final class GetInvestigationMonsterReqOuterClass {
     }
 
     public static final int IS_FOR_MARK_FIELD_NUMBER = 8;
-    private boolean isForMark_ = false;
+    private boolean isForMark_;
     /**
      * <code>bool is_for_mark = 8;</code>
      * @return The isForMark.
@@ -105,7 +172,6 @@ public final class GetInvestigationMonsterReqOuterClass {
     }
 
     public static final int CITY_ID_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList cityIdList_;
     /**
      * <code>repeated uint32 city_id_list = 11;</code>
@@ -158,7 +224,7 @@ public final class GetInvestigationMonsterReqOuterClass {
       for (int i = 0; i < cityIdList_.size(); i++) {
         output.writeUInt32NoTag(cityIdList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -185,7 +251,7 @@ public final class GetInvestigationMonsterReqOuterClass {
         }
         cityIdListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -204,7 +270,7 @@ public final class GetInvestigationMonsterReqOuterClass {
           != other.getIsForMark()) return false;
       if (!getCityIdListList()
           .equals(other.getCityIdListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -222,7 +288,7 @@ public final class GetInvestigationMonsterReqOuterClass {
         hash = (37 * hash) + CITY_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCityIdListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -350,20 +416,26 @@ public final class GetInvestigationMonsterReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isForMark_ = false;
+
         cityIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -390,25 +462,15 @@ public final class GetInvestigationMonsterReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq buildPartial() {
         emu.gingerps.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq result = new emu.gingerps.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.isForMark_ = isForMark_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           cityIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.cityIdList_ = cityIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isForMark_ = isForMark_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -461,14 +523,14 @@ public final class GetInvestigationMonsterReqOuterClass {
         if (!other.cityIdList_.isEmpty()) {
           if (cityIdList_.isEmpty()) {
             cityIdList_ = other.cityIdList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureCityIdListIsMutable();
             cityIdList_.addAll(other.cityIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -483,51 +545,17 @@ public final class GetInvestigationMonsterReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                isForMark_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 88: {
-                int v = input.readUInt32();
-                ensureCityIdListIsMutable();
-                cityIdList_.addInt(v);
-                break;
-              } // case 88
-              case 90: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureCityIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  cityIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -549,7 +577,6 @@ public final class GetInvestigationMonsterReqOuterClass {
       public Builder setIsForMark(boolean value) {
         
         isForMark_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -558,7 +585,7 @@ public final class GetInvestigationMonsterReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsForMark() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isForMark_ = false;
         onChanged();
         return this;
@@ -566,10 +593,10 @@ public final class GetInvestigationMonsterReqOuterClass {
 
       private com.google.protobuf.Internal.IntList cityIdList_ = emptyIntList();
       private void ensureCityIdListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           cityIdList_ = mutableCopy(cityIdList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 city_id_list = 11;</code>
@@ -577,7 +604,7 @@ public final class GetInvestigationMonsterReqOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getCityIdListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(cityIdList_) : cityIdList_;
       }
       /**
@@ -603,7 +630,6 @@ public final class GetInvestigationMonsterReqOuterClass {
        */
       public Builder setCityIdList(
           int index, int value) {
-        
         ensureCityIdListIsMutable();
         cityIdList_.setInt(index, value);
         onChanged();
@@ -615,7 +641,6 @@ public final class GetInvestigationMonsterReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCityIdList(int value) {
-        
         ensureCityIdListIsMutable();
         cityIdList_.addInt(value);
         onChanged();
@@ -640,7 +665,7 @@ public final class GetInvestigationMonsterReqOuterClass {
        */
       public Builder clearCityIdList() {
         cityIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -677,18 +702,7 @@ public final class GetInvestigationMonsterReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetInvestigationMonsterReq(input, extensionRegistry);
       }
     };
 

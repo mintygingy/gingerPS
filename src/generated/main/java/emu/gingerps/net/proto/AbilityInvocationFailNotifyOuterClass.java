@@ -89,6 +89,67 @@ public final class AbilityInvocationFailNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityInvocationFailNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reason_ = s;
+              break;
+            }
+            case 90: {
+              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder subBuilder = null;
+              if (invoke_ != null) {
+                subBuilder = invoke_.toBuilder();
+              }
+              invoke_ = input.readMessage(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(invoke_);
+                invoke_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityInvocationFailNotifyOuterClass.internal_static_AbilityInvocationFailNotify_descriptor;
@@ -103,7 +164,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 4;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 4;</code>
      * @return The entityId.
@@ -114,8 +175,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object reason_ = "";
+    private volatile java.lang.Object reason_;
     /**
      * <code>string reason = 8;</code>
      * @return The reason.
@@ -175,7 +235,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder getInvokeOrBuilder() {
-      return invoke_ == null ? emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance() : invoke_;
+      return getInvoke();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,7 +261,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
       if (invoke_ != null) {
         output.writeMessage(11, getInvoke());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -221,7 +281,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getInvoke());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -245,7 +305,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
         if (!getInvoke()
             .equals(other.getInvoke())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -264,7 +324,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
         hash = (37 * hash) + INVOKE_FIELD_NUMBER;
         hash = (53 * hash) + getInvoke().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -391,23 +451,30 @@ public final class AbilityInvocationFailNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityInvocationFailNotifyOuterClass.AbilityInvocationFailNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         entityId_ = 0;
+
         reason_ = "";
-        invoke_ = null;
-        if (invokeBuilder_ != null) {
-          invokeBuilder_.dispose();
+
+        if (invokeBuilder_ == null) {
+          invoke_ = null;
+        } else {
+          invoke_ = null;
           invokeBuilder_ = null;
         }
         return this;
@@ -436,24 +503,15 @@ public final class AbilityInvocationFailNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityInvocationFailNotifyOuterClass.AbilityInvocationFailNotify buildPartial() {
         emu.gingerps.net.proto.AbilityInvocationFailNotifyOuterClass.AbilityInvocationFailNotify result = new emu.gingerps.net.proto.AbilityInvocationFailNotifyOuterClass.AbilityInvocationFailNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.entityId_ = entityId_;
+        result.reason_ = reason_;
+        if (invokeBuilder_ == null) {
+          result.invoke_ = invoke_;
+        } else {
+          result.invoke_ = invokeBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityInvocationFailNotifyOuterClass.AbilityInvocationFailNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.invoke_ = invokeBuilder_ == null
-              ? invoke_
-              : invokeBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -505,13 +563,12 @@ public final class AbilityInvocationFailNotifyOuterClass {
         }
         if (!other.getReason().isEmpty()) {
           reason_ = other.reason_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasInvoke()) {
           mergeInvoke(other.getInvoke());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -526,50 +583,19 @@ public final class AbilityInvocationFailNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityInvocationFailNotifyOuterClass.AbilityInvocationFailNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 66: {
-                reason_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 66
-              case 90: {
-                input.readMessage(
-                    getInvokeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityInvocationFailNotifyOuterClass.AbilityInvocationFailNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -588,7 +614,6 @@ public final class AbilityInvocationFailNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -597,7 +622,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -644,9 +669,11 @@ public final class AbilityInvocationFailNotifyOuterClass {
        */
       public Builder setReason(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         reason_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -655,8 +682,8 @@ public final class AbilityInvocationFailNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
+        
         reason_ = getDefaultInstance().getReason();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -667,10 +694,12 @@ public final class AbilityInvocationFailNotifyOuterClass {
        */
       public Builder setReasonBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         reason_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -683,7 +712,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
        * @return Whether the invoke field is set.
        */
       public boolean hasInvoke() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return invokeBuilder_ != null || invoke_ != null;
       }
       /**
        * <code>.AbilityInvokeEntry invoke = 11;</code>
@@ -705,11 +734,11 @@ public final class AbilityInvocationFailNotifyOuterClass {
             throw new NullPointerException();
           }
           invoke_ = value;
+          onChanged();
         } else {
           invokeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -719,11 +748,11 @@ public final class AbilityInvocationFailNotifyOuterClass {
           emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
         if (invokeBuilder_ == null) {
           invoke_ = builderForValue.build();
+          onChanged();
         } else {
           invokeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -731,38 +760,38 @@ public final class AbilityInvocationFailNotifyOuterClass {
        */
       public Builder mergeInvoke(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry value) {
         if (invokeBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            invoke_ != null &&
-            invoke_ != emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance()) {
-            getInvokeBuilder().mergeFrom(value);
+          if (invoke_ != null) {
+            invoke_ =
+              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.newBuilder(invoke_).mergeFrom(value).buildPartial();
           } else {
             invoke_ = value;
           }
+          onChanged();
         } else {
           invokeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry invoke = 11;</code>
        */
       public Builder clearInvoke() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        invoke_ = null;
-        if (invokeBuilder_ != null) {
-          invokeBuilder_.dispose();
+        if (invokeBuilder_ == null) {
+          invoke_ = null;
+          onChanged();
+        } else {
+          invoke_ = null;
           invokeBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry invoke = 11;</code>
        */
       public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder getInvokeBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getInvokeFieldBuilder().getBuilder();
       }
@@ -826,18 +855,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityInvocationFailNotify(input, extensionRegistry);
       }
     };
 

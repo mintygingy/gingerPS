@@ -142,6 +142,126 @@ public final class AvatarEnterSceneInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AvatarEnterSceneInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = null;
+              if (avatarAbilityInfo_ != null) {
+                subBuilder = avatarAbilityInfo_.toBuilder();
+              }
+              avatarAbilityInfo_ = input.readMessage(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(avatarAbilityInfo_);
+                avatarAbilityInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
+
+              weaponEntityId_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = null;
+              if (weaponAbilityInfo_ != null) {
+                subBuilder = weaponAbilityInfo_.toBuilder();
+              }
+              weaponAbilityInfo_ = input.readMessage(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(weaponAbilityInfo_);
+                weaponAbilityInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                serverBuffList_ = new java.util.ArrayList<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              serverBuffList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                buffIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              buffIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                buffIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                buffIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
+
+              avatarGuid_ = input.readUInt64();
+              break;
+            }
+            case 104: {
+
+              avatarEntityId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              weaponGuid_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          buffIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.internal_static_AvatarEnterSceneInfo_descriptor;
@@ -156,7 +276,7 @@ public final class AvatarEnterSceneInfoOuterClass {
     }
 
     public static final int WEAPON_ENTITY_ID_FIELD_NUMBER = 5;
-    private int weaponEntityId_ = 0;
+    private int weaponEntityId_;
     /**
      * <code>uint32 weapon_entity_id = 5;</code>
      * @return The weaponEntityId.
@@ -167,7 +287,7 @@ public final class AvatarEnterSceneInfoOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 9;
-    private long avatarGuid_ = 0L;
+    private long avatarGuid_;
     /**
      * <code>uint64 avatar_guid = 9;</code>
      * @return The avatarGuid.
@@ -178,7 +298,7 @@ public final class AvatarEnterSceneInfoOuterClass {
     }
 
     public static final int AVATAR_ENTITY_ID_FIELD_NUMBER = 13;
-    private int avatarEntityId_ = 0;
+    private int avatarEntityId_;
     /**
      * <code>uint32 avatar_entity_id = 13;</code>
      * @return The avatarEntityId.
@@ -189,7 +309,6 @@ public final class AvatarEnterSceneInfoOuterClass {
     }
 
     public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_;
     /**
      * <code>repeated .ServerBuff server_buff_list = 7;</code>
@@ -252,11 +371,10 @@ public final class AvatarEnterSceneInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getWeaponAbilityInfoOrBuilder() {
-      return weaponAbilityInfo_ == null ? emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : weaponAbilityInfo_;
+      return getWeaponAbilityInfo();
     }
 
     public static final int BUFF_ID_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList buffIdList_;
     /**
      * <code>repeated uint32 buff_id_list = 8;</code>
@@ -307,11 +425,11 @@ public final class AvatarEnterSceneInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getAvatarAbilityInfoOrBuilder() {
-      return avatarAbilityInfo_ == null ? emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : avatarAbilityInfo_;
+      return getAvatarAbilityInfo();
     }
 
     public static final int WEAPON_GUID_FIELD_NUMBER = 15;
-    private long weaponGuid_ = 0L;
+    private long weaponGuid_;
     /**
      * <code>uint64 weapon_guid = 15;</code>
      * @return The weaponGuid.
@@ -364,7 +482,7 @@ public final class AvatarEnterSceneInfoOuterClass {
       if (weaponGuid_ != 0L) {
         output.writeUInt64(15, weaponGuid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -415,7 +533,7 @@ public final class AvatarEnterSceneInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(15, weaponGuid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -452,7 +570,7 @@ public final class AvatarEnterSceneInfoOuterClass {
       }
       if (getWeaponGuid()
           != other.getWeaponGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -489,7 +607,7 @@ public final class AvatarEnterSceneInfoOuterClass {
       hash = (37 * hash) + WEAPON_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getWeaponGuid());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -606,40 +724,51 @@ public final class AvatarEnterSceneInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getServerBuffListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         weaponEntityId_ = 0;
+
         avatarGuid_ = 0L;
+
         avatarEntityId_ = 0;
+
         if (serverBuffListBuilder_ == null) {
           serverBuffList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          serverBuffList_ = null;
           serverBuffListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
-        weaponAbilityInfo_ = null;
-        if (weaponAbilityInfoBuilder_ != null) {
-          weaponAbilityInfoBuilder_.dispose();
+        if (weaponAbilityInfoBuilder_ == null) {
+          weaponAbilityInfo_ = null;
+        } else {
+          weaponAbilityInfo_ = null;
           weaponAbilityInfoBuilder_ = null;
         }
         buffIdList_ = emptyIntList();
-        avatarAbilityInfo_ = null;
-        if (avatarAbilityInfoBuilder_ != null) {
-          avatarAbilityInfoBuilder_.dispose();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (avatarAbilityInfoBuilder_ == null) {
+          avatarAbilityInfo_ = null;
+        } else {
+          avatarAbilityInfo_ = null;
           avatarAbilityInfoBuilder_ = null;
         }
         weaponGuid_ = 0L;
+
         return this;
       }
 
@@ -666,53 +795,37 @@ public final class AvatarEnterSceneInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo buildPartial() {
         emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo result = new emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.weaponEntityId_ = weaponEntityId_;
+        result.avatarGuid_ = avatarGuid_;
+        result.avatarEntityId_ = avatarEntityId_;
         if (serverBuffListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.serverBuffList_ = serverBuffList_;
         } else {
           result.serverBuffList_ = serverBuffListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (weaponAbilityInfoBuilder_ == null) {
+          result.weaponAbilityInfo_ = weaponAbilityInfo_;
+        } else {
+          result.weaponAbilityInfo_ = weaponAbilityInfoBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
           buffIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.buffIdList_ = buffIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.weaponEntityId_ = weaponEntityId_;
+        if (avatarAbilityInfoBuilder_ == null) {
+          result.avatarAbilityInfo_ = avatarAbilityInfo_;
+        } else {
+          result.avatarAbilityInfo_ = avatarAbilityInfoBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.avatarGuid_ = avatarGuid_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.avatarEntityId_ = avatarEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.weaponAbilityInfo_ = weaponAbilityInfoBuilder_ == null
-              ? weaponAbilityInfo_
-              : weaponAbilityInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.avatarAbilityInfo_ = avatarAbilityInfoBuilder_ == null
-              ? avatarAbilityInfo_
-              : avatarAbilityInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.weaponGuid_ = weaponGuid_;
-        }
+        result.weaponGuid_ = weaponGuid_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -772,7 +885,7 @@ public final class AvatarEnterSceneInfoOuterClass {
           if (!other.serverBuffList_.isEmpty()) {
             if (serverBuffList_.isEmpty()) {
               serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureServerBuffListIsMutable();
               serverBuffList_.addAll(other.serverBuffList_);
@@ -785,7 +898,7 @@ public final class AvatarEnterSceneInfoOuterClass {
               serverBuffListBuilder_.dispose();
               serverBuffListBuilder_ = null;
               serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               serverBuffListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getServerBuffListFieldBuilder() : null;
@@ -800,7 +913,7 @@ public final class AvatarEnterSceneInfoOuterClass {
         if (!other.buffIdList_.isEmpty()) {
           if (buffIdList_.isEmpty()) {
             buffIdList_ = other.buffIdList_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureBuffIdListIsMutable();
             buffIdList_.addAll(other.buffIdList_);
@@ -813,7 +926,7 @@ public final class AvatarEnterSceneInfoOuterClass {
         if (other.getWeaponGuid() != 0L) {
           setWeaponGuid(other.getWeaponGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -828,93 +941,17 @@ public final class AvatarEnterSceneInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getAvatarAbilityInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 10
-              case 40: {
-                weaponEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              case 50: {
-                input.readMessage(
-                    getWeaponAbilityInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 50
-              case 58: {
-                emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(),
-                        extensionRegistry);
-                if (serverBuffListBuilder_ == null) {
-                  ensureServerBuffListIsMutable();
-                  serverBuffList_.add(m);
-                } else {
-                  serverBuffListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              case 64: {
-                int v = input.readUInt32();
-                ensureBuffIdListIsMutable();
-                buffIdList_.addInt(v);
-                break;
-              } // case 64
-              case 66: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureBuffIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  buffIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 66
-              case 72: {
-                avatarGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 104: {
-                avatarEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              case 120: {
-                weaponGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -936,7 +973,6 @@ public final class AvatarEnterSceneInfoOuterClass {
       public Builder setWeaponEntityId(int value) {
         
         weaponEntityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -945,7 +981,7 @@ public final class AvatarEnterSceneInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWeaponEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         weaponEntityId_ = 0;
         onChanged();
         return this;
@@ -968,7 +1004,6 @@ public final class AvatarEnterSceneInfoOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -977,7 +1012,7 @@ public final class AvatarEnterSceneInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -1000,7 +1035,6 @@ public final class AvatarEnterSceneInfoOuterClass {
       public Builder setAvatarEntityId(int value) {
         
         avatarEntityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1009,7 +1043,7 @@ public final class AvatarEnterSceneInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         avatarEntityId_ = 0;
         onChanged();
         return this;
@@ -1018,9 +1052,9 @@ public final class AvatarEnterSceneInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_ =
         java.util.Collections.emptyList();
       private void ensureServerBuffListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           serverBuffList_ = new java.util.ArrayList<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff>(serverBuffList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1170,7 +1204,7 @@ public final class AvatarEnterSceneInfoOuterClass {
       public Builder clearServerBuffList() {
         if (serverBuffListBuilder_ == null) {
           serverBuffList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           serverBuffListBuilder_.clear();
@@ -1247,7 +1281,7 @@ public final class AvatarEnterSceneInfoOuterClass {
           serverBuffListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff, emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>(
                   serverBuffList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           serverBuffList_ = null;
@@ -1263,7 +1297,7 @@ public final class AvatarEnterSceneInfoOuterClass {
        * @return Whether the weaponAbilityInfo field is set.
        */
       public boolean hasWeaponAbilityInfo() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return weaponAbilityInfoBuilder_ != null || weaponAbilityInfo_ != null;
       }
       /**
        * <code>.AbilitySyncStateInfo weapon_ability_info = 6;</code>
@@ -1285,11 +1319,11 @@ public final class AvatarEnterSceneInfoOuterClass {
             throw new NullPointerException();
           }
           weaponAbilityInfo_ = value;
+          onChanged();
         } else {
           weaponAbilityInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1299,11 +1333,11 @@ public final class AvatarEnterSceneInfoOuterClass {
           emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
         if (weaponAbilityInfoBuilder_ == null) {
           weaponAbilityInfo_ = builderForValue.build();
+          onChanged();
         } else {
           weaponAbilityInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1311,38 +1345,38 @@ public final class AvatarEnterSceneInfoOuterClass {
        */
       public Builder mergeWeaponAbilityInfo(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
         if (weaponAbilityInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            weaponAbilityInfo_ != null &&
-            weaponAbilityInfo_ != emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance()) {
-            getWeaponAbilityInfoBuilder().mergeFrom(value);
+          if (weaponAbilityInfo_ != null) {
+            weaponAbilityInfo_ =
+              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(weaponAbilityInfo_).mergeFrom(value).buildPartial();
           } else {
             weaponAbilityInfo_ = value;
           }
+          onChanged();
         } else {
           weaponAbilityInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo weapon_ability_info = 6;</code>
        */
       public Builder clearWeaponAbilityInfo() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        weaponAbilityInfo_ = null;
-        if (weaponAbilityInfoBuilder_ != null) {
-          weaponAbilityInfoBuilder_.dispose();
+        if (weaponAbilityInfoBuilder_ == null) {
+          weaponAbilityInfo_ = null;
+          onChanged();
+        } else {
+          weaponAbilityInfo_ = null;
           weaponAbilityInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo weapon_ability_info = 6;</code>
        */
       public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getWeaponAbilityInfoBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getWeaponAbilityInfoFieldBuilder().getBuilder();
       }
@@ -1376,10 +1410,10 @@ public final class AvatarEnterSceneInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList buffIdList_ = emptyIntList();
       private void ensureBuffIdListIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           buffIdList_ = mutableCopy(buffIdList_);
-          bitField0_ |= 0x00000020;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 buff_id_list = 8;</code>
@@ -1387,7 +1421,7 @@ public final class AvatarEnterSceneInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getBuffIdListList() {
-        return ((bitField0_ & 0x00000020) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(buffIdList_) : buffIdList_;
       }
       /**
@@ -1413,7 +1447,6 @@ public final class AvatarEnterSceneInfoOuterClass {
        */
       public Builder setBuffIdList(
           int index, int value) {
-        
         ensureBuffIdListIsMutable();
         buffIdList_.setInt(index, value);
         onChanged();
@@ -1425,7 +1458,6 @@ public final class AvatarEnterSceneInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addBuffIdList(int value) {
-        
         ensureBuffIdListIsMutable();
         buffIdList_.addInt(value);
         onChanged();
@@ -1450,7 +1482,7 @@ public final class AvatarEnterSceneInfoOuterClass {
        */
       public Builder clearBuffIdList() {
         buffIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1463,7 +1495,7 @@ public final class AvatarEnterSceneInfoOuterClass {
        * @return Whether the avatarAbilityInfo field is set.
        */
       public boolean hasAvatarAbilityInfo() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return avatarAbilityInfoBuilder_ != null || avatarAbilityInfo_ != null;
       }
       /**
        * <code>.AbilitySyncStateInfo avatar_ability_info = 1;</code>
@@ -1485,11 +1517,11 @@ public final class AvatarEnterSceneInfoOuterClass {
             throw new NullPointerException();
           }
           avatarAbilityInfo_ = value;
+          onChanged();
         } else {
           avatarAbilityInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1499,11 +1531,11 @@ public final class AvatarEnterSceneInfoOuterClass {
           emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
         if (avatarAbilityInfoBuilder_ == null) {
           avatarAbilityInfo_ = builderForValue.build();
+          onChanged();
         } else {
           avatarAbilityInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1511,38 +1543,38 @@ public final class AvatarEnterSceneInfoOuterClass {
        */
       public Builder mergeAvatarAbilityInfo(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
         if (avatarAbilityInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0) &&
-            avatarAbilityInfo_ != null &&
-            avatarAbilityInfo_ != emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance()) {
-            getAvatarAbilityInfoBuilder().mergeFrom(value);
+          if (avatarAbilityInfo_ != null) {
+            avatarAbilityInfo_ =
+              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(avatarAbilityInfo_).mergeFrom(value).buildPartial();
           } else {
             avatarAbilityInfo_ = value;
           }
+          onChanged();
         } else {
           avatarAbilityInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo avatar_ability_info = 1;</code>
        */
       public Builder clearAvatarAbilityInfo() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        avatarAbilityInfo_ = null;
-        if (avatarAbilityInfoBuilder_ != null) {
-          avatarAbilityInfoBuilder_.dispose();
+        if (avatarAbilityInfoBuilder_ == null) {
+          avatarAbilityInfo_ = null;
+          onChanged();
+        } else {
+          avatarAbilityInfo_ = null;
           avatarAbilityInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo avatar_ability_info = 1;</code>
        */
       public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getAvatarAbilityInfoBuilder() {
-        bitField0_ |= 0x00000040;
+        
         onChanged();
         return getAvatarAbilityInfoFieldBuilder().getBuilder();
       }
@@ -1591,7 +1623,6 @@ public final class AvatarEnterSceneInfoOuterClass {
       public Builder setWeaponGuid(long value) {
         
         weaponGuid_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1600,7 +1631,7 @@ public final class AvatarEnterSceneInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWeaponGuid() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         weaponGuid_ = 0L;
         onChanged();
         return this;
@@ -1638,18 +1669,7 @@ public final class AvatarEnterSceneInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AvatarEnterSceneInfo(input, extensionRegistry);
       }
     };
 

@@ -79,6 +79,63 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerApplyEnterHomeResultRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              applyUid_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              param_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              isAgreed_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerApplyEnterHomeResultRspOuterClass.internal_static_PlayerApplyEnterHomeResultRsp_descriptor;
@@ -93,7 +150,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
     }
 
     public static final int APPLY_UID_FIELD_NUMBER = 3;
-    private int applyUid_ = 0;
+    private int applyUid_;
     /**
      * <code>uint32 apply_uid = 3;</code>
      * @return The applyUid.
@@ -104,7 +161,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
     }
 
     public static final int IS_AGREED_FIELD_NUMBER = 6;
-    private boolean isAgreed_ = false;
+    private boolean isAgreed_;
     /**
      * <code>bool is_agreed = 6;</code>
      * @return The isAgreed.
@@ -115,7 +172,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
     }
 
     public static final int PARAM_FIELD_NUMBER = 4;
-    private int param_ = 0;
+    private int param_;
     /**
      * <code>uint32 param = 4;</code>
      * @return The param.
@@ -126,7 +183,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 14;</code>
      * @return The retcode.
@@ -162,7 +219,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(14, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +244,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +267,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
           != other.getParam()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -230,7 +287,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
       hash = (53 * hash) + getParam();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -357,22 +414,30 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerApplyEnterHomeResultRspOuterClass.PlayerApplyEnterHomeResultRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         applyUid_ = 0;
+
         isAgreed_ = false;
+
         param_ = 0;
+
         retcode_ = 0;
+
         return this;
       }
 
@@ -399,25 +464,12 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerApplyEnterHomeResultRspOuterClass.PlayerApplyEnterHomeResultRsp buildPartial() {
         emu.gingerps.net.proto.PlayerApplyEnterHomeResultRspOuterClass.PlayerApplyEnterHomeResultRsp result = new emu.gingerps.net.proto.PlayerApplyEnterHomeResultRspOuterClass.PlayerApplyEnterHomeResultRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.applyUid_ = applyUid_;
+        result.isAgreed_ = isAgreed_;
+        result.param_ = param_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerApplyEnterHomeResultRspOuterClass.PlayerApplyEnterHomeResultRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.applyUid_ = applyUid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isAgreed_ = isAgreed_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.param_ = param_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.retcode_ = retcode_;
-        }
       }
 
       @java.lang.Override
@@ -476,7 +528,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -491,53 +543,19 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerApplyEnterHomeResultRspOuterClass.PlayerApplyEnterHomeResultRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                applyUid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 32: {
-                param_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 48: {
-                isAgreed_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 112: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerApplyEnterHomeResultRspOuterClass.PlayerApplyEnterHomeResultRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int applyUid_ ;
       /**
@@ -556,7 +574,6 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
       public Builder setApplyUid(int value) {
         
         applyUid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -565,7 +582,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearApplyUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         applyUid_ = 0;
         onChanged();
         return this;
@@ -588,7 +605,6 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
       public Builder setIsAgreed(boolean value) {
         
         isAgreed_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -597,7 +613,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAgreed() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isAgreed_ = false;
         onChanged();
         return this;
@@ -620,7 +636,6 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
       public Builder setParam(int value) {
         
         param_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -629,7 +644,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         param_ = 0;
         onChanged();
         return this;
@@ -652,7 +667,6 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -661,7 +675,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -699,18 +713,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerApplyEnterHomeResultRsp(input, extensionRegistry);
       }
     };
 

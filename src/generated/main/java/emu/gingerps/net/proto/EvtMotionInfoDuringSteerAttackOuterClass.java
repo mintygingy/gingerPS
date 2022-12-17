@@ -96,6 +96,87 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtMotionInfoDuringSteerAttack(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (pos_ != null) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (velocity_ != null) {
+                subBuilder = velocity_.toBuilder();
+              }
+              velocity_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(velocity_);
+                velocity_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (faceDir_ != null) {
+                subBuilder = faceDir_.toBuilder();
+              }
+              faceDir_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(faceDir_);
+                faceDir_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtMotionInfoDuringSteerAttackOuterClass.internal_static_EvtMotionInfoDuringSteerAttack_descriptor;
@@ -132,7 +213,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getFaceDirOrBuilder() {
-      return faceDir_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : faceDir_;
+      return getFaceDir();
     }
 
     public static final int POS_FIELD_NUMBER = 8;
@@ -158,11 +239,11 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+      return getPos();
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 4;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 4;</code>
      * @return The entityId.
@@ -195,7 +276,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getVelocityOrBuilder() {
-      return velocity_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : velocity_;
+      return getVelocity();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -224,7 +305,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
       if (faceDir_ != null) {
         output.writeMessage(15, getFaceDir());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -249,7 +330,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getFaceDir());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -281,7 +362,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
         if (!getVelocity()
             .equals(other.getVelocity())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -306,7 +387,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
         hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
         hash = (53 * hash) + getVelocity().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -423,32 +504,40 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtMotionInfoDuringSteerAttackOuterClass.EvtMotionInfoDuringSteerAttack.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        faceDir_ = null;
-        if (faceDirBuilder_ != null) {
-          faceDirBuilder_.dispose();
+        if (faceDirBuilder_ == null) {
+          faceDir_ = null;
+        } else {
+          faceDir_ = null;
           faceDirBuilder_ = null;
         }
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
         entityId_ = 0;
-        velocity_ = null;
-        if (velocityBuilder_ != null) {
-          velocityBuilder_.dispose();
+
+        if (velocityBuilder_ == null) {
+          velocity_ = null;
+        } else {
+          velocity_ = null;
           velocityBuilder_ = null;
         }
         return this;
@@ -477,31 +566,24 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtMotionInfoDuringSteerAttackOuterClass.EvtMotionInfoDuringSteerAttack buildPartial() {
         emu.gingerps.net.proto.EvtMotionInfoDuringSteerAttackOuterClass.EvtMotionInfoDuringSteerAttack result = new emu.gingerps.net.proto.EvtMotionInfoDuringSteerAttackOuterClass.EvtMotionInfoDuringSteerAttack(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (faceDirBuilder_ == null) {
+          result.faceDir_ = faceDir_;
+        } else {
+          result.faceDir_ = faceDirBuilder_.build();
+        }
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        result.entityId_ = entityId_;
+        if (velocityBuilder_ == null) {
+          result.velocity_ = velocity_;
+        } else {
+          result.velocity_ = velocityBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtMotionInfoDuringSteerAttackOuterClass.EvtMotionInfoDuringSteerAttack result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.faceDir_ = faceDirBuilder_ == null
-              ? faceDir_
-              : faceDirBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.velocity_ = velocityBuilder_ == null
-              ? velocity_
-              : velocityBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -560,7 +642,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
         if (other.hasVelocity()) {
           mergeVelocity(other.getVelocity());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -575,59 +657,19 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtMotionInfoDuringSteerAttackOuterClass.EvtMotionInfoDuringSteerAttack parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 66: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 66
-              case 114: {
-                input.readMessage(
-                    getVelocityFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 114
-              case 122: {
-                input.readMessage(
-                    getFaceDirFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtMotionInfoDuringSteerAttackOuterClass.EvtMotionInfoDuringSteerAttack) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector faceDir_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -637,7 +679,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
        * @return Whether the faceDir field is set.
        */
       public boolean hasFaceDir() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return faceDirBuilder_ != null || faceDir_ != null;
       }
       /**
        * <code>.Vector face_dir = 15;</code>
@@ -659,11 +701,11 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
             throw new NullPointerException();
           }
           faceDir_ = value;
+          onChanged();
         } else {
           faceDirBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -673,11 +715,11 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (faceDirBuilder_ == null) {
           faceDir_ = builderForValue.build();
+          onChanged();
         } else {
           faceDirBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -685,38 +727,38 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
        */
       public Builder mergeFaceDir(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (faceDirBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            faceDir_ != null &&
-            faceDir_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getFaceDirBuilder().mergeFrom(value);
+          if (faceDir_ != null) {
+            faceDir_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(faceDir_).mergeFrom(value).buildPartial();
           } else {
             faceDir_ = value;
           }
+          onChanged();
         } else {
           faceDirBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector face_dir = 15;</code>
        */
       public Builder clearFaceDir() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        faceDir_ = null;
-        if (faceDirBuilder_ != null) {
-          faceDirBuilder_.dispose();
+        if (faceDirBuilder_ == null) {
+          faceDir_ = null;
+          onChanged();
+        } else {
+          faceDir_ = null;
           faceDirBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector face_dir = 15;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getFaceDirBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getFaceDirFieldBuilder().getBuilder();
       }
@@ -756,7 +798,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return posBuilder_ != null || pos_ != null;
       }
       /**
        * <code>.Vector pos = 8;</code>
@@ -778,11 +820,11 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -792,11 +834,11 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -804,38 +846,38 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            pos_ != null &&
-            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (pos_ != null) {
+            pos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 8;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 8;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -884,7 +926,6 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -893,7 +934,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -907,7 +948,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
        * @return Whether the velocity field is set.
        */
       public boolean hasVelocity() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return velocityBuilder_ != null || velocity_ != null;
       }
       /**
        * <code>.Vector velocity = 14;</code>
@@ -929,11 +970,11 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
             throw new NullPointerException();
           }
           velocity_ = value;
+          onChanged();
         } else {
           velocityBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -943,11 +984,11 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (velocityBuilder_ == null) {
           velocity_ = builderForValue.build();
+          onChanged();
         } else {
           velocityBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -955,38 +996,38 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
        */
       public Builder mergeVelocity(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (velocityBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            velocity_ != null &&
-            velocity_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getVelocityBuilder().mergeFrom(value);
+          if (velocity_ != null) {
+            velocity_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(velocity_).mergeFrom(value).buildPartial();
           } else {
             velocity_ = value;
           }
+          onChanged();
         } else {
           velocityBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector velocity = 14;</code>
        */
       public Builder clearVelocity() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        velocity_ = null;
-        if (velocityBuilder_ != null) {
-          velocityBuilder_.dispose();
+        if (velocityBuilder_ == null) {
+          velocity_ = null;
+          onChanged();
+        } else {
+          velocity_ = null;
           velocityBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector velocity = 14;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getVelocityBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getVelocityFieldBuilder().getBuilder();
       }
@@ -1050,18 +1091,7 @@ public final class EvtMotionInfoDuringSteerAttackOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtMotionInfoDuringSteerAttack(input, extensionRegistry);
       }
     };
 

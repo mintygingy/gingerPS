@@ -68,6 +68,53 @@ public final class SetCodexPushtipsReadReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SetCodexPushtipsReadReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              typeId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              codexId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SetCodexPushtipsReadReqOuterClass.internal_static_SetCodexPushtipsReadReq_descriptor;
@@ -82,7 +129,7 @@ public final class SetCodexPushtipsReadReqOuterClass {
     }
 
     public static final int CODEX_ID_FIELD_NUMBER = 8;
-    private int codexId_ = 0;
+    private int codexId_;
     /**
      * <code>uint32 codex_id = 8;</code>
      * @return The codexId.
@@ -93,7 +140,7 @@ public final class SetCodexPushtipsReadReqOuterClass {
     }
 
     public static final int TYPE_ID_FIELD_NUMBER = 3;
-    private int typeId_ = 0;
+    private int typeId_;
     /**
      * <code>uint32 type_id = 3;</code>
      * @return The typeId.
@@ -123,7 +170,7 @@ public final class SetCodexPushtipsReadReqOuterClass {
       if (codexId_ != 0) {
         output.writeUInt32(8, codexId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class SetCodexPushtipsReadReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, codexId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class SetCodexPushtipsReadReqOuterClass {
           != other.getCodexId()) return false;
       if (getTypeId()
           != other.getTypeId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class SetCodexPushtipsReadReqOuterClass {
       hash = (53 * hash) + getCodexId();
       hash = (37 * hash) + TYPE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTypeId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -302,20 +349,26 @@ public final class SetCodexPushtipsReadReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         codexId_ = 0;
+
         typeId_ = 0;
+
         return this;
       }
 
@@ -342,19 +395,10 @@ public final class SetCodexPushtipsReadReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq buildPartial() {
         emu.gingerps.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq result = new emu.gingerps.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.codexId_ = codexId_;
+        result.typeId_ = typeId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.codexId_ = codexId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.typeId_ = typeId_;
-        }
       }
 
       @java.lang.Override
@@ -407,7 +451,7 @@ public final class SetCodexPushtipsReadReqOuterClass {
         if (other.getTypeId() != 0) {
           setTypeId(other.getTypeId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -422,43 +466,19 @@ public final class SetCodexPushtipsReadReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                typeId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 64: {
-                codexId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int codexId_ ;
       /**
@@ -477,7 +497,6 @@ public final class SetCodexPushtipsReadReqOuterClass {
       public Builder setCodexId(int value) {
         
         codexId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -486,7 +505,7 @@ public final class SetCodexPushtipsReadReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCodexId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         codexId_ = 0;
         onChanged();
         return this;
@@ -509,7 +528,6 @@ public final class SetCodexPushtipsReadReqOuterClass {
       public Builder setTypeId(int value) {
         
         typeId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -518,7 +536,7 @@ public final class SetCodexPushtipsReadReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTypeId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         typeId_ = 0;
         onChanged();
         return this;
@@ -556,18 +574,7 @@ public final class SetCodexPushtipsReadReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SetCodexPushtipsReadReq(input, extensionRegistry);
       }
     };
 

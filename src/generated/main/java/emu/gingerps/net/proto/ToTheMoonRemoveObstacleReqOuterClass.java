@@ -74,6 +74,58 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ToTheMoonRemoveObstacleReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              queryId_ = input.readInt32();
+              break;
+            }
+            case 56: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              handle_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ToTheMoonRemoveObstacleReqOuterClass.internal_static_ToTheMoonRemoveObstacleReq_descriptor;
@@ -196,7 +248,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
     }
 
     public static final int HANDLE_FIELD_NUMBER = 15;
-    private int handle_ = 0;
+    private int handle_;
     /**
      * <code>int32 handle = 15;</code>
      * @return The handle.
@@ -207,7 +259,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 7;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 7;</code>
      * @return The sceneId.
@@ -218,7 +270,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
     }
 
     public static final int QUERY_ID_FIELD_NUMBER = 6;
-    private int queryId_ = 0;
+    private int queryId_;
     /**
      * <code>int32 query_id = 6;</code>
      * @return The queryId.
@@ -251,7 +303,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
       if (handle_ != 0) {
         output.writeInt32(15, handle_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -272,7 +324,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, handle_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -293,7 +345,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
           != other.getSceneId()) return false;
       if (getQueryId()
           != other.getQueryId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -310,7 +362,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
       hash = (53 * hash) + getSceneId();
       hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getQueryId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -438,21 +490,28 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ToTheMoonRemoveObstacleReqOuterClass.ToTheMoonRemoveObstacleReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         handle_ = 0;
+
         sceneId_ = 0;
+
         queryId_ = 0;
+
         return this;
       }
 
@@ -479,22 +538,11 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ToTheMoonRemoveObstacleReqOuterClass.ToTheMoonRemoveObstacleReq buildPartial() {
         emu.gingerps.net.proto.ToTheMoonRemoveObstacleReqOuterClass.ToTheMoonRemoveObstacleReq result = new emu.gingerps.net.proto.ToTheMoonRemoveObstacleReqOuterClass.ToTheMoonRemoveObstacleReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.handle_ = handle_;
+        result.sceneId_ = sceneId_;
+        result.queryId_ = queryId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ToTheMoonRemoveObstacleReqOuterClass.ToTheMoonRemoveObstacleReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.handle_ = handle_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.queryId_ = queryId_;
-        }
       }
 
       @java.lang.Override
@@ -550,7 +598,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
         if (other.getQueryId() != 0) {
           setQueryId(other.getQueryId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -565,48 +613,19 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ToTheMoonRemoveObstacleReqOuterClass.ToTheMoonRemoveObstacleReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                queryId_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 48
-              case 56: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 120: {
-                handle_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ToTheMoonRemoveObstacleReqOuterClass.ToTheMoonRemoveObstacleReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int handle_ ;
       /**
@@ -625,7 +644,6 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
       public Builder setHandle(int value) {
         
         handle_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -634,7 +652,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHandle() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         handle_ = 0;
         onChanged();
         return this;
@@ -657,7 +675,6 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -666,7 +683,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -689,7 +706,6 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
       public Builder setQueryId(int value) {
         
         queryId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -698,7 +714,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQueryId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         queryId_ = 0;
         onChanged();
         return this;
@@ -736,18 +752,7 @@ public final class ToTheMoonRemoveObstacleReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ToTheMoonRemoveObstacleReq(input, extensionRegistry);
       }
     };
 

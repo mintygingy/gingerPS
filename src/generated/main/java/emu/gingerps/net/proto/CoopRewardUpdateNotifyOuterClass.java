@@ -80,6 +80,56 @@ public final class CoopRewardUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CoopRewardUpdateNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                rewardList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              rewardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          rewardList_ = java.util.Collections.unmodifiableList(rewardList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CoopRewardUpdateNotifyOuterClass.internal_static_CoopRewardUpdateNotify_descriptor;
@@ -94,7 +144,6 @@ public final class CoopRewardUpdateNotifyOuterClass {
     }
 
     public static final int REWARD_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward> rewardList_;
     /**
      * <code>repeated .CoopReward reward_list = 14;</code>
@@ -151,7 +200,7 @@ public final class CoopRewardUpdateNotifyOuterClass {
       for (int i = 0; i < rewardList_.size(); i++) {
         output.writeMessage(14, rewardList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -164,7 +213,7 @@ public final class CoopRewardUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, rewardList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -181,7 +230,7 @@ public final class CoopRewardUpdateNotifyOuterClass {
 
       if (!getRewardListList()
           .equals(other.getRewardListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -196,7 +245,7 @@ public final class CoopRewardUpdateNotifyOuterClass {
         hash = (37 * hash) + REWARD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRewardListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -323,25 +372,29 @@ public final class CoopRewardUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CoopRewardUpdateNotifyOuterClass.CoopRewardUpdateNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRewardListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (rewardListBuilder_ == null) {
           rewardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          rewardList_ = null;
           rewardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -368,13 +421,7 @@ public final class CoopRewardUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CoopRewardUpdateNotifyOuterClass.CoopRewardUpdateNotify buildPartial() {
         emu.gingerps.net.proto.CoopRewardUpdateNotifyOuterClass.CoopRewardUpdateNotify result = new emu.gingerps.net.proto.CoopRewardUpdateNotifyOuterClass.CoopRewardUpdateNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CoopRewardUpdateNotifyOuterClass.CoopRewardUpdateNotify result) {
+        int from_bitField0_ = bitField0_;
         if (rewardListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             rewardList_ = java.util.Collections.unmodifiableList(rewardList_);
@@ -384,10 +431,8 @@ public final class CoopRewardUpdateNotifyOuterClass {
         } else {
           result.rewardList_ = rewardListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CoopRewardUpdateNotifyOuterClass.CoopRewardUpdateNotify result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -460,7 +505,7 @@ public final class CoopRewardUpdateNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -475,43 +520,17 @@ public final class CoopRewardUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CoopRewardUpdateNotifyOuterClass.CoopRewardUpdateNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 114: {
-                emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward.parser(),
-                        extensionRegistry);
-                if (rewardListBuilder_ == null) {
-                  ensureRewardListIsMutable();
-                  rewardList_.add(m);
-                } else {
-                  rewardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CoopRewardUpdateNotifyOuterClass.CoopRewardUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -788,18 +807,7 @@ public final class CoopRewardUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CoopRewardUpdateNotify(input, extensionRegistry);
       }
     };
 

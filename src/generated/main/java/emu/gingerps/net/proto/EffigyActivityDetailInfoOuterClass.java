@@ -100,6 +100,90 @@ public final class EffigyActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EffigyActivityDetailInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                dailyInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.EffigyDailyInfoOuterClass.EffigyDailyInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              dailyInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.EffigyDailyInfoOuterClass.EffigyDailyInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+
+              curScore_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              lastDifficultyId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                takenRewardIndexList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              takenRewardIndexList_.addInt(input.readUInt32());
+              break;
+            }
+            case 106: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                takenRewardIndexList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                takenRewardIndexList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          dailyInfoList_ = java.util.Collections.unmodifiableList(dailyInfoList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          takenRewardIndexList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.internal_static_EffigyActivityDetailInfo_descriptor;
@@ -114,7 +198,7 @@ public final class EffigyActivityDetailInfoOuterClass {
     }
 
     public static final int LAST_DIFFICULTY_ID_FIELD_NUMBER = 8;
-    private int lastDifficultyId_ = 0;
+    private int lastDifficultyId_;
     /**
      * <code>uint32 last_difficulty_id = 8;</code>
      * @return The lastDifficultyId.
@@ -125,7 +209,6 @@ public final class EffigyActivityDetailInfoOuterClass {
     }
 
     public static final int TAKEN_REWARD_INDEX_LIST_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList takenRewardIndexList_;
     /**
      * <code>repeated uint32 taken_reward_index_list = 13;</code>
@@ -154,7 +237,7 @@ public final class EffigyActivityDetailInfoOuterClass {
     private int takenRewardIndexListMemoizedSerializedSize = -1;
 
     public static final int CUR_SCORE_FIELD_NUMBER = 5;
-    private int curScore_ = 0;
+    private int curScore_;
     /**
      * <code>uint32 cur_score = 5;</code>
      * @return The curScore.
@@ -165,7 +248,6 @@ public final class EffigyActivityDetailInfoOuterClass {
     }
 
     public static final int DAILY_INFO_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.EffigyDailyInfoOuterClass.EffigyDailyInfo> dailyInfoList_;
     /**
      * <code>repeated .EffigyDailyInfo daily_info_list = 4;</code>
@@ -236,7 +318,7 @@ public final class EffigyActivityDetailInfoOuterClass {
       for (int i = 0; i < takenRewardIndexList_.size(); i++) {
         output.writeUInt32NoTag(takenRewardIndexList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -271,7 +353,7 @@ public final class EffigyActivityDetailInfoOuterClass {
         }
         takenRewardIndexListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -294,7 +376,7 @@ public final class EffigyActivityDetailInfoOuterClass {
           != other.getCurScore()) return false;
       if (!getDailyInfoListList()
           .equals(other.getDailyInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -317,7 +399,7 @@ public final class EffigyActivityDetailInfoOuterClass {
         hash = (37 * hash) + DAILY_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDailyInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -434,28 +516,35 @@ public final class EffigyActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDailyInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         lastDifficultyId_ = 0;
+
         takenRewardIndexList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         curScore_ = 0;
+
         if (dailyInfoListBuilder_ == null) {
           dailyInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          dailyInfoList_ = null;
           dailyInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -482,37 +571,25 @@ public final class EffigyActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo result = new emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.lastDifficultyId_ = lastDifficultyId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           takenRewardIndexList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.takenRewardIndexList_ = takenRewardIndexList_;
+        result.curScore_ = curScore_;
         if (dailyInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             dailyInfoList_ = java.util.Collections.unmodifiableList(dailyInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.dailyInfoList_ = dailyInfoList_;
         } else {
           result.dailyInfoList_ = dailyInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.lastDifficultyId_ = lastDifficultyId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curScore_ = curScore_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -565,7 +642,7 @@ public final class EffigyActivityDetailInfoOuterClass {
         if (!other.takenRewardIndexList_.isEmpty()) {
           if (takenRewardIndexList_.isEmpty()) {
             takenRewardIndexList_ = other.takenRewardIndexList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTakenRewardIndexListIsMutable();
             takenRewardIndexList_.addAll(other.takenRewardIndexList_);
@@ -579,7 +656,7 @@ public final class EffigyActivityDetailInfoOuterClass {
           if (!other.dailyInfoList_.isEmpty()) {
             if (dailyInfoList_.isEmpty()) {
               dailyInfoList_ = other.dailyInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureDailyInfoListIsMutable();
               dailyInfoList_.addAll(other.dailyInfoList_);
@@ -592,7 +669,7 @@ public final class EffigyActivityDetailInfoOuterClass {
               dailyInfoListBuilder_.dispose();
               dailyInfoListBuilder_ = null;
               dailyInfoList_ = other.dailyInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
               dailyInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDailyInfoListFieldBuilder() : null;
@@ -601,7 +678,7 @@ public final class EffigyActivityDetailInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -616,69 +693,17 @@ public final class EffigyActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 34: {
-                emu.gingerps.net.proto.EffigyDailyInfoOuterClass.EffigyDailyInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.EffigyDailyInfoOuterClass.EffigyDailyInfo.parser(),
-                        extensionRegistry);
-                if (dailyInfoListBuilder_ == null) {
-                  ensureDailyInfoListIsMutable();
-                  dailyInfoList_.add(m);
-                } else {
-                  dailyInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 40: {
-                curScore_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 64: {
-                lastDifficultyId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 104: {
-                int v = input.readUInt32();
-                ensureTakenRewardIndexListIsMutable();
-                takenRewardIndexList_.addInt(v);
-                break;
-              } // case 104
-              case 106: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureTakenRewardIndexListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  takenRewardIndexList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -700,7 +725,6 @@ public final class EffigyActivityDetailInfoOuterClass {
       public Builder setLastDifficultyId(int value) {
         
         lastDifficultyId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -709,7 +733,7 @@ public final class EffigyActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastDifficultyId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         lastDifficultyId_ = 0;
         onChanged();
         return this;
@@ -717,10 +741,10 @@ public final class EffigyActivityDetailInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList takenRewardIndexList_ = emptyIntList();
       private void ensureTakenRewardIndexListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           takenRewardIndexList_ = mutableCopy(takenRewardIndexList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 taken_reward_index_list = 13;</code>
@@ -728,7 +752,7 @@ public final class EffigyActivityDetailInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getTakenRewardIndexListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(takenRewardIndexList_) : takenRewardIndexList_;
       }
       /**
@@ -754,7 +778,6 @@ public final class EffigyActivityDetailInfoOuterClass {
        */
       public Builder setTakenRewardIndexList(
           int index, int value) {
-        
         ensureTakenRewardIndexListIsMutable();
         takenRewardIndexList_.setInt(index, value);
         onChanged();
@@ -766,7 +789,6 @@ public final class EffigyActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addTakenRewardIndexList(int value) {
-        
         ensureTakenRewardIndexListIsMutable();
         takenRewardIndexList_.addInt(value);
         onChanged();
@@ -791,7 +813,7 @@ public final class EffigyActivityDetailInfoOuterClass {
        */
       public Builder clearTakenRewardIndexList() {
         takenRewardIndexList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -813,7 +835,6 @@ public final class EffigyActivityDetailInfoOuterClass {
       public Builder setCurScore(int value) {
         
         curScore_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -822,7 +843,7 @@ public final class EffigyActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurScore() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curScore_ = 0;
         onChanged();
         return this;
@@ -831,9 +852,9 @@ public final class EffigyActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.EffigyDailyInfoOuterClass.EffigyDailyInfo> dailyInfoList_ =
         java.util.Collections.emptyList();
       private void ensureDailyInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           dailyInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.EffigyDailyInfoOuterClass.EffigyDailyInfo>(dailyInfoList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -983,7 +1004,7 @@ public final class EffigyActivityDetailInfoOuterClass {
       public Builder clearDailyInfoList() {
         if (dailyInfoListBuilder_ == null) {
           dailyInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           dailyInfoListBuilder_.clear();
@@ -1060,7 +1081,7 @@ public final class EffigyActivityDetailInfoOuterClass {
           dailyInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.EffigyDailyInfoOuterClass.EffigyDailyInfo, emu.gingerps.net.proto.EffigyDailyInfoOuterClass.EffigyDailyInfo.Builder, emu.gingerps.net.proto.EffigyDailyInfoOuterClass.EffigyDailyInfoOrBuilder>(
                   dailyInfoList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           dailyInfoList_ = null;
@@ -1100,18 +1121,7 @@ public final class EffigyActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EffigyActivityDetailInfo(input, extensionRegistry);
       }
     };
 

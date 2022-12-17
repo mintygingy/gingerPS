@@ -92,6 +92,66 @@ public final class TakeResinCardDailyRewardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TakeResinCardDailyRewardRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 104: {
+
+              productConfigId_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                itemVec_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              itemVec_.add(
+                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          itemVec_ = java.util.Collections.unmodifiableList(itemVec_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TakeResinCardDailyRewardRspOuterClass.internal_static_TakeResinCardDailyRewardRsp_descriptor;
@@ -106,7 +166,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -117,7 +177,6 @@ public final class TakeResinCardDailyRewardRspOuterClass {
     }
 
     public static final int ITEM_VEC_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemVec_;
     /**
      * <code>repeated .ItemParam item_vec = 15;</code>
@@ -158,7 +217,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
     }
 
     public static final int PRODUCT_CONFIG_ID_FIELD_NUMBER = 13;
-    private int productConfigId_ = 0;
+    private int productConfigId_;
     /**
      * <code>uint32 product_config_id = 13;</code>
      * @return The productConfigId.
@@ -191,7 +250,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
       for (int i = 0; i < itemVec_.size(); i++) {
         output.writeMessage(15, itemVec_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -212,7 +271,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, itemVec_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -233,7 +292,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
           .equals(other.getItemVecList())) return false;
       if (getProductConfigId()
           != other.getProductConfigId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -252,7 +311,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
       }
       hash = (37 * hash) + PRODUCT_CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProductConfigId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -379,27 +438,33 @@ public final class TakeResinCardDailyRewardRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.TakeResinCardDailyRewardRspOuterClass.TakeResinCardDailyRewardRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getItemVecFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         if (itemVecBuilder_ == null) {
           itemVec_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          itemVec_ = null;
           itemVecBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         productConfigId_ = 0;
+
         return this;
       }
 
@@ -426,32 +491,20 @@ public final class TakeResinCardDailyRewardRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TakeResinCardDailyRewardRspOuterClass.TakeResinCardDailyRewardRsp buildPartial() {
         emu.gingerps.net.proto.TakeResinCardDailyRewardRspOuterClass.TakeResinCardDailyRewardRsp result = new emu.gingerps.net.proto.TakeResinCardDailyRewardRspOuterClass.TakeResinCardDailyRewardRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TakeResinCardDailyRewardRspOuterClass.TakeResinCardDailyRewardRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         if (itemVecBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             itemVec_ = java.util.Collections.unmodifiableList(itemVec_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.itemVec_ = itemVec_;
         } else {
           result.itemVec_ = itemVecBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TakeResinCardDailyRewardRspOuterClass.TakeResinCardDailyRewardRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.productConfigId_ = productConfigId_;
-        }
+        result.productConfigId_ = productConfigId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -505,7 +558,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
           if (!other.itemVec_.isEmpty()) {
             if (itemVec_.isEmpty()) {
               itemVec_ = other.itemVec_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureItemVecIsMutable();
               itemVec_.addAll(other.itemVec_);
@@ -518,7 +571,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
               itemVecBuilder_.dispose();
               itemVecBuilder_ = null;
               itemVec_ = other.itemVec_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               itemVecBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemVecFieldBuilder() : null;
@@ -530,7 +583,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
         if (other.getProductConfigId() != 0) {
           setProductConfigId(other.getProductConfigId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -545,53 +598,17 @@ public final class TakeResinCardDailyRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TakeResinCardDailyRewardRspOuterClass.TakeResinCardDailyRewardRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 104: {
-                productConfigId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              case 122: {
-                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
-                        extensionRegistry);
-                if (itemVecBuilder_ == null) {
-                  ensureItemVecIsMutable();
-                  itemVec_.add(m);
-                } else {
-                  itemVecBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TakeResinCardDailyRewardRspOuterClass.TakeResinCardDailyRewardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -613,7 +630,6 @@ public final class TakeResinCardDailyRewardRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -622,7 +638,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -631,9 +647,9 @@ public final class TakeResinCardDailyRewardRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemVec_ =
         java.util.Collections.emptyList();
       private void ensureItemVecIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           itemVec_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(itemVec_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -783,7 +799,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
       public Builder clearItemVec() {
         if (itemVecBuilder_ == null) {
           itemVec_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           itemVecBuilder_.clear();
@@ -860,7 +876,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
           itemVecBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   itemVec_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           itemVec_ = null;
@@ -885,7 +901,6 @@ public final class TakeResinCardDailyRewardRspOuterClass {
       public Builder setProductConfigId(int value) {
         
         productConfigId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -894,7 +909,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProductConfigId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         productConfigId_ = 0;
         onChanged();
         return this;
@@ -932,18 +947,7 @@ public final class TakeResinCardDailyRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TakeResinCardDailyRewardRsp(input, extensionRegistry);
       }
     };
 

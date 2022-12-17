@@ -86,6 +86,61 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetAllSceneGalleryInfoRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                galleryInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              galleryInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          galleryInfoList_ = java.util.Collections.unmodifiableList(galleryInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetAllSceneGalleryInfoRspOuterClass.internal_static_GetAllSceneGalleryInfoRsp_descriptor;
@@ -100,7 +155,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 3;</code>
      * @return The retcode.
@@ -111,7 +166,6 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
     }
 
     public static final int GALLERY_INFO_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo> galleryInfoList_;
     /**
      * <code>repeated .SceneGalleryInfo gallery_info_list = 12;</code>
@@ -171,7 +225,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
       for (int i = 0; i < galleryInfoList_.size(); i++) {
         output.writeMessage(12, galleryInfoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, galleryInfoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
           != other.getRetcode()) return false;
       if (!getGalleryInfoListList()
           .equals(other.getGalleryInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
         hash = (37 * hash) + GALLERY_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getGalleryInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +405,31 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetAllSceneGalleryInfoRspOuterClass.GetAllSceneGalleryInfoRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getGalleryInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         if (galleryInfoListBuilder_ == null) {
           galleryInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          galleryInfoList_ = null;
           galleryInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -397,29 +456,19 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetAllSceneGalleryInfoRspOuterClass.GetAllSceneGalleryInfoRsp buildPartial() {
         emu.gingerps.net.proto.GetAllSceneGalleryInfoRspOuterClass.GetAllSceneGalleryInfoRsp result = new emu.gingerps.net.proto.GetAllSceneGalleryInfoRspOuterClass.GetAllSceneGalleryInfoRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetAllSceneGalleryInfoRspOuterClass.GetAllSceneGalleryInfoRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         if (galleryInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             galleryInfoList_ = java.util.Collections.unmodifiableList(galleryInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.galleryInfoList_ = galleryInfoList_;
         } else {
           result.galleryInfoList_ = galleryInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetAllSceneGalleryInfoRspOuterClass.GetAllSceneGalleryInfoRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -473,7 +522,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
           if (!other.galleryInfoList_.isEmpty()) {
             if (galleryInfoList_.isEmpty()) {
               galleryInfoList_ = other.galleryInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureGalleryInfoListIsMutable();
               galleryInfoList_.addAll(other.galleryInfoList_);
@@ -486,7 +535,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
               galleryInfoListBuilder_.dispose();
               galleryInfoListBuilder_ = null;
               galleryInfoList_ = other.galleryInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               galleryInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getGalleryInfoListFieldBuilder() : null;
@@ -495,7 +544,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -510,48 +559,17 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetAllSceneGalleryInfoRspOuterClass.GetAllSceneGalleryInfoRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 98: {
-                emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo.parser(),
-                        extensionRegistry);
-                if (galleryInfoListBuilder_ == null) {
-                  ensureGalleryInfoListIsMutable();
-                  galleryInfoList_.add(m);
-                } else {
-                  galleryInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetAllSceneGalleryInfoRspOuterClass.GetAllSceneGalleryInfoRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -573,7 +591,6 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +599,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -591,9 +608,9 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo> galleryInfoList_ =
         java.util.Collections.emptyList();
       private void ensureGalleryInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           galleryInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo>(galleryInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -743,7 +760,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
       public Builder clearGalleryInfoList() {
         if (galleryInfoListBuilder_ == null) {
           galleryInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           galleryInfoListBuilder_.clear();
@@ -820,7 +837,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
           galleryInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo, emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo.Builder, emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfoOrBuilder>(
                   galleryInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           galleryInfoList_ = null;
@@ -860,18 +877,7 @@ public final class GetAllSceneGalleryInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetAllSceneGalleryInfoRsp(input, extensionRegistry);
       }
     };
 

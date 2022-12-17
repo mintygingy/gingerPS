@@ -135,14 +135,14 @@ public final class AvatarDataNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrDefault(
+
+    emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
+        emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
     /**
      * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
      */
+
     emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrThrow(
         int key);
 
@@ -223,6 +223,187 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AvatarDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              chooseAvatarGuid_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                backupAvatarTeamOrderList_ = newIntList();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              backupAvatarTeamOrderList_.addInt(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000040) != 0) && input.getBytesUntilLimit() > 0) {
+                backupAvatarTeamOrderList_ = newIntList();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                backupAvatarTeamOrderList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                ownedCostumeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              ownedCostumeList_.addInt(input.readUInt32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000020) != 0) && input.getBytesUntilLimit() > 0) {
+                ownedCostumeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                ownedCostumeList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                ownedFlycloakList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              ownedFlycloakList_.addInt(input.readUInt32());
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                ownedFlycloakList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                ownedFlycloakList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 56: {
+
+              curAvatarTeamId_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                avatarRenameList_ = new java.util.ArrayList<emu.gingerps.net.proto.AvatarRenameInfoOuterClass.AvatarRenameInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              avatarRenameList_.add(
+                  input.readMessage(emu.gingerps.net.proto.AvatarRenameInfoOuterClass.AvatarRenameInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                avatarTeamMap_ = com.google.protobuf.MapField.newMapField(
+                    AvatarTeamMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam>
+              avatarTeamMap__ = input.readMessage(
+                  AvatarTeamMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              avatarTeamMap_.getMutableMap().put(
+                  avatarTeamMap__.getKey(), avatarTeamMap__.getValue());
+              break;
+            }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                avatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              avatarList_.add(
+                  input.readMessage(emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                tempAvatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              tempAvatarGuidList_.addLong(input.readUInt64());
+              break;
+            }
+            case 122: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                tempAvatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                tempAvatarGuidList_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
+          backupAvatarTeamOrderList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          ownedCostumeList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          ownedFlycloakList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          avatarRenameList_ = java.util.Collections.unmodifiableList(avatarRenameList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          avatarList_ = java.util.Collections.unmodifiableList(avatarList_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          tempAvatarGuidList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarDataNotifyOuterClass.internal_static_AvatarDataNotify_descriptor;
@@ -249,7 +430,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
     }
 
     public static final int AVATAR_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo> avatarList_;
     /**
      * <code>repeated .AvatarInfo avatar_list = 14;</code>
@@ -290,7 +470,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
     }
 
     public static final int AVATAR_RENAME_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AvatarRenameInfoOuterClass.AvatarRenameInfo> avatarRenameList_;
     /**
      * <code>repeated .AvatarRenameInfo avatar_rename_list = 8;</code>
@@ -331,7 +510,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
     }
 
     public static final int CUR_AVATAR_TEAM_ID_FIELD_NUMBER = 7;
-    private int curAvatarTeamId_ = 0;
+    private int curAvatarTeamId_;
     /**
      * <code>uint32 cur_avatar_team_id = 7;</code>
      * @return The curAvatarTeamId.
@@ -342,7 +521,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
     }
 
     public static final int OWNED_FLYCLOAK_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList ownedFlycloakList_;
     /**
      * <code>repeated uint32 owned_flycloak_list = 6;</code>
@@ -371,7 +549,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
     private int ownedFlycloakListMemoizedSerializedSize = -1;
 
     public static final int TEMP_AVATAR_GUID_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList tempAvatarGuidList_;
     /**
      * <code>repeated uint64 temp_avatar_guid_list = 15;</code>
@@ -400,7 +577,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
     private int tempAvatarGuidListMemoizedSerializedSize = -1;
 
     public static final int CHOOSE_AVATAR_GUID_FIELD_NUMBER = 1;
-    private long chooseAvatarGuid_ = 0L;
+    private long chooseAvatarGuid_;
     /**
      * <code>uint64 choose_avatar_guid = 1;</code>
      * @return The chooseAvatarGuid.
@@ -422,7 +599,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam> avatarTeamMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam>
@@ -433,12 +609,14 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
       }
       return avatarTeamMap_;
     }
+
     public int getAvatarTeamMapCount() {
       return internalGetAvatarTeamMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
      */
+
     @java.lang.Override
     public boolean containsAvatarTeamMap(
         int key) {
@@ -457,6 +635,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
      * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam> getAvatarTeamMapMap() {
       return internalGetAvatarTeamMap().getMap();
     }
@@ -464,11 +643,10 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
      * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrDefault(
+
+    public emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
+        emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam> map =
           internalGetAvatarTeamMap().getMap();
@@ -478,6 +656,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
      * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrThrow(
         int key) {
       
@@ -490,7 +669,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
     }
 
     public static final int OWNED_COSTUME_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList ownedCostumeList_;
     /**
      * <code>repeated uint32 owned_costume_list = 5;</code>
@@ -519,7 +697,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
     private int ownedCostumeListMemoizedSerializedSize = -1;
 
     public static final int BACKUP_AVATAR_TEAM_ORDER_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList backupAvatarTeamOrderList_;
     /**
      * <code>repeated uint32 backup_avatar_team_order_list = 3;</code>
@@ -608,7 +785,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
       for (int i = 0; i < tempAvatarGuidList_.size(); i++) {
         output.writeUInt64NoTag(tempAvatarGuidList_.getLong(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -699,7 +876,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
         }
         tempAvatarGuidListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -732,7 +909,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
           .equals(other.getOwnedCostumeListList())) return false;
       if (!getBackupAvatarTeamOrderListList()
           .equals(other.getBackupAvatarTeamOrderListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -776,7 +953,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
         hash = (37 * hash) + BACKUP_AVATAR_TEAM_ORDER_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBackupAvatarTeamOrderListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -925,39 +1102,49 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
 
       // Construct using emu.gingerps.net.proto.AvatarDataNotifyOuterClass.AvatarDataNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAvatarListFieldBuilder();
+          getAvatarRenameListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (avatarListBuilder_ == null) {
           avatarList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          avatarList_ = null;
           avatarListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (avatarRenameListBuilder_ == null) {
           avatarRenameList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          avatarRenameList_ = null;
           avatarRenameListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         curAvatarTeamId_ = 0;
+
         ownedFlycloakList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         tempAvatarGuidList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000008);
         chooseAvatarGuid_ = 0L;
+
         internalGetMutableAvatarTeamMap().clear();
         ownedCostumeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000020);
         backupAvatarTeamOrderList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -984,13 +1171,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarDataNotifyOuterClass.AvatarDataNotify buildPartial() {
         emu.gingerps.net.proto.AvatarDataNotifyOuterClass.AvatarDataNotify result = new emu.gingerps.net.proto.AvatarDataNotifyOuterClass.AvatarDataNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AvatarDataNotifyOuterClass.AvatarDataNotify result) {
+        int from_bitField0_ = bitField0_;
         if (avatarListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             avatarList_ = java.util.Collections.unmodifiableList(avatarList_);
@@ -1009,40 +1190,32 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
         } else {
           result.avatarRenameList_ = avatarRenameListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
+        result.curAvatarTeamId_ = curAvatarTeamId_;
+        if (((bitField0_ & 0x00000004) != 0)) {
           ownedFlycloakList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.ownedFlycloakList_ = ownedFlycloakList_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           tempAvatarGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.tempAvatarGuidList_ = tempAvatarGuidList_;
-        if (((bitField0_ & 0x00000080) != 0)) {
+        result.chooseAvatarGuid_ = chooseAvatarGuid_;
+        result.avatarTeamMap_ = internalGetAvatarTeamMap();
+        result.avatarTeamMap_.makeImmutable();
+        if (((bitField0_ & 0x00000020) != 0)) {
           ownedCostumeList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.ownedCostumeList_ = ownedCostumeList_;
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           backupAvatarTeamOrderList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.backupAvatarTeamOrderList_ = backupAvatarTeamOrderList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AvatarDataNotifyOuterClass.AvatarDataNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curAvatarTeamId_ = curAvatarTeamId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.chooseAvatarGuid_ = chooseAvatarGuid_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.avatarTeamMap_ = internalGetAvatarTeamMap();
-          result.avatarTeamMap_.makeImmutable();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -1147,7 +1320,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
         if (!other.ownedFlycloakList_.isEmpty()) {
           if (ownedFlycloakList_.isEmpty()) {
             ownedFlycloakList_ = other.ownedFlycloakList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureOwnedFlycloakListIsMutable();
             ownedFlycloakList_.addAll(other.ownedFlycloakList_);
@@ -1157,7 +1330,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
         if (!other.tempAvatarGuidList_.isEmpty()) {
           if (tempAvatarGuidList_.isEmpty()) {
             tempAvatarGuidList_ = other.tempAvatarGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureTempAvatarGuidListIsMutable();
             tempAvatarGuidList_.addAll(other.tempAvatarGuidList_);
@@ -1169,11 +1342,10 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
         }
         internalGetMutableAvatarTeamMap().mergeFrom(
             other.internalGetAvatarTeamMap());
-        bitField0_ |= 0x00000040;
         if (!other.ownedCostumeList_.isEmpty()) {
           if (ownedCostumeList_.isEmpty()) {
             ownedCostumeList_ = other.ownedCostumeList_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureOwnedCostumeListIsMutable();
             ownedCostumeList_.addAll(other.ownedCostumeList_);
@@ -1183,14 +1355,14 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
         if (!other.backupAvatarTeamOrderList_.isEmpty()) {
           if (backupAvatarTeamOrderList_.isEmpty()) {
             backupAvatarTeamOrderList_ = other.backupAvatarTeamOrderList_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureBackupAvatarTeamOrderListIsMutable();
             backupAvatarTeamOrderList_.addAll(other.backupAvatarTeamOrderList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1205,139 +1377,17 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AvatarDataNotifyOuterClass.AvatarDataNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                chooseAvatarGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 8
-              case 24: {
-                int v = input.readUInt32();
-                ensureBackupAvatarTeamOrderListIsMutable();
-                backupAvatarTeamOrderList_.addInt(v);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureBackupAvatarTeamOrderListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  backupAvatarTeamOrderList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 26
-              case 40: {
-                int v = input.readUInt32();
-                ensureOwnedCostumeListIsMutable();
-                ownedCostumeList_.addInt(v);
-                break;
-              } // case 40
-              case 42: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureOwnedCostumeListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  ownedCostumeList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 42
-              case 48: {
-                int v = input.readUInt32();
-                ensureOwnedFlycloakListIsMutable();
-                ownedFlycloakList_.addInt(v);
-                break;
-              } // case 48
-              case 50: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureOwnedFlycloakListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  ownedFlycloakList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 50
-              case 56: {
-                curAvatarTeamId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              case 66: {
-                emu.gingerps.net.proto.AvatarRenameInfoOuterClass.AvatarRenameInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.AvatarRenameInfoOuterClass.AvatarRenameInfo.parser(),
-                        extensionRegistry);
-                if (avatarRenameListBuilder_ == null) {
-                  ensureAvatarRenameListIsMutable();
-                  avatarRenameList_.add(m);
-                } else {
-                  avatarRenameListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 66
-              case 90: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam>
-                avatarTeamMap__ = input.readMessage(
-                    AvatarTeamMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableAvatarTeamMap().getMutableMap().put(
-                    avatarTeamMap__.getKey(), avatarTeamMap__.getValue());
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 90
-              case 114: {
-                emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.parser(),
-                        extensionRegistry);
-                if (avatarListBuilder_ == null) {
-                  ensureAvatarListIsMutable();
-                  avatarList_.add(m);
-                } else {
-                  avatarListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 114
-              case 120: {
-                long v = input.readUInt64();
-                ensureTempAvatarGuidListIsMutable();
-                tempAvatarGuidList_.addLong(v);
-                break;
-              } // case 120
-              case 122: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureTempAvatarGuidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  tempAvatarGuidList_.addLong(input.readUInt64());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AvatarDataNotifyOuterClass.AvatarDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1839,7 +1889,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
       public Builder setCurAvatarTeamId(int value) {
         
         curAvatarTeamId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1848,7 +1897,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearCurAvatarTeamId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curAvatarTeamId_ = 0;
         onChanged();
         return this;
@@ -1856,10 +1905,10 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
 
       private com.google.protobuf.Internal.IntList ownedFlycloakList_ = emptyIntList();
       private void ensureOwnedFlycloakListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           ownedFlycloakList_ = mutableCopy(ownedFlycloakList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated uint32 owned_flycloak_list = 6;</code>
@@ -1867,7 +1916,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public java.util.List<java.lang.Integer>
           getOwnedFlycloakListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(ownedFlycloakList_) : ownedFlycloakList_;
       }
       /**
@@ -1893,7 +1942,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public Builder setOwnedFlycloakList(
           int index, int value) {
-        
         ensureOwnedFlycloakListIsMutable();
         ownedFlycloakList_.setInt(index, value);
         onChanged();
@@ -1905,7 +1953,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        * @return This builder for chaining.
        */
       public Builder addOwnedFlycloakList(int value) {
-        
         ensureOwnedFlycloakListIsMutable();
         ownedFlycloakList_.addInt(value);
         onChanged();
@@ -1930,17 +1977,17 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public Builder clearOwnedFlycloakList() {
         ownedFlycloakList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.LongList tempAvatarGuidList_ = emptyLongList();
       private void ensureTempAvatarGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           tempAvatarGuidList_ = mutableCopy(tempAvatarGuidList_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000008;
+         }
       }
       /**
        * <code>repeated uint64 temp_avatar_guid_list = 15;</code>
@@ -1948,7 +1995,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public java.util.List<java.lang.Long>
           getTempAvatarGuidListList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(tempAvatarGuidList_) : tempAvatarGuidList_;
       }
       /**
@@ -1974,7 +2021,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public Builder setTempAvatarGuidList(
           int index, long value) {
-        
         ensureTempAvatarGuidListIsMutable();
         tempAvatarGuidList_.setLong(index, value);
         onChanged();
@@ -1986,7 +2032,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        * @return This builder for chaining.
        */
       public Builder addTempAvatarGuidList(long value) {
-        
         ensureTempAvatarGuidListIsMutable();
         tempAvatarGuidList_.addLong(value);
         onChanged();
@@ -2011,7 +2056,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public Builder clearTempAvatarGuidList() {
         tempAvatarGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2033,7 +2078,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
       public Builder setChooseAvatarGuid(long value) {
         
         chooseAvatarGuid_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2042,7 +2086,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearChooseAvatarGuid() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         chooseAvatarGuid_ = 0L;
         onChanged();
         return this;
@@ -2051,7 +2095,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam> avatarTeamMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam>
-          internalGetAvatarTeamMap() {
+      internalGetAvatarTeamMap() {
         if (avatarTeamMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               AvatarTeamMapDefaultEntryHolder.defaultEntry);
@@ -2059,7 +2103,8 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
         return avatarTeamMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam>
-          internalGetMutableAvatarTeamMap() {
+      internalGetMutableAvatarTeamMap() {
+        onChanged();;
         if (avatarTeamMap_ == null) {
           avatarTeamMap_ = com.google.protobuf.MapField.newMapField(
               AvatarTeamMapDefaultEntryHolder.defaultEntry);
@@ -2067,16 +2112,16 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
         if (!avatarTeamMap_.isMutable()) {
           avatarTeamMap_ = avatarTeamMap_.copy();
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
         return avatarTeamMap_;
       }
+
       public int getAvatarTeamMapCount() {
         return internalGetAvatarTeamMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
        */
+
       @java.lang.Override
       public boolean containsAvatarTeamMap(
           int key) {
@@ -2095,6 +2140,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam> getAvatarTeamMapMap() {
         return internalGetAvatarTeamMap().getMap();
       }
@@ -2102,11 +2148,10 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrDefault(
+
+      public emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
+          emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam> map =
             internalGetAvatarTeamMap().getMap();
@@ -2116,6 +2161,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrThrow(
           int key) {
         
@@ -2126,8 +2172,8 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearAvatarTeamMap() {
-        bitField0_ = (bitField0_ & ~0x00000040);
         internalGetMutableAvatarTeamMap().getMutableMap()
             .clear();
         return this;
@@ -2135,6 +2181,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
       /**
        * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
        */
+
       public Builder removeAvatarTeamMap(
           int key) {
         
@@ -2147,8 +2194,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam>
-          getMutableAvatarTeamMap() {
-        bitField0_ |= 0x00000040;
+      getMutableAvatarTeamMap() {
         return internalGetMutableAvatarTeamMap().getMutableMap();
       }
       /**
@@ -2158,29 +2204,28 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
           int key,
           emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableAvatarTeamMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000040;
         return this;
       }
       /**
        * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 11;</code>
        */
+
       public Builder putAllAvatarTeamMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam> values) {
         internalGetMutableAvatarTeamMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000040;
         return this;
       }
 
       private com.google.protobuf.Internal.IntList ownedCostumeList_ = emptyIntList();
       private void ensureOwnedCostumeListIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           ownedCostumeList_ = mutableCopy(ownedCostumeList_);
-          bitField0_ |= 0x00000080;
-        }
+          bitField0_ |= 0x00000020;
+         }
       }
       /**
        * <code>repeated uint32 owned_costume_list = 5;</code>
@@ -2188,7 +2233,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public java.util.List<java.lang.Integer>
           getOwnedCostumeListList() {
-        return ((bitField0_ & 0x00000080) != 0) ?
+        return ((bitField0_ & 0x00000020) != 0) ?
                  java.util.Collections.unmodifiableList(ownedCostumeList_) : ownedCostumeList_;
       }
       /**
@@ -2214,7 +2259,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public Builder setOwnedCostumeList(
           int index, int value) {
-        
         ensureOwnedCostumeListIsMutable();
         ownedCostumeList_.setInt(index, value);
         onChanged();
@@ -2226,7 +2270,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        * @return This builder for chaining.
        */
       public Builder addOwnedCostumeList(int value) {
-        
         ensureOwnedCostumeListIsMutable();
         ownedCostumeList_.addInt(value);
         onChanged();
@@ -2251,17 +2294,17 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public Builder clearOwnedCostumeList() {
         ownedCostumeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList backupAvatarTeamOrderList_ = emptyIntList();
       private void ensureBackupAvatarTeamOrderListIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           backupAvatarTeamOrderList_ = mutableCopy(backupAvatarTeamOrderList_);
-          bitField0_ |= 0x00000100;
-        }
+          bitField0_ |= 0x00000040;
+         }
       }
       /**
        * <code>repeated uint32 backup_avatar_team_order_list = 3;</code>
@@ -2269,7 +2312,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public java.util.List<java.lang.Integer>
           getBackupAvatarTeamOrderListList() {
-        return ((bitField0_ & 0x00000100) != 0) ?
+        return ((bitField0_ & 0x00000040) != 0) ?
                  java.util.Collections.unmodifiableList(backupAvatarTeamOrderList_) : backupAvatarTeamOrderList_;
       }
       /**
@@ -2295,7 +2338,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public Builder setBackupAvatarTeamOrderList(
           int index, int value) {
-        
         ensureBackupAvatarTeamOrderListIsMutable();
         backupAvatarTeamOrderList_.setInt(index, value);
         onChanged();
@@ -2307,7 +2349,6 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        * @return This builder for chaining.
        */
       public Builder addBackupAvatarTeamOrderList(int value) {
-        
         ensureBackupAvatarTeamOrderListIsMutable();
         backupAvatarTeamOrderList_.addInt(value);
         onChanged();
@@ -2332,7 +2373,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
        */
       public Builder clearBackupAvatarTeamOrderList() {
         backupAvatarTeamOrderList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -2369,18 +2410,7 @@ emu.gingerps.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AvatarDataNotify(input, extensionRegistry);
       }
     };
 

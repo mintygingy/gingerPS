@@ -119,6 +119,89 @@ public final class GetCityHuntingOfferRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetCityHuntingOfferRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              curWeekFinishedCount_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                huntingOfferList_ = new java.util.ArrayList<emu.gingerps.net.proto.HuntingOfferDataOuterClass.HuntingOfferData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              huntingOfferList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HuntingOfferDataOuterClass.HuntingOfferData.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+
+              nextRefreshTime_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              cityId_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.Builder subBuilder = null;
+              if (ongoingHuntingPair_ != null) {
+                subBuilder = ongoingHuntingPair_.toBuilder();
+              }
+              ongoingHuntingPair_ = input.readMessage(emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(ongoingHuntingPair_);
+                ongoingHuntingPair_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          huntingOfferList_ = java.util.Collections.unmodifiableList(huntingOfferList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetCityHuntingOfferRspOuterClass.internal_static_GetCityHuntingOfferRsp_descriptor;
@@ -133,7 +216,6 @@ public final class GetCityHuntingOfferRspOuterClass {
     }
 
     public static final int HUNTING_OFFER_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HuntingOfferDataOuterClass.HuntingOfferData> huntingOfferList_;
     /**
      * <code>repeated .HuntingOfferData hunting_offer_list = 2;</code>
@@ -174,7 +256,7 @@ public final class GetCityHuntingOfferRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 9;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 9;</code>
      * @return The retcode.
@@ -185,7 +267,7 @@ public final class GetCityHuntingOfferRspOuterClass {
     }
 
     public static final int CUR_WEEK_FINISHED_COUNT_FIELD_NUMBER = 1;
-    private int curWeekFinishedCount_ = 0;
+    private int curWeekFinishedCount_;
     /**
      * <code>uint32 cur_week_finished_count = 1;</code>
      * @return The curWeekFinishedCount.
@@ -218,11 +300,11 @@ public final class GetCityHuntingOfferRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder getOngoingHuntingPairOrBuilder() {
-      return ongoingHuntingPair_ == null ? emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.getDefaultInstance() : ongoingHuntingPair_;
+      return getOngoingHuntingPair();
     }
 
     public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 5;
-    private int nextRefreshTime_ = 0;
+    private int nextRefreshTime_;
     /**
      * <code>uint32 next_refresh_time = 5;</code>
      * @return The nextRefreshTime.
@@ -233,7 +315,7 @@ public final class GetCityHuntingOfferRspOuterClass {
     }
 
     public static final int CITY_ID_FIELD_NUMBER = 12;
-    private int cityId_ = 0;
+    private int cityId_;
     /**
      * <code>uint32 city_id = 12;</code>
      * @return The cityId.
@@ -275,7 +357,7 @@ public final class GetCityHuntingOfferRspOuterClass {
       if (ongoingHuntingPair_ != null) {
         output.writeMessage(15, getOngoingHuntingPair());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -308,7 +390,7 @@ public final class GetCityHuntingOfferRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getOngoingHuntingPair());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -338,7 +420,7 @@ public final class GetCityHuntingOfferRspOuterClass {
           != other.getNextRefreshTime()) return false;
       if (getCityId()
           != other.getCityId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -365,7 +447,7 @@ public final class GetCityHuntingOfferRspOuterClass {
       hash = (53 * hash) + getNextRefreshTime();
       hash = (37 * hash) + CITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCityId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -492,34 +574,43 @@ public final class GetCityHuntingOfferRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetCityHuntingOfferRspOuterClass.GetCityHuntingOfferRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getHuntingOfferListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (huntingOfferListBuilder_ == null) {
           huntingOfferList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          huntingOfferList_ = null;
           huntingOfferListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
+
         curWeekFinishedCount_ = 0;
-        ongoingHuntingPair_ = null;
-        if (ongoingHuntingPairBuilder_ != null) {
-          ongoingHuntingPairBuilder_.dispose();
+
+        if (ongoingHuntingPairBuilder_ == null) {
+          ongoingHuntingPair_ = null;
+        } else {
+          ongoingHuntingPair_ = null;
           ongoingHuntingPairBuilder_ = null;
         }
         nextRefreshTime_ = 0;
+
         cityId_ = 0;
+
         return this;
       }
 
@@ -546,13 +637,7 @@ public final class GetCityHuntingOfferRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetCityHuntingOfferRspOuterClass.GetCityHuntingOfferRsp buildPartial() {
         emu.gingerps.net.proto.GetCityHuntingOfferRspOuterClass.GetCityHuntingOfferRsp result = new emu.gingerps.net.proto.GetCityHuntingOfferRspOuterClass.GetCityHuntingOfferRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetCityHuntingOfferRspOuterClass.GetCityHuntingOfferRsp result) {
+        int from_bitField0_ = bitField0_;
         if (huntingOfferListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             huntingOfferList_ = java.util.Collections.unmodifiableList(huntingOfferList_);
@@ -562,27 +647,17 @@ public final class GetCityHuntingOfferRspOuterClass {
         } else {
           result.huntingOfferList_ = huntingOfferListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetCityHuntingOfferRspOuterClass.GetCityHuntingOfferRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
+        result.retcode_ = retcode_;
+        result.curWeekFinishedCount_ = curWeekFinishedCount_;
+        if (ongoingHuntingPairBuilder_ == null) {
+          result.ongoingHuntingPair_ = ongoingHuntingPair_;
+        } else {
+          result.ongoingHuntingPair_ = ongoingHuntingPairBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curWeekFinishedCount_ = curWeekFinishedCount_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.ongoingHuntingPair_ = ongoingHuntingPairBuilder_ == null
-              ? ongoingHuntingPair_
-              : ongoingHuntingPairBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.nextRefreshTime_ = nextRefreshTime_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.cityId_ = cityId_;
-        }
+        result.nextRefreshTime_ = nextRefreshTime_;
+        result.cityId_ = cityId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -670,7 +745,7 @@ public final class GetCityHuntingOfferRspOuterClass {
         if (other.getCityId() != 0) {
           setCityId(other.getCityId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -685,70 +760,17 @@ public final class GetCityHuntingOfferRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetCityHuntingOfferRspOuterClass.GetCityHuntingOfferRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                curWeekFinishedCount_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 8
-              case 18: {
-                emu.gingerps.net.proto.HuntingOfferDataOuterClass.HuntingOfferData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HuntingOfferDataOuterClass.HuntingOfferData.parser(),
-                        extensionRegistry);
-                if (huntingOfferListBuilder_ == null) {
-                  ensureHuntingOfferListIsMutable();
-                  huntingOfferList_.add(m);
-                } else {
-                  huntingOfferListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 40: {
-                nextRefreshTime_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 72: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 96: {
-                cityId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 96
-              case 122: {
-                input.readMessage(
-                    getOngoingHuntingPairFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetCityHuntingOfferRspOuterClass.GetCityHuntingOfferRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1010,7 +1032,6 @@ public final class GetCityHuntingOfferRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1019,7 +1040,7 @@ public final class GetCityHuntingOfferRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -1042,7 +1063,6 @@ public final class GetCityHuntingOfferRspOuterClass {
       public Builder setCurWeekFinishedCount(int value) {
         
         curWeekFinishedCount_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1051,7 +1071,7 @@ public final class GetCityHuntingOfferRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurWeekFinishedCount() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curWeekFinishedCount_ = 0;
         onChanged();
         return this;
@@ -1065,7 +1085,7 @@ public final class GetCityHuntingOfferRspOuterClass {
        * @return Whether the ongoingHuntingPair field is set.
        */
       public boolean hasOngoingHuntingPair() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ongoingHuntingPairBuilder_ != null || ongoingHuntingPair_ != null;
       }
       /**
        * <code>.HuntingPair ongoing_hunting_pair = 15;</code>
@@ -1087,11 +1107,11 @@ public final class GetCityHuntingOfferRspOuterClass {
             throw new NullPointerException();
           }
           ongoingHuntingPair_ = value;
+          onChanged();
         } else {
           ongoingHuntingPairBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1101,11 +1121,11 @@ public final class GetCityHuntingOfferRspOuterClass {
           emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.Builder builderForValue) {
         if (ongoingHuntingPairBuilder_ == null) {
           ongoingHuntingPair_ = builderForValue.build();
+          onChanged();
         } else {
           ongoingHuntingPairBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1113,38 +1133,38 @@ public final class GetCityHuntingOfferRspOuterClass {
        */
       public Builder mergeOngoingHuntingPair(emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair value) {
         if (ongoingHuntingPairBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            ongoingHuntingPair_ != null &&
-            ongoingHuntingPair_ != emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.getDefaultInstance()) {
-            getOngoingHuntingPairBuilder().mergeFrom(value);
+          if (ongoingHuntingPair_ != null) {
+            ongoingHuntingPair_ =
+              emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.newBuilder(ongoingHuntingPair_).mergeFrom(value).buildPartial();
           } else {
             ongoingHuntingPair_ = value;
           }
+          onChanged();
         } else {
           ongoingHuntingPairBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HuntingPair ongoing_hunting_pair = 15;</code>
        */
       public Builder clearOngoingHuntingPair() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        ongoingHuntingPair_ = null;
-        if (ongoingHuntingPairBuilder_ != null) {
-          ongoingHuntingPairBuilder_.dispose();
+        if (ongoingHuntingPairBuilder_ == null) {
+          ongoingHuntingPair_ = null;
+          onChanged();
+        } else {
+          ongoingHuntingPair_ = null;
           ongoingHuntingPairBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HuntingPair ongoing_hunting_pair = 15;</code>
        */
       public emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.Builder getOngoingHuntingPairBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getOngoingHuntingPairFieldBuilder().getBuilder();
       }
@@ -1193,7 +1213,6 @@ public final class GetCityHuntingOfferRspOuterClass {
       public Builder setNextRefreshTime(int value) {
         
         nextRefreshTime_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1202,7 +1221,7 @@ public final class GetCityHuntingOfferRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextRefreshTime() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         nextRefreshTime_ = 0;
         onChanged();
         return this;
@@ -1225,7 +1244,6 @@ public final class GetCityHuntingOfferRspOuterClass {
       public Builder setCityId(int value) {
         
         cityId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1234,7 +1252,7 @@ public final class GetCityHuntingOfferRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCityId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         cityId_ = 0;
         onChanged();
         return this;
@@ -1272,18 +1290,7 @@ public final class GetCityHuntingOfferRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetCityHuntingOfferRsp(input, extensionRegistry);
       }
     };
 

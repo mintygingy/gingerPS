@@ -84,6 +84,72 @@ public final class LunaRiteHintPointOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private LunaRiteHintPoint(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              areaId_ = input.readUInt32();
+              break;
+            }
+            case 26: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (pos_ != null) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 64: {
+
+              index_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LunaRiteHintPointOuterClass.internal_static_LunaRiteHintPoint_descriptor;
@@ -98,7 +164,7 @@ public final class LunaRiteHintPointOuterClass {
     }
 
     public static final int INDEX_FIELD_NUMBER = 8;
-    private int index_ = 0;
+    private int index_;
     /**
      * <code>uint32 index = 8;</code>
      * @return The index.
@@ -131,11 +197,11 @@ public final class LunaRiteHintPointOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+      return getPos();
     }
 
     public static final int AREA_ID_FIELD_NUMBER = 2;
-    private int areaId_ = 0;
+    private int areaId_;
     /**
      * <code>uint32 area_id = 2;</code>
      * @return The areaId.
@@ -146,7 +212,7 @@ public final class LunaRiteHintPointOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 15;
-    private int type_ = 0;
+    private int type_;
     /**
      * <code>.LunaRiteHintPointType type = 15;</code>
      * @return The enum numeric value on the wire for type.
@@ -159,7 +225,8 @@ public final class LunaRiteHintPointOuterClass {
      * @return The type.
      */
     @java.lang.Override public emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType getType() {
-      emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType result = emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType.forNumber(type_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType result = emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType.valueOf(type_);
       return result == null ? emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType.UNRECOGNIZED : result;
     }
 
@@ -189,7 +256,7 @@ public final class LunaRiteHintPointOuterClass {
       if (type_ != emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType.LUNA_RITE_HINT_POINT_TYPE_NONE.getNumber()) {
         output.writeEnum(15, type_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -214,7 +281,7 @@ public final class LunaRiteHintPointOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(15, type_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -239,7 +306,7 @@ public final class LunaRiteHintPointOuterClass {
       if (getAreaId()
           != other.getAreaId()) return false;
       if (type_ != other.type_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -260,7 +327,7 @@ public final class LunaRiteHintPointOuterClass {
       hash = (53 * hash) + getAreaId();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -377,26 +444,34 @@ public final class LunaRiteHintPointOuterClass {
 
       // Construct using emu.gingerps.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         index_ = 0;
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
         areaId_ = 0;
+
         type_ = 0;
+
         return this;
       }
 
@@ -423,27 +498,16 @@ public final class LunaRiteHintPointOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint buildPartial() {
         emu.gingerps.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint result = new emu.gingerps.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.index_ = index_;
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        result.areaId_ = areaId_;
+        result.type_ = type_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.index_ = index_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.areaId_ = areaId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.type_ = type_;
-        }
       }
 
       @java.lang.Override
@@ -502,7 +566,7 @@ public final class LunaRiteHintPointOuterClass {
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -517,55 +581,19 @@ public final class LunaRiteHintPointOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                areaId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 26: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 26
-              case 64: {
-                index_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 120: {
-                type_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int index_ ;
       /**
@@ -584,7 +612,6 @@ public final class LunaRiteHintPointOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -593,7 +620,7 @@ public final class LunaRiteHintPointOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         index_ = 0;
         onChanged();
         return this;
@@ -607,7 +634,7 @@ public final class LunaRiteHintPointOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return posBuilder_ != null || pos_ != null;
       }
       /**
        * <code>.Vector pos = 3;</code>
@@ -629,11 +656,11 @@ public final class LunaRiteHintPointOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -643,11 +670,11 @@ public final class LunaRiteHintPointOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -655,38 +682,38 @@ public final class LunaRiteHintPointOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            pos_ != null &&
-            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (pos_ != null) {
+            pos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 3;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 3;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -735,7 +762,6 @@ public final class LunaRiteHintPointOuterClass {
       public Builder setAreaId(int value) {
         
         areaId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -744,7 +770,7 @@ public final class LunaRiteHintPointOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAreaId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         areaId_ = 0;
         onChanged();
         return this;
@@ -764,8 +790,8 @@ public final class LunaRiteHintPointOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+        
         type_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -775,7 +801,8 @@ public final class LunaRiteHintPointOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType getType() {
-        emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType result = emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType.forNumber(type_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType result = emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType.valueOf(type_);
         return result == null ? emu.gingerps.net.proto.LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType.UNRECOGNIZED : result;
       }
       /**
@@ -787,7 +814,7 @@ public final class LunaRiteHintPointOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -797,7 +824,7 @@ public final class LunaRiteHintPointOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         type_ = 0;
         onChanged();
         return this;
@@ -835,18 +862,7 @@ public final class LunaRiteHintPointOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new LunaRiteHintPoint(input, extensionRegistry);
       }
     };
 

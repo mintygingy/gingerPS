@@ -57,6 +57,53 @@ public final class ItemParamOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ItemParam(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              itemId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              count_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ItemParamOuterClass.internal_static_ItemParam_descriptor;
@@ -71,7 +118,7 @@ public final class ItemParamOuterClass {
     }
 
     public static final int ITEM_ID_FIELD_NUMBER = 1;
-    private int itemId_ = 0;
+    private int itemId_;
     /**
      * <code>uint32 item_id = 1;</code>
      * @return The itemId.
@@ -82,7 +129,7 @@ public final class ItemParamOuterClass {
     }
 
     public static final int COUNT_FIELD_NUMBER = 2;
-    private int count_ = 0;
+    private int count_;
     /**
      * <code>uint32 count = 2;</code>
      * @return The count.
@@ -112,7 +159,7 @@ public final class ItemParamOuterClass {
       if (count_ != 0) {
         output.writeUInt32(2, count_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +176,7 @@ public final class ItemParamOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, count_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -148,7 +195,7 @@ public final class ItemParamOuterClass {
           != other.getItemId()) return false;
       if (getCount()
           != other.getCount()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -163,7 +210,7 @@ public final class ItemParamOuterClass {
       hash = (53 * hash) + getItemId();
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCount();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -280,20 +327,26 @@ public final class ItemParamOuterClass {
 
       // Construct using emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         itemId_ = 0;
+
         count_ = 0;
+
         return this;
       }
 
@@ -320,19 +373,10 @@ public final class ItemParamOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ItemParamOuterClass.ItemParam buildPartial() {
         emu.gingerps.net.proto.ItemParamOuterClass.ItemParam result = new emu.gingerps.net.proto.ItemParamOuterClass.ItemParam(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.itemId_ = itemId_;
+        result.count_ = count_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.itemId_ = itemId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.count_ = count_;
-        }
       }
 
       @java.lang.Override
@@ -385,7 +429,7 @@ public final class ItemParamOuterClass {
         if (other.getCount() != 0) {
           setCount(other.getCount());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -400,43 +444,19 @@ public final class ItemParamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                itemId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                count_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ItemParamOuterClass.ItemParam) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int itemId_ ;
       /**
@@ -455,7 +475,6 @@ public final class ItemParamOuterClass {
       public Builder setItemId(int value) {
         
         itemId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +483,7 @@ public final class ItemParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearItemId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         itemId_ = 0;
         onChanged();
         return this;
@@ -487,7 +506,6 @@ public final class ItemParamOuterClass {
       public Builder setCount(int value) {
         
         count_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -496,7 +514,7 @@ public final class ItemParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCount() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         count_ = 0;
         onChanged();
         return this;
@@ -534,18 +552,7 @@ public final class ItemParamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ItemParam(input, extensionRegistry);
       }
     };
 

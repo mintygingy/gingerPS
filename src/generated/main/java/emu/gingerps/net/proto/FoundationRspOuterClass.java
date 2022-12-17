@@ -91,6 +91,69 @@ public final class FoundationRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FoundationRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              gadgetEntityId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              pointConfigId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              buildingId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+
+              opType_ = rawValue;
+              break;
+            }
+            case 120: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FoundationRspOuterClass.internal_static_FoundationRsp_descriptor;
@@ -105,7 +168,7 @@ public final class FoundationRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 15;</code>
      * @return The retcode.
@@ -116,7 +179,7 @@ public final class FoundationRspOuterClass {
     }
 
     public static final int BUILDING_ID_FIELD_NUMBER = 10;
-    private int buildingId_ = 0;
+    private int buildingId_;
     /**
      * <code>uint32 building_id = 10;</code>
      * @return The buildingId.
@@ -127,7 +190,7 @@ public final class FoundationRspOuterClass {
     }
 
     public static final int OP_TYPE_FIELD_NUMBER = 14;
-    private int opType_ = 0;
+    private int opType_;
     /**
      * <code>.FoundationOpType op_type = 14;</code>
      * @return The enum numeric value on the wire for opType.
@@ -140,12 +203,13 @@ public final class FoundationRspOuterClass {
      * @return The opType.
      */
     @java.lang.Override public emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType getOpType() {
-      emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType result = emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.forNumber(opType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType result = emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.valueOf(opType_);
       return result == null ? emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.UNRECOGNIZED : result;
     }
 
     public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 2;
-    private int gadgetEntityId_ = 0;
+    private int gadgetEntityId_;
     /**
      * <code>uint32 gadget_entity_id = 2;</code>
      * @return The gadgetEntityId.
@@ -156,7 +220,7 @@ public final class FoundationRspOuterClass {
     }
 
     public static final int POINT_CONFIG_ID_FIELD_NUMBER = 6;
-    private int pointConfigId_ = 0;
+    private int pointConfigId_;
     /**
      * <code>uint32 point_config_id = 6;</code>
      * @return The pointConfigId.
@@ -195,7 +259,7 @@ public final class FoundationRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(15, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -224,7 +288,7 @@ public final class FoundationRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -248,7 +312,7 @@ public final class FoundationRspOuterClass {
           != other.getGadgetEntityId()) return false;
       if (getPointConfigId()
           != other.getPointConfigId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -269,7 +333,7 @@ public final class FoundationRspOuterClass {
       hash = (53 * hash) + getGadgetEntityId();
       hash = (37 * hash) + POINT_CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPointConfigId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -396,23 +460,32 @@ public final class FoundationRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.FoundationRspOuterClass.FoundationRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         buildingId_ = 0;
+
         opType_ = 0;
+
         gadgetEntityId_ = 0;
+
         pointConfigId_ = 0;
+
         return this;
       }
 
@@ -439,28 +512,13 @@ public final class FoundationRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FoundationRspOuterClass.FoundationRsp buildPartial() {
         emu.gingerps.net.proto.FoundationRspOuterClass.FoundationRsp result = new emu.gingerps.net.proto.FoundationRspOuterClass.FoundationRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        result.buildingId_ = buildingId_;
+        result.opType_ = opType_;
+        result.gadgetEntityId_ = gadgetEntityId_;
+        result.pointConfigId_ = pointConfigId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FoundationRspOuterClass.FoundationRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.buildingId_ = buildingId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.opType_ = opType_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.gadgetEntityId_ = gadgetEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.pointConfigId_ = pointConfigId_;
-        }
       }
 
       @java.lang.Override
@@ -522,7 +580,7 @@ public final class FoundationRspOuterClass {
         if (other.getPointConfigId() != 0) {
           setPointConfigId(other.getPointConfigId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -537,58 +595,19 @@ public final class FoundationRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FoundationRspOuterClass.FoundationRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                gadgetEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 16
-              case 48: {
-                pointConfigId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 48
-              case 80: {
-                buildingId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 112: {
-                opType_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              case 120: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FoundationRspOuterClass.FoundationRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -607,7 +626,6 @@ public final class FoundationRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -616,7 +634,7 @@ public final class FoundationRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -639,7 +657,6 @@ public final class FoundationRspOuterClass {
       public Builder setBuildingId(int value) {
         
         buildingId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -648,7 +665,7 @@ public final class FoundationRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuildingId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         buildingId_ = 0;
         onChanged();
         return this;
@@ -668,8 +685,8 @@ public final class FoundationRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOpTypeValue(int value) {
+        
         opType_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -679,7 +696,8 @@ public final class FoundationRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType getOpType() {
-        emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType result = emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.forNumber(opType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType result = emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.valueOf(opType_);
         return result == null ? emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.UNRECOGNIZED : result;
       }
       /**
@@ -691,7 +709,7 @@ public final class FoundationRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         opType_ = value.getNumber();
         onChanged();
         return this;
@@ -701,7 +719,7 @@ public final class FoundationRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         opType_ = 0;
         onChanged();
         return this;
@@ -724,7 +742,6 @@ public final class FoundationRspOuterClass {
       public Builder setGadgetEntityId(int value) {
         
         gadgetEntityId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -733,7 +750,7 @@ public final class FoundationRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         gadgetEntityId_ = 0;
         onChanged();
         return this;
@@ -756,7 +773,6 @@ public final class FoundationRspOuterClass {
       public Builder setPointConfigId(int value) {
         
         pointConfigId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -765,7 +781,7 @@ public final class FoundationRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPointConfigId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         pointConfigId_ = 0;
         onChanged();
         return this;
@@ -803,18 +819,7 @@ public final class FoundationRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FoundationRsp(input, extensionRegistry);
       }
     };
 

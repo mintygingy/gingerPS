@@ -51,6 +51,48 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneGalleryFungusFighterCaptureInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 120: {
+
+              isHideProgress_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.internal_static_SceneGalleryFungusFighterCaptureInfo_descriptor;
@@ -65,7 +107,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
     }
 
     public static final int IS_HIDE_PROGRESS_FIELD_NUMBER = 15;
-    private boolean isHideProgress_ = false;
+    private boolean isHideProgress_;
     /**
      * <code>bool is_hide_progress = 15;</code>
      * @return The isHideProgress.
@@ -92,7 +134,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
       if (isHideProgress_ != false) {
         output.writeBool(15, isHideProgress_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -105,7 +147,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isHideProgress_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -122,7 +164,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
 
       if (getIsHideProgress()
           != other.getIsHideProgress()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -136,7 +178,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
       hash = (37 * hash) + IS_HIDE_PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsHideProgress());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -253,19 +295,24 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isHideProgress_ = false;
+
         return this;
       }
 
@@ -292,16 +339,9 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo result = new emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isHideProgress_ = isHideProgress_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isHideProgress_ = isHideProgress_;
-        }
       }
 
       @java.lang.Override
@@ -351,7 +391,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
         if (other.getIsHideProgress() != false) {
           setIsHideProgress(other.getIsHideProgress());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -366,38 +406,19 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 120: {
-                isHideProgress_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isHideProgress_ ;
       /**
@@ -416,7 +437,6 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
       public Builder setIsHideProgress(boolean value) {
         
         isHideProgress_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -425,7 +445,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsHideProgress() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isHideProgress_ = false;
         onChanged();
         return this;
@@ -463,18 +483,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneGalleryFungusFighterCaptureInfo(input, extensionRegistry);
       }
     };
 

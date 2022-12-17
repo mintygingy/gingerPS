@@ -81,6 +81,69 @@ public final class GCGMsgTokenChangeOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGMsgTokenChange(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 56: {
+
+              tokenType_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              unk3300LLGHGEALDDI_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              unk3300LCNKBFBJDFM_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              cardGuid_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.internal_static_GCGMsgTokenChange_descriptor;
@@ -95,7 +158,7 @@ public final class GCGMsgTokenChangeOuterClass {
     }
 
     public static final int TOKEN_TYPE_FIELD_NUMBER = 7;
-    private int tokenType_ = 0;
+    private int tokenType_;
     /**
      * <code>uint32 token_type = 7;</code>
      * @return The tokenType.
@@ -106,7 +169,7 @@ public final class GCGMsgTokenChangeOuterClass {
     }
 
     public static final int UNK3300_LLGHGEALDDI_FIELD_NUMBER = 10;
-    private int unk3300LLGHGEALDDI_ = 0;
+    private int unk3300LLGHGEALDDI_;
     /**
      * <code>uint32 Unk3300_LLGHGEALDDI = 10;</code>
      * @return The unk3300LLGHGEALDDI.
@@ -117,7 +180,7 @@ public final class GCGMsgTokenChangeOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 3;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.GCGReason reason = 3;</code>
      * @return The enum numeric value on the wire for reason.
@@ -130,12 +193,13 @@ public final class GCGMsgTokenChangeOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason getReason() {
-      emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
     }
 
     public static final int UNK3300_LCNKBFBJDFM_FIELD_NUMBER = 12;
-    private int unk3300LCNKBFBJDFM_ = 0;
+    private int unk3300LCNKBFBJDFM_;
     /**
      * <code>uint32 Unk3300_LCNKBFBJDFM = 12;</code>
      * @return The unk3300LCNKBFBJDFM.
@@ -146,7 +210,7 @@ public final class GCGMsgTokenChangeOuterClass {
     }
 
     public static final int CARD_GUID_FIELD_NUMBER = 13;
-    private int cardGuid_ = 0;
+    private int cardGuid_;
     /**
      * <code>uint32 card_guid = 13;</code>
      * @return The cardGuid.
@@ -185,7 +249,7 @@ public final class GCGMsgTokenChangeOuterClass {
       if (cardGuid_ != 0) {
         output.writeUInt32(13, cardGuid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -214,7 +278,7 @@ public final class GCGMsgTokenChangeOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, cardGuid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -238,7 +302,7 @@ public final class GCGMsgTokenChangeOuterClass {
           != other.getUnk3300LCNKBFBJDFM()) return false;
       if (getCardGuid()
           != other.getCardGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -259,7 +323,7 @@ public final class GCGMsgTokenChangeOuterClass {
       hash = (53 * hash) + getUnk3300LCNKBFBJDFM();
       hash = (37 * hash) + CARD_GUID_FIELD_NUMBER;
       hash = (53 * hash) + getCardGuid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -376,23 +440,32 @@ public final class GCGMsgTokenChangeOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         tokenType_ = 0;
+
         unk3300LLGHGEALDDI_ = 0;
+
         reason_ = 0;
+
         unk3300LCNKBFBJDFM_ = 0;
+
         cardGuid_ = 0;
+
         return this;
       }
 
@@ -419,28 +492,13 @@ public final class GCGMsgTokenChangeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange buildPartial() {
         emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange result = new emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.tokenType_ = tokenType_;
+        result.unk3300LLGHGEALDDI_ = unk3300LLGHGEALDDI_;
+        result.reason_ = reason_;
+        result.unk3300LCNKBFBJDFM_ = unk3300LCNKBFBJDFM_;
+        result.cardGuid_ = cardGuid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.tokenType_ = tokenType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300LLGHGEALDDI_ = unk3300LLGHGEALDDI_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300LCNKBFBJDFM_ = unk3300LCNKBFBJDFM_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.cardGuid_ = cardGuid_;
-        }
       }
 
       @java.lang.Override
@@ -502,7 +560,7 @@ public final class GCGMsgTokenChangeOuterClass {
         if (other.getCardGuid() != 0) {
           setCardGuid(other.getCardGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -517,58 +575,19 @@ public final class GCGMsgTokenChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 56: {
-                tokenType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 80: {
-                unk3300LLGHGEALDDI_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 96: {
-                unk3300LCNKBFBJDFM_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              case 104: {
-                cardGuid_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int tokenType_ ;
       /**
@@ -587,7 +606,6 @@ public final class GCGMsgTokenChangeOuterClass {
       public Builder setTokenType(int value) {
         
         tokenType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -596,7 +614,7 @@ public final class GCGMsgTokenChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTokenType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         tokenType_ = 0;
         onChanged();
         return this;
@@ -619,7 +637,6 @@ public final class GCGMsgTokenChangeOuterClass {
       public Builder setUnk3300LLGHGEALDDI(int value) {
         
         unk3300LLGHGEALDDI_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -628,7 +645,7 @@ public final class GCGMsgTokenChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LLGHGEALDDI() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300LLGHGEALDDI_ = 0;
         onChanged();
         return this;
@@ -648,8 +665,8 @@ public final class GCGMsgTokenChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -659,7 +676,8 @@ public final class GCGMsgTokenChangeOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason getReason() {
-        emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
       }
       /**
@@ -671,7 +689,7 @@ public final class GCGMsgTokenChangeOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -681,7 +699,7 @@ public final class GCGMsgTokenChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -704,7 +722,6 @@ public final class GCGMsgTokenChangeOuterClass {
       public Builder setUnk3300LCNKBFBJDFM(int value) {
         
         unk3300LCNKBFBJDFM_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -713,7 +730,7 @@ public final class GCGMsgTokenChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LCNKBFBJDFM() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300LCNKBFBJDFM_ = 0;
         onChanged();
         return this;
@@ -736,7 +753,6 @@ public final class GCGMsgTokenChangeOuterClass {
       public Builder setCardGuid(int value) {
         
         cardGuid_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -745,7 +761,7 @@ public final class GCGMsgTokenChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardGuid() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         cardGuid_ = 0;
         onChanged();
         return this;
@@ -783,18 +799,7 @@ public final class GCGMsgTokenChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGMsgTokenChange(input, extensionRegistry);
       }
     };
 

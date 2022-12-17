@@ -63,6 +63,58 @@ public final class HomeResourceOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeResource(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              storeValue_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              storeLimit_ = input.readUInt32();
+              break;
+            }
+            case 109: {
+
+              nextRefreshTime_ = input.readFixed32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeResourceOuterClass.internal_static_HomeResource_descriptor;
@@ -77,7 +129,7 @@ public final class HomeResourceOuterClass {
     }
 
     public static final int STORE_LIMIT_FIELD_NUMBER = 6;
-    private int storeLimit_ = 0;
+    private int storeLimit_;
     /**
      * <code>uint32 store_limit = 6;</code>
      * @return The storeLimit.
@@ -88,7 +140,7 @@ public final class HomeResourceOuterClass {
     }
 
     public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 13;
-    private int nextRefreshTime_ = 0;
+    private int nextRefreshTime_;
     /**
      * <code>fixed32 next_refresh_time = 13;</code>
      * @return The nextRefreshTime.
@@ -99,7 +151,7 @@ public final class HomeResourceOuterClass {
     }
 
     public static final int STORE_VALUE_FIELD_NUMBER = 1;
-    private int storeValue_ = 0;
+    private int storeValue_;
     /**
      * <code>uint32 store_value = 1;</code>
      * @return The storeValue.
@@ -132,7 +184,7 @@ public final class HomeResourceOuterClass {
       if (nextRefreshTime_ != 0) {
         output.writeFixed32(13, nextRefreshTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +205,7 @@ public final class HomeResourceOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeFixed32Size(13, nextRefreshTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +226,7 @@ public final class HomeResourceOuterClass {
           != other.getNextRefreshTime()) return false;
       if (getStoreValue()
           != other.getStoreValue()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -191,7 +243,7 @@ public final class HomeResourceOuterClass {
       hash = (53 * hash) + getNextRefreshTime();
       hash = (37 * hash) + STORE_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getStoreValue();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -308,21 +360,28 @@ public final class HomeResourceOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         storeLimit_ = 0;
+
         nextRefreshTime_ = 0;
+
         storeValue_ = 0;
+
         return this;
       }
 
@@ -349,22 +408,11 @@ public final class HomeResourceOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource buildPartial() {
         emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource result = new emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.storeLimit_ = storeLimit_;
+        result.nextRefreshTime_ = nextRefreshTime_;
+        result.storeValue_ = storeValue_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.storeLimit_ = storeLimit_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.nextRefreshTime_ = nextRefreshTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.storeValue_ = storeValue_;
-        }
       }
 
       @java.lang.Override
@@ -420,7 +468,7 @@ public final class HomeResourceOuterClass {
         if (other.getStoreValue() != 0) {
           setStoreValue(other.getStoreValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -435,48 +483,19 @@ public final class HomeResourceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                storeValue_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 8
-              case 48: {
-                storeLimit_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 109: {
-                nextRefreshTime_ = input.readFixed32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 109
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int storeLimit_ ;
       /**
@@ -495,7 +514,6 @@ public final class HomeResourceOuterClass {
       public Builder setStoreLimit(int value) {
         
         storeLimit_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -504,7 +522,7 @@ public final class HomeResourceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStoreLimit() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         storeLimit_ = 0;
         onChanged();
         return this;
@@ -527,7 +545,6 @@ public final class HomeResourceOuterClass {
       public Builder setNextRefreshTime(int value) {
         
         nextRefreshTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +553,7 @@ public final class HomeResourceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextRefreshTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         nextRefreshTime_ = 0;
         onChanged();
         return this;
@@ -559,7 +576,6 @@ public final class HomeResourceOuterClass {
       public Builder setStoreValue(int value) {
         
         storeValue_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -568,7 +584,7 @@ public final class HomeResourceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStoreValue() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         storeValue_ = 0;
         onChanged();
         return this;
@@ -606,18 +622,7 @@ public final class HomeResourceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeResource(input, extensionRegistry);
       }
     };
 

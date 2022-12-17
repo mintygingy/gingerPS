@@ -59,12 +59,14 @@ public final class GivingRecordOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
      */
+
     int getMaterialCountMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
      */
+
     int getMaterialCountMapOrThrow(
         int key);
 
@@ -113,6 +115,87 @@ public final class GivingRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GivingRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                materialCountMap_ = com.google.protobuf.MapField.newMapField(
+                    MaterialCountMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              materialCountMap__ = input.readMessage(
+                  MaterialCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              materialCountMap_.getMutableMap().put(
+                  materialCountMap__.getKey(), materialCountMap__.getValue());
+              break;
+            }
+            case 24: {
+
+              isGadgetGiving_ = input.readBool();
+              break;
+            }
+            case 32: {
+
+              configId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              lastGroupId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              isFinished_ = input.readBool();
+              break;
+            }
+            case 56: {
+
+              groupId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              givingId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GivingRecordOuterClass.internal_static_GivingRecord_descriptor;
@@ -139,7 +222,7 @@ public final class GivingRecordOuterClass {
     }
 
     public static final int IS_GADGET_GIVING_FIELD_NUMBER = 3;
-    private boolean isGadgetGiving_ = false;
+    private boolean isGadgetGiving_;
     /**
      * <code>bool is_gadget_giving = 3;</code>
      * @return The isGadgetGiving.
@@ -150,7 +233,7 @@ public final class GivingRecordOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 7;
-    private int groupId_ = 0;
+    private int groupId_;
     /**
      * <code>uint32 group_id = 7;</code>
      * @return The groupId.
@@ -161,7 +244,7 @@ public final class GivingRecordOuterClass {
     }
 
     public static final int IS_FINISHED_FIELD_NUMBER = 6;
-    private boolean isFinished_ = false;
+    private boolean isFinished_;
     /**
      * <code>bool is_finished = 6;</code>
      * @return The isFinished.
@@ -183,7 +266,6 @@ public final class GivingRecordOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> materialCountMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -194,12 +276,14 @@ public final class GivingRecordOuterClass {
       }
       return materialCountMap_;
     }
+
     public int getMaterialCountMapCount() {
       return internalGetMaterialCountMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
      */
+
     @java.lang.Override
     public boolean containsMaterialCountMap(
         int key) {
@@ -218,6 +302,7 @@ public final class GivingRecordOuterClass {
      * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getMaterialCountMapMap() {
       return internalGetMaterialCountMap().getMap();
     }
@@ -225,6 +310,7 @@ public final class GivingRecordOuterClass {
      * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
      */
     @java.lang.Override
+
     public int getMaterialCountMapOrDefault(
         int key,
         int defaultValue) {
@@ -237,6 +323,7 @@ public final class GivingRecordOuterClass {
      * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
      */
     @java.lang.Override
+
     public int getMaterialCountMapOrThrow(
         int key) {
       
@@ -249,7 +336,7 @@ public final class GivingRecordOuterClass {
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 4;
-    private int configId_ = 0;
+    private int configId_;
     /**
      * <code>uint32 config_id = 4;</code>
      * @return The configId.
@@ -260,7 +347,7 @@ public final class GivingRecordOuterClass {
     }
 
     public static final int LAST_GROUP_ID_FIELD_NUMBER = 5;
-    private int lastGroupId_ = 0;
+    private int lastGroupId_;
     /**
      * <code>uint32 last_group_id = 5;</code>
      * @return The lastGroupId.
@@ -271,7 +358,7 @@ public final class GivingRecordOuterClass {
     }
 
     public static final int GIVING_ID_FIELD_NUMBER = 14;
-    private int givingId_ = 0;
+    private int givingId_;
     /**
      * <code>uint32 giving_id = 14;</code>
      * @return The givingId.
@@ -319,7 +406,7 @@ public final class GivingRecordOuterClass {
       if (givingId_ != 0) {
         output.writeUInt32(14, givingId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -362,7 +449,7 @@ public final class GivingRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, givingId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -391,7 +478,7 @@ public final class GivingRecordOuterClass {
           != other.getLastGroupId()) return false;
       if (getGivingId()
           != other.getGivingId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -420,7 +507,7 @@ public final class GivingRecordOuterClass {
       hash = (53 * hash) + getLastGroupId();
       hash = (37 * hash) + GIVING_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGivingId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -559,25 +646,35 @@ public final class GivingRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isGadgetGiving_ = false;
+
         groupId_ = 0;
+
         isFinished_ = false;
+
         internalGetMutableMaterialCountMap().clear();
         configId_ = 0;
+
         lastGroupId_ = 0;
+
         givingId_ = 0;
+
         return this;
       }
 
@@ -604,35 +701,17 @@ public final class GivingRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord buildPartial() {
         emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord result = new emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.isGadgetGiving_ = isGadgetGiving_;
+        result.groupId_ = groupId_;
+        result.isFinished_ = isFinished_;
+        result.materialCountMap_ = internalGetMaterialCountMap();
+        result.materialCountMap_.makeImmutable();
+        result.configId_ = configId_;
+        result.lastGroupId_ = lastGroupId_;
+        result.givingId_ = givingId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isGadgetGiving_ = isGadgetGiving_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.groupId_ = groupId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isFinished_ = isFinished_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.materialCountMap_ = internalGetMaterialCountMap();
-          result.materialCountMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.configId_ = configId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.lastGroupId_ = lastGroupId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.givingId_ = givingId_;
-        }
       }
 
       @java.lang.Override
@@ -690,7 +769,6 @@ public final class GivingRecordOuterClass {
         }
         internalGetMutableMaterialCountMap().mergeFrom(
             other.internalGetMaterialCountMap());
-        bitField0_ |= 0x00000008;
         if (other.getConfigId() != 0) {
           setConfigId(other.getConfigId());
         }
@@ -700,7 +778,7 @@ public final class GivingRecordOuterClass {
         if (other.getGivingId() != 0) {
           setGivingId(other.getGivingId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -715,69 +793,17 @@ public final class GivingRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                materialCountMap__ = input.readMessage(
-                    MaterialCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableMaterialCountMap().getMutableMap().put(
-                    materialCountMap__.getKey(), materialCountMap__.getValue());
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 10
-              case 24: {
-                isGadgetGiving_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 32: {
-                configId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 32
-              case 40: {
-                lastGroupId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 40
-              case 48: {
-                isFinished_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 48
-              case 56: {
-                groupId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 112: {
-                givingId_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -799,7 +825,6 @@ public final class GivingRecordOuterClass {
       public Builder setIsGadgetGiving(boolean value) {
         
         isGadgetGiving_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -808,7 +833,7 @@ public final class GivingRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsGadgetGiving() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isGadgetGiving_ = false;
         onChanged();
         return this;
@@ -831,7 +856,6 @@ public final class GivingRecordOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -840,7 +864,7 @@ public final class GivingRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         groupId_ = 0;
         onChanged();
         return this;
@@ -863,7 +887,6 @@ public final class GivingRecordOuterClass {
       public Builder setIsFinished(boolean value) {
         
         isFinished_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -872,7 +895,7 @@ public final class GivingRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isFinished_ = false;
         onChanged();
         return this;
@@ -881,7 +904,7 @@ public final class GivingRecordOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> materialCountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMaterialCountMap() {
+      internalGetMaterialCountMap() {
         if (materialCountMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               MaterialCountMapDefaultEntryHolder.defaultEntry);
@@ -889,7 +912,8 @@ public final class GivingRecordOuterClass {
         return materialCountMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableMaterialCountMap() {
+      internalGetMutableMaterialCountMap() {
+        onChanged();;
         if (materialCountMap_ == null) {
           materialCountMap_ = com.google.protobuf.MapField.newMapField(
               MaterialCountMapDefaultEntryHolder.defaultEntry);
@@ -897,16 +921,16 @@ public final class GivingRecordOuterClass {
         if (!materialCountMap_.isMutable()) {
           materialCountMap_ = materialCountMap_.copy();
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
         return materialCountMap_;
       }
+
       public int getMaterialCountMapCount() {
         return internalGetMaterialCountMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
        */
+
       @java.lang.Override
       public boolean containsMaterialCountMap(
           int key) {
@@ -925,6 +949,7 @@ public final class GivingRecordOuterClass {
        * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getMaterialCountMapMap() {
         return internalGetMaterialCountMap().getMap();
       }
@@ -932,6 +957,7 @@ public final class GivingRecordOuterClass {
        * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
        */
       @java.lang.Override
+
       public int getMaterialCountMapOrDefault(
           int key,
           int defaultValue) {
@@ -944,6 +970,7 @@ public final class GivingRecordOuterClass {
        * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
        */
       @java.lang.Override
+
       public int getMaterialCountMapOrThrow(
           int key) {
         
@@ -954,8 +981,8 @@ public final class GivingRecordOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearMaterialCountMap() {
-        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableMaterialCountMap().getMutableMap()
             .clear();
         return this;
@@ -963,6 +990,7 @@ public final class GivingRecordOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
        */
+
       public Builder removeMaterialCountMap(
           int key) {
         
@@ -975,8 +1003,7 @@ public final class GivingRecordOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableMaterialCountMap() {
-        bitField0_ |= 0x00000008;
+      getMutableMaterialCountMap() {
         return internalGetMutableMaterialCountMap().getMutableMap();
       }
       /**
@@ -989,17 +1016,16 @@ public final class GivingRecordOuterClass {
         
         internalGetMutableMaterialCountMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000008;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; material_count_map = 1;</code>
        */
+
       public Builder putAllMaterialCountMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableMaterialCountMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000008;
         return this;
       }
 
@@ -1020,7 +1046,6 @@ public final class GivingRecordOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1029,7 +1054,7 @@ public final class GivingRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         configId_ = 0;
         onChanged();
         return this;
@@ -1052,7 +1077,6 @@ public final class GivingRecordOuterClass {
       public Builder setLastGroupId(int value) {
         
         lastGroupId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1061,7 +1085,7 @@ public final class GivingRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastGroupId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         lastGroupId_ = 0;
         onChanged();
         return this;
@@ -1084,7 +1108,6 @@ public final class GivingRecordOuterClass {
       public Builder setGivingId(int value) {
         
         givingId_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1093,7 +1116,7 @@ public final class GivingRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGivingId() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         givingId_ = 0;
         onChanged();
         return this;
@@ -1131,18 +1154,7 @@ public final class GivingRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GivingRecord(input, extensionRegistry);
       }
     };
 

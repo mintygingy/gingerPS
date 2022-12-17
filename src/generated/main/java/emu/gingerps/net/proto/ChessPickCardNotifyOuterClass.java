@@ -76,6 +76,61 @@ public final class ChessPickCardNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ChessPickCardNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              curseCardId_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo.Builder subBuilder = null;
+              if (normalCardInfo_ != null) {
+                subBuilder = normalCardInfo_.toBuilder();
+              }
+              normalCardInfo_ = input.readMessage(emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(normalCardInfo_);
+                normalCardInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChessPickCardNotifyOuterClass.internal_static_ChessPickCardNotify_descriptor;
@@ -112,11 +167,11 @@ public final class ChessPickCardNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfoOrBuilder getNormalCardInfoOrBuilder() {
-      return normalCardInfo_ == null ? emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo.getDefaultInstance() : normalCardInfo_;
+      return getNormalCardInfo();
     }
 
     public static final int CURSE_CARD_ID_FIELD_NUMBER = 6;
-    private int curseCardId_ = 0;
+    private int curseCardId_;
     /**
      * <code>uint32 curse_card_id = 6;</code>
      * @return The curseCardId.
@@ -146,7 +201,7 @@ public final class ChessPickCardNotifyOuterClass {
       if (normalCardInfo_ != null) {
         output.writeMessage(8, getNormalCardInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class ChessPickCardNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getNormalCardInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class ChessPickCardNotifyOuterClass {
       }
       if (getCurseCardId()
           != other.getCurseCardId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +257,7 @@ public final class ChessPickCardNotifyOuterClass {
       }
       hash = (37 * hash) + CURSE_CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCurseCardId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,24 +384,30 @@ public final class ChessPickCardNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChessPickCardNotifyOuterClass.ChessPickCardNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        normalCardInfo_ = null;
-        if (normalCardInfoBuilder_ != null) {
-          normalCardInfoBuilder_.dispose();
+        if (normalCardInfoBuilder_ == null) {
+          normalCardInfo_ = null;
+        } else {
+          normalCardInfo_ = null;
           normalCardInfoBuilder_ = null;
         }
         curseCardId_ = 0;
+
         return this;
       }
 
@@ -373,21 +434,14 @@ public final class ChessPickCardNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChessPickCardNotifyOuterClass.ChessPickCardNotify buildPartial() {
         emu.gingerps.net.proto.ChessPickCardNotifyOuterClass.ChessPickCardNotify result = new emu.gingerps.net.proto.ChessPickCardNotifyOuterClass.ChessPickCardNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (normalCardInfoBuilder_ == null) {
+          result.normalCardInfo_ = normalCardInfo_;
+        } else {
+          result.normalCardInfo_ = normalCardInfoBuilder_.build();
+        }
+        result.curseCardId_ = curseCardId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ChessPickCardNotifyOuterClass.ChessPickCardNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.normalCardInfo_ = normalCardInfoBuilder_ == null
-              ? normalCardInfo_
-              : normalCardInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.curseCardId_ = curseCardId_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +494,7 @@ public final class ChessPickCardNotifyOuterClass {
         if (other.getCurseCardId() != 0) {
           setCurseCardId(other.getCurseCardId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,45 +509,19 @@ public final class ChessPickCardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ChessPickCardNotifyOuterClass.ChessPickCardNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                curseCardId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 66: {
-                input.readMessage(
-                    getNormalCardInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 66
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ChessPickCardNotifyOuterClass.ChessPickCardNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo normalCardInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -503,7 +531,7 @@ public final class ChessPickCardNotifyOuterClass {
        * @return Whether the normalCardInfo field is set.
        */
       public boolean hasNormalCardInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return normalCardInfoBuilder_ != null || normalCardInfo_ != null;
       }
       /**
        * <code>.ChessNormalCardInfo normal_card_info = 8;</code>
@@ -525,11 +553,11 @@ public final class ChessPickCardNotifyOuterClass {
             throw new NullPointerException();
           }
           normalCardInfo_ = value;
+          onChanged();
         } else {
           normalCardInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -539,11 +567,11 @@ public final class ChessPickCardNotifyOuterClass {
           emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo.Builder builderForValue) {
         if (normalCardInfoBuilder_ == null) {
           normalCardInfo_ = builderForValue.build();
+          onChanged();
         } else {
           normalCardInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -551,38 +579,38 @@ public final class ChessPickCardNotifyOuterClass {
        */
       public Builder mergeNormalCardInfo(emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo value) {
         if (normalCardInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            normalCardInfo_ != null &&
-            normalCardInfo_ != emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo.getDefaultInstance()) {
-            getNormalCardInfoBuilder().mergeFrom(value);
+          if (normalCardInfo_ != null) {
+            normalCardInfo_ =
+              emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo.newBuilder(normalCardInfo_).mergeFrom(value).buildPartial();
           } else {
             normalCardInfo_ = value;
           }
+          onChanged();
         } else {
           normalCardInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ChessNormalCardInfo normal_card_info = 8;</code>
        */
       public Builder clearNormalCardInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        normalCardInfo_ = null;
-        if (normalCardInfoBuilder_ != null) {
-          normalCardInfoBuilder_.dispose();
+        if (normalCardInfoBuilder_ == null) {
+          normalCardInfo_ = null;
+          onChanged();
+        } else {
+          normalCardInfo_ = null;
           normalCardInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ChessNormalCardInfo normal_card_info = 8;</code>
        */
       public emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo.Builder getNormalCardInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getNormalCardInfoFieldBuilder().getBuilder();
       }
@@ -631,7 +659,6 @@ public final class ChessPickCardNotifyOuterClass {
       public Builder setCurseCardId(int value) {
         
         curseCardId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -640,7 +667,7 @@ public final class ChessPickCardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurseCardId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         curseCardId_ = 0;
         onChanged();
         return this;
@@ -678,18 +705,7 @@ public final class ChessPickCardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ChessPickCardNotify(input, extensionRegistry);
       }
     };
 

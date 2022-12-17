@@ -95,6 +95,72 @@ public final class DropItemReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DropItemReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              count_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              guid_ = input.readUInt64();
+              break;
+            }
+            case 98: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (pos_ != null) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+
+              storeType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DropItemReqOuterClass.internal_static_DropItemReq_descriptor;
@@ -131,11 +197,11 @@ public final class DropItemReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+      return getPos();
     }
 
     public static final int STORE_TYPE_FIELD_NUMBER = 13;
-    private int storeType_ = 0;
+    private int storeType_;
     /**
      * <code>.StoreType store_type = 13;</code>
      * @return The enum numeric value on the wire for storeType.
@@ -148,12 +214,13 @@ public final class DropItemReqOuterClass {
      * @return The storeType.
      */
     @java.lang.Override public emu.gingerps.net.proto.StoreTypeOuterClass.StoreType getStoreType() {
-      emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.forNumber(storeType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.valueOf(storeType_);
       return result == null ? emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
     }
 
     public static final int COUNT_FIELD_NUMBER = 4;
-    private int count_ = 0;
+    private int count_;
     /**
      * <code>uint32 count = 4;</code>
      * @return The count.
@@ -164,7 +231,7 @@ public final class DropItemReqOuterClass {
     }
 
     public static final int GUID_FIELD_NUMBER = 9;
-    private long guid_ = 0L;
+    private long guid_;
     /**
      * <code>uint64 guid = 9;</code>
      * @return The guid.
@@ -200,7 +267,7 @@ public final class DropItemReqOuterClass {
       if (storeType_ != emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
         output.writeEnum(13, storeType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -225,7 +292,7 @@ public final class DropItemReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, storeType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -250,7 +317,7 @@ public final class DropItemReqOuterClass {
           != other.getCount()) return false;
       if (getGuid()
           != other.getGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -272,7 +339,7 @@ public final class DropItemReqOuterClass {
       hash = (37 * hash) + GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGuid());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -400,26 +467,34 @@ public final class DropItemReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.DropItemReqOuterClass.DropItemReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
         storeType_ = 0;
+
         count_ = 0;
+
         guid_ = 0L;
+
         return this;
       }
 
@@ -446,27 +521,16 @@ public final class DropItemReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DropItemReqOuterClass.DropItemReq buildPartial() {
         emu.gingerps.net.proto.DropItemReqOuterClass.DropItemReq result = new emu.gingerps.net.proto.DropItemReqOuterClass.DropItemReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        result.storeType_ = storeType_;
+        result.count_ = count_;
+        result.guid_ = guid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DropItemReqOuterClass.DropItemReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.storeType_ = storeType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.count_ = count_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.guid_ = guid_;
-        }
       }
 
       @java.lang.Override
@@ -525,7 +589,7 @@ public final class DropItemReqOuterClass {
         if (other.getGuid() != 0L) {
           setGuid(other.getGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -540,55 +604,19 @@ public final class DropItemReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DropItemReqOuterClass.DropItemReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                count_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 72: {
-                guid_ = input.readUInt64();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 72
-              case 98: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 98
-              case 104: {
-                storeType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DropItemReqOuterClass.DropItemReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector pos_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -598,7 +626,7 @@ public final class DropItemReqOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return posBuilder_ != null || pos_ != null;
       }
       /**
        * <code>.Vector pos = 12;</code>
@@ -620,11 +648,11 @@ public final class DropItemReqOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -634,11 +662,11 @@ public final class DropItemReqOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -646,38 +674,38 @@ public final class DropItemReqOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            pos_ != null &&
-            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (pos_ != null) {
+            pos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 12;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 12;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -723,8 +751,8 @@ public final class DropItemReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStoreTypeValue(int value) {
+        
         storeType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -734,7 +762,8 @@ public final class DropItemReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.StoreTypeOuterClass.StoreType getStoreType() {
-        emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.forNumber(storeType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.valueOf(storeType_);
         return result == null ? emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
       }
       /**
@@ -746,7 +775,7 @@ public final class DropItemReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         storeType_ = value.getNumber();
         onChanged();
         return this;
@@ -756,7 +785,7 @@ public final class DropItemReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStoreType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         storeType_ = 0;
         onChanged();
         return this;
@@ -779,7 +808,6 @@ public final class DropItemReqOuterClass {
       public Builder setCount(int value) {
         
         count_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -788,7 +816,7 @@ public final class DropItemReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCount() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         count_ = 0;
         onChanged();
         return this;
@@ -811,7 +839,6 @@ public final class DropItemReqOuterClass {
       public Builder setGuid(long value) {
         
         guid_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -820,7 +847,7 @@ public final class DropItemReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         guid_ = 0L;
         onChanged();
         return this;
@@ -858,18 +885,7 @@ public final class DropItemReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DropItemReq(input, extensionRegistry);
       }
     };
 

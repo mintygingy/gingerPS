@@ -197,6 +197,154 @@ public final class BreakoutPhysicalObjectOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BreakoutPhysicalObject(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              index_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              isActive_ = input.readBool();
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder = null;
+              if (pos_ != null) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder = null;
+              if (moveDir_ != null) {
+                subBuilder = moveDir_.toBuilder();
+              }
+              moveDir_ = input.readMessage(emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(moveDir_);
+                moveDir_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 48: {
+
+              speed_ = input.readInt32();
+              break;
+            }
+            case 56: {
+
+              initPeerId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              state_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              elementType_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              elementReactionBuff_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                modifierList_ = new java.util.ArrayList<emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              modifierList_.add(
+                  input.readMessage(emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.parser(), extensionRegistry));
+              break;
+            }
+            case 96: {
+
+              totalRotation_ = input.readInt32();
+              break;
+            }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                infoList_ = new java.util.ArrayList<emu.gingerps.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              infoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+
+              lastHitPeerId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              speedIncreaseCount_ = input.readUInt32();
+              break;
+            }
+            case 128: {
+
+              offset_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          modifierList_ = java.util.Collections.unmodifiableList(modifierList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          infoList_ = java.util.Collections.unmodifiableList(infoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BreakoutPhysicalObjectOuterClass.internal_static_BreakoutPhysicalObject_descriptor;
@@ -211,7 +359,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_ = 0;
+    private int id_;
     /**
      * <code>uint32 id = 1;</code>
      * @return The id.
@@ -222,7 +370,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int INDEX_FIELD_NUMBER = 2;
-    private int index_ = 0;
+    private int index_;
     /**
      * <code>uint32 index = 2;</code>
      * @return The index.
@@ -233,7 +381,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int IS_ACTIVE_FIELD_NUMBER = 3;
-    private boolean isActive_ = false;
+    private boolean isActive_;
     /**
      * <code>bool is_active = 3;</code>
      * @return The isActive.
@@ -266,7 +414,7 @@ public final class BreakoutPhysicalObjectOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2OrBuilder getPosOrBuilder() {
-      return pos_ == null ? emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : pos_;
+      return getPos();
     }
 
     public static final int MOVE_DIR_FIELD_NUMBER = 5;
@@ -292,11 +440,11 @@ public final class BreakoutPhysicalObjectOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMoveDirOrBuilder() {
-      return moveDir_ == null ? emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : moveDir_;
+      return getMoveDir();
     }
 
     public static final int SPEED_FIELD_NUMBER = 6;
-    private int speed_ = 0;
+    private int speed_;
     /**
      * <code>int32 speed = 6;</code>
      * @return The speed.
@@ -307,7 +455,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int INIT_PEER_ID_FIELD_NUMBER = 7;
-    private int initPeerId_ = 0;
+    private int initPeerId_;
     /**
      * <code>uint32 init_peer_id = 7;</code>
      * @return The initPeerId.
@@ -318,7 +466,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int STATE_FIELD_NUMBER = 8;
-    private int state_ = 0;
+    private int state_;
     /**
      * <code>uint32 state = 8;</code>
      * @return The state.
@@ -329,7 +477,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int ELEMENT_TYPE_FIELD_NUMBER = 9;
-    private int elementType_ = 0;
+    private int elementType_;
     /**
      * <code>uint32 element_type = 9;</code>
      * @return The elementType.
@@ -340,7 +488,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int ELEMENT_REACTION_BUFF_FIELD_NUMBER = 10;
-    private int elementReactionBuff_ = 0;
+    private int elementReactionBuff_;
     /**
      * <code>uint32 element_reaction_buff = 10;</code>
      * @return The elementReactionBuff.
@@ -351,7 +499,6 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int MODIFIER_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> modifierList_;
     /**
      * <code>repeated .BreakoutPhysicalObjectModifier modifier_list = 11;</code>
@@ -392,7 +539,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int TOTAL_ROTATION_FIELD_NUMBER = 12;
-    private int totalRotation_ = 0;
+    private int totalRotation_;
     /**
      * <code>int32 total_rotation = 12;</code>
      * @return The totalRotation.
@@ -403,7 +550,6 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int INFO_LIST_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo> infoList_;
     /**
      * <code>repeated .BreakoutBrickInfo info_list = 13;</code>
@@ -444,7 +590,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int LAST_HIT_PEER_ID_FIELD_NUMBER = 14;
-    private int lastHitPeerId_ = 0;
+    private int lastHitPeerId_;
     /**
      * <code>uint32 last_hit_peer_id = 14;</code>
      * @return The lastHitPeerId.
@@ -455,7 +601,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int SPEED_INCREASE_COUNT_FIELD_NUMBER = 15;
-    private int speedIncreaseCount_ = 0;
+    private int speedIncreaseCount_;
     /**
      * <code>uint32 speed_increase_count = 15;</code>
      * @return The speedIncreaseCount.
@@ -466,7 +612,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     public static final int OFFSET_FIELD_NUMBER = 16;
-    private int offset_ = 0;
+    private int offset_;
     /**
      * <code>int32 offset = 16;</code>
      * @return The offset.
@@ -538,7 +684,7 @@ public final class BreakoutPhysicalObjectOuterClass {
       if (offset_ != 0) {
         output.writeInt32(16, offset_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -611,7 +757,7 @@ public final class BreakoutPhysicalObjectOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(16, offset_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -664,7 +810,7 @@ public final class BreakoutPhysicalObjectOuterClass {
           != other.getSpeedIncreaseCount()) return false;
       if (getOffset()
           != other.getOffset()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -716,7 +862,7 @@ public final class BreakoutPhysicalObjectOuterClass {
       hash = (53 * hash) + getSpeedIncreaseCount();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getOffset();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -833,54 +979,72 @@ public final class BreakoutPhysicalObjectOuterClass {
 
       // Construct using emu.gingerps.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObject.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getModifierListFieldBuilder();
+          getInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = 0;
+
         index_ = 0;
+
         isActive_ = false;
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
-        moveDir_ = null;
-        if (moveDirBuilder_ != null) {
-          moveDirBuilder_.dispose();
+        if (moveDirBuilder_ == null) {
+          moveDir_ = null;
+        } else {
+          moveDir_ = null;
           moveDirBuilder_ = null;
         }
         speed_ = 0;
+
         initPeerId_ = 0;
+
         state_ = 0;
+
         elementType_ = 0;
+
         elementReactionBuff_ = 0;
+
         if (modifierListBuilder_ == null) {
           modifierList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          modifierList_ = null;
           modifierListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000400);
         totalRotation_ = 0;
+
         if (infoListBuilder_ == null) {
           infoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          infoList_ = null;
           infoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00001000);
         lastHitPeerId_ = 0;
+
         speedIncreaseCount_ = 0;
+
         offset_ = 0;
+
         return this;
       }
 
@@ -907,81 +1071,49 @@ public final class BreakoutPhysicalObjectOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObject buildPartial() {
         emu.gingerps.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObject result = new emu.gingerps.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObject(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObject result) {
+        int from_bitField0_ = bitField0_;
+        result.id_ = id_;
+        result.index_ = index_;
+        result.isActive_ = isActive_;
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        if (moveDirBuilder_ == null) {
+          result.moveDir_ = moveDir_;
+        } else {
+          result.moveDir_ = moveDirBuilder_.build();
+        }
+        result.speed_ = speed_;
+        result.initPeerId_ = initPeerId_;
+        result.state_ = state_;
+        result.elementType_ = elementType_;
+        result.elementReactionBuff_ = elementReactionBuff_;
         if (modifierListBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             modifierList_ = java.util.Collections.unmodifiableList(modifierList_);
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.modifierList_ = modifierList_;
         } else {
           result.modifierList_ = modifierListBuilder_.build();
         }
+        result.totalRotation_ = totalRotation_;
         if (infoListBuilder_ == null) {
-          if (((bitField0_ & 0x00001000) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             infoList_ = java.util.Collections.unmodifiableList(infoList_);
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.infoList_ = infoList_;
         } else {
           result.infoList_ = infoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObject result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.index_ = index_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isActive_ = isActive_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.moveDir_ = moveDirBuilder_ == null
-              ? moveDir_
-              : moveDirBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.speed_ = speed_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.initPeerId_ = initPeerId_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.state_ = state_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.elementType_ = elementType_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.elementReactionBuff_ = elementReactionBuff_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.totalRotation_ = totalRotation_;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.lastHitPeerId_ = lastHitPeerId_;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.speedIncreaseCount_ = speedIncreaseCount_;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.offset_ = offset_;
-        }
+        result.lastHitPeerId_ = lastHitPeerId_;
+        result.speedIncreaseCount_ = speedIncreaseCount_;
+        result.offset_ = offset_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -1062,7 +1194,7 @@ public final class BreakoutPhysicalObjectOuterClass {
           if (!other.modifierList_.isEmpty()) {
             if (modifierList_.isEmpty()) {
               modifierList_ = other.modifierList_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureModifierListIsMutable();
               modifierList_.addAll(other.modifierList_);
@@ -1075,7 +1207,7 @@ public final class BreakoutPhysicalObjectOuterClass {
               modifierListBuilder_.dispose();
               modifierListBuilder_ = null;
               modifierList_ = other.modifierList_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000001);
               modifierListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getModifierListFieldBuilder() : null;
@@ -1091,7 +1223,7 @@ public final class BreakoutPhysicalObjectOuterClass {
           if (!other.infoList_.isEmpty()) {
             if (infoList_.isEmpty()) {
               infoList_ = other.infoList_;
-              bitField0_ = (bitField0_ & ~0x00001000);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureInfoListIsMutable();
               infoList_.addAll(other.infoList_);
@@ -1104,7 +1236,7 @@ public final class BreakoutPhysicalObjectOuterClass {
               infoListBuilder_.dispose();
               infoListBuilder_ = null;
               infoList_ = other.infoList_;
-              bitField0_ = (bitField0_ & ~0x00001000);
+              bitField0_ = (bitField0_ & ~0x00000002);
               infoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getInfoListFieldBuilder() : null;
@@ -1122,7 +1254,7 @@ public final class BreakoutPhysicalObjectOuterClass {
         if (other.getOffset() != 0) {
           setOffset(other.getOffset());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1137,130 +1269,17 @@ public final class BreakoutPhysicalObjectOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObject parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                index_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                isActive_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 34: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getMoveDirFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              case 48: {
-                speed_ = input.readInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 56: {
-                initPeerId_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              case 64: {
-                state_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 64
-              case 72: {
-                elementType_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 80: {
-                elementReactionBuff_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 80
-              case 90: {
-                emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.parser(),
-                        extensionRegistry);
-                if (modifierListBuilder_ == null) {
-                  ensureModifierListIsMutable();
-                  modifierList_.add(m);
-                } else {
-                  modifierListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              case 96: {
-                totalRotation_ = input.readInt32();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 96
-              case 106: {
-                emu.gingerps.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo.parser(),
-                        extensionRegistry);
-                if (infoListBuilder_ == null) {
-                  ensureInfoListIsMutable();
-                  infoList_.add(m);
-                } else {
-                  infoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 106
-              case 112: {
-                lastHitPeerId_ = input.readUInt32();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 112
-              case 120: {
-                speedIncreaseCount_ = input.readUInt32();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 120
-              case 128: {
-                offset_ = input.readInt32();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 128
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObject) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1282,7 +1301,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1291,7 +1309,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         id_ = 0;
         onChanged();
         return this;
@@ -1314,7 +1332,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1323,7 +1340,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         index_ = 0;
         onChanged();
         return this;
@@ -1346,7 +1363,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setIsActive(boolean value) {
         
         isActive_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1355,7 +1371,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsActive() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isActive_ = false;
         onChanged();
         return this;
@@ -1369,7 +1385,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return posBuilder_ != null || pos_ != null;
       }
       /**
        * <code>.BreakoutVector2 pos = 4;</code>
@@ -1391,11 +1407,11 @@ public final class BreakoutPhysicalObjectOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1405,11 +1421,11 @@ public final class BreakoutPhysicalObjectOuterClass {
           emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1417,38 +1433,38 @@ public final class BreakoutPhysicalObjectOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2 value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            pos_ != null &&
-            pos_ != emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (pos_ != null) {
+            pos_ =
+              emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutVector2 pos = 4;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutVector2 pos = 4;</code>
        */
       public emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder getPosBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -1488,7 +1504,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return Whether the moveDir field is set.
        */
       public boolean hasMoveDir() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return moveDirBuilder_ != null || moveDir_ != null;
       }
       /**
        * <code>.BreakoutVector2 move_dir = 5;</code>
@@ -1510,11 +1526,11 @@ public final class BreakoutPhysicalObjectOuterClass {
             throw new NullPointerException();
           }
           moveDir_ = value;
+          onChanged();
         } else {
           moveDirBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1524,11 +1540,11 @@ public final class BreakoutPhysicalObjectOuterClass {
           emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder builderForValue) {
         if (moveDirBuilder_ == null) {
           moveDir_ = builderForValue.build();
+          onChanged();
         } else {
           moveDirBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1536,38 +1552,38 @@ public final class BreakoutPhysicalObjectOuterClass {
        */
       public Builder mergeMoveDir(emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2 value) {
         if (moveDirBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            moveDir_ != null &&
-            moveDir_ != emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance()) {
-            getMoveDirBuilder().mergeFrom(value);
+          if (moveDir_ != null) {
+            moveDir_ =
+              emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.newBuilder(moveDir_).mergeFrom(value).buildPartial();
           } else {
             moveDir_ = value;
           }
+          onChanged();
         } else {
           moveDirBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutVector2 move_dir = 5;</code>
        */
       public Builder clearMoveDir() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        moveDir_ = null;
-        if (moveDirBuilder_ != null) {
-          moveDirBuilder_.dispose();
+        if (moveDirBuilder_ == null) {
+          moveDir_ = null;
+          onChanged();
+        } else {
+          moveDir_ = null;
           moveDirBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutVector2 move_dir = 5;</code>
        */
       public emu.gingerps.net.proto.BreakoutVector2OuterClass.BreakoutVector2.Builder getMoveDirBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getMoveDirFieldBuilder().getBuilder();
       }
@@ -1616,7 +1632,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setSpeed(int value) {
         
         speed_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1625,7 +1640,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSpeed() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         speed_ = 0;
         onChanged();
         return this;
@@ -1648,7 +1663,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setInitPeerId(int value) {
         
         initPeerId_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1657,7 +1671,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInitPeerId() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         initPeerId_ = 0;
         onChanged();
         return this;
@@ -1680,7 +1694,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setState(int value) {
         
         state_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1689,7 +1702,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         state_ = 0;
         onChanged();
         return this;
@@ -1712,7 +1725,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setElementType(int value) {
         
         elementType_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1721,7 +1733,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementType() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         elementType_ = 0;
         onChanged();
         return this;
@@ -1744,7 +1756,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setElementReactionBuff(int value) {
         
         elementReactionBuff_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1753,7 +1764,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementReactionBuff() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         elementReactionBuff_ = 0;
         onChanged();
         return this;
@@ -1762,9 +1773,9 @@ public final class BreakoutPhysicalObjectOuterClass {
       private java.util.List<emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> modifierList_ =
         java.util.Collections.emptyList();
       private void ensureModifierListIsMutable() {
-        if (!((bitField0_ & 0x00000400) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           modifierList_ = new java.util.ArrayList<emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier>(modifierList_);
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1914,7 +1925,7 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder clearModifierList() {
         if (modifierListBuilder_ == null) {
           modifierList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           modifierListBuilder_.clear();
@@ -1991,7 +2002,7 @@ public final class BreakoutPhysicalObjectOuterClass {
           modifierListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier, emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder, emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder>(
                   modifierList_,
-                  ((bitField0_ & 0x00000400) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           modifierList_ = null;
@@ -2016,7 +2027,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setTotalRotation(int value) {
         
         totalRotation_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2025,7 +2035,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalRotation() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         totalRotation_ = 0;
         onChanged();
         return this;
@@ -2034,9 +2044,9 @@ public final class BreakoutPhysicalObjectOuterClass {
       private java.util.List<emu.gingerps.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo> infoList_ =
         java.util.Collections.emptyList();
       private void ensureInfoListIsMutable() {
-        if (!((bitField0_ & 0x00001000) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           infoList_ = new java.util.ArrayList<emu.gingerps.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo>(infoList_);
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -2186,7 +2196,7 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder clearInfoList() {
         if (infoListBuilder_ == null) {
           infoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           infoListBuilder_.clear();
@@ -2263,7 +2273,7 @@ public final class BreakoutPhysicalObjectOuterClass {
           infoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo, emu.gingerps.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo.Builder, emu.gingerps.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfoOrBuilder>(
                   infoList_,
-                  ((bitField0_ & 0x00001000) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           infoList_ = null;
@@ -2288,7 +2298,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setLastHitPeerId(int value) {
         
         lastHitPeerId_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -2297,7 +2306,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastHitPeerId() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        
         lastHitPeerId_ = 0;
         onChanged();
         return this;
@@ -2320,7 +2329,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setSpeedIncreaseCount(int value) {
         
         speedIncreaseCount_ = value;
-        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -2329,7 +2337,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSpeedIncreaseCount() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        
         speedIncreaseCount_ = 0;
         onChanged();
         return this;
@@ -2352,7 +2360,6 @@ public final class BreakoutPhysicalObjectOuterClass {
       public Builder setOffset(int value) {
         
         offset_ = value;
-        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -2361,7 +2368,7 @@ public final class BreakoutPhysicalObjectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOffset() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        
         offset_ = 0;
         onChanged();
         return this;
@@ -2399,18 +2406,7 @@ public final class BreakoutPhysicalObjectOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BreakoutPhysicalObject(input, extensionRegistry);
       }
     };
 

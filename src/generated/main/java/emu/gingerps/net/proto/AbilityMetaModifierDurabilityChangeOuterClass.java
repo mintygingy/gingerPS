@@ -57,6 +57,53 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityMetaModifierDurabilityChange(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+
+              reduceDurability_ = input.readFloat();
+              break;
+            }
+            case 109: {
+
+              remainDurability_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.internal_static_AbilityMetaModifierDurabilityChange_descriptor;
@@ -71,7 +118,7 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
     }
 
     public static final int REMAIN_DURABILITY_FIELD_NUMBER = 13;
-    private float remainDurability_ = 0F;
+    private float remainDurability_;
     /**
      * <code>float remain_durability = 13;</code>
      * @return The remainDurability.
@@ -82,7 +129,7 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
     }
 
     public static final int REDUCE_DURABILITY_FIELD_NUMBER = 1;
-    private float reduceDurability_ = 0F;
+    private float reduceDurability_;
     /**
      * <code>float reduce_durability = 1;</code>
      * @return The reduceDurability.
@@ -106,13 +153,13 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Float.floatToRawIntBits(reduceDurability_) != 0) {
+      if (reduceDurability_ != 0F) {
         output.writeFloat(1, reduceDurability_);
       }
-      if (java.lang.Float.floatToRawIntBits(remainDurability_) != 0) {
+      if (remainDurability_ != 0F) {
         output.writeFloat(13, remainDurability_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -121,15 +168,15 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Float.floatToRawIntBits(reduceDurability_) != 0) {
+      if (reduceDurability_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, reduceDurability_);
       }
-      if (java.lang.Float.floatToRawIntBits(remainDurability_) != 0) {
+      if (remainDurability_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(13, remainDurability_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -150,7 +197,7 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       if (java.lang.Float.floatToIntBits(getReduceDurability())
           != java.lang.Float.floatToIntBits(
               other.getReduceDurability())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -167,7 +214,7 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       hash = (37 * hash) + REDUCE_DURABILITY_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getReduceDurability());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -284,20 +331,26 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         remainDurability_ = 0F;
+
         reduceDurability_ = 0F;
+
         return this;
       }
 
@@ -324,19 +377,10 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange buildPartial() {
         emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange result = new emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.remainDurability_ = remainDurability_;
+        result.reduceDurability_ = reduceDurability_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.remainDurability_ = remainDurability_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.reduceDurability_ = reduceDurability_;
-        }
       }
 
       @java.lang.Override
@@ -389,7 +433,7 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
         if (other.getReduceDurability() != 0F) {
           setReduceDurability(other.getReduceDurability());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -404,43 +448,19 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                reduceDurability_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 13
-              case 109: {
-                remainDurability_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 109
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private float remainDurability_ ;
       /**
@@ -459,7 +479,6 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       public Builder setRemainDurability(float value) {
         
         remainDurability_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -468,7 +487,7 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemainDurability() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         remainDurability_ = 0F;
         onChanged();
         return this;
@@ -491,7 +510,6 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       public Builder setReduceDurability(float value) {
         
         reduceDurability_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -500,7 +518,7 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReduceDurability() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         reduceDurability_ = 0F;
         onChanged();
         return this;
@@ -538,18 +556,7 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityMetaModifierDurabilityChange(input, extensionRegistry);
       }
     };
 

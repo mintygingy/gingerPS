@@ -182,14 +182,14 @@ public final class EnterRoguelikeDungeonNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo getCellInfoMapOrDefault(
+
+    emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo getCellInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
+        emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     /**
      * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
      */
+
     emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo getCellInfoMapOrThrow(
         int key);
   }
@@ -234,6 +234,196 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EnterRoguelikeDungeonNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              unk3300IIIJDDNJEBB_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                exploredCellList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              exploredCellList_.addInt(input.readUInt32());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                exploredCellList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                exploredCellList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 24: {
+
+              unk3300GBHHLEDAGAM_ = input.readBool();
+              break;
+            }
+            case 32: {
+
+              unk3300DBDABNIINEL_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                backstageAvatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              backstageAvatarGuidList_.addLong(input.readUInt64());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                backstageAvatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                backstageAvatarGuidList_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
+
+              curLevel_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              unk3300PKDLOJADIPA_ = input.readUInt32();
+              break;
+            }
+            case 93: {
+
+              bonusResourceProp_ = input.readFloat();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                runeRecordList_ = new java.util.ArrayList<emu.gingerps.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              runeRecordList_.add(
+                  input.readMessage(emu.gingerps.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.parser(), extensionRegistry));
+              break;
+            }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                cellInfoMap_ = com.google.protobuf.MapField.newMapField(
+                    CellInfoMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo>
+              cellInfoMap__ = input.readMessage(
+                  CellInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              cellInfoMap_.getMutableMap().put(
+                  cellInfoMap__.getKey(), cellInfoMap__.getValue());
+              break;
+            }
+            case 120: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                onstageAvatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              onstageAvatarGuidList_.addLong(input.readUInt64());
+              break;
+            }
+            case 122: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                onstageAvatarGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                onstageAvatarGuidList_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 9504: {
+
+              reviseMonsterLevel_ = input.readUInt32();
+              break;
+            }
+            case 11752: {
+
+              unk3300PKPOKOAAOKF_ = input.readBool();
+              break;
+            }
+            case 16368: {
+
+              unk3300KLFDKOCGAHN_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          exploredCellList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          backstageAvatarGuidList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          runeRecordList_ = java.util.Collections.unmodifiableList(runeRecordList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          onstageAvatarGuidList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EnterRoguelikeDungeonNotifyOuterClass.internal_static_EnterRoguelikeDungeonNotify_descriptor;
@@ -260,7 +450,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int BONUS_RESOURCE_PROP_FIELD_NUMBER = 11;
-    private float bonusResourceProp_ = 0F;
+    private float bonusResourceProp_;
     /**
      * <code>float bonus_resource_prop = 11;</code>
      * @return The bonusResourceProp.
@@ -271,7 +461,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int UNK3300_DBDABNIINEL_FIELD_NUMBER = 4;
-    private int unk3300DBDABNIINEL_ = 0;
+    private int unk3300DBDABNIINEL_;
     /**
      * <code>uint32 Unk3300_DBDABNIINEL = 4;</code>
      * @return The unk3300DBDABNIINEL.
@@ -282,7 +472,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int RUNE_RECORD_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord> runeRecordList_;
     /**
      * <code>repeated .RoguelikeRuneRecord rune_record_list = 12;</code>
@@ -323,7 +512,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int CUR_LEVEL_FIELD_NUMBER = 9;
-    private int curLevel_ = 0;
+    private int curLevel_;
     /**
      * <code>uint32 cur_level = 9;</code>
      * @return The curLevel.
@@ -334,7 +523,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 5;
-    private int dungeonId_ = 0;
+    private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 5;</code>
      * @return The dungeonId.
@@ -345,7 +534,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int REVISE_MONSTER_LEVEL_FIELD_NUMBER = 1188;
-    private int reviseMonsterLevel_ = 0;
+    private int reviseMonsterLevel_;
     /**
      * <code>uint32 revise_monster_level = 1188;</code>
      * @return The reviseMonsterLevel.
@@ -356,7 +545,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int UNK3300_PKPOKOAAOKF_FIELD_NUMBER = 1469;
-    private boolean unk3300PKPOKOAAOKF_ = false;
+    private boolean unk3300PKPOKOAAOKF_;
     /**
      * <code>bool Unk3300_PKPOKOAAOKF = 1469;</code>
      * @return The unk3300PKPOKOAAOKF.
@@ -367,7 +556,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int EXPLORED_CELL_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList exploredCellList_;
     /**
      * <code>repeated uint32 explored_cell_list = 2;</code>
@@ -396,7 +584,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     private int exploredCellListMemoizedSerializedSize = -1;
 
     public static final int ONSTAGE_AVATAR_GUID_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList onstageAvatarGuidList_;
     /**
      * <code>repeated uint64 onstage_avatar_guid_list = 15;</code>
@@ -425,7 +612,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     private int onstageAvatarGuidListMemoizedSerializedSize = -1;
 
     public static final int STAGE_ID_FIELD_NUMBER = 6;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 6;</code>
      * @return The stageId.
@@ -436,7 +623,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int UNK3300_KLFDKOCGAHN_FIELD_NUMBER = 2046;
-    private int unk3300KLFDKOCGAHN_ = 0;
+    private int unk3300KLFDKOCGAHN_;
     /**
      * <code>uint32 Unk3300_KLFDKOCGAHN = 2046;</code>
      * @return The unk3300KLFDKOCGAHN.
@@ -447,7 +634,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int UNK3300_GBHHLEDAGAM_FIELD_NUMBER = 3;
-    private boolean unk3300GBHHLEDAGAM_ = false;
+    private boolean unk3300GBHHLEDAGAM_;
     /**
      * <code>bool Unk3300_GBHHLEDAGAM = 3;</code>
      * @return The unk3300GBHHLEDAGAM.
@@ -458,7 +645,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int UNK3300_IIIJDDNJEBB_FIELD_NUMBER = 1;
-    private int unk3300IIIJDDNJEBB_ = 0;
+    private int unk3300IIIJDDNJEBB_;
     /**
      * <code>uint32 Unk3300_IIIJDDNJEBB = 1;</code>
      * @return The unk3300IIIJDDNJEBB.
@@ -469,7 +656,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     }
 
     public static final int BACKSTAGE_AVATAR_GUID_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList backstageAvatarGuidList_;
     /**
      * <code>repeated uint64 backstage_avatar_guid_list = 7;</code>
@@ -498,7 +684,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
     private int backstageAvatarGuidListMemoizedSerializedSize = -1;
 
     public static final int UNK3300_PKDLOJADIPA_FIELD_NUMBER = 10;
-    private int unk3300PKDLOJADIPA_ = 0;
+    private int unk3300PKDLOJADIPA_;
     /**
      * <code>uint32 Unk3300_PKDLOJADIPA = 10;</code>
      * @return The unk3300PKDLOJADIPA.
@@ -520,7 +706,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo> cellInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo>
@@ -531,12 +716,14 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
       }
       return cellInfoMap_;
     }
+
     public int getCellInfoMapCount() {
       return internalGetCellInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
      */
+
     @java.lang.Override
     public boolean containsCellInfoMap(
         int key) {
@@ -555,6 +742,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
      * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo> getCellInfoMapMap() {
       return internalGetCellInfoMap().getMap();
     }
@@ -562,11 +750,10 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue);
      * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo getCellInfoMapOrDefault(
+
+    public emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo getCellInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
+        emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo> map =
           internalGetCellInfoMap().getMap();
@@ -576,6 +763,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
      * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo getCellInfoMapOrThrow(
         int key) {
       
@@ -637,7 +825,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       if (unk3300PKDLOJADIPA_ != 0) {
         output.writeUInt32(10, unk3300PKDLOJADIPA_);
       }
-      if (java.lang.Float.floatToRawIntBits(bonusResourceProp_) != 0) {
+      if (bonusResourceProp_ != 0F) {
         output.writeFloat(11, bonusResourceProp_);
       }
       for (int i = 0; i < runeRecordList_.size(); i++) {
@@ -665,7 +853,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       if (unk3300KLFDKOCGAHN_ != 0) {
         output.writeUInt32(2046, unk3300KLFDKOCGAHN_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -730,7 +918,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, unk3300PKDLOJADIPA_);
       }
-      if (java.lang.Float.floatToRawIntBits(bonusResourceProp_) != 0) {
+      if (bonusResourceProp_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(11, bonusResourceProp_);
       }
@@ -774,7 +962,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2046, unk3300KLFDKOCGAHN_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -822,7 +1010,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
           != other.getUnk3300PKDLOJADIPA()) return false;
       if (!internalGetCellInfoMap().equals(
           other.internalGetCellInfoMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -878,7 +1066,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
         hash = (37 * hash) + CELL_INFO_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetCellInfoMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1027,39 +1215,57 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
 
       // Construct using emu.gingerps.net.proto.EnterRoguelikeDungeonNotifyOuterClass.EnterRoguelikeDungeonNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRuneRecordListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         bonusResourceProp_ = 0F;
+
         unk3300DBDABNIINEL_ = 0;
+
         if (runeRecordListBuilder_ == null) {
           runeRecordList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          runeRecordList_ = null;
           runeRecordListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         curLevel_ = 0;
+
         dungeonId_ = 0;
+
         reviseMonsterLevel_ = 0;
+
         unk3300PKPOKOAAOKF_ = false;
+
         exploredCellList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onstageAvatarGuidList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         stageId_ = 0;
+
         unk3300KLFDKOCGAHN_ = 0;
+
         unk3300GBHHLEDAGAM_ = false;
+
         unk3300IIIJDDNJEBB_ = 0;
+
         backstageAvatarGuidList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300PKDLOJADIPA_ = 0;
+
         internalGetMutableCellInfoMap().clear();
         return this;
       }
@@ -1087,78 +1293,46 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       @java.lang.Override
       public emu.gingerps.net.proto.EnterRoguelikeDungeonNotifyOuterClass.EnterRoguelikeDungeonNotify buildPartial() {
         emu.gingerps.net.proto.EnterRoguelikeDungeonNotifyOuterClass.EnterRoguelikeDungeonNotify result = new emu.gingerps.net.proto.EnterRoguelikeDungeonNotifyOuterClass.EnterRoguelikeDungeonNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EnterRoguelikeDungeonNotifyOuterClass.EnterRoguelikeDungeonNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.bonusResourceProp_ = bonusResourceProp_;
+        result.unk3300DBDABNIINEL_ = unk3300DBDABNIINEL_;
         if (runeRecordListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             runeRecordList_ = java.util.Collections.unmodifiableList(runeRecordList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.runeRecordList_ = runeRecordList_;
         } else {
           result.runeRecordList_ = runeRecordListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000080) != 0)) {
+        result.curLevel_ = curLevel_;
+        result.dungeonId_ = dungeonId_;
+        result.reviseMonsterLevel_ = reviseMonsterLevel_;
+        result.unk3300PKPOKOAAOKF_ = unk3300PKPOKOAAOKF_;
+        if (((bitField0_ & 0x00000002) != 0)) {
           exploredCellList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.exploredCellList_ = exploredCellList_;
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           onstageAvatarGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.onstageAvatarGuidList_ = onstageAvatarGuidList_;
-        if (((bitField0_ & 0x00002000) != 0)) {
+        result.stageId_ = stageId_;
+        result.unk3300KLFDKOCGAHN_ = unk3300KLFDKOCGAHN_;
+        result.unk3300GBHHLEDAGAM_ = unk3300GBHHLEDAGAM_;
+        result.unk3300IIIJDDNJEBB_ = unk3300IIIJDDNJEBB_;
+        if (((bitField0_ & 0x00000008) != 0)) {
           backstageAvatarGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.backstageAvatarGuidList_ = backstageAvatarGuidList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EnterRoguelikeDungeonNotifyOuterClass.EnterRoguelikeDungeonNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.bonusResourceProp_ = bonusResourceProp_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300DBDABNIINEL_ = unk3300DBDABNIINEL_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.curLevel_ = curLevel_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.dungeonId_ = dungeonId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.reviseMonsterLevel_ = reviseMonsterLevel_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.unk3300PKPOKOAAOKF_ = unk3300PKPOKOAAOKF_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.stageId_ = stageId_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.unk3300KLFDKOCGAHN_ = unk3300KLFDKOCGAHN_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.unk3300GBHHLEDAGAM_ = unk3300GBHHLEDAGAM_;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.unk3300IIIJDDNJEBB_ = unk3300IIIJDDNJEBB_;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.unk3300PKDLOJADIPA_ = unk3300PKDLOJADIPA_;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.cellInfoMap_ = internalGetCellInfoMap();
-          result.cellInfoMap_.makeImmutable();
-        }
+        result.unk3300PKDLOJADIPA_ = unk3300PKDLOJADIPA_;
+        result.cellInfoMap_ = internalGetCellInfoMap();
+        result.cellInfoMap_.makeImmutable();
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -1215,7 +1389,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
           if (!other.runeRecordList_.isEmpty()) {
             if (runeRecordList_.isEmpty()) {
               runeRecordList_ = other.runeRecordList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureRuneRecordListIsMutable();
               runeRecordList_.addAll(other.runeRecordList_);
@@ -1228,7 +1402,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
               runeRecordListBuilder_.dispose();
               runeRecordListBuilder_ = null;
               runeRecordList_ = other.runeRecordList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               runeRecordListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRuneRecordListFieldBuilder() : null;
@@ -1252,7 +1426,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
         if (!other.exploredCellList_.isEmpty()) {
           if (exploredCellList_.isEmpty()) {
             exploredCellList_ = other.exploredCellList_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureExploredCellListIsMutable();
             exploredCellList_.addAll(other.exploredCellList_);
@@ -1262,7 +1436,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
         if (!other.onstageAvatarGuidList_.isEmpty()) {
           if (onstageAvatarGuidList_.isEmpty()) {
             onstageAvatarGuidList_ = other.onstageAvatarGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureOnstageAvatarGuidListIsMutable();
             onstageAvatarGuidList_.addAll(other.onstageAvatarGuidList_);
@@ -1284,7 +1458,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
         if (!other.backstageAvatarGuidList_.isEmpty()) {
           if (backstageAvatarGuidList_.isEmpty()) {
             backstageAvatarGuidList_ = other.backstageAvatarGuidList_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureBackstageAvatarGuidListIsMutable();
             backstageAvatarGuidList_.addAll(other.backstageAvatarGuidList_);
@@ -1296,8 +1470,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
         }
         internalGetMutableCellInfoMap().mergeFrom(
             other.internalGetCellInfoMap());
-        bitField0_ |= 0x00008000;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1312,155 +1485,17 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EnterRoguelikeDungeonNotifyOuterClass.EnterRoguelikeDungeonNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                unk3300IIIJDDNJEBB_ = input.readUInt32();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 8
-              case 16: {
-                int v = input.readUInt32();
-                ensureExploredCellListIsMutable();
-                exploredCellList_.addInt(v);
-                break;
-              } // case 16
-              case 18: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureExploredCellListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  exploredCellList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 18
-              case 24: {
-                unk3300GBHHLEDAGAM_ = input.readBool();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 24
-              case 32: {
-                unk3300DBDABNIINEL_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 40: {
-                dungeonId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 48: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 48
-              case 56: {
-                long v = input.readUInt64();
-                ensureBackstageAvatarGuidListIsMutable();
-                backstageAvatarGuidList_.addLong(v);
-                break;
-              } // case 56
-              case 58: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureBackstageAvatarGuidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  backstageAvatarGuidList_.addLong(input.readUInt64());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 58
-              case 72: {
-                curLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 72
-              case 80: {
-                unk3300PKDLOJADIPA_ = input.readUInt32();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 80
-              case 93: {
-                bonusResourceProp_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 93
-              case 98: {
-                emu.gingerps.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.parser(),
-                        extensionRegistry);
-                if (runeRecordListBuilder_ == null) {
-                  ensureRuneRecordListIsMutable();
-                  runeRecordList_.add(m);
-                } else {
-                  runeRecordListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              case 114: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo>
-                cellInfoMap__ = input.readMessage(
-                    CellInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableCellInfoMap().getMutableMap().put(
-                    cellInfoMap__.getKey(), cellInfoMap__.getValue());
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 114
-              case 120: {
-                long v = input.readUInt64();
-                ensureOnstageAvatarGuidListIsMutable();
-                onstageAvatarGuidList_.addLong(v);
-                break;
-              } // case 120
-              case 122: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureOnstageAvatarGuidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  onstageAvatarGuidList_.addLong(input.readUInt64());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 122
-              case 9504: {
-                reviseMonsterLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 9504
-              case 11752: {
-                unk3300PKPOKOAAOKF_ = input.readBool();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 11752
-              case 16368: {
-                unk3300KLFDKOCGAHN_ = input.readUInt32();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 16368
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EnterRoguelikeDungeonNotifyOuterClass.EnterRoguelikeDungeonNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1482,7 +1517,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder setBonusResourceProp(float value) {
         
         bonusResourceProp_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1491,7 +1525,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearBonusResourceProp() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         bonusResourceProp_ = 0F;
         onChanged();
         return this;
@@ -1514,7 +1548,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder setUnk3300DBDABNIINEL(int value) {
         
         unk3300DBDABNIINEL_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1523,7 +1556,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DBDABNIINEL() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300DBDABNIINEL_ = 0;
         onChanged();
         return this;
@@ -1532,9 +1565,9 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       private java.util.List<emu.gingerps.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord> runeRecordList_ =
         java.util.Collections.emptyList();
       private void ensureRuneRecordListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           runeRecordList_ = new java.util.ArrayList<emu.gingerps.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord>(runeRecordList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1684,7 +1717,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder clearRuneRecordList() {
         if (runeRecordListBuilder_ == null) {
           runeRecordList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           runeRecordListBuilder_.clear();
@@ -1761,7 +1794,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
           runeRecordListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord, emu.gingerps.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.Builder, emu.gingerps.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder>(
                   runeRecordList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           runeRecordList_ = null;
@@ -1786,7 +1819,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder setCurLevel(int value) {
         
         curLevel_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1795,7 +1827,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearCurLevel() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         curLevel_ = 0;
         onChanged();
         return this;
@@ -1818,7 +1850,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1827,7 +1858,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -1850,7 +1881,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder setReviseMonsterLevel(int value) {
         
         reviseMonsterLevel_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1859,7 +1889,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearReviseMonsterLevel() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         reviseMonsterLevel_ = 0;
         onChanged();
         return this;
@@ -1882,7 +1912,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder setUnk3300PKPOKOAAOKF(boolean value) {
         
         unk3300PKPOKOAAOKF_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1891,7 +1920,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PKPOKOAAOKF() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         unk3300PKPOKOAAOKF_ = false;
         onChanged();
         return this;
@@ -1899,10 +1928,10 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
 
       private com.google.protobuf.Internal.IntList exploredCellList_ = emptyIntList();
       private void ensureExploredCellListIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           exploredCellList_ = mutableCopy(exploredCellList_);
-          bitField0_ |= 0x00000080;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 explored_cell_list = 2;</code>
@@ -1910,7 +1939,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        */
       public java.util.List<java.lang.Integer>
           getExploredCellListList() {
-        return ((bitField0_ & 0x00000080) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(exploredCellList_) : exploredCellList_;
       }
       /**
@@ -1936,7 +1965,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        */
       public Builder setExploredCellList(
           int index, int value) {
-        
         ensureExploredCellListIsMutable();
         exploredCellList_.setInt(index, value);
         onChanged();
@@ -1948,7 +1976,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder addExploredCellList(int value) {
-        
         ensureExploredCellListIsMutable();
         exploredCellList_.addInt(value);
         onChanged();
@@ -1973,17 +2000,17 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        */
       public Builder clearExploredCellList() {
         exploredCellList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.LongList onstageAvatarGuidList_ = emptyLongList();
       private void ensureOnstageAvatarGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           onstageAvatarGuidList_ = mutableCopy(onstageAvatarGuidList_);
-          bitField0_ |= 0x00000100;
-        }
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated uint64 onstage_avatar_guid_list = 15;</code>
@@ -1991,7 +2018,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        */
       public java.util.List<java.lang.Long>
           getOnstageAvatarGuidListList() {
-        return ((bitField0_ & 0x00000100) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(onstageAvatarGuidList_) : onstageAvatarGuidList_;
       }
       /**
@@ -2017,7 +2044,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        */
       public Builder setOnstageAvatarGuidList(
           int index, long value) {
-        
         ensureOnstageAvatarGuidListIsMutable();
         onstageAvatarGuidList_.setLong(index, value);
         onChanged();
@@ -2029,7 +2055,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder addOnstageAvatarGuidList(long value) {
-        
         ensureOnstageAvatarGuidListIsMutable();
         onstageAvatarGuidList_.addLong(value);
         onChanged();
@@ -2054,7 +2079,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        */
       public Builder clearOnstageAvatarGuidList() {
         onstageAvatarGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -2076,7 +2101,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2085,7 +2109,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -2108,7 +2132,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder setUnk3300KLFDKOCGAHN(int value) {
         
         unk3300KLFDKOCGAHN_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2117,7 +2140,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KLFDKOCGAHN() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         unk3300KLFDKOCGAHN_ = 0;
         onChanged();
         return this;
@@ -2140,7 +2163,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder setUnk3300GBHHLEDAGAM(boolean value) {
         
         unk3300GBHHLEDAGAM_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2149,7 +2171,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GBHHLEDAGAM() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         unk3300GBHHLEDAGAM_ = false;
         onChanged();
         return this;
@@ -2172,7 +2194,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder setUnk3300IIIJDDNJEBB(int value) {
         
         unk3300IIIJDDNJEBB_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2181,7 +2202,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IIIJDDNJEBB() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         unk3300IIIJDDNJEBB_ = 0;
         onChanged();
         return this;
@@ -2189,10 +2210,10 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
 
       private com.google.protobuf.Internal.LongList backstageAvatarGuidList_ = emptyLongList();
       private void ensureBackstageAvatarGuidListIsMutable() {
-        if (!((bitField0_ & 0x00002000) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           backstageAvatarGuidList_ = mutableCopy(backstageAvatarGuidList_);
-          bitField0_ |= 0x00002000;
-        }
+          bitField0_ |= 0x00000008;
+         }
       }
       /**
        * <code>repeated uint64 backstage_avatar_guid_list = 7;</code>
@@ -2200,7 +2221,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        */
       public java.util.List<java.lang.Long>
           getBackstageAvatarGuidListList() {
-        return ((bitField0_ & 0x00002000) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(backstageAvatarGuidList_) : backstageAvatarGuidList_;
       }
       /**
@@ -2226,7 +2247,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        */
       public Builder setBackstageAvatarGuidList(
           int index, long value) {
-        
         ensureBackstageAvatarGuidListIsMutable();
         backstageAvatarGuidList_.setLong(index, value);
         onChanged();
@@ -2238,7 +2258,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder addBackstageAvatarGuidList(long value) {
-        
         ensureBackstageAvatarGuidListIsMutable();
         backstageAvatarGuidList_.addLong(value);
         onChanged();
@@ -2263,7 +2282,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        */
       public Builder clearBackstageAvatarGuidList() {
         backstageAvatarGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2285,7 +2304,6 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       public Builder setUnk3300PKDLOJADIPA(int value) {
         
         unk3300PKDLOJADIPA_ = value;
-        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -2294,7 +2312,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PKDLOJADIPA() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        
         unk3300PKDLOJADIPA_ = 0;
         onChanged();
         return this;
@@ -2303,7 +2321,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo> cellInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo>
-          internalGetCellInfoMap() {
+      internalGetCellInfoMap() {
         if (cellInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               CellInfoMapDefaultEntryHolder.defaultEntry);
@@ -2311,7 +2329,8 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
         return cellInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo>
-          internalGetMutableCellInfoMap() {
+      internalGetMutableCellInfoMap() {
+        onChanged();;
         if (cellInfoMap_ == null) {
           cellInfoMap_ = com.google.protobuf.MapField.newMapField(
               CellInfoMapDefaultEntryHolder.defaultEntry);
@@ -2319,16 +2338,16 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
         if (!cellInfoMap_.isMutable()) {
           cellInfoMap_ = cellInfoMap_.copy();
         }
-        bitField0_ |= 0x00008000;
-        onChanged();
         return cellInfoMap_;
       }
+
       public int getCellInfoMapCount() {
         return internalGetCellInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
        */
+
       @java.lang.Override
       public boolean containsCellInfoMap(
           int key) {
@@ -2347,6 +2366,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo> getCellInfoMapMap() {
         return internalGetCellInfoMap().getMap();
       }
@@ -2354,11 +2374,10 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo getCellInfoMapOrDefault(
+
+      public emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo getCellInfoMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
+          emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo> map =
             internalGetCellInfoMap().getMap();
@@ -2368,6 +2387,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo getCellInfoMapOrThrow(
           int key) {
         
@@ -2378,8 +2398,8 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearCellInfoMap() {
-        bitField0_ = (bitField0_ & ~0x00008000);
         internalGetMutableCellInfoMap().getMutableMap()
             .clear();
         return this;
@@ -2387,6 +2407,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
       /**
        * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
        */
+
       public Builder removeCellInfoMap(
           int key) {
         
@@ -2399,8 +2420,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo>
-          getMutableCellInfoMap() {
-        bitField0_ |= 0x00008000;
+      getMutableCellInfoMap() {
         return internalGetMutableCellInfoMap().getMutableMap();
       }
       /**
@@ -2410,20 +2430,19 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
           int key,
           emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableCellInfoMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00008000;
         return this;
       }
       /**
        * <code>map&lt;uint32, .RogueCellInfo&gt; cell_info_map = 14;</code>
        */
+
       public Builder putAllCellInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo> values) {
         internalGetMutableCellInfoMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00008000;
         return this;
       }
       @java.lang.Override
@@ -2459,18 +2478,7 @@ emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EnterRoguelikeDungeonNotify(input, extensionRegistry);
       }
     };
 

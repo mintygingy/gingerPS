@@ -114,6 +114,98 @@ public final class GMObstacleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GMObstacleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              shape_ = rawValue;
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder subBuilder = null;
+              if (rotation_ != null) {
+                subBuilder = rotation_.toBuilder();
+              }
+              rotation_ = input.readMessage(emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rotation_);
+                rotation_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.Builder subBuilder = null;
+              if (extents_ != null) {
+                subBuilder = extents_.toBuilder();
+              }
+              extents_ = input.readMessage(emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(extents_);
+                extents_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 104: {
+
+              obstacleId_ = input.readInt32();
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (center_ != null) {
+                subBuilder = center_.toBuilder();
+              }
+              center_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(center_);
+                center_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GMObstacleInfoOuterClass.internal_static_GMObstacleInfo_descriptor;
@@ -236,7 +328,7 @@ public final class GMObstacleInfoOuterClass {
     }
 
     public static final int SHAPE_FIELD_NUMBER = 2;
-    private int shape_ = 0;
+    private int shape_;
     /**
      * <code>.GMObstacleInfo.ShapeType shape = 2;</code>
      * @return The enum numeric value on the wire for shape.
@@ -249,7 +341,8 @@ public final class GMObstacleInfoOuterClass {
      * @return The shape.
      */
     @java.lang.Override public emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType getShape() {
-      emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType result = emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType.forNumber(shape_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType result = emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType.valueOf(shape_);
       return result == null ? emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType.UNRECOGNIZED : result;
     }
 
@@ -276,7 +369,7 @@ public final class GMObstacleInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder getRotationOrBuilder() {
-      return rotation_ == null ? emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.getDefaultInstance() : rotation_;
+      return getRotation();
     }
 
     public static final int CENTER_FIELD_NUMBER = 15;
@@ -302,11 +395,11 @@ public final class GMObstacleInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
-      return center_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
+      return getCenter();
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 1;
-    private long timestamp_ = 0L;
+    private long timestamp_;
     /**
      * <code>int64 timestamp = 1;</code>
      * @return The timestamp.
@@ -317,7 +410,7 @@ public final class GMObstacleInfoOuterClass {
     }
 
     public static final int OBSTACLE_ID_FIELD_NUMBER = 13;
-    private int obstacleId_ = 0;
+    private int obstacleId_;
     /**
      * <code>int32 obstacle_id = 13;</code>
      * @return The obstacleId.
@@ -350,7 +443,7 @@ public final class GMObstacleInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getExtentsOrBuilder() {
-      return extents_ == null ? emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.getDefaultInstance() : extents_;
+      return getExtents();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -385,7 +478,7 @@ public final class GMObstacleInfoOuterClass {
       if (center_ != null) {
         output.writeMessage(15, getCenter());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -418,7 +511,7 @@ public final class GMObstacleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getCenter());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -453,7 +546,7 @@ public final class GMObstacleInfoOuterClass {
         if (!getExtents()
             .equals(other.getExtents())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -483,7 +576,7 @@ public final class GMObstacleInfoOuterClass {
         hash = (37 * hash) + EXTENTS_FIELD_NUMBER;
         hash = (53 * hash) + getExtents().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -600,34 +693,44 @@ public final class GMObstacleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         shape_ = 0;
-        rotation_ = null;
-        if (rotationBuilder_ != null) {
-          rotationBuilder_.dispose();
+
+        if (rotationBuilder_ == null) {
+          rotation_ = null;
+        } else {
+          rotation_ = null;
           rotationBuilder_ = null;
         }
-        center_ = null;
-        if (centerBuilder_ != null) {
-          centerBuilder_.dispose();
+        if (centerBuilder_ == null) {
+          center_ = null;
+        } else {
+          center_ = null;
           centerBuilder_ = null;
         }
         timestamp_ = 0L;
+
         obstacleId_ = 0;
-        extents_ = null;
-        if (extentsBuilder_ != null) {
-          extentsBuilder_.dispose();
+
+        if (extentsBuilder_ == null) {
+          extents_ = null;
+        } else {
+          extents_ = null;
           extentsBuilder_ = null;
         }
         return this;
@@ -656,37 +759,26 @@ public final class GMObstacleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo buildPartial() {
         emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo result = new emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.shape_ = shape_;
+        if (rotationBuilder_ == null) {
+          result.rotation_ = rotation_;
+        } else {
+          result.rotation_ = rotationBuilder_.build();
+        }
+        if (centerBuilder_ == null) {
+          result.center_ = center_;
+        } else {
+          result.center_ = centerBuilder_.build();
+        }
+        result.timestamp_ = timestamp_;
+        result.obstacleId_ = obstacleId_;
+        if (extentsBuilder_ == null) {
+          result.extents_ = extents_;
+        } else {
+          result.extents_ = extentsBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.shape_ = shape_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.rotation_ = rotationBuilder_ == null
-              ? rotation_
-              : rotationBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.center_ = centerBuilder_ == null
-              ? center_
-              : centerBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.timestamp_ = timestamp_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.obstacleId_ = obstacleId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.extents_ = extentsBuilder_ == null
-              ? extents_
-              : extentsBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -751,7 +843,7 @@ public final class GMObstacleInfoOuterClass {
         if (other.hasExtents()) {
           mergeExtents(other.getExtents());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -766,69 +858,19 @@ public final class GMObstacleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                timestamp_ = input.readInt64();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 8
-              case 16: {
-                shape_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 66: {
-                input.readMessage(
-                    getRotationFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 66
-              case 74: {
-                input.readMessage(
-                    getExtentsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 74
-              case 104: {
-                obstacleId_ = input.readInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 104
-              case 122: {
-                input.readMessage(
-                    getCenterFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int shape_ = 0;
       /**
@@ -844,8 +886,8 @@ public final class GMObstacleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setShapeValue(int value) {
+        
         shape_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -855,7 +897,8 @@ public final class GMObstacleInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType getShape() {
-        emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType result = emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType.forNumber(shape_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType result = emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType.valueOf(shape_);
         return result == null ? emu.gingerps.net.proto.GMObstacleInfoOuterClass.GMObstacleInfo.ShapeType.UNRECOGNIZED : result;
       }
       /**
@@ -867,7 +910,7 @@ public final class GMObstacleInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         shape_ = value.getNumber();
         onChanged();
         return this;
@@ -877,7 +920,7 @@ public final class GMObstacleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShape() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         shape_ = 0;
         onChanged();
         return this;
@@ -891,7 +934,7 @@ public final class GMObstacleInfoOuterClass {
        * @return Whether the rotation field is set.
        */
       public boolean hasRotation() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return rotationBuilder_ != null || rotation_ != null;
       }
       /**
        * <code>.MathQuaternion rotation = 8;</code>
@@ -913,11 +956,11 @@ public final class GMObstacleInfoOuterClass {
             throw new NullPointerException();
           }
           rotation_ = value;
+          onChanged();
         } else {
           rotationBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -927,11 +970,11 @@ public final class GMObstacleInfoOuterClass {
           emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder builderForValue) {
         if (rotationBuilder_ == null) {
           rotation_ = builderForValue.build();
+          onChanged();
         } else {
           rotationBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -939,38 +982,38 @@ public final class GMObstacleInfoOuterClass {
        */
       public Builder mergeRotation(emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion value) {
         if (rotationBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            rotation_ != null &&
-            rotation_ != emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.getDefaultInstance()) {
-            getRotationBuilder().mergeFrom(value);
+          if (rotation_ != null) {
+            rotation_ =
+              emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.newBuilder(rotation_).mergeFrom(value).buildPartial();
           } else {
             rotation_ = value;
           }
+          onChanged();
         } else {
           rotationBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MathQuaternion rotation = 8;</code>
        */
       public Builder clearRotation() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        rotation_ = null;
-        if (rotationBuilder_ != null) {
-          rotationBuilder_.dispose();
+        if (rotationBuilder_ == null) {
+          rotation_ = null;
+          onChanged();
+        } else {
+          rotation_ = null;
           rotationBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MathQuaternion rotation = 8;</code>
        */
       public emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder getRotationBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getRotationFieldBuilder().getBuilder();
       }
@@ -1010,7 +1053,7 @@ public final class GMObstacleInfoOuterClass {
        * @return Whether the center field is set.
        */
       public boolean hasCenter() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return centerBuilder_ != null || center_ != null;
       }
       /**
        * <code>.Vector center = 15;</code>
@@ -1032,11 +1075,11 @@ public final class GMObstacleInfoOuterClass {
             throw new NullPointerException();
           }
           center_ = value;
+          onChanged();
         } else {
           centerBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1046,11 +1089,11 @@ public final class GMObstacleInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (centerBuilder_ == null) {
           center_ = builderForValue.build();
+          onChanged();
         } else {
           centerBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1058,38 +1101,38 @@ public final class GMObstacleInfoOuterClass {
        */
       public Builder mergeCenter(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (centerBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            center_ != null &&
-            center_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getCenterBuilder().mergeFrom(value);
+          if (center_ != null) {
+            center_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(center_).mergeFrom(value).buildPartial();
           } else {
             center_ = value;
           }
+          onChanged();
         } else {
           centerBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector center = 15;</code>
        */
       public Builder clearCenter() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        center_ = null;
-        if (centerBuilder_ != null) {
-          centerBuilder_.dispose();
+        if (centerBuilder_ == null) {
+          center_ = null;
+          onChanged();
+        } else {
+          center_ = null;
           centerBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector center = 15;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getCenterBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getCenterFieldBuilder().getBuilder();
       }
@@ -1138,7 +1181,6 @@ public final class GMObstacleInfoOuterClass {
       public Builder setTimestamp(long value) {
         
         timestamp_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1147,7 +1189,7 @@ public final class GMObstacleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         timestamp_ = 0L;
         onChanged();
         return this;
@@ -1170,7 +1212,6 @@ public final class GMObstacleInfoOuterClass {
       public Builder setObstacleId(int value) {
         
         obstacleId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1179,7 +1220,7 @@ public final class GMObstacleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearObstacleId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         obstacleId_ = 0;
         onChanged();
         return this;
@@ -1193,7 +1234,7 @@ public final class GMObstacleInfoOuterClass {
        * @return Whether the extents field is set.
        */
       public boolean hasExtents() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return extentsBuilder_ != null || extents_ != null;
       }
       /**
        * <code>.Vector3Int extents = 9;</code>
@@ -1215,11 +1256,11 @@ public final class GMObstacleInfoOuterClass {
             throw new NullPointerException();
           }
           extents_ = value;
+          onChanged();
         } else {
           extentsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1229,11 +1270,11 @@ public final class GMObstacleInfoOuterClass {
           emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.Builder builderForValue) {
         if (extentsBuilder_ == null) {
           extents_ = builderForValue.build();
+          onChanged();
         } else {
           extentsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1241,38 +1282,38 @@ public final class GMObstacleInfoOuterClass {
        */
       public Builder mergeExtents(emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int value) {
         if (extentsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            extents_ != null &&
-            extents_ != emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.getDefaultInstance()) {
-            getExtentsBuilder().mergeFrom(value);
+          if (extents_ != null) {
+            extents_ =
+              emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.newBuilder(extents_).mergeFrom(value).buildPartial();
           } else {
             extents_ = value;
           }
+          onChanged();
         } else {
           extentsBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector3Int extents = 9;</code>
        */
       public Builder clearExtents() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        extents_ = null;
-        if (extentsBuilder_ != null) {
-          extentsBuilder_.dispose();
+        if (extentsBuilder_ == null) {
+          extents_ = null;
+          onChanged();
+        } else {
+          extents_ = null;
           extentsBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector3Int extents = 9;</code>
        */
       public emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.Builder getExtentsBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getExtentsFieldBuilder().getBuilder();
       }
@@ -1336,18 +1377,7 @@ public final class GMObstacleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GMObstacleInfo(input, extensionRegistry);
       }
     };
 

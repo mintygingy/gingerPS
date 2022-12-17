@@ -57,6 +57,53 @@ public final class QuestGlobalVarOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private QuestGlobalVar(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              value_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              key_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.QuestGlobalVarOuterClass.internal_static_QuestGlobalVar_descriptor;
@@ -71,7 +118,7 @@ public final class QuestGlobalVarOuterClass {
     }
 
     public static final int VALUE_FIELD_NUMBER = 4;
-    private int value_ = 0;
+    private int value_;
     /**
      * <code>int32 value = 4;</code>
      * @return The value.
@@ -82,7 +129,7 @@ public final class QuestGlobalVarOuterClass {
     }
 
     public static final int KEY_FIELD_NUMBER = 9;
-    private int key_ = 0;
+    private int key_;
     /**
      * <code>uint32 key = 9;</code>
      * @return The key.
@@ -112,7 +159,7 @@ public final class QuestGlobalVarOuterClass {
       if (key_ != 0) {
         output.writeUInt32(9, key_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +176,7 @@ public final class QuestGlobalVarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, key_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -148,7 +195,7 @@ public final class QuestGlobalVarOuterClass {
           != other.getValue()) return false;
       if (getKey()
           != other.getKey()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -163,7 +210,7 @@ public final class QuestGlobalVarOuterClass {
       hash = (53 * hash) + getValue();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -280,20 +327,26 @@ public final class QuestGlobalVarOuterClass {
 
       // Construct using emu.gingerps.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         value_ = 0;
+
         key_ = 0;
+
         return this;
       }
 
@@ -320,19 +373,10 @@ public final class QuestGlobalVarOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar buildPartial() {
         emu.gingerps.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar result = new emu.gingerps.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.value_ = value_;
+        result.key_ = key_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.value_ = value_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.key_ = key_;
-        }
       }
 
       @java.lang.Override
@@ -385,7 +429,7 @@ public final class QuestGlobalVarOuterClass {
         if (other.getKey() != 0) {
           setKey(other.getKey());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -400,43 +444,19 @@ public final class QuestGlobalVarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                value_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 72: {
-                key_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int value_ ;
       /**
@@ -455,7 +475,6 @@ public final class QuestGlobalVarOuterClass {
       public Builder setValue(int value) {
         
         value_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +483,7 @@ public final class QuestGlobalVarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         value_ = 0;
         onChanged();
         return this;
@@ -487,7 +506,6 @@ public final class QuestGlobalVarOuterClass {
       public Builder setKey(int value) {
         
         key_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -496,7 +514,7 @@ public final class QuestGlobalVarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKey() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         key_ = 0;
         onChanged();
         return this;
@@ -534,18 +552,7 @@ public final class QuestGlobalVarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new QuestGlobalVar(input, extensionRegistry);
       }
     };
 

@@ -123,6 +123,119 @@ public final class VehicleLocationInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private VehicleLocationInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              gadgetId_ = input.readUInt32();
+              break;
+            }
+            case 21: {
+
+              curHp_ = input.readFloat();
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                uidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              uidList_.addInt(input.readUInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                uidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                uidList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 42: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (rot_ != null) {
+                subBuilder = rot_.toBuilder();
+              }
+              rot_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rot_);
+                rot_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (pos_ != null) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 88: {
+
+              ownerUid_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 125: {
+
+              maxHp_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          uidList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VehicleLocationInfoOuterClass.internal_static_VehicleLocationInfo_descriptor;
@@ -159,11 +272,11 @@ public final class VehicleLocationInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
-      return rot_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
+      return getRot();
     }
 
     public static final int OWNER_UID_FIELD_NUMBER = 11;
-    private int ownerUid_ = 0;
+    private int ownerUid_;
     /**
      * <code>uint32 owner_uid = 11;</code>
      * @return The ownerUid.
@@ -174,7 +287,6 @@ public final class VehicleLocationInfoOuterClass {
     }
 
     public static final int UID_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList uidList_;
     /**
      * <code>repeated uint32 uid_list = 4;</code>
@@ -203,7 +315,7 @@ public final class VehicleLocationInfoOuterClass {
     private int uidListMemoizedSerializedSize = -1;
 
     public static final int CUR_HP_FIELD_NUMBER = 2;
-    private float curHp_ = 0F;
+    private float curHp_;
     /**
      * <code>float cur_hp = 2;</code>
      * @return The curHp.
@@ -236,11 +348,11 @@ public final class VehicleLocationInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+      return getPos();
     }
 
     public static final int GADGET_ID_FIELD_NUMBER = 1;
-    private int gadgetId_ = 0;
+    private int gadgetId_;
     /**
      * <code>uint32 gadget_id = 1;</code>
      * @return The gadgetId.
@@ -251,7 +363,7 @@ public final class VehicleLocationInfoOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 14;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
@@ -262,7 +374,7 @@ public final class VehicleLocationInfoOuterClass {
     }
 
     public static final int MAX_HP_FIELD_NUMBER = 15;
-    private float maxHp_ = 0F;
+    private float maxHp_;
     /**
      * <code>float max_hp = 15;</code>
      * @return The maxHp.
@@ -290,7 +402,7 @@ public final class VehicleLocationInfoOuterClass {
       if (gadgetId_ != 0) {
         output.writeUInt32(1, gadgetId_);
       }
-      if (java.lang.Float.floatToRawIntBits(curHp_) != 0) {
+      if (curHp_ != 0F) {
         output.writeFloat(2, curHp_);
       }
       if (getUidListList().size() > 0) {
@@ -312,10 +424,10 @@ public final class VehicleLocationInfoOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(14, entityId_);
       }
-      if (java.lang.Float.floatToRawIntBits(maxHp_) != 0) {
+      if (maxHp_ != 0F) {
         output.writeFloat(15, maxHp_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -328,7 +440,7 @@ public final class VehicleLocationInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, gadgetId_);
       }
-      if (java.lang.Float.floatToRawIntBits(curHp_) != 0) {
+      if (curHp_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, curHp_);
       }
@@ -362,11 +474,11 @@ public final class VehicleLocationInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, entityId_);
       }
-      if (java.lang.Float.floatToRawIntBits(maxHp_) != 0) {
+      if (maxHp_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(15, maxHp_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -405,7 +517,7 @@ public final class VehicleLocationInfoOuterClass {
       if (java.lang.Float.floatToIntBits(getMaxHp())
           != java.lang.Float.floatToIntBits(
               other.getMaxHp())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -440,7 +552,7 @@ public final class VehicleLocationInfoOuterClass {
       hash = (37 * hash) + MAX_HP_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getMaxHp());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -557,34 +669,46 @@ public final class VehicleLocationInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        rot_ = null;
-        if (rotBuilder_ != null) {
-          rotBuilder_.dispose();
+        if (rotBuilder_ == null) {
+          rot_ = null;
+        } else {
+          rot_ = null;
           rotBuilder_ = null;
         }
         ownerUid_ = 0;
+
         uidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         curHp_ = 0F;
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
         gadgetId_ = 0;
+
         entityId_ = 0;
+
         maxHp_ = 0F;
+
         return this;
       }
 
@@ -611,47 +735,29 @@ public final class VehicleLocationInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo buildPartial() {
         emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo result = new emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        if (rotBuilder_ == null) {
+          result.rot_ = rot_;
+        } else {
+          result.rot_ = rotBuilder_.build();
+        }
+        result.ownerUid_ = ownerUid_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           uidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.uidList_ = uidList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.rot_ = rotBuilder_ == null
-              ? rot_
-              : rotBuilder_.build();
+        result.curHp_ = curHp_;
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.ownerUid_ = ownerUid_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.curHp_ = curHp_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.gadgetId_ = gadgetId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.maxHp_ = maxHp_;
-        }
+        result.gadgetId_ = gadgetId_;
+        result.entityId_ = entityId_;
+        result.maxHp_ = maxHp_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -707,7 +813,7 @@ public final class VehicleLocationInfoOuterClass {
         if (!other.uidList_.isEmpty()) {
           if (uidList_.isEmpty()) {
             uidList_ = other.uidList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureUidListIsMutable();
             uidList_.addAll(other.uidList_);
@@ -729,7 +835,7 @@ public final class VehicleLocationInfoOuterClass {
         if (other.getMaxHp() != 0F) {
           setMaxHp(other.getMaxHp());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -744,85 +850,17 @@ public final class VehicleLocationInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                gadgetId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 8
-              case 21: {
-                curHp_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 21
-              case 32: {
-                int v = input.readUInt32();
-                ensureUidListIsMutable();
-                uidList_.addInt(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  uidList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getRotFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 42
-              case 74: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 74
-              case 88: {
-                ownerUid_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              case 112: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 112
-              case 125: {
-                maxHp_ = input.readFloat();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 125
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -835,7 +873,7 @@ public final class VehicleLocationInfoOuterClass {
        * @return Whether the rot field is set.
        */
       public boolean hasRot() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return rotBuilder_ != null || rot_ != null;
       }
       /**
        * <code>.Vector rot = 5;</code>
@@ -857,11 +895,11 @@ public final class VehicleLocationInfoOuterClass {
             throw new NullPointerException();
           }
           rot_ = value;
+          onChanged();
         } else {
           rotBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -871,11 +909,11 @@ public final class VehicleLocationInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (rotBuilder_ == null) {
           rot_ = builderForValue.build();
+          onChanged();
         } else {
           rotBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -883,38 +921,38 @@ public final class VehicleLocationInfoOuterClass {
        */
       public Builder mergeRot(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (rotBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            rot_ != null &&
-            rot_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getRotBuilder().mergeFrom(value);
+          if (rot_ != null) {
+            rot_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(rot_).mergeFrom(value).buildPartial();
           } else {
             rot_ = value;
           }
+          onChanged();
         } else {
           rotBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector rot = 5;</code>
        */
       public Builder clearRot() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        rot_ = null;
-        if (rotBuilder_ != null) {
-          rotBuilder_.dispose();
+        if (rotBuilder_ == null) {
+          rot_ = null;
+          onChanged();
+        } else {
+          rot_ = null;
           rotBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector rot = 5;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getRotBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getRotFieldBuilder().getBuilder();
       }
@@ -963,7 +1001,6 @@ public final class VehicleLocationInfoOuterClass {
       public Builder setOwnerUid(int value) {
         
         ownerUid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -972,7 +1009,7 @@ public final class VehicleLocationInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOwnerUid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         ownerUid_ = 0;
         onChanged();
         return this;
@@ -980,10 +1017,10 @@ public final class VehicleLocationInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList uidList_ = emptyIntList();
       private void ensureUidListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           uidList_ = mutableCopy(uidList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 uid_list = 4;</code>
@@ -991,7 +1028,7 @@ public final class VehicleLocationInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUidListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(uidList_) : uidList_;
       }
       /**
@@ -1017,7 +1054,6 @@ public final class VehicleLocationInfoOuterClass {
        */
       public Builder setUidList(
           int index, int value) {
-        
         ensureUidListIsMutable();
         uidList_.setInt(index, value);
         onChanged();
@@ -1029,7 +1065,6 @@ public final class VehicleLocationInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUidList(int value) {
-        
         ensureUidListIsMutable();
         uidList_.addInt(value);
         onChanged();
@@ -1054,7 +1089,7 @@ public final class VehicleLocationInfoOuterClass {
        */
       public Builder clearUidList() {
         uidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1076,7 +1111,6 @@ public final class VehicleLocationInfoOuterClass {
       public Builder setCurHp(float value) {
         
         curHp_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1085,7 +1119,7 @@ public final class VehicleLocationInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurHp() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         curHp_ = 0F;
         onChanged();
         return this;
@@ -1099,7 +1133,7 @@ public final class VehicleLocationInfoOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return posBuilder_ != null || pos_ != null;
       }
       /**
        * <code>.Vector pos = 9;</code>
@@ -1121,11 +1155,11 @@ public final class VehicleLocationInfoOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1135,11 +1169,11 @@ public final class VehicleLocationInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1147,38 +1181,38 @@ public final class VehicleLocationInfoOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            pos_ != null &&
-            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (pos_ != null) {
+            pos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 9;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 9;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -1227,7 +1261,6 @@ public final class VehicleLocationInfoOuterClass {
       public Builder setGadgetId(int value) {
         
         gadgetId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1236,7 +1269,7 @@ public final class VehicleLocationInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         gadgetId_ = 0;
         onChanged();
         return this;
@@ -1259,7 +1292,6 @@ public final class VehicleLocationInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1268,7 +1300,7 @@ public final class VehicleLocationInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -1291,7 +1323,6 @@ public final class VehicleLocationInfoOuterClass {
       public Builder setMaxHp(float value) {
         
         maxHp_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1300,7 +1331,7 @@ public final class VehicleLocationInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxHp() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         maxHp_ = 0F;
         onChanged();
         return this;
@@ -1338,18 +1369,7 @@ public final class VehicleLocationInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new VehicleLocationInfo(input, extensionRegistry);
       }
     };
 

@@ -73,6 +73,58 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DragonSpineChapterProgressChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              chapterId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              curProgress_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DragonSpineChapterProgressChangeNotifyOuterClass.internal_static_DragonSpineChapterProgressChangeNotify_descriptor;
@@ -87,7 +139,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
     }
 
     public static final int CHAPTER_ID_FIELD_NUMBER = 9;
-    private int chapterId_ = 0;
+    private int chapterId_;
     /**
      * <code>uint32 chapter_id = 9;</code>
      * @return The chapterId.
@@ -98,7 +150,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 3;
-    private int scheduleId_ = 0;
+    private int scheduleId_;
     /**
      * <code>uint32 schedule_id = 3;</code>
      * @return The scheduleId.
@@ -109,7 +161,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
     }
 
     public static final int CUR_PROGRESS_FIELD_NUMBER = 11;
-    private int curProgress_ = 0;
+    private int curProgress_;
     /**
      * <code>uint32 cur_progress = 11;</code>
      * @return The curProgress.
@@ -142,7 +194,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
       if (curProgress_ != 0) {
         output.writeUInt32(11, curProgress_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +215,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, curProgress_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -184,7 +236,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
           != other.getScheduleId()) return false;
       if (getCurProgress()
           != other.getCurProgress()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -201,7 +253,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
       hash = (53 * hash) + getScheduleId();
       hash = (37 * hash) + CUR_PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getCurProgress();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -328,21 +380,28 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DragonSpineChapterProgressChangeNotifyOuterClass.DragonSpineChapterProgressChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         chapterId_ = 0;
+
         scheduleId_ = 0;
+
         curProgress_ = 0;
+
         return this;
       }
 
@@ -369,22 +428,11 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DragonSpineChapterProgressChangeNotifyOuterClass.DragonSpineChapterProgressChangeNotify buildPartial() {
         emu.gingerps.net.proto.DragonSpineChapterProgressChangeNotifyOuterClass.DragonSpineChapterProgressChangeNotify result = new emu.gingerps.net.proto.DragonSpineChapterProgressChangeNotifyOuterClass.DragonSpineChapterProgressChangeNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.chapterId_ = chapterId_;
+        result.scheduleId_ = scheduleId_;
+        result.curProgress_ = curProgress_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DragonSpineChapterProgressChangeNotifyOuterClass.DragonSpineChapterProgressChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.chapterId_ = chapterId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.scheduleId_ = scheduleId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curProgress_ = curProgress_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +488,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
         if (other.getCurProgress() != 0) {
           setCurProgress(other.getCurProgress());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,48 +503,19 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DragonSpineChapterProgressChangeNotifyOuterClass.DragonSpineChapterProgressChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                scheduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 72: {
-                chapterId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 88: {
-                curProgress_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DragonSpineChapterProgressChangeNotifyOuterClass.DragonSpineChapterProgressChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int chapterId_ ;
       /**
@@ -515,7 +534,6 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
       public Builder setChapterId(int value) {
         
         chapterId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +542,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChapterId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         chapterId_ = 0;
         onChanged();
         return this;
@@ -547,7 +565,6 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -556,7 +573,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -579,7 +596,6 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
       public Builder setCurProgress(int value) {
         
         curProgress_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -588,7 +604,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurProgress() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curProgress_ = 0;
         onChanged();
         return this;
@@ -626,18 +642,7 @@ public final class DragonSpineChapterProgressChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DragonSpineChapterProgressChangeNotify(input, extensionRegistry);
       }
     };
 

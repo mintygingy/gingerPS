@@ -81,6 +81,73 @@ public final class AbilityIdentifierOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityIdentifier(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              abilityCasterId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              instancedAbilityId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              instancedModifierId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              localId_ = input.readInt32();
+              break;
+            }
+            case 80: {
+
+              modifierOwnerId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              isServerbuffModifier_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityIdentifierOuterClass.internal_static_AbilityIdentifier_descriptor;
@@ -95,7 +162,7 @@ public final class AbilityIdentifierOuterClass {
     }
 
     public static final int INSTANCED_ABILITY_ID_FIELD_NUMBER = 4;
-    private int instancedAbilityId_ = 0;
+    private int instancedAbilityId_;
     /**
      * <code>uint32 instanced_ability_id = 4;</code>
      * @return The instancedAbilityId.
@@ -106,7 +173,7 @@ public final class AbilityIdentifierOuterClass {
     }
 
     public static final int MODIFIER_OWNER_ID_FIELD_NUMBER = 10;
-    private int modifierOwnerId_ = 0;
+    private int modifierOwnerId_;
     /**
      * <code>uint32 modifier_owner_id = 10;</code>
      * @return The modifierOwnerId.
@@ -117,7 +184,7 @@ public final class AbilityIdentifierOuterClass {
     }
 
     public static final int IS_SERVERBUFF_MODIFIER_FIELD_NUMBER = 14;
-    private boolean isServerbuffModifier_ = false;
+    private boolean isServerbuffModifier_;
     /**
      * <code>bool is_serverbuff_modifier = 14;</code>
      * @return The isServerbuffModifier.
@@ -128,7 +195,7 @@ public final class AbilityIdentifierOuterClass {
     }
 
     public static final int LOCAL_ID_FIELD_NUMBER = 7;
-    private int localId_ = 0;
+    private int localId_;
     /**
      * <code>int32 local_id = 7;</code>
      * @return The localId.
@@ -139,7 +206,7 @@ public final class AbilityIdentifierOuterClass {
     }
 
     public static final int ABILITY_CASTER_ID_FIELD_NUMBER = 1;
-    private int abilityCasterId_ = 0;
+    private int abilityCasterId_;
     /**
      * <code>uint32 ability_caster_id = 1;</code>
      * @return The abilityCasterId.
@@ -150,7 +217,7 @@ public final class AbilityIdentifierOuterClass {
     }
 
     public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 5;
-    private int instancedModifierId_ = 0;
+    private int instancedModifierId_;
     /**
      * <code>uint32 instanced_modifier_id = 5;</code>
      * @return The instancedModifierId.
@@ -192,7 +259,7 @@ public final class AbilityIdentifierOuterClass {
       if (isServerbuffModifier_ != false) {
         output.writeBool(14, isServerbuffModifier_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -225,7 +292,7 @@ public final class AbilityIdentifierOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isServerbuffModifier_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -252,7 +319,7 @@ public final class AbilityIdentifierOuterClass {
           != other.getAbilityCasterId()) return false;
       if (getInstancedModifierId()
           != other.getInstancedModifierId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -276,7 +343,7 @@ public final class AbilityIdentifierOuterClass {
       hash = (53 * hash) + getAbilityCasterId();
       hash = (37 * hash) + INSTANCED_MODIFIER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInstancedModifierId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,24 +460,34 @@ public final class AbilityIdentifierOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         instancedAbilityId_ = 0;
+
         modifierOwnerId_ = 0;
+
         isServerbuffModifier_ = false;
+
         localId_ = 0;
+
         abilityCasterId_ = 0;
+
         instancedModifierId_ = 0;
+
         return this;
       }
 
@@ -437,31 +514,14 @@ public final class AbilityIdentifierOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier buildPartial() {
         emu.gingerps.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier result = new emu.gingerps.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.instancedAbilityId_ = instancedAbilityId_;
+        result.modifierOwnerId_ = modifierOwnerId_;
+        result.isServerbuffModifier_ = isServerbuffModifier_;
+        result.localId_ = localId_;
+        result.abilityCasterId_ = abilityCasterId_;
+        result.instancedModifierId_ = instancedModifierId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.instancedAbilityId_ = instancedAbilityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.modifierOwnerId_ = modifierOwnerId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isServerbuffModifier_ = isServerbuffModifier_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.localId_ = localId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.abilityCasterId_ = abilityCasterId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.instancedModifierId_ = instancedModifierId_;
-        }
       }
 
       @java.lang.Override
@@ -526,7 +586,7 @@ public final class AbilityIdentifierOuterClass {
         if (other.getInstancedModifierId() != 0) {
           setInstancedModifierId(other.getInstancedModifierId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -541,63 +601,19 @@ public final class AbilityIdentifierOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                abilityCasterId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 8
-              case 32: {
-                instancedAbilityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 40: {
-                instancedModifierId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 40
-              case 56: {
-                localId_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 80: {
-                modifierOwnerId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 112: {
-                isServerbuffModifier_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int instancedAbilityId_ ;
       /**
@@ -616,7 +632,6 @@ public final class AbilityIdentifierOuterClass {
       public Builder setInstancedAbilityId(int value) {
         
         instancedAbilityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -625,7 +640,7 @@ public final class AbilityIdentifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInstancedAbilityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         instancedAbilityId_ = 0;
         onChanged();
         return this;
@@ -648,7 +663,6 @@ public final class AbilityIdentifierOuterClass {
       public Builder setModifierOwnerId(int value) {
         
         modifierOwnerId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -657,7 +671,7 @@ public final class AbilityIdentifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearModifierOwnerId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         modifierOwnerId_ = 0;
         onChanged();
         return this;
@@ -680,7 +694,6 @@ public final class AbilityIdentifierOuterClass {
       public Builder setIsServerbuffModifier(boolean value) {
         
         isServerbuffModifier_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -689,7 +702,7 @@ public final class AbilityIdentifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsServerbuffModifier() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isServerbuffModifier_ = false;
         onChanged();
         return this;
@@ -712,7 +725,6 @@ public final class AbilityIdentifierOuterClass {
       public Builder setLocalId(int value) {
         
         localId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -721,7 +733,7 @@ public final class AbilityIdentifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLocalId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         localId_ = 0;
         onChanged();
         return this;
@@ -744,7 +756,6 @@ public final class AbilityIdentifierOuterClass {
       public Builder setAbilityCasterId(int value) {
         
         abilityCasterId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -753,7 +764,7 @@ public final class AbilityIdentifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAbilityCasterId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         abilityCasterId_ = 0;
         onChanged();
         return this;
@@ -776,7 +787,6 @@ public final class AbilityIdentifierOuterClass {
       public Builder setInstancedModifierId(int value) {
         
         instancedModifierId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -785,7 +795,7 @@ public final class AbilityIdentifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInstancedModifierId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         instancedModifierId_ = 0;
         onChanged();
         return this;
@@ -823,18 +833,7 @@ public final class AbilityIdentifierOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityIdentifier(input, extensionRegistry);
       }
     };
 

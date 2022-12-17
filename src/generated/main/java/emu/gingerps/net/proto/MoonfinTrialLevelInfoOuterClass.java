@@ -57,6 +57,53 @@ public final class MoonfinTrialLevelInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MoonfinTrialLevelInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 104: {
+
+              openTime_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              bestRecord_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MoonfinTrialLevelInfoOuterClass.internal_static_MoonfinTrialLevelInfo_descriptor;
@@ -71,7 +118,7 @@ public final class MoonfinTrialLevelInfoOuterClass {
     }
 
     public static final int BEST_RECORD_FIELD_NUMBER = 15;
-    private int bestRecord_ = 0;
+    private int bestRecord_;
     /**
      * <code>uint32 best_record = 15;</code>
      * @return The bestRecord.
@@ -82,7 +129,7 @@ public final class MoonfinTrialLevelInfoOuterClass {
     }
 
     public static final int OPEN_TIME_FIELD_NUMBER = 13;
-    private int openTime_ = 0;
+    private int openTime_;
     /**
      * <code>uint32 open_time = 13;</code>
      * @return The openTime.
@@ -112,7 +159,7 @@ public final class MoonfinTrialLevelInfoOuterClass {
       if (bestRecord_ != 0) {
         output.writeUInt32(15, bestRecord_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +176,7 @@ public final class MoonfinTrialLevelInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, bestRecord_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -148,7 +195,7 @@ public final class MoonfinTrialLevelInfoOuterClass {
           != other.getBestRecord()) return false;
       if (getOpenTime()
           != other.getOpenTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -163,7 +210,7 @@ public final class MoonfinTrialLevelInfoOuterClass {
       hash = (53 * hash) + getBestRecord();
       hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getOpenTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -280,20 +327,26 @@ public final class MoonfinTrialLevelInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MoonfinTrialLevelInfoOuterClass.MoonfinTrialLevelInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         bestRecord_ = 0;
+
         openTime_ = 0;
+
         return this;
       }
 
@@ -320,19 +373,10 @@ public final class MoonfinTrialLevelInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MoonfinTrialLevelInfoOuterClass.MoonfinTrialLevelInfo buildPartial() {
         emu.gingerps.net.proto.MoonfinTrialLevelInfoOuterClass.MoonfinTrialLevelInfo result = new emu.gingerps.net.proto.MoonfinTrialLevelInfoOuterClass.MoonfinTrialLevelInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.bestRecord_ = bestRecord_;
+        result.openTime_ = openTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MoonfinTrialLevelInfoOuterClass.MoonfinTrialLevelInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.bestRecord_ = bestRecord_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.openTime_ = openTime_;
-        }
       }
 
       @java.lang.Override
@@ -385,7 +429,7 @@ public final class MoonfinTrialLevelInfoOuterClass {
         if (other.getOpenTime() != 0) {
           setOpenTime(other.getOpenTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -400,43 +444,19 @@ public final class MoonfinTrialLevelInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MoonfinTrialLevelInfoOuterClass.MoonfinTrialLevelInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 104: {
-                openTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              case 120: {
-                bestRecord_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MoonfinTrialLevelInfoOuterClass.MoonfinTrialLevelInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int bestRecord_ ;
       /**
@@ -455,7 +475,6 @@ public final class MoonfinTrialLevelInfoOuterClass {
       public Builder setBestRecord(int value) {
         
         bestRecord_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +483,7 @@ public final class MoonfinTrialLevelInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBestRecord() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         bestRecord_ = 0;
         onChanged();
         return this;
@@ -487,7 +506,6 @@ public final class MoonfinTrialLevelInfoOuterClass {
       public Builder setOpenTime(int value) {
         
         openTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -496,7 +514,7 @@ public final class MoonfinTrialLevelInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         openTime_ = 0;
         onChanged();
         return this;
@@ -534,18 +552,7 @@ public final class MoonfinTrialLevelInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MoonfinTrialLevelInfo(input, extensionRegistry);
       }
     };
 

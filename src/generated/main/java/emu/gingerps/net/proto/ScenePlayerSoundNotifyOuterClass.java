@@ -95,6 +95,68 @@ public final class ScenePlayerSoundNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ScenePlayerSoundNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 50: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (playPos_ != null) {
+                subBuilder = playPos_.toBuilder();
+              }
+              playPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(playPos_);
+                playPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              soundName_ = s;
+              break;
+            }
+            case 120: {
+              int rawValue = input.readEnum();
+
+              playType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.internal_static_ScenePlayerSoundNotify_descriptor;
@@ -248,11 +310,11 @@ public final class ScenePlayerSoundNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPlayPosOrBuilder() {
-      return playPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : playPos_;
+      return getPlayPos();
     }
 
     public static final int PLAY_TYPE_FIELD_NUMBER = 15;
-    private int playType_ = 0;
+    private int playType_;
     /**
      * <code>.ScenePlayerSoundNotify.PlaySoundType play_type = 15;</code>
      * @return The enum numeric value on the wire for playType.
@@ -265,13 +327,13 @@ public final class ScenePlayerSoundNotifyOuterClass {
      * @return The playType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType getPlayType() {
-      emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType result = emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType.forNumber(playType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType result = emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType.valueOf(playType_);
       return result == null ? emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType.UNRECOGNIZED : result;
     }
 
     public static final int SOUND_NAME_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object soundName_ = "";
+    private volatile java.lang.Object soundName_;
     /**
      * <code>string sound_name = 14;</code>
      * @return The soundName.
@@ -331,7 +393,7 @@ public final class ScenePlayerSoundNotifyOuterClass {
       if (playType_ != emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType.PLAY_SOUND_TYPE_NONE.getNumber()) {
         output.writeEnum(15, playType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -351,7 +413,7 @@ public final class ScenePlayerSoundNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(15, playType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -374,7 +436,7 @@ public final class ScenePlayerSoundNotifyOuterClass {
       if (playType_ != other.playType_) return false;
       if (!getSoundName()
           .equals(other.getSoundName())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -393,7 +455,7 @@ public final class ScenePlayerSoundNotifyOuterClass {
       hash = (53 * hash) + playType_;
       hash = (37 * hash) + SOUND_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getSoundName().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -520,25 +582,32 @@ public final class ScenePlayerSoundNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        playPos_ = null;
-        if (playPosBuilder_ != null) {
-          playPosBuilder_.dispose();
+        if (playPosBuilder_ == null) {
+          playPos_ = null;
+        } else {
+          playPos_ = null;
           playPosBuilder_ = null;
         }
         playType_ = 0;
+
         soundName_ = "";
+
         return this;
       }
 
@@ -565,24 +634,15 @@ public final class ScenePlayerSoundNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify buildPartial() {
         emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify result = new emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (playPosBuilder_ == null) {
+          result.playPos_ = playPos_;
+        } else {
+          result.playPos_ = playPosBuilder_.build();
+        }
+        result.playType_ = playType_;
+        result.soundName_ = soundName_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.playPos_ = playPosBuilder_ == null
-              ? playPos_
-              : playPosBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.playType_ = playType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.soundName_ = soundName_;
-        }
       }
 
       @java.lang.Override
@@ -637,10 +697,9 @@ public final class ScenePlayerSoundNotifyOuterClass {
         }
         if (!other.getSoundName().isEmpty()) {
           soundName_ = other.soundName_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -655,50 +714,19 @@ public final class ScenePlayerSoundNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 50: {
-                input.readMessage(
-                    getPlayPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 50
-              case 114: {
-                soundName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 114
-              case 120: {
-                playType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector playPos_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -708,7 +736,7 @@ public final class ScenePlayerSoundNotifyOuterClass {
        * @return Whether the playPos field is set.
        */
       public boolean hasPlayPos() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return playPosBuilder_ != null || playPos_ != null;
       }
       /**
        * <code>.Vector play_pos = 6;</code>
@@ -730,11 +758,11 @@ public final class ScenePlayerSoundNotifyOuterClass {
             throw new NullPointerException();
           }
           playPos_ = value;
+          onChanged();
         } else {
           playPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -744,11 +772,11 @@ public final class ScenePlayerSoundNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (playPosBuilder_ == null) {
           playPos_ = builderForValue.build();
+          onChanged();
         } else {
           playPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -756,38 +784,38 @@ public final class ScenePlayerSoundNotifyOuterClass {
        */
       public Builder mergePlayPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (playPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            playPos_ != null &&
-            playPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getPlayPosBuilder().mergeFrom(value);
+          if (playPos_ != null) {
+            playPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(playPos_).mergeFrom(value).buildPartial();
           } else {
             playPos_ = value;
           }
+          onChanged();
         } else {
           playPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector play_pos = 6;</code>
        */
       public Builder clearPlayPos() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        playPos_ = null;
-        if (playPosBuilder_ != null) {
-          playPosBuilder_.dispose();
+        if (playPosBuilder_ == null) {
+          playPos_ = null;
+          onChanged();
+        } else {
+          playPos_ = null;
           playPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector play_pos = 6;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPlayPosBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getPlayPosFieldBuilder().getBuilder();
       }
@@ -833,8 +861,8 @@ public final class ScenePlayerSoundNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setPlayTypeValue(int value) {
+        
         playType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -844,7 +872,8 @@ public final class ScenePlayerSoundNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType getPlayType() {
-        emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType result = emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType.forNumber(playType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType result = emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType.valueOf(playType_);
         return result == null ? emu.gingerps.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType.UNRECOGNIZED : result;
       }
       /**
@@ -856,7 +885,7 @@ public final class ScenePlayerSoundNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         playType_ = value.getNumber();
         onChanged();
         return this;
@@ -866,7 +895,7 @@ public final class ScenePlayerSoundNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         playType_ = 0;
         onChanged();
         return this;
@@ -913,9 +942,11 @@ public final class ScenePlayerSoundNotifyOuterClass {
        */
       public Builder setSoundName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         soundName_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -924,8 +955,8 @@ public final class ScenePlayerSoundNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSoundName() {
+        
         soundName_ = getDefaultInstance().getSoundName();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -936,10 +967,12 @@ public final class ScenePlayerSoundNotifyOuterClass {
        */
       public Builder setSoundNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         soundName_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -976,18 +1009,7 @@ public final class ScenePlayerSoundNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ScenePlayerSoundNotify(input, extensionRegistry);
       }
     };
 

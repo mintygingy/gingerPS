@@ -129,6 +129,88 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CrystalLinkDungeonInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              initGalleryProgress_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                buffInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              buffInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                dungeonAvatarInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              dungeonAvatarInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 104: {
+
+              isUpperPart_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              difficultyId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          buffInfoList_ = java.util.Collections.unmodifiableList(buffInfoList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          dungeonAvatarInfoList_ = java.util.Collections.unmodifiableList(dungeonAvatarInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CrystalLinkDungeonInfoNotifyOuterClass.internal_static_CrystalLinkDungeonInfoNotify_descriptor;
@@ -143,7 +225,6 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
     }
 
     public static final int BUFF_INFO_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo> buffInfoList_;
     /**
      * <code>repeated .CrystalLinkBuffInfo buff_info_list = 11;</code>
@@ -184,7 +265,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 5;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 5;</code>
      * @return The levelId.
@@ -195,7 +276,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
     }
 
     public static final int IS_UPPER_PART_FIELD_NUMBER = 13;
-    private boolean isUpperPart_ = false;
+    private boolean isUpperPart_;
     /**
      * <code>bool is_upper_part = 13;</code>
      * @return The isUpperPart.
@@ -206,7 +287,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
     }
 
     public static final int DIFFICULTY_ID_FIELD_NUMBER = 14;
-    private int difficultyId_ = 0;
+    private int difficultyId_;
     /**
      * <code>uint32 difficulty_id = 14;</code>
      * @return The difficultyId.
@@ -217,7 +298,6 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
     }
 
     public static final int DUNGEON_AVATAR_INFO_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfo> dungeonAvatarInfoList_;
     /**
      * <code>repeated .CrystalLinkDungeonAvatarInfo dungeon_avatar_info_list = 12;</code>
@@ -258,7 +338,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
     }
 
     public static final int INIT_GALLERY_PROGRESS_FIELD_NUMBER = 4;
-    private int initGalleryProgress_ = 0;
+    private int initGalleryProgress_;
     /**
      * <code>uint32 init_gallery_progress = 4;</code>
      * @return The initGalleryProgress.
@@ -300,7 +380,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
       if (difficultyId_ != 0) {
         output.writeUInt32(14, difficultyId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -333,7 +413,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, difficultyId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -360,7 +440,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
           .equals(other.getDungeonAvatarInfoListList())) return false;
       if (getInitGalleryProgress()
           != other.getInitGalleryProgress()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -388,7 +468,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
       }
       hash = (37 * hash) + INIT_GALLERY_PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getInitGalleryProgress();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -515,36 +595,44 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CrystalLinkDungeonInfoNotifyOuterClass.CrystalLinkDungeonInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBuffInfoListFieldBuilder();
+          getDungeonAvatarInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (buffInfoListBuilder_ == null) {
           buffInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          buffInfoList_ = null;
           buffInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         levelId_ = 0;
+
         isUpperPart_ = false;
+
         difficultyId_ = 0;
+
         if (dungeonAvatarInfoListBuilder_ == null) {
           dungeonAvatarInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          dungeonAvatarInfoList_ = null;
           dungeonAvatarInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         initGalleryProgress_ = 0;
+
         return this;
       }
 
@@ -571,13 +659,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CrystalLinkDungeonInfoNotifyOuterClass.CrystalLinkDungeonInfoNotify buildPartial() {
         emu.gingerps.net.proto.CrystalLinkDungeonInfoNotifyOuterClass.CrystalLinkDungeonInfoNotify result = new emu.gingerps.net.proto.CrystalLinkDungeonInfoNotifyOuterClass.CrystalLinkDungeonInfoNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CrystalLinkDungeonInfoNotifyOuterClass.CrystalLinkDungeonInfoNotify result) {
+        int from_bitField0_ = bitField0_;
         if (buffInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             buffInfoList_ = java.util.Collections.unmodifiableList(buffInfoList_);
@@ -587,31 +669,21 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
         } else {
           result.buffInfoList_ = buffInfoListBuilder_.build();
         }
+        result.levelId_ = levelId_;
+        result.isUpperPart_ = isUpperPart_;
+        result.difficultyId_ = difficultyId_;
         if (dungeonAvatarInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             dungeonAvatarInfoList_ = java.util.Collections.unmodifiableList(dungeonAvatarInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.dungeonAvatarInfoList_ = dungeonAvatarInfoList_;
         } else {
           result.dungeonAvatarInfoList_ = dungeonAvatarInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CrystalLinkDungeonInfoNotifyOuterClass.CrystalLinkDungeonInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.levelId_ = levelId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isUpperPart_ = isUpperPart_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.difficultyId_ = difficultyId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.initGalleryProgress_ = initGalleryProgress_;
-        }
+        result.initGalleryProgress_ = initGalleryProgress_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -697,7 +769,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
           if (!other.dungeonAvatarInfoList_.isEmpty()) {
             if (dungeonAvatarInfoList_.isEmpty()) {
               dungeonAvatarInfoList_ = other.dungeonAvatarInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureDungeonAvatarInfoListIsMutable();
               dungeonAvatarInfoList_.addAll(other.dungeonAvatarInfoList_);
@@ -710,7 +782,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
               dungeonAvatarInfoListBuilder_.dispose();
               dungeonAvatarInfoListBuilder_ = null;
               dungeonAvatarInfoList_ = other.dungeonAvatarInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000002);
               dungeonAvatarInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDungeonAvatarInfoListFieldBuilder() : null;
@@ -722,7 +794,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
         if (other.getInitGalleryProgress() != 0) {
           setInitGalleryProgress(other.getInitGalleryProgress());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -737,76 +809,17 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CrystalLinkDungeonInfoNotifyOuterClass.CrystalLinkDungeonInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                initGalleryProgress_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 32
-              case 40: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 90: {
-                emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo.parser(),
-                        extensionRegistry);
-                if (buffInfoListBuilder_ == null) {
-                  ensureBuffInfoListIsMutable();
-                  buffInfoList_.add(m);
-                } else {
-                  buffInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              case 98: {
-                emu.gingerps.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfo.parser(),
-                        extensionRegistry);
-                if (dungeonAvatarInfoListBuilder_ == null) {
-                  ensureDungeonAvatarInfoListIsMutable();
-                  dungeonAvatarInfoList_.add(m);
-                } else {
-                  dungeonAvatarInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              case 104: {
-                isUpperPart_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              case 112: {
-                difficultyId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CrystalLinkDungeonInfoNotifyOuterClass.CrystalLinkDungeonInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1068,7 +1081,6 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1077,7 +1089,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -1100,7 +1112,6 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
       public Builder setIsUpperPart(boolean value) {
         
         isUpperPart_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1109,7 +1120,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsUpperPart() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isUpperPart_ = false;
         onChanged();
         return this;
@@ -1132,7 +1143,6 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
       public Builder setDifficultyId(int value) {
         
         difficultyId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1141,7 +1151,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficultyId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         difficultyId_ = 0;
         onChanged();
         return this;
@@ -1150,9 +1160,9 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfo> dungeonAvatarInfoList_ =
         java.util.Collections.emptyList();
       private void ensureDungeonAvatarInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           dungeonAvatarInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfo>(dungeonAvatarInfoList_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1302,7 +1312,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
       public Builder clearDungeonAvatarInfoList() {
         if (dungeonAvatarInfoListBuilder_ == null) {
           dungeonAvatarInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           dungeonAvatarInfoListBuilder_.clear();
@@ -1379,7 +1389,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
           dungeonAvatarInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfo, emu.gingerps.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfo.Builder, emu.gingerps.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfoOrBuilder>(
                   dungeonAvatarInfoList_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           dungeonAvatarInfoList_ = null;
@@ -1404,7 +1414,6 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
       public Builder setInitGalleryProgress(int value) {
         
         initGalleryProgress_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1413,7 +1422,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInitGalleryProgress() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         initGalleryProgress_ = 0;
         onChanged();
         return this;
@@ -1451,18 +1460,7 @@ public final class CrystalLinkDungeonInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CrystalLinkDungeonInfoNotify(input, extensionRegistry);
       }
     };
 

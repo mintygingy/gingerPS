@@ -109,6 +109,77 @@ public final class ClientLogBodyLoginOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ClientLogBodyLogin(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              actionType_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              actionResult_ = s;
+              break;
+            }
+            case 24: {
+
+              actionTime_ = input.readUInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              xg_ = s;
+              break;
+            }
+            case 40: {
+
+              signalLevel_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              dns_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ClientLogBodyLoginOuterClass.internal_static_ClientLogBodyLogin_descriptor;
@@ -123,8 +194,7 @@ public final class ClientLogBodyLoginOuterClass {
     }
 
     public static final int ACTION_TYPE_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object actionType_ = "";
+    private volatile java.lang.Object actionType_;
     /**
      * <code>string action_type = 1;</code>
      * @return The actionType.
@@ -162,8 +232,7 @@ public final class ClientLogBodyLoginOuterClass {
     }
 
     public static final int ACTION_RESULT_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object actionResult_ = "";
+    private volatile java.lang.Object actionResult_;
     /**
      * <code>string action_result = 2;</code>
      * @return The actionResult.
@@ -201,7 +270,7 @@ public final class ClientLogBodyLoginOuterClass {
     }
 
     public static final int ACTION_TIME_FIELD_NUMBER = 3;
-    private int actionTime_ = 0;
+    private int actionTime_;
     /**
      * <code>uint32 action_time = 3;</code>
      * @return The actionTime.
@@ -212,8 +281,7 @@ public final class ClientLogBodyLoginOuterClass {
     }
 
     public static final int XG_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object xg_ = "";
+    private volatile java.lang.Object xg_;
     /**
      * <code>string xg = 4;</code>
      * @return The xg.
@@ -251,7 +319,7 @@ public final class ClientLogBodyLoginOuterClass {
     }
 
     public static final int SIGNAL_LEVEL_FIELD_NUMBER = 5;
-    private int signalLevel_ = 0;
+    private int signalLevel_;
     /**
      * <code>uint32 signal_level = 5;</code>
      * @return The signalLevel.
@@ -262,8 +330,7 @@ public final class ClientLogBodyLoginOuterClass {
     }
 
     public static final int DNS_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object dns_ = "";
+    private volatile java.lang.Object dns_;
     /**
      * <code>string dns = 6;</code>
      * @return The dns.
@@ -332,7 +399,7 @@ public final class ClientLogBodyLoginOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dns_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, dns_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -361,7 +428,7 @@ public final class ClientLogBodyLoginOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dns_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, dns_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -388,7 +455,7 @@ public final class ClientLogBodyLoginOuterClass {
           != other.getSignalLevel()) return false;
       if (!getDns()
           .equals(other.getDns())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -411,7 +478,7 @@ public final class ClientLogBodyLoginOuterClass {
       hash = (53 * hash) + getSignalLevel();
       hash = (37 * hash) + DNS_FIELD_NUMBER;
       hash = (53 * hash) + getDns().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -528,24 +595,34 @@ public final class ClientLogBodyLoginOuterClass {
 
       // Construct using emu.gingerps.net.proto.ClientLogBodyLoginOuterClass.ClientLogBodyLogin.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         actionType_ = "";
+
         actionResult_ = "";
+
         actionTime_ = 0;
+
         xg_ = "";
+
         signalLevel_ = 0;
+
         dns_ = "";
+
         return this;
       }
 
@@ -572,31 +649,14 @@ public final class ClientLogBodyLoginOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ClientLogBodyLoginOuterClass.ClientLogBodyLogin buildPartial() {
         emu.gingerps.net.proto.ClientLogBodyLoginOuterClass.ClientLogBodyLogin result = new emu.gingerps.net.proto.ClientLogBodyLoginOuterClass.ClientLogBodyLogin(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.actionType_ = actionType_;
+        result.actionResult_ = actionResult_;
+        result.actionTime_ = actionTime_;
+        result.xg_ = xg_;
+        result.signalLevel_ = signalLevel_;
+        result.dns_ = dns_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ClientLogBodyLoginOuterClass.ClientLogBodyLogin result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.actionType_ = actionType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.actionResult_ = actionResult_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.actionTime_ = actionTime_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.xg_ = xg_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.signalLevel_ = signalLevel_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.dns_ = dns_;
-        }
       }
 
       @java.lang.Override
@@ -645,12 +705,10 @@ public final class ClientLogBodyLoginOuterClass {
         if (other == emu.gingerps.net.proto.ClientLogBodyLoginOuterClass.ClientLogBodyLogin.getDefaultInstance()) return this;
         if (!other.getActionType().isEmpty()) {
           actionType_ = other.actionType_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getActionResult().isEmpty()) {
           actionResult_ = other.actionResult_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getActionTime() != 0) {
@@ -658,7 +716,6 @@ public final class ClientLogBodyLoginOuterClass {
         }
         if (!other.getXg().isEmpty()) {
           xg_ = other.xg_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.getSignalLevel() != 0) {
@@ -666,10 +723,9 @@ public final class ClientLogBodyLoginOuterClass {
         }
         if (!other.getDns().isEmpty()) {
           dns_ = other.dns_;
-          bitField0_ |= 0x00000020;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -684,63 +740,19 @@ public final class ClientLogBodyLoginOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ClientLogBodyLoginOuterClass.ClientLogBodyLogin parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                actionType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                actionResult_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 24: {
-                actionTime_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 34: {
-                xg_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 40: {
-                signalLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 50: {
-                dns_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ClientLogBodyLoginOuterClass.ClientLogBodyLogin) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object actionType_ = "";
       /**
@@ -783,9 +795,11 @@ public final class ClientLogBodyLoginOuterClass {
        */
       public Builder setActionType(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         actionType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -794,8 +808,8 @@ public final class ClientLogBodyLoginOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActionType() {
+        
         actionType_ = getDefaultInstance().getActionType();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -806,10 +820,12 @@ public final class ClientLogBodyLoginOuterClass {
        */
       public Builder setActionTypeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         actionType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -855,9 +871,11 @@ public final class ClientLogBodyLoginOuterClass {
        */
       public Builder setActionResult(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         actionResult_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -866,8 +884,8 @@ public final class ClientLogBodyLoginOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActionResult() {
+        
         actionResult_ = getDefaultInstance().getActionResult();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -878,10 +896,12 @@ public final class ClientLogBodyLoginOuterClass {
        */
       public Builder setActionResultBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         actionResult_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -903,7 +923,6 @@ public final class ClientLogBodyLoginOuterClass {
       public Builder setActionTime(int value) {
         
         actionTime_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -912,7 +931,7 @@ public final class ClientLogBodyLoginOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActionTime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         actionTime_ = 0;
         onChanged();
         return this;
@@ -959,9 +978,11 @@ public final class ClientLogBodyLoginOuterClass {
        */
       public Builder setXg(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         xg_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -970,8 +991,8 @@ public final class ClientLogBodyLoginOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearXg() {
+        
         xg_ = getDefaultInstance().getXg();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -982,10 +1003,12 @@ public final class ClientLogBodyLoginOuterClass {
        */
       public Builder setXgBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         xg_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1007,7 +1030,6 @@ public final class ClientLogBodyLoginOuterClass {
       public Builder setSignalLevel(int value) {
         
         signalLevel_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1016,7 +1038,7 @@ public final class ClientLogBodyLoginOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSignalLevel() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         signalLevel_ = 0;
         onChanged();
         return this;
@@ -1063,9 +1085,11 @@ public final class ClientLogBodyLoginOuterClass {
        */
       public Builder setDns(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         dns_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1074,8 +1098,8 @@ public final class ClientLogBodyLoginOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDns() {
+        
         dns_ = getDefaultInstance().getDns();
-        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1086,10 +1110,12 @@ public final class ClientLogBodyLoginOuterClass {
        */
       public Builder setDnsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         dns_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1126,18 +1152,7 @@ public final class ClientLogBodyLoginOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ClientLogBodyLogin(input, extensionRegistry);
       }
     };
 

@@ -83,6 +83,62 @@ public final class EvtRushMoveNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtRushMoveNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo.Builder subBuilder = null;
+              if (evtRushMoveInfo_ != null) {
+                subBuilder = evtRushMoveInfo_.toBuilder();
+              }
+              evtRushMoveInfo_ = input.readMessage(emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(evtRushMoveInfo_);
+                evtRushMoveInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              forwardType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtRushMoveNotifyOuterClass.internal_static_EvtRushMoveNotify_descriptor;
@@ -119,11 +175,11 @@ public final class EvtRushMoveNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfoOrBuilder getEvtRushMoveInfoOrBuilder() {
-      return evtRushMoveInfo_ == null ? emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo.getDefaultInstance() : evtRushMoveInfo_;
+      return getEvtRushMoveInfo();
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 10;
-    private int forwardType_ = 0;
+    private int forwardType_;
     /**
      * <code>.ForwardType forward_type = 10;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -136,7 +192,8 @@ public final class EvtRushMoveNotifyOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
@@ -160,7 +217,7 @@ public final class EvtRushMoveNotifyOuterClass {
       if (forwardType_ != emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
         output.writeEnum(10, forwardType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class EvtRushMoveNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, forwardType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -198,7 +255,7 @@ public final class EvtRushMoveNotifyOuterClass {
             .equals(other.getEvtRushMoveInfo())) return false;
       }
       if (forwardType_ != other.forwardType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -215,7 +272,7 @@ public final class EvtRushMoveNotifyOuterClass {
       }
       hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + forwardType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -343,24 +400,30 @@ public final class EvtRushMoveNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtRushMoveNotifyOuterClass.EvtRushMoveNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        evtRushMoveInfo_ = null;
-        if (evtRushMoveInfoBuilder_ != null) {
-          evtRushMoveInfoBuilder_.dispose();
+        if (evtRushMoveInfoBuilder_ == null) {
+          evtRushMoveInfo_ = null;
+        } else {
+          evtRushMoveInfo_ = null;
           evtRushMoveInfoBuilder_ = null;
         }
         forwardType_ = 0;
+
         return this;
       }
 
@@ -387,21 +450,14 @@ public final class EvtRushMoveNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtRushMoveNotifyOuterClass.EvtRushMoveNotify buildPartial() {
         emu.gingerps.net.proto.EvtRushMoveNotifyOuterClass.EvtRushMoveNotify result = new emu.gingerps.net.proto.EvtRushMoveNotifyOuterClass.EvtRushMoveNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (evtRushMoveInfoBuilder_ == null) {
+          result.evtRushMoveInfo_ = evtRushMoveInfo_;
+        } else {
+          result.evtRushMoveInfo_ = evtRushMoveInfoBuilder_.build();
+        }
+        result.forwardType_ = forwardType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtRushMoveNotifyOuterClass.EvtRushMoveNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.evtRushMoveInfo_ = evtRushMoveInfoBuilder_ == null
-              ? evtRushMoveInfo_
-              : evtRushMoveInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.forwardType_ = forwardType_;
-        }
       }
 
       @java.lang.Override
@@ -454,7 +510,7 @@ public final class EvtRushMoveNotifyOuterClass {
         if (other.forwardType_ != 0) {
           setForwardTypeValue(other.getForwardTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -469,45 +525,19 @@ public final class EvtRushMoveNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtRushMoveNotifyOuterClass.EvtRushMoveNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getEvtRushMoveInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 80: {
-                forwardType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtRushMoveNotifyOuterClass.EvtRushMoveNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo evtRushMoveInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -517,7 +547,7 @@ public final class EvtRushMoveNotifyOuterClass {
        * @return Whether the evtRushMoveInfo field is set.
        */
       public boolean hasEvtRushMoveInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return evtRushMoveInfoBuilder_ != null || evtRushMoveInfo_ != null;
       }
       /**
        * <code>.EvtRushMoveInfo evt_rush_move_info = 1;</code>
@@ -539,11 +569,11 @@ public final class EvtRushMoveNotifyOuterClass {
             throw new NullPointerException();
           }
           evtRushMoveInfo_ = value;
+          onChanged();
         } else {
           evtRushMoveInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -553,11 +583,11 @@ public final class EvtRushMoveNotifyOuterClass {
           emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo.Builder builderForValue) {
         if (evtRushMoveInfoBuilder_ == null) {
           evtRushMoveInfo_ = builderForValue.build();
+          onChanged();
         } else {
           evtRushMoveInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -565,38 +595,38 @@ public final class EvtRushMoveNotifyOuterClass {
        */
       public Builder mergeEvtRushMoveInfo(emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo value) {
         if (evtRushMoveInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            evtRushMoveInfo_ != null &&
-            evtRushMoveInfo_ != emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo.getDefaultInstance()) {
-            getEvtRushMoveInfoBuilder().mergeFrom(value);
+          if (evtRushMoveInfo_ != null) {
+            evtRushMoveInfo_ =
+              emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo.newBuilder(evtRushMoveInfo_).mergeFrom(value).buildPartial();
           } else {
             evtRushMoveInfo_ = value;
           }
+          onChanged();
         } else {
           evtRushMoveInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EvtRushMoveInfo evt_rush_move_info = 1;</code>
        */
       public Builder clearEvtRushMoveInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        evtRushMoveInfo_ = null;
-        if (evtRushMoveInfoBuilder_ != null) {
-          evtRushMoveInfoBuilder_.dispose();
+        if (evtRushMoveInfoBuilder_ == null) {
+          evtRushMoveInfo_ = null;
+          onChanged();
+        } else {
+          evtRushMoveInfo_ = null;
           evtRushMoveInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EvtRushMoveInfo evt_rush_move_info = 1;</code>
        */
       public emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo.Builder getEvtRushMoveInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getEvtRushMoveInfoFieldBuilder().getBuilder();
       }
@@ -642,8 +672,8 @@ public final class EvtRushMoveNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
+        
         forwardType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -653,7 +683,8 @@ public final class EvtRushMoveNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -665,7 +696,7 @@ public final class EvtRushMoveNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -675,7 +706,7 @@ public final class EvtRushMoveNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         forwardType_ = 0;
         onChanged();
         return this;
@@ -713,18 +744,7 @@ public final class EvtRushMoveNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtRushMoveNotify(input, extensionRegistry);
       }
     };
 

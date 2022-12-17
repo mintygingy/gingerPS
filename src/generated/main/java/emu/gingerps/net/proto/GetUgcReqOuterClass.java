@@ -104,6 +104,71 @@ public final class GetUgcReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetUgcReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+              int rawValue = input.readEnum();
+
+              ugcType_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              ugcGuid_ = input.readUInt64();
+              break;
+            }
+            case 56: {
+
+              isRequireBrief_ = input.readBool();
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              getUgcType_ = rawValue;
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+
+              ugcRecordUsage_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetUgcReqOuterClass.internal_static_GetUgcReq_descriptor;
@@ -118,7 +183,7 @@ public final class GetUgcReqOuterClass {
     }
 
     public static final int UGC_GUID_FIELD_NUMBER = 6;
-    private long ugcGuid_ = 0L;
+    private long ugcGuid_;
     /**
      * <code>uint64 ugc_guid = 6;</code>
      * @return The ugcGuid.
@@ -129,7 +194,7 @@ public final class GetUgcReqOuterClass {
     }
 
     public static final int UGC_TYPE_FIELD_NUMBER = 2;
-    private int ugcType_ = 0;
+    private int ugcType_;
     /**
      * <code>.UgcType ugc_type = 2;</code>
      * @return The enum numeric value on the wire for ugcType.
@@ -142,12 +207,13 @@ public final class GetUgcReqOuterClass {
      * @return The ugcType.
      */
     @java.lang.Override public emu.gingerps.net.proto.UgcTypeOuterClass.UgcType getUgcType() {
-      emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.forNumber(ugcType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.valueOf(ugcType_);
       return result == null ? emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
     }
 
     public static final int GET_UGC_TYPE_FIELD_NUMBER = 12;
-    private int getUgcType_ = 0;
+    private int getUgcType_;
     /**
      * <code>.GetUgcType get_ugc_type = 12;</code>
      * @return The enum numeric value on the wire for getUgcType.
@@ -160,12 +226,13 @@ public final class GetUgcReqOuterClass {
      * @return The getUgcType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType getGetUgcType() {
-      emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType result = emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType.forNumber(getUgcType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType result = emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType.valueOf(getUgcType_);
       return result == null ? emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType.UNRECOGNIZED : result;
     }
 
     public static final int UGC_RECORD_USAGE_FIELD_NUMBER = 13;
-    private int ugcRecordUsage_ = 0;
+    private int ugcRecordUsage_;
     /**
      * <code>.RecordUsage ugc_record_usage = 13;</code>
      * @return The enum numeric value on the wire for ugcRecordUsage.
@@ -178,12 +245,13 @@ public final class GetUgcReqOuterClass {
      * @return The ugcRecordUsage.
      */
     @java.lang.Override public emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage getUgcRecordUsage() {
-      emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage result = emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage.forNumber(ugcRecordUsage_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage result = emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage.valueOf(ugcRecordUsage_);
       return result == null ? emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage.UNRECOGNIZED : result;
     }
 
     public static final int IS_REQUIRE_BRIEF_FIELD_NUMBER = 7;
-    private boolean isRequireBrief_ = false;
+    private boolean isRequireBrief_;
     /**
      * <code>bool is_require_brief = 7;</code>
      * @return The isRequireBrief.
@@ -222,7 +290,7 @@ public final class GetUgcReqOuterClass {
       if (ugcRecordUsage_ != emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage.RECORD_USAGE_UGC_RECORD_USAGE_NONE.getNumber()) {
         output.writeEnum(13, ugcRecordUsage_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -251,7 +319,7 @@ public final class GetUgcReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, ugcRecordUsage_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -273,7 +341,7 @@ public final class GetUgcReqOuterClass {
       if (ugcRecordUsage_ != other.ugcRecordUsage_) return false;
       if (getIsRequireBrief()
           != other.getIsRequireBrief()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -296,7 +364,7 @@ public final class GetUgcReqOuterClass {
       hash = (37 * hash) + IS_REQUIRE_BRIEF_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsRequireBrief());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -424,23 +492,32 @@ public final class GetUgcReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetUgcReqOuterClass.GetUgcReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         ugcGuid_ = 0L;
+
         ugcType_ = 0;
+
         getUgcType_ = 0;
+
         ugcRecordUsage_ = 0;
+
         isRequireBrief_ = false;
+
         return this;
       }
 
@@ -467,28 +544,13 @@ public final class GetUgcReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetUgcReqOuterClass.GetUgcReq buildPartial() {
         emu.gingerps.net.proto.GetUgcReqOuterClass.GetUgcReq result = new emu.gingerps.net.proto.GetUgcReqOuterClass.GetUgcReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.ugcGuid_ = ugcGuid_;
+        result.ugcType_ = ugcType_;
+        result.getUgcType_ = getUgcType_;
+        result.ugcRecordUsage_ = ugcRecordUsage_;
+        result.isRequireBrief_ = isRequireBrief_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetUgcReqOuterClass.GetUgcReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.ugcGuid_ = ugcGuid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.ugcType_ = ugcType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.getUgcType_ = getUgcType_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.ugcRecordUsage_ = ugcRecordUsage_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.isRequireBrief_ = isRequireBrief_;
-        }
       }
 
       @java.lang.Override
@@ -550,7 +612,7 @@ public final class GetUgcReqOuterClass {
         if (other.getIsRequireBrief() != false) {
           setIsRequireBrief(other.getIsRequireBrief());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -565,58 +627,19 @@ public final class GetUgcReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetUgcReqOuterClass.GetUgcReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                ugcType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 48: {
-                ugcGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 56: {
-                isRequireBrief_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 56
-              case 96: {
-                getUgcType_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              case 104: {
-                ugcRecordUsage_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetUgcReqOuterClass.GetUgcReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long ugcGuid_ ;
       /**
@@ -635,7 +658,6 @@ public final class GetUgcReqOuterClass {
       public Builder setUgcGuid(long value) {
         
         ugcGuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -644,7 +666,7 @@ public final class GetUgcReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUgcGuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         ugcGuid_ = 0L;
         onChanged();
         return this;
@@ -664,8 +686,8 @@ public final class GetUgcReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUgcTypeValue(int value) {
+        
         ugcType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -675,7 +697,8 @@ public final class GetUgcReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.UgcTypeOuterClass.UgcType getUgcType() {
-        emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.forNumber(ugcType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.valueOf(ugcType_);
         return result == null ? emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
       }
       /**
@@ -687,7 +710,7 @@ public final class GetUgcReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         ugcType_ = value.getNumber();
         onChanged();
         return this;
@@ -697,7 +720,7 @@ public final class GetUgcReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUgcType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         ugcType_ = 0;
         onChanged();
         return this;
@@ -717,8 +740,8 @@ public final class GetUgcReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setGetUgcTypeValue(int value) {
+        
         getUgcType_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -728,7 +751,8 @@ public final class GetUgcReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType getGetUgcType() {
-        emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType result = emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType.forNumber(getUgcType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType result = emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType.valueOf(getUgcType_);
         return result == null ? emu.gingerps.net.proto.GetUgcTypeOuterClass.GetUgcType.UNRECOGNIZED : result;
       }
       /**
@@ -740,7 +764,7 @@ public final class GetUgcReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         getUgcType_ = value.getNumber();
         onChanged();
         return this;
@@ -750,7 +774,7 @@ public final class GetUgcReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGetUgcType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         getUgcType_ = 0;
         onChanged();
         return this;
@@ -770,8 +794,8 @@ public final class GetUgcReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUgcRecordUsageValue(int value) {
+        
         ugcRecordUsage_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -781,7 +805,8 @@ public final class GetUgcReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage getUgcRecordUsage() {
-        emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage result = emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage.forNumber(ugcRecordUsage_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage result = emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage.valueOf(ugcRecordUsage_);
         return result == null ? emu.gingerps.net.proto.RecordUsageOuterClass.RecordUsage.UNRECOGNIZED : result;
       }
       /**
@@ -793,7 +818,7 @@ public final class GetUgcReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        
         ugcRecordUsage_ = value.getNumber();
         onChanged();
         return this;
@@ -803,7 +828,7 @@ public final class GetUgcReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUgcRecordUsage() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         ugcRecordUsage_ = 0;
         onChanged();
         return this;
@@ -826,7 +851,6 @@ public final class GetUgcReqOuterClass {
       public Builder setIsRequireBrief(boolean value) {
         
         isRequireBrief_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -835,7 +859,7 @@ public final class GetUgcReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsRequireBrief() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         isRequireBrief_ = false;
         onChanged();
         return this;
@@ -873,18 +897,7 @@ public final class GetUgcReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetUgcReq(input, extensionRegistry);
       }
     };
 

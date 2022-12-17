@@ -63,6 +63,58 @@ public final class AvatarSatiationDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AvatarSatiationData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 53: {
+
+              penaltyFinishTime_ = input.readFloat();
+              break;
+            }
+            case 61: {
+
+              finishTime_ = input.readFloat();
+              break;
+            }
+            case 120: {
+
+              avatarGuid_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarSatiationDataOuterClass.internal_static_AvatarSatiationData_descriptor;
@@ -77,7 +129,7 @@ public final class AvatarSatiationDataOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 15;
-    private long avatarGuid_ = 0L;
+    private long avatarGuid_;
     /**
      * <code>uint64 avatar_guid = 15;</code>
      * @return The avatarGuid.
@@ -88,7 +140,7 @@ public final class AvatarSatiationDataOuterClass {
     }
 
     public static final int PENALTY_FINISH_TIME_FIELD_NUMBER = 6;
-    private float penaltyFinishTime_ = 0F;
+    private float penaltyFinishTime_;
     /**
      * <code>float penalty_finish_time = 6;</code>
      * @return The penaltyFinishTime.
@@ -99,7 +151,7 @@ public final class AvatarSatiationDataOuterClass {
     }
 
     public static final int FINISH_TIME_FIELD_NUMBER = 7;
-    private float finishTime_ = 0F;
+    private float finishTime_;
     /**
      * <code>float finish_time = 7;</code>
      * @return The finishTime.
@@ -123,16 +175,16 @@ public final class AvatarSatiationDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Float.floatToRawIntBits(penaltyFinishTime_) != 0) {
+      if (penaltyFinishTime_ != 0F) {
         output.writeFloat(6, penaltyFinishTime_);
       }
-      if (java.lang.Float.floatToRawIntBits(finishTime_) != 0) {
+      if (finishTime_ != 0F) {
         output.writeFloat(7, finishTime_);
       }
       if (avatarGuid_ != 0L) {
         output.writeUInt64(15, avatarGuid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -141,11 +193,11 @@ public final class AvatarSatiationDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Float.floatToRawIntBits(penaltyFinishTime_) != 0) {
+      if (penaltyFinishTime_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, penaltyFinishTime_);
       }
-      if (java.lang.Float.floatToRawIntBits(finishTime_) != 0) {
+      if (finishTime_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, finishTime_);
       }
@@ -153,7 +205,7 @@ public final class AvatarSatiationDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(15, avatarGuid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -176,7 +228,7 @@ public final class AvatarSatiationDataOuterClass {
       if (java.lang.Float.floatToIntBits(getFinishTime())
           != java.lang.Float.floatToIntBits(
               other.getFinishTime())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -196,7 +248,7 @@ public final class AvatarSatiationDataOuterClass {
       hash = (37 * hash) + FINISH_TIME_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getFinishTime());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -313,21 +365,28 @@ public final class AvatarSatiationDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         avatarGuid_ = 0L;
+
         penaltyFinishTime_ = 0F;
+
         finishTime_ = 0F;
+
         return this;
       }
 
@@ -354,22 +413,11 @@ public final class AvatarSatiationDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData buildPartial() {
         emu.gingerps.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData result = new emu.gingerps.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.avatarGuid_ = avatarGuid_;
+        result.penaltyFinishTime_ = penaltyFinishTime_;
+        result.finishTime_ = finishTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.avatarGuid_ = avatarGuid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.penaltyFinishTime_ = penaltyFinishTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.finishTime_ = finishTime_;
-        }
       }
 
       @java.lang.Override
@@ -425,7 +473,7 @@ public final class AvatarSatiationDataOuterClass {
         if (other.getFinishTime() != 0F) {
           setFinishTime(other.getFinishTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -440,48 +488,19 @@ public final class AvatarSatiationDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 53: {
-                penaltyFinishTime_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 53
-              case 61: {
-                finishTime_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 61
-              case 120: {
-                avatarGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long avatarGuid_ ;
       /**
@@ -500,7 +519,6 @@ public final class AvatarSatiationDataOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -509,7 +527,7 @@ public final class AvatarSatiationDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -532,7 +550,6 @@ public final class AvatarSatiationDataOuterClass {
       public Builder setPenaltyFinishTime(float value) {
         
         penaltyFinishTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -541,7 +558,7 @@ public final class AvatarSatiationDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPenaltyFinishTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         penaltyFinishTime_ = 0F;
         onChanged();
         return this;
@@ -564,7 +581,6 @@ public final class AvatarSatiationDataOuterClass {
       public Builder setFinishTime(float value) {
         
         finishTime_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -573,7 +589,7 @@ public final class AvatarSatiationDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishTime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         finishTime_ = 0F;
         onChanged();
         return this;
@@ -611,18 +627,7 @@ public final class AvatarSatiationDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AvatarSatiationData(input, extensionRegistry);
       }
     };
 

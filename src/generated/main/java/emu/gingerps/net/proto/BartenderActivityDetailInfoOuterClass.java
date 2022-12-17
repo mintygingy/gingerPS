@@ -143,6 +143,126 @@ public final class BartenderActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BartenderActivityDetailInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unlockItemList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unlockItemList_.addInt(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                unlockItemList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unlockItemList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                unlockTaskList_ = new java.util.ArrayList<emu.gingerps.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              unlockTaskList_.add(
+                  input.readMessage(emu.gingerps.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                unlockFormulaList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              unlockFormulaList_.addInt(input.readUInt32());
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                unlockFormulaList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unlockFormulaList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
+
+              isDevelopModuleOpen_ = input.readBool();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unlockLevelList_ = new java.util.ArrayList<emu.gingerps.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unlockLevelList_.add(
+                  input.readMessage(emu.gingerps.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
+
+              isContentClosed_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          unlockItemList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          unlockTaskList_ = java.util.Collections.unmodifiableList(unlockTaskList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          unlockFormulaList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unlockLevelList_ = java.util.Collections.unmodifiableList(unlockLevelList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.internal_static_BartenderActivityDetailInfo_descriptor;
@@ -157,7 +277,7 @@ public final class BartenderActivityDetailInfoOuterClass {
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 15;
-    private boolean isContentClosed_ = false;
+    private boolean isContentClosed_;
     /**
      * <code>bool is_content_closed = 15;</code>
      * @return The isContentClosed.
@@ -168,7 +288,6 @@ public final class BartenderActivityDetailInfoOuterClass {
     }
 
     public static final int UNLOCK_LEVEL_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo> unlockLevelList_;
     /**
      * <code>repeated .BartenderLevelInfo unlock_level_list = 10;</code>
@@ -209,7 +328,6 @@ public final class BartenderActivityDetailInfoOuterClass {
     }
 
     public static final int UNLOCK_ITEM_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unlockItemList_;
     /**
      * <code>repeated uint32 unlock_item_list = 3;</code>
@@ -238,7 +356,6 @@ public final class BartenderActivityDetailInfoOuterClass {
     private int unlockItemListMemoizedSerializedSize = -1;
 
     public static final int UNLOCK_FORMULA_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unlockFormulaList_;
     /**
      * <code>repeated uint32 unlock_formula_list = 6;</code>
@@ -267,7 +384,6 @@ public final class BartenderActivityDetailInfoOuterClass {
     private int unlockFormulaListMemoizedSerializedSize = -1;
 
     public static final int UNLOCK_TASK_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo> unlockTaskList_;
     /**
      * <code>repeated .BartenderTaskInfo unlock_task_list = 5;</code>
@@ -308,7 +424,7 @@ public final class BartenderActivityDetailInfoOuterClass {
     }
 
     public static final int IS_DEVELOP_MODULE_OPEN_FIELD_NUMBER = 9;
-    private boolean isDevelopModuleOpen_ = false;
+    private boolean isDevelopModuleOpen_;
     /**
      * <code>bool is_develop_module_open = 9;</code>
      * @return The isDevelopModuleOpen.
@@ -359,7 +475,7 @@ public final class BartenderActivityDetailInfoOuterClass {
       if (isContentClosed_ != false) {
         output.writeBool(15, isContentClosed_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -412,7 +528,7 @@ public final class BartenderActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isContentClosed_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -439,7 +555,7 @@ public final class BartenderActivityDetailInfoOuterClass {
           .equals(other.getUnlockTaskListList())) return false;
       if (getIsDevelopModuleOpen()
           != other.getIsDevelopModuleOpen()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -472,7 +588,7 @@ public final class BartenderActivityDetailInfoOuterClass {
       hash = (37 * hash) + IS_DEVELOP_MODULE_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsDevelopModuleOpen());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -589,36 +705,44 @@ public final class BartenderActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getUnlockLevelListFieldBuilder();
+          getUnlockTaskListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isContentClosed_ = false;
+
         if (unlockLevelListBuilder_ == null) {
           unlockLevelList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          unlockLevelList_ = null;
           unlockLevelListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         unlockItemList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         unlockFormulaList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (unlockTaskListBuilder_ == null) {
           unlockTaskList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          unlockTaskList_ = null;
           unlockTaskListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         isDevelopModuleOpen_ = false;
+
         return this;
       }
 
@@ -645,51 +769,39 @@ public final class BartenderActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo result = new emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.isContentClosed_ = isContentClosed_;
         if (unlockLevelListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             unlockLevelList_ = java.util.Collections.unmodifiableList(unlockLevelList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.unlockLevelList_ = unlockLevelList_;
         } else {
           result.unlockLevelList_ = unlockLevelListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           unlockItemList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.unlockItemList_ = unlockItemList_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           unlockFormulaList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.unlockFormulaList_ = unlockFormulaList_;
         if (unlockTaskListBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             unlockTaskList_ = java.util.Collections.unmodifiableList(unlockTaskList_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.unlockTaskList_ = unlockTaskList_;
         } else {
           result.unlockTaskList_ = unlockTaskListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isContentClosed_ = isContentClosed_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isDevelopModuleOpen_ = isDevelopModuleOpen_;
-        }
+        result.isDevelopModuleOpen_ = isDevelopModuleOpen_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -743,7 +855,7 @@ public final class BartenderActivityDetailInfoOuterClass {
           if (!other.unlockLevelList_.isEmpty()) {
             if (unlockLevelList_.isEmpty()) {
               unlockLevelList_ = other.unlockLevelList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureUnlockLevelListIsMutable();
               unlockLevelList_.addAll(other.unlockLevelList_);
@@ -756,7 +868,7 @@ public final class BartenderActivityDetailInfoOuterClass {
               unlockLevelListBuilder_.dispose();
               unlockLevelListBuilder_ = null;
               unlockLevelList_ = other.unlockLevelList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               unlockLevelListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUnlockLevelListFieldBuilder() : null;
@@ -768,7 +880,7 @@ public final class BartenderActivityDetailInfoOuterClass {
         if (!other.unlockItemList_.isEmpty()) {
           if (unlockItemList_.isEmpty()) {
             unlockItemList_ = other.unlockItemList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureUnlockItemListIsMutable();
             unlockItemList_.addAll(other.unlockItemList_);
@@ -778,7 +890,7 @@ public final class BartenderActivityDetailInfoOuterClass {
         if (!other.unlockFormulaList_.isEmpty()) {
           if (unlockFormulaList_.isEmpty()) {
             unlockFormulaList_ = other.unlockFormulaList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureUnlockFormulaListIsMutable();
             unlockFormulaList_.addAll(other.unlockFormulaList_);
@@ -789,7 +901,7 @@ public final class BartenderActivityDetailInfoOuterClass {
           if (!other.unlockTaskList_.isEmpty()) {
             if (unlockTaskList_.isEmpty()) {
               unlockTaskList_ = other.unlockTaskList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureUnlockTaskListIsMutable();
               unlockTaskList_.addAll(other.unlockTaskList_);
@@ -802,7 +914,7 @@ public final class BartenderActivityDetailInfoOuterClass {
               unlockTaskListBuilder_.dispose();
               unlockTaskListBuilder_ = null;
               unlockTaskList_ = other.unlockTaskList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000008);
               unlockTaskListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUnlockTaskListFieldBuilder() : null;
@@ -814,7 +926,7 @@ public final class BartenderActivityDetailInfoOuterClass {
         if (other.getIsDevelopModuleOpen() != false) {
           setIsDevelopModuleOpen(other.getIsDevelopModuleOpen());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -829,98 +941,17 @@ public final class BartenderActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                int v = input.readUInt32();
-                ensureUnlockItemListIsMutable();
-                unlockItemList_.addInt(v);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnlockItemListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unlockItemList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 26
-              case 42: {
-                emu.gingerps.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo.parser(),
-                        extensionRegistry);
-                if (unlockTaskListBuilder_ == null) {
-                  ensureUnlockTaskListIsMutable();
-                  unlockTaskList_.add(m);
-                } else {
-                  unlockTaskListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 48: {
-                int v = input.readUInt32();
-                ensureUnlockFormulaListIsMutable();
-                unlockFormulaList_.addInt(v);
-                break;
-              } // case 48
-              case 50: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnlockFormulaListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unlockFormulaList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 50
-              case 72: {
-                isDevelopModuleOpen_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 72
-              case 82: {
-                emu.gingerps.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo.parser(),
-                        extensionRegistry);
-                if (unlockLevelListBuilder_ == null) {
-                  ensureUnlockLevelListIsMutable();
-                  unlockLevelList_.add(m);
-                } else {
-                  unlockLevelListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              case 120: {
-                isContentClosed_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -942,7 +973,6 @@ public final class BartenderActivityDetailInfoOuterClass {
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -951,7 +981,7 @@ public final class BartenderActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -960,9 +990,9 @@ public final class BartenderActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo> unlockLevelList_ =
         java.util.Collections.emptyList();
       private void ensureUnlockLevelListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           unlockLevelList_ = new java.util.ArrayList<emu.gingerps.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo>(unlockLevelList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1112,7 +1142,7 @@ public final class BartenderActivityDetailInfoOuterClass {
       public Builder clearUnlockLevelList() {
         if (unlockLevelListBuilder_ == null) {
           unlockLevelList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           unlockLevelListBuilder_.clear();
@@ -1189,7 +1219,7 @@ public final class BartenderActivityDetailInfoOuterClass {
           unlockLevelListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo, emu.gingerps.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo.Builder, emu.gingerps.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfoOrBuilder>(
                   unlockLevelList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           unlockLevelList_ = null;
@@ -1199,10 +1229,10 @@ public final class BartenderActivityDetailInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList unlockItemList_ = emptyIntList();
       private void ensureUnlockItemListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           unlockItemList_ = mutableCopy(unlockItemList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 unlock_item_list = 3;</code>
@@ -1210,7 +1240,7 @@ public final class BartenderActivityDetailInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnlockItemListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(unlockItemList_) : unlockItemList_;
       }
       /**
@@ -1236,7 +1266,6 @@ public final class BartenderActivityDetailInfoOuterClass {
        */
       public Builder setUnlockItemList(
           int index, int value) {
-        
         ensureUnlockItemListIsMutable();
         unlockItemList_.setInt(index, value);
         onChanged();
@@ -1248,7 +1277,6 @@ public final class BartenderActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnlockItemList(int value) {
-        
         ensureUnlockItemListIsMutable();
         unlockItemList_.addInt(value);
         onChanged();
@@ -1273,17 +1301,17 @@ public final class BartenderActivityDetailInfoOuterClass {
        */
       public Builder clearUnlockItemList() {
         unlockItemList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList unlockFormulaList_ = emptyIntList();
       private void ensureUnlockFormulaListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           unlockFormulaList_ = mutableCopy(unlockFormulaList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated uint32 unlock_formula_list = 6;</code>
@@ -1291,7 +1319,7 @@ public final class BartenderActivityDetailInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnlockFormulaListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(unlockFormulaList_) : unlockFormulaList_;
       }
       /**
@@ -1317,7 +1345,6 @@ public final class BartenderActivityDetailInfoOuterClass {
        */
       public Builder setUnlockFormulaList(
           int index, int value) {
-        
         ensureUnlockFormulaListIsMutable();
         unlockFormulaList_.setInt(index, value);
         onChanged();
@@ -1329,7 +1356,6 @@ public final class BartenderActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnlockFormulaList(int value) {
-        
         ensureUnlockFormulaListIsMutable();
         unlockFormulaList_.addInt(value);
         onChanged();
@@ -1354,7 +1380,7 @@ public final class BartenderActivityDetailInfoOuterClass {
        */
       public Builder clearUnlockFormulaList() {
         unlockFormulaList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1362,9 +1388,9 @@ public final class BartenderActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo> unlockTaskList_ =
         java.util.Collections.emptyList();
       private void ensureUnlockTaskListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           unlockTaskList_ = new java.util.ArrayList<emu.gingerps.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo>(unlockTaskList_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1514,7 +1540,7 @@ public final class BartenderActivityDetailInfoOuterClass {
       public Builder clearUnlockTaskList() {
         if (unlockTaskListBuilder_ == null) {
           unlockTaskList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           unlockTaskListBuilder_.clear();
@@ -1591,7 +1617,7 @@ public final class BartenderActivityDetailInfoOuterClass {
           unlockTaskListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo, emu.gingerps.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo.Builder, emu.gingerps.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfoOrBuilder>(
                   unlockTaskList_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           unlockTaskList_ = null;
@@ -1616,7 +1642,6 @@ public final class BartenderActivityDetailInfoOuterClass {
       public Builder setIsDevelopModuleOpen(boolean value) {
         
         isDevelopModuleOpen_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1625,7 +1650,7 @@ public final class BartenderActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsDevelopModuleOpen() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isDevelopModuleOpen_ = false;
         onChanged();
         return this;
@@ -1663,18 +1688,7 @@ public final class BartenderActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BartenderActivityDetailInfo(input, extensionRegistry);
       }
     };
 

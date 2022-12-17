@@ -41,14 +41,14 @@ public final class SceneGalleryBalloonInfoOuterClass {
     /**
      * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo getScenePlayerBalloonInfoMapOrDefault(
+
+    emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo getScenePlayerBalloonInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValue);
+        emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValue);
     /**
      * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
      */
+
     emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo getScenePlayerBalloonInfoMapOrThrow(
         int key);
 
@@ -84,6 +84,62 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SceneGalleryBalloonInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+
+              endTime_ = input.readUInt32();
+              break;
+            }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                scenePlayerBalloonInfoMap_ = com.google.protobuf.MapField.newMapField(
+                    ScenePlayerBalloonInfoMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo>
+              scenePlayerBalloonInfoMap__ = input.readMessage(
+                  ScenePlayerBalloonInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              scenePlayerBalloonInfoMap_.getMutableMap().put(
+                  scenePlayerBalloonInfoMap__.getKey(), scenePlayerBalloonInfoMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -122,7 +178,6 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo> scenePlayerBalloonInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo>
@@ -133,12 +188,14 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
       }
       return scenePlayerBalloonInfoMap_;
     }
+
     public int getScenePlayerBalloonInfoMapCount() {
       return internalGetScenePlayerBalloonInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
      */
+
     @java.lang.Override
     public boolean containsScenePlayerBalloonInfoMap(
         int key) {
@@ -157,6 +214,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
      * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo> getScenePlayerBalloonInfoMapMap() {
       return internalGetScenePlayerBalloonInfoMap().getMap();
     }
@@ -164,11 +222,10 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
      * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo getScenePlayerBalloonInfoMapOrDefault(
+
+    public emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo getScenePlayerBalloonInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValue) {
+        emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo> map =
           internalGetScenePlayerBalloonInfoMap().getMap();
@@ -178,6 +235,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
      * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo getScenePlayerBalloonInfoMapOrThrow(
         int key) {
       
@@ -190,7 +248,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
     }
 
     public static final int END_TIME_FIELD_NUMBER = 9;
-    private int endTime_ = 0;
+    private int endTime_;
     /**
      * <code>uint32 end_time = 9;</code>
      * @return The endTime.
@@ -223,7 +281,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
           internalGetScenePlayerBalloonInfoMap(),
           ScenePlayerBalloonInfoMapDefaultEntryHolder.defaultEntry,
           13);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -246,7 +304,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(13, scenePlayerBalloonInfoMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -265,7 +323,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
           other.internalGetScenePlayerBalloonInfoMap())) return false;
       if (getEndTime()
           != other.getEndTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -282,7 +340,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
       }
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -421,20 +479,25 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
 
       // Construct using emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableScenePlayerBalloonInfoMap().clear();
         endTime_ = 0;
+
         return this;
       }
 
@@ -461,20 +524,12 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo result = new emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.scenePlayerBalloonInfoMap_ = internalGetScenePlayerBalloonInfoMap();
+        result.scenePlayerBalloonInfoMap_.makeImmutable();
+        result.endTime_ = endTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.scenePlayerBalloonInfoMap_ = internalGetScenePlayerBalloonInfoMap();
-          result.scenePlayerBalloonInfoMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.endTime_ = endTime_;
-        }
       }
 
       @java.lang.Override
@@ -523,11 +578,10 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
         if (other == emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo.getDefaultInstance()) return this;
         internalGetMutableScenePlayerBalloonInfoMap().mergeFrom(
             other.internalGetScenePlayerBalloonInfoMap());
-        bitField0_ |= 0x00000001;
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -542,44 +596,17 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                endTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 106: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo>
-                scenePlayerBalloonInfoMap__ = input.readMessage(
-                    ScenePlayerBalloonInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableScenePlayerBalloonInfoMap().getMutableMap().put(
-                    scenePlayerBalloonInfoMap__.getKey(), scenePlayerBalloonInfoMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -587,7 +614,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo> scenePlayerBalloonInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo>
-          internalGetScenePlayerBalloonInfoMap() {
+      internalGetScenePlayerBalloonInfoMap() {
         if (scenePlayerBalloonInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ScenePlayerBalloonInfoMapDefaultEntryHolder.defaultEntry);
@@ -595,7 +622,8 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
         return scenePlayerBalloonInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo>
-          internalGetMutableScenePlayerBalloonInfoMap() {
+      internalGetMutableScenePlayerBalloonInfoMap() {
+        onChanged();;
         if (scenePlayerBalloonInfoMap_ == null) {
           scenePlayerBalloonInfoMap_ = com.google.protobuf.MapField.newMapField(
               ScenePlayerBalloonInfoMapDefaultEntryHolder.defaultEntry);
@@ -603,16 +631,16 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
         if (!scenePlayerBalloonInfoMap_.isMutable()) {
           scenePlayerBalloonInfoMap_ = scenePlayerBalloonInfoMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return scenePlayerBalloonInfoMap_;
       }
+
       public int getScenePlayerBalloonInfoMapCount() {
         return internalGetScenePlayerBalloonInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
        */
+
       @java.lang.Override
       public boolean containsScenePlayerBalloonInfoMap(
           int key) {
@@ -631,6 +659,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
        * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo> getScenePlayerBalloonInfoMapMap() {
         return internalGetScenePlayerBalloonInfoMap().getMap();
       }
@@ -638,11 +667,10 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
        * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo getScenePlayerBalloonInfoMapOrDefault(
+
+      public emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo getScenePlayerBalloonInfoMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValue) {
+          emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo> map =
             internalGetScenePlayerBalloonInfoMap().getMap();
@@ -652,6 +680,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
        * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo getScenePlayerBalloonInfoMapOrThrow(
           int key) {
         
@@ -662,8 +691,8 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
         }
         return map.get(key);
       }
+
       public Builder clearScenePlayerBalloonInfoMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableScenePlayerBalloonInfoMap().getMutableMap()
             .clear();
         return this;
@@ -671,6 +700,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
       /**
        * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
        */
+
       public Builder removeScenePlayerBalloonInfoMap(
           int key) {
         
@@ -683,8 +713,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo>
-          getMutableScenePlayerBalloonInfoMap() {
-        bitField0_ |= 0x00000001;
+      getMutableScenePlayerBalloonInfoMap() {
         return internalGetMutableScenePlayerBalloonInfoMap().getMutableMap();
       }
       /**
@@ -694,20 +723,19 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
           int key,
           emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableScenePlayerBalloonInfoMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .BalloonPlayerInfo&gt; scene_player_balloon_info_map = 13;</code>
        */
+
       public Builder putAllScenePlayerBalloonInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo> values) {
         internalGetMutableScenePlayerBalloonInfoMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -728,7 +756,6 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
       public Builder setEndTime(int value) {
         
         endTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -737,7 +764,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         endTime_ = 0;
         onChanged();
         return this;
@@ -775,18 +802,7 @@ emu.gingerps.net.proto.BalloonPlayerInfoOuterClass.BalloonPlayerInfo defaultValu
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneGalleryBalloonInfo(input, extensionRegistry);
       }
     };
 

@@ -76,6 +76,61 @@ public final class HomeStakePlayRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeStakePlayRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              timestamp_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                engagedPlayerInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              engagedPlayerInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          engagedPlayerInfoList_ = java.util.Collections.unmodifiableList(engagedPlayerInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeStakePlayRecordOuterClass.internal_static_HomeStakePlayRecord_descriptor;
@@ -90,7 +145,6 @@ public final class HomeStakePlayRecordOuterClass {
     }
 
     public static final int ENGAGED_PLAYER_INFO_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo> engagedPlayerInfoList_;
     /**
      * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 7;</code>
@@ -131,7 +185,7 @@ public final class HomeStakePlayRecordOuterClass {
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 3;
-    private int timestamp_ = 0;
+    private int timestamp_;
     /**
      * <code>uint32 timestamp = 3;</code>
      * @return The timestamp.
@@ -161,7 +215,7 @@ public final class HomeStakePlayRecordOuterClass {
       for (int i = 0; i < engagedPlayerInfoList_.size(); i++) {
         output.writeMessage(7, engagedPlayerInfoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -178,7 +232,7 @@ public final class HomeStakePlayRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, engagedPlayerInfoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +251,7 @@ public final class HomeStakePlayRecordOuterClass {
           .equals(other.getEngagedPlayerInfoListList())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -214,7 +268,7 @@ public final class HomeStakePlayRecordOuterClass {
       }
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + getTimestamp();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +385,31 @@ public final class HomeStakePlayRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeStakePlayRecordOuterClass.HomeStakePlayRecord.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getEngagedPlayerInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (engagedPlayerInfoListBuilder_ == null) {
           engagedPlayerInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          engagedPlayerInfoList_ = null;
           engagedPlayerInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         timestamp_ = 0;
+
         return this;
       }
 
@@ -377,13 +436,7 @@ public final class HomeStakePlayRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeStakePlayRecordOuterClass.HomeStakePlayRecord buildPartial() {
         emu.gingerps.net.proto.HomeStakePlayRecordOuterClass.HomeStakePlayRecord result = new emu.gingerps.net.proto.HomeStakePlayRecordOuterClass.HomeStakePlayRecord(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomeStakePlayRecordOuterClass.HomeStakePlayRecord result) {
+        int from_bitField0_ = bitField0_;
         if (engagedPlayerInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             engagedPlayerInfoList_ = java.util.Collections.unmodifiableList(engagedPlayerInfoList_);
@@ -393,13 +446,9 @@ public final class HomeStakePlayRecordOuterClass {
         } else {
           result.engagedPlayerInfoList_ = engagedPlayerInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeStakePlayRecordOuterClass.HomeStakePlayRecord result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.timestamp_ = timestamp_;
-        }
+        result.timestamp_ = timestamp_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -475,7 +524,7 @@ public final class HomeStakePlayRecordOuterClass {
         if (other.getTimestamp() != 0) {
           setTimestamp(other.getTimestamp());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,48 +539,17 @@ public final class HomeStakePlayRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeStakePlayRecordOuterClass.HomeStakePlayRecord parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                timestamp_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 58: {
-                emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.parser(),
-                        extensionRegistry);
-                if (engagedPlayerInfoListBuilder_ == null) {
-                  ensureEngagedPlayerInfoListIsMutable();
-                  engagedPlayerInfoList_.add(m);
-                } else {
-                  engagedPlayerInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeStakePlayRecordOuterClass.HomeStakePlayRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -793,7 +811,6 @@ public final class HomeStakePlayRecordOuterClass {
       public Builder setTimestamp(int value) {
         
         timestamp_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -802,7 +819,7 @@ public final class HomeStakePlayRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         timestamp_ = 0;
         onChanged();
         return this;
@@ -840,18 +857,7 @@ public final class HomeStakePlayRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeStakePlayRecord(input, extensionRegistry);
       }
     };
 

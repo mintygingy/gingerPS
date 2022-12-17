@@ -47,14 +47,14 @@ public final class GCGPlayerFieldOuterClass {
     /**
      * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone getModifyZoneMapOrDefault(
+
+    emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone getModifyZoneMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue);
+        emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue);
     /**
      * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
      */
+
     emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone getModifyZoneMapOrThrow(
         int key);
 
@@ -282,6 +282,212 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue);
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGPlayerField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder subBuilder = null;
+              if (unk3300IPLMHKCNDLE_ != null) {
+                subBuilder = unk3300IPLMHKCNDLE_.toBuilder();
+              }
+              unk3300IPLMHKCNDLE_ = input.readMessage(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300IPLMHKCNDLE_);
+                unk3300IPLMHKCNDLE_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                waitingList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              waitingList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter.parser(), extensionRegistry));
+              break;
+            }
+            case 24: {
+
+              deckCardNum_ = input.readUInt32();
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder subBuilder = null;
+              if (unk3300EFNAEFBECHD_ != null) {
+                subBuilder = unk3300EFNAEFBECHD_.toBuilder();
+              }
+              unk3300EFNAEFBECHD_ = input.readMessage(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300EFNAEFBECHD_);
+                unk3300EFNAEFBECHD_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
+
+              unk3300IKJMGAHCFPM_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                modifyZoneMap_ = com.google.protobuf.MapField.newMapField(
+                    ModifyZoneMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone>
+              modifyZoneMap__ = input.readMessage(
+                  ModifyZoneMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              modifyZoneMap_.getMutableMap().put(
+                  modifyZoneMap__.getKey(), modifyZoneMap__.getValue());
+              break;
+            }
+            case 64: {
+
+              isPassed_ = input.readBool();
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder subBuilder = null;
+              if (unk3300EIHOMDLENMK_ != null) {
+                subBuilder = unk3300EIHOMDLENMK_.toBuilder();
+              }
+              unk3300EIHOMDLENMK_ = input.readMessage(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300EIHOMDLENMK_);
+                unk3300EIHOMDLENMK_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder subBuilder = null;
+              if (unk3300AOPJIOHMPOF_ != null) {
+                subBuilder = unk3300AOPJIOHMPOF_.toBuilder();
+              }
+              unk3300AOPJIOHMPOF_ = input.readMessage(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300AOPJIOHMPOF_);
+                unk3300AOPJIOHMPOF_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 90: {
+              emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder subBuilder = null;
+              if (unk3300INDJNJJJNKL_ != null) {
+                subBuilder = unk3300INDJNJJJNKL_.toBuilder();
+              }
+              unk3300INDJNJJJNKL_ = input.readMessage(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300INDJNJJJNKL_);
+                unk3300INDJNJJJNKL_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 96: {
+
+              unk3300FDFPHNDOJML_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                diceSideList_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              diceSideList_.add(rawValue);
+              break;
+            }
+            case 106: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  diceSideList_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                diceSideList_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+            case 112: {
+
+              unk3300GLNIFLOKBPM_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              unk3300PBECINKKHND_ = input.readUInt32();
+              break;
+            }
+            case 2434: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                intentionList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              intentionList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention.parser(), extensionRegistry));
+              break;
+            }
+            case 5848: {
+
+              unk3300GGHKFFADEAL_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          waitingList_ = java.util.Collections.unmodifiableList(waitingList_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          diceSideList_ = java.util.Collections.unmodifiableList(diceSideList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          intentionList_ = java.util.Collections.unmodifiableList(intentionList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGPlayerFieldOuterClass.internal_static_GCGPlayerField_descriptor;
@@ -308,7 +514,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue);
     }
 
     public static final int UNK3300_IKJMGAHCFPM_FIELD_NUMBER = 5;
-    private int unk3300IKJMGAHCFPM_ = 0;
+    private int unk3300IKJMGAHCFPM_;
     /**
      * <code>uint32 Unk3300_IKJMGAHCFPM = 5;</code>
      * @return The unk3300IKJMGAHCFPM.
@@ -330,7 +536,6 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone> modifyZoneMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone>
@@ -341,12 +546,14 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue);
       }
       return modifyZoneMap_;
     }
+
     public int getModifyZoneMapCount() {
       return internalGetModifyZoneMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
      */
+
     @java.lang.Override
     public boolean containsModifyZoneMap(
         int key) {
@@ -365,6 +572,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue);
      * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone> getModifyZoneMapMap() {
       return internalGetModifyZoneMap().getMap();
     }
@@ -372,11 +580,10 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue);
      * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone getModifyZoneMapOrDefault(
+
+    public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone getModifyZoneMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
+        emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone> map =
           internalGetModifyZoneMap().getMap();
@@ -386,6 +593,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
      * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone getModifyZoneMapOrThrow(
         int key) {
       
@@ -398,7 +606,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
     }
 
     public static final int UNK3300_GGHKFFADEAL_FIELD_NUMBER = 731;
-    private int unk3300GGHKFFADEAL_ = 0;
+    private int unk3300GGHKFFADEAL_;
     /**
      * <code>uint32 Unk3300_GGHKFFADEAL = 731;</code>
      * @return The unk3300GGHKFFADEAL.
@@ -431,11 +639,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZoneOrBuilder getUnk3300AOPJIOHMPOFOrBuilder() {
-      return unk3300AOPJIOHMPOF_ == null ? emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.getDefaultInstance() : unk3300AOPJIOHMPOF_;
+      return getUnk3300AOPJIOHMPOF();
     }
 
     public static final int UNK3300_FDFPHNDOJML_FIELD_NUMBER = 12;
-    private int unk3300FDFPHNDOJML_ = 0;
+    private int unk3300FDFPHNDOJML_;
     /**
      * <code>uint32 Unk3300_FDFPHNDOJML = 12;</code>
      * @return The unk3300FDFPHNDOJML.
@@ -468,7 +676,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZoneOrBuilder getUnk3300IPLMHKCNDLEOrBuilder() {
-      return unk3300IPLMHKCNDLE_ == null ? emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.getDefaultInstance() : unk3300IPLMHKCNDLE_;
+      return getUnk3300IPLMHKCNDLE();
     }
 
     public static final int UNK3300_EIHOMDLENMK_FIELD_NUMBER = 9;
@@ -494,11 +702,10 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZoneOrBuilder getUnk3300EIHOMDLENMKOrBuilder() {
-      return unk3300EIHOMDLENMK_ == null ? emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.getDefaultInstance() : unk3300EIHOMDLENMK_;
+      return getUnk3300EIHOMDLENMK();
     }
 
     public static final int WAITING_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter> waitingList_;
     /**
      * <code>repeated .GCGWaitingCharacter waiting_list = 2;</code>
@@ -539,7 +746,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
     }
 
     public static final int UNK3300_PBECINKKHND_FIELD_NUMBER = 15;
-    private int unk3300PBECINKKHND_ = 0;
+    private int unk3300PBECINKKHND_;
     /**
      * <code>uint32 Unk3300_PBECINKKHND = 15;</code>
      * @return The unk3300PBECINKKHND.
@@ -550,7 +757,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 6;
-    private int controllerId_ = 0;
+    private int controllerId_;
     /**
      * <code>uint32 controller_id = 6;</code>
      * @return The controllerId.
@@ -583,7 +790,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZoneOrBuilder getUnk3300INDJNJJJNKLOrBuilder() {
-      return unk3300INDJNJJJNKL_ == null ? emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.getDefaultInstance() : unk3300INDJNJJJNKL_;
+      return getUnk3300INDJNJJJNKL();
     }
 
     public static final int UNK3300_EFNAEFBECHD_FIELD_NUMBER = 4;
@@ -609,11 +816,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZoneOrBuilder getUnk3300EFNAEFBECHDOrBuilder() {
-      return unk3300EFNAEFBECHD_ == null ? emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.getDefaultInstance() : unk3300EFNAEFBECHD_;
+      return getUnk3300EFNAEFBECHD();
     }
 
     public static final int IS_PASSED_FIELD_NUMBER = 8;
-    private boolean isPassed_ = false;
+    private boolean isPassed_;
     /**
      * <code>bool is_passed = 8;</code>
      * @return The isPassed.
@@ -624,7 +831,6 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
     }
 
     public static final int INTENTION_LIST_FIELD_NUMBER = 304;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention> intentionList_;
     /**
      * <code>repeated .GCGPVEIntention intention_list = 304;</code>
@@ -665,14 +871,14 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
     }
 
     public static final int DICE_SIDE_LIST_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> diceSideList_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType> diceSideList_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType>() {
               public emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType convert(java.lang.Integer from) {
-                emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType result = emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType.forNumber(from);
+                @SuppressWarnings("deprecation")
+                emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType result = emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType.valueOf(from);
                 return result == null ? emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType.UNRECOGNIZED : result;
               }
             };
@@ -723,7 +929,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
     private int diceSideListMemoizedSerializedSize;
 
     public static final int DECK_CARD_NUM_FIELD_NUMBER = 3;
-    private int deckCardNum_ = 0;
+    private int deckCardNum_;
     /**
      * <code>uint32 deck_card_num = 3;</code>
      * @return The deckCardNum.
@@ -734,7 +940,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
     }
 
     public static final int UNK3300_GLNIFLOKBPM_FIELD_NUMBER = 14;
-    private int unk3300GLNIFLOKBPM_ = 0;
+    private int unk3300GLNIFLOKBPM_;
     /**
      * <code>uint32 Unk3300_GLNIFLOKBPM = 14;</code>
      * @return The unk3300GLNIFLOKBPM.
@@ -817,7 +1023,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       if (unk3300GGHKFFADEAL_ != 0) {
         output.writeUInt32(731, unk3300GGHKFFADEAL_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -908,7 +1114,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(731, unk3300GGHKFFADEAL_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -971,7 +1177,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           != other.getDeckCardNum()) return false;
       if (getUnk3300GLNIFLOKBPM()
           != other.getUnk3300GLNIFLOKBPM()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1035,7 +1241,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       hash = (53 * hash) + getDeckCardNum();
       hash = (37 * hash) + UNK3300_GLNIFLOKBPM_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300GLNIFLOKBPM();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1174,68 +1380,85 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
 
       // Construct using emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getWaitingListFieldBuilder();
+          getIntentionListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300IKJMGAHCFPM_ = 0;
+
         internalGetMutableModifyZoneMap().clear();
         unk3300GGHKFFADEAL_ = 0;
-        unk3300AOPJIOHMPOF_ = null;
-        if (unk3300AOPJIOHMPOFBuilder_ != null) {
-          unk3300AOPJIOHMPOFBuilder_.dispose();
+
+        if (unk3300AOPJIOHMPOFBuilder_ == null) {
+          unk3300AOPJIOHMPOF_ = null;
+        } else {
+          unk3300AOPJIOHMPOF_ = null;
           unk3300AOPJIOHMPOFBuilder_ = null;
         }
         unk3300FDFPHNDOJML_ = 0;
-        unk3300IPLMHKCNDLE_ = null;
-        if (unk3300IPLMHKCNDLEBuilder_ != null) {
-          unk3300IPLMHKCNDLEBuilder_.dispose();
+
+        if (unk3300IPLMHKCNDLEBuilder_ == null) {
+          unk3300IPLMHKCNDLE_ = null;
+        } else {
+          unk3300IPLMHKCNDLE_ = null;
           unk3300IPLMHKCNDLEBuilder_ = null;
         }
-        unk3300EIHOMDLENMK_ = null;
-        if (unk3300EIHOMDLENMKBuilder_ != null) {
-          unk3300EIHOMDLENMKBuilder_.dispose();
+        if (unk3300EIHOMDLENMKBuilder_ == null) {
+          unk3300EIHOMDLENMK_ = null;
+        } else {
+          unk3300EIHOMDLENMK_ = null;
           unk3300EIHOMDLENMKBuilder_ = null;
         }
         if (waitingListBuilder_ == null) {
           waitingList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          waitingList_ = null;
           waitingListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300PBECINKKHND_ = 0;
+
         controllerId_ = 0;
-        unk3300INDJNJJJNKL_ = null;
-        if (unk3300INDJNJJJNKLBuilder_ != null) {
-          unk3300INDJNJJJNKLBuilder_.dispose();
+
+        if (unk3300INDJNJJJNKLBuilder_ == null) {
+          unk3300INDJNJJJNKL_ = null;
+        } else {
+          unk3300INDJNJJJNKL_ = null;
           unk3300INDJNJJJNKLBuilder_ = null;
         }
-        unk3300EFNAEFBECHD_ = null;
-        if (unk3300EFNAEFBECHDBuilder_ != null) {
-          unk3300EFNAEFBECHDBuilder_.dispose();
+        if (unk3300EFNAEFBECHDBuilder_ == null) {
+          unk3300EFNAEFBECHD_ = null;
+        } else {
+          unk3300EFNAEFBECHD_ = null;
           unk3300EFNAEFBECHDBuilder_ = null;
         }
         isPassed_ = false;
+
         if (intentionListBuilder_ == null) {
           intentionList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          intentionList_ = null;
           intentionListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00002000);
         diceSideList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00000008);
         deckCardNum_ = 0;
+
         unk3300GLNIFLOKBPM_ = 0;
+
         return this;
       }
 
@@ -1262,93 +1485,67 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField buildPartial() {
         emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField result = new emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField result) {
+        int from_bitField0_ = bitField0_;
+        result.unk3300IKJMGAHCFPM_ = unk3300IKJMGAHCFPM_;
+        result.modifyZoneMap_ = internalGetModifyZoneMap();
+        result.modifyZoneMap_.makeImmutable();
+        result.unk3300GGHKFFADEAL_ = unk3300GGHKFFADEAL_;
+        if (unk3300AOPJIOHMPOFBuilder_ == null) {
+          result.unk3300AOPJIOHMPOF_ = unk3300AOPJIOHMPOF_;
+        } else {
+          result.unk3300AOPJIOHMPOF_ = unk3300AOPJIOHMPOFBuilder_.build();
+        }
+        result.unk3300FDFPHNDOJML_ = unk3300FDFPHNDOJML_;
+        if (unk3300IPLMHKCNDLEBuilder_ == null) {
+          result.unk3300IPLMHKCNDLE_ = unk3300IPLMHKCNDLE_;
+        } else {
+          result.unk3300IPLMHKCNDLE_ = unk3300IPLMHKCNDLEBuilder_.build();
+        }
+        if (unk3300EIHOMDLENMKBuilder_ == null) {
+          result.unk3300EIHOMDLENMK_ = unk3300EIHOMDLENMK_;
+        } else {
+          result.unk3300EIHOMDLENMK_ = unk3300EIHOMDLENMKBuilder_.build();
+        }
         if (waitingListBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             waitingList_ = java.util.Collections.unmodifiableList(waitingList_);
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.waitingList_ = waitingList_;
         } else {
           result.waitingList_ = waitingListBuilder_.build();
         }
+        result.unk3300PBECINKKHND_ = unk3300PBECINKKHND_;
+        result.controllerId_ = controllerId_;
+        if (unk3300INDJNJJJNKLBuilder_ == null) {
+          result.unk3300INDJNJJJNKL_ = unk3300INDJNJJJNKL_;
+        } else {
+          result.unk3300INDJNJJJNKL_ = unk3300INDJNJJJNKLBuilder_.build();
+        }
+        if (unk3300EFNAEFBECHDBuilder_ == null) {
+          result.unk3300EFNAEFBECHD_ = unk3300EFNAEFBECHD_;
+        } else {
+          result.unk3300EFNAEFBECHD_ = unk3300EFNAEFBECHDBuilder_.build();
+        }
+        result.isPassed_ = isPassed_;
         if (intentionListBuilder_ == null) {
-          if (((bitField0_ & 0x00002000) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             intentionList_ = java.util.Collections.unmodifiableList(intentionList_);
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.intentionList_ = intentionList_;
         } else {
           result.intentionList_ = intentionListBuilder_.build();
         }
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           diceSideList_ = java.util.Collections.unmodifiableList(diceSideList_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.diceSideList_ = diceSideList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300IKJMGAHCFPM_ = unk3300IKJMGAHCFPM_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.modifyZoneMap_ = internalGetModifyZoneMap();
-          result.modifyZoneMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300GGHKFFADEAL_ = unk3300GGHKFFADEAL_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300AOPJIOHMPOF_ = unk3300AOPJIOHMPOFBuilder_ == null
-              ? unk3300AOPJIOHMPOF_
-              : unk3300AOPJIOHMPOFBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300FDFPHNDOJML_ = unk3300FDFPHNDOJML_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.unk3300IPLMHKCNDLE_ = unk3300IPLMHKCNDLEBuilder_ == null
-              ? unk3300IPLMHKCNDLE_
-              : unk3300IPLMHKCNDLEBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.unk3300EIHOMDLENMK_ = unk3300EIHOMDLENMKBuilder_ == null
-              ? unk3300EIHOMDLENMK_
-              : unk3300EIHOMDLENMKBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.unk3300PBECINKKHND_ = unk3300PBECINKKHND_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.controllerId_ = controllerId_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.unk3300INDJNJJJNKL_ = unk3300INDJNJJJNKLBuilder_ == null
-              ? unk3300INDJNJJJNKL_
-              : unk3300INDJNJJJNKLBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.unk3300EFNAEFBECHD_ = unk3300EFNAEFBECHDBuilder_ == null
-              ? unk3300EFNAEFBECHD_
-              : unk3300EFNAEFBECHDBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.isPassed_ = isPassed_;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.deckCardNum_ = deckCardNum_;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.unk3300GLNIFLOKBPM_ = unk3300GLNIFLOKBPM_;
-        }
+        result.deckCardNum_ = deckCardNum_;
+        result.unk3300GLNIFLOKBPM_ = unk3300GLNIFLOKBPM_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -1400,7 +1597,6 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
         }
         internalGetMutableModifyZoneMap().mergeFrom(
             other.internalGetModifyZoneMap());
-        bitField0_ |= 0x00000002;
         if (other.getUnk3300GGHKFFADEAL() != 0) {
           setUnk3300GGHKFFADEAL(other.getUnk3300GGHKFFADEAL());
         }
@@ -1420,7 +1616,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           if (!other.waitingList_.isEmpty()) {
             if (waitingList_.isEmpty()) {
               waitingList_ = other.waitingList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureWaitingListIsMutable();
               waitingList_.addAll(other.waitingList_);
@@ -1433,7 +1629,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
               waitingListBuilder_.dispose();
               waitingListBuilder_ = null;
               waitingList_ = other.waitingList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000002);
               waitingListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getWaitingListFieldBuilder() : null;
@@ -1461,7 +1657,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           if (!other.intentionList_.isEmpty()) {
             if (intentionList_.isEmpty()) {
               intentionList_ = other.intentionList_;
-              bitField0_ = (bitField0_ & ~0x00002000);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureIntentionListIsMutable();
               intentionList_.addAll(other.intentionList_);
@@ -1474,7 +1670,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
               intentionListBuilder_.dispose();
               intentionListBuilder_ = null;
               intentionList_ = other.intentionList_;
-              bitField0_ = (bitField0_ & ~0x00002000);
+              bitField0_ = (bitField0_ & ~0x00000004);
               intentionListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getIntentionListFieldBuilder() : null;
@@ -1486,7 +1682,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
         if (!other.diceSideList_.isEmpty()) {
           if (diceSideList_.isEmpty()) {
             diceSideList_ = other.diceSideList_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureDiceSideListIsMutable();
             diceSideList_.addAll(other.diceSideList_);
@@ -1499,7 +1695,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
         if (other.getUnk3300GLNIFLOKBPM() != 0) {
           setUnk3300GLNIFLOKBPM(other.getUnk3300GLNIFLOKBPM());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1514,157 +1710,17 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getUnk3300IPLMHKCNDLEFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 10
-              case 18: {
-                emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter.parser(),
-                        extensionRegistry);
-                if (waitingListBuilder_ == null) {
-                  ensureWaitingListIsMutable();
-                  waitingList_.add(m);
-                } else {
-                  waitingListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 24: {
-                deckCardNum_ = input.readUInt32();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 24
-              case 34: {
-                input.readMessage(
-                    getUnk3300EFNAEFBECHDFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 34
-              case 40: {
-                unk3300IKJMGAHCFPM_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              case 48: {
-                controllerId_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 48
-              case 58: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone>
-                modifyZoneMap__ = input.readMessage(
-                    ModifyZoneMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableModifyZoneMap().getMutableMap().put(
-                    modifyZoneMap__.getKey(), modifyZoneMap__.getValue());
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 58
-              case 64: {
-                isPassed_ = input.readBool();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 64
-              case 74: {
-                input.readMessage(
-                    getUnk3300EIHOMDLENMKFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 74
-              case 82: {
-                input.readMessage(
-                    getUnk3300AOPJIOHMPOFFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 82
-              case 90: {
-                input.readMessage(
-                    getUnk3300INDJNJJJNKLFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 90
-              case 96: {
-                unk3300FDFPHNDOJML_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 96
-              case 104: {
-                int tmpRaw = input.readEnum();
-                ensureDiceSideListIsMutable();
-                diceSideList_.add(tmpRaw);
-                break;
-              } // case 104
-              case 106: {
-                int length = input.readRawVarint32();
-                int oldLimit = input.pushLimit(length);
-                while(input.getBytesUntilLimit() > 0) {
-                  int tmpRaw = input.readEnum();
-                  ensureDiceSideListIsMutable();
-                  diceSideList_.add(tmpRaw);
-                }
-                input.popLimit(oldLimit);
-                break;
-              } // case 106
-              case 112: {
-                unk3300GLNIFLOKBPM_ = input.readUInt32();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 112
-              case 120: {
-                unk3300PBECINKKHND_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 120
-              case 2434: {
-                emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention.parser(),
-                        extensionRegistry);
-                if (intentionListBuilder_ == null) {
-                  ensureIntentionListIsMutable();
-                  intentionList_.add(m);
-                } else {
-                  intentionListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 2434
-              case 5848: {
-                unk3300GGHKFFADEAL_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 5848
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGPlayerFieldOuterClass.GCGPlayerField) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1686,7 +1742,6 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       public Builder setUnk3300IKJMGAHCFPM(int value) {
         
         unk3300IKJMGAHCFPM_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1695,7 +1750,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IKJMGAHCFPM() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300IKJMGAHCFPM_ = 0;
         onChanged();
         return this;
@@ -1704,7 +1759,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone> modifyZoneMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone>
-          internalGetModifyZoneMap() {
+      internalGetModifyZoneMap() {
         if (modifyZoneMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ModifyZoneMapDefaultEntryHolder.defaultEntry);
@@ -1712,7 +1767,8 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
         return modifyZoneMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone>
-          internalGetMutableModifyZoneMap() {
+      internalGetMutableModifyZoneMap() {
+        onChanged();;
         if (modifyZoneMap_ == null) {
           modifyZoneMap_ = com.google.protobuf.MapField.newMapField(
               ModifyZoneMapDefaultEntryHolder.defaultEntry);
@@ -1720,16 +1776,16 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
         if (!modifyZoneMap_.isMutable()) {
           modifyZoneMap_ = modifyZoneMap_.copy();
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
         return modifyZoneMap_;
       }
+
       public int getModifyZoneMapCount() {
         return internalGetModifyZoneMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
        */
+
       @java.lang.Override
       public boolean containsModifyZoneMap(
           int key) {
@@ -1748,6 +1804,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone> getModifyZoneMapMap() {
         return internalGetModifyZoneMap().getMap();
       }
@@ -1755,11 +1812,10 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone getModifyZoneMapOrDefault(
+
+      public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone getModifyZoneMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
+          emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone> map =
             internalGetModifyZoneMap().getMap();
@@ -1769,6 +1825,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone getModifyZoneMapOrThrow(
           int key) {
         
@@ -1779,8 +1836,8 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearModifyZoneMap() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableModifyZoneMap().getMutableMap()
             .clear();
         return this;
@@ -1788,6 +1845,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       /**
        * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
        */
+
       public Builder removeModifyZoneMap(
           int key) {
         
@@ -1800,8 +1858,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone>
-          getMutableModifyZoneMap() {
-        bitField0_ |= 0x00000002;
+      getMutableModifyZoneMap() {
         return internalGetMutableModifyZoneMap().getMutableMap();
       }
       /**
@@ -1811,20 +1868,19 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           int key,
           emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableModifyZoneMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, .GCGZone&gt; modify_zone_map = 7;</code>
        */
+
       public Builder putAllModifyZoneMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone> values) {
         internalGetMutableModifyZoneMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -1845,7 +1901,6 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       public Builder setUnk3300GGHKFFADEAL(int value) {
         
         unk3300GGHKFFADEAL_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1854,7 +1909,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GGHKFFADEAL() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300GGHKFFADEAL_ = 0;
         onChanged();
         return this;
@@ -1868,7 +1923,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return Whether the unk3300AOPJIOHMPOF field is set.
        */
       public boolean hasUnk3300AOPJIOHMPOF() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return unk3300AOPJIOHMPOFBuilder_ != null || unk3300AOPJIOHMPOF_ != null;
       }
       /**
        * <code>.GCGZone Unk3300_AOPJIOHMPOF = 10;</code>
@@ -1890,11 +1945,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
             throw new NullPointerException();
           }
           unk3300AOPJIOHMPOF_ = value;
+          onChanged();
         } else {
           unk3300AOPJIOHMPOFBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1904,11 +1959,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder builderForValue) {
         if (unk3300AOPJIOHMPOFBuilder_ == null) {
           unk3300AOPJIOHMPOF_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300AOPJIOHMPOFBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1916,38 +1971,38 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        */
       public Builder mergeUnk3300AOPJIOHMPOF(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone value) {
         if (unk3300AOPJIOHMPOFBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            unk3300AOPJIOHMPOF_ != null &&
-            unk3300AOPJIOHMPOF_ != emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.getDefaultInstance()) {
-            getUnk3300AOPJIOHMPOFBuilder().mergeFrom(value);
+          if (unk3300AOPJIOHMPOF_ != null) {
+            unk3300AOPJIOHMPOF_ =
+              emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.newBuilder(unk3300AOPJIOHMPOF_).mergeFrom(value).buildPartial();
           } else {
             unk3300AOPJIOHMPOF_ = value;
           }
+          onChanged();
         } else {
           unk3300AOPJIOHMPOFBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGZone Unk3300_AOPJIOHMPOF = 10;</code>
        */
       public Builder clearUnk3300AOPJIOHMPOF() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        unk3300AOPJIOHMPOF_ = null;
-        if (unk3300AOPJIOHMPOFBuilder_ != null) {
-          unk3300AOPJIOHMPOFBuilder_.dispose();
+        if (unk3300AOPJIOHMPOFBuilder_ == null) {
+          unk3300AOPJIOHMPOF_ = null;
+          onChanged();
+        } else {
+          unk3300AOPJIOHMPOF_ = null;
           unk3300AOPJIOHMPOFBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGZone Unk3300_AOPJIOHMPOF = 10;</code>
        */
       public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder getUnk3300AOPJIOHMPOFBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getUnk3300AOPJIOHMPOFFieldBuilder().getBuilder();
       }
@@ -1996,7 +2051,6 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       public Builder setUnk3300FDFPHNDOJML(int value) {
         
         unk3300FDFPHNDOJML_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2005,7 +2059,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FDFPHNDOJML() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300FDFPHNDOJML_ = 0;
         onChanged();
         return this;
@@ -2019,7 +2073,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return Whether the unk3300IPLMHKCNDLE field is set.
        */
       public boolean hasUnk3300IPLMHKCNDLE() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return unk3300IPLMHKCNDLEBuilder_ != null || unk3300IPLMHKCNDLE_ != null;
       }
       /**
        * <code>.GCGZone Unk3300_IPLMHKCNDLE = 1;</code>
@@ -2041,11 +2095,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
             throw new NullPointerException();
           }
           unk3300IPLMHKCNDLE_ = value;
+          onChanged();
         } else {
           unk3300IPLMHKCNDLEBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -2055,11 +2109,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder builderForValue) {
         if (unk3300IPLMHKCNDLEBuilder_ == null) {
           unk3300IPLMHKCNDLE_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300IPLMHKCNDLEBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -2067,38 +2121,38 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        */
       public Builder mergeUnk3300IPLMHKCNDLE(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone value) {
         if (unk3300IPLMHKCNDLEBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            unk3300IPLMHKCNDLE_ != null &&
-            unk3300IPLMHKCNDLE_ != emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.getDefaultInstance()) {
-            getUnk3300IPLMHKCNDLEBuilder().mergeFrom(value);
+          if (unk3300IPLMHKCNDLE_ != null) {
+            unk3300IPLMHKCNDLE_ =
+              emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.newBuilder(unk3300IPLMHKCNDLE_).mergeFrom(value).buildPartial();
           } else {
             unk3300IPLMHKCNDLE_ = value;
           }
+          onChanged();
         } else {
           unk3300IPLMHKCNDLEBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGZone Unk3300_IPLMHKCNDLE = 1;</code>
        */
       public Builder clearUnk3300IPLMHKCNDLE() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        unk3300IPLMHKCNDLE_ = null;
-        if (unk3300IPLMHKCNDLEBuilder_ != null) {
-          unk3300IPLMHKCNDLEBuilder_.dispose();
+        if (unk3300IPLMHKCNDLEBuilder_ == null) {
+          unk3300IPLMHKCNDLE_ = null;
+          onChanged();
+        } else {
+          unk3300IPLMHKCNDLE_ = null;
           unk3300IPLMHKCNDLEBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGZone Unk3300_IPLMHKCNDLE = 1;</code>
        */
       public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder getUnk3300IPLMHKCNDLEBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getUnk3300IPLMHKCNDLEFieldBuilder().getBuilder();
       }
@@ -2138,7 +2192,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return Whether the unk3300EIHOMDLENMK field is set.
        */
       public boolean hasUnk3300EIHOMDLENMK() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return unk3300EIHOMDLENMKBuilder_ != null || unk3300EIHOMDLENMK_ != null;
       }
       /**
        * <code>.GCGZone Unk3300_EIHOMDLENMK = 9;</code>
@@ -2160,11 +2214,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
             throw new NullPointerException();
           }
           unk3300EIHOMDLENMK_ = value;
+          onChanged();
         } else {
           unk3300EIHOMDLENMKBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -2174,11 +2228,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder builderForValue) {
         if (unk3300EIHOMDLENMKBuilder_ == null) {
           unk3300EIHOMDLENMK_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300EIHOMDLENMKBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -2186,38 +2240,38 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        */
       public Builder mergeUnk3300EIHOMDLENMK(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone value) {
         if (unk3300EIHOMDLENMKBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0) &&
-            unk3300EIHOMDLENMK_ != null &&
-            unk3300EIHOMDLENMK_ != emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.getDefaultInstance()) {
-            getUnk3300EIHOMDLENMKBuilder().mergeFrom(value);
+          if (unk3300EIHOMDLENMK_ != null) {
+            unk3300EIHOMDLENMK_ =
+              emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.newBuilder(unk3300EIHOMDLENMK_).mergeFrom(value).buildPartial();
           } else {
             unk3300EIHOMDLENMK_ = value;
           }
+          onChanged();
         } else {
           unk3300EIHOMDLENMKBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGZone Unk3300_EIHOMDLENMK = 9;</code>
        */
       public Builder clearUnk3300EIHOMDLENMK() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        unk3300EIHOMDLENMK_ = null;
-        if (unk3300EIHOMDLENMKBuilder_ != null) {
-          unk3300EIHOMDLENMKBuilder_.dispose();
+        if (unk3300EIHOMDLENMKBuilder_ == null) {
+          unk3300EIHOMDLENMK_ = null;
+          onChanged();
+        } else {
+          unk3300EIHOMDLENMK_ = null;
           unk3300EIHOMDLENMKBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGZone Unk3300_EIHOMDLENMK = 9;</code>
        */
       public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder getUnk3300EIHOMDLENMKBuilder() {
-        bitField0_ |= 0x00000040;
+        
         onChanged();
         return getUnk3300EIHOMDLENMKFieldBuilder().getBuilder();
       }
@@ -2252,9 +2306,9 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       private java.util.List<emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter> waitingList_ =
         java.util.Collections.emptyList();
       private void ensureWaitingListIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           waitingList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter>(waitingList_);
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -2404,7 +2458,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       public Builder clearWaitingList() {
         if (waitingListBuilder_ == null) {
           waitingList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           waitingListBuilder_.clear();
@@ -2481,7 +2535,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           waitingListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter, emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter.Builder, emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacterOrBuilder>(
                   waitingList_,
-                  ((bitField0_ & 0x00000080) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           waitingList_ = null;
@@ -2506,7 +2560,6 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       public Builder setUnk3300PBECINKKHND(int value) {
         
         unk3300PBECINKKHND_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2515,7 +2568,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PBECINKKHND() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         unk3300PBECINKKHND_ = 0;
         onChanged();
         return this;
@@ -2538,7 +2591,6 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2547,7 +2599,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         controllerId_ = 0;
         onChanged();
         return this;
@@ -2561,7 +2613,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return Whether the unk3300INDJNJJJNKL field is set.
        */
       public boolean hasUnk3300INDJNJJJNKL() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return unk3300INDJNJJJNKLBuilder_ != null || unk3300INDJNJJJNKL_ != null;
       }
       /**
        * <code>.GCGZone Unk3300_INDJNJJJNKL = 11;</code>
@@ -2583,11 +2635,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
             throw new NullPointerException();
           }
           unk3300INDJNJJJNKL_ = value;
+          onChanged();
         } else {
           unk3300INDJNJJJNKLBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000400;
-        onChanged();
+
         return this;
       }
       /**
@@ -2597,11 +2649,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder builderForValue) {
         if (unk3300INDJNJJJNKLBuilder_ == null) {
           unk3300INDJNJJJNKL_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300INDJNJJJNKLBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000400;
-        onChanged();
+
         return this;
       }
       /**
@@ -2609,38 +2661,38 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        */
       public Builder mergeUnk3300INDJNJJJNKL(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone value) {
         if (unk3300INDJNJJJNKLBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) != 0) &&
-            unk3300INDJNJJJNKL_ != null &&
-            unk3300INDJNJJJNKL_ != emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.getDefaultInstance()) {
-            getUnk3300INDJNJJJNKLBuilder().mergeFrom(value);
+          if (unk3300INDJNJJJNKL_ != null) {
+            unk3300INDJNJJJNKL_ =
+              emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.newBuilder(unk3300INDJNJJJNKL_).mergeFrom(value).buildPartial();
           } else {
             unk3300INDJNJJJNKL_ = value;
           }
+          onChanged();
         } else {
           unk3300INDJNJJJNKLBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000400;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGZone Unk3300_INDJNJJJNKL = 11;</code>
        */
       public Builder clearUnk3300INDJNJJJNKL() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        unk3300INDJNJJJNKL_ = null;
-        if (unk3300INDJNJJJNKLBuilder_ != null) {
-          unk3300INDJNJJJNKLBuilder_.dispose();
+        if (unk3300INDJNJJJNKLBuilder_ == null) {
+          unk3300INDJNJJJNKL_ = null;
+          onChanged();
+        } else {
+          unk3300INDJNJJJNKL_ = null;
           unk3300INDJNJJJNKLBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGZone Unk3300_INDJNJJJNKL = 11;</code>
        */
       public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder getUnk3300INDJNJJJNKLBuilder() {
-        bitField0_ |= 0x00000400;
+        
         onChanged();
         return getUnk3300INDJNJJJNKLFieldBuilder().getBuilder();
       }
@@ -2680,7 +2732,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return Whether the unk3300EFNAEFBECHD field is set.
        */
       public boolean hasUnk3300EFNAEFBECHD() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return unk3300EFNAEFBECHDBuilder_ != null || unk3300EFNAEFBECHD_ != null;
       }
       /**
        * <code>.GCGZone Unk3300_EFNAEFBECHD = 4;</code>
@@ -2702,11 +2754,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
             throw new NullPointerException();
           }
           unk3300EFNAEFBECHD_ = value;
+          onChanged();
         } else {
           unk3300EFNAEFBECHDBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000800;
-        onChanged();
+
         return this;
       }
       /**
@@ -2716,11 +2768,11 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder builderForValue) {
         if (unk3300EFNAEFBECHDBuilder_ == null) {
           unk3300EFNAEFBECHD_ = builderForValue.build();
+          onChanged();
         } else {
           unk3300EFNAEFBECHDBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000800;
-        onChanged();
+
         return this;
       }
       /**
@@ -2728,38 +2780,38 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        */
       public Builder mergeUnk3300EFNAEFBECHD(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone value) {
         if (unk3300EFNAEFBECHDBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) != 0) &&
-            unk3300EFNAEFBECHD_ != null &&
-            unk3300EFNAEFBECHD_ != emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.getDefaultInstance()) {
-            getUnk3300EFNAEFBECHDBuilder().mergeFrom(value);
+          if (unk3300EFNAEFBECHD_ != null) {
+            unk3300EFNAEFBECHD_ =
+              emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.newBuilder(unk3300EFNAEFBECHD_).mergeFrom(value).buildPartial();
           } else {
             unk3300EFNAEFBECHD_ = value;
           }
+          onChanged();
         } else {
           unk3300EFNAEFBECHDBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000800;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGZone Unk3300_EFNAEFBECHD = 4;</code>
        */
       public Builder clearUnk3300EFNAEFBECHD() {
-        bitField0_ = (bitField0_ & ~0x00000800);
-        unk3300EFNAEFBECHD_ = null;
-        if (unk3300EFNAEFBECHDBuilder_ != null) {
-          unk3300EFNAEFBECHDBuilder_.dispose();
+        if (unk3300EFNAEFBECHDBuilder_ == null) {
+          unk3300EFNAEFBECHD_ = null;
+          onChanged();
+        } else {
+          unk3300EFNAEFBECHD_ = null;
           unk3300EFNAEFBECHDBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGZone Unk3300_EFNAEFBECHD = 4;</code>
        */
       public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.Builder getUnk3300EFNAEFBECHDBuilder() {
-        bitField0_ |= 0x00000800;
+        
         onChanged();
         return getUnk3300EFNAEFBECHDFieldBuilder().getBuilder();
       }
@@ -2808,7 +2860,6 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       public Builder setIsPassed(boolean value) {
         
         isPassed_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2817,7 +2868,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearIsPassed() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         isPassed_ = false;
         onChanged();
         return this;
@@ -2826,9 +2877,9 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       private java.util.List<emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention> intentionList_ =
         java.util.Collections.emptyList();
       private void ensureIntentionListIsMutable() {
-        if (!((bitField0_ & 0x00002000) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           intentionList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention>(intentionList_);
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -2978,7 +3029,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       public Builder clearIntentionList() {
         if (intentionListBuilder_ == null) {
           intentionList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           intentionListBuilder_.clear();
@@ -3055,7 +3106,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           intentionListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention, emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention.Builder, emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntentionOrBuilder>(
                   intentionList_,
-                  ((bitField0_ & 0x00002000) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           intentionList_ = null;
@@ -3066,9 +3117,9 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       private java.util.List<java.lang.Integer> diceSideList_ =
         java.util.Collections.emptyList();
       private void ensureDiceSideListIsMutable() {
-        if (!((bitField0_ & 0x00004000) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           diceSideList_ = new java.util.ArrayList<java.lang.Integer>(diceSideList_);
-          bitField0_ |= 0x00004000;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -3144,7 +3195,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        */
       public Builder clearDiceSideList() {
         diceSideList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -3166,8 +3217,8 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       }
       /**
        * <code>repeated .GCGDiceSideType dice_side_list = 13;</code>
-       * @param index The index to set the value at.
-       * @param value The enum numeric value on the wire for diceSideList to set.
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of diceSideList at the given index.
        * @return This builder for chaining.
        */
       public Builder setDiceSideListValue(
@@ -3220,7 +3271,6 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       public Builder setDeckCardNum(int value) {
         
         deckCardNum_ = value;
-        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -3229,7 +3279,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearDeckCardNum() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        
         deckCardNum_ = 0;
         onChanged();
         return this;
@@ -3252,7 +3302,6 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
       public Builder setUnk3300GLNIFLOKBPM(int value) {
         
         unk3300GLNIFLOKBPM_ = value;
-        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -3261,7 +3310,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GLNIFLOKBPM() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        
         unk3300GLNIFLOKBPM_ = 0;
         onChanged();
         return this;
@@ -3299,18 +3348,7 @@ emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGPlayerField(input, extensionRegistry);
       }
     };
 

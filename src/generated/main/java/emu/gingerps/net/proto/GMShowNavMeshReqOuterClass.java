@@ -86,6 +86,69 @@ public final class GMShowNavMeshReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GMShowNavMeshReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (extent_ != null) {
+                subBuilder = extent_.toBuilder();
+              }
+              extent_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(extent_);
+                extent_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (center_ != null) {
+                subBuilder = center_.toBuilder();
+              }
+              center_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(center_);
+                center_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GMShowNavMeshReqOuterClass.internal_static_GMShowNavMeshReq_descriptor;
@@ -122,7 +185,7 @@ public final class GMShowNavMeshReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getExtentOrBuilder() {
-      return extent_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : extent_;
+      return getExtent();
     }
 
     public static final int CENTER_FIELD_NUMBER = 4;
@@ -148,7 +211,7 @@ public final class GMShowNavMeshReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
-      return center_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
+      return getCenter();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -171,7 +234,7 @@ public final class GMShowNavMeshReqOuterClass {
       if (center_ != null) {
         output.writeMessage(4, getCenter());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +251,7 @@ public final class GMShowNavMeshReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getCenter());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -213,7 +276,7 @@ public final class GMShowNavMeshReqOuterClass {
         if (!getCenter()
             .equals(other.getCenter())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -232,7 +295,7 @@ public final class GMShowNavMeshReqOuterClass {
         hash = (37 * hash) + CENTER_FIELD_NUMBER;
         hash = (53 * hash) + getCenter().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,26 +423,32 @@ public final class GMShowNavMeshReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GMShowNavMeshReqOuterClass.GMShowNavMeshReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        extent_ = null;
-        if (extentBuilder_ != null) {
-          extentBuilder_.dispose();
+        if (extentBuilder_ == null) {
+          extent_ = null;
+        } else {
+          extent_ = null;
           extentBuilder_ = null;
         }
-        center_ = null;
-        if (centerBuilder_ != null) {
-          centerBuilder_.dispose();
+        if (centerBuilder_ == null) {
+          center_ = null;
+        } else {
+          center_ = null;
           centerBuilder_ = null;
         }
         return this;
@@ -408,23 +477,18 @@ public final class GMShowNavMeshReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GMShowNavMeshReqOuterClass.GMShowNavMeshReq buildPartial() {
         emu.gingerps.net.proto.GMShowNavMeshReqOuterClass.GMShowNavMeshReq result = new emu.gingerps.net.proto.GMShowNavMeshReqOuterClass.GMShowNavMeshReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (extentBuilder_ == null) {
+          result.extent_ = extent_;
+        } else {
+          result.extent_ = extentBuilder_.build();
+        }
+        if (centerBuilder_ == null) {
+          result.center_ = center_;
+        } else {
+          result.center_ = centerBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GMShowNavMeshReqOuterClass.GMShowNavMeshReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.extent_ = extentBuilder_ == null
-              ? extent_
-              : extentBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.center_ = centerBuilder_ == null
-              ? center_
-              : centerBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -477,7 +541,7 @@ public final class GMShowNavMeshReqOuterClass {
         if (other.hasCenter()) {
           mergeCenter(other.getCenter());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -492,47 +556,19 @@ public final class GMShowNavMeshReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GMShowNavMeshReqOuterClass.GMShowNavMeshReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                input.readMessage(
-                    getExtentFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getCenterFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GMShowNavMeshReqOuterClass.GMShowNavMeshReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector extent_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -542,7 +578,7 @@ public final class GMShowNavMeshReqOuterClass {
        * @return Whether the extent field is set.
        */
       public boolean hasExtent() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return extentBuilder_ != null || extent_ != null;
       }
       /**
        * <code>.Vector extent = 3;</code>
@@ -564,11 +600,11 @@ public final class GMShowNavMeshReqOuterClass {
             throw new NullPointerException();
           }
           extent_ = value;
+          onChanged();
         } else {
           extentBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -578,11 +614,11 @@ public final class GMShowNavMeshReqOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (extentBuilder_ == null) {
           extent_ = builderForValue.build();
+          onChanged();
         } else {
           extentBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -590,38 +626,38 @@ public final class GMShowNavMeshReqOuterClass {
        */
       public Builder mergeExtent(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (extentBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            extent_ != null &&
-            extent_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getExtentBuilder().mergeFrom(value);
+          if (extent_ != null) {
+            extent_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(extent_).mergeFrom(value).buildPartial();
           } else {
             extent_ = value;
           }
+          onChanged();
         } else {
           extentBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector extent = 3;</code>
        */
       public Builder clearExtent() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        extent_ = null;
-        if (extentBuilder_ != null) {
-          extentBuilder_.dispose();
+        if (extentBuilder_ == null) {
+          extent_ = null;
+          onChanged();
+        } else {
+          extent_ = null;
           extentBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector extent = 3;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getExtentBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getExtentFieldBuilder().getBuilder();
       }
@@ -661,7 +697,7 @@ public final class GMShowNavMeshReqOuterClass {
        * @return Whether the center field is set.
        */
       public boolean hasCenter() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return centerBuilder_ != null || center_ != null;
       }
       /**
        * <code>.Vector center = 4;</code>
@@ -683,11 +719,11 @@ public final class GMShowNavMeshReqOuterClass {
             throw new NullPointerException();
           }
           center_ = value;
+          onChanged();
         } else {
           centerBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -697,11 +733,11 @@ public final class GMShowNavMeshReqOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (centerBuilder_ == null) {
           center_ = builderForValue.build();
+          onChanged();
         } else {
           centerBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -709,38 +745,38 @@ public final class GMShowNavMeshReqOuterClass {
        */
       public Builder mergeCenter(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (centerBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            center_ != null &&
-            center_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getCenterBuilder().mergeFrom(value);
+          if (center_ != null) {
+            center_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(center_).mergeFrom(value).buildPartial();
           } else {
             center_ = value;
           }
+          onChanged();
         } else {
           centerBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector center = 4;</code>
        */
       public Builder clearCenter() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        center_ = null;
-        if (centerBuilder_ != null) {
-          centerBuilder_.dispose();
+        if (centerBuilder_ == null) {
+          center_ = null;
+          onChanged();
+        } else {
+          center_ = null;
           centerBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector center = 4;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getCenterBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getCenterFieldBuilder().getBuilder();
       }
@@ -804,18 +840,7 @@ public final class GMShowNavMeshReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GMShowNavMeshReq(input, extensionRegistry);
       }
     };
 

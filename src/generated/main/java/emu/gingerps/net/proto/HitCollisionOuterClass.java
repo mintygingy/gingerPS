@@ -105,6 +105,90 @@ public final class HitCollisionOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HitCollision(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (hitDir_ != null) {
+                subBuilder = hitDir_.toBuilder();
+              }
+              hitDir_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hitDir_);
+                hitDir_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              hitColliderType_ = rawValue;
+              break;
+            }
+            case 61: {
+
+              attackeeHitEntityAngle_ = input.readFloat();
+              break;
+            }
+            case 64: {
+
+              hitBoxIndex_ = input.readInt32();
+              break;
+            }
+            case 85: {
+
+              attackeeHitForceAngle_ = input.readFloat();
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (hitPoint_ != null) {
+                subBuilder = hitPoint_.toBuilder();
+              }
+              hitPoint_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hitPoint_);
+                hitPoint_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HitCollisionOuterClass.internal_static_HitCollision_descriptor;
@@ -119,7 +203,7 @@ public final class HitCollisionOuterClass {
     }
 
     public static final int HIT_BOX_INDEX_FIELD_NUMBER = 8;
-    private int hitBoxIndex_ = 0;
+    private int hitBoxIndex_;
     /**
      * <code>int32 hit_box_index = 8;</code>
      * @return The hitBoxIndex.
@@ -130,7 +214,7 @@ public final class HitCollisionOuterClass {
     }
 
     public static final int HIT_COLLIDER_TYPE_FIELD_NUMBER = 5;
-    private int hitColliderType_ = 0;
+    private int hitColliderType_;
     /**
      * <code>.HitColliderType hit_collider_type = 5;</code>
      * @return The enum numeric value on the wire for hitColliderType.
@@ -143,12 +227,13 @@ public final class HitCollisionOuterClass {
      * @return The hitColliderType.
      */
     @java.lang.Override public emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
-      emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType result = emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType.forNumber(hitColliderType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType result = emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType.valueOf(hitColliderType_);
       return result == null ? emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
     }
 
     public static final int ATTACKEE_HIT_ENTITY_ANGLE_FIELD_NUMBER = 7;
-    private float attackeeHitEntityAngle_ = 0F;
+    private float attackeeHitEntityAngle_;
     /**
      * <code>float attackee_hit_entity_angle = 7;</code>
      * @return The attackeeHitEntityAngle.
@@ -181,7 +266,7 @@ public final class HitCollisionOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getHitDirOrBuilder() {
-      return hitDir_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hitDir_;
+      return getHitDir();
     }
 
     public static final int HIT_POINT_FIELD_NUMBER = 14;
@@ -207,11 +292,11 @@ public final class HitCollisionOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getHitPointOrBuilder() {
-      return hitPoint_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hitPoint_;
+      return getHitPoint();
     }
 
     public static final int ATTACKEE_HIT_FORCE_ANGLE_FIELD_NUMBER = 10;
-    private float attackeeHitForceAngle_ = 0F;
+    private float attackeeHitForceAngle_;
     /**
      * <code>float attackee_hit_force_angle = 10;</code>
      * @return The attackeeHitForceAngle.
@@ -241,19 +326,19 @@ public final class HitCollisionOuterClass {
       if (hitColliderType_ != emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType.HIT_COLLIDER_TYPE_INVALID.getNumber()) {
         output.writeEnum(5, hitColliderType_);
       }
-      if (java.lang.Float.floatToRawIntBits(attackeeHitEntityAngle_) != 0) {
+      if (attackeeHitEntityAngle_ != 0F) {
         output.writeFloat(7, attackeeHitEntityAngle_);
       }
       if (hitBoxIndex_ != 0) {
         output.writeInt32(8, hitBoxIndex_);
       }
-      if (java.lang.Float.floatToRawIntBits(attackeeHitForceAngle_) != 0) {
+      if (attackeeHitForceAngle_ != 0F) {
         output.writeFloat(10, attackeeHitForceAngle_);
       }
       if (hitPoint_ != null) {
         output.writeMessage(14, getHitPoint());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -270,7 +355,7 @@ public final class HitCollisionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, hitColliderType_);
       }
-      if (java.lang.Float.floatToRawIntBits(attackeeHitEntityAngle_) != 0) {
+      if (attackeeHitEntityAngle_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, attackeeHitEntityAngle_);
       }
@@ -278,7 +363,7 @@ public final class HitCollisionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(8, hitBoxIndex_);
       }
-      if (java.lang.Float.floatToRawIntBits(attackeeHitForceAngle_) != 0) {
+      if (attackeeHitForceAngle_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(10, attackeeHitForceAngle_);
       }
@@ -286,7 +371,7 @@ public final class HitCollisionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getHitPoint());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -320,7 +405,7 @@ public final class HitCollisionOuterClass {
       if (java.lang.Float.floatToIntBits(getAttackeeHitForceAngle())
           != java.lang.Float.floatToIntBits(
               other.getAttackeeHitForceAngle())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -349,7 +434,7 @@ public final class HitCollisionOuterClass {
       hash = (37 * hash) + ATTACKEE_HIT_FORCE_ANGLE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getAttackeeHitForceAngle());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -466,32 +551,42 @@ public final class HitCollisionOuterClass {
 
       // Construct using emu.gingerps.net.proto.HitCollisionOuterClass.HitCollision.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         hitBoxIndex_ = 0;
+
         hitColliderType_ = 0;
+
         attackeeHitEntityAngle_ = 0F;
-        hitDir_ = null;
-        if (hitDirBuilder_ != null) {
-          hitDirBuilder_.dispose();
+
+        if (hitDirBuilder_ == null) {
+          hitDir_ = null;
+        } else {
+          hitDir_ = null;
           hitDirBuilder_ = null;
         }
-        hitPoint_ = null;
-        if (hitPointBuilder_ != null) {
-          hitPointBuilder_.dispose();
+        if (hitPointBuilder_ == null) {
+          hitPoint_ = null;
+        } else {
+          hitPoint_ = null;
           hitPointBuilder_ = null;
         }
         attackeeHitForceAngle_ = 0F;
+
         return this;
       }
 
@@ -518,35 +613,22 @@ public final class HitCollisionOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HitCollisionOuterClass.HitCollision buildPartial() {
         emu.gingerps.net.proto.HitCollisionOuterClass.HitCollision result = new emu.gingerps.net.proto.HitCollisionOuterClass.HitCollision(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.hitBoxIndex_ = hitBoxIndex_;
+        result.hitColliderType_ = hitColliderType_;
+        result.attackeeHitEntityAngle_ = attackeeHitEntityAngle_;
+        if (hitDirBuilder_ == null) {
+          result.hitDir_ = hitDir_;
+        } else {
+          result.hitDir_ = hitDirBuilder_.build();
+        }
+        if (hitPointBuilder_ == null) {
+          result.hitPoint_ = hitPoint_;
+        } else {
+          result.hitPoint_ = hitPointBuilder_.build();
+        }
+        result.attackeeHitForceAngle_ = attackeeHitForceAngle_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HitCollisionOuterClass.HitCollision result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.hitBoxIndex_ = hitBoxIndex_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.hitColliderType_ = hitColliderType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.attackeeHitEntityAngle_ = attackeeHitEntityAngle_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.hitDir_ = hitDirBuilder_ == null
-              ? hitDir_
-              : hitDirBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.hitPoint_ = hitPointBuilder_ == null
-              ? hitPoint_
-              : hitPointBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.attackeeHitForceAngle_ = attackeeHitForceAngle_;
-        }
       }
 
       @java.lang.Override
@@ -611,7 +693,7 @@ public final class HitCollisionOuterClass {
         if (other.getAttackeeHitForceAngle() != 0F) {
           setAttackeeHitForceAngle(other.getAttackeeHitForceAngle());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -626,67 +708,19 @@ public final class HitCollisionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HitCollisionOuterClass.HitCollision parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                input.readMessage(
-                    getHitDirFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 26
-              case 40: {
-                hitColliderType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 61: {
-                attackeeHitEntityAngle_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 61
-              case 64: {
-                hitBoxIndex_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 85: {
-                attackeeHitForceAngle_ = input.readFloat();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 85
-              case 114: {
-                input.readMessage(
-                    getHitPointFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HitCollisionOuterClass.HitCollision) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int hitBoxIndex_ ;
       /**
@@ -705,7 +739,6 @@ public final class HitCollisionOuterClass {
       public Builder setHitBoxIndex(int value) {
         
         hitBoxIndex_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -714,7 +747,7 @@ public final class HitCollisionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHitBoxIndex() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         hitBoxIndex_ = 0;
         onChanged();
         return this;
@@ -734,8 +767,8 @@ public final class HitCollisionOuterClass {
        * @return This builder for chaining.
        */
       public Builder setHitColliderTypeValue(int value) {
+        
         hitColliderType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -745,7 +778,8 @@ public final class HitCollisionOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
-        emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType result = emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType.forNumber(hitColliderType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType result = emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType.valueOf(hitColliderType_);
         return result == null ? emu.gingerps.net.proto.HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
       }
       /**
@@ -757,7 +791,7 @@ public final class HitCollisionOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         hitColliderType_ = value.getNumber();
         onChanged();
         return this;
@@ -767,7 +801,7 @@ public final class HitCollisionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHitColliderType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         hitColliderType_ = 0;
         onChanged();
         return this;
@@ -790,7 +824,6 @@ public final class HitCollisionOuterClass {
       public Builder setAttackeeHitEntityAngle(float value) {
         
         attackeeHitEntityAngle_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -799,7 +832,7 @@ public final class HitCollisionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAttackeeHitEntityAngle() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         attackeeHitEntityAngle_ = 0F;
         onChanged();
         return this;
@@ -813,7 +846,7 @@ public final class HitCollisionOuterClass {
        * @return Whether the hitDir field is set.
        */
       public boolean hasHitDir() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return hitDirBuilder_ != null || hitDir_ != null;
       }
       /**
        * <code>.Vector hit_dir = 3;</code>
@@ -835,11 +868,11 @@ public final class HitCollisionOuterClass {
             throw new NullPointerException();
           }
           hitDir_ = value;
+          onChanged();
         } else {
           hitDirBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -849,11 +882,11 @@ public final class HitCollisionOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (hitDirBuilder_ == null) {
           hitDir_ = builderForValue.build();
+          onChanged();
         } else {
           hitDirBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -861,38 +894,38 @@ public final class HitCollisionOuterClass {
        */
       public Builder mergeHitDir(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (hitDirBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            hitDir_ != null &&
-            hitDir_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getHitDirBuilder().mergeFrom(value);
+          if (hitDir_ != null) {
+            hitDir_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(hitDir_).mergeFrom(value).buildPartial();
           } else {
             hitDir_ = value;
           }
+          onChanged();
         } else {
           hitDirBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector hit_dir = 3;</code>
        */
       public Builder clearHitDir() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        hitDir_ = null;
-        if (hitDirBuilder_ != null) {
-          hitDirBuilder_.dispose();
+        if (hitDirBuilder_ == null) {
+          hitDir_ = null;
+          onChanged();
+        } else {
+          hitDir_ = null;
           hitDirBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector hit_dir = 3;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getHitDirBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getHitDirFieldBuilder().getBuilder();
       }
@@ -932,7 +965,7 @@ public final class HitCollisionOuterClass {
        * @return Whether the hitPoint field is set.
        */
       public boolean hasHitPoint() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return hitPointBuilder_ != null || hitPoint_ != null;
       }
       /**
        * <code>.Vector hit_point = 14;</code>
@@ -954,11 +987,11 @@ public final class HitCollisionOuterClass {
             throw new NullPointerException();
           }
           hitPoint_ = value;
+          onChanged();
         } else {
           hitPointBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -968,11 +1001,11 @@ public final class HitCollisionOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (hitPointBuilder_ == null) {
           hitPoint_ = builderForValue.build();
+          onChanged();
         } else {
           hitPointBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -980,38 +1013,38 @@ public final class HitCollisionOuterClass {
        */
       public Builder mergeHitPoint(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (hitPointBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            hitPoint_ != null &&
-            hitPoint_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getHitPointBuilder().mergeFrom(value);
+          if (hitPoint_ != null) {
+            hitPoint_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(hitPoint_).mergeFrom(value).buildPartial();
           } else {
             hitPoint_ = value;
           }
+          onChanged();
         } else {
           hitPointBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector hit_point = 14;</code>
        */
       public Builder clearHitPoint() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        hitPoint_ = null;
-        if (hitPointBuilder_ != null) {
-          hitPointBuilder_.dispose();
+        if (hitPointBuilder_ == null) {
+          hitPoint_ = null;
+          onChanged();
+        } else {
+          hitPoint_ = null;
           hitPointBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector hit_point = 14;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getHitPointBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getHitPointFieldBuilder().getBuilder();
       }
@@ -1060,7 +1093,6 @@ public final class HitCollisionOuterClass {
       public Builder setAttackeeHitForceAngle(float value) {
         
         attackeeHitForceAngle_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1069,7 +1101,7 @@ public final class HitCollisionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAttackeeHitForceAngle() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         attackeeHitForceAngle_ = 0F;
         onChanged();
         return this;
@@ -1107,18 +1139,7 @@ public final class HitCollisionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HitCollision(input, extensionRegistry);
       }
     };
 

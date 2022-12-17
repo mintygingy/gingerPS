@@ -112,6 +112,76 @@ public final class GetAuthkeyRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetAuthkeyRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gameBiz_ = s;
+              break;
+            }
+            case 24: {
+
+              unk3300FGBHHPOKCJH_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              authkey_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              authAppid_ = s;
+              break;
+            }
+            case 64: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 104: {
+
+              unk3300DODLFCNOAMB_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetAuthkeyRspOuterClass.internal_static_GetAuthkeyRsp_descriptor;
@@ -126,7 +196,7 @@ public final class GetAuthkeyRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -137,8 +207,7 @@ public final class GetAuthkeyRspOuterClass {
     }
 
     public static final int AUTHKEY_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object authkey_ = "";
+    private volatile java.lang.Object authkey_;
     /**
      * <code>string authkey = 6;</code>
      * @return The authkey.
@@ -176,7 +245,7 @@ public final class GetAuthkeyRspOuterClass {
     }
 
     public static final int UNK3300_DODLFCNOAMB_FIELD_NUMBER = 13;
-    private int unk3300DODLFCNOAMB_ = 0;
+    private int unk3300DODLFCNOAMB_;
     /**
      * <code>uint32 Unk3300_DODLFCNOAMB = 13;</code>
      * @return The unk3300DODLFCNOAMB.
@@ -187,7 +256,7 @@ public final class GetAuthkeyRspOuterClass {
     }
 
     public static final int UNK3300_FGBHHPOKCJH_FIELD_NUMBER = 3;
-    private int unk3300FGBHHPOKCJH_ = 0;
+    private int unk3300FGBHHPOKCJH_;
     /**
      * <code>uint32 Unk3300_FGBHHPOKCJH = 3;</code>
      * @return The unk3300FGBHHPOKCJH.
@@ -198,8 +267,7 @@ public final class GetAuthkeyRspOuterClass {
     }
 
     public static final int AUTH_APPID_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object authAppid_ = "";
+    private volatile java.lang.Object authAppid_;
     /**
      * <code>string auth_appid = 7;</code>
      * @return The authAppid.
@@ -237,8 +305,7 @@ public final class GetAuthkeyRspOuterClass {
     }
 
     public static final int GAME_BIZ_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object gameBiz_ = "";
+    private volatile java.lang.Object gameBiz_;
     /**
      * <code>string game_biz = 1;</code>
      * @return The gameBiz.
@@ -307,7 +374,7 @@ public final class GetAuthkeyRspOuterClass {
       if (unk3300DODLFCNOAMB_ != 0) {
         output.writeUInt32(13, unk3300DODLFCNOAMB_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -337,7 +404,7 @@ public final class GetAuthkeyRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, unk3300DODLFCNOAMB_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -364,7 +431,7 @@ public final class GetAuthkeyRspOuterClass {
           .equals(other.getAuthAppid())) return false;
       if (!getGameBiz()
           .equals(other.getGameBiz())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -387,7 +454,7 @@ public final class GetAuthkeyRspOuterClass {
       hash = (53 * hash) + getAuthAppid().hashCode();
       hash = (37 * hash) + GAME_BIZ_FIELD_NUMBER;
       hash = (53 * hash) + getGameBiz().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -514,24 +581,34 @@ public final class GetAuthkeyRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         authkey_ = "";
+
         unk3300DODLFCNOAMB_ = 0;
+
         unk3300FGBHHPOKCJH_ = 0;
+
         authAppid_ = "";
+
         gameBiz_ = "";
+
         return this;
       }
 
@@ -558,31 +635,14 @@ public final class GetAuthkeyRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp buildPartial() {
         emu.gingerps.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp result = new emu.gingerps.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        result.authkey_ = authkey_;
+        result.unk3300DODLFCNOAMB_ = unk3300DODLFCNOAMB_;
+        result.unk3300FGBHHPOKCJH_ = unk3300FGBHHPOKCJH_;
+        result.authAppid_ = authAppid_;
+        result.gameBiz_ = gameBiz_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.authkey_ = authkey_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300DODLFCNOAMB_ = unk3300DODLFCNOAMB_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300FGBHHPOKCJH_ = unk3300FGBHHPOKCJH_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.authAppid_ = authAppid_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.gameBiz_ = gameBiz_;
-        }
       }
 
       @java.lang.Override
@@ -634,7 +694,6 @@ public final class GetAuthkeyRspOuterClass {
         }
         if (!other.getAuthkey().isEmpty()) {
           authkey_ = other.authkey_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getUnk3300DODLFCNOAMB() != 0) {
@@ -645,15 +704,13 @@ public final class GetAuthkeyRspOuterClass {
         }
         if (!other.getAuthAppid().isEmpty()) {
           authAppid_ = other.authAppid_;
-          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (!other.getGameBiz().isEmpty()) {
           gameBiz_ = other.gameBiz_;
-          bitField0_ |= 0x00000020;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -668,63 +725,19 @@ public final class GetAuthkeyRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                gameBiz_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 10
-              case 24: {
-                unk3300FGBHHPOKCJH_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 24
-              case 50: {
-                authkey_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 50
-              case 58: {
-                authAppid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 58
-              case 64: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 104: {
-                unk3300DODLFCNOAMB_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -743,7 +756,6 @@ public final class GetAuthkeyRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -752,7 +764,7 @@ public final class GetAuthkeyRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -799,9 +811,11 @@ public final class GetAuthkeyRspOuterClass {
        */
       public Builder setAuthkey(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         authkey_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -810,8 +824,8 @@ public final class GetAuthkeyRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAuthkey() {
+        
         authkey_ = getDefaultInstance().getAuthkey();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -822,10 +836,12 @@ public final class GetAuthkeyRspOuterClass {
        */
       public Builder setAuthkeyBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         authkey_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -847,7 +863,6 @@ public final class GetAuthkeyRspOuterClass {
       public Builder setUnk3300DODLFCNOAMB(int value) {
         
         unk3300DODLFCNOAMB_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -856,7 +871,7 @@ public final class GetAuthkeyRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DODLFCNOAMB() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300DODLFCNOAMB_ = 0;
         onChanged();
         return this;
@@ -879,7 +894,6 @@ public final class GetAuthkeyRspOuterClass {
       public Builder setUnk3300FGBHHPOKCJH(int value) {
         
         unk3300FGBHHPOKCJH_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -888,7 +902,7 @@ public final class GetAuthkeyRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FGBHHPOKCJH() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300FGBHHPOKCJH_ = 0;
         onChanged();
         return this;
@@ -935,9 +949,11 @@ public final class GetAuthkeyRspOuterClass {
        */
       public Builder setAuthAppid(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         authAppid_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -946,8 +962,8 @@ public final class GetAuthkeyRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAuthAppid() {
+        
         authAppid_ = getDefaultInstance().getAuthAppid();
-        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -958,10 +974,12 @@ public final class GetAuthkeyRspOuterClass {
        */
       public Builder setAuthAppidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         authAppid_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1007,9 +1025,11 @@ public final class GetAuthkeyRspOuterClass {
        */
       public Builder setGameBiz(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         gameBiz_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1018,8 +1038,8 @@ public final class GetAuthkeyRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGameBiz() {
+        
         gameBiz_ = getDefaultInstance().getGameBiz();
-        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1030,10 +1050,12 @@ public final class GetAuthkeyRspOuterClass {
        */
       public Builder setGameBizBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         gameBiz_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1070,18 +1092,7 @@ public final class GetAuthkeyRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetAuthkeyRsp(input, extensionRegistry);
       }
     };
 

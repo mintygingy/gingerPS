@@ -98,6 +98,80 @@ public final class MailChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MailChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                mailList_ = new java.util.ArrayList<emu.gingerps.net.proto.MailDataOuterClass.MailData>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              mailList_.add(
+                  input.readMessage(emu.gingerps.net.proto.MailDataOuterClass.MailData.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                delMailIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              delMailIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 122: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                delMailIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                delMailIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          mailList_ = java.util.Collections.unmodifiableList(mailList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          delMailIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MailChangeNotifyOuterClass.internal_static_MailChangeNotify_descriptor;
@@ -112,7 +186,6 @@ public final class MailChangeNotifyOuterClass {
     }
 
     public static final int DEL_MAIL_ID_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList delMailIdList_;
     /**
      * <code>repeated uint32 del_mail_id_list = 15;</code>
@@ -141,7 +214,6 @@ public final class MailChangeNotifyOuterClass {
     private int delMailIdListMemoizedSerializedSize = -1;
 
     public static final int MAIL_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MailDataOuterClass.MailData> mailList_;
     /**
      * <code>repeated .MailData mail_list = 2;</code>
@@ -206,7 +278,7 @@ public final class MailChangeNotifyOuterClass {
       for (int i = 0; i < delMailIdList_.size(); i++) {
         output.writeUInt32NoTag(delMailIdList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -233,7 +305,7 @@ public final class MailChangeNotifyOuterClass {
         }
         delMailIdListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -252,7 +324,7 @@ public final class MailChangeNotifyOuterClass {
           .equals(other.getDelMailIdListList())) return false;
       if (!getMailListList()
           .equals(other.getMailListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -271,7 +343,7 @@ public final class MailChangeNotifyOuterClass {
         hash = (37 * hash) + MAIL_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMailListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -398,26 +470,31 @@ public final class MailChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MailChangeNotifyOuterClass.MailChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMailListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         delMailIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (mailListBuilder_ == null) {
           mailList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          mailList_ = null;
           mailListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -444,13 +521,7 @@ public final class MailChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MailChangeNotifyOuterClass.MailChangeNotify buildPartial() {
         emu.gingerps.net.proto.MailChangeNotifyOuterClass.MailChangeNotify result = new emu.gingerps.net.proto.MailChangeNotifyOuterClass.MailChangeNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MailChangeNotifyOuterClass.MailChangeNotify result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           delMailIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -465,10 +536,8 @@ public final class MailChangeNotifyOuterClass {
         } else {
           result.mailList_ = mailListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MailChangeNotifyOuterClass.MailChangeNotify result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -551,7 +620,7 @@ public final class MailChangeNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -566,59 +635,17 @@ public final class MailChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MailChangeNotifyOuterClass.MailChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                emu.gingerps.net.proto.MailDataOuterClass.MailData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.MailDataOuterClass.MailData.parser(),
-                        extensionRegistry);
-                if (mailListBuilder_ == null) {
-                  ensureMailListIsMutable();
-                  mailList_.add(m);
-                } else {
-                  mailListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 120: {
-                int v = input.readUInt32();
-                ensureDelMailIdListIsMutable();
-                delMailIdList_.addInt(v);
-                break;
-              } // case 120
-              case 122: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureDelMailIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  delMailIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MailChangeNotifyOuterClass.MailChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -628,7 +655,7 @@ public final class MailChangeNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           delMailIdList_ = mutableCopy(delMailIdList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 del_mail_id_list = 15;</code>
@@ -662,7 +689,6 @@ public final class MailChangeNotifyOuterClass {
        */
       public Builder setDelMailIdList(
           int index, int value) {
-        
         ensureDelMailIdListIsMutable();
         delMailIdList_.setInt(index, value);
         onChanged();
@@ -674,7 +700,6 @@ public final class MailChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addDelMailIdList(int value) {
-        
         ensureDelMailIdListIsMutable();
         delMailIdList_.addInt(value);
         onChanged();
@@ -976,18 +1001,7 @@ public final class MailChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MailChangeNotify(input, extensionRegistry);
       }
     };
 

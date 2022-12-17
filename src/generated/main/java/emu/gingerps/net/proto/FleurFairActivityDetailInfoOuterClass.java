@@ -77,14 +77,14 @@ public final class FleurFairActivityDetailInfoOuterClass {
     /**
      * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo getDungeonSectionInfoMapOrDefault(
+
+    emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo getDungeonSectionInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo defaultValue);
+        emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo defaultValue);
     /**
      * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
      */
+
     emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo getDungeonSectionInfoMapOrThrow(
         int key);
 
@@ -117,14 +117,14 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
     /**
      * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo getMinigameInfoMapOrDefault(
+
+    emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo getMinigameInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo defaultValue);
+        emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo defaultValue);
     /**
      * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
      */
+
     emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo getMinigameInfoMapOrThrow(
         int key);
 
@@ -168,6 +168,107 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FleurFairActivityDetailInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              unk3300KONOCAMIIIE_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              contentCloseTime_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                chapterInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              chapterInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 48: {
+
+              isDungeonUnlocked_ = input.readBool();
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                dungeonSectionInfoMap_ = com.google.protobuf.MapField.newMapField(
+                    DungeonSectionInfoMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo>
+              dungeonSectionInfoMap__ = input.readMessage(
+                  DungeonSectionInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              dungeonSectionInfoMap_.getMutableMap().put(
+                  dungeonSectionInfoMap__.getKey(), dungeonSectionInfoMap__.getValue());
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                minigameInfoMap_ = com.google.protobuf.MapField.newMapField(
+                    MinigameInfoMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo>
+              minigameInfoMap__ = input.readMessage(
+                  MinigameInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              minigameInfoMap_.getMutableMap().put(
+                  minigameInfoMap__.getKey(), minigameInfoMap__.getValue());
+              break;
+            }
+            case 80: {
+
+              unk3300LOFLGOOIMNH_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              isContentClosed_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          chapterInfoList_ = java.util.Collections.unmodifiableList(chapterInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.internal_static_FleurFairActivityDetailInfo_descriptor;
@@ -196,7 +297,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
     }
 
     public static final int UNK3300_KONOCAMIIIE_FIELD_NUMBER = 3;
-    private int unk3300KONOCAMIIIE_ = 0;
+    private int unk3300KONOCAMIIIE_;
     /**
      * <code>uint32 Unk3300_KONOCAMIIIE = 3;</code>
      * @return The unk3300KONOCAMIIIE.
@@ -207,7 +308,6 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
     }
 
     public static final int CHAPTER_INFO_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfo> chapterInfoList_;
     /**
      * <code>repeated .FleurFairChapterInfo chapter_info_list = 5;</code>
@@ -248,7 +348,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
     }
 
     public static final int IS_DUNGEON_UNLOCKED_FIELD_NUMBER = 6;
-    private boolean isDungeonUnlocked_ = false;
+    private boolean isDungeonUnlocked_;
     /**
      * <code>bool is_dungeon_unlocked = 6;</code>
      * @return The isDungeonUnlocked.
@@ -270,7 +370,6 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo> dungeonSectionInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo>
@@ -281,12 +380,14 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       }
       return dungeonSectionInfoMap_;
     }
+
     public int getDungeonSectionInfoMapCount() {
       return internalGetDungeonSectionInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
      */
+
     @java.lang.Override
     public boolean containsDungeonSectionInfoMap(
         int key) {
@@ -305,6 +406,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
      * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo> getDungeonSectionInfoMapMap() {
       return internalGetDungeonSectionInfoMap().getMap();
     }
@@ -312,11 +414,10 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
      * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo getDungeonSectionInfoMapOrDefault(
+
+    public emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo getDungeonSectionInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo defaultValue) {
+        emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo> map =
           internalGetDungeonSectionInfoMap().getMap();
@@ -326,6 +427,7 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
      * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo getDungeonSectionInfoMapOrThrow(
         int key) {
       
@@ -338,7 +440,7 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 13;
-    private boolean isContentClosed_ = false;
+    private boolean isContentClosed_;
     /**
      * <code>bool is_content_closed = 13;</code>
      * @return The isContentClosed.
@@ -360,7 +462,6 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo> minigameInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo>
@@ -371,12 +472,14 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
       }
       return minigameInfoMap_;
     }
+
     public int getMinigameInfoMapCount() {
       return internalGetMinigameInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
      */
+
     @java.lang.Override
     public boolean containsMinigameInfoMap(
         int key) {
@@ -395,6 +498,7 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
      * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo> getMinigameInfoMapMap() {
       return internalGetMinigameInfoMap().getMap();
     }
@@ -402,11 +506,10 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
      * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo getMinigameInfoMapOrDefault(
+
+    public emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo getMinigameInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo defaultValue) {
+        emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo> map =
           internalGetMinigameInfoMap().getMap();
@@ -416,6 +519,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
      * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo getMinigameInfoMapOrThrow(
         int key) {
       
@@ -428,7 +532,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
     }
 
     public static final int UNK3300_LOFLGOOIMNH_FIELD_NUMBER = 10;
-    private int unk3300LOFLGOOIMNH_ = 0;
+    private int unk3300LOFLGOOIMNH_;
     /**
      * <code>uint32 Unk3300_LOFLGOOIMNH = 10;</code>
      * @return The unk3300LOFLGOOIMNH.
@@ -439,7 +543,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
     }
 
     public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 4;
-    private int contentCloseTime_ = 0;
+    private int contentCloseTime_;
     /**
      * <code>uint32 content_close_time = 4;</code>
      * @return The contentCloseTime.
@@ -493,7 +597,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       if (isContentClosed_ != false) {
         output.writeBool(13, isContentClosed_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -546,7 +650,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isContentClosed_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -577,7 +681,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
           != other.getUnk3300LOFLGOOIMNH()) return false;
       if (getContentCloseTime()
           != other.getContentCloseTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -612,7 +716,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       hash = (53 * hash) + getUnk3300LOFLGOOIMNH();
       hash = (37 * hash) + CONTENT_CLOSE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getContentCloseTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -755,32 +859,41 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
 
       // Construct using emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getChapterInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300KONOCAMIIIE_ = 0;
+
         if (chapterInfoListBuilder_ == null) {
           chapterInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          chapterInfoList_ = null;
           chapterInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         isDungeonUnlocked_ = false;
+
         internalGetMutableDungeonSectionInfoMap().clear();
         isContentClosed_ = false;
+
         internalGetMutableMinigameInfoMap().clear();
         unk3300LOFLGOOIMNH_ = 0;
+
         contentCloseTime_ = 0;
+
         return this;
       }
 
@@ -807,49 +920,27 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       @java.lang.Override
       public emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo result = new emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.unk3300KONOCAMIIIE_ = unk3300KONOCAMIIIE_;
         if (chapterInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             chapterInfoList_ = java.util.Collections.unmodifiableList(chapterInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.chapterInfoList_ = chapterInfoList_;
         } else {
           result.chapterInfoList_ = chapterInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300KONOCAMIIIE_ = unk3300KONOCAMIIIE_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isDungeonUnlocked_ = isDungeonUnlocked_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.dungeonSectionInfoMap_ = internalGetDungeonSectionInfoMap();
-          result.dungeonSectionInfoMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.isContentClosed_ = isContentClosed_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.minigameInfoMap_ = internalGetMinigameInfoMap();
-          result.minigameInfoMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.unk3300LOFLGOOIMNH_ = unk3300LOFLGOOIMNH_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.contentCloseTime_ = contentCloseTime_;
-        }
+        result.isDungeonUnlocked_ = isDungeonUnlocked_;
+        result.dungeonSectionInfoMap_ = internalGetDungeonSectionInfoMap();
+        result.dungeonSectionInfoMap_.makeImmutable();
+        result.isContentClosed_ = isContentClosed_;
+        result.minigameInfoMap_ = internalGetMinigameInfoMap();
+        result.minigameInfoMap_.makeImmutable();
+        result.unk3300LOFLGOOIMNH_ = unk3300LOFLGOOIMNH_;
+        result.contentCloseTime_ = contentCloseTime_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -903,7 +994,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
           if (!other.chapterInfoList_.isEmpty()) {
             if (chapterInfoList_.isEmpty()) {
               chapterInfoList_ = other.chapterInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureChapterInfoListIsMutable();
               chapterInfoList_.addAll(other.chapterInfoList_);
@@ -916,7 +1007,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
               chapterInfoListBuilder_.dispose();
               chapterInfoListBuilder_ = null;
               chapterInfoList_ = other.chapterInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               chapterInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChapterInfoListFieldBuilder() : null;
@@ -930,20 +1021,18 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
         }
         internalGetMutableDungeonSectionInfoMap().mergeFrom(
             other.internalGetDungeonSectionInfoMap());
-        bitField0_ |= 0x00000008;
         if (other.getIsContentClosed() != false) {
           setIsContentClosed(other.getIsContentClosed());
         }
         internalGetMutableMinigameInfoMap().mergeFrom(
             other.internalGetMinigameInfoMap());
-        bitField0_ |= 0x00000020;
         if (other.getUnk3300LOFLGOOIMNH() != 0) {
           setUnk3300LOFLGOOIMNH(other.getUnk3300LOFLGOOIMNH());
         }
         if (other.getContentCloseTime() != 0) {
           setContentCloseTime(other.getContentCloseTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -958,86 +1047,17 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                unk3300KONOCAMIIIE_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 32: {
-                contentCloseTime_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 32
-              case 42: {
-                emu.gingerps.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfo.parser(),
-                        extensionRegistry);
-                if (chapterInfoListBuilder_ == null) {
-                  ensureChapterInfoListIsMutable();
-                  chapterInfoList_.add(m);
-                } else {
-                  chapterInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 48: {
-                isDungeonUnlocked_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 48
-              case 66: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo>
-                dungeonSectionInfoMap__ = input.readMessage(
-                    DungeonSectionInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableDungeonSectionInfoMap().getMutableMap().put(
-                    dungeonSectionInfoMap__.getKey(), dungeonSectionInfoMap__.getValue());
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 66
-              case 74: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo>
-                minigameInfoMap__ = input.readMessage(
-                    MinigameInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableMinigameInfoMap().getMutableMap().put(
-                    minigameInfoMap__.getKey(), minigameInfoMap__.getValue());
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 74
-              case 80: {
-                unk3300LOFLGOOIMNH_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 80
-              case 104: {
-                isContentClosed_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1059,7 +1079,6 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       public Builder setUnk3300KONOCAMIIIE(int value) {
         
         unk3300KONOCAMIIIE_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1068,7 +1087,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KONOCAMIIIE() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300KONOCAMIIIE_ = 0;
         onChanged();
         return this;
@@ -1077,9 +1096,9 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       private java.util.List<emu.gingerps.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfo> chapterInfoList_ =
         java.util.Collections.emptyList();
       private void ensureChapterInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           chapterInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfo>(chapterInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1229,7 +1248,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       public Builder clearChapterInfoList() {
         if (chapterInfoListBuilder_ == null) {
           chapterInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           chapterInfoListBuilder_.clear();
@@ -1306,7 +1325,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
           chapterInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfo, emu.gingerps.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfo.Builder, emu.gingerps.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfoOrBuilder>(
                   chapterInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           chapterInfoList_ = null;
@@ -1331,7 +1350,6 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       public Builder setIsDungeonUnlocked(boolean value) {
         
         isDungeonUnlocked_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1340,7 +1358,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
        * @return This builder for chaining.
        */
       public Builder clearIsDungeonUnlocked() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isDungeonUnlocked_ = false;
         onChanged();
         return this;
@@ -1349,7 +1367,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo> dungeonSectionInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo>
-          internalGetDungeonSectionInfoMap() {
+      internalGetDungeonSectionInfoMap() {
         if (dungeonSectionInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               DungeonSectionInfoMapDefaultEntryHolder.defaultEntry);
@@ -1357,7 +1375,8 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
         return dungeonSectionInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo>
-          internalGetMutableDungeonSectionInfoMap() {
+      internalGetMutableDungeonSectionInfoMap() {
+        onChanged();;
         if (dungeonSectionInfoMap_ == null) {
           dungeonSectionInfoMap_ = com.google.protobuf.MapField.newMapField(
               DungeonSectionInfoMapDefaultEntryHolder.defaultEntry);
@@ -1365,16 +1384,16 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
         if (!dungeonSectionInfoMap_.isMutable()) {
           dungeonSectionInfoMap_ = dungeonSectionInfoMap_.copy();
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
         return dungeonSectionInfoMap_;
       }
+
       public int getDungeonSectionInfoMapCount() {
         return internalGetDungeonSectionInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
        */
+
       @java.lang.Override
       public boolean containsDungeonSectionInfoMap(
           int key) {
@@ -1393,6 +1412,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
        * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo> getDungeonSectionInfoMapMap() {
         return internalGetDungeonSectionInfoMap().getMap();
       }
@@ -1400,11 +1420,10 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
        * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo getDungeonSectionInfoMapOrDefault(
+
+      public emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo getDungeonSectionInfoMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo defaultValue) {
+          emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo> map =
             internalGetDungeonSectionInfoMap().getMap();
@@ -1414,6 +1433,7 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
        * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo getDungeonSectionInfoMapOrThrow(
           int key) {
         
@@ -1424,8 +1444,8 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
         }
         return map.get(key);
       }
+
       public Builder clearDungeonSectionInfoMap() {
-        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableDungeonSectionInfoMap().getMutableMap()
             .clear();
         return this;
@@ -1433,6 +1453,7 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
       /**
        * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
        */
+
       public Builder removeDungeonSectionInfoMap(
           int key) {
         
@@ -1445,8 +1466,7 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo>
-          getMutableDungeonSectionInfoMap() {
-        bitField0_ |= 0x00000008;
+      getMutableDungeonSectionInfoMap() {
         return internalGetMutableDungeonSectionInfoMap().getMutableMap();
       }
       /**
@@ -1456,20 +1476,19 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
           int key,
           emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableDungeonSectionInfoMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000008;
         return this;
       }
       /**
        * <code>map&lt;uint32, .FleurFairDungeonSectionInfo&gt; dungeon_section_info_map = 8;</code>
        */
+
       public Builder putAllDungeonSectionInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo> values) {
         internalGetMutableDungeonSectionInfoMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000008;
         return this;
       }
 
@@ -1490,7 +1509,6 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1499,7 +1517,7 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -1508,7 +1526,7 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo> minigameInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo>
-          internalGetMinigameInfoMap() {
+      internalGetMinigameInfoMap() {
         if (minigameInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               MinigameInfoMapDefaultEntryHolder.defaultEntry);
@@ -1516,7 +1534,8 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
         return minigameInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo>
-          internalGetMutableMinigameInfoMap() {
+      internalGetMutableMinigameInfoMap() {
+        onChanged();;
         if (minigameInfoMap_ == null) {
           minigameInfoMap_ = com.google.protobuf.MapField.newMapField(
               MinigameInfoMapDefaultEntryHolder.defaultEntry);
@@ -1524,16 +1543,16 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
         if (!minigameInfoMap_.isMutable()) {
           minigameInfoMap_ = minigameInfoMap_.copy();
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
         return minigameInfoMap_;
       }
+
       public int getMinigameInfoMapCount() {
         return internalGetMinigameInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
        */
+
       @java.lang.Override
       public boolean containsMinigameInfoMap(
           int key) {
@@ -1552,6 +1571,7 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
        * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo> getMinigameInfoMapMap() {
         return internalGetMinigameInfoMap().getMap();
       }
@@ -1559,11 +1579,10 @@ emu.gingerps.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSec
        * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo getMinigameInfoMapOrDefault(
+
+      public emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo getMinigameInfoMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo defaultValue) {
+          emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo> map =
             internalGetMinigameInfoMap().getMap();
@@ -1573,6 +1592,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
        * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo getMinigameInfoMapOrThrow(
           int key) {
         
@@ -1583,8 +1603,8 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
         }
         return map.get(key);
       }
+
       public Builder clearMinigameInfoMap() {
-        bitField0_ = (bitField0_ & ~0x00000020);
         internalGetMutableMinigameInfoMap().getMutableMap()
             .clear();
         return this;
@@ -1592,6 +1612,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       /**
        * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
        */
+
       public Builder removeMinigameInfoMap(
           int key) {
         
@@ -1604,8 +1625,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo>
-          getMutableMinigameInfoMap() {
-        bitField0_ |= 0x00000020;
+      getMutableMinigameInfoMap() {
         return internalGetMutableMinigameInfoMap().getMutableMap();
       }
       /**
@@ -1615,20 +1635,19 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
           int key,
           emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableMinigameInfoMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000020;
         return this;
       }
       /**
        * <code>map&lt;uint32, .FleurFairMinigameInfo&gt; minigame_info_map = 9;</code>
        */
+
       public Builder putAllMinigameInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo> values) {
         internalGetMutableMinigameInfoMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000020;
         return this;
       }
 
@@ -1649,7 +1668,6 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       public Builder setUnk3300LOFLGOOIMNH(int value) {
         
         unk3300LOFLGOOIMNH_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1658,7 +1676,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LOFLGOOIMNH() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         unk3300LOFLGOOIMNH_ = 0;
         onChanged();
         return this;
@@ -1681,7 +1699,6 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
       public Builder setContentCloseTime(int value) {
         
         contentCloseTime_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1690,7 +1707,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
        * @return This builder for chaining.
        */
       public Builder clearContentCloseTime() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         contentCloseTime_ = 0;
         onChanged();
         return this;
@@ -1728,18 +1745,7 @@ emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo def
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FleurFairActivityDetailInfo(input, extensionRegistry);
       }
     };
 

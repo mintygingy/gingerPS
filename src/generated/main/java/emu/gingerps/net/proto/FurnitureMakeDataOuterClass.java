@@ -81,6 +81,73 @@ public final class FurnitureMakeDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FurnitureMakeData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+
+              beginTime_ = input.readFixed32();
+              break;
+            }
+            case 40: {
+
+              avatarId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              index_ = input.readUInt32();
+              break;
+            }
+            case 61: {
+
+              accelerateTime_ = input.readFixed32();
+              break;
+            }
+            case 64: {
+
+              durTime_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              makeId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FurnitureMakeDataOuterClass.internal_static_FurnitureMakeData_descriptor;
@@ -95,7 +162,7 @@ public final class FurnitureMakeDataOuterClass {
     }
 
     public static final int BEGIN_TIME_FIELD_NUMBER = 1;
-    private int beginTime_ = 0;
+    private int beginTime_;
     /**
      * <code>fixed32 begin_time = 1;</code>
      * @return The beginTime.
@@ -106,7 +173,7 @@ public final class FurnitureMakeDataOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 5;
-    private int avatarId_ = 0;
+    private int avatarId_;
     /**
      * <code>uint32 avatar_id = 5;</code>
      * @return The avatarId.
@@ -117,7 +184,7 @@ public final class FurnitureMakeDataOuterClass {
     }
 
     public static final int MAKE_ID_FIELD_NUMBER = 10;
-    private int makeId_ = 0;
+    private int makeId_;
     /**
      * <code>uint32 make_id = 10;</code>
      * @return The makeId.
@@ -128,7 +195,7 @@ public final class FurnitureMakeDataOuterClass {
     }
 
     public static final int INDEX_FIELD_NUMBER = 6;
-    private int index_ = 0;
+    private int index_;
     /**
      * <code>uint32 index = 6;</code>
      * @return The index.
@@ -139,7 +206,7 @@ public final class FurnitureMakeDataOuterClass {
     }
 
     public static final int DUR_TIME_FIELD_NUMBER = 8;
-    private int durTime_ = 0;
+    private int durTime_;
     /**
      * <code>uint32 dur_time = 8;</code>
      * @return The durTime.
@@ -150,7 +217,7 @@ public final class FurnitureMakeDataOuterClass {
     }
 
     public static final int ACCELERATE_TIME_FIELD_NUMBER = 7;
-    private int accelerateTime_ = 0;
+    private int accelerateTime_;
     /**
      * <code>fixed32 accelerate_time = 7;</code>
      * @return The accelerateTime.
@@ -192,7 +259,7 @@ public final class FurnitureMakeDataOuterClass {
       if (makeId_ != 0) {
         output.writeUInt32(10, makeId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -225,7 +292,7 @@ public final class FurnitureMakeDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, makeId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -252,7 +319,7 @@ public final class FurnitureMakeDataOuterClass {
           != other.getDurTime()) return false;
       if (getAccelerateTime()
           != other.getAccelerateTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -275,7 +342,7 @@ public final class FurnitureMakeDataOuterClass {
       hash = (53 * hash) + getDurTime();
       hash = (37 * hash) + ACCELERATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getAccelerateTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -392,24 +459,34 @@ public final class FurnitureMakeDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         beginTime_ = 0;
+
         avatarId_ = 0;
+
         makeId_ = 0;
+
         index_ = 0;
+
         durTime_ = 0;
+
         accelerateTime_ = 0;
+
         return this;
       }
 
@@ -436,31 +513,14 @@ public final class FurnitureMakeDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData buildPartial() {
         emu.gingerps.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData result = new emu.gingerps.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.beginTime_ = beginTime_;
+        result.avatarId_ = avatarId_;
+        result.makeId_ = makeId_;
+        result.index_ = index_;
+        result.durTime_ = durTime_;
+        result.accelerateTime_ = accelerateTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.beginTime_ = beginTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.avatarId_ = avatarId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.makeId_ = makeId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.index_ = index_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.durTime_ = durTime_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.accelerateTime_ = accelerateTime_;
-        }
       }
 
       @java.lang.Override
@@ -525,7 +585,7 @@ public final class FurnitureMakeDataOuterClass {
         if (other.getAccelerateTime() != 0) {
           setAccelerateTime(other.getAccelerateTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -540,63 +600,19 @@ public final class FurnitureMakeDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                beginTime_ = input.readFixed32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 40: {
-                avatarId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 48: {
-                index_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 48
-              case 61: {
-                accelerateTime_ = input.readFixed32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 61
-              case 64: {
-                durTime_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 64
-              case 80: {
-                makeId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int beginTime_ ;
       /**
@@ -615,7 +631,6 @@ public final class FurnitureMakeDataOuterClass {
       public Builder setBeginTime(int value) {
         
         beginTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -624,7 +639,7 @@ public final class FurnitureMakeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         beginTime_ = 0;
         onChanged();
         return this;
@@ -647,7 +662,6 @@ public final class FurnitureMakeDataOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -656,7 +670,7 @@ public final class FurnitureMakeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         avatarId_ = 0;
         onChanged();
         return this;
@@ -679,7 +693,6 @@ public final class FurnitureMakeDataOuterClass {
       public Builder setMakeId(int value) {
         
         makeId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -688,7 +701,7 @@ public final class FurnitureMakeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMakeId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         makeId_ = 0;
         onChanged();
         return this;
@@ -711,7 +724,6 @@ public final class FurnitureMakeDataOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -720,7 +732,7 @@ public final class FurnitureMakeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         index_ = 0;
         onChanged();
         return this;
@@ -743,7 +755,6 @@ public final class FurnitureMakeDataOuterClass {
       public Builder setDurTime(int value) {
         
         durTime_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -752,7 +763,7 @@ public final class FurnitureMakeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDurTime() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         durTime_ = 0;
         onChanged();
         return this;
@@ -775,7 +786,6 @@ public final class FurnitureMakeDataOuterClass {
       public Builder setAccelerateTime(int value) {
         
         accelerateTime_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -784,7 +794,7 @@ public final class FurnitureMakeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAccelerateTime() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         accelerateTime_ = 0;
         onChanged();
         return this;
@@ -822,18 +832,7 @@ public final class FurnitureMakeDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FurnitureMakeData(input, extensionRegistry);
       }
     };
 

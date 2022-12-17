@@ -73,6 +73,68 @@ public final class Unk3300DGBNCDEIIFC {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Unk3300_DGBNCDEIIFC(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                monsterIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              monsterIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 74: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                monsterIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                monsterIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          monsterIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.Unk3300DGBNCDEIIFC.internal_static_Unk3300_DGBNCDEIIFC_descriptor;
@@ -87,7 +149,6 @@ public final class Unk3300DGBNCDEIIFC {
     }
 
     public static final int MONSTER_ID_LIST_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList monsterIdList_;
     /**
      * <code>repeated uint32 monster_id_list = 9;</code>
@@ -137,7 +198,7 @@ public final class Unk3300DGBNCDEIIFC {
       for (int i = 0; i < monsterIdList_.size(); i++) {
         output.writeUInt32NoTag(monsterIdList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -160,7 +221,7 @@ public final class Unk3300DGBNCDEIIFC {
         }
         monsterIdListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -177,7 +238,7 @@ public final class Unk3300DGBNCDEIIFC {
 
       if (!getMonsterIdListList()
           .equals(other.getMonsterIdListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -192,7 +253,7 @@ public final class Unk3300DGBNCDEIIFC {
         hash = (37 * hash) + MONSTER_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMonsterIdListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -319,19 +380,24 @@ public final class Unk3300DGBNCDEIIFC {
 
       // Construct using emu.gingerps.net.proto.Unk3300DGBNCDEIIFC.Unk3300_DGBNCDEIIFC.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         monsterIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -358,22 +424,14 @@ public final class Unk3300DGBNCDEIIFC {
       @java.lang.Override
       public emu.gingerps.net.proto.Unk3300DGBNCDEIIFC.Unk3300_DGBNCDEIIFC buildPartial() {
         emu.gingerps.net.proto.Unk3300DGBNCDEIIFC.Unk3300_DGBNCDEIIFC result = new emu.gingerps.net.proto.Unk3300DGBNCDEIIFC.Unk3300_DGBNCDEIIFC(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.Unk3300DGBNCDEIIFC.Unk3300_DGBNCDEIIFC result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           monsterIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.monsterIdList_ = monsterIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.Unk3300DGBNCDEIIFC.Unk3300_DGBNCDEIIFC result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -430,7 +488,7 @@ public final class Unk3300DGBNCDEIIFC {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -445,46 +503,17 @@ public final class Unk3300DGBNCDEIIFC {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.Unk3300DGBNCDEIIFC.Unk3300_DGBNCDEIIFC parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                int v = input.readUInt32();
-                ensureMonsterIdListIsMutable();
-                monsterIdList_.addInt(v);
-                break;
-              } // case 72
-              case 74: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureMonsterIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  monsterIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 74
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.Unk3300DGBNCDEIIFC.Unk3300_DGBNCDEIIFC) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -494,7 +523,7 @@ public final class Unk3300DGBNCDEIIFC {
         if (!((bitField0_ & 0x00000001) != 0)) {
           monsterIdList_ = mutableCopy(monsterIdList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 monster_id_list = 9;</code>
@@ -528,7 +557,6 @@ public final class Unk3300DGBNCDEIIFC {
        */
       public Builder setMonsterIdList(
           int index, int value) {
-        
         ensureMonsterIdListIsMutable();
         monsterIdList_.setInt(index, value);
         onChanged();
@@ -540,7 +568,6 @@ public final class Unk3300DGBNCDEIIFC {
        * @return This builder for chaining.
        */
       public Builder addMonsterIdList(int value) {
-        
         ensureMonsterIdListIsMutable();
         monsterIdList_.addInt(value);
         onChanged();
@@ -602,18 +629,7 @@ public final class Unk3300DGBNCDEIIFC {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Unk3300_DGBNCDEIIFC(input, extensionRegistry);
       }
     };
 

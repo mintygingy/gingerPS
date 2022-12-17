@@ -72,6 +72,66 @@ public final class MPLevelEntityInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MPLevelEntityInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              authorityPeerId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = null;
+              if (abilityInfo_ != null) {
+                subBuilder = abilityInfo_.toBuilder();
+              }
+              abilityInfo_ = input.readMessage(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(abilityInfo_);
+                abilityInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.internal_static_MPLevelEntityInfo_descriptor;
@@ -108,11 +168,11 @@ public final class MPLevelEntityInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getAbilityInfoOrBuilder() {
-      return abilityInfo_ == null ? emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : abilityInfo_;
+      return getAbilityInfo();
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 10;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 10;</code>
      * @return The entityId.
@@ -123,7 +183,7 @@ public final class MPLevelEntityInfoOuterClass {
     }
 
     public static final int AUTHORITY_PEER_ID_FIELD_NUMBER = 5;
-    private int authorityPeerId_ = 0;
+    private int authorityPeerId_;
     /**
      * <code>uint32 authority_peer_id = 5;</code>
      * @return The authorityPeerId.
@@ -156,7 +216,7 @@ public final class MPLevelEntityInfoOuterClass {
       if (abilityInfo_ != null) {
         output.writeMessage(15, getAbilityInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +237,7 @@ public final class MPLevelEntityInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getAbilityInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -201,7 +261,7 @@ public final class MPLevelEntityInfoOuterClass {
           != other.getEntityId()) return false;
       if (getAuthorityPeerId()
           != other.getAuthorityPeerId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -220,7 +280,7 @@ public final class MPLevelEntityInfoOuterClass {
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + AUTHORITY_PEER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAuthorityPeerId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -337,25 +397,32 @@ public final class MPLevelEntityInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        abilityInfo_ = null;
-        if (abilityInfoBuilder_ != null) {
-          abilityInfoBuilder_.dispose();
+        if (abilityInfoBuilder_ == null) {
+          abilityInfo_ = null;
+        } else {
+          abilityInfo_ = null;
           abilityInfoBuilder_ = null;
         }
         entityId_ = 0;
+
         authorityPeerId_ = 0;
+
         return this;
       }
 
@@ -382,24 +449,15 @@ public final class MPLevelEntityInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo buildPartial() {
         emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo result = new emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (abilityInfoBuilder_ == null) {
+          result.abilityInfo_ = abilityInfo_;
+        } else {
+          result.abilityInfo_ = abilityInfoBuilder_.build();
+        }
+        result.entityId_ = entityId_;
+        result.authorityPeerId_ = authorityPeerId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.abilityInfo_ = abilityInfoBuilder_ == null
-              ? abilityInfo_
-              : abilityInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.authorityPeerId_ = authorityPeerId_;
-        }
       }
 
       @java.lang.Override
@@ -455,7 +513,7 @@ public final class MPLevelEntityInfoOuterClass {
         if (other.getAuthorityPeerId() != 0) {
           setAuthorityPeerId(other.getAuthorityPeerId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -470,50 +528,19 @@ public final class MPLevelEntityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                authorityPeerId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 80: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 122: {
-                input.readMessage(
-                    getAbilityInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo abilityInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -523,7 +550,7 @@ public final class MPLevelEntityInfoOuterClass {
        * @return Whether the abilityInfo field is set.
        */
       public boolean hasAbilityInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return abilityInfoBuilder_ != null || abilityInfo_ != null;
       }
       /**
        * <code>.AbilitySyncStateInfo ability_info = 15;</code>
@@ -545,11 +572,11 @@ public final class MPLevelEntityInfoOuterClass {
             throw new NullPointerException();
           }
           abilityInfo_ = value;
+          onChanged();
         } else {
           abilityInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -559,11 +586,11 @@ public final class MPLevelEntityInfoOuterClass {
           emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
         if (abilityInfoBuilder_ == null) {
           abilityInfo_ = builderForValue.build();
+          onChanged();
         } else {
           abilityInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -571,38 +598,38 @@ public final class MPLevelEntityInfoOuterClass {
        */
       public Builder mergeAbilityInfo(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
         if (abilityInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            abilityInfo_ != null &&
-            abilityInfo_ != emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance()) {
-            getAbilityInfoBuilder().mergeFrom(value);
+          if (abilityInfo_ != null) {
+            abilityInfo_ =
+              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(abilityInfo_).mergeFrom(value).buildPartial();
           } else {
             abilityInfo_ = value;
           }
+          onChanged();
         } else {
           abilityInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo ability_info = 15;</code>
        */
       public Builder clearAbilityInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        abilityInfo_ = null;
-        if (abilityInfoBuilder_ != null) {
-          abilityInfoBuilder_.dispose();
+        if (abilityInfoBuilder_ == null) {
+          abilityInfo_ = null;
+          onChanged();
+        } else {
+          abilityInfo_ = null;
           abilityInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo ability_info = 15;</code>
        */
       public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getAbilityInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getAbilityInfoFieldBuilder().getBuilder();
       }
@@ -651,7 +678,6 @@ public final class MPLevelEntityInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -660,7 +686,7 @@ public final class MPLevelEntityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -683,7 +709,6 @@ public final class MPLevelEntityInfoOuterClass {
       public Builder setAuthorityPeerId(int value) {
         
         authorityPeerId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -692,7 +717,7 @@ public final class MPLevelEntityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAuthorityPeerId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         authorityPeerId_ = 0;
         onChanged();
         return this;
@@ -730,18 +755,7 @@ public final class MPLevelEntityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MPLevelEntityInfo(input, extensionRegistry);
       }
     };
 

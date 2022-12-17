@@ -94,6 +94,85 @@ public final class AbilityMixinScenePropSyncOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityMixinScenePropSync(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              isClearAll_ = input.readBool();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                massivePropList_ = new java.util.ArrayList<emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              massivePropList_.add(
+                  input.readMessage(emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                deleteIdList_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              deleteIdList_.addLong(input.readInt64());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                deleteIdList_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                deleteIdList_.addLong(input.readInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          massivePropList_ = java.util.Collections.unmodifiableList(massivePropList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          deleteIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinScenePropSyncOuterClass.internal_static_AbilityMixinScenePropSync_descriptor;
@@ -108,7 +187,6 @@ public final class AbilityMixinScenePropSyncOuterClass {
     }
 
     public static final int MASSIVE_PROP_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo> massivePropList_;
     /**
      * <code>repeated .MassivePropSyncInfo massive_prop_list = 11;</code>
@@ -149,7 +227,6 @@ public final class AbilityMixinScenePropSyncOuterClass {
     }
 
     public static final int DELETE_ID_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList deleteIdList_;
     /**
      * <code>repeated int64 delete_id_list = 12;</code>
@@ -178,7 +255,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
     private int deleteIdListMemoizedSerializedSize = -1;
 
     public static final int IS_CLEAR_ALL_FIELD_NUMBER = 3;
-    private boolean isClearAll_ = false;
+    private boolean isClearAll_;
     /**
      * <code>bool is_clear_all = 3;</code>
      * @return The isClearAll.
@@ -216,7 +293,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
       for (int i = 0; i < deleteIdList_.size(); i++) {
         output.writeInt64NoTag(deleteIdList_.getLong(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -247,7 +324,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         }
         deleteIdListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -268,7 +345,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
           .equals(other.getDeleteIdListList())) return false;
       if (getIsClearAll()
           != other.getIsClearAll()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -290,7 +367,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
       hash = (37 * hash) + IS_CLEAR_ALL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsClearAll());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -407,27 +484,33 @@ public final class AbilityMixinScenePropSyncOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinScenePropSyncOuterClass.AbilityMixinScenePropSync.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMassivePropListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (massivePropListBuilder_ == null) {
           massivePropList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          massivePropList_ = null;
           massivePropListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         deleteIdList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         isClearAll_ = false;
+
         return this;
       }
 
@@ -454,13 +537,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinScenePropSyncOuterClass.AbilityMixinScenePropSync buildPartial() {
         emu.gingerps.net.proto.AbilityMixinScenePropSyncOuterClass.AbilityMixinScenePropSync result = new emu.gingerps.net.proto.AbilityMixinScenePropSyncOuterClass.AbilityMixinScenePropSync(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AbilityMixinScenePropSyncOuterClass.AbilityMixinScenePropSync result) {
+        int from_bitField0_ = bitField0_;
         if (massivePropListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             massivePropList_ = java.util.Collections.unmodifiableList(massivePropList_);
@@ -475,13 +552,9 @@ public final class AbilityMixinScenePropSyncOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.deleteIdList_ = deleteIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinScenePropSyncOuterClass.AbilityMixinScenePropSync result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isClearAll_ = isClearAll_;
-        }
+        result.isClearAll_ = isClearAll_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -567,7 +640,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         if (other.getIsClearAll() != false) {
           setIsClearAll(other.getIsClearAll());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -582,64 +655,17 @@ public final class AbilityMixinScenePropSyncOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityMixinScenePropSyncOuterClass.AbilityMixinScenePropSync parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                isClearAll_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 90: {
-                emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.parser(),
-                        extensionRegistry);
-                if (massivePropListBuilder_ == null) {
-                  ensureMassivePropListIsMutable();
-                  massivePropList_.add(m);
-                } else {
-                  massivePropListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              case 96: {
-                long v = input.readInt64();
-                ensureDeleteIdListIsMutable();
-                deleteIdList_.addLong(v);
-                break;
-              } // case 96
-              case 98: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureDeleteIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  deleteIdList_.addLong(input.readInt64());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityMixinScenePropSyncOuterClass.AbilityMixinScenePropSync) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -889,7 +915,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           deleteIdList_ = mutableCopy(deleteIdList_);
           bitField0_ |= 0x00000002;
-        }
+         }
       }
       /**
        * <code>repeated int64 delete_id_list = 12;</code>
@@ -923,7 +949,6 @@ public final class AbilityMixinScenePropSyncOuterClass {
        */
       public Builder setDeleteIdList(
           int index, long value) {
-        
         ensureDeleteIdListIsMutable();
         deleteIdList_.setLong(index, value);
         onChanged();
@@ -935,7 +960,6 @@ public final class AbilityMixinScenePropSyncOuterClass {
        * @return This builder for chaining.
        */
       public Builder addDeleteIdList(long value) {
-        
         ensureDeleteIdListIsMutable();
         deleteIdList_.addLong(value);
         onChanged();
@@ -982,7 +1006,6 @@ public final class AbilityMixinScenePropSyncOuterClass {
       public Builder setIsClearAll(boolean value) {
         
         isClearAll_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -991,7 +1014,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsClearAll() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isClearAll_ = false;
         onChanged();
         return this;
@@ -1029,18 +1052,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityMixinScenePropSync(input, extensionRegistry);
       }
     };
 

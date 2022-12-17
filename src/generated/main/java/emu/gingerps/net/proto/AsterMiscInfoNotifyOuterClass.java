@@ -67,6 +67,53 @@ public final class AsterMiscInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AsterMiscInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              unk3300DCHBFEJNBHP_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              unk3300KFDGFFPJGJC_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AsterMiscInfoNotifyOuterClass.internal_static_AsterMiscInfoNotify_descriptor;
@@ -81,7 +128,7 @@ public final class AsterMiscInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_DCHBFEJNBHP_FIELD_NUMBER = 4;
-    private int unk3300DCHBFEJNBHP_ = 0;
+    private int unk3300DCHBFEJNBHP_;
     /**
      * <code>uint32 Unk3300_DCHBFEJNBHP = 4;</code>
      * @return The unk3300DCHBFEJNBHP.
@@ -92,7 +139,7 @@ public final class AsterMiscInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_KFDGFFPJGJC_FIELD_NUMBER = 5;
-    private int unk3300KFDGFFPJGJC_ = 0;
+    private int unk3300KFDGFFPJGJC_;
     /**
      * <code>uint32 Unk3300_KFDGFFPJGJC = 5;</code>
      * @return The unk3300KFDGFFPJGJC.
@@ -122,7 +169,7 @@ public final class AsterMiscInfoNotifyOuterClass {
       if (unk3300KFDGFFPJGJC_ != 0) {
         output.writeUInt32(5, unk3300KFDGFFPJGJC_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class AsterMiscInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, unk3300KFDGFFPJGJC_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class AsterMiscInfoNotifyOuterClass {
           != other.getUnk3300DCHBFEJNBHP()) return false;
       if (getUnk3300KFDGFFPJGJC()
           != other.getUnk3300KFDGFFPJGJC()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -173,7 +220,7 @@ public final class AsterMiscInfoNotifyOuterClass {
       hash = (53 * hash) + getUnk3300DCHBFEJNBHP();
       hash = (37 * hash) + UNK3300_KFDGFFPJGJC_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300KFDGFFPJGJC();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -300,20 +347,26 @@ public final class AsterMiscInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300DCHBFEJNBHP_ = 0;
+
         unk3300KFDGFFPJGJC_ = 0;
+
         return this;
       }
 
@@ -340,19 +393,10 @@ public final class AsterMiscInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify buildPartial() {
         emu.gingerps.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify result = new emu.gingerps.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.unk3300DCHBFEJNBHP_ = unk3300DCHBFEJNBHP_;
+        result.unk3300KFDGFFPJGJC_ = unk3300KFDGFFPJGJC_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300DCHBFEJNBHP_ = unk3300DCHBFEJNBHP_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300KFDGFFPJGJC_ = unk3300KFDGFFPJGJC_;
-        }
       }
 
       @java.lang.Override
@@ -405,7 +449,7 @@ public final class AsterMiscInfoNotifyOuterClass {
         if (other.getUnk3300KFDGFFPJGJC() != 0) {
           setUnk3300KFDGFFPJGJC(other.getUnk3300KFDGFFPJGJC());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,43 +464,19 @@ public final class AsterMiscInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                unk3300DCHBFEJNBHP_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 40: {
-                unk3300KFDGFFPJGJC_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int unk3300DCHBFEJNBHP_ ;
       /**
@@ -475,7 +495,6 @@ public final class AsterMiscInfoNotifyOuterClass {
       public Builder setUnk3300DCHBFEJNBHP(int value) {
         
         unk3300DCHBFEJNBHP_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -484,7 +503,7 @@ public final class AsterMiscInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DCHBFEJNBHP() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300DCHBFEJNBHP_ = 0;
         onChanged();
         return this;
@@ -507,7 +526,6 @@ public final class AsterMiscInfoNotifyOuterClass {
       public Builder setUnk3300KFDGFFPJGJC(int value) {
         
         unk3300KFDGFFPJGJC_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -516,7 +534,7 @@ public final class AsterMiscInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KFDGFFPJGJC() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300KFDGFFPJGJC_ = 0;
         onChanged();
         return this;
@@ -554,18 +572,7 @@ public final class AsterMiscInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AsterMiscInfoNotify(input, extensionRegistry);
       }
     };
 

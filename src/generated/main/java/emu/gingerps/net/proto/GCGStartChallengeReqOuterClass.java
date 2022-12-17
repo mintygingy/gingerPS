@@ -80,6 +80,59 @@ public final class GCGStartChallengeReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGStartChallengeReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              configId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              levelType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGStartChallengeReqOuterClass.internal_static_GCGStartChallengeReq_descriptor;
@@ -94,7 +147,7 @@ public final class GCGStartChallengeReqOuterClass {
     }
 
     public static final int LEVEL_TYPE_FIELD_NUMBER = 12;
-    private int levelType_ = 0;
+    private int levelType_;
     /**
      * <code>.GCGLevelType level_type = 12;</code>
      * @return The enum numeric value on the wire for levelType.
@@ -107,12 +160,13 @@ public final class GCGStartChallengeReqOuterClass {
      * @return The levelType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType getLevelType() {
-      emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.forNumber(levelType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.valueOf(levelType_);
       return result == null ? emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.UNRECOGNIZED : result;
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 7;
-    private int configId_ = 0;
+    private int configId_;
     /**
      * <code>uint32 config_id = 7;</code>
      * @return The configId.
@@ -123,7 +177,7 @@ public final class GCGStartChallengeReqOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 2;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 2;</code>
      * @return The levelId.
@@ -156,7 +210,7 @@ public final class GCGStartChallengeReqOuterClass {
       if (levelType_ != emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.GCG_LEVEL_TYPE_NONE.getNumber()) {
         output.writeEnum(12, levelType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +231,7 @@ public final class GCGStartChallengeReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, levelType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +251,7 @@ public final class GCGStartChallengeReqOuterClass {
           != other.getConfigId()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -214,7 +268,7 @@ public final class GCGStartChallengeReqOuterClass {
       hash = (53 * hash) + getConfigId();
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -342,21 +396,28 @@ public final class GCGStartChallengeReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGStartChallengeReqOuterClass.GCGStartChallengeReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         levelType_ = 0;
+
         configId_ = 0;
+
         levelId_ = 0;
+
         return this;
       }
 
@@ -383,22 +444,11 @@ public final class GCGStartChallengeReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGStartChallengeReqOuterClass.GCGStartChallengeReq buildPartial() {
         emu.gingerps.net.proto.GCGStartChallengeReqOuterClass.GCGStartChallengeReq result = new emu.gingerps.net.proto.GCGStartChallengeReqOuterClass.GCGStartChallengeReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.levelType_ = levelType_;
+        result.configId_ = configId_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGStartChallengeReqOuterClass.GCGStartChallengeReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.levelType_ = levelType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.configId_ = configId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.levelId_ = levelId_;
-        }
       }
 
       @java.lang.Override
@@ -454,7 +504,7 @@ public final class GCGStartChallengeReqOuterClass {
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -469,48 +519,19 @@ public final class GCGStartChallengeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGStartChallengeReqOuterClass.GCGStartChallengeReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 56: {
-                configId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 96: {
-                levelType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGStartChallengeReqOuterClass.GCGStartChallengeReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int levelType_ = 0;
       /**
@@ -526,8 +547,8 @@ public final class GCGStartChallengeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setLevelTypeValue(int value) {
+        
         levelType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -537,7 +558,8 @@ public final class GCGStartChallengeReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType getLevelType() {
-        emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.forNumber(levelType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.valueOf(levelType_);
         return result == null ? emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.UNRECOGNIZED : result;
       }
       /**
@@ -549,7 +571,7 @@ public final class GCGStartChallengeReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         levelType_ = value.getNumber();
         onChanged();
         return this;
@@ -559,7 +581,7 @@ public final class GCGStartChallengeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         levelType_ = 0;
         onChanged();
         return this;
@@ -582,7 +604,6 @@ public final class GCGStartChallengeReqOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -591,7 +612,7 @@ public final class GCGStartChallengeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         configId_ = 0;
         onChanged();
         return this;
@@ -614,7 +635,6 @@ public final class GCGStartChallengeReqOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -623,7 +643,7 @@ public final class GCGStartChallengeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -661,18 +681,7 @@ public final class GCGStartChallengeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGStartChallengeReq(input, extensionRegistry);
       }
     };
 

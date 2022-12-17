@@ -70,12 +70,14 @@ public final class GCGDuelExtraOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
      */
+
     int getCardFaceMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
      */
+
     int getCardFaceMapOrThrow(
         int key);
 
@@ -198,6 +200,163 @@ public final class GCGDuelExtraOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGDuelExtra(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cardIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                cardIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                cardIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 16: {
+
+              fieldId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              cardBackId_ = input.readUInt32();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                cardFaceMap_ = com.google.protobuf.MapField.newMapField(
+                    CardFaceMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              cardFaceMap__ = input.readMessage(
+                  CardFaceMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              cardFaceMap_.getMutableMap().put(
+                  cardFaceMap__.getKey(), cardFaceMap__.getValue());
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                challengeList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              challengeList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData.parser(), extensionRegistry));
+              break;
+            }
+            case 48: {
+
+              score_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              isMatchAi_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              aiDeckId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              isInternal_ = input.readBool();
+              break;
+            }
+            case 80: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                forbidFinishChallengeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              forbidFinishChallengeList_.addInt(input.readUInt32());
+              break;
+            }
+            case 82: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                forbidFinishChallengeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                forbidFinishChallengeList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 88: {
+
+              level_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              clientVersion_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+
+              platformType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cardIdList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          challengeList_ = java.util.Collections.unmodifiableList(challengeList_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          forbidFinishChallengeList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGDuelExtraOuterClass.internal_static_GCGDuelExtra_descriptor;
@@ -224,7 +383,6 @@ public final class GCGDuelExtraOuterClass {
     }
 
     public static final int CARD_ID_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList cardIdList_;
     /**
      * <code>repeated uint32 card_id_list = 1;</code>
@@ -253,7 +411,7 @@ public final class GCGDuelExtraOuterClass {
     private int cardIdListMemoizedSerializedSize = -1;
 
     public static final int FIELD_ID_FIELD_NUMBER = 2;
-    private int fieldId_ = 0;
+    private int fieldId_;
     /**
      * <code>uint32 field_id = 2;</code>
      * @return The fieldId.
@@ -264,7 +422,7 @@ public final class GCGDuelExtraOuterClass {
     }
 
     public static final int CARD_BACK_ID_FIELD_NUMBER = 3;
-    private int cardBackId_ = 0;
+    private int cardBackId_;
     /**
      * <code>uint32 card_back_id = 3;</code>
      * @return The cardBackId.
@@ -286,7 +444,6 @@ public final class GCGDuelExtraOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> cardFaceMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -297,12 +454,14 @@ public final class GCGDuelExtraOuterClass {
       }
       return cardFaceMap_;
     }
+
     public int getCardFaceMapCount() {
       return internalGetCardFaceMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
      */
+
     @java.lang.Override
     public boolean containsCardFaceMap(
         int key) {
@@ -321,6 +480,7 @@ public final class GCGDuelExtraOuterClass {
      * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getCardFaceMapMap() {
       return internalGetCardFaceMap().getMap();
     }
@@ -328,6 +488,7 @@ public final class GCGDuelExtraOuterClass {
      * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
      */
     @java.lang.Override
+
     public int getCardFaceMapOrDefault(
         int key,
         int defaultValue) {
@@ -340,6 +501,7 @@ public final class GCGDuelExtraOuterClass {
      * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
      */
     @java.lang.Override
+
     public int getCardFaceMapOrThrow(
         int key) {
       
@@ -352,7 +514,6 @@ public final class GCGDuelExtraOuterClass {
     }
 
     public static final int CHALLENGE_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData> challengeList_;
     /**
      * <code>repeated .GCGChallengeData challenge_list = 5;</code>
@@ -393,7 +554,7 @@ public final class GCGDuelExtraOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 6;
-    private int score_ = 0;
+    private int score_;
     /**
      * <code>uint32 score = 6;</code>
      * @return The score.
@@ -404,7 +565,7 @@ public final class GCGDuelExtraOuterClass {
     }
 
     public static final int IS_MATCH_AI_FIELD_NUMBER = 7;
-    private boolean isMatchAi_ = false;
+    private boolean isMatchAi_;
     /**
      * <code>bool is_match_ai = 7;</code>
      * @return The isMatchAi.
@@ -415,7 +576,7 @@ public final class GCGDuelExtraOuterClass {
     }
 
     public static final int AI_DECK_ID_FIELD_NUMBER = 8;
-    private int aiDeckId_ = 0;
+    private int aiDeckId_;
     /**
      * <code>uint32 ai_deck_id = 8;</code>
      * @return The aiDeckId.
@@ -426,7 +587,7 @@ public final class GCGDuelExtraOuterClass {
     }
 
     public static final int IS_INTERNAL_FIELD_NUMBER = 9;
-    private boolean isInternal_ = false;
+    private boolean isInternal_;
     /**
      * <code>bool is_internal = 9;</code>
      * @return The isInternal.
@@ -437,7 +598,6 @@ public final class GCGDuelExtraOuterClass {
     }
 
     public static final int FORBID_FINISH_CHALLENGE_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList forbidFinishChallengeList_;
     /**
      * <code>repeated uint32 forbid_finish_challenge_list = 10;</code>
@@ -466,7 +626,7 @@ public final class GCGDuelExtraOuterClass {
     private int forbidFinishChallengeListMemoizedSerializedSize = -1;
 
     public static final int LEVEL_FIELD_NUMBER = 11;
-    private int level_ = 0;
+    private int level_;
     /**
      * <code>uint32 level = 11;</code>
      * @return The level.
@@ -477,7 +637,7 @@ public final class GCGDuelExtraOuterClass {
     }
 
     public static final int CLIENT_VERSION_FIELD_NUMBER = 12;
-    private int clientVersion_ = 0;
+    private int clientVersion_;
     /**
      * <code>uint32 client_version = 12;</code>
      * @return The clientVersion.
@@ -488,7 +648,7 @@ public final class GCGDuelExtraOuterClass {
     }
 
     public static final int PLATFORM_TYPE_FIELD_NUMBER = 13;
-    private int platformType_ = 0;
+    private int platformType_;
     /**
      * <code>.PlatformType platform_type = 13;</code>
      * @return The enum numeric value on the wire for platformType.
@@ -501,7 +661,8 @@ public final class GCGDuelExtraOuterClass {
      * @return The platformType.
      */
     @java.lang.Override public emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType getPlatformType() {
-      emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType result = emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType.forNumber(platformType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType result = emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType.valueOf(platformType_);
       return result == null ? emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType.UNRECOGNIZED : result;
     }
 
@@ -570,7 +731,7 @@ public final class GCGDuelExtraOuterClass {
       if (platformType_ != emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType.PLATFORM_TYPE_EDITOR.getNumber()) {
         output.writeEnum(13, platformType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -657,7 +818,7 @@ public final class GCGDuelExtraOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, platformType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -697,7 +858,7 @@ public final class GCGDuelExtraOuterClass {
       if (getClientVersion()
           != other.getClientVersion()) return false;
       if (platformType_ != other.platformType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -744,7 +905,7 @@ public final class GCGDuelExtraOuterClass {
       hash = (53 * hash) + getClientVersion();
       hash = (37 * hash) + PLATFORM_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + platformType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -883,37 +1044,52 @@ public final class GCGDuelExtraOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGDuelExtraOuterClass.GCGDuelExtra.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getChallengeListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         cardIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         fieldId_ = 0;
+
         cardBackId_ = 0;
+
         internalGetMutableCardFaceMap().clear();
         if (challengeListBuilder_ == null) {
           challengeList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          challengeList_ = null;
           challengeListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         score_ = 0;
+
         isMatchAi_ = false;
+
         aiDeckId_ = 0;
+
         isInternal_ = false;
+
         forbidFinishChallengeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000008);
         level_ = 0;
+
         clientVersion_ = 0;
+
         platformType_ = 0;
+
         return this;
       }
 
@@ -940,67 +1116,39 @@ public final class GCGDuelExtraOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGDuelExtraOuterClass.GCGDuelExtra buildPartial() {
         emu.gingerps.net.proto.GCGDuelExtraOuterClass.GCGDuelExtra result = new emu.gingerps.net.proto.GCGDuelExtraOuterClass.GCGDuelExtra(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGDuelExtraOuterClass.GCGDuelExtra result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           cardIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.cardIdList_ = cardIdList_;
+        result.fieldId_ = fieldId_;
+        result.cardBackId_ = cardBackId_;
+        result.cardFaceMap_ = internalGetCardFaceMap();
+        result.cardFaceMap_.makeImmutable();
         if (challengeListBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             challengeList_ = java.util.Collections.unmodifiableList(challengeList_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.challengeList_ = challengeList_;
         } else {
           result.challengeList_ = challengeListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000200) != 0)) {
+        result.score_ = score_;
+        result.isMatchAi_ = isMatchAi_;
+        result.aiDeckId_ = aiDeckId_;
+        result.isInternal_ = isInternal_;
+        if (((bitField0_ & 0x00000008) != 0)) {
           forbidFinishChallengeList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.forbidFinishChallengeList_ = forbidFinishChallengeList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGDuelExtraOuterClass.GCGDuelExtra result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.fieldId_ = fieldId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.cardBackId_ = cardBackId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.cardFaceMap_ = internalGetCardFaceMap();
-          result.cardFaceMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.score_ = score_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.isMatchAi_ = isMatchAi_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.aiDeckId_ = aiDeckId_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.isInternal_ = isInternal_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.level_ = level_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.clientVersion_ = clientVersion_;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.platformType_ = platformType_;
-        }
+        result.level_ = level_;
+        result.clientVersion_ = clientVersion_;
+        result.platformType_ = platformType_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -1065,12 +1213,11 @@ public final class GCGDuelExtraOuterClass {
         }
         internalGetMutableCardFaceMap().mergeFrom(
             other.internalGetCardFaceMap());
-        bitField0_ |= 0x00000008;
         if (challengeListBuilder_ == null) {
           if (!other.challengeList_.isEmpty()) {
             if (challengeList_.isEmpty()) {
               challengeList_ = other.challengeList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureChallengeListIsMutable();
               challengeList_.addAll(other.challengeList_);
@@ -1083,7 +1230,7 @@ public final class GCGDuelExtraOuterClass {
               challengeListBuilder_.dispose();
               challengeListBuilder_ = null;
               challengeList_ = other.challengeList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000004);
               challengeListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChallengeListFieldBuilder() : null;
@@ -1107,7 +1254,7 @@ public final class GCGDuelExtraOuterClass {
         if (!other.forbidFinishChallengeList_.isEmpty()) {
           if (forbidFinishChallengeList_.isEmpty()) {
             forbidFinishChallengeList_ = other.forbidFinishChallengeList_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureForbidFinishChallengeListIsMutable();
             forbidFinishChallengeList_.addAll(other.forbidFinishChallengeList_);
@@ -1123,7 +1270,7 @@ public final class GCGDuelExtraOuterClass {
         if (other.platformType_ != 0) {
           setPlatformTypeValue(other.getPlatformTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1138,129 +1285,17 @@ public final class GCGDuelExtraOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGDuelExtraOuterClass.GCGDuelExtra parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int v = input.readUInt32();
-                ensureCardIdListIsMutable();
-                cardIdList_.addInt(v);
-                break;
-              } // case 8
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureCardIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  cardIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 10
-              case 16: {
-                fieldId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                cardBackId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 34: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                cardFaceMap__ = input.readMessage(
-                    CardFaceMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableCardFaceMap().getMutableMap().put(
-                    cardFaceMap__.getKey(), cardFaceMap__.getValue());
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 42: {
-                emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData.parser(),
-                        extensionRegistry);
-                if (challengeListBuilder_ == null) {
-                  ensureChallengeListIsMutable();
-                  challengeList_.add(m);
-                } else {
-                  challengeListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 48: {
-                score_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 56: {
-                isMatchAi_ = input.readBool();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              case 64: {
-                aiDeckId_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 64
-              case 72: {
-                isInternal_ = input.readBool();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 80: {
-                int v = input.readUInt32();
-                ensureForbidFinishChallengeListIsMutable();
-                forbidFinishChallengeList_.addInt(v);
-                break;
-              } // case 80
-              case 82: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureForbidFinishChallengeListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  forbidFinishChallengeList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 82
-              case 88: {
-                level_ = input.readUInt32();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 88
-              case 96: {
-                clientVersion_ = input.readUInt32();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 96
-              case 104: {
-                platformType_ = input.readEnum();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGDuelExtraOuterClass.GCGDuelExtra) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1270,7 +1305,7 @@ public final class GCGDuelExtraOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           cardIdList_ = mutableCopy(cardIdList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 card_id_list = 1;</code>
@@ -1304,7 +1339,6 @@ public final class GCGDuelExtraOuterClass {
        */
       public Builder setCardIdList(
           int index, int value) {
-        
         ensureCardIdListIsMutable();
         cardIdList_.setInt(index, value);
         onChanged();
@@ -1316,7 +1350,6 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCardIdList(int value) {
-        
         ensureCardIdListIsMutable();
         cardIdList_.addInt(value);
         onChanged();
@@ -1363,7 +1396,6 @@ public final class GCGDuelExtraOuterClass {
       public Builder setFieldId(int value) {
         
         fieldId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1372,7 +1404,7 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFieldId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         fieldId_ = 0;
         onChanged();
         return this;
@@ -1395,7 +1427,6 @@ public final class GCGDuelExtraOuterClass {
       public Builder setCardBackId(int value) {
         
         cardBackId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1404,7 +1435,7 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardBackId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         cardBackId_ = 0;
         onChanged();
         return this;
@@ -1413,7 +1444,7 @@ public final class GCGDuelExtraOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> cardFaceMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetCardFaceMap() {
+      internalGetCardFaceMap() {
         if (cardFaceMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               CardFaceMapDefaultEntryHolder.defaultEntry);
@@ -1421,7 +1452,8 @@ public final class GCGDuelExtraOuterClass {
         return cardFaceMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableCardFaceMap() {
+      internalGetMutableCardFaceMap() {
+        onChanged();;
         if (cardFaceMap_ == null) {
           cardFaceMap_ = com.google.protobuf.MapField.newMapField(
               CardFaceMapDefaultEntryHolder.defaultEntry);
@@ -1429,16 +1461,16 @@ public final class GCGDuelExtraOuterClass {
         if (!cardFaceMap_.isMutable()) {
           cardFaceMap_ = cardFaceMap_.copy();
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
         return cardFaceMap_;
       }
+
       public int getCardFaceMapCount() {
         return internalGetCardFaceMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
        */
+
       @java.lang.Override
       public boolean containsCardFaceMap(
           int key) {
@@ -1457,6 +1489,7 @@ public final class GCGDuelExtraOuterClass {
        * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getCardFaceMapMap() {
         return internalGetCardFaceMap().getMap();
       }
@@ -1464,6 +1497,7 @@ public final class GCGDuelExtraOuterClass {
        * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
        */
       @java.lang.Override
+
       public int getCardFaceMapOrDefault(
           int key,
           int defaultValue) {
@@ -1476,6 +1510,7 @@ public final class GCGDuelExtraOuterClass {
        * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
        */
       @java.lang.Override
+
       public int getCardFaceMapOrThrow(
           int key) {
         
@@ -1486,8 +1521,8 @@ public final class GCGDuelExtraOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearCardFaceMap() {
-        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableCardFaceMap().getMutableMap()
             .clear();
         return this;
@@ -1495,6 +1530,7 @@ public final class GCGDuelExtraOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
        */
+
       public Builder removeCardFaceMap(
           int key) {
         
@@ -1507,8 +1543,7 @@ public final class GCGDuelExtraOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableCardFaceMap() {
-        bitField0_ |= 0x00000008;
+      getMutableCardFaceMap() {
         return internalGetMutableCardFaceMap().getMutableMap();
       }
       /**
@@ -1521,26 +1556,25 @@ public final class GCGDuelExtraOuterClass {
         
         internalGetMutableCardFaceMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000008;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; card_face_map = 4;</code>
        */
+
       public Builder putAllCardFaceMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableCardFaceMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000008;
         return this;
       }
 
       private java.util.List<emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData> challengeList_ =
         java.util.Collections.emptyList();
       private void ensureChallengeListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           challengeList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData>(challengeList_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1690,7 +1724,7 @@ public final class GCGDuelExtraOuterClass {
       public Builder clearChallengeList() {
         if (challengeListBuilder_ == null) {
           challengeList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           challengeListBuilder_.clear();
@@ -1767,7 +1801,7 @@ public final class GCGDuelExtraOuterClass {
           challengeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData, emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData.Builder, emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeDataOrBuilder>(
                   challengeList_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           challengeList_ = null;
@@ -1792,7 +1826,6 @@ public final class GCGDuelExtraOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1801,7 +1834,7 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         score_ = 0;
         onChanged();
         return this;
@@ -1824,7 +1857,6 @@ public final class GCGDuelExtraOuterClass {
       public Builder setIsMatchAi(boolean value) {
         
         isMatchAi_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1833,7 +1865,7 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsMatchAi() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         isMatchAi_ = false;
         onChanged();
         return this;
@@ -1856,7 +1888,6 @@ public final class GCGDuelExtraOuterClass {
       public Builder setAiDeckId(int value) {
         
         aiDeckId_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1865,7 +1896,7 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAiDeckId() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         aiDeckId_ = 0;
         onChanged();
         return this;
@@ -1888,7 +1919,6 @@ public final class GCGDuelExtraOuterClass {
       public Builder setIsInternal(boolean value) {
         
         isInternal_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1897,7 +1927,7 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsInternal() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         isInternal_ = false;
         onChanged();
         return this;
@@ -1905,10 +1935,10 @@ public final class GCGDuelExtraOuterClass {
 
       private com.google.protobuf.Internal.IntList forbidFinishChallengeList_ = emptyIntList();
       private void ensureForbidFinishChallengeListIsMutable() {
-        if (!((bitField0_ & 0x00000200) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           forbidFinishChallengeList_ = mutableCopy(forbidFinishChallengeList_);
-          bitField0_ |= 0x00000200;
-        }
+          bitField0_ |= 0x00000008;
+         }
       }
       /**
        * <code>repeated uint32 forbid_finish_challenge_list = 10;</code>
@@ -1916,7 +1946,7 @@ public final class GCGDuelExtraOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getForbidFinishChallengeListList() {
-        return ((bitField0_ & 0x00000200) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(forbidFinishChallengeList_) : forbidFinishChallengeList_;
       }
       /**
@@ -1942,7 +1972,6 @@ public final class GCGDuelExtraOuterClass {
        */
       public Builder setForbidFinishChallengeList(
           int index, int value) {
-        
         ensureForbidFinishChallengeListIsMutable();
         forbidFinishChallengeList_.setInt(index, value);
         onChanged();
@@ -1954,7 +1983,6 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder addForbidFinishChallengeList(int value) {
-        
         ensureForbidFinishChallengeListIsMutable();
         forbidFinishChallengeList_.addInt(value);
         onChanged();
@@ -1979,7 +2007,7 @@ public final class GCGDuelExtraOuterClass {
        */
       public Builder clearForbidFinishChallengeList() {
         forbidFinishChallengeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2001,7 +2029,6 @@ public final class GCGDuelExtraOuterClass {
       public Builder setLevel(int value) {
         
         level_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2010,7 +2037,7 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         level_ = 0;
         onChanged();
         return this;
@@ -2033,7 +2060,6 @@ public final class GCGDuelExtraOuterClass {
       public Builder setClientVersion(int value) {
         
         clientVersion_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2042,7 +2068,7 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientVersion() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         clientVersion_ = 0;
         onChanged();
         return this;
@@ -2062,8 +2088,8 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder setPlatformTypeValue(int value) {
+        
         platformType_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2073,7 +2099,8 @@ public final class GCGDuelExtraOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType getPlatformType() {
-        emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType result = emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType.forNumber(platformType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType result = emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType.valueOf(platformType_);
         return result == null ? emu.gingerps.net.proto.PlatformTypeOuterClass.PlatformType.UNRECOGNIZED : result;
       }
       /**
@@ -2085,7 +2112,7 @@ public final class GCGDuelExtraOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00001000;
+        
         platformType_ = value.getNumber();
         onChanged();
         return this;
@@ -2095,7 +2122,7 @@ public final class GCGDuelExtraOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlatformType() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         platformType_ = 0;
         onChanged();
         return this;
@@ -2133,18 +2160,7 @@ public final class GCGDuelExtraOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGDuelExtra(input, extensionRegistry);
       }
     };
 

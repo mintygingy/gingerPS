@@ -100,6 +100,86 @@ public final class SalvageChallengeInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SalvageChallengeInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              emu.gingerps.net.proto.SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.Builder subBuilder = null;
+              if (challengeDetailCase_ == 2) {
+                subBuilder = ((emu.gingerps.net.proto.SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) challengeDetail_).toBuilder();
+              }
+              challengeDetail_ =
+                  input.readMessage(emu.gingerps.net.proto.SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) challengeDetail_);
+                challengeDetail_ = subBuilder.buildPartial();
+              }
+              challengeDetailCase_ = 2;
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.Builder subBuilder = null;
+              if (challengeDetailCase_ == 9) {
+                subBuilder = ((emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) challengeDetail_).toBuilder();
+              }
+              challengeDetail_ =
+                  input.readMessage(emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) challengeDetail_);
+                challengeDetail_ = subBuilder.buildPartial();
+              }
+              challengeDetailCase_ = 9;
+              break;
+            }
+            case 88: {
+
+              challengeType_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              challengeDetailCase_ = 12;
+              challengeDetail_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              isUnlock_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.internal_static_SalvageChallengeInfo_descriptor;
@@ -157,7 +237,7 @@ public final class SalvageChallengeInfoOuterClass {
     }
 
     public static final int CHALLENGE_TYPE_FIELD_NUMBER = 11;
-    private int challengeType_ = 0;
+    private int challengeType_;
     /**
      * <code>uint32 challenge_type = 11;</code>
      * @return The challengeType.
@@ -168,7 +248,7 @@ public final class SalvageChallengeInfoOuterClass {
     }
 
     public static final int IS_UNLOCK_FIELD_NUMBER = 14;
-    private boolean isUnlock_ = false;
+    private boolean isUnlock_;
     /**
      * <code>bool is_unlock = 14;</code>
      * @return The isUnlock.
@@ -291,7 +371,7 @@ public final class SalvageChallengeInfoOuterClass {
       if (isUnlock_ != false) {
         output.writeBool(14, isUnlock_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -321,7 +401,7 @@ public final class SalvageChallengeInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isUnlock_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -357,7 +437,7 @@ public final class SalvageChallengeInfoOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -389,7 +469,7 @@ public final class SalvageChallengeInfoOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -506,26 +586,26 @@ public final class SalvageChallengeInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         challengeType_ = 0;
+
         isUnlock_ = false;
-        if (bundleInfoBuilder_ != null) {
-          bundleInfoBuilder_.clear();
-        }
-        if (scoreChallengeInfoBuilder_ != null) {
-          scoreChallengeInfoBuilder_.clear();
-        }
+
         challengeDetailCase_ = 0;
         challengeDetail_ = null;
         return this;
@@ -554,33 +634,28 @@ public final class SalvageChallengeInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo buildPartial() {
         emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo result = new emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        result.challengeType_ = challengeType_;
+        result.isUnlock_ = isUnlock_;
+        if (challengeDetailCase_ == 2) {
+          if (bundleInfoBuilder_ == null) {
+            result.challengeDetail_ = challengeDetail_;
+          } else {
+            result.challengeDetail_ = bundleInfoBuilder_.build();
+          }
+        }
+        if (challengeDetailCase_ == 9) {
+          if (scoreChallengeInfoBuilder_ == null) {
+            result.challengeDetail_ = challengeDetail_;
+          } else {
+            result.challengeDetail_ = scoreChallengeInfoBuilder_.build();
+          }
+        }
+        if (challengeDetailCase_ == 12) {
+          result.challengeDetail_ = challengeDetail_;
+        }
+        result.challengeDetailCase_ = challengeDetailCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.challengeType_ = challengeType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isUnlock_ = isUnlock_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo result) {
-        result.challengeDetailCase_ = challengeDetailCase_;
-        result.challengeDetail_ = this.challengeDetail_;
-        if (challengeDetailCase_ == 2 &&
-            bundleInfoBuilder_ != null) {
-          result.challengeDetail_ = bundleInfoBuilder_.build();
-        }
-        if (challengeDetailCase_ == 9 &&
-            scoreChallengeInfoBuilder_ != null) {
-          result.challengeDetail_ = scoreChallengeInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -650,7 +725,7 @@ public final class SalvageChallengeInfoOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -665,59 +740,17 @@ public final class SalvageChallengeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                input.readMessage(
-                    getBundleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                challengeDetailCase_ = 2;
-                break;
-              } // case 18
-              case 74: {
-                input.readMessage(
-                    getScoreChallengeInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                challengeDetailCase_ = 9;
-                break;
-              } // case 74
-              case 88: {
-                challengeType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 96: {
-                challengeDetail_ = input.readUInt32();
-                challengeDetailCase_ = 12;
-                break;
-              } // case 96
-              case 112: {
-                isUnlock_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int challengeDetailCase_ = 0;
@@ -735,7 +768,6 @@ public final class SalvageChallengeInfoOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private int challengeType_ ;
       /**
@@ -754,7 +786,6 @@ public final class SalvageChallengeInfoOuterClass {
       public Builder setChallengeType(int value) {
         
         challengeType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -763,7 +794,7 @@ public final class SalvageChallengeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         challengeType_ = 0;
         onChanged();
         return this;
@@ -786,7 +817,6 @@ public final class SalvageChallengeInfoOuterClass {
       public Builder setIsUnlock(boolean value) {
         
         isUnlock_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -795,7 +825,7 @@ public final class SalvageChallengeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsUnlock() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isUnlock_ = false;
         onChanged();
         return this;
@@ -875,9 +905,8 @@ public final class SalvageChallengeInfoOuterClass {
         } else {
           if (challengeDetailCase_ == 2) {
             bundleInfoBuilder_.mergeFrom(value);
-          } else {
-            bundleInfoBuilder_.setMessage(value);
           }
+          bundleInfoBuilder_.setMessage(value);
         }
         challengeDetailCase_ = 2;
         return this;
@@ -939,7 +968,7 @@ public final class SalvageChallengeInfoOuterClass {
           challengeDetail_ = null;
         }
         challengeDetailCase_ = 2;
-        onChanged();
+        onChanged();;
         return bundleInfoBuilder_;
       }
 
@@ -1017,9 +1046,8 @@ public final class SalvageChallengeInfoOuterClass {
         } else {
           if (challengeDetailCase_ == 9) {
             scoreChallengeInfoBuilder_.mergeFrom(value);
-          } else {
-            scoreChallengeInfoBuilder_.setMessage(value);
           }
+          scoreChallengeInfoBuilder_.setMessage(value);
         }
         challengeDetailCase_ = 9;
         return this;
@@ -1081,7 +1109,7 @@ public final class SalvageChallengeInfoOuterClass {
           challengeDetail_ = null;
         }
         challengeDetailCase_ = 9;
-        onChanged();
+        onChanged();;
         return scoreChallengeInfoBuilder_;
       }
 
@@ -1108,7 +1136,6 @@ public final class SalvageChallengeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBossChallengeId(int value) {
-        
         challengeDetailCase_ = 12;
         challengeDetail_ = value;
         onChanged();
@@ -1159,18 +1186,7 @@ public final class SalvageChallengeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SalvageChallengeInfo(input, extensionRegistry);
       }
     };
 

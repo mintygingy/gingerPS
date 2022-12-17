@@ -51,6 +51,48 @@ public final class AbilityActionHitEffectOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityActionHitEffect(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 104: {
+
+              triggerId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityActionHitEffectOuterClass.internal_static_AbilityActionHitEffect_descriptor;
@@ -65,7 +107,7 @@ public final class AbilityActionHitEffectOuterClass {
     }
 
     public static final int TRIGGER_ID_FIELD_NUMBER = 13;
-    private int triggerId_ = 0;
+    private int triggerId_;
     /**
      * <code>uint32 trigger_id = 13;</code>
      * @return The triggerId.
@@ -92,7 +134,7 @@ public final class AbilityActionHitEffectOuterClass {
       if (triggerId_ != 0) {
         output.writeUInt32(13, triggerId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -105,7 +147,7 @@ public final class AbilityActionHitEffectOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, triggerId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -122,7 +164,7 @@ public final class AbilityActionHitEffectOuterClass {
 
       if (getTriggerId()
           != other.getTriggerId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -135,7 +177,7 @@ public final class AbilityActionHitEffectOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TRIGGER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTriggerId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -252,19 +294,24 @@ public final class AbilityActionHitEffectOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityActionHitEffectOuterClass.AbilityActionHitEffect.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         triggerId_ = 0;
+
         return this;
       }
 
@@ -291,16 +338,9 @@ public final class AbilityActionHitEffectOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityActionHitEffectOuterClass.AbilityActionHitEffect buildPartial() {
         emu.gingerps.net.proto.AbilityActionHitEffectOuterClass.AbilityActionHitEffect result = new emu.gingerps.net.proto.AbilityActionHitEffectOuterClass.AbilityActionHitEffect(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.triggerId_ = triggerId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityActionHitEffectOuterClass.AbilityActionHitEffect result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.triggerId_ = triggerId_;
-        }
       }
 
       @java.lang.Override
@@ -350,7 +390,7 @@ public final class AbilityActionHitEffectOuterClass {
         if (other.getTriggerId() != 0) {
           setTriggerId(other.getTriggerId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -365,38 +405,19 @@ public final class AbilityActionHitEffectOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityActionHitEffectOuterClass.AbilityActionHitEffect parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 104: {
-                triggerId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityActionHitEffectOuterClass.AbilityActionHitEffect) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int triggerId_ ;
       /**
@@ -415,7 +436,6 @@ public final class AbilityActionHitEffectOuterClass {
       public Builder setTriggerId(int value) {
         
         triggerId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -424,7 +444,7 @@ public final class AbilityActionHitEffectOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTriggerId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         triggerId_ = 0;
         onChanged();
         return this;
@@ -462,18 +482,7 @@ public final class AbilityActionHitEffectOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityActionHitEffect(input, extensionRegistry);
       }
     };
 

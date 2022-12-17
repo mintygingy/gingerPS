@@ -61,6 +61,48 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RoguelikeResourceBonusPropUpdateNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 45: {
+
+              bonusResourceProp_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RoguelikeResourceBonusPropUpdateNotifyOuterClass.internal_static_RoguelikeResourceBonusPropUpdateNotify_descriptor;
@@ -75,7 +117,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
     }
 
     public static final int BONUS_RESOURCE_PROP_FIELD_NUMBER = 5;
-    private float bonusResourceProp_ = 0F;
+    private float bonusResourceProp_;
     /**
      * <code>float bonus_resource_prop = 5;</code>
      * @return The bonusResourceProp.
@@ -99,10 +141,10 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Float.floatToRawIntBits(bonusResourceProp_) != 0) {
+      if (bonusResourceProp_ != 0F) {
         output.writeFloat(5, bonusResourceProp_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -111,11 +153,11 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Float.floatToRawIntBits(bonusResourceProp_) != 0) {
+      if (bonusResourceProp_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, bonusResourceProp_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -133,7 +175,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
       if (java.lang.Float.floatToIntBits(getBonusResourceProp())
           != java.lang.Float.floatToIntBits(
               other.getBonusResourceProp())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -147,7 +189,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
       hash = (37 * hash) + BONUS_RESOURCE_PROP_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getBonusResourceProp());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -274,19 +316,24 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.RoguelikeResourceBonusPropUpdateNotifyOuterClass.RoguelikeResourceBonusPropUpdateNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         bonusResourceProp_ = 0F;
+
         return this;
       }
 
@@ -313,16 +360,9 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RoguelikeResourceBonusPropUpdateNotifyOuterClass.RoguelikeResourceBonusPropUpdateNotify buildPartial() {
         emu.gingerps.net.proto.RoguelikeResourceBonusPropUpdateNotifyOuterClass.RoguelikeResourceBonusPropUpdateNotify result = new emu.gingerps.net.proto.RoguelikeResourceBonusPropUpdateNotifyOuterClass.RoguelikeResourceBonusPropUpdateNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.bonusResourceProp_ = bonusResourceProp_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RoguelikeResourceBonusPropUpdateNotifyOuterClass.RoguelikeResourceBonusPropUpdateNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.bonusResourceProp_ = bonusResourceProp_;
-        }
       }
 
       @java.lang.Override
@@ -372,7 +412,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
         if (other.getBonusResourceProp() != 0F) {
           setBonusResourceProp(other.getBonusResourceProp());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -387,38 +427,19 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RoguelikeResourceBonusPropUpdateNotifyOuterClass.RoguelikeResourceBonusPropUpdateNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 45: {
-                bonusResourceProp_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 45
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RoguelikeResourceBonusPropUpdateNotifyOuterClass.RoguelikeResourceBonusPropUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private float bonusResourceProp_ ;
       /**
@@ -437,7 +458,6 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
       public Builder setBonusResourceProp(float value) {
         
         bonusResourceProp_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -446,7 +466,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBonusResourceProp() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         bonusResourceProp_ = 0F;
         onChanged();
         return this;
@@ -484,18 +504,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RoguelikeResourceBonusPropUpdateNotify(input, extensionRegistry);
       }
     };
 

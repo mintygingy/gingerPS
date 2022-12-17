@@ -63,6 +63,58 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGSkillPreviewTokenInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              unk3300IKICJMEFEON_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              unk3300MMIKPPJMHAD_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              tokenType_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.internal_static_GCGSkillPreviewTokenInfo_descriptor;
@@ -77,7 +129,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
     }
 
     public static final int TOKEN_TYPE_FIELD_NUMBER = 11;
-    private int tokenType_ = 0;
+    private int tokenType_;
     /**
      * <code>uint32 token_type = 11;</code>
      * @return The tokenType.
@@ -88,7 +140,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
     }
 
     public static final int UNK3300_MMIKPPJMHAD_FIELD_NUMBER = 10;
-    private int unk3300MMIKPPJMHAD_ = 0;
+    private int unk3300MMIKPPJMHAD_;
     /**
      * <code>uint32 Unk3300_MMIKPPJMHAD = 10;</code>
      * @return The unk3300MMIKPPJMHAD.
@@ -99,7 +151,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
     }
 
     public static final int UNK3300_IKICJMEFEON_FIELD_NUMBER = 3;
-    private int unk3300IKICJMEFEON_ = 0;
+    private int unk3300IKICJMEFEON_;
     /**
      * <code>uint32 Unk3300_IKICJMEFEON = 3;</code>
      * @return The unk3300IKICJMEFEON.
@@ -132,7 +184,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       if (tokenType_ != 0) {
         output.writeUInt32(11, tokenType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +205,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, tokenType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +226,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
           != other.getUnk3300MMIKPPJMHAD()) return false;
       if (getUnk3300IKICJMEFEON()
           != other.getUnk3300IKICJMEFEON()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -191,7 +243,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       hash = (53 * hash) + getUnk3300MMIKPPJMHAD();
       hash = (37 * hash) + UNK3300_IKICJMEFEON_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300IKICJMEFEON();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -308,21 +360,28 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         tokenType_ = 0;
+
         unk3300MMIKPPJMHAD_ = 0;
+
         unk3300IKICJMEFEON_ = 0;
+
         return this;
       }
 
@@ -349,22 +408,11 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo buildPartial() {
         emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo result = new emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.tokenType_ = tokenType_;
+        result.unk3300MMIKPPJMHAD_ = unk3300MMIKPPJMHAD_;
+        result.unk3300IKICJMEFEON_ = unk3300IKICJMEFEON_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.tokenType_ = tokenType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300MMIKPPJMHAD_ = unk3300MMIKPPJMHAD_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300IKICJMEFEON_ = unk3300IKICJMEFEON_;
-        }
       }
 
       @java.lang.Override
@@ -420,7 +468,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
         if (other.getUnk3300IKICJMEFEON() != 0) {
           setUnk3300IKICJMEFEON(other.getUnk3300IKICJMEFEON());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -435,48 +483,19 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                unk3300IKICJMEFEON_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 80: {
-                unk3300MMIKPPJMHAD_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 88: {
-                tokenType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int tokenType_ ;
       /**
@@ -495,7 +514,6 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       public Builder setTokenType(int value) {
         
         tokenType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -504,7 +522,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTokenType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         tokenType_ = 0;
         onChanged();
         return this;
@@ -527,7 +545,6 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       public Builder setUnk3300MMIKPPJMHAD(int value) {
         
         unk3300MMIKPPJMHAD_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +553,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MMIKPPJMHAD() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300MMIKPPJMHAD_ = 0;
         onChanged();
         return this;
@@ -559,7 +576,6 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       public Builder setUnk3300IKICJMEFEON(int value) {
         
         unk3300IKICJMEFEON_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -568,7 +584,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IKICJMEFEON() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300IKICJMEFEON_ = 0;
         onChanged();
         return this;
@@ -606,18 +622,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGSkillPreviewTokenInfo(input, extensionRegistry);
       }
     };
 

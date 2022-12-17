@@ -99,6 +99,80 @@ public final class RogueFinishRepairReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RogueFinishRepairReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                chosenAvatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              chosenAvatarList_.add(
+                  input.readMessage(emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                chosenCardList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              chosenCardList_.addInt(input.readUInt32());
+              break;
+            }
+            case 122: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                chosenCardList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                chosenCardList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          chosenAvatarList_ = java.util.Collections.unmodifiableList(chosenAvatarList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          chosenCardList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RogueFinishRepairReqOuterClass.internal_static_RogueFinishRepairReq_descriptor;
@@ -113,7 +187,6 @@ public final class RogueFinishRepairReqOuterClass {
     }
 
     public static final int CHOSEN_AVATAR_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> chosenAvatarList_;
     /**
      * <code>repeated .RogueDiaryAvatar chosen_avatar_list = 14;</code>
@@ -154,7 +227,6 @@ public final class RogueFinishRepairReqOuterClass {
     }
 
     public static final int CHOSEN_CARD_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList chosenCardList_;
     /**
      * <code>repeated uint32 chosen_card_list = 15;</code>
@@ -207,7 +279,7 @@ public final class RogueFinishRepairReqOuterClass {
       for (int i = 0; i < chosenCardList_.size(); i++) {
         output.writeUInt32NoTag(chosenCardList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +306,7 @@ public final class RogueFinishRepairReqOuterClass {
         }
         chosenCardListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -253,7 +325,7 @@ public final class RogueFinishRepairReqOuterClass {
           .equals(other.getChosenAvatarListList())) return false;
       if (!getChosenCardListList()
           .equals(other.getChosenCardListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -272,7 +344,7 @@ public final class RogueFinishRepairReqOuterClass {
         hash = (37 * hash) + CHOSEN_CARD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getChosenCardListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -400,26 +472,31 @@ public final class RogueFinishRepairReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.RogueFinishRepairReqOuterClass.RogueFinishRepairReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getChosenAvatarListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (chosenAvatarListBuilder_ == null) {
           chosenAvatarList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          chosenAvatarList_ = null;
           chosenAvatarListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         chosenCardList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -446,13 +523,7 @@ public final class RogueFinishRepairReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RogueFinishRepairReqOuterClass.RogueFinishRepairReq buildPartial() {
         emu.gingerps.net.proto.RogueFinishRepairReqOuterClass.RogueFinishRepairReq result = new emu.gingerps.net.proto.RogueFinishRepairReqOuterClass.RogueFinishRepairReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.RogueFinishRepairReqOuterClass.RogueFinishRepairReq result) {
+        int from_bitField0_ = bitField0_;
         if (chosenAvatarListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             chosenAvatarList_ = java.util.Collections.unmodifiableList(chosenAvatarList_);
@@ -467,10 +538,8 @@ public final class RogueFinishRepairReqOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.chosenCardList_ = chosenCardList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RogueFinishRepairReqOuterClass.RogueFinishRepairReq result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -553,7 +622,7 @@ public final class RogueFinishRepairReqOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -568,59 +637,17 @@ public final class RogueFinishRepairReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RogueFinishRepairReqOuterClass.RogueFinishRepairReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 114: {
-                emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.parser(),
-                        extensionRegistry);
-                if (chosenAvatarListBuilder_ == null) {
-                  ensureChosenAvatarListIsMutable();
-                  chosenAvatarList_.add(m);
-                } else {
-                  chosenAvatarListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 114
-              case 120: {
-                int v = input.readUInt32();
-                ensureChosenCardListIsMutable();
-                chosenCardList_.addInt(v);
-                break;
-              } // case 120
-              case 122: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureChosenCardListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  chosenCardList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RogueFinishRepairReqOuterClass.RogueFinishRepairReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -870,7 +897,7 @@ public final class RogueFinishRepairReqOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           chosenCardList_ = mutableCopy(chosenCardList_);
           bitField0_ |= 0x00000002;
-        }
+         }
       }
       /**
        * <code>repeated uint32 chosen_card_list = 15;</code>
@@ -904,7 +931,6 @@ public final class RogueFinishRepairReqOuterClass {
        */
       public Builder setChosenCardList(
           int index, int value) {
-        
         ensureChosenCardListIsMutable();
         chosenCardList_.setInt(index, value);
         onChanged();
@@ -916,7 +942,6 @@ public final class RogueFinishRepairReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addChosenCardList(int value) {
-        
         ensureChosenCardListIsMutable();
         chosenCardList_.addInt(value);
         onChanged();
@@ -978,18 +1003,7 @@ public final class RogueFinishRepairReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RogueFinishRepairReq(input, extensionRegistry);
       }
     };
 

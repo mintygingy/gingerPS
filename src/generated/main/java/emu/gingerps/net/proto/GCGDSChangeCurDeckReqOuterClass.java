@@ -62,6 +62,48 @@ public final class GCGDSChangeCurDeckReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGDSChangeCurDeckReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 104: {
+
+              deckId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGDSChangeCurDeckReqOuterClass.internal_static_GCGDSChangeCurDeckReq_descriptor;
@@ -76,7 +118,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
     }
 
     public static final int DECK_ID_FIELD_NUMBER = 13;
-    private int deckId_ = 0;
+    private int deckId_;
     /**
      * <code>uint32 deck_id = 13;</code>
      * @return The deckId.
@@ -103,7 +145,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
       if (deckId_ != 0) {
         output.writeUInt32(13, deckId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -116,7 +158,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, deckId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -133,7 +175,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
 
       if (getDeckId()
           != other.getDeckId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -146,7 +188,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DECK_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDeckId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -274,19 +316,24 @@ public final class GCGDSChangeCurDeckReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGDSChangeCurDeckReqOuterClass.GCGDSChangeCurDeckReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         deckId_ = 0;
+
         return this;
       }
 
@@ -313,16 +360,9 @@ public final class GCGDSChangeCurDeckReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGDSChangeCurDeckReqOuterClass.GCGDSChangeCurDeckReq buildPartial() {
         emu.gingerps.net.proto.GCGDSChangeCurDeckReqOuterClass.GCGDSChangeCurDeckReq result = new emu.gingerps.net.proto.GCGDSChangeCurDeckReqOuterClass.GCGDSChangeCurDeckReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.deckId_ = deckId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGDSChangeCurDeckReqOuterClass.GCGDSChangeCurDeckReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.deckId_ = deckId_;
-        }
       }
 
       @java.lang.Override
@@ -372,7 +412,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
         if (other.getDeckId() != 0) {
           setDeckId(other.getDeckId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -387,38 +427,19 @@ public final class GCGDSChangeCurDeckReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGDSChangeCurDeckReqOuterClass.GCGDSChangeCurDeckReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 104: {
-                deckId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGDSChangeCurDeckReqOuterClass.GCGDSChangeCurDeckReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int deckId_ ;
       /**
@@ -437,7 +458,6 @@ public final class GCGDSChangeCurDeckReqOuterClass {
       public Builder setDeckId(int value) {
         
         deckId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -446,7 +466,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDeckId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         deckId_ = 0;
         onChanged();
         return this;
@@ -484,18 +504,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGDSChangeCurDeckReq(input, extensionRegistry);
       }
     };
 

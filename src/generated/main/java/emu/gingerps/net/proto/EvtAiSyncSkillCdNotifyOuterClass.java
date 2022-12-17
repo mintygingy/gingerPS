@@ -41,14 +41,14 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo getAiCdMapOrDefault(
+
+    emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo getAiCdMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue);
+        emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue);
     /**
      * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
      */
+
     emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo getAiCdMapOrThrow(
         int key);
   }
@@ -90,6 +90,57 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue);
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtAiSyncSkillCdNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                aiCdMap_ = com.google.protobuf.MapField.newMapField(
+                    AiCdMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo>
+              aiCdMap__ = input.readMessage(
+                  AiCdMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              aiCdMap_.getMutableMap().put(
+                  aiCdMap__.getKey(), aiCdMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtAiSyncSkillCdNotifyOuterClass.internal_static_EvtAiSyncSkillCdNotify_descriptor;
@@ -127,7 +178,6 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo> aiCdMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo>
@@ -138,12 +188,14 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue);
       }
       return aiCdMap_;
     }
+
     public int getAiCdMapCount() {
       return internalGetAiCdMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
      */
+
     @java.lang.Override
     public boolean containsAiCdMap(
         int key) {
@@ -162,6 +214,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue);
      * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo> getAiCdMapMap() {
       return internalGetAiCdMap().getMap();
     }
@@ -169,11 +222,10 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue);
      * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo getAiCdMapOrDefault(
+
+    public emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo getAiCdMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
+        emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo> map =
           internalGetAiCdMap().getMap();
@@ -183,6 +235,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
      * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo getAiCdMapOrThrow(
         int key) {
       
@@ -214,7 +267,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
           internalGetAiCdMap(),
           AiCdMapDefaultEntryHolder.defaultEntry,
           14);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -233,7 +286,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(14, aiCdMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -250,7 +303,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
 
       if (!internalGetAiCdMap().equals(
           other.internalGetAiCdMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -265,7 +318,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
         hash = (37 * hash) + AI_CD_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAiCdMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -415,18 +468,22 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
 
       // Construct using emu.gingerps.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableAiCdMap().clear();
         return this;
       }
@@ -454,17 +511,11 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify buildPartial() {
         emu.gingerps.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify result = new emu.gingerps.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.aiCdMap_ = internalGetAiCdMap();
+        result.aiCdMap_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.aiCdMap_ = internalGetAiCdMap();
-          result.aiCdMap_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -513,8 +564,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
         if (other == emu.gingerps.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify.getDefaultInstance()) return this;
         internalGetMutableAiCdMap().mergeFrom(
             other.internalGetAiCdMap());
-        bitField0_ |= 0x00000001;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -529,39 +579,17 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 114: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo>
-                aiCdMap__ = input.readMessage(
-                    AiCdMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableAiCdMap().getMutableMap().put(
-                    aiCdMap__.getKey(), aiCdMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -569,7 +597,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo> aiCdMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo>
-          internalGetAiCdMap() {
+      internalGetAiCdMap() {
         if (aiCdMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               AiCdMapDefaultEntryHolder.defaultEntry);
@@ -577,7 +605,8 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
         return aiCdMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo>
-          internalGetMutableAiCdMap() {
+      internalGetMutableAiCdMap() {
+        onChanged();;
         if (aiCdMap_ == null) {
           aiCdMap_ = com.google.protobuf.MapField.newMapField(
               AiCdMapDefaultEntryHolder.defaultEntry);
@@ -585,16 +614,16 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
         if (!aiCdMap_.isMutable()) {
           aiCdMap_ = aiCdMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return aiCdMap_;
       }
+
       public int getAiCdMapCount() {
         return internalGetAiCdMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
        */
+
       @java.lang.Override
       public boolean containsAiCdMap(
           int key) {
@@ -613,6 +642,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
        * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo> getAiCdMapMap() {
         return internalGetAiCdMap().getMap();
       }
@@ -620,11 +650,10 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
        * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo getAiCdMapOrDefault(
+
+      public emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo getAiCdMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
+          emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo> map =
             internalGetAiCdMap().getMap();
@@ -634,6 +663,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
        * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo getAiCdMapOrThrow(
           int key) {
         
@@ -644,8 +674,8 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearAiCdMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableAiCdMap().getMutableMap()
             .clear();
         return this;
@@ -653,6 +683,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
       /**
        * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
        */
+
       public Builder removeAiCdMap(
           int key) {
         
@@ -665,8 +696,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo>
-          getMutableAiCdMap() {
-        bitField0_ |= 0x00000001;
+      getMutableAiCdMap() {
         return internalGetMutableAiCdMap().getMutableMap();
       }
       /**
@@ -676,20 +706,19 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
           int key,
           emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableAiCdMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 14;</code>
        */
+
       public Builder putAllAiCdMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo> values) {
         internalGetMutableAiCdMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -725,18 +754,7 @@ emu.gingerps.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtAiSyncSkillCdNotify(input, extensionRegistry);
       }
     };
 

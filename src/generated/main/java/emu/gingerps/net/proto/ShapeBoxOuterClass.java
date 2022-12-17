@@ -120,6 +120,108 @@ public final class ShapeBoxOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ShapeBox(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (center_ != null) {
+                subBuilder = center_.toBuilder();
+              }
+              center_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(center_);
+                center_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (axis0_ != null) {
+                subBuilder = axis0_.toBuilder();
+              }
+              axis0_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(axis0_);
+                axis0_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (axis1_ != null) {
+                subBuilder = axis1_.toBuilder();
+              }
+              axis1_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(axis1_);
+                axis1_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (axis2_ != null) {
+                subBuilder = axis2_.toBuilder();
+              }
+              axis2_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(axis2_);
+                axis2_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (extents_ != null) {
+                subBuilder = extents_.toBuilder();
+              }
+              extents_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(extents_);
+                extents_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ShapeBoxOuterClass.internal_static_ShapeBox_descriptor;
@@ -156,7 +258,7 @@ public final class ShapeBoxOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
-      return center_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
+      return getCenter();
     }
 
     public static final int AXIS0_FIELD_NUMBER = 2;
@@ -182,7 +284,7 @@ public final class ShapeBoxOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getAxis0OrBuilder() {
-      return axis0_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : axis0_;
+      return getAxis0();
     }
 
     public static final int AXIS1_FIELD_NUMBER = 3;
@@ -208,7 +310,7 @@ public final class ShapeBoxOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getAxis1OrBuilder() {
-      return axis1_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : axis1_;
+      return getAxis1();
     }
 
     public static final int AXIS2_FIELD_NUMBER = 4;
@@ -234,7 +336,7 @@ public final class ShapeBoxOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getAxis2OrBuilder() {
-      return axis2_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : axis2_;
+      return getAxis2();
     }
 
     public static final int EXTENTS_FIELD_NUMBER = 5;
@@ -260,7 +362,7 @@ public final class ShapeBoxOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getExtentsOrBuilder() {
-      return extents_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : extents_;
+      return getExtents();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -292,7 +394,7 @@ public final class ShapeBoxOuterClass {
       if (extents_ != null) {
         output.writeMessage(5, getExtents());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -321,7 +423,7 @@ public final class ShapeBoxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getExtents());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -361,7 +463,7 @@ public final class ShapeBoxOuterClass {
         if (!getExtents()
             .equals(other.getExtents())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -392,7 +494,7 @@ public final class ShapeBoxOuterClass {
         hash = (37 * hash) + EXTENTS_FIELD_NUMBER;
         hash = (53 * hash) + getExtents().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -509,41 +611,50 @@ public final class ShapeBoxOuterClass {
 
       // Construct using emu.gingerps.net.proto.ShapeBoxOuterClass.ShapeBox.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        center_ = null;
-        if (centerBuilder_ != null) {
-          centerBuilder_.dispose();
+        if (centerBuilder_ == null) {
+          center_ = null;
+        } else {
+          center_ = null;
           centerBuilder_ = null;
         }
-        axis0_ = null;
-        if (axis0Builder_ != null) {
-          axis0Builder_.dispose();
+        if (axis0Builder_ == null) {
+          axis0_ = null;
+        } else {
+          axis0_ = null;
           axis0Builder_ = null;
         }
-        axis1_ = null;
-        if (axis1Builder_ != null) {
-          axis1Builder_.dispose();
+        if (axis1Builder_ == null) {
+          axis1_ = null;
+        } else {
+          axis1_ = null;
           axis1Builder_ = null;
         }
-        axis2_ = null;
-        if (axis2Builder_ != null) {
-          axis2Builder_.dispose();
+        if (axis2Builder_ == null) {
+          axis2_ = null;
+        } else {
+          axis2_ = null;
           axis2Builder_ = null;
         }
-        extents_ = null;
-        if (extentsBuilder_ != null) {
-          extentsBuilder_.dispose();
+        if (extentsBuilder_ == null) {
+          extents_ = null;
+        } else {
+          extents_ = null;
           extentsBuilder_ = null;
         }
         return this;
@@ -572,38 +683,33 @@ public final class ShapeBoxOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ShapeBoxOuterClass.ShapeBox buildPartial() {
         emu.gingerps.net.proto.ShapeBoxOuterClass.ShapeBox result = new emu.gingerps.net.proto.ShapeBoxOuterClass.ShapeBox(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (centerBuilder_ == null) {
+          result.center_ = center_;
+        } else {
+          result.center_ = centerBuilder_.build();
+        }
+        if (axis0Builder_ == null) {
+          result.axis0_ = axis0_;
+        } else {
+          result.axis0_ = axis0Builder_.build();
+        }
+        if (axis1Builder_ == null) {
+          result.axis1_ = axis1_;
+        } else {
+          result.axis1_ = axis1Builder_.build();
+        }
+        if (axis2Builder_ == null) {
+          result.axis2_ = axis2_;
+        } else {
+          result.axis2_ = axis2Builder_.build();
+        }
+        if (extentsBuilder_ == null) {
+          result.extents_ = extents_;
+        } else {
+          result.extents_ = extentsBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ShapeBoxOuterClass.ShapeBox result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.center_ = centerBuilder_ == null
-              ? center_
-              : centerBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.axis0_ = axis0Builder_ == null
-              ? axis0_
-              : axis0Builder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.axis1_ = axis1Builder_ == null
-              ? axis1_
-              : axis1Builder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.axis2_ = axis2Builder_ == null
-              ? axis2_
-              : axis2Builder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.extents_ = extentsBuilder_ == null
-              ? extents_
-              : extentsBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -665,7 +771,7 @@ public final class ShapeBoxOuterClass {
         if (other.hasExtents()) {
           mergeExtents(other.getExtents());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -680,68 +786,19 @@ public final class ShapeBoxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ShapeBoxOuterClass.ShapeBox parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getCenterFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getAxis0FieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getAxis1FieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getAxis2FieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getExtentsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ShapeBoxOuterClass.ShapeBox) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector center_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -751,7 +808,7 @@ public final class ShapeBoxOuterClass {
        * @return Whether the center field is set.
        */
       public boolean hasCenter() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return centerBuilder_ != null || center_ != null;
       }
       /**
        * <code>.Vector center = 1;</code>
@@ -773,11 +830,11 @@ public final class ShapeBoxOuterClass {
             throw new NullPointerException();
           }
           center_ = value;
+          onChanged();
         } else {
           centerBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -787,11 +844,11 @@ public final class ShapeBoxOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (centerBuilder_ == null) {
           center_ = builderForValue.build();
+          onChanged();
         } else {
           centerBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -799,38 +856,38 @@ public final class ShapeBoxOuterClass {
        */
       public Builder mergeCenter(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (centerBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            center_ != null &&
-            center_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getCenterBuilder().mergeFrom(value);
+          if (center_ != null) {
+            center_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(center_).mergeFrom(value).buildPartial();
           } else {
             center_ = value;
           }
+          onChanged();
         } else {
           centerBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector center = 1;</code>
        */
       public Builder clearCenter() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        center_ = null;
-        if (centerBuilder_ != null) {
-          centerBuilder_.dispose();
+        if (centerBuilder_ == null) {
+          center_ = null;
+          onChanged();
+        } else {
+          center_ = null;
           centerBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector center = 1;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getCenterBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getCenterFieldBuilder().getBuilder();
       }
@@ -870,7 +927,7 @@ public final class ShapeBoxOuterClass {
        * @return Whether the axis0 field is set.
        */
       public boolean hasAxis0() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return axis0Builder_ != null || axis0_ != null;
       }
       /**
        * <code>.Vector axis0 = 2;</code>
@@ -892,11 +949,11 @@ public final class ShapeBoxOuterClass {
             throw new NullPointerException();
           }
           axis0_ = value;
+          onChanged();
         } else {
           axis0Builder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -906,11 +963,11 @@ public final class ShapeBoxOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (axis0Builder_ == null) {
           axis0_ = builderForValue.build();
+          onChanged();
         } else {
           axis0Builder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -918,38 +975,38 @@ public final class ShapeBoxOuterClass {
        */
       public Builder mergeAxis0(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (axis0Builder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            axis0_ != null &&
-            axis0_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getAxis0Builder().mergeFrom(value);
+          if (axis0_ != null) {
+            axis0_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(axis0_).mergeFrom(value).buildPartial();
           } else {
             axis0_ = value;
           }
+          onChanged();
         } else {
           axis0Builder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector axis0 = 2;</code>
        */
       public Builder clearAxis0() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        axis0_ = null;
-        if (axis0Builder_ != null) {
-          axis0Builder_.dispose();
+        if (axis0Builder_ == null) {
+          axis0_ = null;
+          onChanged();
+        } else {
+          axis0_ = null;
           axis0Builder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector axis0 = 2;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getAxis0Builder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getAxis0FieldBuilder().getBuilder();
       }
@@ -989,7 +1046,7 @@ public final class ShapeBoxOuterClass {
        * @return Whether the axis1 field is set.
        */
       public boolean hasAxis1() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return axis1Builder_ != null || axis1_ != null;
       }
       /**
        * <code>.Vector axis1 = 3;</code>
@@ -1011,11 +1068,11 @@ public final class ShapeBoxOuterClass {
             throw new NullPointerException();
           }
           axis1_ = value;
+          onChanged();
         } else {
           axis1Builder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1025,11 +1082,11 @@ public final class ShapeBoxOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (axis1Builder_ == null) {
           axis1_ = builderForValue.build();
+          onChanged();
         } else {
           axis1Builder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1037,38 +1094,38 @@ public final class ShapeBoxOuterClass {
        */
       public Builder mergeAxis1(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (axis1Builder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            axis1_ != null &&
-            axis1_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getAxis1Builder().mergeFrom(value);
+          if (axis1_ != null) {
+            axis1_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(axis1_).mergeFrom(value).buildPartial();
           } else {
             axis1_ = value;
           }
+          onChanged();
         } else {
           axis1Builder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector axis1 = 3;</code>
        */
       public Builder clearAxis1() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        axis1_ = null;
-        if (axis1Builder_ != null) {
-          axis1Builder_.dispose();
+        if (axis1Builder_ == null) {
+          axis1_ = null;
+          onChanged();
+        } else {
+          axis1_ = null;
           axis1Builder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector axis1 = 3;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getAxis1Builder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getAxis1FieldBuilder().getBuilder();
       }
@@ -1108,7 +1165,7 @@ public final class ShapeBoxOuterClass {
        * @return Whether the axis2 field is set.
        */
       public boolean hasAxis2() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return axis2Builder_ != null || axis2_ != null;
       }
       /**
        * <code>.Vector axis2 = 4;</code>
@@ -1130,11 +1187,11 @@ public final class ShapeBoxOuterClass {
             throw new NullPointerException();
           }
           axis2_ = value;
+          onChanged();
         } else {
           axis2Builder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1144,11 +1201,11 @@ public final class ShapeBoxOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (axis2Builder_ == null) {
           axis2_ = builderForValue.build();
+          onChanged();
         } else {
           axis2Builder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1156,38 +1213,38 @@ public final class ShapeBoxOuterClass {
        */
       public Builder mergeAxis2(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (axis2Builder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            axis2_ != null &&
-            axis2_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getAxis2Builder().mergeFrom(value);
+          if (axis2_ != null) {
+            axis2_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(axis2_).mergeFrom(value).buildPartial();
           } else {
             axis2_ = value;
           }
+          onChanged();
         } else {
           axis2Builder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector axis2 = 4;</code>
        */
       public Builder clearAxis2() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        axis2_ = null;
-        if (axis2Builder_ != null) {
-          axis2Builder_.dispose();
+        if (axis2Builder_ == null) {
+          axis2_ = null;
+          onChanged();
+        } else {
+          axis2_ = null;
           axis2Builder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector axis2 = 4;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getAxis2Builder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getAxis2FieldBuilder().getBuilder();
       }
@@ -1227,7 +1284,7 @@ public final class ShapeBoxOuterClass {
        * @return Whether the extents field is set.
        */
       public boolean hasExtents() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return extentsBuilder_ != null || extents_ != null;
       }
       /**
        * <code>.Vector extents = 5;</code>
@@ -1249,11 +1306,11 @@ public final class ShapeBoxOuterClass {
             throw new NullPointerException();
           }
           extents_ = value;
+          onChanged();
         } else {
           extentsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1263,11 +1320,11 @@ public final class ShapeBoxOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (extentsBuilder_ == null) {
           extents_ = builderForValue.build();
+          onChanged();
         } else {
           extentsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1275,38 +1332,38 @@ public final class ShapeBoxOuterClass {
        */
       public Builder mergeExtents(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (extentsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            extents_ != null &&
-            extents_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getExtentsBuilder().mergeFrom(value);
+          if (extents_ != null) {
+            extents_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(extents_).mergeFrom(value).buildPartial();
           } else {
             extents_ = value;
           }
+          onChanged();
         } else {
           extentsBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector extents = 5;</code>
        */
       public Builder clearExtents() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        extents_ = null;
-        if (extentsBuilder_ != null) {
-          extentsBuilder_.dispose();
+        if (extentsBuilder_ == null) {
+          extents_ = null;
+          onChanged();
+        } else {
+          extents_ = null;
           extentsBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector extents = 5;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getExtentsBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getExtentsFieldBuilder().getBuilder();
       }
@@ -1370,18 +1427,7 @@ public final class ShapeBoxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ShapeBox(input, extensionRegistry);
       }
     };
 

@@ -51,6 +51,48 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityMixinDoActionByElementReaction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              targetEntityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinDoActionByElementReactionOuterClass.internal_static_AbilityMixinDoActionByElementReaction_descriptor;
@@ -65,7 +107,7 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
     }
 
     public static final int TARGET_ENTITY_ID_FIELD_NUMBER = 5;
-    private int targetEntityId_ = 0;
+    private int targetEntityId_;
     /**
      * <code>uint32 target_entity_id = 5;</code>
      * @return The targetEntityId.
@@ -92,7 +134,7 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
       if (targetEntityId_ != 0) {
         output.writeUInt32(5, targetEntityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -105,7 +147,7 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, targetEntityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -122,7 +164,7 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
 
       if (getTargetEntityId()
           != other.getTargetEntityId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -135,7 +177,7 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TARGET_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetEntityId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -252,19 +294,24 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinDoActionByElementReactionOuterClass.AbilityMixinDoActionByElementReaction.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         targetEntityId_ = 0;
+
         return this;
       }
 
@@ -291,16 +338,9 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinDoActionByElementReactionOuterClass.AbilityMixinDoActionByElementReaction buildPartial() {
         emu.gingerps.net.proto.AbilityMixinDoActionByElementReactionOuterClass.AbilityMixinDoActionByElementReaction result = new emu.gingerps.net.proto.AbilityMixinDoActionByElementReactionOuterClass.AbilityMixinDoActionByElementReaction(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.targetEntityId_ = targetEntityId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinDoActionByElementReactionOuterClass.AbilityMixinDoActionByElementReaction result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.targetEntityId_ = targetEntityId_;
-        }
       }
 
       @java.lang.Override
@@ -350,7 +390,7 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
         if (other.getTargetEntityId() != 0) {
           setTargetEntityId(other.getTargetEntityId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -365,38 +405,19 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityMixinDoActionByElementReactionOuterClass.AbilityMixinDoActionByElementReaction parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                targetEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityMixinDoActionByElementReactionOuterClass.AbilityMixinDoActionByElementReaction) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int targetEntityId_ ;
       /**
@@ -415,7 +436,6 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
       public Builder setTargetEntityId(int value) {
         
         targetEntityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -424,7 +444,7 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         targetEntityId_ = 0;
         onChanged();
         return this;
@@ -462,18 +482,7 @@ public final class AbilityMixinDoActionByElementReactionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityMixinDoActionByElementReaction(input, extensionRegistry);
       }
     };
 

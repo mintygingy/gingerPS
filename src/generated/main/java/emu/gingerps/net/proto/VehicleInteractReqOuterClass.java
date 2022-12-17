@@ -80,6 +80,59 @@ public final class VehicleInteractReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private VehicleInteractReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+              int rawValue = input.readEnum();
+
+              interactType_ = rawValue;
+              break;
+            }
+            case 32: {
+
+              pos_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VehicleInteractReqOuterClass.internal_static_VehicleInteractReq_descriptor;
@@ -94,7 +147,7 @@ public final class VehicleInteractReqOuterClass {
     }
 
     public static final int INTERACT_TYPE_FIELD_NUMBER = 3;
-    private int interactType_ = 0;
+    private int interactType_;
     /**
      * <code>.VehicleInteractType interact_type = 3;</code>
      * @return The enum numeric value on the wire for interactType.
@@ -107,12 +160,13 @@ public final class VehicleInteractReqOuterClass {
      * @return The interactType.
      */
     @java.lang.Override public emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType getInteractType() {
-      emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType result = emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.forNumber(interactType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType result = emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.valueOf(interactType_);
       return result == null ? emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.UNRECOGNIZED : result;
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 11;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
@@ -123,7 +177,7 @@ public final class VehicleInteractReqOuterClass {
     }
 
     public static final int POS_FIELD_NUMBER = 4;
-    private int pos_ = 0;
+    private int pos_;
     /**
      * <code>uint32 pos = 4;</code>
      * @return The pos.
@@ -156,7 +210,7 @@ public final class VehicleInteractReqOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(11, entityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +231,7 @@ public final class VehicleInteractReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, entityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +251,7 @@ public final class VehicleInteractReqOuterClass {
           != other.getEntityId()) return false;
       if (getPos()
           != other.getPos()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -214,7 +268,7 @@ public final class VehicleInteractReqOuterClass {
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + POS_FIELD_NUMBER;
       hash = (53 * hash) + getPos();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -342,21 +396,28 @@ public final class VehicleInteractReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.VehicleInteractReqOuterClass.VehicleInteractReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         interactType_ = 0;
+
         entityId_ = 0;
+
         pos_ = 0;
+
         return this;
       }
 
@@ -383,22 +444,11 @@ public final class VehicleInteractReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VehicleInteractReqOuterClass.VehicleInteractReq buildPartial() {
         emu.gingerps.net.proto.VehicleInteractReqOuterClass.VehicleInteractReq result = new emu.gingerps.net.proto.VehicleInteractReqOuterClass.VehicleInteractReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.interactType_ = interactType_;
+        result.entityId_ = entityId_;
+        result.pos_ = pos_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.VehicleInteractReqOuterClass.VehicleInteractReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.interactType_ = interactType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.pos_ = pos_;
-        }
       }
 
       @java.lang.Override
@@ -454,7 +504,7 @@ public final class VehicleInteractReqOuterClass {
         if (other.getPos() != 0) {
           setPos(other.getPos());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -469,48 +519,19 @@ public final class VehicleInteractReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.VehicleInteractReqOuterClass.VehicleInteractReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                interactType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 32: {
-                pos_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 88: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.VehicleInteractReqOuterClass.VehicleInteractReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int interactType_ = 0;
       /**
@@ -526,8 +547,8 @@ public final class VehicleInteractReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setInteractTypeValue(int value) {
+        
         interactType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -537,7 +558,8 @@ public final class VehicleInteractReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType getInteractType() {
-        emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType result = emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.forNumber(interactType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType result = emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.valueOf(interactType_);
         return result == null ? emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.UNRECOGNIZED : result;
       }
       /**
@@ -549,7 +571,7 @@ public final class VehicleInteractReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         interactType_ = value.getNumber();
         onChanged();
         return this;
@@ -559,7 +581,7 @@ public final class VehicleInteractReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInteractType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         interactType_ = 0;
         onChanged();
         return this;
@@ -582,7 +604,6 @@ public final class VehicleInteractReqOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -591,7 +612,7 @@ public final class VehicleInteractReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -614,7 +635,6 @@ public final class VehicleInteractReqOuterClass {
       public Builder setPos(int value) {
         
         pos_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -623,7 +643,7 @@ public final class VehicleInteractReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         pos_ = 0;
         onChanged();
         return this;
@@ -661,18 +681,7 @@ public final class VehicleInteractReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new VehicleInteractReq(input, extensionRegistry);
       }
     };
 

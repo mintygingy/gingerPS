@@ -521,6 +521,478 @@ public final class SceneGadgetInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneGadgetInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              gadgetId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              groupId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              configId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              ownerEntityId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              bornType_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              gadgetState_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              gadgetType_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isShowCutscene_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              authorityPeerId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              isEnableInteract_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              interactId_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              emu.gingerps.net.proto.ItemOuterClass.Item.Builder subBuilder = null;
+              if (contentCase_ == 12) {
+                subBuilder = ((emu.gingerps.net.proto.ItemOuterClass.Item) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.ItemOuterClass.Item.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.ItemOuterClass.Item) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 12;
+              break;
+            }
+            case 106: {
+              emu.gingerps.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo.Builder subBuilder = null;
+              if (contentCase_ == 13) {
+                subBuilder = ((emu.gingerps.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 13;
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.WorktopInfoOuterClass.WorktopInfo.Builder subBuilder = null;
+              if (contentCase_ == 14) {
+                subBuilder = ((emu.gingerps.net.proto.WorktopInfoOuterClass.WorktopInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.WorktopInfoOuterClass.WorktopInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.WorktopInfoOuterClass.WorktopInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 14;
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.ClientGadgetInfoOuterClass.ClientGadgetInfo.Builder subBuilder = null;
+              if (contentCase_ == 15) {
+                subBuilder = ((emu.gingerps.net.proto.ClientGadgetInfoOuterClass.ClientGadgetInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.ClientGadgetInfoOuterClass.ClientGadgetInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.ClientGadgetInfoOuterClass.ClientGadgetInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 15;
+              break;
+            }
+            case 138: {
+              emu.gingerps.net.proto.WeatherInfoOuterClass.WeatherInfo.Builder subBuilder = null;
+              if (contentCase_ == 17) {
+                subBuilder = ((emu.gingerps.net.proto.WeatherInfoOuterClass.WeatherInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.WeatherInfoOuterClass.WeatherInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.WeatherInfoOuterClass.WeatherInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 17;
+              break;
+            }
+            case 146: {
+              emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.AbilityGadgetInfo.Builder subBuilder = null;
+              if (contentCase_ == 18) {
+                subBuilder = ((emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.AbilityGadgetInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.AbilityGadgetInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.AbilityGadgetInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 18;
+              break;
+            }
+            case 154: {
+              emu.gingerps.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo.Builder subBuilder = null;
+              if (contentCase_ == 19) {
+                subBuilder = ((emu.gingerps.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 19;
+              break;
+            }
+            case 162: {
+              emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo.Builder subBuilder = null;
+              if (contentCase_ == 20) {
+                subBuilder = ((emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.BossChestInfoOuterClass.BossChestInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 20;
+              break;
+            }
+            case 168: {
+
+              markFlag_ = input.readUInt32();
+              break;
+            }
+            case 176: {
+
+              propOwnerEntityId_ = input.readUInt32();
+              break;
+            }
+            case 186: {
+              emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder subBuilder = null;
+              if (platform_ != null) {
+                subBuilder = platform_.toBuilder();
+              }
+              platform_ = input.readMessage(emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(platform_);
+                platform_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 192: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                interactUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              interactUidList_.addInt(input.readUInt32());
+              break;
+            }
+            case 194: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                interactUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                interactUidList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 200: {
+
+              draftId_ = input.readUInt32();
+              break;
+            }
+            case 208: {
+
+              gadgetTalkState_ = input.readUInt32();
+              break;
+            }
+            case 330: {
+              emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo.Builder subBuilder = null;
+              if (contentCase_ == 41) {
+                subBuilder = ((emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.BlossomChestInfoOuterClass.BlossomChestInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 41;
+              break;
+            }
+            case 338: {
+              emu.gingerps.net.proto.MpPlayRewardInfoOuterClass.MpPlayRewardInfo.Builder subBuilder = null;
+              if (contentCase_ == 42) {
+                subBuilder = ((emu.gingerps.net.proto.MpPlayRewardInfoOuterClass.MpPlayRewardInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.MpPlayRewardInfoOuterClass.MpPlayRewardInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.MpPlayRewardInfoOuterClass.MpPlayRewardInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 42;
+              break;
+            }
+            case 346: {
+              emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.Builder subBuilder = null;
+              if (contentCase_ == 43) {
+                subBuilder = ((emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 43;
+              break;
+            }
+            case 354: {
+              emu.gingerps.net.proto.OfferingInfoOuterClass.OfferingInfo.Builder subBuilder = null;
+              if (contentCase_ == 44) {
+                subBuilder = ((emu.gingerps.net.proto.OfferingInfoOuterClass.OfferingInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.OfferingInfoOuterClass.OfferingInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.OfferingInfoOuterClass.OfferingInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 44;
+              break;
+            }
+            case 362: {
+              emu.gingerps.net.proto.FoundationInfoOuterClass.FoundationInfo.Builder subBuilder = null;
+              if (contentCase_ == 45) {
+                subBuilder = ((emu.gingerps.net.proto.FoundationInfoOuterClass.FoundationInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.FoundationInfoOuterClass.FoundationInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.FoundationInfoOuterClass.FoundationInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 45;
+              break;
+            }
+            case 370: {
+              emu.gingerps.net.proto.VehicleInfoOuterClass.VehicleInfo.Builder subBuilder = null;
+              if (contentCase_ == 46) {
+                subBuilder = ((emu.gingerps.net.proto.VehicleInfoOuterClass.VehicleInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.VehicleInfoOuterClass.VehicleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.VehicleInfoOuterClass.VehicleInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 46;
+              break;
+            }
+            case 378: {
+              emu.gingerps.net.proto.EchoShellInfoOuterClass.EchoShellInfo.Builder subBuilder = null;
+              if (contentCase_ == 47) {
+                subBuilder = ((emu.gingerps.net.proto.EchoShellInfoOuterClass.EchoShellInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.EchoShellInfoOuterClass.EchoShellInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.EchoShellInfoOuterClass.EchoShellInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 47;
+              break;
+            }
+            case 386: {
+              emu.gingerps.net.proto.ScreenInfoOuterClass.ScreenInfo.Builder subBuilder = null;
+              if (contentCase_ == 48) {
+                subBuilder = ((emu.gingerps.net.proto.ScreenInfoOuterClass.ScreenInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.ScreenInfoOuterClass.ScreenInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.ScreenInfoOuterClass.ScreenInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 48;
+              break;
+            }
+            case 474: {
+              emu.gingerps.net.proto.FishPoolInfoOuterClass.FishPoolInfo.Builder subBuilder = null;
+              if (contentCase_ == 59) {
+                subBuilder = ((emu.gingerps.net.proto.FishPoolInfoOuterClass.FishPoolInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.FishPoolInfoOuterClass.FishPoolInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.FishPoolInfoOuterClass.FishPoolInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 59;
+              break;
+            }
+            case 482: {
+              emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder subBuilder = null;
+              if (contentCase_ == 60) {
+                subBuilder = ((emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 60;
+              break;
+            }
+            case 490: {
+              emu.gingerps.net.proto.RoguelikeGadgetInfoOuterClass.RoguelikeGadgetInfo.Builder subBuilder = null;
+              if (contentCase_ == 61) {
+                subBuilder = ((emu.gingerps.net.proto.RoguelikeGadgetInfoOuterClass.RoguelikeGadgetInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.RoguelikeGadgetInfoOuterClass.RoguelikeGadgetInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.RoguelikeGadgetInfoOuterClass.RoguelikeGadgetInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 61;
+              break;
+            }
+            case 498: {
+              emu.gingerps.net.proto.NightCrowGadgetInfoOuterClass.NightCrowGadgetInfo.Builder subBuilder = null;
+              if (contentCase_ == 62) {
+                subBuilder = ((emu.gingerps.net.proto.NightCrowGadgetInfoOuterClass.NightCrowGadgetInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.NightCrowGadgetInfoOuterClass.NightCrowGadgetInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.NightCrowGadgetInfoOuterClass.NightCrowGadgetInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 62;
+              break;
+            }
+            case 506: {
+              emu.gingerps.net.proto.DeshretObeliskGadgetInfoOuterClass.DeshretObeliskGadgetInfo.Builder subBuilder = null;
+              if (contentCase_ == 63) {
+                subBuilder = ((emu.gingerps.net.proto.DeshretObeliskGadgetInfoOuterClass.DeshretObeliskGadgetInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.DeshretObeliskGadgetInfoOuterClass.DeshretObeliskGadgetInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.DeshretObeliskGadgetInfoOuterClass.DeshretObeliskGadgetInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 63;
+              break;
+            }
+            case 514: {
+              emu.gingerps.net.proto.CoinCollectOperatorInfoOuterClass.CoinCollectOperatorInfo.Builder subBuilder = null;
+              if (contentCase_ == 64) {
+                subBuilder = ((emu.gingerps.net.proto.CoinCollectOperatorInfoOuterClass.CoinCollectOperatorInfo) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.gingerps.net.proto.CoinCollectOperatorInfoOuterClass.CoinCollectOperatorInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.CoinCollectOperatorInfoOuterClass.CoinCollectOperatorInfo) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 64;
+              break;
+            }
+            case 802: {
+              emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo.Builder subBuilder = null;
+              if (playInfo_ != null) {
+                subBuilder = playInfo_.toBuilder();
+              }
+              playInfo_ = input.readMessage(emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(playInfo_);
+                playInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          interactUidList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGadgetInfoOuterClass.internal_static_SceneGadgetInfo_descriptor;
@@ -616,7 +1088,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int GADGET_ID_FIELD_NUMBER = 1;
-    private int gadgetId_ = 0;
+    private int gadgetId_;
     /**
      * <code>uint32 gadget_id = 1;</code>
      * @return The gadgetId.
@@ -627,7 +1099,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 2;
-    private int groupId_ = 0;
+    private int groupId_;
     /**
      * <code>uint32 group_id = 2;</code>
      * @return The groupId.
@@ -638,7 +1110,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 3;
-    private int configId_ = 0;
+    private int configId_;
     /**
      * <code>uint32 config_id = 3;</code>
      * @return The configId.
@@ -649,7 +1121,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int OWNER_ENTITY_ID_FIELD_NUMBER = 4;
-    private int ownerEntityId_ = 0;
+    private int ownerEntityId_;
     /**
      * <code>uint32 owner_entity_id = 4;</code>
      * @return The ownerEntityId.
@@ -660,7 +1132,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int BORN_TYPE_FIELD_NUMBER = 5;
-    private int bornType_ = 0;
+    private int bornType_;
     /**
      * <code>.GadgetBornType born_type = 5;</code>
      * @return The enum numeric value on the wire for bornType.
@@ -673,12 +1145,13 @@ public final class SceneGadgetInfoOuterClass {
      * @return The bornType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType() {
-      emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.forNumber(bornType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.valueOf(bornType_);
       return result == null ? emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.UNRECOGNIZED : result;
     }
 
     public static final int GADGET_STATE_FIELD_NUMBER = 6;
-    private int gadgetState_ = 0;
+    private int gadgetState_;
     /**
      * <code>uint32 gadget_state = 6;</code>
      * @return The gadgetState.
@@ -689,7 +1162,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int GADGET_TYPE_FIELD_NUMBER = 7;
-    private int gadgetType_ = 0;
+    private int gadgetType_;
     /**
      * <code>uint32 gadget_type = 7;</code>
      * @return The gadgetType.
@@ -700,7 +1173,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int IS_SHOW_CUTSCENE_FIELD_NUMBER = 8;
-    private boolean isShowCutscene_ = false;
+    private boolean isShowCutscene_;
     /**
      * <code>bool is_show_cutscene = 8;</code>
      * @return The isShowCutscene.
@@ -711,7 +1184,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int AUTHORITY_PEER_ID_FIELD_NUMBER = 9;
-    private int authorityPeerId_ = 0;
+    private int authorityPeerId_;
     /**
      * <code>uint32 authority_peer_id = 9;</code>
      * @return The authorityPeerId.
@@ -722,7 +1195,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int IS_ENABLE_INTERACT_FIELD_NUMBER = 10;
-    private boolean isEnableInteract_ = false;
+    private boolean isEnableInteract_;
     /**
      * <code>bool is_enable_interact = 10;</code>
      * @return The isEnableInteract.
@@ -733,7 +1206,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int INTERACT_ID_FIELD_NUMBER = 11;
-    private int interactId_ = 0;
+    private int interactId_;
     /**
      * <code>uint32 interact_id = 11;</code>
      * @return The interactId.
@@ -744,7 +1217,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int MARK_FLAG_FIELD_NUMBER = 21;
-    private int markFlag_ = 0;
+    private int markFlag_;
     /**
      * <code>uint32 mark_flag = 21;</code>
      * @return The markFlag.
@@ -755,7 +1228,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int PROP_OWNER_ENTITY_ID_FIELD_NUMBER = 22;
-    private int propOwnerEntityId_ = 0;
+    private int propOwnerEntityId_;
     /**
      * <code>uint32 prop_owner_entity_id = 22;</code>
      * @return The propOwnerEntityId.
@@ -788,11 +1261,10 @@ public final class SceneGadgetInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfoOrBuilder getPlatformOrBuilder() {
-      return platform_ == null ? emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.getDefaultInstance() : platform_;
+      return getPlatform();
     }
 
     public static final int INTERACT_UID_LIST_FIELD_NUMBER = 24;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList interactUidList_;
     /**
      * <code>repeated uint32 interact_uid_list = 24;</code>
@@ -821,7 +1293,7 @@ public final class SceneGadgetInfoOuterClass {
     private int interactUidListMemoizedSerializedSize = -1;
 
     public static final int DRAFT_ID_FIELD_NUMBER = 25;
-    private int draftId_ = 0;
+    private int draftId_;
     /**
      * <code>uint32 draft_id = 25;</code>
      * @return The draftId.
@@ -832,7 +1304,7 @@ public final class SceneGadgetInfoOuterClass {
     }
 
     public static final int GADGET_TALK_STATE_FIELD_NUMBER = 26;
-    private int gadgetTalkState_ = 0;
+    private int gadgetTalkState_;
     /**
      * <code>uint32 gadget_talk_state = 26;</code>
      * @return The gadgetTalkState.
@@ -865,7 +1337,7 @@ public final class SceneGadgetInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfoOrBuilder getPlayInfoOrBuilder() {
-      return playInfo_ == null ? emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo.getDefaultInstance() : playInfo_;
+      return getPlayInfo();
     }
 
     public static final int TRIFLE_ITEM_FIELD_NUMBER = 12;
@@ -1689,7 +2161,7 @@ public final class SceneGadgetInfoOuterClass {
       if (playInfo_ != null) {
         output.writeMessage(100, getPlayInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1868,7 +2340,7 @@ public final class SceneGadgetInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(100, getPlayInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2017,7 +2489,7 @@ public final class SceneGadgetInfoOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2164,7 +2636,7 @@ public final class SceneGadgetInfoOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2281,110 +2753,65 @@ public final class SceneGadgetInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        bitField1_ = 0;
         gadgetId_ = 0;
+
         groupId_ = 0;
+
         configId_ = 0;
+
         ownerEntityId_ = 0;
+
         bornType_ = 0;
+
         gadgetState_ = 0;
+
         gadgetType_ = 0;
+
         isShowCutscene_ = false;
+
         authorityPeerId_ = 0;
+
         isEnableInteract_ = false;
+
         interactId_ = 0;
+
         markFlag_ = 0;
+
         propOwnerEntityId_ = 0;
-        platform_ = null;
-        if (platformBuilder_ != null) {
-          platformBuilder_.dispose();
+
+        if (platformBuilder_ == null) {
+          platform_ = null;
+        } else {
+          platform_ = null;
           platformBuilder_ = null;
         }
         interactUidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         draftId_ = 0;
+
         gadgetTalkState_ = 0;
-        playInfo_ = null;
-        if (playInfoBuilder_ != null) {
-          playInfoBuilder_.dispose();
+
+        if (playInfoBuilder_ == null) {
+          playInfo_ = null;
+        } else {
+          playInfo_ = null;
           playInfoBuilder_ = null;
-        }
-        if (trifleItemBuilder_ != null) {
-          trifleItemBuilder_.clear();
-        }
-        if (gatherGadgetBuilder_ != null) {
-          gatherGadgetBuilder_.clear();
-        }
-        if (worktopBuilder_ != null) {
-          worktopBuilder_.clear();
-        }
-        if (clientGadgetBuilder_ != null) {
-          clientGadgetBuilder_.clear();
-        }
-        if (weatherBuilder_ != null) {
-          weatherBuilder_.clear();
-        }
-        if (abilityGadgetBuilder_ != null) {
-          abilityGadgetBuilder_.clear();
-        }
-        if (statueGadgetBuilder_ != null) {
-          statueGadgetBuilder_.clear();
-        }
-        if (bossChestBuilder_ != null) {
-          bossChestBuilder_.clear();
-        }
-        if (blossomChestBuilder_ != null) {
-          blossomChestBuilder_.clear();
-        }
-        if (mpPlayRewardBuilder_ != null) {
-          mpPlayRewardBuilder_.clear();
-        }
-        if (generalRewardBuilder_ != null) {
-          generalRewardBuilder_.clear();
-        }
-        if (offeringInfoBuilder_ != null) {
-          offeringInfoBuilder_.clear();
-        }
-        if (foundationInfoBuilder_ != null) {
-          foundationInfoBuilder_.clear();
-        }
-        if (vehicleInfoBuilder_ != null) {
-          vehicleInfoBuilder_.clear();
-        }
-        if (shellInfoBuilder_ != null) {
-          shellInfoBuilder_.clear();
-        }
-        if (screenInfoBuilder_ != null) {
-          screenInfoBuilder_.clear();
-        }
-        if (fishPoolInfoBuilder_ != null) {
-          fishPoolInfoBuilder_.clear();
-        }
-        if (customGadgetTreeInfoBuilder_ != null) {
-          customGadgetTreeInfoBuilder_.clear();
-        }
-        if (roguelikeGadgetInfoBuilder_ != null) {
-          roguelikeGadgetInfoBuilder_.clear();
-        }
-        if (nightCrowGadgetInfoBuilder_ != null) {
-          nightCrowGadgetInfoBuilder_.clear();
-        }
-        if (deshretObeliskGadgetInfoBuilder_ != null) {
-          deshretObeliskGadgetInfoBuilder_.clear();
-        }
-        if (coinCollectOperatorInfoBuilder_ != null) {
-          coinCollectOperatorInfoBuilder_.clear();
         }
         contentCase_ = 0;
         content_ = null;
@@ -2414,176 +2841,194 @@ public final class SceneGadgetInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo buildPartial() {
         emu.gingerps.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo result = new emu.gingerps.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        if (bitField1_ != 0) { buildPartial1(result); }
-        buildPartialOneofs(result);
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo result) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.gadgetId_ = gadgetId_;
+        result.groupId_ = groupId_;
+        result.configId_ = configId_;
+        result.ownerEntityId_ = ownerEntityId_;
+        result.bornType_ = bornType_;
+        result.gadgetState_ = gadgetState_;
+        result.gadgetType_ = gadgetType_;
+        result.isShowCutscene_ = isShowCutscene_;
+        result.authorityPeerId_ = authorityPeerId_;
+        result.isEnableInteract_ = isEnableInteract_;
+        result.interactId_ = interactId_;
+        result.markFlag_ = markFlag_;
+        result.propOwnerEntityId_ = propOwnerEntityId_;
+        if (platformBuilder_ == null) {
+          result.platform_ = platform_;
+        } else {
+          result.platform_ = platformBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
           interactUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.interactUidList_ = interactUidList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.gadgetId_ = gadgetId_;
+        result.draftId_ = draftId_;
+        result.gadgetTalkState_ = gadgetTalkState_;
+        if (playInfoBuilder_ == null) {
+          result.playInfo_ = playInfo_;
+        } else {
+          result.playInfo_ = playInfoBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.groupId_ = groupId_;
+        if (contentCase_ == 12) {
+          if (trifleItemBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = trifleItemBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.configId_ = configId_;
+        if (contentCase_ == 13) {
+          if (gatherGadgetBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = gatherGadgetBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.ownerEntityId_ = ownerEntityId_;
+        if (contentCase_ == 14) {
+          if (worktopBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = worktopBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.bornType_ = bornType_;
+        if (contentCase_ == 15) {
+          if (clientGadgetBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = clientGadgetBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.gadgetState_ = gadgetState_;
+        if (contentCase_ == 17) {
+          if (weatherBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = weatherBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.gadgetType_ = gadgetType_;
+        if (contentCase_ == 18) {
+          if (abilityGadgetBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = abilityGadgetBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.isShowCutscene_ = isShowCutscene_;
+        if (contentCase_ == 19) {
+          if (statueGadgetBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = statueGadgetBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.authorityPeerId_ = authorityPeerId_;
+        if (contentCase_ == 20) {
+          if (bossChestBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = bossChestBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.isEnableInteract_ = isEnableInteract_;
+        if (contentCase_ == 41) {
+          if (blossomChestBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = blossomChestBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.interactId_ = interactId_;
+        if (contentCase_ == 42) {
+          if (mpPlayRewardBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = mpPlayRewardBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.markFlag_ = markFlag_;
+        if (contentCase_ == 43) {
+          if (generalRewardBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = generalRewardBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.propOwnerEntityId_ = propOwnerEntityId_;
+        if (contentCase_ == 44) {
+          if (offeringInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = offeringInfoBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.platform_ = platformBuilder_ == null
-              ? platform_
-              : platformBuilder_.build();
+        if (contentCase_ == 45) {
+          if (foundationInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = foundationInfoBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.draftId_ = draftId_;
+        if (contentCase_ == 46) {
+          if (vehicleInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = vehicleInfoBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.gadgetTalkState_ = gadgetTalkState_;
+        if (contentCase_ == 47) {
+          if (shellInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = shellInfoBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.playInfo_ = playInfoBuilder_ == null
-              ? playInfo_
-              : playInfoBuilder_.build();
+        if (contentCase_ == 48) {
+          if (screenInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = screenInfoBuilder_.build();
+          }
         }
-      }
-
-      private void buildPartial1(emu.gingerps.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo result) {
-        int from_bitField1_ = bitField1_;
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo result) {
+        if (contentCase_ == 59) {
+          if (fishPoolInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = fishPoolInfoBuilder_.build();
+          }
+        }
+        if (contentCase_ == 60) {
+          if (customGadgetTreeInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = customGadgetTreeInfoBuilder_.build();
+          }
+        }
+        if (contentCase_ == 61) {
+          if (roguelikeGadgetInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = roguelikeGadgetInfoBuilder_.build();
+          }
+        }
+        if (contentCase_ == 62) {
+          if (nightCrowGadgetInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = nightCrowGadgetInfoBuilder_.build();
+          }
+        }
+        if (contentCase_ == 63) {
+          if (deshretObeliskGadgetInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = deshretObeliskGadgetInfoBuilder_.build();
+          }
+        }
+        if (contentCase_ == 64) {
+          if (coinCollectOperatorInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = coinCollectOperatorInfoBuilder_.build();
+          }
+        }
         result.contentCase_ = contentCase_;
-        result.content_ = this.content_;
-        if (contentCase_ == 12 &&
-            trifleItemBuilder_ != null) {
-          result.content_ = trifleItemBuilder_.build();
-        }
-        if (contentCase_ == 13 &&
-            gatherGadgetBuilder_ != null) {
-          result.content_ = gatherGadgetBuilder_.build();
-        }
-        if (contentCase_ == 14 &&
-            worktopBuilder_ != null) {
-          result.content_ = worktopBuilder_.build();
-        }
-        if (contentCase_ == 15 &&
-            clientGadgetBuilder_ != null) {
-          result.content_ = clientGadgetBuilder_.build();
-        }
-        if (contentCase_ == 17 &&
-            weatherBuilder_ != null) {
-          result.content_ = weatherBuilder_.build();
-        }
-        if (contentCase_ == 18 &&
-            abilityGadgetBuilder_ != null) {
-          result.content_ = abilityGadgetBuilder_.build();
-        }
-        if (contentCase_ == 19 &&
-            statueGadgetBuilder_ != null) {
-          result.content_ = statueGadgetBuilder_.build();
-        }
-        if (contentCase_ == 20 &&
-            bossChestBuilder_ != null) {
-          result.content_ = bossChestBuilder_.build();
-        }
-        if (contentCase_ == 41 &&
-            blossomChestBuilder_ != null) {
-          result.content_ = blossomChestBuilder_.build();
-        }
-        if (contentCase_ == 42 &&
-            mpPlayRewardBuilder_ != null) {
-          result.content_ = mpPlayRewardBuilder_.build();
-        }
-        if (contentCase_ == 43 &&
-            generalRewardBuilder_ != null) {
-          result.content_ = generalRewardBuilder_.build();
-        }
-        if (contentCase_ == 44 &&
-            offeringInfoBuilder_ != null) {
-          result.content_ = offeringInfoBuilder_.build();
-        }
-        if (contentCase_ == 45 &&
-            foundationInfoBuilder_ != null) {
-          result.content_ = foundationInfoBuilder_.build();
-        }
-        if (contentCase_ == 46 &&
-            vehicleInfoBuilder_ != null) {
-          result.content_ = vehicleInfoBuilder_.build();
-        }
-        if (contentCase_ == 47 &&
-            shellInfoBuilder_ != null) {
-          result.content_ = shellInfoBuilder_.build();
-        }
-        if (contentCase_ == 48 &&
-            screenInfoBuilder_ != null) {
-          result.content_ = screenInfoBuilder_.build();
-        }
-        if (contentCase_ == 59 &&
-            fishPoolInfoBuilder_ != null) {
-          result.content_ = fishPoolInfoBuilder_.build();
-        }
-        if (contentCase_ == 60 &&
-            customGadgetTreeInfoBuilder_ != null) {
-          result.content_ = customGadgetTreeInfoBuilder_.build();
-        }
-        if (contentCase_ == 61 &&
-            roguelikeGadgetInfoBuilder_ != null) {
-          result.content_ = roguelikeGadgetInfoBuilder_.build();
-        }
-        if (contentCase_ == 62 &&
-            nightCrowGadgetInfoBuilder_ != null) {
-          result.content_ = nightCrowGadgetInfoBuilder_.build();
-        }
-        if (contentCase_ == 63 &&
-            deshretObeliskGadgetInfoBuilder_ != null) {
-          result.content_ = deshretObeliskGadgetInfoBuilder_.build();
-        }
-        if (contentCase_ == 64 &&
-            coinCollectOperatorInfoBuilder_ != null) {
-          result.content_ = coinCollectOperatorInfoBuilder_.build();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -2675,7 +3120,7 @@ public final class SceneGadgetInfoOuterClass {
         if (!other.interactUidList_.isEmpty()) {
           if (interactUidList_.isEmpty()) {
             interactUidList_ = other.interactUidList_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInteractUidListIsMutable();
             interactUidList_.addAll(other.interactUidList_);
@@ -2784,7 +3229,7 @@ public final class SceneGadgetInfoOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2799,289 +3244,17 @@ public final class SceneGadgetInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                gadgetId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                groupId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                configId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                ownerEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                bornType_ = input.readEnum();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 48: {
-                gadgetState_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 56: {
-                gadgetType_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              case 64: {
-                isShowCutscene_ = input.readBool();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 64
-              case 72: {
-                authorityPeerId_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 80: {
-                isEnableInteract_ = input.readBool();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 80
-              case 88: {
-                interactId_ = input.readUInt32();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 88
-              case 98: {
-                input.readMessage(
-                    getTrifleItemFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 12;
-                break;
-              } // case 98
-              case 106: {
-                input.readMessage(
-                    getGatherGadgetFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 13;
-                break;
-              } // case 106
-              case 114: {
-                input.readMessage(
-                    getWorktopFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 14;
-                break;
-              } // case 114
-              case 122: {
-                input.readMessage(
-                    getClientGadgetFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 15;
-                break;
-              } // case 122
-              case 138: {
-                input.readMessage(
-                    getWeatherFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 17;
-                break;
-              } // case 138
-              case 146: {
-                input.readMessage(
-                    getAbilityGadgetFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 18;
-                break;
-              } // case 146
-              case 154: {
-                input.readMessage(
-                    getStatueGadgetFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 19;
-                break;
-              } // case 154
-              case 162: {
-                input.readMessage(
-                    getBossChestFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 20;
-                break;
-              } // case 162
-              case 168: {
-                markFlag_ = input.readUInt32();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 168
-              case 176: {
-                propOwnerEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 176
-              case 186: {
-                input.readMessage(
-                    getPlatformFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 186
-              case 192: {
-                int v = input.readUInt32();
-                ensureInteractUidListIsMutable();
-                interactUidList_.addInt(v);
-                break;
-              } // case 192
-              case 194: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureInteractUidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  interactUidList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 194
-              case 200: {
-                draftId_ = input.readUInt32();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 200
-              case 208: {
-                gadgetTalkState_ = input.readUInt32();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 208
-              case 330: {
-                input.readMessage(
-                    getBlossomChestFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 41;
-                break;
-              } // case 330
-              case 338: {
-                input.readMessage(
-                    getMpPlayRewardFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 42;
-                break;
-              } // case 338
-              case 346: {
-                input.readMessage(
-                    getGeneralRewardFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 43;
-                break;
-              } // case 346
-              case 354: {
-                input.readMessage(
-                    getOfferingInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 44;
-                break;
-              } // case 354
-              case 362: {
-                input.readMessage(
-                    getFoundationInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 45;
-                break;
-              } // case 362
-              case 370: {
-                input.readMessage(
-                    getVehicleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 46;
-                break;
-              } // case 370
-              case 378: {
-                input.readMessage(
-                    getShellInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 47;
-                break;
-              } // case 378
-              case 386: {
-                input.readMessage(
-                    getScreenInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 48;
-                break;
-              } // case 386
-              case 474: {
-                input.readMessage(
-                    getFishPoolInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 59;
-                break;
-              } // case 474
-              case 482: {
-                input.readMessage(
-                    getCustomGadgetTreeInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 60;
-                break;
-              } // case 482
-              case 490: {
-                input.readMessage(
-                    getRoguelikeGadgetInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 61;
-                break;
-              } // case 490
-              case 498: {
-                input.readMessage(
-                    getNightCrowGadgetInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 62;
-                break;
-              } // case 498
-              case 506: {
-                input.readMessage(
-                    getDeshretObeliskGadgetInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 63;
-                break;
-              } // case 506
-              case 514: {
-                input.readMessage(
-                    getCoinCollectOperatorInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contentCase_ = 64;
-                break;
-              } // case 514
-              case 802: {
-                input.readMessage(
-                    getPlayInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00020000;
-                break;
-              } // case 802
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int contentCase_ = 0;
@@ -3100,7 +3273,6 @@ public final class SceneGadgetInfoOuterClass {
       }
 
       private int bitField0_;
-      private int bitField1_;
 
       private int gadgetId_ ;
       /**
@@ -3119,7 +3291,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setGadgetId(int value) {
         
         gadgetId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3128,7 +3299,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         gadgetId_ = 0;
         onChanged();
         return this;
@@ -3151,7 +3322,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3160,7 +3330,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         groupId_ = 0;
         onChanged();
         return this;
@@ -3183,7 +3353,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3192,7 +3361,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         configId_ = 0;
         onChanged();
         return this;
@@ -3215,7 +3384,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setOwnerEntityId(int value) {
         
         ownerEntityId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3224,7 +3392,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOwnerEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         ownerEntityId_ = 0;
         onChanged();
         return this;
@@ -3244,8 +3412,8 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBornTypeValue(int value) {
+        
         bornType_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3255,7 +3423,8 @@ public final class SceneGadgetInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType() {
-        emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.forNumber(bornType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.valueOf(bornType_);
         return result == null ? emu.gingerps.net.proto.GadgetBornTypeOuterClass.GadgetBornType.UNRECOGNIZED : result;
       }
       /**
@@ -3267,7 +3436,7 @@ public final class SceneGadgetInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000010;
+        
         bornType_ = value.getNumber();
         onChanged();
         return this;
@@ -3277,7 +3446,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBornType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         bornType_ = 0;
         onChanged();
         return this;
@@ -3300,7 +3469,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setGadgetState(int value) {
         
         gadgetState_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -3309,7 +3477,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetState() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         gadgetState_ = 0;
         onChanged();
         return this;
@@ -3332,7 +3500,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setGadgetType(int value) {
         
         gadgetType_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3341,7 +3508,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetType() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         gadgetType_ = 0;
         onChanged();
         return this;
@@ -3364,7 +3531,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setIsShowCutscene(boolean value) {
         
         isShowCutscene_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -3373,7 +3539,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsShowCutscene() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         isShowCutscene_ = false;
         onChanged();
         return this;
@@ -3396,7 +3562,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setAuthorityPeerId(int value) {
         
         authorityPeerId_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -3405,7 +3570,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAuthorityPeerId() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         authorityPeerId_ = 0;
         onChanged();
         return this;
@@ -3428,7 +3593,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setIsEnableInteract(boolean value) {
         
         isEnableInteract_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -3437,7 +3601,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsEnableInteract() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         isEnableInteract_ = false;
         onChanged();
         return this;
@@ -3460,7 +3624,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setInteractId(int value) {
         
         interactId_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -3469,7 +3632,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInteractId() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         interactId_ = 0;
         onChanged();
         return this;
@@ -3492,7 +3655,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setMarkFlag(int value) {
         
         markFlag_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -3501,7 +3663,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMarkFlag() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         markFlag_ = 0;
         onChanged();
         return this;
@@ -3524,7 +3686,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setPropOwnerEntityId(int value) {
         
         propOwnerEntityId_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -3533,7 +3694,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPropOwnerEntityId() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         propOwnerEntityId_ = 0;
         onChanged();
         return this;
@@ -3547,7 +3708,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return Whether the platform field is set.
        */
       public boolean hasPlatform() {
-        return ((bitField0_ & 0x00002000) != 0);
+        return platformBuilder_ != null || platform_ != null;
       }
       /**
        * <code>.PlatformInfo platform = 23;</code>
@@ -3569,11 +3730,11 @@ public final class SceneGadgetInfoOuterClass {
             throw new NullPointerException();
           }
           platform_ = value;
+          onChanged();
         } else {
           platformBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00002000;
-        onChanged();
+
         return this;
       }
       /**
@@ -3583,11 +3744,11 @@ public final class SceneGadgetInfoOuterClass {
           emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder builderForValue) {
         if (platformBuilder_ == null) {
           platform_ = builderForValue.build();
+          onChanged();
         } else {
           platformBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00002000;
-        onChanged();
+
         return this;
       }
       /**
@@ -3595,38 +3756,38 @@ public final class SceneGadgetInfoOuterClass {
        */
       public Builder mergePlatform(emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo value) {
         if (platformBuilder_ == null) {
-          if (((bitField0_ & 0x00002000) != 0) &&
-            platform_ != null &&
-            platform_ != emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.getDefaultInstance()) {
-            getPlatformBuilder().mergeFrom(value);
+          if (platform_ != null) {
+            platform_ =
+              emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.newBuilder(platform_).mergeFrom(value).buildPartial();
           } else {
             platform_ = value;
           }
+          onChanged();
         } else {
           platformBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00002000;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PlatformInfo platform = 23;</code>
        */
       public Builder clearPlatform() {
-        bitField0_ = (bitField0_ & ~0x00002000);
-        platform_ = null;
-        if (platformBuilder_ != null) {
-          platformBuilder_.dispose();
+        if (platformBuilder_ == null) {
+          platform_ = null;
+          onChanged();
+        } else {
+          platform_ = null;
           platformBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PlatformInfo platform = 23;</code>
        */
       public emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder getPlatformBuilder() {
-        bitField0_ |= 0x00002000;
+        
         onChanged();
         return getPlatformFieldBuilder().getBuilder();
       }
@@ -3660,10 +3821,10 @@ public final class SceneGadgetInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList interactUidList_ = emptyIntList();
       private void ensureInteractUidListIsMutable() {
-        if (!((bitField0_ & 0x00004000) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           interactUidList_ = mutableCopy(interactUidList_);
-          bitField0_ |= 0x00004000;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 interact_uid_list = 24;</code>
@@ -3671,7 +3832,7 @@ public final class SceneGadgetInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getInteractUidListList() {
-        return ((bitField0_ & 0x00004000) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(interactUidList_) : interactUidList_;
       }
       /**
@@ -3697,7 +3858,6 @@ public final class SceneGadgetInfoOuterClass {
        */
       public Builder setInteractUidList(
           int index, int value) {
-        
         ensureInteractUidListIsMutable();
         interactUidList_.setInt(index, value);
         onChanged();
@@ -3709,7 +3869,6 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addInteractUidList(int value) {
-        
         ensureInteractUidListIsMutable();
         interactUidList_.addInt(value);
         onChanged();
@@ -3734,7 +3893,7 @@ public final class SceneGadgetInfoOuterClass {
        */
       public Builder clearInteractUidList() {
         interactUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3756,7 +3915,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setDraftId(int value) {
         
         draftId_ = value;
-        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -3765,7 +3923,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDraftId() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        
         draftId_ = 0;
         onChanged();
         return this;
@@ -3788,7 +3946,6 @@ public final class SceneGadgetInfoOuterClass {
       public Builder setGadgetTalkState(int value) {
         
         gadgetTalkState_ = value;
-        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -3797,7 +3954,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetTalkState() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        
         gadgetTalkState_ = 0;
         onChanged();
         return this;
@@ -3811,7 +3968,7 @@ public final class SceneGadgetInfoOuterClass {
        * @return Whether the playInfo field is set.
        */
       public boolean hasPlayInfo() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return playInfoBuilder_ != null || playInfo_ != null;
       }
       /**
        * <code>.GadgetPlayInfo play_info = 100;</code>
@@ -3833,11 +3990,11 @@ public final class SceneGadgetInfoOuterClass {
             throw new NullPointerException();
           }
           playInfo_ = value;
+          onChanged();
         } else {
           playInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00020000;
-        onChanged();
+
         return this;
       }
       /**
@@ -3847,11 +4004,11 @@ public final class SceneGadgetInfoOuterClass {
           emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo.Builder builderForValue) {
         if (playInfoBuilder_ == null) {
           playInfo_ = builderForValue.build();
+          onChanged();
         } else {
           playInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00020000;
-        onChanged();
+
         return this;
       }
       /**
@@ -3859,38 +4016,38 @@ public final class SceneGadgetInfoOuterClass {
        */
       public Builder mergePlayInfo(emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo value) {
         if (playInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00020000) != 0) &&
-            playInfo_ != null &&
-            playInfo_ != emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo.getDefaultInstance()) {
-            getPlayInfoBuilder().mergeFrom(value);
+          if (playInfo_ != null) {
+            playInfo_ =
+              emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo.newBuilder(playInfo_).mergeFrom(value).buildPartial();
           } else {
             playInfo_ = value;
           }
+          onChanged();
         } else {
           playInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00020000;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GadgetPlayInfo play_info = 100;</code>
        */
       public Builder clearPlayInfo() {
-        bitField0_ = (bitField0_ & ~0x00020000);
-        playInfo_ = null;
-        if (playInfoBuilder_ != null) {
-          playInfoBuilder_.dispose();
+        if (playInfoBuilder_ == null) {
+          playInfo_ = null;
+          onChanged();
+        } else {
+          playInfo_ = null;
           playInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GadgetPlayInfo play_info = 100;</code>
        */
       public emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo.Builder getPlayInfoBuilder() {
-        bitField0_ |= 0x00020000;
+        
         onChanged();
         return getPlayInfoFieldBuilder().getBuilder();
       }
@@ -3996,9 +4153,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 12) {
             trifleItemBuilder_.mergeFrom(value);
-          } else {
-            trifleItemBuilder_.setMessage(value);
           }
+          trifleItemBuilder_.setMessage(value);
         }
         contentCase_ = 12;
         return this;
@@ -4060,7 +4216,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 12;
-        onChanged();
+        onChanged();;
         return trifleItemBuilder_;
       }
 
@@ -4138,9 +4294,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 13) {
             gatherGadgetBuilder_.mergeFrom(value);
-          } else {
-            gatherGadgetBuilder_.setMessage(value);
           }
+          gatherGadgetBuilder_.setMessage(value);
         }
         contentCase_ = 13;
         return this;
@@ -4202,7 +4357,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 13;
-        onChanged();
+        onChanged();;
         return gatherGadgetBuilder_;
       }
 
@@ -4280,9 +4435,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 14) {
             worktopBuilder_.mergeFrom(value);
-          } else {
-            worktopBuilder_.setMessage(value);
           }
+          worktopBuilder_.setMessage(value);
         }
         contentCase_ = 14;
         return this;
@@ -4344,7 +4498,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 14;
-        onChanged();
+        onChanged();;
         return worktopBuilder_;
       }
 
@@ -4422,9 +4576,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 15) {
             clientGadgetBuilder_.mergeFrom(value);
-          } else {
-            clientGadgetBuilder_.setMessage(value);
           }
+          clientGadgetBuilder_.setMessage(value);
         }
         contentCase_ = 15;
         return this;
@@ -4486,7 +4639,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 15;
-        onChanged();
+        onChanged();;
         return clientGadgetBuilder_;
       }
 
@@ -4564,9 +4717,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 17) {
             weatherBuilder_.mergeFrom(value);
-          } else {
-            weatherBuilder_.setMessage(value);
           }
+          weatherBuilder_.setMessage(value);
         }
         contentCase_ = 17;
         return this;
@@ -4628,7 +4780,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 17;
-        onChanged();
+        onChanged();;
         return weatherBuilder_;
       }
 
@@ -4706,9 +4858,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 18) {
             abilityGadgetBuilder_.mergeFrom(value);
-          } else {
-            abilityGadgetBuilder_.setMessage(value);
           }
+          abilityGadgetBuilder_.setMessage(value);
         }
         contentCase_ = 18;
         return this;
@@ -4770,7 +4921,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 18;
-        onChanged();
+        onChanged();;
         return abilityGadgetBuilder_;
       }
 
@@ -4848,9 +4999,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 19) {
             statueGadgetBuilder_.mergeFrom(value);
-          } else {
-            statueGadgetBuilder_.setMessage(value);
           }
+          statueGadgetBuilder_.setMessage(value);
         }
         contentCase_ = 19;
         return this;
@@ -4912,7 +5062,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 19;
-        onChanged();
+        onChanged();;
         return statueGadgetBuilder_;
       }
 
@@ -4990,9 +5140,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 20) {
             bossChestBuilder_.mergeFrom(value);
-          } else {
-            bossChestBuilder_.setMessage(value);
           }
+          bossChestBuilder_.setMessage(value);
         }
         contentCase_ = 20;
         return this;
@@ -5054,7 +5203,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 20;
-        onChanged();
+        onChanged();;
         return bossChestBuilder_;
       }
 
@@ -5132,9 +5281,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 41) {
             blossomChestBuilder_.mergeFrom(value);
-          } else {
-            blossomChestBuilder_.setMessage(value);
           }
+          blossomChestBuilder_.setMessage(value);
         }
         contentCase_ = 41;
         return this;
@@ -5196,7 +5344,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 41;
-        onChanged();
+        onChanged();;
         return blossomChestBuilder_;
       }
 
@@ -5274,9 +5422,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 42) {
             mpPlayRewardBuilder_.mergeFrom(value);
-          } else {
-            mpPlayRewardBuilder_.setMessage(value);
           }
+          mpPlayRewardBuilder_.setMessage(value);
         }
         contentCase_ = 42;
         return this;
@@ -5338,7 +5485,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 42;
-        onChanged();
+        onChanged();;
         return mpPlayRewardBuilder_;
       }
 
@@ -5416,9 +5563,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 43) {
             generalRewardBuilder_.mergeFrom(value);
-          } else {
-            generalRewardBuilder_.setMessage(value);
           }
+          generalRewardBuilder_.setMessage(value);
         }
         contentCase_ = 43;
         return this;
@@ -5480,7 +5626,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 43;
-        onChanged();
+        onChanged();;
         return generalRewardBuilder_;
       }
 
@@ -5558,9 +5704,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 44) {
             offeringInfoBuilder_.mergeFrom(value);
-          } else {
-            offeringInfoBuilder_.setMessage(value);
           }
+          offeringInfoBuilder_.setMessage(value);
         }
         contentCase_ = 44;
         return this;
@@ -5622,7 +5767,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 44;
-        onChanged();
+        onChanged();;
         return offeringInfoBuilder_;
       }
 
@@ -5700,9 +5845,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 45) {
             foundationInfoBuilder_.mergeFrom(value);
-          } else {
-            foundationInfoBuilder_.setMessage(value);
           }
+          foundationInfoBuilder_.setMessage(value);
         }
         contentCase_ = 45;
         return this;
@@ -5764,7 +5908,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 45;
-        onChanged();
+        onChanged();;
         return foundationInfoBuilder_;
       }
 
@@ -5842,9 +5986,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 46) {
             vehicleInfoBuilder_.mergeFrom(value);
-          } else {
-            vehicleInfoBuilder_.setMessage(value);
           }
+          vehicleInfoBuilder_.setMessage(value);
         }
         contentCase_ = 46;
         return this;
@@ -5906,7 +6049,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 46;
-        onChanged();
+        onChanged();;
         return vehicleInfoBuilder_;
       }
 
@@ -5984,9 +6127,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 47) {
             shellInfoBuilder_.mergeFrom(value);
-          } else {
-            shellInfoBuilder_.setMessage(value);
           }
+          shellInfoBuilder_.setMessage(value);
         }
         contentCase_ = 47;
         return this;
@@ -6048,7 +6190,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 47;
-        onChanged();
+        onChanged();;
         return shellInfoBuilder_;
       }
 
@@ -6126,9 +6268,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 48) {
             screenInfoBuilder_.mergeFrom(value);
-          } else {
-            screenInfoBuilder_.setMessage(value);
           }
+          screenInfoBuilder_.setMessage(value);
         }
         contentCase_ = 48;
         return this;
@@ -6190,7 +6331,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 48;
-        onChanged();
+        onChanged();;
         return screenInfoBuilder_;
       }
 
@@ -6268,9 +6409,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 59) {
             fishPoolInfoBuilder_.mergeFrom(value);
-          } else {
-            fishPoolInfoBuilder_.setMessage(value);
           }
+          fishPoolInfoBuilder_.setMessage(value);
         }
         contentCase_ = 59;
         return this;
@@ -6332,7 +6472,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 59;
-        onChanged();
+        onChanged();;
         return fishPoolInfoBuilder_;
       }
 
@@ -6410,9 +6550,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 60) {
             customGadgetTreeInfoBuilder_.mergeFrom(value);
-          } else {
-            customGadgetTreeInfoBuilder_.setMessage(value);
           }
+          customGadgetTreeInfoBuilder_.setMessage(value);
         }
         contentCase_ = 60;
         return this;
@@ -6474,7 +6613,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 60;
-        onChanged();
+        onChanged();;
         return customGadgetTreeInfoBuilder_;
       }
 
@@ -6552,9 +6691,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 61) {
             roguelikeGadgetInfoBuilder_.mergeFrom(value);
-          } else {
-            roguelikeGadgetInfoBuilder_.setMessage(value);
           }
+          roguelikeGadgetInfoBuilder_.setMessage(value);
         }
         contentCase_ = 61;
         return this;
@@ -6616,7 +6754,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 61;
-        onChanged();
+        onChanged();;
         return roguelikeGadgetInfoBuilder_;
       }
 
@@ -6694,9 +6832,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 62) {
             nightCrowGadgetInfoBuilder_.mergeFrom(value);
-          } else {
-            nightCrowGadgetInfoBuilder_.setMessage(value);
           }
+          nightCrowGadgetInfoBuilder_.setMessage(value);
         }
         contentCase_ = 62;
         return this;
@@ -6758,7 +6895,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 62;
-        onChanged();
+        onChanged();;
         return nightCrowGadgetInfoBuilder_;
       }
 
@@ -6836,9 +6973,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 63) {
             deshretObeliskGadgetInfoBuilder_.mergeFrom(value);
-          } else {
-            deshretObeliskGadgetInfoBuilder_.setMessage(value);
           }
+          deshretObeliskGadgetInfoBuilder_.setMessage(value);
         }
         contentCase_ = 63;
         return this;
@@ -6900,7 +7036,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 63;
-        onChanged();
+        onChanged();;
         return deshretObeliskGadgetInfoBuilder_;
       }
 
@@ -6978,9 +7114,8 @@ public final class SceneGadgetInfoOuterClass {
         } else {
           if (contentCase_ == 64) {
             coinCollectOperatorInfoBuilder_.mergeFrom(value);
-          } else {
-            coinCollectOperatorInfoBuilder_.setMessage(value);
           }
+          coinCollectOperatorInfoBuilder_.setMessage(value);
         }
         contentCase_ = 64;
         return this;
@@ -7042,7 +7177,7 @@ public final class SceneGadgetInfoOuterClass {
           content_ = null;
         }
         contentCase_ = 64;
-        onChanged();
+        onChanged();;
         return coinCollectOperatorInfoBuilder_;
       }
       @java.lang.Override
@@ -7078,18 +7213,7 @@ public final class SceneGadgetInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneGadgetInfo(input, extensionRegistry);
       }
     };
 

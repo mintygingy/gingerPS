@@ -86,6 +86,61 @@ public final class ResinCardDataUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ResinCardDataUpdateNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              todayStartTime_ = input.readUInt32();
+              break;
+            }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cardDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardDataList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cardDataList_ = java.util.Collections.unmodifiableList(cardDataList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ResinCardDataUpdateNotifyOuterClass.internal_static_ResinCardDataUpdateNotify_descriptor;
@@ -100,7 +155,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
     }
 
     public static final int TODAY_START_TIME_FIELD_NUMBER = 4;
-    private int todayStartTime_ = 0;
+    private int todayStartTime_;
     /**
      * <code>uint32 today_start_time = 4;</code>
      * @return The todayStartTime.
@@ -111,7 +166,6 @@ public final class ResinCardDataUpdateNotifyOuterClass {
     }
 
     public static final int CARD_DATA_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData> cardDataList_;
     /**
      * <code>repeated .ResinCardData card_data_list = 14;</code>
@@ -171,7 +225,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       for (int i = 0; i < cardDataList_.size(); i++) {
         output.writeMessage(14, cardDataList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, cardDataList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
           != other.getTodayStartTime()) return false;
       if (!getCardDataListList()
           .equals(other.getCardDataListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         hash = (37 * hash) + CARD_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCardDataListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +405,31 @@ public final class ResinCardDataUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCardDataListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         todayStartTime_ = 0;
+
         if (cardDataListBuilder_ == null) {
           cardDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          cardDataList_ = null;
           cardDataListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -397,29 +456,19 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify buildPartial() {
         emu.gingerps.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify result = new emu.gingerps.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.todayStartTime_ = todayStartTime_;
         if (cardDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             cardDataList_ = java.util.Collections.unmodifiableList(cardDataList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.cardDataList_ = cardDataList_;
         } else {
           result.cardDataList_ = cardDataListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.todayStartTime_ = todayStartTime_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -473,7 +522,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
           if (!other.cardDataList_.isEmpty()) {
             if (cardDataList_.isEmpty()) {
               cardDataList_ = other.cardDataList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureCardDataListIsMutable();
               cardDataList_.addAll(other.cardDataList_);
@@ -486,7 +535,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
               cardDataListBuilder_.dispose();
               cardDataListBuilder_ = null;
               cardDataList_ = other.cardDataList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               cardDataListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCardDataListFieldBuilder() : null;
@@ -495,7 +544,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -510,48 +559,17 @@ public final class ResinCardDataUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                todayStartTime_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 114: {
-                emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData.parser(),
-                        extensionRegistry);
-                if (cardDataListBuilder_ == null) {
-                  ensureCardDataListIsMutable();
-                  cardDataList_.add(m);
-                } else {
-                  cardDataListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -573,7 +591,6 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       public Builder setTodayStartTime(int value) {
         
         todayStartTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +599,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTodayStartTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         todayStartTime_ = 0;
         onChanged();
         return this;
@@ -591,9 +608,9 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData> cardDataList_ =
         java.util.Collections.emptyList();
       private void ensureCardDataListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           cardDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData>(cardDataList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -743,7 +760,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       public Builder clearCardDataList() {
         if (cardDataListBuilder_ == null) {
           cardDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           cardDataListBuilder_.clear();
@@ -820,7 +837,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
           cardDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData, emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData.Builder, emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardDataOrBuilder>(
                   cardDataList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           cardDataList_ = null;
@@ -860,18 +877,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ResinCardDataUpdateNotify(input, extensionRegistry);
       }
     };
 

@@ -77,6 +77,61 @@ public final class SceneAvatarStaminaStepReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneAvatarStaminaStepReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+
+              useClientRot_ = input.readBool();
+              break;
+            }
+            case 98: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (rot_ != null) {
+                subBuilder = rot_.toBuilder();
+              }
+              rot_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rot_);
+                rot_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneAvatarStaminaStepReqOuterClass.internal_static_SceneAvatarStaminaStepReq_descriptor;
@@ -91,7 +146,7 @@ public final class SceneAvatarStaminaStepReqOuterClass {
     }
 
     public static final int USE_CLIENT_ROT_FIELD_NUMBER = 9;
-    private boolean useClientRot_ = false;
+    private boolean useClientRot_;
     /**
      * <code>bool use_client_rot = 9;</code>
      * @return The useClientRot.
@@ -124,7 +179,7 @@ public final class SceneAvatarStaminaStepReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
-      return rot_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
+      return getRot();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -147,7 +202,7 @@ public final class SceneAvatarStaminaStepReqOuterClass {
       if (rot_ != null) {
         output.writeMessage(12, getRot());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -164,7 +219,7 @@ public final class SceneAvatarStaminaStepReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getRot());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -186,7 +241,7 @@ public final class SceneAvatarStaminaStepReqOuterClass {
         if (!getRot()
             .equals(other.getRot())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -204,7 +259,7 @@ public final class SceneAvatarStaminaStepReqOuterClass {
         hash = (37 * hash) + ROT_FIELD_NUMBER;
         hash = (53 * hash) + getRot().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -332,22 +387,28 @@ public final class SceneAvatarStaminaStepReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneAvatarStaminaStepReqOuterClass.SceneAvatarStaminaStepReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         useClientRot_ = false;
-        rot_ = null;
-        if (rotBuilder_ != null) {
-          rotBuilder_.dispose();
+
+        if (rotBuilder_ == null) {
+          rot_ = null;
+        } else {
+          rot_ = null;
           rotBuilder_ = null;
         }
         return this;
@@ -376,21 +437,14 @@ public final class SceneAvatarStaminaStepReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneAvatarStaminaStepReqOuterClass.SceneAvatarStaminaStepReq buildPartial() {
         emu.gingerps.net.proto.SceneAvatarStaminaStepReqOuterClass.SceneAvatarStaminaStepReq result = new emu.gingerps.net.proto.SceneAvatarStaminaStepReqOuterClass.SceneAvatarStaminaStepReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.useClientRot_ = useClientRot_;
+        if (rotBuilder_ == null) {
+          result.rot_ = rot_;
+        } else {
+          result.rot_ = rotBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneAvatarStaminaStepReqOuterClass.SceneAvatarStaminaStepReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.useClientRot_ = useClientRot_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.rot_ = rotBuilder_ == null
-              ? rot_
-              : rotBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -443,7 +497,7 @@ public final class SceneAvatarStaminaStepReqOuterClass {
         if (other.hasRot()) {
           mergeRot(other.getRot());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -458,45 +512,19 @@ public final class SceneAvatarStaminaStepReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneAvatarStaminaStepReqOuterClass.SceneAvatarStaminaStepReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                useClientRot_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 98: {
-                input.readMessage(
-                    getRotFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneAvatarStaminaStepReqOuterClass.SceneAvatarStaminaStepReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean useClientRot_ ;
       /**
@@ -515,7 +543,6 @@ public final class SceneAvatarStaminaStepReqOuterClass {
       public Builder setUseClientRot(boolean value) {
         
         useClientRot_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +551,7 @@ public final class SceneAvatarStaminaStepReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUseClientRot() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         useClientRot_ = false;
         onChanged();
         return this;
@@ -538,7 +565,7 @@ public final class SceneAvatarStaminaStepReqOuterClass {
        * @return Whether the rot field is set.
        */
       public boolean hasRot() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return rotBuilder_ != null || rot_ != null;
       }
       /**
        * <code>.Vector rot = 12;</code>
@@ -560,11 +587,11 @@ public final class SceneAvatarStaminaStepReqOuterClass {
             throw new NullPointerException();
           }
           rot_ = value;
+          onChanged();
         } else {
           rotBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -574,11 +601,11 @@ public final class SceneAvatarStaminaStepReqOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (rotBuilder_ == null) {
           rot_ = builderForValue.build();
+          onChanged();
         } else {
           rotBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -586,38 +613,38 @@ public final class SceneAvatarStaminaStepReqOuterClass {
        */
       public Builder mergeRot(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (rotBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            rot_ != null &&
-            rot_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getRotBuilder().mergeFrom(value);
+          if (rot_ != null) {
+            rot_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(rot_).mergeFrom(value).buildPartial();
           } else {
             rot_ = value;
           }
+          onChanged();
         } else {
           rotBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector rot = 12;</code>
        */
       public Builder clearRot() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        rot_ = null;
-        if (rotBuilder_ != null) {
-          rotBuilder_.dispose();
+        if (rotBuilder_ == null) {
+          rot_ = null;
+          onChanged();
+        } else {
+          rot_ = null;
           rotBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector rot = 12;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getRotBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getRotFieldBuilder().getBuilder();
       }
@@ -681,18 +708,7 @@ public final class SceneAvatarStaminaStepReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneAvatarStaminaStepReq(input, extensionRegistry);
       }
     };
 

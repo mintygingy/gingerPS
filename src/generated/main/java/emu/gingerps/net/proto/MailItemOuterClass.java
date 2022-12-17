@@ -75,6 +75,69 @@ public final class MailItemOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MailItem(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.EquipParamOuterClass.EquipParam.Builder subBuilder = null;
+              if (equipParam_ != null) {
+                subBuilder = equipParam_.toBuilder();
+              }
+              equipParam_ = input.readMessage(emu.gingerps.net.proto.EquipParamOuterClass.EquipParam.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(equipParam_);
+                equipParam_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              emu.gingerps.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.Builder subBuilder = null;
+              if (deleteInfo_ != null) {
+                subBuilder = deleteInfo_.toBuilder();
+              }
+              deleteInfo_ = input.readMessage(emu.gingerps.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(deleteInfo_);
+                deleteInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MailItemOuterClass.internal_static_MailItem_descriptor;
@@ -111,7 +174,7 @@ public final class MailItemOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.EquipParamOuterClass.EquipParamOrBuilder getEquipParamOrBuilder() {
-      return equipParam_ == null ? emu.gingerps.net.proto.EquipParamOuterClass.EquipParam.getDefaultInstance() : equipParam_;
+      return getEquipParam();
     }
 
     public static final int DELETE_INFO_FIELD_NUMBER = 2;
@@ -137,7 +200,7 @@ public final class MailItemOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfoOrBuilder getDeleteInfoOrBuilder() {
-      return deleteInfo_ == null ? emu.gingerps.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.getDefaultInstance() : deleteInfo_;
+      return getDeleteInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -160,7 +223,7 @@ public final class MailItemOuterClass {
       if (deleteInfo_ != null) {
         output.writeMessage(2, getDeleteInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +240,7 @@ public final class MailItemOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getDeleteInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -202,7 +265,7 @@ public final class MailItemOuterClass {
         if (!getDeleteInfo()
             .equals(other.getDeleteInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -221,7 +284,7 @@ public final class MailItemOuterClass {
         hash = (37 * hash) + DELETE_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getDeleteInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -338,26 +401,32 @@ public final class MailItemOuterClass {
 
       // Construct using emu.gingerps.net.proto.MailItemOuterClass.MailItem.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        equipParam_ = null;
-        if (equipParamBuilder_ != null) {
-          equipParamBuilder_.dispose();
+        if (equipParamBuilder_ == null) {
+          equipParam_ = null;
+        } else {
+          equipParam_ = null;
           equipParamBuilder_ = null;
         }
-        deleteInfo_ = null;
-        if (deleteInfoBuilder_ != null) {
-          deleteInfoBuilder_.dispose();
+        if (deleteInfoBuilder_ == null) {
+          deleteInfo_ = null;
+        } else {
+          deleteInfo_ = null;
           deleteInfoBuilder_ = null;
         }
         return this;
@@ -386,23 +455,18 @@ public final class MailItemOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MailItemOuterClass.MailItem buildPartial() {
         emu.gingerps.net.proto.MailItemOuterClass.MailItem result = new emu.gingerps.net.proto.MailItemOuterClass.MailItem(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (equipParamBuilder_ == null) {
+          result.equipParam_ = equipParam_;
+        } else {
+          result.equipParam_ = equipParamBuilder_.build();
+        }
+        if (deleteInfoBuilder_ == null) {
+          result.deleteInfo_ = deleteInfo_;
+        } else {
+          result.deleteInfo_ = deleteInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MailItemOuterClass.MailItem result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.equipParam_ = equipParamBuilder_ == null
-              ? equipParam_
-              : equipParamBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.deleteInfo_ = deleteInfoBuilder_ == null
-              ? deleteInfo_
-              : deleteInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -455,7 +519,7 @@ public final class MailItemOuterClass {
         if (other.hasDeleteInfo()) {
           mergeDeleteInfo(other.getDeleteInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -470,47 +534,19 @@ public final class MailItemOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MailItemOuterClass.MailItem parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getEquipParamFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getDeleteInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MailItemOuterClass.MailItem) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.EquipParamOuterClass.EquipParam equipParam_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -520,7 +556,7 @@ public final class MailItemOuterClass {
        * @return Whether the equipParam field is set.
        */
       public boolean hasEquipParam() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return equipParamBuilder_ != null || equipParam_ != null;
       }
       /**
        * <code>.EquipParam equip_param = 1;</code>
@@ -542,11 +578,11 @@ public final class MailItemOuterClass {
             throw new NullPointerException();
           }
           equipParam_ = value;
+          onChanged();
         } else {
           equipParamBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -556,11 +592,11 @@ public final class MailItemOuterClass {
           emu.gingerps.net.proto.EquipParamOuterClass.EquipParam.Builder builderForValue) {
         if (equipParamBuilder_ == null) {
           equipParam_ = builderForValue.build();
+          onChanged();
         } else {
           equipParamBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -568,38 +604,38 @@ public final class MailItemOuterClass {
        */
       public Builder mergeEquipParam(emu.gingerps.net.proto.EquipParamOuterClass.EquipParam value) {
         if (equipParamBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            equipParam_ != null &&
-            equipParam_ != emu.gingerps.net.proto.EquipParamOuterClass.EquipParam.getDefaultInstance()) {
-            getEquipParamBuilder().mergeFrom(value);
+          if (equipParam_ != null) {
+            equipParam_ =
+              emu.gingerps.net.proto.EquipParamOuterClass.EquipParam.newBuilder(equipParam_).mergeFrom(value).buildPartial();
           } else {
             equipParam_ = value;
           }
+          onChanged();
         } else {
           equipParamBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EquipParam equip_param = 1;</code>
        */
       public Builder clearEquipParam() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        equipParam_ = null;
-        if (equipParamBuilder_ != null) {
-          equipParamBuilder_.dispose();
+        if (equipParamBuilder_ == null) {
+          equipParam_ = null;
+          onChanged();
+        } else {
+          equipParam_ = null;
           equipParamBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EquipParam equip_param = 1;</code>
        */
       public emu.gingerps.net.proto.EquipParamOuterClass.EquipParam.Builder getEquipParamBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getEquipParamFieldBuilder().getBuilder();
       }
@@ -639,7 +675,7 @@ public final class MailItemOuterClass {
        * @return Whether the deleteInfo field is set.
        */
       public boolean hasDeleteInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return deleteInfoBuilder_ != null || deleteInfo_ != null;
       }
       /**
        * <code>.MaterialDeleteInfo delete_info = 2;</code>
@@ -661,11 +697,11 @@ public final class MailItemOuterClass {
             throw new NullPointerException();
           }
           deleteInfo_ = value;
+          onChanged();
         } else {
           deleteInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -675,11 +711,11 @@ public final class MailItemOuterClass {
           emu.gingerps.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.Builder builderForValue) {
         if (deleteInfoBuilder_ == null) {
           deleteInfo_ = builderForValue.build();
+          onChanged();
         } else {
           deleteInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -687,38 +723,38 @@ public final class MailItemOuterClass {
        */
       public Builder mergeDeleteInfo(emu.gingerps.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo value) {
         if (deleteInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            deleteInfo_ != null &&
-            deleteInfo_ != emu.gingerps.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.getDefaultInstance()) {
-            getDeleteInfoBuilder().mergeFrom(value);
+          if (deleteInfo_ != null) {
+            deleteInfo_ =
+              emu.gingerps.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.newBuilder(deleteInfo_).mergeFrom(value).buildPartial();
           } else {
             deleteInfo_ = value;
           }
+          onChanged();
         } else {
           deleteInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MaterialDeleteInfo delete_info = 2;</code>
        */
       public Builder clearDeleteInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        deleteInfo_ = null;
-        if (deleteInfoBuilder_ != null) {
-          deleteInfoBuilder_.dispose();
+        if (deleteInfoBuilder_ == null) {
+          deleteInfo_ = null;
+          onChanged();
+        } else {
+          deleteInfo_ = null;
           deleteInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MaterialDeleteInfo delete_info = 2;</code>
        */
       public emu.gingerps.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.Builder getDeleteInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getDeleteInfoFieldBuilder().getBuilder();
       }
@@ -782,18 +818,7 @@ public final class MailItemOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MailItem(input, extensionRegistry);
       }
     };
 

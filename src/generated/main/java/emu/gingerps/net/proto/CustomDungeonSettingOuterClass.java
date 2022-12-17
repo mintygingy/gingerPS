@@ -99,6 +99,98 @@ public final class CustomDungeonSettingOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CustomDungeonSetting(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              startRoomId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              coinLimit_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              isArriveFinish_ = input.readBool();
+              break;
+            }
+            case 56: {
+
+              isForbidSkill_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              lifeNum_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              timeLimit_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                openRoomList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              openRoomList_.addInt(input.readUInt32());
+              break;
+            }
+            case 114: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                openRoomList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                openRoomList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          openRoomList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonSettingOuterClass.internal_static_CustomDungeonSetting_descriptor;
@@ -113,7 +205,7 @@ public final class CustomDungeonSettingOuterClass {
     }
 
     public static final int START_ROOM_ID_FIELD_NUMBER = 3;
-    private int startRoomId_ = 0;
+    private int startRoomId_;
     /**
      * <code>uint32 start_room_id = 3;</code>
      * @return The startRoomId.
@@ -124,7 +216,7 @@ public final class CustomDungeonSettingOuterClass {
     }
 
     public static final int TIME_LIMIT_FIELD_NUMBER = 9;
-    private int timeLimit_ = 0;
+    private int timeLimit_;
     /**
      * <code>uint32 time_limit = 9;</code>
      * @return The timeLimit.
@@ -135,7 +227,6 @@ public final class CustomDungeonSettingOuterClass {
     }
 
     public static final int OPEN_ROOM_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList openRoomList_;
     /**
      * <code>repeated uint32 open_room_list = 14;</code>
@@ -164,7 +255,7 @@ public final class CustomDungeonSettingOuterClass {
     private int openRoomListMemoizedSerializedSize = -1;
 
     public static final int COIN_LIMIT_FIELD_NUMBER = 5;
-    private int coinLimit_ = 0;
+    private int coinLimit_;
     /**
      * <code>uint32 coin_limit = 5;</code>
      * @return The coinLimit.
@@ -175,7 +266,7 @@ public final class CustomDungeonSettingOuterClass {
     }
 
     public static final int IS_FORBID_SKILL_FIELD_NUMBER = 7;
-    private boolean isForbidSkill_ = false;
+    private boolean isForbidSkill_;
     /**
      * <code>bool is_forbid_skill = 7;</code>
      * @return The isForbidSkill.
@@ -186,7 +277,7 @@ public final class CustomDungeonSettingOuterClass {
     }
 
     public static final int IS_ARRIVE_FINISH_FIELD_NUMBER = 6;
-    private boolean isArriveFinish_ = false;
+    private boolean isArriveFinish_;
     /**
      * <code>bool is_arrive_finish = 6;</code>
      * @return The isArriveFinish.
@@ -197,7 +288,7 @@ public final class CustomDungeonSettingOuterClass {
     }
 
     public static final int LIFE_NUM_FIELD_NUMBER = 8;
-    private int lifeNum_ = 0;
+    private int lifeNum_;
     /**
      * <code>uint32 life_num = 8;</code>
      * @return The lifeNum.
@@ -247,7 +338,7 @@ public final class CustomDungeonSettingOuterClass {
       for (int i = 0; i < openRoomList_.size(); i++) {
         output.writeUInt32NoTag(openRoomList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -294,7 +385,7 @@ public final class CustomDungeonSettingOuterClass {
         }
         openRoomListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -323,7 +414,7 @@ public final class CustomDungeonSettingOuterClass {
           != other.getIsArriveFinish()) return false;
       if (getLifeNum()
           != other.getLifeNum()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -352,7 +443,7 @@ public final class CustomDungeonSettingOuterClass {
           getIsArriveFinish());
       hash = (37 * hash) + LIFE_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getLifeNum();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -469,25 +560,36 @@ public final class CustomDungeonSettingOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         startRoomId_ = 0;
+
         timeLimit_ = 0;
+
         openRoomList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         coinLimit_ = 0;
+
         isForbidSkill_ = false;
+
         isArriveFinish_ = false;
+
         lifeNum_ = 0;
+
         return this;
       }
 
@@ -514,40 +616,20 @@ public final class CustomDungeonSettingOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting buildPartial() {
         emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting result = new emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.startRoomId_ = startRoomId_;
+        result.timeLimit_ = timeLimit_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           openRoomList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.openRoomList_ = openRoomList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.startRoomId_ = startRoomId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.timeLimit_ = timeLimit_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.coinLimit_ = coinLimit_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.isForbidSkill_ = isForbidSkill_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isArriveFinish_ = isArriveFinish_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.lifeNum_ = lifeNum_;
-        }
+        result.coinLimit_ = coinLimit_;
+        result.isForbidSkill_ = isForbidSkill_;
+        result.isArriveFinish_ = isArriveFinish_;
+        result.lifeNum_ = lifeNum_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -603,7 +685,7 @@ public final class CustomDungeonSettingOuterClass {
         if (!other.openRoomList_.isEmpty()) {
           if (openRoomList_.isEmpty()) {
             openRoomList_ = other.openRoomList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureOpenRoomListIsMutable();
             openRoomList_.addAll(other.openRoomList_);
@@ -622,7 +704,7 @@ public final class CustomDungeonSettingOuterClass {
         if (other.getLifeNum() != 0) {
           setLifeNum(other.getLifeNum());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -637,76 +719,17 @@ public final class CustomDungeonSettingOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                startRoomId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 40: {
-                coinLimit_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 40
-              case 48: {
-                isArriveFinish_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 56: {
-                isForbidSkill_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 56
-              case 64: {
-                lifeNum_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 64
-              case 72: {
-                timeLimit_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 112: {
-                int v = input.readUInt32();
-                ensureOpenRoomListIsMutable();
-                openRoomList_.addInt(v);
-                break;
-              } // case 112
-              case 114: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureOpenRoomListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  openRoomList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -728,7 +751,6 @@ public final class CustomDungeonSettingOuterClass {
       public Builder setStartRoomId(int value) {
         
         startRoomId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -737,7 +759,7 @@ public final class CustomDungeonSettingOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartRoomId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         startRoomId_ = 0;
         onChanged();
         return this;
@@ -760,7 +782,6 @@ public final class CustomDungeonSettingOuterClass {
       public Builder setTimeLimit(int value) {
         
         timeLimit_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -769,7 +790,7 @@ public final class CustomDungeonSettingOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimeLimit() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         timeLimit_ = 0;
         onChanged();
         return this;
@@ -777,10 +798,10 @@ public final class CustomDungeonSettingOuterClass {
 
       private com.google.protobuf.Internal.IntList openRoomList_ = emptyIntList();
       private void ensureOpenRoomListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           openRoomList_ = mutableCopy(openRoomList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 open_room_list = 14;</code>
@@ -788,7 +809,7 @@ public final class CustomDungeonSettingOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getOpenRoomListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(openRoomList_) : openRoomList_;
       }
       /**
@@ -814,7 +835,6 @@ public final class CustomDungeonSettingOuterClass {
        */
       public Builder setOpenRoomList(
           int index, int value) {
-        
         ensureOpenRoomListIsMutable();
         openRoomList_.setInt(index, value);
         onChanged();
@@ -826,7 +846,6 @@ public final class CustomDungeonSettingOuterClass {
        * @return This builder for chaining.
        */
       public Builder addOpenRoomList(int value) {
-        
         ensureOpenRoomListIsMutable();
         openRoomList_.addInt(value);
         onChanged();
@@ -851,7 +870,7 @@ public final class CustomDungeonSettingOuterClass {
        */
       public Builder clearOpenRoomList() {
         openRoomList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -873,7 +892,6 @@ public final class CustomDungeonSettingOuterClass {
       public Builder setCoinLimit(int value) {
         
         coinLimit_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -882,7 +900,7 @@ public final class CustomDungeonSettingOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoinLimit() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         coinLimit_ = 0;
         onChanged();
         return this;
@@ -905,7 +923,6 @@ public final class CustomDungeonSettingOuterClass {
       public Builder setIsForbidSkill(boolean value) {
         
         isForbidSkill_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -914,7 +931,7 @@ public final class CustomDungeonSettingOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsForbidSkill() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         isForbidSkill_ = false;
         onChanged();
         return this;
@@ -937,7 +954,6 @@ public final class CustomDungeonSettingOuterClass {
       public Builder setIsArriveFinish(boolean value) {
         
         isArriveFinish_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -946,7 +962,7 @@ public final class CustomDungeonSettingOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsArriveFinish() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isArriveFinish_ = false;
         onChanged();
         return this;
@@ -969,7 +985,6 @@ public final class CustomDungeonSettingOuterClass {
       public Builder setLifeNum(int value) {
         
         lifeNum_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -978,7 +993,7 @@ public final class CustomDungeonSettingOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLifeNum() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         lifeNum_ = 0;
         onChanged();
         return this;
@@ -1016,18 +1031,7 @@ public final class CustomDungeonSettingOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CustomDungeonSetting(input, extensionRegistry);
       }
     };
 

@@ -79,6 +79,73 @@ public final class SceneAreaUnlockNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneAreaUnlockNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                areaList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              areaList_.addInt(input.readUInt32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                areaList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                areaList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          areaList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneAreaUnlockNotifyOuterClass.internal_static_SceneAreaUnlockNotify_descriptor;
@@ -93,7 +160,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 1;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 1;</code>
      * @return The sceneId.
@@ -104,7 +171,6 @@ public final class SceneAreaUnlockNotifyOuterClass {
     }
 
     public static final int AREA_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList areaList_;
     /**
      * <code>repeated uint32 area_list = 5;</code>
@@ -157,7 +223,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
       for (int i = 0; i < areaList_.size(); i++) {
         output.writeUInt32NoTag(areaList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -184,7 +250,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
         }
         areaListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -203,7 +269,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
           != other.getSceneId()) return false;
       if (!getAreaListList()
           .equals(other.getAreaListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -220,7 +286,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
         hash = (37 * hash) + AREA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAreaListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,20 +413,26 @@ public final class SceneAreaUnlockNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         sceneId_ = 0;
+
         areaList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -387,25 +459,15 @@ public final class SceneAreaUnlockNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotify buildPartial() {
         emu.gingerps.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotify result = new emu.gingerps.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotify result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.sceneId_ = sceneId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           areaList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.areaList_ = areaList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -458,14 +520,14 @@ public final class SceneAreaUnlockNotifyOuterClass {
         if (!other.areaList_.isEmpty()) {
           if (areaList_.isEmpty()) {
             areaList_ = other.areaList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAreaListIsMutable();
             areaList_.addAll(other.areaList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -480,51 +542,17 @@ public final class SceneAreaUnlockNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 40: {
-                int v = input.readUInt32();
-                ensureAreaListIsMutable();
-                areaList_.addInt(v);
-                break;
-              } // case 40
-              case 42: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureAreaListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  areaList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -546,7 +574,6 @@ public final class SceneAreaUnlockNotifyOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -555,7 +582,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -563,10 +590,10 @@ public final class SceneAreaUnlockNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList areaList_ = emptyIntList();
       private void ensureAreaListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           areaList_ = mutableCopy(areaList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 area_list = 5;</code>
@@ -574,7 +601,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getAreaListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(areaList_) : areaList_;
       }
       /**
@@ -600,7 +627,6 @@ public final class SceneAreaUnlockNotifyOuterClass {
        */
       public Builder setAreaList(
           int index, int value) {
-        
         ensureAreaListIsMutable();
         areaList_.setInt(index, value);
         onChanged();
@@ -612,7 +638,6 @@ public final class SceneAreaUnlockNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAreaList(int value) {
-        
         ensureAreaListIsMutable();
         areaList_.addInt(value);
         onChanged();
@@ -637,7 +662,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
        */
       public Builder clearAreaList() {
         areaList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -674,18 +699,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneAreaUnlockNotify(input, extensionRegistry);
       }
     };
 

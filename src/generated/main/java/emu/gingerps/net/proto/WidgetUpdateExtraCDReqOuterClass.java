@@ -80,6 +80,59 @@ public final class WidgetUpdateExtraCDReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WidgetUpdateExtraCDReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              materialId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              extraCdType_ = rawValue;
+              break;
+            }
+            case 112: {
+
+              cdGroup_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WidgetUpdateExtraCDReqOuterClass.internal_static_WidgetUpdateExtraCDReq_descriptor;
@@ -94,7 +147,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
     }
 
     public static final int MATERIAL_ID_FIELD_NUMBER = 6;
-    private int materialId_ = 0;
+    private int materialId_;
     /**
      * <code>uint32 material_id = 6;</code>
      * @return The materialId.
@@ -105,7 +158,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
     }
 
     public static final int EXTRA_CD_TYPE_FIELD_NUMBER = 7;
-    private int extraCdType_ = 0;
+    private int extraCdType_;
     /**
      * <code>.WidgetExtraCdType extra_cd_type = 7;</code>
      * @return The enum numeric value on the wire for extraCdType.
@@ -118,12 +171,13 @@ public final class WidgetUpdateExtraCDReqOuterClass {
      * @return The extraCdType.
      */
     @java.lang.Override public emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType getExtraCdType() {
-      emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType result = emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType.forNumber(extraCdType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType result = emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType.valueOf(extraCdType_);
       return result == null ? emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType.UNRECOGNIZED : result;
     }
 
     public static final int CD_GROUP_FIELD_NUMBER = 14;
-    private int cdGroup_ = 0;
+    private int cdGroup_;
     /**
      * <code>uint32 cd_group = 14;</code>
      * @return The cdGroup.
@@ -156,7 +210,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
       if (cdGroup_ != 0) {
         output.writeUInt32(14, cdGroup_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +231,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, cdGroup_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +251,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
       if (extraCdType_ != other.extraCdType_) return false;
       if (getCdGroup()
           != other.getCdGroup()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -214,7 +268,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
       hash = (53 * hash) + extraCdType_;
       hash = (37 * hash) + CD_GROUP_FIELD_NUMBER;
       hash = (53 * hash) + getCdGroup();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -342,21 +396,28 @@ public final class WidgetUpdateExtraCDReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.WidgetUpdateExtraCDReqOuterClass.WidgetUpdateExtraCDReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         materialId_ = 0;
+
         extraCdType_ = 0;
+
         cdGroup_ = 0;
+
         return this;
       }
 
@@ -383,22 +444,11 @@ public final class WidgetUpdateExtraCDReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetUpdateExtraCDReqOuterClass.WidgetUpdateExtraCDReq buildPartial() {
         emu.gingerps.net.proto.WidgetUpdateExtraCDReqOuterClass.WidgetUpdateExtraCDReq result = new emu.gingerps.net.proto.WidgetUpdateExtraCDReqOuterClass.WidgetUpdateExtraCDReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.materialId_ = materialId_;
+        result.extraCdType_ = extraCdType_;
+        result.cdGroup_ = cdGroup_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WidgetUpdateExtraCDReqOuterClass.WidgetUpdateExtraCDReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.materialId_ = materialId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.extraCdType_ = extraCdType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.cdGroup_ = cdGroup_;
-        }
       }
 
       @java.lang.Override
@@ -454,7 +504,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
         if (other.getCdGroup() != 0) {
           setCdGroup(other.getCdGroup());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -469,48 +519,19 @@ public final class WidgetUpdateExtraCDReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WidgetUpdateExtraCDReqOuterClass.WidgetUpdateExtraCDReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                materialId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 56: {
-                extraCdType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 112: {
-                cdGroup_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WidgetUpdateExtraCDReqOuterClass.WidgetUpdateExtraCDReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int materialId_ ;
       /**
@@ -529,7 +550,6 @@ public final class WidgetUpdateExtraCDReqOuterClass {
       public Builder setMaterialId(int value) {
         
         materialId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -538,7 +558,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         materialId_ = 0;
         onChanged();
         return this;
@@ -558,8 +578,8 @@ public final class WidgetUpdateExtraCDReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setExtraCdTypeValue(int value) {
+        
         extraCdType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -569,7 +589,8 @@ public final class WidgetUpdateExtraCDReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType getExtraCdType() {
-        emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType result = emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType.forNumber(extraCdType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType result = emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType.valueOf(extraCdType_);
         return result == null ? emu.gingerps.net.proto.WidgetExtraCdTypeOuterClass.WidgetExtraCdType.UNRECOGNIZED : result;
       }
       /**
@@ -581,7 +602,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         extraCdType_ = value.getNumber();
         onChanged();
         return this;
@@ -591,7 +612,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExtraCdType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         extraCdType_ = 0;
         onChanged();
         return this;
@@ -614,7 +635,6 @@ public final class WidgetUpdateExtraCDReqOuterClass {
       public Builder setCdGroup(int value) {
         
         cdGroup_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -623,7 +643,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCdGroup() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         cdGroup_ = 0;
         onChanged();
         return this;
@@ -661,18 +681,7 @@ public final class WidgetUpdateExtraCDReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WidgetUpdateExtraCDReq(input, extensionRegistry);
       }
     };
 

@@ -140,6 +140,124 @@ public final class AbilityMixinBreakoutOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityMixinBreakout(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing.Builder subBuilder = null;
+              if (syncCase_ == 1) {
+                subBuilder = ((emu.gingerps.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing) sync_).toBuilder();
+              }
+              sync_ =
+                  input.readMessage(emu.gingerps.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing) sync_);
+                sync_ = subBuilder.buildPartial();
+              }
+              syncCase_ = 1;
+              break;
+            }
+            case 18: {
+              emu.gingerps.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.Builder subBuilder = null;
+              if (syncCase_ == 2) {
+                subBuilder = ((emu.gingerps.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_).toBuilder();
+              }
+              sync_ =
+                  input.readMessage(emu.gingerps.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_);
+                sync_ = subBuilder.buildPartial();
+              }
+              syncCase_ = 2;
+              break;
+            }
+            case 26: {
+              emu.gingerps.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.Builder subBuilder = null;
+              if (syncCase_ == 3) {
+                subBuilder = ((emu.gingerps.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_).toBuilder();
+              }
+              sync_ =
+                  input.readMessage(emu.gingerps.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_);
+                sync_ = subBuilder.buildPartial();
+              }
+              syncCase_ = 3;
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              syncType_ = rawValue;
+              break;
+            }
+            case 42: {
+              emu.gingerps.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.Builder subBuilder = null;
+              if (syncCase_ == 5) {
+                subBuilder = ((emu.gingerps.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_).toBuilder();
+              }
+              sync_ =
+                  input.readMessage(emu.gingerps.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_);
+                sync_ = subBuilder.buildPartial();
+              }
+              syncCase_ = 5;
+              break;
+            }
+            case 64: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.Builder subBuilder = null;
+              if (syncCase_ == 14) {
+                subBuilder = ((emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_).toBuilder();
+              }
+              sync_ =
+                  input.readMessage(emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_);
+                sync_ = subBuilder.buildPartial();
+              }
+              syncCase_ = 14;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.internal_static_AbilityMixinBreakout_descriptor;
@@ -354,7 +472,7 @@ public final class AbilityMixinBreakoutOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -365,7 +483,7 @@ public final class AbilityMixinBreakoutOuterClass {
     }
 
     public static final int SYNC_TYPE_FIELD_NUMBER = 4;
-    private int syncType_ = 0;
+    private int syncType_;
     /**
      * <code>.AbilityMixinBreakout.SyncType sync_type = 4;</code>
      * @return The enum numeric value on the wire for syncType.
@@ -378,7 +496,8 @@ public final class AbilityMixinBreakoutOuterClass {
      * @return The syncType.
      */
     @java.lang.Override public emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType getSyncType() {
-      emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType result = emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.forNumber(syncType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType result = emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.valueOf(syncType_);
       return result == null ? emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.UNRECOGNIZED : result;
     }
 
@@ -572,7 +691,7 @@ public final class AbilityMixinBreakoutOuterClass {
       if (syncCase_ == 14) {
         output.writeMessage(14, (emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -609,7 +728,7 @@ public final class AbilityMixinBreakoutOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, (emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -652,7 +771,7 @@ public final class AbilityMixinBreakoutOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -691,7 +810,7 @@ public final class AbilityMixinBreakoutOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -808,35 +927,26 @@ public final class AbilityMixinBreakoutOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         syncType_ = 0;
-        if (syncCreateConnectBuilder_ != null) {
-          syncCreateConnectBuilder_.clear();
-        }
-        if (syncPingBuilder_ != null) {
-          syncPingBuilder_.clear();
-        }
-        if (syncFinishGameBuilder_ != null) {
-          syncFinishGameBuilder_.clear();
-        }
-        if (syncSnapShotBuilder_ != null) {
-          syncSnapShotBuilder_.clear();
-        }
-        if (syncActionBuilder_ != null) {
-          syncActionBuilder_.clear();
-        }
+
         syncCase_ = 0;
         sync_ = null;
         return this;
@@ -865,45 +975,46 @@ public final class AbilityMixinBreakoutOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout buildPartial() {
         emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout result = new emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        result.retcode_ = retcode_;
+        result.syncType_ = syncType_;
+        if (syncCase_ == 2) {
+          if (syncCreateConnectBuilder_ == null) {
+            result.sync_ = sync_;
+          } else {
+            result.sync_ = syncCreateConnectBuilder_.build();
+          }
+        }
+        if (syncCase_ == 1) {
+          if (syncPingBuilder_ == null) {
+            result.sync_ = sync_;
+          } else {
+            result.sync_ = syncPingBuilder_.build();
+          }
+        }
+        if (syncCase_ == 5) {
+          if (syncFinishGameBuilder_ == null) {
+            result.sync_ = sync_;
+          } else {
+            result.sync_ = syncFinishGameBuilder_.build();
+          }
+        }
+        if (syncCase_ == 14) {
+          if (syncSnapShotBuilder_ == null) {
+            result.sync_ = sync_;
+          } else {
+            result.sync_ = syncSnapShotBuilder_.build();
+          }
+        }
+        if (syncCase_ == 3) {
+          if (syncActionBuilder_ == null) {
+            result.sync_ = sync_;
+          } else {
+            result.sync_ = syncActionBuilder_.build();
+          }
+        }
+        result.syncCase_ = syncCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.syncType_ = syncType_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout result) {
-        result.syncCase_ = syncCase_;
-        result.sync_ = this.sync_;
-        if (syncCase_ == 2 &&
-            syncCreateConnectBuilder_ != null) {
-          result.sync_ = syncCreateConnectBuilder_.build();
-        }
-        if (syncCase_ == 1 &&
-            syncPingBuilder_ != null) {
-          result.sync_ = syncPingBuilder_.build();
-        }
-        if (syncCase_ == 5 &&
-            syncFinishGameBuilder_ != null) {
-          result.sync_ = syncFinishGameBuilder_.build();
-        }
-        if (syncCase_ == 14 &&
-            syncSnapShotBuilder_ != null) {
-          result.sync_ = syncSnapShotBuilder_.build();
-        }
-        if (syncCase_ == 3 &&
-            syncActionBuilder_ != null) {
-          result.sync_ = syncActionBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -981,7 +1092,7 @@ public final class AbilityMixinBreakoutOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -996,75 +1107,17 @@ public final class AbilityMixinBreakoutOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getSyncPingFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                syncCase_ = 1;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getSyncCreateConnectFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                syncCase_ = 2;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getSyncActionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                syncCase_ = 3;
-                break;
-              } // case 26
-              case 32: {
-                syncType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 42: {
-                input.readMessage(
-                    getSyncFinishGameFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                syncCase_ = 5;
-                break;
-              } // case 42
-              case 64: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 114: {
-                input.readMessage(
-                    getSyncSnapShotFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                syncCase_ = 14;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int syncCase_ = 0;
@@ -1082,7 +1135,6 @@ public final class AbilityMixinBreakoutOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -1101,7 +1153,6 @@ public final class AbilityMixinBreakoutOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1110,7 +1161,7 @@ public final class AbilityMixinBreakoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -1130,8 +1181,8 @@ public final class AbilityMixinBreakoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder setSyncTypeValue(int value) {
+        
         syncType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1141,7 +1192,8 @@ public final class AbilityMixinBreakoutOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType getSyncType() {
-        emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType result = emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.forNumber(syncType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType result = emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.valueOf(syncType_);
         return result == null ? emu.gingerps.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.UNRECOGNIZED : result;
       }
       /**
@@ -1153,7 +1205,7 @@ public final class AbilityMixinBreakoutOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         syncType_ = value.getNumber();
         onChanged();
         return this;
@@ -1163,7 +1215,7 @@ public final class AbilityMixinBreakoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSyncType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         syncType_ = 0;
         onChanged();
         return this;
@@ -1243,9 +1295,8 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           if (syncCase_ == 2) {
             syncCreateConnectBuilder_.mergeFrom(value);
-          } else {
-            syncCreateConnectBuilder_.setMessage(value);
           }
+          syncCreateConnectBuilder_.setMessage(value);
         }
         syncCase_ = 2;
         return this;
@@ -1307,7 +1358,7 @@ public final class AbilityMixinBreakoutOuterClass {
           sync_ = null;
         }
         syncCase_ = 2;
-        onChanged();
+        onChanged();;
         return syncCreateConnectBuilder_;
       }
 
@@ -1385,9 +1436,8 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           if (syncCase_ == 1) {
             syncPingBuilder_.mergeFrom(value);
-          } else {
-            syncPingBuilder_.setMessage(value);
           }
+          syncPingBuilder_.setMessage(value);
         }
         syncCase_ = 1;
         return this;
@@ -1449,7 +1499,7 @@ public final class AbilityMixinBreakoutOuterClass {
           sync_ = null;
         }
         syncCase_ = 1;
-        onChanged();
+        onChanged();;
         return syncPingBuilder_;
       }
 
@@ -1527,9 +1577,8 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           if (syncCase_ == 5) {
             syncFinishGameBuilder_.mergeFrom(value);
-          } else {
-            syncFinishGameBuilder_.setMessage(value);
           }
+          syncFinishGameBuilder_.setMessage(value);
         }
         syncCase_ = 5;
         return this;
@@ -1591,7 +1640,7 @@ public final class AbilityMixinBreakoutOuterClass {
           sync_ = null;
         }
         syncCase_ = 5;
-        onChanged();
+        onChanged();;
         return syncFinishGameBuilder_;
       }
 
@@ -1669,9 +1718,8 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           if (syncCase_ == 14) {
             syncSnapShotBuilder_.mergeFrom(value);
-          } else {
-            syncSnapShotBuilder_.setMessage(value);
           }
+          syncSnapShotBuilder_.setMessage(value);
         }
         syncCase_ = 14;
         return this;
@@ -1733,7 +1781,7 @@ public final class AbilityMixinBreakoutOuterClass {
           sync_ = null;
         }
         syncCase_ = 14;
-        onChanged();
+        onChanged();;
         return syncSnapShotBuilder_;
       }
 
@@ -1811,9 +1859,8 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           if (syncCase_ == 3) {
             syncActionBuilder_.mergeFrom(value);
-          } else {
-            syncActionBuilder_.setMessage(value);
           }
+          syncActionBuilder_.setMessage(value);
         }
         syncCase_ = 3;
         return this;
@@ -1875,7 +1922,7 @@ public final class AbilityMixinBreakoutOuterClass {
           sync_ = null;
         }
         syncCase_ = 3;
-        onChanged();
+        onChanged();;
         return syncActionBuilder_;
       }
       @java.lang.Override
@@ -1911,18 +1958,7 @@ public final class AbilityMixinBreakoutOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityMixinBreakout(input, extensionRegistry);
       }
     };
 

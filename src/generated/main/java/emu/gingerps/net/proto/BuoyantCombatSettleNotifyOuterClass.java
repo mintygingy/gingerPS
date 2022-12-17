@@ -76,6 +76,61 @@ public final class BuoyantCombatSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BuoyantCombatSettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.BuoyantCombatSettleInfoOuterClass.BuoyantCombatSettleInfo.Builder subBuilder = null;
+              if (settleInfo_ != null) {
+                subBuilder = settleInfo_.toBuilder();
+              }
+              settleInfo_ = input.readMessage(emu.gingerps.net.proto.BuoyantCombatSettleInfoOuterClass.BuoyantCombatSettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(settleInfo_);
+                settleInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BuoyantCombatSettleNotifyOuterClass.internal_static_BuoyantCombatSettleNotify_descriptor;
@@ -90,7 +145,7 @@ public final class BuoyantCombatSettleNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 8;
-    private int galleryId_ = 0;
+    private int galleryId_;
     /**
      * <code>uint32 gallery_id = 8;</code>
      * @return The galleryId.
@@ -123,7 +178,7 @@ public final class BuoyantCombatSettleNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BuoyantCombatSettleInfoOuterClass.BuoyantCombatSettleInfoOrBuilder getSettleInfoOrBuilder() {
-      return settleInfo_ == null ? emu.gingerps.net.proto.BuoyantCombatSettleInfoOuterClass.BuoyantCombatSettleInfo.getDefaultInstance() : settleInfo_;
+      return getSettleInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -146,7 +201,7 @@ public final class BuoyantCombatSettleNotifyOuterClass {
       if (settleInfo_ != null) {
         output.writeMessage(15, getSettleInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class BuoyantCombatSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getSettleInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class BuoyantCombatSettleNotifyOuterClass {
         if (!getSettleInfo()
             .equals(other.getSettleInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +257,7 @@ public final class BuoyantCombatSettleNotifyOuterClass {
         hash = (37 * hash) + SETTLE_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getSettleInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,22 +384,28 @@ public final class BuoyantCombatSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.BuoyantCombatSettleNotifyOuterClass.BuoyantCombatSettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         galleryId_ = 0;
-        settleInfo_ = null;
-        if (settleInfoBuilder_ != null) {
-          settleInfoBuilder_.dispose();
+
+        if (settleInfoBuilder_ == null) {
+          settleInfo_ = null;
+        } else {
+          settleInfo_ = null;
           settleInfoBuilder_ = null;
         }
         return this;
@@ -373,21 +434,14 @@ public final class BuoyantCombatSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BuoyantCombatSettleNotifyOuterClass.BuoyantCombatSettleNotify buildPartial() {
         emu.gingerps.net.proto.BuoyantCombatSettleNotifyOuterClass.BuoyantCombatSettleNotify result = new emu.gingerps.net.proto.BuoyantCombatSettleNotifyOuterClass.BuoyantCombatSettleNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.galleryId_ = galleryId_;
+        if (settleInfoBuilder_ == null) {
+          result.settleInfo_ = settleInfo_;
+        } else {
+          result.settleInfo_ = settleInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BuoyantCombatSettleNotifyOuterClass.BuoyantCombatSettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.galleryId_ = galleryId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.settleInfo_ = settleInfoBuilder_ == null
-              ? settleInfo_
-              : settleInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -440,7 +494,7 @@ public final class BuoyantCombatSettleNotifyOuterClass {
         if (other.hasSettleInfo()) {
           mergeSettleInfo(other.getSettleInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,45 +509,19 @@ public final class BuoyantCombatSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BuoyantCombatSettleNotifyOuterClass.BuoyantCombatSettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                galleryId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 122: {
-                input.readMessage(
-                    getSettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BuoyantCombatSettleNotifyOuterClass.BuoyantCombatSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int galleryId_ ;
       /**
@@ -512,7 +540,6 @@ public final class BuoyantCombatSettleNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -521,7 +548,7 @@ public final class BuoyantCombatSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         galleryId_ = 0;
         onChanged();
         return this;
@@ -535,7 +562,7 @@ public final class BuoyantCombatSettleNotifyOuterClass {
        * @return Whether the settleInfo field is set.
        */
       public boolean hasSettleInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return settleInfoBuilder_ != null || settleInfo_ != null;
       }
       /**
        * <code>.BuoyantCombatSettleInfo settle_info = 15;</code>
@@ -557,11 +584,11 @@ public final class BuoyantCombatSettleNotifyOuterClass {
             throw new NullPointerException();
           }
           settleInfo_ = value;
+          onChanged();
         } else {
           settleInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -571,11 +598,11 @@ public final class BuoyantCombatSettleNotifyOuterClass {
           emu.gingerps.net.proto.BuoyantCombatSettleInfoOuterClass.BuoyantCombatSettleInfo.Builder builderForValue) {
         if (settleInfoBuilder_ == null) {
           settleInfo_ = builderForValue.build();
+          onChanged();
         } else {
           settleInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -583,38 +610,38 @@ public final class BuoyantCombatSettleNotifyOuterClass {
        */
       public Builder mergeSettleInfo(emu.gingerps.net.proto.BuoyantCombatSettleInfoOuterClass.BuoyantCombatSettleInfo value) {
         if (settleInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            settleInfo_ != null &&
-            settleInfo_ != emu.gingerps.net.proto.BuoyantCombatSettleInfoOuterClass.BuoyantCombatSettleInfo.getDefaultInstance()) {
-            getSettleInfoBuilder().mergeFrom(value);
+          if (settleInfo_ != null) {
+            settleInfo_ =
+              emu.gingerps.net.proto.BuoyantCombatSettleInfoOuterClass.BuoyantCombatSettleInfo.newBuilder(settleInfo_).mergeFrom(value).buildPartial();
           } else {
             settleInfo_ = value;
           }
+          onChanged();
         } else {
           settleInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BuoyantCombatSettleInfo settle_info = 15;</code>
        */
       public Builder clearSettleInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        settleInfo_ = null;
-        if (settleInfoBuilder_ != null) {
-          settleInfoBuilder_.dispose();
+        if (settleInfoBuilder_ == null) {
+          settleInfo_ = null;
+          onChanged();
+        } else {
+          settleInfo_ = null;
           settleInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BuoyantCombatSettleInfo settle_info = 15;</code>
        */
       public emu.gingerps.net.proto.BuoyantCombatSettleInfoOuterClass.BuoyantCombatSettleInfo.Builder getSettleInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getSettleInfoFieldBuilder().getBuilder();
       }
@@ -678,18 +705,7 @@ public final class BuoyantCombatSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BuoyantCombatSettleNotify(input, extensionRegistry);
       }
     };
 

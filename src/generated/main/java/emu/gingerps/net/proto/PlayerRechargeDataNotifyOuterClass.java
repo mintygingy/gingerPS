@@ -86,6 +86,61 @@ public final class PlayerRechargeDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerRechargeDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              cardProductRemainDays_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                productPriceTierList_ = new java.util.ArrayList<emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              productPriceTierList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          productPriceTierList_ = java.util.Collections.unmodifiableList(productPriceTierList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerRechargeDataNotifyOuterClass.internal_static_PlayerRechargeDataNotify_descriptor;
@@ -100,7 +155,6 @@ public final class PlayerRechargeDataNotifyOuterClass {
     }
 
     public static final int PRODUCT_PRICE_TIER_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier> productPriceTierList_;
     /**
      * <code>repeated .ProductPriceTier product_price_tier_list = 7;</code>
@@ -141,7 +195,7 @@ public final class PlayerRechargeDataNotifyOuterClass {
     }
 
     public static final int CARD_PRODUCT_REMAIN_DAYS_FIELD_NUMBER = 6;
-    private int cardProductRemainDays_ = 0;
+    private int cardProductRemainDays_;
     /**
      * <code>uint32 card_product_remain_days = 6;</code>
      * @return The cardProductRemainDays.
@@ -171,7 +225,7 @@ public final class PlayerRechargeDataNotifyOuterClass {
       for (int i = 0; i < productPriceTierList_.size(); i++) {
         output.writeMessage(7, productPriceTierList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class PlayerRechargeDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, productPriceTierList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class PlayerRechargeDataNotifyOuterClass {
           .equals(other.getProductPriceTierListList())) return false;
       if (getCardProductRemainDays()
           != other.getCardProductRemainDays()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class PlayerRechargeDataNotifyOuterClass {
       }
       hash = (37 * hash) + CARD_PRODUCT_REMAIN_DAYS_FIELD_NUMBER;
       hash = (53 * hash) + getCardProductRemainDays();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +405,31 @@ public final class PlayerRechargeDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerRechargeDataNotifyOuterClass.PlayerRechargeDataNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getProductPriceTierListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (productPriceTierListBuilder_ == null) {
           productPriceTierList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          productPriceTierList_ = null;
           productPriceTierListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         cardProductRemainDays_ = 0;
+
         return this;
       }
 
@@ -397,13 +456,7 @@ public final class PlayerRechargeDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerRechargeDataNotifyOuterClass.PlayerRechargeDataNotify buildPartial() {
         emu.gingerps.net.proto.PlayerRechargeDataNotifyOuterClass.PlayerRechargeDataNotify result = new emu.gingerps.net.proto.PlayerRechargeDataNotifyOuterClass.PlayerRechargeDataNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PlayerRechargeDataNotifyOuterClass.PlayerRechargeDataNotify result) {
+        int from_bitField0_ = bitField0_;
         if (productPriceTierListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             productPriceTierList_ = java.util.Collections.unmodifiableList(productPriceTierList_);
@@ -413,13 +466,9 @@ public final class PlayerRechargeDataNotifyOuterClass {
         } else {
           result.productPriceTierList_ = productPriceTierListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerRechargeDataNotifyOuterClass.PlayerRechargeDataNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cardProductRemainDays_ = cardProductRemainDays_;
-        }
+        result.cardProductRemainDays_ = cardProductRemainDays_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -495,7 +544,7 @@ public final class PlayerRechargeDataNotifyOuterClass {
         if (other.getCardProductRemainDays() != 0) {
           setCardProductRemainDays(other.getCardProductRemainDays());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -510,48 +559,17 @@ public final class PlayerRechargeDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerRechargeDataNotifyOuterClass.PlayerRechargeDataNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                cardProductRemainDays_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 58: {
-                emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier.parser(),
-                        extensionRegistry);
-                if (productPriceTierListBuilder_ == null) {
-                  ensureProductPriceTierListIsMutable();
-                  productPriceTierList_.add(m);
-                } else {
-                  productPriceTierListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerRechargeDataNotifyOuterClass.PlayerRechargeDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -813,7 +831,6 @@ public final class PlayerRechargeDataNotifyOuterClass {
       public Builder setCardProductRemainDays(int value) {
         
         cardProductRemainDays_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -822,7 +839,7 @@ public final class PlayerRechargeDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardProductRemainDays() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         cardProductRemainDays_ = 0;
         onChanged();
         return this;
@@ -860,18 +877,7 @@ public final class PlayerRechargeDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerRechargeDataNotify(input, extensionRegistry);
       }
     };
 

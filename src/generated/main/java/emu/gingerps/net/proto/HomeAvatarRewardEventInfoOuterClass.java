@@ -75,6 +75,68 @@ public final class HomeAvatarRewardEventInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeAvatarRewardEventInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              eventId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              guid_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              avatarId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              randomPosition_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              suiteId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeAvatarRewardEventInfoOuterClass.internal_static_HomeAvatarRewardEventInfo_descriptor;
@@ -89,7 +151,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
     }
 
     public static final int RANDOM_POSITION_FIELD_NUMBER = 9;
-    private int randomPosition_ = 0;
+    private int randomPosition_;
     /**
      * <code>uint32 random_position = 9;</code>
      * @return The randomPosition.
@@ -100,7 +162,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
     }
 
     public static final int SUITE_ID_FIELD_NUMBER = 11;
-    private int suiteId_ = 0;
+    private int suiteId_;
     /**
      * <code>uint32 suite_id = 11;</code>
      * @return The suiteId.
@@ -111,7 +173,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
     }
 
     public static final int GUID_FIELD_NUMBER = 6;
-    private int guid_ = 0;
+    private int guid_;
     /**
      * <code>uint32 guid = 6;</code>
      * @return The guid.
@@ -122,7 +184,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
     }
 
     public static final int EVENT_ID_FIELD_NUMBER = 5;
-    private int eventId_ = 0;
+    private int eventId_;
     /**
      * <code>uint32 event_id = 5;</code>
      * @return The eventId.
@@ -133,7 +195,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 7;
-    private int avatarId_ = 0;
+    private int avatarId_;
     /**
      * <code>uint32 avatar_id = 7;</code>
      * @return The avatarId.
@@ -172,7 +234,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
       if (suiteId_ != 0) {
         output.writeUInt32(11, suiteId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -201,7 +263,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, suiteId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +288,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
           != other.getEventId()) return false;
       if (getAvatarId()
           != other.getAvatarId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -247,7 +309,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
       hash = (53 * hash) + getEventId();
       hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -364,23 +426,32 @@ public final class HomeAvatarRewardEventInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeAvatarRewardEventInfoOuterClass.HomeAvatarRewardEventInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         randomPosition_ = 0;
+
         suiteId_ = 0;
+
         guid_ = 0;
+
         eventId_ = 0;
+
         avatarId_ = 0;
+
         return this;
       }
 
@@ -407,28 +478,13 @@ public final class HomeAvatarRewardEventInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeAvatarRewardEventInfoOuterClass.HomeAvatarRewardEventInfo buildPartial() {
         emu.gingerps.net.proto.HomeAvatarRewardEventInfoOuterClass.HomeAvatarRewardEventInfo result = new emu.gingerps.net.proto.HomeAvatarRewardEventInfoOuterClass.HomeAvatarRewardEventInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.randomPosition_ = randomPosition_;
+        result.suiteId_ = suiteId_;
+        result.guid_ = guid_;
+        result.eventId_ = eventId_;
+        result.avatarId_ = avatarId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeAvatarRewardEventInfoOuterClass.HomeAvatarRewardEventInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.randomPosition_ = randomPosition_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.suiteId_ = suiteId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.guid_ = guid_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.eventId_ = eventId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.avatarId_ = avatarId_;
-        }
       }
 
       @java.lang.Override
@@ -490,7 +546,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
         if (other.getAvatarId() != 0) {
           setAvatarId(other.getAvatarId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -505,58 +561,19 @@ public final class HomeAvatarRewardEventInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeAvatarRewardEventInfoOuterClass.HomeAvatarRewardEventInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                eventId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 40
-              case 48: {
-                guid_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 48
-              case 56: {
-                avatarId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 56
-              case 72: {
-                randomPosition_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 88: {
-                suiteId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeAvatarRewardEventInfoOuterClass.HomeAvatarRewardEventInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int randomPosition_ ;
       /**
@@ -575,7 +592,6 @@ public final class HomeAvatarRewardEventInfoOuterClass {
       public Builder setRandomPosition(int value) {
         
         randomPosition_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -584,7 +600,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRandomPosition() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         randomPosition_ = 0;
         onChanged();
         return this;
@@ -607,7 +623,6 @@ public final class HomeAvatarRewardEventInfoOuterClass {
       public Builder setSuiteId(int value) {
         
         suiteId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -616,7 +631,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSuiteId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         suiteId_ = 0;
         onChanged();
         return this;
@@ -639,7 +654,6 @@ public final class HomeAvatarRewardEventInfoOuterClass {
       public Builder setGuid(int value) {
         
         guid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -648,7 +662,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         guid_ = 0;
         onChanged();
         return this;
@@ -671,7 +685,6 @@ public final class HomeAvatarRewardEventInfoOuterClass {
       public Builder setEventId(int value) {
         
         eventId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -680,7 +693,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEventId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         eventId_ = 0;
         onChanged();
         return this;
@@ -703,7 +716,6 @@ public final class HomeAvatarRewardEventInfoOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -712,7 +724,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         avatarId_ = 0;
         onChanged();
         return this;
@@ -750,18 +762,7 @@ public final class HomeAvatarRewardEventInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeAvatarRewardEventInfo(input, extensionRegistry);
       }
     };
 

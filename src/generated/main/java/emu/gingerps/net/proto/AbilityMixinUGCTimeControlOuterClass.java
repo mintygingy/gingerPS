@@ -57,6 +57,53 @@ public final class AbilityMixinUGCTimeControlOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityMixinUGCTimeControl(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+
+              startMoveTime_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              startMoveTimeMs_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinUGCTimeControlOuterClass.internal_static_AbilityMixinUGCTimeControl_descriptor;
@@ -71,7 +118,7 @@ public final class AbilityMixinUGCTimeControlOuterClass {
     }
 
     public static final int START_MOVE_TIME_MS_FIELD_NUMBER = 12;
-    private long startMoveTimeMs_ = 0L;
+    private long startMoveTimeMs_;
     /**
      * <code>uint64 start_move_time_ms = 12;</code>
      * @return The startMoveTimeMs.
@@ -82,7 +129,7 @@ public final class AbilityMixinUGCTimeControlOuterClass {
     }
 
     public static final int START_MOVE_TIME_FIELD_NUMBER = 9;
-    private int startMoveTime_ = 0;
+    private int startMoveTime_;
     /**
      * <code>uint32 start_move_time = 9;</code>
      * @return The startMoveTime.
@@ -112,7 +159,7 @@ public final class AbilityMixinUGCTimeControlOuterClass {
       if (startMoveTimeMs_ != 0L) {
         output.writeUInt64(12, startMoveTimeMs_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +176,7 @@ public final class AbilityMixinUGCTimeControlOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(12, startMoveTimeMs_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -148,7 +195,7 @@ public final class AbilityMixinUGCTimeControlOuterClass {
           != other.getStartMoveTimeMs()) return false;
       if (getStartMoveTime()
           != other.getStartMoveTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -164,7 +211,7 @@ public final class AbilityMixinUGCTimeControlOuterClass {
           getStartMoveTimeMs());
       hash = (37 * hash) + START_MOVE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartMoveTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -281,20 +328,26 @@ public final class AbilityMixinUGCTimeControlOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinUGCTimeControlOuterClass.AbilityMixinUGCTimeControl.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         startMoveTimeMs_ = 0L;
+
         startMoveTime_ = 0;
+
         return this;
       }
 
@@ -321,19 +374,10 @@ public final class AbilityMixinUGCTimeControlOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinUGCTimeControlOuterClass.AbilityMixinUGCTimeControl buildPartial() {
         emu.gingerps.net.proto.AbilityMixinUGCTimeControlOuterClass.AbilityMixinUGCTimeControl result = new emu.gingerps.net.proto.AbilityMixinUGCTimeControlOuterClass.AbilityMixinUGCTimeControl(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.startMoveTimeMs_ = startMoveTimeMs_;
+        result.startMoveTime_ = startMoveTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinUGCTimeControlOuterClass.AbilityMixinUGCTimeControl result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.startMoveTimeMs_ = startMoveTimeMs_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.startMoveTime_ = startMoveTime_;
-        }
       }
 
       @java.lang.Override
@@ -386,7 +430,7 @@ public final class AbilityMixinUGCTimeControlOuterClass {
         if (other.getStartMoveTime() != 0) {
           setStartMoveTime(other.getStartMoveTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -401,43 +445,19 @@ public final class AbilityMixinUGCTimeControlOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityMixinUGCTimeControlOuterClass.AbilityMixinUGCTimeControl parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                startMoveTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 96: {
-                startMoveTimeMs_ = input.readUInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityMixinUGCTimeControlOuterClass.AbilityMixinUGCTimeControl) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long startMoveTimeMs_ ;
       /**
@@ -456,7 +476,6 @@ public final class AbilityMixinUGCTimeControlOuterClass {
       public Builder setStartMoveTimeMs(long value) {
         
         startMoveTimeMs_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -465,7 +484,7 @@ public final class AbilityMixinUGCTimeControlOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartMoveTimeMs() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         startMoveTimeMs_ = 0L;
         onChanged();
         return this;
@@ -488,7 +507,6 @@ public final class AbilityMixinUGCTimeControlOuterClass {
       public Builder setStartMoveTime(int value) {
         
         startMoveTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -497,7 +515,7 @@ public final class AbilityMixinUGCTimeControlOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartMoveTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         startMoveTime_ = 0;
         onChanged();
         return this;
@@ -535,18 +553,7 @@ public final class AbilityMixinUGCTimeControlOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityMixinUGCTimeControl(input, extensionRegistry);
       }
     };
 

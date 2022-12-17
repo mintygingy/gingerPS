@@ -68,6 +68,53 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ScenePlayGuestReplyInviteReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              playId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              isAgree_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayGuestReplyInviteReqOuterClass.internal_static_ScenePlayGuestReplyInviteReq_descriptor;
@@ -82,7 +129,7 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
     }
 
     public static final int IS_AGREE_FIELD_NUMBER = 7;
-    private boolean isAgree_ = false;
+    private boolean isAgree_;
     /**
      * <code>bool is_agree = 7;</code>
      * @return The isAgree.
@@ -93,7 +140,7 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
     }
 
     public static final int PLAY_ID_FIELD_NUMBER = 4;
-    private int playId_ = 0;
+    private int playId_;
     /**
      * <code>uint32 play_id = 4;</code>
      * @return The playId.
@@ -123,7 +170,7 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
       if (isAgree_ != false) {
         output.writeBool(7, isAgree_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, isAgree_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
           != other.getIsAgree()) return false;
       if (getPlayId()
           != other.getPlayId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -175,7 +222,7 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
           getIsAgree());
       hash = (37 * hash) + PLAY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPlayId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -303,20 +350,26 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayGuestReplyInviteReqOuterClass.ScenePlayGuestReplyInviteReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isAgree_ = false;
+
         playId_ = 0;
+
         return this;
       }
 
@@ -343,19 +396,10 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayGuestReplyInviteReqOuterClass.ScenePlayGuestReplyInviteReq buildPartial() {
         emu.gingerps.net.proto.ScenePlayGuestReplyInviteReqOuterClass.ScenePlayGuestReplyInviteReq result = new emu.gingerps.net.proto.ScenePlayGuestReplyInviteReqOuterClass.ScenePlayGuestReplyInviteReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isAgree_ = isAgree_;
+        result.playId_ = playId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ScenePlayGuestReplyInviteReqOuterClass.ScenePlayGuestReplyInviteReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isAgree_ = isAgree_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.playId_ = playId_;
-        }
       }
 
       @java.lang.Override
@@ -408,7 +452,7 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
         if (other.getPlayId() != 0) {
           setPlayId(other.getPlayId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -423,43 +467,19 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ScenePlayGuestReplyInviteReqOuterClass.ScenePlayGuestReplyInviteReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                playId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 56: {
-                isAgree_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ScenePlayGuestReplyInviteReqOuterClass.ScenePlayGuestReplyInviteReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isAgree_ ;
       /**
@@ -478,7 +498,6 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
       public Builder setIsAgree(boolean value) {
         
         isAgree_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -487,7 +506,7 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAgree() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isAgree_ = false;
         onChanged();
         return this;
@@ -510,7 +529,6 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
       public Builder setPlayId(int value) {
         
         playId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -519,7 +537,7 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         playId_ = 0;
         onChanged();
         return this;
@@ -557,18 +575,7 @@ public final class ScenePlayGuestReplyInviteReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ScenePlayGuestReplyInviteReq(input, extensionRegistry);
       }
     };
 

@@ -47,14 +47,14 @@ public final class FleurFairBalloonSettleNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo getSettleInfoMapOrDefault(
+
+    emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo getSettleInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo defaultValue);
+        emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo defaultValue);
     /**
      * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
      */
+
     emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo getSettleInfoMapOrThrow(
         int key);
   }
@@ -95,6 +95,62 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FleurFairBalloonSettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              minigameId_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                settleInfoMap_ = com.google.protobuf.MapField.newMapField(
+                    SettleInfoMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo>
+              settleInfoMap__ = input.readMessage(
+                  SettleInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              settleInfoMap_.getMutableMap().put(
+                  settleInfoMap__.getKey(), settleInfoMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FleurFairBalloonSettleNotifyOuterClass.internal_static_FleurFairBalloonSettleNotify_descriptor;
@@ -121,7 +177,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
     }
 
     public static final int MINIGAME_ID_FIELD_NUMBER = 1;
-    private int minigameId_ = 0;
+    private int minigameId_;
     /**
      * <code>uint32 minigame_id = 1;</code>
      * @return The minigameId.
@@ -143,7 +199,6 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo> settleInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo>
@@ -154,12 +209,14 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
       }
       return settleInfoMap_;
     }
+
     public int getSettleInfoMapCount() {
       return internalGetSettleInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
      */
+
     @java.lang.Override
     public boolean containsSettleInfoMap(
         int key) {
@@ -178,6 +235,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
      * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo> getSettleInfoMapMap() {
       return internalGetSettleInfoMap().getMap();
     }
@@ -185,11 +243,10 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
      * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo getSettleInfoMapOrDefault(
+
+    public emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo getSettleInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo defaultValue) {
+        emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo> map =
           internalGetSettleInfoMap().getMap();
@@ -199,6 +256,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
      * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo getSettleInfoMapOrThrow(
         int key) {
       
@@ -233,7 +291,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
           internalGetSettleInfoMap(),
           SettleInfoMapDefaultEntryHolder.defaultEntry,
           6);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -256,7 +314,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(6, settleInfoMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -275,7 +333,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
           != other.getMinigameId()) return false;
       if (!internalGetSettleInfoMap().equals(
           other.internalGetSettleInfoMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -292,7 +350,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
         hash = (37 * hash) + SETTLE_INFO_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetSettleInfoMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -441,19 +499,24 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
 
       // Construct using emu.gingerps.net.proto.FleurFairBalloonSettleNotifyOuterClass.FleurFairBalloonSettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         minigameId_ = 0;
+
         internalGetMutableSettleInfoMap().clear();
         return this;
       }
@@ -481,20 +544,12 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
       @java.lang.Override
       public emu.gingerps.net.proto.FleurFairBalloonSettleNotifyOuterClass.FleurFairBalloonSettleNotify buildPartial() {
         emu.gingerps.net.proto.FleurFairBalloonSettleNotifyOuterClass.FleurFairBalloonSettleNotify result = new emu.gingerps.net.proto.FleurFairBalloonSettleNotifyOuterClass.FleurFairBalloonSettleNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.minigameId_ = minigameId_;
+        result.settleInfoMap_ = internalGetSettleInfoMap();
+        result.settleInfoMap_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FleurFairBalloonSettleNotifyOuterClass.FleurFairBalloonSettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.minigameId_ = minigameId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.settleInfoMap_ = internalGetSettleInfoMap();
-          result.settleInfoMap_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -546,8 +601,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
         }
         internalGetMutableSettleInfoMap().mergeFrom(
             other.internalGetSettleInfoMap());
-        bitField0_ |= 0x00000002;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -562,44 +616,17 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FleurFairBalloonSettleNotifyOuterClass.FleurFairBalloonSettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                minigameId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 50: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo>
-                settleInfoMap__ = input.readMessage(
-                    SettleInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableSettleInfoMap().getMutableMap().put(
-                    settleInfoMap__.getKey(), settleInfoMap__.getValue());
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FleurFairBalloonSettleNotifyOuterClass.FleurFairBalloonSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -621,7 +648,6 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
       public Builder setMinigameId(int value) {
         
         minigameId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -630,7 +656,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
        * @return This builder for chaining.
        */
       public Builder clearMinigameId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         minigameId_ = 0;
         onChanged();
         return this;
@@ -639,7 +665,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo> settleInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo>
-          internalGetSettleInfoMap() {
+      internalGetSettleInfoMap() {
         if (settleInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               SettleInfoMapDefaultEntryHolder.defaultEntry);
@@ -647,7 +673,8 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
         return settleInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo>
-          internalGetMutableSettleInfoMap() {
+      internalGetMutableSettleInfoMap() {
+        onChanged();;
         if (settleInfoMap_ == null) {
           settleInfoMap_ = com.google.protobuf.MapField.newMapField(
               SettleInfoMapDefaultEntryHolder.defaultEntry);
@@ -655,16 +682,16 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
         if (!settleInfoMap_.isMutable()) {
           settleInfoMap_ = settleInfoMap_.copy();
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
         return settleInfoMap_;
       }
+
       public int getSettleInfoMapCount() {
         return internalGetSettleInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
        */
+
       @java.lang.Override
       public boolean containsSettleInfoMap(
           int key) {
@@ -683,6 +710,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
        * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo> getSettleInfoMapMap() {
         return internalGetSettleInfoMap().getMap();
       }
@@ -690,11 +718,10 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
        * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo getSettleInfoMapOrDefault(
+
+      public emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo getSettleInfoMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo defaultValue) {
+          emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo> map =
             internalGetSettleInfoMap().getMap();
@@ -704,6 +731,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
        * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo getSettleInfoMapOrThrow(
           int key) {
         
@@ -714,8 +742,8 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
         }
         return map.get(key);
       }
+
       public Builder clearSettleInfoMap() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableSettleInfoMap().getMutableMap()
             .clear();
         return this;
@@ -723,6 +751,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
       /**
        * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
        */
+
       public Builder removeSettleInfoMap(
           int key) {
         
@@ -735,8 +764,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo>
-          getMutableSettleInfoMap() {
-        bitField0_ |= 0x00000002;
+      getMutableSettleInfoMap() {
         return internalGetMutableSettleInfoMap().getMutableMap();
       }
       /**
@@ -746,20 +774,19 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
           int key,
           emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableSettleInfoMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, .FleurFairBalloonSettleInfo&gt; settle_info_map = 6;</code>
        */
+
       public Builder putAllSettleInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSettleInfo> values) {
         internalGetMutableSettleInfoMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000002;
         return this;
       }
       @java.lang.Override
@@ -795,18 +822,7 @@ emu.gingerps.net.proto.FleurFairBalloonSettleInfoOuterClass.FleurFairBalloonSett
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FleurFairBalloonSettleNotify(input, extensionRegistry);
       }
     };
 

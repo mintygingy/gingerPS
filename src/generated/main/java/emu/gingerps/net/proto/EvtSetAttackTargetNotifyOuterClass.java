@@ -83,6 +83,62 @@ public final class EvtSetAttackTargetNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtSetAttackTargetNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+              int rawValue = input.readEnum();
+
+              forwardType_ = rawValue;
+              break;
+            }
+            case 106: {
+              emu.gingerps.net.proto.EvtSetAttackTargetInfoOuterClass.EvtSetAttackTargetInfo.Builder subBuilder = null;
+              if (evtSetAttackTargetInfo_ != null) {
+                subBuilder = evtSetAttackTargetInfo_.toBuilder();
+              }
+              evtSetAttackTargetInfo_ = input.readMessage(emu.gingerps.net.proto.EvtSetAttackTargetInfoOuterClass.EvtSetAttackTargetInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(evtSetAttackTargetInfo_);
+                evtSetAttackTargetInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtSetAttackTargetNotifyOuterClass.internal_static_EvtSetAttackTargetNotify_descriptor;
@@ -119,11 +175,11 @@ public final class EvtSetAttackTargetNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.EvtSetAttackTargetInfoOuterClass.EvtSetAttackTargetInfoOrBuilder getEvtSetAttackTargetInfoOrBuilder() {
-      return evtSetAttackTargetInfo_ == null ? emu.gingerps.net.proto.EvtSetAttackTargetInfoOuterClass.EvtSetAttackTargetInfo.getDefaultInstance() : evtSetAttackTargetInfo_;
+      return getEvtSetAttackTargetInfo();
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 6;
-    private int forwardType_ = 0;
+    private int forwardType_;
     /**
      * <code>.ForwardType forward_type = 6;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -136,7 +192,8 @@ public final class EvtSetAttackTargetNotifyOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
@@ -160,7 +217,7 @@ public final class EvtSetAttackTargetNotifyOuterClass {
       if (evtSetAttackTargetInfo_ != null) {
         output.writeMessage(13, getEvtSetAttackTargetInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class EvtSetAttackTargetNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getEvtSetAttackTargetInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -198,7 +255,7 @@ public final class EvtSetAttackTargetNotifyOuterClass {
             .equals(other.getEvtSetAttackTargetInfo())) return false;
       }
       if (forwardType_ != other.forwardType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -215,7 +272,7 @@ public final class EvtSetAttackTargetNotifyOuterClass {
       }
       hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + forwardType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -343,24 +400,30 @@ public final class EvtSetAttackTargetNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtSetAttackTargetNotifyOuterClass.EvtSetAttackTargetNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        evtSetAttackTargetInfo_ = null;
-        if (evtSetAttackTargetInfoBuilder_ != null) {
-          evtSetAttackTargetInfoBuilder_.dispose();
+        if (evtSetAttackTargetInfoBuilder_ == null) {
+          evtSetAttackTargetInfo_ = null;
+        } else {
+          evtSetAttackTargetInfo_ = null;
           evtSetAttackTargetInfoBuilder_ = null;
         }
         forwardType_ = 0;
+
         return this;
       }
 
@@ -387,21 +450,14 @@ public final class EvtSetAttackTargetNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtSetAttackTargetNotifyOuterClass.EvtSetAttackTargetNotify buildPartial() {
         emu.gingerps.net.proto.EvtSetAttackTargetNotifyOuterClass.EvtSetAttackTargetNotify result = new emu.gingerps.net.proto.EvtSetAttackTargetNotifyOuterClass.EvtSetAttackTargetNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (evtSetAttackTargetInfoBuilder_ == null) {
+          result.evtSetAttackTargetInfo_ = evtSetAttackTargetInfo_;
+        } else {
+          result.evtSetAttackTargetInfo_ = evtSetAttackTargetInfoBuilder_.build();
+        }
+        result.forwardType_ = forwardType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtSetAttackTargetNotifyOuterClass.EvtSetAttackTargetNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.evtSetAttackTargetInfo_ = evtSetAttackTargetInfoBuilder_ == null
-              ? evtSetAttackTargetInfo_
-              : evtSetAttackTargetInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.forwardType_ = forwardType_;
-        }
       }
 
       @java.lang.Override
@@ -454,7 +510,7 @@ public final class EvtSetAttackTargetNotifyOuterClass {
         if (other.forwardType_ != 0) {
           setForwardTypeValue(other.getForwardTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -469,45 +525,19 @@ public final class EvtSetAttackTargetNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtSetAttackTargetNotifyOuterClass.EvtSetAttackTargetNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                forwardType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 106: {
-                input.readMessage(
-                    getEvtSetAttackTargetInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtSetAttackTargetNotifyOuterClass.EvtSetAttackTargetNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.EvtSetAttackTargetInfoOuterClass.EvtSetAttackTargetInfo evtSetAttackTargetInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -517,7 +547,7 @@ public final class EvtSetAttackTargetNotifyOuterClass {
        * @return Whether the evtSetAttackTargetInfo field is set.
        */
       public boolean hasEvtSetAttackTargetInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return evtSetAttackTargetInfoBuilder_ != null || evtSetAttackTargetInfo_ != null;
       }
       /**
        * <code>.EvtSetAttackTargetInfo evt_set_attack_target_info = 13;</code>
@@ -539,11 +569,11 @@ public final class EvtSetAttackTargetNotifyOuterClass {
             throw new NullPointerException();
           }
           evtSetAttackTargetInfo_ = value;
+          onChanged();
         } else {
           evtSetAttackTargetInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -553,11 +583,11 @@ public final class EvtSetAttackTargetNotifyOuterClass {
           emu.gingerps.net.proto.EvtSetAttackTargetInfoOuterClass.EvtSetAttackTargetInfo.Builder builderForValue) {
         if (evtSetAttackTargetInfoBuilder_ == null) {
           evtSetAttackTargetInfo_ = builderForValue.build();
+          onChanged();
         } else {
           evtSetAttackTargetInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -565,38 +595,38 @@ public final class EvtSetAttackTargetNotifyOuterClass {
        */
       public Builder mergeEvtSetAttackTargetInfo(emu.gingerps.net.proto.EvtSetAttackTargetInfoOuterClass.EvtSetAttackTargetInfo value) {
         if (evtSetAttackTargetInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            evtSetAttackTargetInfo_ != null &&
-            evtSetAttackTargetInfo_ != emu.gingerps.net.proto.EvtSetAttackTargetInfoOuterClass.EvtSetAttackTargetInfo.getDefaultInstance()) {
-            getEvtSetAttackTargetInfoBuilder().mergeFrom(value);
+          if (evtSetAttackTargetInfo_ != null) {
+            evtSetAttackTargetInfo_ =
+              emu.gingerps.net.proto.EvtSetAttackTargetInfoOuterClass.EvtSetAttackTargetInfo.newBuilder(evtSetAttackTargetInfo_).mergeFrom(value).buildPartial();
           } else {
             evtSetAttackTargetInfo_ = value;
           }
+          onChanged();
         } else {
           evtSetAttackTargetInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EvtSetAttackTargetInfo evt_set_attack_target_info = 13;</code>
        */
       public Builder clearEvtSetAttackTargetInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        evtSetAttackTargetInfo_ = null;
-        if (evtSetAttackTargetInfoBuilder_ != null) {
-          evtSetAttackTargetInfoBuilder_.dispose();
+        if (evtSetAttackTargetInfoBuilder_ == null) {
+          evtSetAttackTargetInfo_ = null;
+          onChanged();
+        } else {
+          evtSetAttackTargetInfo_ = null;
           evtSetAttackTargetInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.EvtSetAttackTargetInfo evt_set_attack_target_info = 13;</code>
        */
       public emu.gingerps.net.proto.EvtSetAttackTargetInfoOuterClass.EvtSetAttackTargetInfo.Builder getEvtSetAttackTargetInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getEvtSetAttackTargetInfoFieldBuilder().getBuilder();
       }
@@ -642,8 +672,8 @@ public final class EvtSetAttackTargetNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
+        
         forwardType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -653,7 +683,8 @@ public final class EvtSetAttackTargetNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -665,7 +696,7 @@ public final class EvtSetAttackTargetNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -675,7 +706,7 @@ public final class EvtSetAttackTargetNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         forwardType_ = 0;
         onChanged();
         return this;
@@ -713,18 +744,7 @@ public final class EvtSetAttackTargetNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtSetAttackTargetNotify(input, extensionRegistry);
       }
     };
 

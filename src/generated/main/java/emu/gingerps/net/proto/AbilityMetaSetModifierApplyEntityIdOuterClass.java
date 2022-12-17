@@ -51,6 +51,48 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityMetaSetModifierApplyEntityId(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 80: {
+
+              applyEntityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMetaSetModifierApplyEntityIdOuterClass.internal_static_AbilityMetaSetModifierApplyEntityId_descriptor;
@@ -65,7 +107,7 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
     }
 
     public static final int APPLY_ENTITY_ID_FIELD_NUMBER = 10;
-    private int applyEntityId_ = 0;
+    private int applyEntityId_;
     /**
      * <code>uint32 apply_entity_id = 10;</code>
      * @return The applyEntityId.
@@ -92,7 +134,7 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
       if (applyEntityId_ != 0) {
         output.writeUInt32(10, applyEntityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -105,7 +147,7 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, applyEntityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -122,7 +164,7 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
 
       if (getApplyEntityId()
           != other.getApplyEntityId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -135,7 +177,7 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + APPLY_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getApplyEntityId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -252,19 +294,24 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMetaSetModifierApplyEntityIdOuterClass.AbilityMetaSetModifierApplyEntityId.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         applyEntityId_ = 0;
+
         return this;
       }
 
@@ -291,16 +338,9 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMetaSetModifierApplyEntityIdOuterClass.AbilityMetaSetModifierApplyEntityId buildPartial() {
         emu.gingerps.net.proto.AbilityMetaSetModifierApplyEntityIdOuterClass.AbilityMetaSetModifierApplyEntityId result = new emu.gingerps.net.proto.AbilityMetaSetModifierApplyEntityIdOuterClass.AbilityMetaSetModifierApplyEntityId(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.applyEntityId_ = applyEntityId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityMetaSetModifierApplyEntityIdOuterClass.AbilityMetaSetModifierApplyEntityId result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.applyEntityId_ = applyEntityId_;
-        }
       }
 
       @java.lang.Override
@@ -350,7 +390,7 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
         if (other.getApplyEntityId() != 0) {
           setApplyEntityId(other.getApplyEntityId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -365,38 +405,19 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityMetaSetModifierApplyEntityIdOuterClass.AbilityMetaSetModifierApplyEntityId parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 80: {
-                applyEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityMetaSetModifierApplyEntityIdOuterClass.AbilityMetaSetModifierApplyEntityId) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int applyEntityId_ ;
       /**
@@ -415,7 +436,6 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
       public Builder setApplyEntityId(int value) {
         
         applyEntityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -424,7 +444,7 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearApplyEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         applyEntityId_ = 0;
         onChanged();
         return this;
@@ -462,18 +482,7 @@ public final class AbilityMetaSetModifierApplyEntityIdOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityMetaSetModifierApplyEntityId(input, extensionRegistry);
       }
     };
 

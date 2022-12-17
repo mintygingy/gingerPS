@@ -69,6 +69,73 @@ public final class GCGBossChallengeDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGBossChallengeData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unlockLevelIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unlockLevelIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                unlockLevelIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unlockLevelIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 80: {
+
+              id_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unlockLevelIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.internal_static_GCGBossChallengeData_descriptor;
@@ -83,7 +150,6 @@ public final class GCGBossChallengeDataOuterClass {
     }
 
     public static final int UNLOCK_LEVEL_ID_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unlockLevelIdList_;
     /**
      * <code>repeated uint32 unlock_level_id_list = 3;</code>
@@ -112,7 +178,7 @@ public final class GCGBossChallengeDataOuterClass {
     private int unlockLevelIdListMemoizedSerializedSize = -1;
 
     public static final int ID_FIELD_NUMBER = 10;
-    private int id_ = 0;
+    private int id_;
     /**
      * <code>uint32 id = 10;</code>
      * @return The id.
@@ -147,7 +213,7 @@ public final class GCGBossChallengeDataOuterClass {
       if (id_ != 0) {
         output.writeUInt32(10, id_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -174,7 +240,7 @@ public final class GCGBossChallengeDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, id_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -193,7 +259,7 @@ public final class GCGBossChallengeDataOuterClass {
           .equals(other.getUnlockLevelIdListList())) return false;
       if (getId()
           != other.getId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -210,7 +276,7 @@ public final class GCGBossChallengeDataOuterClass {
       }
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,20 +393,26 @@ public final class GCGBossChallengeDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unlockLevelIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
+
         return this;
       }
 
@@ -367,25 +439,15 @@ public final class GCGBossChallengeDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData buildPartial() {
         emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData result = new emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           unlockLevelIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.unlockLevelIdList_ = unlockLevelIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.id_ = id_;
-        }
+        result.id_ = id_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -445,7 +507,7 @@ public final class GCGBossChallengeDataOuterClass {
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -460,51 +522,17 @@ public final class GCGBossChallengeDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                int v = input.readUInt32();
-                ensureUnlockLevelIdListIsMutable();
-                unlockLevelIdList_.addInt(v);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnlockLevelIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unlockLevelIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 26
-              case 80: {
-                id_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -514,7 +542,7 @@ public final class GCGBossChallengeDataOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           unlockLevelIdList_ = mutableCopy(unlockLevelIdList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 unlock_level_id_list = 3;</code>
@@ -548,7 +576,6 @@ public final class GCGBossChallengeDataOuterClass {
        */
       public Builder setUnlockLevelIdList(
           int index, int value) {
-        
         ensureUnlockLevelIdListIsMutable();
         unlockLevelIdList_.setInt(index, value);
         onChanged();
@@ -560,7 +587,6 @@ public final class GCGBossChallengeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnlockLevelIdList(int value) {
-        
         ensureUnlockLevelIdListIsMutable();
         unlockLevelIdList_.addInt(value);
         onChanged();
@@ -607,7 +633,6 @@ public final class GCGBossChallengeDataOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -616,7 +641,7 @@ public final class GCGBossChallengeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         id_ = 0;
         onChanged();
         return this;
@@ -654,18 +679,7 @@ public final class GCGBossChallengeDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGBossChallengeData(input, extensionRegistry);
       }
     };
 

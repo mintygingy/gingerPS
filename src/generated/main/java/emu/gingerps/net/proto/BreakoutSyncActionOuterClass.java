@@ -60,6 +60,56 @@ public final class BreakoutSyncActionOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BreakoutSyncAction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 122: {
+              emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.Builder subBuilder = null;
+              if (action_ != null) {
+                subBuilder = action_.toBuilder();
+              }
+              action_ = input.readMessage(emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(action_);
+                action_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BreakoutSyncActionOuterClass.internal_static_BreakoutSyncAction_descriptor;
@@ -96,7 +146,7 @@ public final class BreakoutSyncActionOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder getActionOrBuilder() {
-      return action_ == null ? emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.getDefaultInstance() : action_;
+      return getAction();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -116,7 +166,7 @@ public final class BreakoutSyncActionOuterClass {
       if (action_ != null) {
         output.writeMessage(15, getAction());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +179,7 @@ public final class BreakoutSyncActionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getAction());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -149,7 +199,7 @@ public final class BreakoutSyncActionOuterClass {
         if (!getAction()
             .equals(other.getAction())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -164,7 +214,7 @@ public final class BreakoutSyncActionOuterClass {
         hash = (37 * hash) + ACTION_FIELD_NUMBER;
         hash = (53 * hash) + getAction().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -281,21 +331,26 @@ public final class BreakoutSyncActionOuterClass {
 
       // Construct using emu.gingerps.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        action_ = null;
-        if (actionBuilder_ != null) {
-          actionBuilder_.dispose();
+        if (actionBuilder_ == null) {
+          action_ = null;
+        } else {
+          action_ = null;
           actionBuilder_ = null;
         }
         return this;
@@ -324,18 +379,13 @@ public final class BreakoutSyncActionOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction buildPartial() {
         emu.gingerps.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction result = new emu.gingerps.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (actionBuilder_ == null) {
+          result.action_ = action_;
+        } else {
+          result.action_ = actionBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.action_ = actionBuilder_ == null
-              ? action_
-              : actionBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -385,7 +435,7 @@ public final class BreakoutSyncActionOuterClass {
         if (other.hasAction()) {
           mergeAction(other.getAction());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -400,40 +450,19 @@ public final class BreakoutSyncActionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 122: {
-                input.readMessage(
-                    getActionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction action_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -443,7 +472,7 @@ public final class BreakoutSyncActionOuterClass {
        * @return Whether the action field is set.
        */
       public boolean hasAction() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return actionBuilder_ != null || action_ != null;
       }
       /**
        * <code>.BreakoutAction action = 15;</code>
@@ -465,11 +494,11 @@ public final class BreakoutSyncActionOuterClass {
             throw new NullPointerException();
           }
           action_ = value;
+          onChanged();
         } else {
           actionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -479,11 +508,11 @@ public final class BreakoutSyncActionOuterClass {
           emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.Builder builderForValue) {
         if (actionBuilder_ == null) {
           action_ = builderForValue.build();
+          onChanged();
         } else {
           actionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -491,38 +520,38 @@ public final class BreakoutSyncActionOuterClass {
        */
       public Builder mergeAction(emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction value) {
         if (actionBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            action_ != null &&
-            action_ != emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.getDefaultInstance()) {
-            getActionBuilder().mergeFrom(value);
+          if (action_ != null) {
+            action_ =
+              emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.newBuilder(action_).mergeFrom(value).buildPartial();
           } else {
             action_ = value;
           }
+          onChanged();
         } else {
           actionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutAction action = 15;</code>
        */
       public Builder clearAction() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        action_ = null;
-        if (actionBuilder_ != null) {
-          actionBuilder_.dispose();
+        if (actionBuilder_ == null) {
+          action_ = null;
+          onChanged();
+        } else {
+          action_ = null;
           actionBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutAction action = 15;</code>
        */
       public emu.gingerps.net.proto.BreakoutActionOuterClass.BreakoutAction.Builder getActionBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getActionFieldBuilder().getBuilder();
       }
@@ -586,18 +615,7 @@ public final class BreakoutSyncActionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BreakoutSyncAction(input, extensionRegistry);
       }
     };
 

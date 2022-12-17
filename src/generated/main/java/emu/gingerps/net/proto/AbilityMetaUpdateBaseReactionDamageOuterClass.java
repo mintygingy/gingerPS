@@ -87,6 +87,79 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityMetaUpdateBaseReactionDamage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              reactionType_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder subBuilder = null;
+              if (abilityName_ != null) {
+                subBuilder = abilityName_.toBuilder();
+              }
+              abilityName_ = input.readMessage(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(abilityName_);
+                abilityName_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 104: {
+
+              sourceCasterId_ = input.readUInt32();
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder subBuilder = null;
+              if (globalValueKey_ != null) {
+                subBuilder = globalValueKey_.toBuilder();
+              }
+              globalValueKey_ = input.readMessage(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(globalValueKey_);
+                globalValueKey_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMetaUpdateBaseReactionDamageOuterClass.internal_static_AbilityMetaUpdateBaseReactionDamage_descriptor;
@@ -101,7 +174,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
     }
 
     public static final int REACTION_TYPE_FIELD_NUMBER = 2;
-    private int reactionType_ = 0;
+    private int reactionType_;
     /**
      * <code>uint32 reaction_type = 2;</code>
      * @return The reactionType.
@@ -112,7 +185,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
     }
 
     public static final int SOURCE_CASTER_ID_FIELD_NUMBER = 13;
-    private int sourceCasterId_ = 0;
+    private int sourceCasterId_;
     /**
      * <code>uint32 source_caster_id = 13;</code>
      * @return The sourceCasterId.
@@ -145,7 +218,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getAbilityNameOrBuilder() {
-      return abilityName_ == null ? emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance() : abilityName_;
+      return getAbilityName();
     }
 
     public static final int GLOBAL_VALUE_KEY_FIELD_NUMBER = 14;
@@ -171,7 +244,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getGlobalValueKeyOrBuilder() {
-      return globalValueKey_ == null ? emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance() : globalValueKey_;
+      return getGlobalValueKey();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -200,7 +273,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
       if (globalValueKey_ != null) {
         output.writeMessage(14, getGlobalValueKey());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -225,7 +298,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getGlobalValueKey());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -254,7 +327,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
         if (!getGlobalValueKey()
             .equals(other.getGlobalValueKey())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -277,7 +350,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
         hash = (37 * hash) + GLOBAL_VALUE_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getGlobalValueKey().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -394,28 +467,36 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMetaUpdateBaseReactionDamageOuterClass.AbilityMetaUpdateBaseReactionDamage.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         reactionType_ = 0;
+
         sourceCasterId_ = 0;
-        abilityName_ = null;
-        if (abilityNameBuilder_ != null) {
-          abilityNameBuilder_.dispose();
+
+        if (abilityNameBuilder_ == null) {
+          abilityName_ = null;
+        } else {
+          abilityName_ = null;
           abilityNameBuilder_ = null;
         }
-        globalValueKey_ = null;
-        if (globalValueKeyBuilder_ != null) {
-          globalValueKeyBuilder_.dispose();
+        if (globalValueKeyBuilder_ == null) {
+          globalValueKey_ = null;
+        } else {
+          globalValueKey_ = null;
           globalValueKeyBuilder_ = null;
         }
         return this;
@@ -444,29 +525,20 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMetaUpdateBaseReactionDamageOuterClass.AbilityMetaUpdateBaseReactionDamage buildPartial() {
         emu.gingerps.net.proto.AbilityMetaUpdateBaseReactionDamageOuterClass.AbilityMetaUpdateBaseReactionDamage result = new emu.gingerps.net.proto.AbilityMetaUpdateBaseReactionDamageOuterClass.AbilityMetaUpdateBaseReactionDamage(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.reactionType_ = reactionType_;
+        result.sourceCasterId_ = sourceCasterId_;
+        if (abilityNameBuilder_ == null) {
+          result.abilityName_ = abilityName_;
+        } else {
+          result.abilityName_ = abilityNameBuilder_.build();
+        }
+        if (globalValueKeyBuilder_ == null) {
+          result.globalValueKey_ = globalValueKey_;
+        } else {
+          result.globalValueKey_ = globalValueKeyBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityMetaUpdateBaseReactionDamageOuterClass.AbilityMetaUpdateBaseReactionDamage result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.reactionType_ = reactionType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.sourceCasterId_ = sourceCasterId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.abilityName_ = abilityNameBuilder_ == null
-              ? abilityName_
-              : abilityNameBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.globalValueKey_ = globalValueKeyBuilder_ == null
-              ? globalValueKey_
-              : globalValueKeyBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -525,7 +597,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
         if (other.hasGlobalValueKey()) {
           mergeGlobalValueKey(other.getGlobalValueKey());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -540,57 +612,19 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityMetaUpdateBaseReactionDamageOuterClass.AbilityMetaUpdateBaseReactionDamage parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                reactionType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 50: {
-                input.readMessage(
-                    getAbilityNameFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 50
-              case 104: {
-                sourceCasterId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              case 114: {
-                input.readMessage(
-                    getGlobalValueKeyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityMetaUpdateBaseReactionDamageOuterClass.AbilityMetaUpdateBaseReactionDamage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int reactionType_ ;
       /**
@@ -609,7 +643,6 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
       public Builder setReactionType(int value) {
         
         reactionType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -618,7 +651,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReactionType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         reactionType_ = 0;
         onChanged();
         return this;
@@ -641,7 +674,6 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
       public Builder setSourceCasterId(int value) {
         
         sourceCasterId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -650,7 +682,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSourceCasterId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         sourceCasterId_ = 0;
         onChanged();
         return this;
@@ -664,7 +696,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
        * @return Whether the abilityName field is set.
        */
       public boolean hasAbilityName() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return abilityNameBuilder_ != null || abilityName_ != null;
       }
       /**
        * <code>.AbilityString ability_name = 6;</code>
@@ -686,11 +718,11 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
             throw new NullPointerException();
           }
           abilityName_ = value;
+          onChanged();
         } else {
           abilityNameBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -700,11 +732,11 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
           emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder builderForValue) {
         if (abilityNameBuilder_ == null) {
           abilityName_ = builderForValue.build();
+          onChanged();
         } else {
           abilityNameBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -712,38 +744,38 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
        */
       public Builder mergeAbilityName(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString value) {
         if (abilityNameBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            abilityName_ != null &&
-            abilityName_ != emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance()) {
-            getAbilityNameBuilder().mergeFrom(value);
+          if (abilityName_ != null) {
+            abilityName_ =
+              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.newBuilder(abilityName_).mergeFrom(value).buildPartial();
           } else {
             abilityName_ = value;
           }
+          onChanged();
         } else {
           abilityNameBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilityString ability_name = 6;</code>
        */
       public Builder clearAbilityName() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        abilityName_ = null;
-        if (abilityNameBuilder_ != null) {
-          abilityNameBuilder_.dispose();
+        if (abilityNameBuilder_ == null) {
+          abilityName_ = null;
+          onChanged();
+        } else {
+          abilityName_ = null;
           abilityNameBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilityString ability_name = 6;</code>
        */
       public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder getAbilityNameBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getAbilityNameFieldBuilder().getBuilder();
       }
@@ -783,7 +815,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
        * @return Whether the globalValueKey field is set.
        */
       public boolean hasGlobalValueKey() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return globalValueKeyBuilder_ != null || globalValueKey_ != null;
       }
       /**
        * <code>.AbilityString global_value_key = 14;</code>
@@ -805,11 +837,11 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
             throw new NullPointerException();
           }
           globalValueKey_ = value;
+          onChanged();
         } else {
           globalValueKeyBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -819,11 +851,11 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
           emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder builderForValue) {
         if (globalValueKeyBuilder_ == null) {
           globalValueKey_ = builderForValue.build();
+          onChanged();
         } else {
           globalValueKeyBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -831,38 +863,38 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
        */
       public Builder mergeGlobalValueKey(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString value) {
         if (globalValueKeyBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            globalValueKey_ != null &&
-            globalValueKey_ != emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance()) {
-            getGlobalValueKeyBuilder().mergeFrom(value);
+          if (globalValueKey_ != null) {
+            globalValueKey_ =
+              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.newBuilder(globalValueKey_).mergeFrom(value).buildPartial();
           } else {
             globalValueKey_ = value;
           }
+          onChanged();
         } else {
           globalValueKeyBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilityString global_value_key = 14;</code>
        */
       public Builder clearGlobalValueKey() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        globalValueKey_ = null;
-        if (globalValueKeyBuilder_ != null) {
-          globalValueKeyBuilder_.dispose();
+        if (globalValueKeyBuilder_ == null) {
+          globalValueKey_ = null;
+          onChanged();
+        } else {
+          globalValueKey_ = null;
           globalValueKeyBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.AbilityString global_value_key = 14;</code>
        */
       public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder getGlobalValueKeyBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getGlobalValueKeyFieldBuilder().getBuilder();
       }
@@ -926,18 +958,7 @@ public final class AbilityMetaUpdateBaseReactionDamageOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityMetaUpdateBaseReactionDamage(input, extensionRegistry);
       }
     };
 

@@ -91,6 +91,69 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ServerUpdateGlobalValueNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 29: {
+
+              value_ = input.readFloat();
+              break;
+            }
+            case 53: {
+
+              delta_ = input.readFloat();
+              break;
+            }
+            case 64: {
+
+              keyHash_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              updateType_ = rawValue;
+              break;
+            }
+            case 120: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.internal_static_ServerUpdateGlobalValueNotify_descriptor;
@@ -222,7 +285,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
     }
 
     public static final int KEY_HASH_FIELD_NUMBER = 8;
-    private int keyHash_ = 0;
+    private int keyHash_;
     /**
      * <code>uint32 key_hash = 8;</code>
      * @return The keyHash.
@@ -233,7 +296,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
     }
 
     public static final int UPDATE_TYPE_FIELD_NUMBER = 9;
-    private int updateType_ = 0;
+    private int updateType_;
     /**
      * <code>.ServerUpdateGlobalValueNotify.UpdateType update_type = 9;</code>
      * @return The enum numeric value on the wire for updateType.
@@ -246,12 +309,13 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
      * @return The updateType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType getUpdateType() {
-      emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType result = emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType.forNumber(updateType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType result = emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType.valueOf(updateType_);
       return result == null ? emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType.UNRECOGNIZED : result;
     }
 
     public static final int DELTA_FIELD_NUMBER = 6;
-    private float delta_ = 0F;
+    private float delta_;
     /**
      * <code>float delta = 6;</code>
      * @return The delta.
@@ -262,7 +326,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
     }
 
     public static final int VALUE_FIELD_NUMBER = 3;
-    private float value_ = 0F;
+    private float value_;
     /**
      * <code>float value = 3;</code>
      * @return The value.
@@ -273,7 +337,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 15;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 15;</code>
      * @return The entityId.
@@ -297,10 +361,10 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Float.floatToRawIntBits(value_) != 0) {
+      if (value_ != 0F) {
         output.writeFloat(3, value_);
       }
-      if (java.lang.Float.floatToRawIntBits(delta_) != 0) {
+      if (delta_ != 0F) {
         output.writeFloat(6, delta_);
       }
       if (keyHash_ != 0) {
@@ -312,7 +376,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(15, entityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -321,11 +385,11 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Float.floatToRawIntBits(value_) != 0) {
+      if (value_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, value_);
       }
-      if (java.lang.Float.floatToRawIntBits(delta_) != 0) {
+      if (delta_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, delta_);
       }
@@ -341,7 +405,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, entityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -367,7 +431,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
               other.getValue())) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -390,7 +454,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
           getValue());
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -517,23 +581,32 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         keyHash_ = 0;
+
         updateType_ = 0;
+
         delta_ = 0F;
+
         value_ = 0F;
+
         entityId_ = 0;
+
         return this;
       }
 
@@ -560,28 +633,13 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify buildPartial() {
         emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify result = new emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.keyHash_ = keyHash_;
+        result.updateType_ = updateType_;
+        result.delta_ = delta_;
+        result.value_ = value_;
+        result.entityId_ = entityId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.keyHash_ = keyHash_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.updateType_ = updateType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.delta_ = delta_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.value_ = value_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.entityId_ = entityId_;
-        }
       }
 
       @java.lang.Override
@@ -643,7 +701,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -658,58 +716,19 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 29: {
-                value_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 29
-              case 53: {
-                delta_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 53
-              case 64: {
-                keyHash_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 72: {
-                updateType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 120: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int keyHash_ ;
       /**
@@ -728,7 +747,6 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
       public Builder setKeyHash(int value) {
         
         keyHash_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -737,7 +755,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKeyHash() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         keyHash_ = 0;
         onChanged();
         return this;
@@ -757,8 +775,8 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUpdateTypeValue(int value) {
+        
         updateType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -768,7 +786,8 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType getUpdateType() {
-        emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType result = emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType.forNumber(updateType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType result = emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType.valueOf(updateType_);
         return result == null ? emu.gingerps.net.proto.ServerUpdateGlobalValueNotifyOuterClass.ServerUpdateGlobalValueNotify.UpdateType.UNRECOGNIZED : result;
       }
       /**
@@ -780,7 +799,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         updateType_ = value.getNumber();
         onChanged();
         return this;
@@ -790,7 +809,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUpdateType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         updateType_ = 0;
         onChanged();
         return this;
@@ -813,7 +832,6 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
       public Builder setDelta(float value) {
         
         delta_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -822,7 +840,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDelta() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         delta_ = 0F;
         onChanged();
         return this;
@@ -845,7 +863,6 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
       public Builder setValue(float value) {
         
         value_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -854,7 +871,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         value_ = 0F;
         onChanged();
         return this;
@@ -877,7 +894,6 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -886,7 +902,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -924,18 +940,7 @@ public final class ServerUpdateGlobalValueNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ServerUpdateGlobalValueNotify(input, extensionRegistry);
       }
     };
 

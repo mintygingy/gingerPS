@@ -60,6 +60,56 @@ public final class AbilityActionFireAfterImageOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityActionFireAfterImage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 82: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (dir_ != null) {
+                subBuilder = dir_.toBuilder();
+              }
+              dir_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dir_);
+                dir_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityActionFireAfterImageOuterClass.internal_static_AbilityActionFireAfterImage_descriptor;
@@ -96,7 +146,7 @@ public final class AbilityActionFireAfterImageOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getDirOrBuilder() {
-      return dir_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : dir_;
+      return getDir();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -116,7 +166,7 @@ public final class AbilityActionFireAfterImageOuterClass {
       if (dir_ != null) {
         output.writeMessage(10, getDir());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +179,7 @@ public final class AbilityActionFireAfterImageOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getDir());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -149,7 +199,7 @@ public final class AbilityActionFireAfterImageOuterClass {
         if (!getDir()
             .equals(other.getDir())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -164,7 +214,7 @@ public final class AbilityActionFireAfterImageOuterClass {
         hash = (37 * hash) + DIR_FIELD_NUMBER;
         hash = (53 * hash) + getDir().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -281,21 +331,26 @@ public final class AbilityActionFireAfterImageOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityActionFireAfterImageOuterClass.AbilityActionFireAfterImage.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        dir_ = null;
-        if (dirBuilder_ != null) {
-          dirBuilder_.dispose();
+        if (dirBuilder_ == null) {
+          dir_ = null;
+        } else {
+          dir_ = null;
           dirBuilder_ = null;
         }
         return this;
@@ -324,18 +379,13 @@ public final class AbilityActionFireAfterImageOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityActionFireAfterImageOuterClass.AbilityActionFireAfterImage buildPartial() {
         emu.gingerps.net.proto.AbilityActionFireAfterImageOuterClass.AbilityActionFireAfterImage result = new emu.gingerps.net.proto.AbilityActionFireAfterImageOuterClass.AbilityActionFireAfterImage(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (dirBuilder_ == null) {
+          result.dir_ = dir_;
+        } else {
+          result.dir_ = dirBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityActionFireAfterImageOuterClass.AbilityActionFireAfterImage result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.dir_ = dirBuilder_ == null
-              ? dir_
-              : dirBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -385,7 +435,7 @@ public final class AbilityActionFireAfterImageOuterClass {
         if (other.hasDir()) {
           mergeDir(other.getDir());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -400,40 +450,19 @@ public final class AbilityActionFireAfterImageOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityActionFireAfterImageOuterClass.AbilityActionFireAfterImage parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 82: {
-                input.readMessage(
-                    getDirFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 82
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityActionFireAfterImageOuterClass.AbilityActionFireAfterImage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector dir_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -443,7 +472,7 @@ public final class AbilityActionFireAfterImageOuterClass {
        * @return Whether the dir field is set.
        */
       public boolean hasDir() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return dirBuilder_ != null || dir_ != null;
       }
       /**
        * <code>.Vector dir = 10;</code>
@@ -465,11 +494,11 @@ public final class AbilityActionFireAfterImageOuterClass {
             throw new NullPointerException();
           }
           dir_ = value;
+          onChanged();
         } else {
           dirBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -479,11 +508,11 @@ public final class AbilityActionFireAfterImageOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (dirBuilder_ == null) {
           dir_ = builderForValue.build();
+          onChanged();
         } else {
           dirBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -491,38 +520,38 @@ public final class AbilityActionFireAfterImageOuterClass {
        */
       public Builder mergeDir(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (dirBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            dir_ != null &&
-            dir_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getDirBuilder().mergeFrom(value);
+          if (dir_ != null) {
+            dir_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(dir_).mergeFrom(value).buildPartial();
           } else {
             dir_ = value;
           }
+          onChanged();
         } else {
           dirBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector dir = 10;</code>
        */
       public Builder clearDir() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        dir_ = null;
-        if (dirBuilder_ != null) {
-          dirBuilder_.dispose();
+        if (dirBuilder_ == null) {
+          dir_ = null;
+          onChanged();
+        } else {
+          dir_ = null;
           dirBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector dir = 10;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getDirBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getDirFieldBuilder().getBuilder();
       }
@@ -586,18 +615,7 @@ public final class AbilityActionFireAfterImageOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityActionFireAfterImage(input, extensionRegistry);
       }
     };
 

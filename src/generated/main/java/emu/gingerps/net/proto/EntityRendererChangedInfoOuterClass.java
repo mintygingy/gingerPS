@@ -41,12 +41,14 @@ public final class EntityRendererChangedInfoOuterClass {
     /**
      * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
      */
+
     int getChangedRenderersOrDefault(
         java.lang.String key,
         int defaultValue);
     /**
      * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
      */
+
     int getChangedRenderersOrThrow(
         java.lang.String key);
 
@@ -89,6 +91,67 @@ public final class EntityRendererChangedInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EntityRendererChangedInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                changedRenderers_ = com.google.protobuf.MapField.newMapField(
+                    ChangedRenderersDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+              changedRenderers__ = input.readMessage(
+                  ChangedRenderersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              changedRenderers_.getMutableMap().put(
+                  changedRenderers__.getKey(), changedRenderers__.getValue());
+              break;
+            }
+            case 16: {
+
+              visibilityCount_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              isCached_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.internal_static_EntityRendererChangedInfo_descriptor;
@@ -126,7 +189,6 @@ public final class EntityRendererChangedInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.Integer> changedRenderers_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
@@ -137,16 +199,18 @@ public final class EntityRendererChangedInfoOuterClass {
       }
       return changedRenderers_;
     }
+
     public int getChangedRenderersCount() {
       return internalGetChangedRenderers().getMap().size();
     }
     /**
      * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
      */
+
     @java.lang.Override
     public boolean containsChangedRenderers(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetChangedRenderers().getMap().containsKey(key);
     }
     /**
@@ -161,6 +225,7 @@ public final class EntityRendererChangedInfoOuterClass {
      * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.String, java.lang.Integer> getChangedRenderersMap() {
       return internalGetChangedRenderers().getMap();
     }
@@ -168,10 +233,11 @@ public final class EntityRendererChangedInfoOuterClass {
      * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
      */
     @java.lang.Override
+
     public int getChangedRenderersOrDefault(
         java.lang.String key,
         int defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetChangedRenderers().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -180,9 +246,10 @@ public final class EntityRendererChangedInfoOuterClass {
      * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
      */
     @java.lang.Override
+
     public int getChangedRenderersOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetChangedRenderers().getMap();
       if (!map.containsKey(key)) {
@@ -192,7 +259,7 @@ public final class EntityRendererChangedInfoOuterClass {
     }
 
     public static final int VISIBILITY_COUNT_FIELD_NUMBER = 2;
-    private int visibilityCount_ = 0;
+    private int visibilityCount_;
     /**
      * <code>uint32 visibility_count = 2;</code>
      * @return The visibilityCount.
@@ -203,7 +270,7 @@ public final class EntityRendererChangedInfoOuterClass {
     }
 
     public static final int IS_CACHED_FIELD_NUMBER = 3;
-    private boolean isCached_ = false;
+    private boolean isCached_;
     /**
      * <code>bool is_cached = 3;</code>
      * @return The isCached.
@@ -239,7 +306,7 @@ public final class EntityRendererChangedInfoOuterClass {
       if (isCached_ != false) {
         output.writeBool(3, isCached_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -266,7 +333,7 @@ public final class EntityRendererChangedInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, isCached_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -287,7 +354,7 @@ public final class EntityRendererChangedInfoOuterClass {
           != other.getVisibilityCount()) return false;
       if (getIsCached()
           != other.getIsCached()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -307,7 +374,7 @@ public final class EntityRendererChangedInfoOuterClass {
       hash = (37 * hash) + IS_CACHED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCached());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -446,21 +513,27 @@ public final class EntityRendererChangedInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableChangedRenderers().clear();
         visibilityCount_ = 0;
+
         isCached_ = false;
+
         return this;
       }
 
@@ -487,23 +560,13 @@ public final class EntityRendererChangedInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo buildPartial() {
         emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo result = new emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.changedRenderers_ = internalGetChangedRenderers();
+        result.changedRenderers_.makeImmutable();
+        result.visibilityCount_ = visibilityCount_;
+        result.isCached_ = isCached_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.changedRenderers_ = internalGetChangedRenderers();
-          result.changedRenderers_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.visibilityCount_ = visibilityCount_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isCached_ = isCached_;
-        }
       }
 
       @java.lang.Override
@@ -552,14 +615,13 @@ public final class EntityRendererChangedInfoOuterClass {
         if (other == emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.getDefaultInstance()) return this;
         internalGetMutableChangedRenderers().mergeFrom(
             other.internalGetChangedRenderers());
-        bitField0_ |= 0x00000001;
         if (other.getVisibilityCount() != 0) {
           setVisibilityCount(other.getVisibilityCount());
         }
         if (other.getIsCached() != false) {
           setIsCached(other.getIsCached());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -574,49 +636,17 @@ public final class EntityRendererChangedInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
-                changedRenderers__ = input.readMessage(
-                    ChangedRenderersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableChangedRenderers().getMutableMap().put(
-                    changedRenderers__.getKey(), changedRenderers__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 16: {
-                visibilityCount_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                isCached_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -624,7 +654,7 @@ public final class EntityRendererChangedInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.String, java.lang.Integer> changedRenderers_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-          internalGetChangedRenderers() {
+      internalGetChangedRenderers() {
         if (changedRenderers_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ChangedRenderersDefaultEntryHolder.defaultEntry);
@@ -632,7 +662,8 @@ public final class EntityRendererChangedInfoOuterClass {
         return changedRenderers_;
       }
       private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-          internalGetMutableChangedRenderers() {
+      internalGetMutableChangedRenderers() {
+        onChanged();;
         if (changedRenderers_ == null) {
           changedRenderers_ = com.google.protobuf.MapField.newMapField(
               ChangedRenderersDefaultEntryHolder.defaultEntry);
@@ -640,20 +671,20 @@ public final class EntityRendererChangedInfoOuterClass {
         if (!changedRenderers_.isMutable()) {
           changedRenderers_ = changedRenderers_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return changedRenderers_;
       }
+
       public int getChangedRenderersCount() {
         return internalGetChangedRenderers().getMap().size();
       }
       /**
        * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
        */
+
       @java.lang.Override
       public boolean containsChangedRenderers(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         return internalGetChangedRenderers().getMap().containsKey(key);
       }
       /**
@@ -668,6 +699,7 @@ public final class EntityRendererChangedInfoOuterClass {
        * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.String, java.lang.Integer> getChangedRenderersMap() {
         return internalGetChangedRenderers().getMap();
       }
@@ -675,10 +707,11 @@ public final class EntityRendererChangedInfoOuterClass {
        * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
        */
       @java.lang.Override
+
       public int getChangedRenderersOrDefault(
           java.lang.String key,
           int defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.Integer> map =
             internalGetChangedRenderers().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -687,9 +720,10 @@ public final class EntityRendererChangedInfoOuterClass {
        * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
        */
       @java.lang.Override
+
       public int getChangedRenderersOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.Integer> map =
             internalGetChangedRenderers().getMap();
         if (!map.containsKey(key)) {
@@ -697,8 +731,8 @@ public final class EntityRendererChangedInfoOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearChangedRenderers() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableChangedRenderers().getMutableMap()
             .clear();
         return this;
@@ -706,9 +740,10 @@ public final class EntityRendererChangedInfoOuterClass {
       /**
        * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
        */
+
       public Builder removeChangedRenderers(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableChangedRenderers().getMutableMap()
             .remove(key);
         return this;
@@ -718,8 +753,7 @@ public final class EntityRendererChangedInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Integer>
-          getMutableChangedRenderers() {
-        bitField0_ |= 0x00000001;
+      getMutableChangedRenderers() {
         return internalGetMutableChangedRenderers().getMutableMap();
       }
       /**
@@ -728,21 +762,20 @@ public final class EntityRendererChangedInfoOuterClass {
       public Builder putChangedRenderers(
           java.lang.String key,
           int value) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         
         internalGetMutableChangedRenderers().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;string, uint32&gt; changed_renderers = 1;</code>
        */
+
       public Builder putAllChangedRenderers(
           java.util.Map<java.lang.String, java.lang.Integer> values) {
         internalGetMutableChangedRenderers().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -763,7 +796,6 @@ public final class EntityRendererChangedInfoOuterClass {
       public Builder setVisibilityCount(int value) {
         
         visibilityCount_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -772,7 +804,7 @@ public final class EntityRendererChangedInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearVisibilityCount() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         visibilityCount_ = 0;
         onChanged();
         return this;
@@ -795,7 +827,6 @@ public final class EntityRendererChangedInfoOuterClass {
       public Builder setIsCached(boolean value) {
         
         isCached_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -804,7 +835,7 @@ public final class EntityRendererChangedInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCached() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isCached_ = false;
         onChanged();
         return this;
@@ -842,18 +873,7 @@ public final class EntityRendererChangedInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EntityRendererChangedInfo(input, extensionRegistry);
       }
     };
 

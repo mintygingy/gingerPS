@@ -41,14 +41,14 @@ public final class FleurFairMusicGameInfoOuterClass {
     /**
      * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord getMusicRecordMapOrDefault(
+
+    emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord getMusicRecordMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defaultValue);
+        emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defaultValue);
     /**
      * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
      */
+
     emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord getMusicRecordMapOrThrow(
         int key);
   }
@@ -78,6 +78,57 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private FleurFairMusicGameInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                musicRecordMap_ = com.google.protobuf.MapField.newMapField(
+                    MusicRecordMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord>
+              musicRecordMap__ = input.readMessage(
+                  MusicRecordMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              musicRecordMap_.getMutableMap().put(
+                  musicRecordMap__.getKey(), musicRecordMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -116,7 +167,6 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord> musicRecordMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord>
@@ -127,12 +177,14 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
       }
       return musicRecordMap_;
     }
+
     public int getMusicRecordMapCount() {
       return internalGetMusicRecordMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
      */
+
     @java.lang.Override
     public boolean containsMusicRecordMap(
         int key) {
@@ -151,6 +203,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
      * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord> getMusicRecordMapMap() {
       return internalGetMusicRecordMap().getMap();
     }
@@ -158,11 +211,10 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
      * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord getMusicRecordMapOrDefault(
+
+    public emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord getMusicRecordMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defaultValue) {
+        emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord> map =
           internalGetMusicRecordMap().getMap();
@@ -172,6 +224,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
      * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord getMusicRecordMapOrThrow(
         int key) {
       
@@ -203,7 +256,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
           internalGetMusicRecordMap(),
           MusicRecordMapDefaultEntryHolder.defaultEntry,
           6);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -222,7 +275,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(6, musicRecordMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -239,7 +292,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
 
       if (!internalGetMusicRecordMap().equals(
           other.internalGetMusicRecordMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -254,7 +307,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
         hash = (37 * hash) + MUSIC_RECORD_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetMusicRecordMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,18 +446,22 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
 
       // Construct using emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableMusicRecordMap().clear();
         return this;
       }
@@ -432,17 +489,11 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
       @java.lang.Override
       public emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo buildPartial() {
         emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo result = new emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.musicRecordMap_ = internalGetMusicRecordMap();
+        result.musicRecordMap_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.musicRecordMap_ = internalGetMusicRecordMap();
-          result.musicRecordMap_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -491,8 +542,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
         if (other == emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo.getDefaultInstance()) return this;
         internalGetMutableMusicRecordMap().mergeFrom(
             other.internalGetMusicRecordMap());
-        bitField0_ |= 0x00000001;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -507,39 +557,17 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 50: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord>
-                musicRecordMap__ = input.readMessage(
-                    MusicRecordMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableMusicRecordMap().getMutableMap().put(
-                    musicRecordMap__.getKey(), musicRecordMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -547,7 +575,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord> musicRecordMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord>
-          internalGetMusicRecordMap() {
+      internalGetMusicRecordMap() {
         if (musicRecordMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               MusicRecordMapDefaultEntryHolder.defaultEntry);
@@ -555,7 +583,8 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
         return musicRecordMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord>
-          internalGetMutableMusicRecordMap() {
+      internalGetMutableMusicRecordMap() {
+        onChanged();;
         if (musicRecordMap_ == null) {
           musicRecordMap_ = com.google.protobuf.MapField.newMapField(
               MusicRecordMapDefaultEntryHolder.defaultEntry);
@@ -563,16 +592,16 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
         if (!musicRecordMap_.isMutable()) {
           musicRecordMap_ = musicRecordMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return musicRecordMap_;
       }
+
       public int getMusicRecordMapCount() {
         return internalGetMusicRecordMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
        */
+
       @java.lang.Override
       public boolean containsMusicRecordMap(
           int key) {
@@ -591,6 +620,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
        * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord> getMusicRecordMapMap() {
         return internalGetMusicRecordMap().getMap();
       }
@@ -598,11 +628,10 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
        * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord getMusicRecordMapOrDefault(
+
+      public emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord getMusicRecordMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defaultValue) {
+          emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord> map =
             internalGetMusicRecordMap().getMap();
@@ -612,6 +641,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
        * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord getMusicRecordMapOrThrow(
           int key) {
         
@@ -622,8 +652,8 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
         }
         return map.get(key);
       }
+
       public Builder clearMusicRecordMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableMusicRecordMap().getMutableMap()
             .clear();
         return this;
@@ -631,6 +661,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
       /**
        * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
        */
+
       public Builder removeMusicRecordMap(
           int key) {
         
@@ -643,8 +674,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord>
-          getMutableMusicRecordMap() {
-        bitField0_ |= 0x00000001;
+      getMutableMusicRecordMap() {
         return internalGetMutableMusicRecordMap().getMutableMap();
       }
       /**
@@ -654,20 +684,19 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
           int key,
           emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableMusicRecordMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code>
        */
+
       public Builder putAllMusicRecordMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord> values) {
         internalGetMutableMusicRecordMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -703,18 +732,7 @@ emu.gingerps.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord defau
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FleurFairMusicGameInfo(input, extensionRegistry);
       }
     };
 

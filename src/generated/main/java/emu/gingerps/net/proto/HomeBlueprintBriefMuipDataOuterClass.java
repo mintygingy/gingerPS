@@ -94,6 +94,79 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeBlueprintBriefMuipData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              shareCode_ = s;
+              break;
+            }
+            case 16: {
+
+              ownerUid_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              moduleId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              blockId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              isAllowCopy_ = input.readBool();
+              break;
+            }
+            case 56: {
+
+              createTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.internal_static_HomeBlueprintBriefMuipData_descriptor;
@@ -108,8 +181,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
     }
 
     public static final int SHARE_CODE_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object shareCode_ = "";
+    private volatile java.lang.Object shareCode_;
     /**
      * <code>string share_code = 1;</code>
      * @return The shareCode.
@@ -147,7 +219,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
     }
 
     public static final int OWNER_UID_FIELD_NUMBER = 2;
-    private int ownerUid_ = 0;
+    private int ownerUid_;
     /**
      * <code>uint32 owner_uid = 2;</code>
      * @return The ownerUid.
@@ -158,7 +230,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
     }
 
     public static final int MODULE_ID_FIELD_NUMBER = 3;
-    private int moduleId_ = 0;
+    private int moduleId_;
     /**
      * <code>uint32 module_id = 3;</code>
      * @return The moduleId.
@@ -169,7 +241,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 4;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 4;</code>
      * @return The sceneId.
@@ -180,7 +252,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
     }
 
     public static final int BLOCK_ID_FIELD_NUMBER = 5;
-    private int blockId_ = 0;
+    private int blockId_;
     /**
      * <code>uint32 block_id = 5;</code>
      * @return The blockId.
@@ -191,7 +263,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
     }
 
     public static final int IS_ALLOW_COPY_FIELD_NUMBER = 6;
-    private boolean isAllowCopy_ = false;
+    private boolean isAllowCopy_;
     /**
      * <code>bool is_allow_copy = 6;</code>
      * @return The isAllowCopy.
@@ -202,7 +274,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
     }
 
     public static final int CREATE_TIME_FIELD_NUMBER = 7;
-    private int createTime_ = 0;
+    private int createTime_;
     /**
      * <code>uint32 create_time = 7;</code>
      * @return The createTime.
@@ -247,7 +319,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
       if (createTime_ != 0) {
         output.writeUInt32(7, createTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -283,7 +355,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, createTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -312,7 +384,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
           != other.getIsAllowCopy()) return false;
       if (getCreateTime()
           != other.getCreateTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -338,7 +410,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
           getIsAllowCopy());
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -455,25 +527,36 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         shareCode_ = "";
+
         ownerUid_ = 0;
+
         moduleId_ = 0;
+
         sceneId_ = 0;
+
         blockId_ = 0;
+
         isAllowCopy_ = false;
+
         createTime_ = 0;
+
         return this;
       }
 
@@ -500,34 +583,15 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData buildPartial() {
         emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData result = new emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.shareCode_ = shareCode_;
+        result.ownerUid_ = ownerUid_;
+        result.moduleId_ = moduleId_;
+        result.sceneId_ = sceneId_;
+        result.blockId_ = blockId_;
+        result.isAllowCopy_ = isAllowCopy_;
+        result.createTime_ = createTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.shareCode_ = shareCode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.ownerUid_ = ownerUid_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.moduleId_ = moduleId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.blockId_ = blockId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isAllowCopy_ = isAllowCopy_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.createTime_ = createTime_;
-        }
       }
 
       @java.lang.Override
@@ -576,7 +640,6 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
         if (other == emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData.getDefaultInstance()) return this;
         if (!other.getShareCode().isEmpty()) {
           shareCode_ = other.shareCode_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getOwnerUid() != 0) {
@@ -597,7 +660,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
         if (other.getCreateTime() != 0) {
           setCreateTime(other.getCreateTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -612,68 +675,19 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                shareCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 16: {
-                ownerUid_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                moduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                blockId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 48: {
-                isAllowCopy_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 56: {
-                createTime_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeBlueprintBriefMuipDataOuterClass.HomeBlueprintBriefMuipData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object shareCode_ = "";
       /**
@@ -716,9 +730,11 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
        */
       public Builder setShareCode(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         shareCode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -727,8 +743,8 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShareCode() {
+        
         shareCode_ = getDefaultInstance().getShareCode();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -739,10 +755,12 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
        */
       public Builder setShareCodeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         shareCode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -764,7 +782,6 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
       public Builder setOwnerUid(int value) {
         
         ownerUid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -773,7 +790,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOwnerUid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         ownerUid_ = 0;
         onChanged();
         return this;
@@ -796,7 +813,6 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
       public Builder setModuleId(int value) {
         
         moduleId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -805,7 +821,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearModuleId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         moduleId_ = 0;
         onChanged();
         return this;
@@ -828,7 +844,6 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -837,7 +852,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -860,7 +875,6 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
       public Builder setBlockId(int value) {
         
         blockId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -869,7 +883,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBlockId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         blockId_ = 0;
         onChanged();
         return this;
@@ -892,7 +906,6 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
       public Builder setIsAllowCopy(boolean value) {
         
         isAllowCopy_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -901,7 +914,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAllowCopy() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isAllowCopy_ = false;
         onChanged();
         return this;
@@ -924,7 +937,6 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
       public Builder setCreateTime(int value) {
         
         createTime_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -933,7 +945,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCreateTime() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         createTime_ = 0;
         onChanged();
         return this;
@@ -971,18 +983,7 @@ public final class HomeBlueprintBriefMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeBlueprintBriefMuipData(input, extensionRegistry);
       }
     };
 

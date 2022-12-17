@@ -75,6 +75,64 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneGalleryIslandPartyDownHillInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+              int rawValue = input.readEnum();
+
+              startSource_ = rawValue;
+              break;
+            }
+            case 32: {
+
+              coin_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              maxKillMonsterCount_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              totalKillMonsterCount_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.internal_static_SceneGalleryIslandPartyDownHillInfo_descriptor;
@@ -89,7 +147,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
     }
 
     public static final int MAX_KILL_MONSTER_COUNT_FIELD_NUMBER = 10;
-    private int maxKillMonsterCount_ = 0;
+    private int maxKillMonsterCount_;
     /**
      * <code>uint32 max_kill_monster_count = 10;</code>
      * @return The maxKillMonsterCount.
@@ -100,7 +158,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
     }
 
     public static final int START_SOURCE_FIELD_NUMBER = 2;
-    private int startSource_ = 0;
+    private int startSource_;
     /**
      * <code>.GalleryStartSource start_source = 2;</code>
      * @return The enum numeric value on the wire for startSource.
@@ -113,12 +171,13 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
      * @return The startSource.
      */
     @java.lang.Override public emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource getStartSource() {
-      emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.forNumber(startSource_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.valueOf(startSource_);
       return result == null ? emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.UNRECOGNIZED : result;
     }
 
     public static final int TOTAL_KILL_MONSTER_COUNT_FIELD_NUMBER = 12;
-    private int totalKillMonsterCount_ = 0;
+    private int totalKillMonsterCount_;
     /**
      * <code>uint32 total_kill_monster_count = 12;</code>
      * @return The totalKillMonsterCount.
@@ -129,7 +188,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
     }
 
     public static final int COIN_FIELD_NUMBER = 4;
-    private int coin_ = 0;
+    private int coin_;
     /**
      * <code>uint32 coin = 4;</code>
      * @return The coin.
@@ -165,7 +224,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
       if (totalKillMonsterCount_ != 0) {
         output.writeUInt32(12, totalKillMonsterCount_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -190,7 +249,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, totalKillMonsterCount_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -212,7 +271,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
           != other.getTotalKillMonsterCount()) return false;
       if (getCoin()
           != other.getCoin()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -231,7 +290,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
       hash = (53 * hash) + getTotalKillMonsterCount();
       hash = (37 * hash) + COIN_FIELD_NUMBER;
       hash = (53 * hash) + getCoin();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -348,22 +407,30 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         maxKillMonsterCount_ = 0;
+
         startSource_ = 0;
+
         totalKillMonsterCount_ = 0;
+
         coin_ = 0;
+
         return this;
       }
 
@@ -390,25 +457,12 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo result = new emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.maxKillMonsterCount_ = maxKillMonsterCount_;
+        result.startSource_ = startSource_;
+        result.totalKillMonsterCount_ = totalKillMonsterCount_;
+        result.coin_ = coin_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.maxKillMonsterCount_ = maxKillMonsterCount_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.startSource_ = startSource_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.totalKillMonsterCount_ = totalKillMonsterCount_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.coin_ = coin_;
-        }
       }
 
       @java.lang.Override
@@ -467,7 +521,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
         if (other.getCoin() != 0) {
           setCoin(other.getCoin());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -482,53 +536,19 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                startSource_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 32: {
-                coin_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 80: {
-                maxKillMonsterCount_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 96: {
-                totalKillMonsterCount_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int maxKillMonsterCount_ ;
       /**
@@ -547,7 +567,6 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
       public Builder setMaxKillMonsterCount(int value) {
         
         maxKillMonsterCount_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -556,7 +575,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxKillMonsterCount() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         maxKillMonsterCount_ = 0;
         onChanged();
         return this;
@@ -576,8 +595,8 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStartSourceValue(int value) {
+        
         startSource_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -587,7 +606,8 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource getStartSource() {
-        emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.forNumber(startSource_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.valueOf(startSource_);
         return result == null ? emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.UNRECOGNIZED : result;
       }
       /**
@@ -599,7 +619,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         startSource_ = value.getNumber();
         onChanged();
         return this;
@@ -609,7 +629,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartSource() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         startSource_ = 0;
         onChanged();
         return this;
@@ -632,7 +652,6 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
       public Builder setTotalKillMonsterCount(int value) {
         
         totalKillMonsterCount_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -641,7 +660,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalKillMonsterCount() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         totalKillMonsterCount_ = 0;
         onChanged();
         return this;
@@ -664,7 +683,6 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
       public Builder setCoin(int value) {
         
         coin_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -673,7 +691,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoin() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         coin_ = 0;
         onChanged();
         return this;
@@ -711,18 +729,7 @@ public final class SceneGalleryIslandPartyDownHillInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneGalleryIslandPartyDownHillInfo(input, extensionRegistry);
       }
     };
 

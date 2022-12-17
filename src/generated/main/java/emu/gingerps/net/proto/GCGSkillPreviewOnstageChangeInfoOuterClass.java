@@ -57,6 +57,53 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGSkillPreviewOnstageChangeInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+
+              unk3300EHHDPPFDIFB_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              unk3300BALADGFAPKL_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.internal_static_GCGSkillPreviewOnstageChangeInfo_descriptor;
@@ -71,7 +118,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
     }
 
     public static final int UNK3300_EHHDPPFDIFB_FIELD_NUMBER = 8;
-    private int unk3300EHHDPPFDIFB_ = 0;
+    private int unk3300EHHDPPFDIFB_;
     /**
      * <code>uint32 Unk3300_EHHDPPFDIFB = 8;</code>
      * @return The unk3300EHHDPPFDIFB.
@@ -82,7 +129,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
     }
 
     public static final int UNK3300_BALADGFAPKL_FIELD_NUMBER = 14;
-    private int unk3300BALADGFAPKL_ = 0;
+    private int unk3300BALADGFAPKL_;
     /**
      * <code>uint32 Unk3300_BALADGFAPKL = 14;</code>
      * @return The unk3300BALADGFAPKL.
@@ -112,7 +159,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
       if (unk3300BALADGFAPKL_ != 0) {
         output.writeUInt32(14, unk3300BALADGFAPKL_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +176,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, unk3300BALADGFAPKL_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -148,7 +195,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
           != other.getUnk3300EHHDPPFDIFB()) return false;
       if (getUnk3300BALADGFAPKL()
           != other.getUnk3300BALADGFAPKL()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -163,7 +210,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
       hash = (53 * hash) + getUnk3300EHHDPPFDIFB();
       hash = (37 * hash) + UNK3300_BALADGFAPKL_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300BALADGFAPKL();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -280,20 +327,26 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300EHHDPPFDIFB_ = 0;
+
         unk3300BALADGFAPKL_ = 0;
+
         return this;
       }
 
@@ -320,19 +373,10 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo buildPartial() {
         emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo result = new emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.unk3300EHHDPPFDIFB_ = unk3300EHHDPPFDIFB_;
+        result.unk3300BALADGFAPKL_ = unk3300BALADGFAPKL_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300EHHDPPFDIFB_ = unk3300EHHDPPFDIFB_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300BALADGFAPKL_ = unk3300BALADGFAPKL_;
-        }
       }
 
       @java.lang.Override
@@ -385,7 +429,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
         if (other.getUnk3300BALADGFAPKL() != 0) {
           setUnk3300BALADGFAPKL(other.getUnk3300BALADGFAPKL());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -400,43 +444,19 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                unk3300EHHDPPFDIFB_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 112: {
-                unk3300BALADGFAPKL_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int unk3300EHHDPPFDIFB_ ;
       /**
@@ -455,7 +475,6 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
       public Builder setUnk3300EHHDPPFDIFB(int value) {
         
         unk3300EHHDPPFDIFB_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +483,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EHHDPPFDIFB() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300EHHDPPFDIFB_ = 0;
         onChanged();
         return this;
@@ -487,7 +506,6 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
       public Builder setUnk3300BALADGFAPKL(int value) {
         
         unk3300BALADGFAPKL_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -496,7 +514,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BALADGFAPKL() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300BALADGFAPKL_ = 0;
         onChanged();
         return this;
@@ -534,18 +552,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGSkillPreviewOnstageChangeInfo(input, extensionRegistry);
       }
     };
 

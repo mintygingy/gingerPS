@@ -76,6 +76,61 @@ public final class VintageMarketTraderInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private VintageMarketTraderInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              traderId_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                availableItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              availableItemList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          availableItemList_ = java.util.Collections.unmodifiableList(availableItemList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageMarketTraderInfoOuterClass.internal_static_VintageMarketTraderInfo_descriptor;
@@ -90,7 +145,7 @@ public final class VintageMarketTraderInfoOuterClass {
     }
 
     public static final int TRADER_ID_FIELD_NUMBER = 4;
-    private int traderId_ = 0;
+    private int traderId_;
     /**
      * <code>uint32 trader_id = 4;</code>
      * @return The traderId.
@@ -101,7 +156,6 @@ public final class VintageMarketTraderInfoOuterClass {
     }
 
     public static final int AVAILABLE_ITEM_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> availableItemList_;
     /**
      * <code>repeated .ItemParam available_item_list = 15;</code>
@@ -161,7 +215,7 @@ public final class VintageMarketTraderInfoOuterClass {
       for (int i = 0; i < availableItemList_.size(); i++) {
         output.writeMessage(15, availableItemList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -178,7 +232,7 @@ public final class VintageMarketTraderInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, availableItemList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +251,7 @@ public final class VintageMarketTraderInfoOuterClass {
           != other.getTraderId()) return false;
       if (!getAvailableItemListList()
           .equals(other.getAvailableItemListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -214,7 +268,7 @@ public final class VintageMarketTraderInfoOuterClass {
         hash = (37 * hash) + AVAILABLE_ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvailableItemListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +385,31 @@ public final class VintageMarketTraderInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAvailableItemListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         traderId_ = 0;
+
         if (availableItemListBuilder_ == null) {
           availableItemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          availableItemList_ = null;
           availableItemListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -377,29 +436,19 @@ public final class VintageMarketTraderInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo buildPartial() {
         emu.gingerps.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo result = new emu.gingerps.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.traderId_ = traderId_;
         if (availableItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             availableItemList_ = java.util.Collections.unmodifiableList(availableItemList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.availableItemList_ = availableItemList_;
         } else {
           result.availableItemList_ = availableItemListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.traderId_ = traderId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -453,7 +502,7 @@ public final class VintageMarketTraderInfoOuterClass {
           if (!other.availableItemList_.isEmpty()) {
             if (availableItemList_.isEmpty()) {
               availableItemList_ = other.availableItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureAvailableItemListIsMutable();
               availableItemList_.addAll(other.availableItemList_);
@@ -466,7 +515,7 @@ public final class VintageMarketTraderInfoOuterClass {
               availableItemListBuilder_.dispose();
               availableItemListBuilder_ = null;
               availableItemList_ = other.availableItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               availableItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAvailableItemListFieldBuilder() : null;
@@ -475,7 +524,7 @@ public final class VintageMarketTraderInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,48 +539,17 @@ public final class VintageMarketTraderInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                traderId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 122: {
-                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
-                        extensionRegistry);
-                if (availableItemListBuilder_ == null) {
-                  ensureAvailableItemListIsMutable();
-                  availableItemList_.add(m);
-                } else {
-                  availableItemListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -553,7 +571,6 @@ public final class VintageMarketTraderInfoOuterClass {
       public Builder setTraderId(int value) {
         
         traderId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +579,7 @@ public final class VintageMarketTraderInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTraderId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         traderId_ = 0;
         onChanged();
         return this;
@@ -571,9 +588,9 @@ public final class VintageMarketTraderInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> availableItemList_ =
         java.util.Collections.emptyList();
       private void ensureAvailableItemListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           availableItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(availableItemList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -723,7 +740,7 @@ public final class VintageMarketTraderInfoOuterClass {
       public Builder clearAvailableItemList() {
         if (availableItemListBuilder_ == null) {
           availableItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           availableItemListBuilder_.clear();
@@ -800,7 +817,7 @@ public final class VintageMarketTraderInfoOuterClass {
           availableItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   availableItemList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           availableItemList_ = null;
@@ -840,18 +857,7 @@ public final class VintageMarketTraderInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new VintageMarketTraderInfo(input, extensionRegistry);
       }
     };
 

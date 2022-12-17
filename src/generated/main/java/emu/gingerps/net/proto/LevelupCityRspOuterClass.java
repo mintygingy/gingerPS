@@ -88,6 +88,71 @@ public final class LevelupCityRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private LevelupCityRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              areaId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.CityInfoOuterClass.CityInfo.Builder subBuilder = null;
+              if (cityInfo_ != null) {
+                subBuilder = cityInfo_.toBuilder();
+              }
+              cityInfo_ = input.readMessage(emu.gingerps.net.proto.CityInfoOuterClass.CityInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cityInfo_);
+                cityInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LevelupCityRspOuterClass.internal_static_LevelupCityRsp_descriptor;
@@ -102,7 +167,7 @@ public final class LevelupCityRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
@@ -135,11 +200,11 @@ public final class LevelupCityRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CityInfoOuterClass.CityInfoOrBuilder getCityInfoOrBuilder() {
-      return cityInfo_ == null ? emu.gingerps.net.proto.CityInfoOuterClass.CityInfo.getDefaultInstance() : cityInfo_;
+      return getCityInfo();
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 11;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 11;</code>
      * @return The sceneId.
@@ -150,7 +215,7 @@ public final class LevelupCityRspOuterClass {
     }
 
     public static final int AREA_ID_FIELD_NUMBER = 9;
-    private int areaId_ = 0;
+    private int areaId_;
     /**
      * <code>uint32 area_id = 9;</code>
      * @return The areaId.
@@ -186,7 +251,7 @@ public final class LevelupCityRspOuterClass {
       if (cityInfo_ != null) {
         output.writeMessage(14, getCityInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -211,7 +276,7 @@ public final class LevelupCityRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getCityInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +302,7 @@ public final class LevelupCityRspOuterClass {
           != other.getSceneId()) return false;
       if (getAreaId()
           != other.getAreaId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -258,7 +323,7 @@ public final class LevelupCityRspOuterClass {
       hash = (53 * hash) + getSceneId();
       hash = (37 * hash) + AREA_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAreaId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -385,26 +450,34 @@ public final class LevelupCityRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.LevelupCityRspOuterClass.LevelupCityRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
-        cityInfo_ = null;
-        if (cityInfoBuilder_ != null) {
-          cityInfoBuilder_.dispose();
+
+        if (cityInfoBuilder_ == null) {
+          cityInfo_ = null;
+        } else {
+          cityInfo_ = null;
           cityInfoBuilder_ = null;
         }
         sceneId_ = 0;
+
         areaId_ = 0;
+
         return this;
       }
 
@@ -431,27 +504,16 @@ public final class LevelupCityRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LevelupCityRspOuterClass.LevelupCityRsp buildPartial() {
         emu.gingerps.net.proto.LevelupCityRspOuterClass.LevelupCityRsp result = new emu.gingerps.net.proto.LevelupCityRspOuterClass.LevelupCityRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        if (cityInfoBuilder_ == null) {
+          result.cityInfo_ = cityInfo_;
+        } else {
+          result.cityInfo_ = cityInfoBuilder_.build();
+        }
+        result.sceneId_ = sceneId_;
+        result.areaId_ = areaId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.LevelupCityRspOuterClass.LevelupCityRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cityInfo_ = cityInfoBuilder_ == null
-              ? cityInfo_
-              : cityInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.areaId_ = areaId_;
-        }
       }
 
       @java.lang.Override
@@ -510,7 +572,7 @@ public final class LevelupCityRspOuterClass {
         if (other.getAreaId() != 0) {
           setAreaId(other.getAreaId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -525,55 +587,19 @@ public final class LevelupCityRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.LevelupCityRspOuterClass.LevelupCityRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 72: {
-                areaId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 72
-              case 88: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              case 114: {
-                input.readMessage(
-                    getCityInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.LevelupCityRspOuterClass.LevelupCityRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -592,7 +618,6 @@ public final class LevelupCityRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -601,7 +626,7 @@ public final class LevelupCityRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -615,7 +640,7 @@ public final class LevelupCityRspOuterClass {
        * @return Whether the cityInfo field is set.
        */
       public boolean hasCityInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return cityInfoBuilder_ != null || cityInfo_ != null;
       }
       /**
        * <code>.CityInfo city_info = 14;</code>
@@ -637,11 +662,11 @@ public final class LevelupCityRspOuterClass {
             throw new NullPointerException();
           }
           cityInfo_ = value;
+          onChanged();
         } else {
           cityInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -651,11 +676,11 @@ public final class LevelupCityRspOuterClass {
           emu.gingerps.net.proto.CityInfoOuterClass.CityInfo.Builder builderForValue) {
         if (cityInfoBuilder_ == null) {
           cityInfo_ = builderForValue.build();
+          onChanged();
         } else {
           cityInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -663,38 +688,38 @@ public final class LevelupCityRspOuterClass {
        */
       public Builder mergeCityInfo(emu.gingerps.net.proto.CityInfoOuterClass.CityInfo value) {
         if (cityInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            cityInfo_ != null &&
-            cityInfo_ != emu.gingerps.net.proto.CityInfoOuterClass.CityInfo.getDefaultInstance()) {
-            getCityInfoBuilder().mergeFrom(value);
+          if (cityInfo_ != null) {
+            cityInfo_ =
+              emu.gingerps.net.proto.CityInfoOuterClass.CityInfo.newBuilder(cityInfo_).mergeFrom(value).buildPartial();
           } else {
             cityInfo_ = value;
           }
+          onChanged();
         } else {
           cityInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CityInfo city_info = 14;</code>
        */
       public Builder clearCityInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        cityInfo_ = null;
-        if (cityInfoBuilder_ != null) {
-          cityInfoBuilder_.dispose();
+        if (cityInfoBuilder_ == null) {
+          cityInfo_ = null;
+          onChanged();
+        } else {
+          cityInfo_ = null;
           cityInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CityInfo city_info = 14;</code>
        */
       public emu.gingerps.net.proto.CityInfoOuterClass.CityInfo.Builder getCityInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getCityInfoFieldBuilder().getBuilder();
       }
@@ -743,7 +768,6 @@ public final class LevelupCityRspOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -752,7 +776,7 @@ public final class LevelupCityRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -775,7 +799,6 @@ public final class LevelupCityRspOuterClass {
       public Builder setAreaId(int value) {
         
         areaId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -784,7 +807,7 @@ public final class LevelupCityRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAreaId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         areaId_ = 0;
         onChanged();
         return this;
@@ -822,18 +845,7 @@ public final class LevelupCityRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new LevelupCityRsp(input, extensionRegistry);
       }
     };
 

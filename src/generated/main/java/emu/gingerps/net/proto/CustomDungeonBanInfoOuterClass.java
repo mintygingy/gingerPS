@@ -69,6 +69,59 @@ public final class CustomDungeonBanInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CustomDungeonBanInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+              int rawValue = input.readEnum();
+
+              banType_ = rawValue;
+              break;
+            }
+            case 104: {
+
+              dungeonGuid_ = input.readUInt64();
+              break;
+            }
+            case 120: {
+
+              expireTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.internal_static_CustomDungeonBanInfo_descriptor;
@@ -83,7 +136,7 @@ public final class CustomDungeonBanInfoOuterClass {
     }
 
     public static final int EXPIRE_TIME_FIELD_NUMBER = 15;
-    private int expireTime_ = 0;
+    private int expireTime_;
     /**
      * <code>uint32 expire_time = 15;</code>
      * @return The expireTime.
@@ -94,7 +147,7 @@ public final class CustomDungeonBanInfoOuterClass {
     }
 
     public static final int BAN_TYPE_FIELD_NUMBER = 2;
-    private int banType_ = 0;
+    private int banType_;
     /**
      * <code>.CustomDungeonBanType ban_type = 2;</code>
      * @return The enum numeric value on the wire for banType.
@@ -107,12 +160,13 @@ public final class CustomDungeonBanInfoOuterClass {
      * @return The banType.
      */
     @java.lang.Override public emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType getBanType() {
-      emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType result = emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.forNumber(banType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType result = emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.valueOf(banType_);
       return result == null ? emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.UNRECOGNIZED : result;
     }
 
     public static final int DUNGEON_GUID_FIELD_NUMBER = 13;
-    private long dungeonGuid_ = 0L;
+    private long dungeonGuid_;
     /**
      * <code>uint64 dungeon_guid = 13;</code>
      * @return The dungeonGuid.
@@ -145,7 +199,7 @@ public final class CustomDungeonBanInfoOuterClass {
       if (expireTime_ != 0) {
         output.writeUInt32(15, expireTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -166,7 +220,7 @@ public final class CustomDungeonBanInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, expireTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -186,7 +240,7 @@ public final class CustomDungeonBanInfoOuterClass {
       if (banType_ != other.banType_) return false;
       if (getDungeonGuid()
           != other.getDungeonGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -204,7 +258,7 @@ public final class CustomDungeonBanInfoOuterClass {
       hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDungeonGuid());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -321,21 +375,28 @@ public final class CustomDungeonBanInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         expireTime_ = 0;
+
         banType_ = 0;
+
         dungeonGuid_ = 0L;
+
         return this;
       }
 
@@ -362,22 +423,11 @@ public final class CustomDungeonBanInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo buildPartial() {
         emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo result = new emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.expireTime_ = expireTime_;
+        result.banType_ = banType_;
+        result.dungeonGuid_ = dungeonGuid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.expireTime_ = expireTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.banType_ = banType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.dungeonGuid_ = dungeonGuid_;
-        }
       }
 
       @java.lang.Override
@@ -433,7 +483,7 @@ public final class CustomDungeonBanInfoOuterClass {
         if (other.getDungeonGuid() != 0L) {
           setDungeonGuid(other.getDungeonGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -448,48 +498,19 @@ public final class CustomDungeonBanInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                banType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 104: {
-                dungeonGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              case 120: {
-                expireTime_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int expireTime_ ;
       /**
@@ -508,7 +529,6 @@ public final class CustomDungeonBanInfoOuterClass {
       public Builder setExpireTime(int value) {
         
         expireTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -517,7 +537,7 @@ public final class CustomDungeonBanInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExpireTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         expireTime_ = 0;
         onChanged();
         return this;
@@ -537,8 +557,8 @@ public final class CustomDungeonBanInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBanTypeValue(int value) {
+        
         banType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -548,7 +568,8 @@ public final class CustomDungeonBanInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType getBanType() {
-        emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType result = emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.forNumber(banType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType result = emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.valueOf(banType_);
         return result == null ? emu.gingerps.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.UNRECOGNIZED : result;
       }
       /**
@@ -560,7 +581,7 @@ public final class CustomDungeonBanInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         banType_ = value.getNumber();
         onChanged();
         return this;
@@ -570,7 +591,7 @@ public final class CustomDungeonBanInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBanType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         banType_ = 0;
         onChanged();
         return this;
@@ -593,7 +614,6 @@ public final class CustomDungeonBanInfoOuterClass {
       public Builder setDungeonGuid(long value) {
         
         dungeonGuid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -602,7 +622,7 @@ public final class CustomDungeonBanInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonGuid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         dungeonGuid_ = 0L;
         onChanged();
         return this;
@@ -640,18 +660,7 @@ public final class CustomDungeonBanInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CustomDungeonBanInfo(input, extensionRegistry);
       }
     };
 

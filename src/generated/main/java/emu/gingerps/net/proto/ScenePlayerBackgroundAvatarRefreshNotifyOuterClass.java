@@ -98,6 +98,67 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ScenePlayerBackgroundAvatarRefreshNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              param_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                entityList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              entityList_.add(
+                  input.readMessage(emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+
+              appearType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          entityList_ = java.util.Collections.unmodifiableList(entityList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayerBackgroundAvatarRefreshNotifyOuterClass.internal_static_ScenePlayerBackgroundAvatarRefreshNotify_descriptor;
@@ -112,7 +173,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
     }
 
     public static final int PARAM_FIELD_NUMBER = 7;
-    private int param_ = 0;
+    private int param_;
     /**
      * <code>uint32 param = 7;</code>
      * @return The param.
@@ -123,7 +184,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
     }
 
     public static final int APPEAR_TYPE_FIELD_NUMBER = 14;
-    private int appearType_ = 0;
+    private int appearType_;
     /**
      * <code>.VisionType appear_type = 14;</code>
      * @return The enum numeric value on the wire for appearType.
@@ -136,12 +197,12 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
      * @return The appearType.
      */
     @java.lang.Override public emu.gingerps.net.proto.VisionTypeOuterClass.VisionType getAppearType() {
-      emu.gingerps.net.proto.VisionTypeOuterClass.VisionType result = emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.forNumber(appearType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.VisionTypeOuterClass.VisionType result = emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.valueOf(appearType_);
       return result == null ? emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.UNRECOGNIZED : result;
     }
 
     public static final int ENTITY_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo> entityList_;
     /**
      * <code>repeated .SceneEntityInfo entity_list = 12;</code>
@@ -204,7 +265,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
       if (appearType_ != emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.VISION_TYPE_NONE.getNumber()) {
         output.writeEnum(14, appearType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -225,7 +286,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, appearType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -245,7 +306,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
       if (appearType_ != other.appearType_) return false;
       if (!getEntityListList()
           .equals(other.getEntityListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -264,7 +325,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
         hash = (37 * hash) + ENTITY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEntityListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -391,27 +452,33 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayerBackgroundAvatarRefreshNotifyOuterClass.ScenePlayerBackgroundAvatarRefreshNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getEntityListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         param_ = 0;
+
         appearType_ = 0;
+
         if (entityListBuilder_ == null) {
           entityList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          entityList_ = null;
           entityListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -438,32 +505,20 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayerBackgroundAvatarRefreshNotifyOuterClass.ScenePlayerBackgroundAvatarRefreshNotify buildPartial() {
         emu.gingerps.net.proto.ScenePlayerBackgroundAvatarRefreshNotifyOuterClass.ScenePlayerBackgroundAvatarRefreshNotify result = new emu.gingerps.net.proto.ScenePlayerBackgroundAvatarRefreshNotifyOuterClass.ScenePlayerBackgroundAvatarRefreshNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ScenePlayerBackgroundAvatarRefreshNotifyOuterClass.ScenePlayerBackgroundAvatarRefreshNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.param_ = param_;
+        result.appearType_ = appearType_;
         if (entityListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             entityList_ = java.util.Collections.unmodifiableList(entityList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.entityList_ = entityList_;
         } else {
           result.entityList_ = entityListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ScenePlayerBackgroundAvatarRefreshNotifyOuterClass.ScenePlayerBackgroundAvatarRefreshNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.param_ = param_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.appearType_ = appearType_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -520,7 +575,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
           if (!other.entityList_.isEmpty()) {
             if (entityList_.isEmpty()) {
               entityList_ = other.entityList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureEntityListIsMutable();
               entityList_.addAll(other.entityList_);
@@ -533,7 +588,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
               entityListBuilder_.dispose();
               entityListBuilder_ = null;
               entityList_ = other.entityList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               entityListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getEntityListFieldBuilder() : null;
@@ -542,7 +597,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -557,53 +612,17 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ScenePlayerBackgroundAvatarRefreshNotifyOuterClass.ScenePlayerBackgroundAvatarRefreshNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                param_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 98: {
-                emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.parser(),
-                        extensionRegistry);
-                if (entityListBuilder_ == null) {
-                  ensureEntityListIsMutable();
-                  entityList_.add(m);
-                } else {
-                  entityListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              case 112: {
-                appearType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ScenePlayerBackgroundAvatarRefreshNotifyOuterClass.ScenePlayerBackgroundAvatarRefreshNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -625,7 +644,6 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
       public Builder setParam(int value) {
         
         param_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -634,7 +652,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         param_ = 0;
         onChanged();
         return this;
@@ -654,8 +672,8 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setAppearTypeValue(int value) {
+        
         appearType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -665,7 +683,8 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.VisionTypeOuterClass.VisionType getAppearType() {
-        emu.gingerps.net.proto.VisionTypeOuterClass.VisionType result = emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.forNumber(appearType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.VisionTypeOuterClass.VisionType result = emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.valueOf(appearType_);
         return result == null ? emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.UNRECOGNIZED : result;
       }
       /**
@@ -677,7 +696,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         appearType_ = value.getNumber();
         onChanged();
         return this;
@@ -687,7 +706,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAppearType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         appearType_ = 0;
         onChanged();
         return this;
@@ -696,9 +715,9 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo> entityList_ =
         java.util.Collections.emptyList();
       private void ensureEntityListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           entityList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>(entityList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -848,7 +867,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
       public Builder clearEntityList() {
         if (entityListBuilder_ == null) {
           entityList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           entityListBuilder_.clear();
@@ -925,7 +944,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
           entityListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo, emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder, emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder>(
                   entityList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           entityList_ = null;
@@ -965,18 +984,7 @@ public final class ScenePlayerBackgroundAvatarRefreshNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ScenePlayerBackgroundAvatarRefreshNotify(input, extensionRegistry);
       }
     };
 

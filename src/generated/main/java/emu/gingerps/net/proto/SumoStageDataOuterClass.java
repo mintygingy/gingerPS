@@ -94,6 +94,76 @@ public final class SumoStageDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SumoStageData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                teamList_ = new java.util.ArrayList<emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              teamList_.add(
+                  input.readMessage(emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData.parser(), extensionRegistry));
+              break;
+            }
+            case 16: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              maxScore_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              openTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          teamList_ = java.util.Collections.unmodifiableList(teamList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SumoStageDataOuterClass.internal_static_SumoStageData_descriptor;
@@ -108,7 +178,7 @@ public final class SumoStageDataOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 2;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 2;</code>
      * @return The stageId.
@@ -119,7 +189,7 @@ public final class SumoStageDataOuterClass {
     }
 
     public static final int OPEN_TIME_FIELD_NUMBER = 15;
-    private int openTime_ = 0;
+    private int openTime_;
     /**
      * <code>uint32 open_time = 15;</code>
      * @return The openTime.
@@ -130,7 +200,6 @@ public final class SumoStageDataOuterClass {
     }
 
     public static final int TEAM_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData> teamList_;
     /**
      * <code>repeated .SumoTeamData team_list = 1;</code>
@@ -171,7 +240,7 @@ public final class SumoStageDataOuterClass {
     }
 
     public static final int MAX_SCORE_FIELD_NUMBER = 7;
-    private int maxScore_ = 0;
+    private int maxScore_;
     /**
      * <code>uint32 max_score = 7;</code>
      * @return The maxScore.
@@ -182,7 +251,7 @@ public final class SumoStageDataOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 8;
-    private boolean isOpen_ = false;
+    private boolean isOpen_;
     /**
      * <code>bool is_open = 8;</code>
      * @return The isOpen.
@@ -221,7 +290,7 @@ public final class SumoStageDataOuterClass {
       if (openTime_ != 0) {
         output.writeUInt32(15, openTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -250,7 +319,7 @@ public final class SumoStageDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, openTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -275,7 +344,7 @@ public final class SumoStageDataOuterClass {
           != other.getMaxScore()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -299,7 +368,7 @@ public final class SumoStageDataOuterClass {
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -416,29 +485,37 @@ public final class SumoStageDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTeamListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         stageId_ = 0;
+
         openTime_ = 0;
+
         if (teamListBuilder_ == null) {
           teamList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          teamList_ = null;
           teamListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         maxScore_ = 0;
+
         isOpen_ = false;
+
         return this;
       }
 
@@ -465,38 +542,22 @@ public final class SumoStageDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData buildPartial() {
         emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData result = new emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData result) {
+        int from_bitField0_ = bitField0_;
+        result.stageId_ = stageId_;
+        result.openTime_ = openTime_;
         if (teamListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             teamList_ = java.util.Collections.unmodifiableList(teamList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.teamList_ = teamList_;
         } else {
           result.teamList_ = teamListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.stageId_ = stageId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.openTime_ = openTime_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.maxScore_ = maxScore_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.isOpen_ = isOpen_;
-        }
+        result.maxScore_ = maxScore_;
+        result.isOpen_ = isOpen_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -553,7 +614,7 @@ public final class SumoStageDataOuterClass {
           if (!other.teamList_.isEmpty()) {
             if (teamList_.isEmpty()) {
               teamList_ = other.teamList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureTeamListIsMutable();
               teamList_.addAll(other.teamList_);
@@ -566,7 +627,7 @@ public final class SumoStageDataOuterClass {
               teamListBuilder_.dispose();
               teamListBuilder_ = null;
               teamList_ = other.teamList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               teamListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTeamListFieldBuilder() : null;
@@ -581,7 +642,7 @@ public final class SumoStageDataOuterClass {
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -596,63 +657,17 @@ public final class SumoStageDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData.parser(),
-                        extensionRegistry);
-                if (teamListBuilder_ == null) {
-                  ensureTeamListIsMutable();
-                  teamList_.add(m);
-                } else {
-                  teamListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 16: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 56: {
-                maxScore_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 64: {
-                isOpen_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 64
-              case 120: {
-                openTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -674,7 +689,6 @@ public final class SumoStageDataOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -683,7 +697,7 @@ public final class SumoStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -706,7 +720,6 @@ public final class SumoStageDataOuterClass {
       public Builder setOpenTime(int value) {
         
         openTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -715,7 +728,7 @@ public final class SumoStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         openTime_ = 0;
         onChanged();
         return this;
@@ -724,9 +737,9 @@ public final class SumoStageDataOuterClass {
       private java.util.List<emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData> teamList_ =
         java.util.Collections.emptyList();
       private void ensureTeamListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           teamList_ = new java.util.ArrayList<emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData>(teamList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -876,7 +889,7 @@ public final class SumoStageDataOuterClass {
       public Builder clearTeamList() {
         if (teamListBuilder_ == null) {
           teamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           teamListBuilder_.clear();
@@ -953,7 +966,7 @@ public final class SumoStageDataOuterClass {
           teamListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData, emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData.Builder, emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamDataOrBuilder>(
                   teamList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           teamList_ = null;
@@ -978,7 +991,6 @@ public final class SumoStageDataOuterClass {
       public Builder setMaxScore(int value) {
         
         maxScore_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -987,7 +999,7 @@ public final class SumoStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         maxScore_ = 0;
         onChanged();
         return this;
@@ -1010,7 +1022,6 @@ public final class SumoStageDataOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1019,7 +1030,7 @@ public final class SumoStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         isOpen_ = false;
         onChanged();
         return this;
@@ -1057,18 +1068,7 @@ public final class SumoStageDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SumoStageData(input, extensionRegistry);
       }
     };
 

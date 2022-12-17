@@ -68,6 +68,53 @@ public final class MistTrialFloorLevelNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MistTrialFloorLevelNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              dungeonSceneId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              floorLevel_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MistTrialFloorLevelNotifyOuterClass.internal_static_MistTrialFloorLevelNotify_descriptor;
@@ -82,7 +129,7 @@ public final class MistTrialFloorLevelNotifyOuterClass {
     }
 
     public static final int DUNGEON_SCENE_ID_FIELD_NUMBER = 6;
-    private int dungeonSceneId_ = 0;
+    private int dungeonSceneId_;
     /**
      * <code>uint32 dungeon_scene_id = 6;</code>
      * @return The dungeonSceneId.
@@ -93,7 +140,7 @@ public final class MistTrialFloorLevelNotifyOuterClass {
     }
 
     public static final int FLOOR_LEVEL_FIELD_NUMBER = 7;
-    private int floorLevel_ = 0;
+    private int floorLevel_;
     /**
      * <code>uint32 floor_level = 7;</code>
      * @return The floorLevel.
@@ -123,7 +170,7 @@ public final class MistTrialFloorLevelNotifyOuterClass {
       if (floorLevel_ != 0) {
         output.writeUInt32(7, floorLevel_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class MistTrialFloorLevelNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, floorLevel_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class MistTrialFloorLevelNotifyOuterClass {
           != other.getDungeonSceneId()) return false;
       if (getFloorLevel()
           != other.getFloorLevel()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class MistTrialFloorLevelNotifyOuterClass {
       hash = (53 * hash) + getDungeonSceneId();
       hash = (37 * hash) + FLOOR_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getFloorLevel();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -302,20 +349,26 @@ public final class MistTrialFloorLevelNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MistTrialFloorLevelNotifyOuterClass.MistTrialFloorLevelNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         dungeonSceneId_ = 0;
+
         floorLevel_ = 0;
+
         return this;
       }
 
@@ -342,19 +395,10 @@ public final class MistTrialFloorLevelNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MistTrialFloorLevelNotifyOuterClass.MistTrialFloorLevelNotify buildPartial() {
         emu.gingerps.net.proto.MistTrialFloorLevelNotifyOuterClass.MistTrialFloorLevelNotify result = new emu.gingerps.net.proto.MistTrialFloorLevelNotifyOuterClass.MistTrialFloorLevelNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.dungeonSceneId_ = dungeonSceneId_;
+        result.floorLevel_ = floorLevel_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MistTrialFloorLevelNotifyOuterClass.MistTrialFloorLevelNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.dungeonSceneId_ = dungeonSceneId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.floorLevel_ = floorLevel_;
-        }
       }
 
       @java.lang.Override
@@ -407,7 +451,7 @@ public final class MistTrialFloorLevelNotifyOuterClass {
         if (other.getFloorLevel() != 0) {
           setFloorLevel(other.getFloorLevel());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -422,43 +466,19 @@ public final class MistTrialFloorLevelNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MistTrialFloorLevelNotifyOuterClass.MistTrialFloorLevelNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                dungeonSceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 56: {
-                floorLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MistTrialFloorLevelNotifyOuterClass.MistTrialFloorLevelNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int dungeonSceneId_ ;
       /**
@@ -477,7 +497,6 @@ public final class MistTrialFloorLevelNotifyOuterClass {
       public Builder setDungeonSceneId(int value) {
         
         dungeonSceneId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -486,7 +505,7 @@ public final class MistTrialFloorLevelNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         dungeonSceneId_ = 0;
         onChanged();
         return this;
@@ -509,7 +528,6 @@ public final class MistTrialFloorLevelNotifyOuterClass {
       public Builder setFloorLevel(int value) {
         
         floorLevel_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -518,7 +536,7 @@ public final class MistTrialFloorLevelNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFloorLevel() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         floorLevel_ = 0;
         onChanged();
         return this;
@@ -556,18 +574,7 @@ public final class MistTrialFloorLevelNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MistTrialFloorLevelNotify(input, extensionRegistry);
       }
     };
 

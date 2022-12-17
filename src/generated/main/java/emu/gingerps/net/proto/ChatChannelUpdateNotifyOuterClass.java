@@ -82,6 +82,66 @@ public final class ChatChannelUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ChatChannelUpdateNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              channelId_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              emu.gingerps.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.Builder subBuilder = null;
+              if (channelInfo_ != null) {
+                subBuilder = channelInfo_.toBuilder();
+              }
+              channelInfo_ = input.readMessage(emu.gingerps.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(channelInfo_);
+                channelInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 120: {
+
+              isCreate_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChatChannelUpdateNotifyOuterClass.internal_static_ChatChannelUpdateNotify_descriptor;
@@ -96,7 +156,7 @@ public final class ChatChannelUpdateNotifyOuterClass {
     }
 
     public static final int CHANNEL_ID_FIELD_NUMBER = 2;
-    private int channelId_ = 0;
+    private int channelId_;
     /**
      * <code>uint32 channel_id = 2;</code>
      * @return The channelId.
@@ -129,11 +189,11 @@ public final class ChatChannelUpdateNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ChatChannelInfoOuterClass.ChatChannelInfoOrBuilder getChannelInfoOrBuilder() {
-      return channelInfo_ == null ? emu.gingerps.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.getDefaultInstance() : channelInfo_;
+      return getChannelInfo();
     }
 
     public static final int IS_CREATE_FIELD_NUMBER = 15;
-    private boolean isCreate_ = false;
+    private boolean isCreate_;
     /**
      * <code>bool is_create = 15;</code>
      * @return The isCreate.
@@ -166,7 +226,7 @@ public final class ChatChannelUpdateNotifyOuterClass {
       if (isCreate_ != false) {
         output.writeBool(15, isCreate_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +247,7 @@ public final class ChatChannelUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isCreate_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -211,7 +271,7 @@ public final class ChatChannelUpdateNotifyOuterClass {
       }
       if (getIsCreate()
           != other.getIsCreate()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -231,7 +291,7 @@ public final class ChatChannelUpdateNotifyOuterClass {
       hash = (37 * hash) + IS_CREATE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCreate());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -358,25 +418,32 @@ public final class ChatChannelUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChatChannelUpdateNotifyOuterClass.ChatChannelUpdateNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         channelId_ = 0;
-        channelInfo_ = null;
-        if (channelInfoBuilder_ != null) {
-          channelInfoBuilder_.dispose();
+
+        if (channelInfoBuilder_ == null) {
+          channelInfo_ = null;
+        } else {
+          channelInfo_ = null;
           channelInfoBuilder_ = null;
         }
         isCreate_ = false;
+
         return this;
       }
 
@@ -403,24 +470,15 @@ public final class ChatChannelUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChatChannelUpdateNotifyOuterClass.ChatChannelUpdateNotify buildPartial() {
         emu.gingerps.net.proto.ChatChannelUpdateNotifyOuterClass.ChatChannelUpdateNotify result = new emu.gingerps.net.proto.ChatChannelUpdateNotifyOuterClass.ChatChannelUpdateNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.channelId_ = channelId_;
+        if (channelInfoBuilder_ == null) {
+          result.channelInfo_ = channelInfo_;
+        } else {
+          result.channelInfo_ = channelInfoBuilder_.build();
+        }
+        result.isCreate_ = isCreate_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ChatChannelUpdateNotifyOuterClass.ChatChannelUpdateNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.channelId_ = channelId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.channelInfo_ = channelInfoBuilder_ == null
-              ? channelInfo_
-              : channelInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isCreate_ = isCreate_;
-        }
       }
 
       @java.lang.Override
@@ -476,7 +534,7 @@ public final class ChatChannelUpdateNotifyOuterClass {
         if (other.getIsCreate() != false) {
           setIsCreate(other.getIsCreate());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -491,50 +549,19 @@ public final class ChatChannelUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ChatChannelUpdateNotifyOuterClass.ChatChannelUpdateNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                channelId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 42: {
-                input.readMessage(
-                    getChannelInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 42
-              case 120: {
-                isCreate_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ChatChannelUpdateNotifyOuterClass.ChatChannelUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int channelId_ ;
       /**
@@ -553,7 +580,6 @@ public final class ChatChannelUpdateNotifyOuterClass {
       public Builder setChannelId(int value) {
         
         channelId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +588,7 @@ public final class ChatChannelUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChannelId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         channelId_ = 0;
         onChanged();
         return this;
@@ -576,7 +602,7 @@ public final class ChatChannelUpdateNotifyOuterClass {
        * @return Whether the channelInfo field is set.
        */
       public boolean hasChannelInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return channelInfoBuilder_ != null || channelInfo_ != null;
       }
       /**
        * <code>.ChatChannelInfo channel_info = 5;</code>
@@ -598,11 +624,11 @@ public final class ChatChannelUpdateNotifyOuterClass {
             throw new NullPointerException();
           }
           channelInfo_ = value;
+          onChanged();
         } else {
           channelInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -612,11 +638,11 @@ public final class ChatChannelUpdateNotifyOuterClass {
           emu.gingerps.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.Builder builderForValue) {
         if (channelInfoBuilder_ == null) {
           channelInfo_ = builderForValue.build();
+          onChanged();
         } else {
           channelInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -624,38 +650,38 @@ public final class ChatChannelUpdateNotifyOuterClass {
        */
       public Builder mergeChannelInfo(emu.gingerps.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo value) {
         if (channelInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            channelInfo_ != null &&
-            channelInfo_ != emu.gingerps.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.getDefaultInstance()) {
-            getChannelInfoBuilder().mergeFrom(value);
+          if (channelInfo_ != null) {
+            channelInfo_ =
+              emu.gingerps.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.newBuilder(channelInfo_).mergeFrom(value).buildPartial();
           } else {
             channelInfo_ = value;
           }
+          onChanged();
         } else {
           channelInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ChatChannelInfo channel_info = 5;</code>
        */
       public Builder clearChannelInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        channelInfo_ = null;
-        if (channelInfoBuilder_ != null) {
-          channelInfoBuilder_.dispose();
+        if (channelInfoBuilder_ == null) {
+          channelInfo_ = null;
+          onChanged();
+        } else {
+          channelInfo_ = null;
           channelInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ChatChannelInfo channel_info = 5;</code>
        */
       public emu.gingerps.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.Builder getChannelInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getChannelInfoFieldBuilder().getBuilder();
       }
@@ -704,7 +730,6 @@ public final class ChatChannelUpdateNotifyOuterClass {
       public Builder setIsCreate(boolean value) {
         
         isCreate_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -713,7 +738,7 @@ public final class ChatChannelUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCreate() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isCreate_ = false;
         onChanged();
         return this;
@@ -751,18 +776,7 @@ public final class ChatChannelUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ChatChannelUpdateNotify(input, extensionRegistry);
       }
     };
 

@@ -63,6 +63,58 @@ public final class GCGDuelChallengeOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGDuelChallenge(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              curProgress_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              totalProgress_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              challengeId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGDuelChallengeOuterClass.internal_static_GCGDuelChallenge_descriptor;
@@ -77,7 +129,7 @@ public final class GCGDuelChallengeOuterClass {
     }
 
     public static final int CHALLENGE_ID_FIELD_NUMBER = 12;
-    private int challengeId_ = 0;
+    private int challengeId_;
     /**
      * <code>uint32 challenge_id = 12;</code>
      * @return The challengeId.
@@ -88,7 +140,7 @@ public final class GCGDuelChallengeOuterClass {
     }
 
     public static final int CUR_PROGRESS_FIELD_NUMBER = 2;
-    private int curProgress_ = 0;
+    private int curProgress_;
     /**
      * <code>uint32 cur_progress = 2;</code>
      * @return The curProgress.
@@ -99,7 +151,7 @@ public final class GCGDuelChallengeOuterClass {
     }
 
     public static final int TOTAL_PROGRESS_FIELD_NUMBER = 4;
-    private int totalProgress_ = 0;
+    private int totalProgress_;
     /**
      * <code>uint32 total_progress = 4;</code>
      * @return The totalProgress.
@@ -132,7 +184,7 @@ public final class GCGDuelChallengeOuterClass {
       if (challengeId_ != 0) {
         output.writeUInt32(12, challengeId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +205,7 @@ public final class GCGDuelChallengeOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, challengeId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +226,7 @@ public final class GCGDuelChallengeOuterClass {
           != other.getCurProgress()) return false;
       if (getTotalProgress()
           != other.getTotalProgress()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -191,7 +243,7 @@ public final class GCGDuelChallengeOuterClass {
       hash = (53 * hash) + getCurProgress();
       hash = (37 * hash) + TOTAL_PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getTotalProgress();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -308,21 +360,28 @@ public final class GCGDuelChallengeOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         challengeId_ = 0;
+
         curProgress_ = 0;
+
         totalProgress_ = 0;
+
         return this;
       }
 
@@ -349,22 +408,11 @@ public final class GCGDuelChallengeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge buildPartial() {
         emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge result = new emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.challengeId_ = challengeId_;
+        result.curProgress_ = curProgress_;
+        result.totalProgress_ = totalProgress_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.challengeId_ = challengeId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.curProgress_ = curProgress_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.totalProgress_ = totalProgress_;
-        }
       }
 
       @java.lang.Override
@@ -420,7 +468,7 @@ public final class GCGDuelChallengeOuterClass {
         if (other.getTotalProgress() != 0) {
           setTotalProgress(other.getTotalProgress());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -435,48 +483,19 @@ public final class GCGDuelChallengeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                curProgress_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 32: {
-                totalProgress_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 96: {
-                challengeId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGDuelChallengeOuterClass.GCGDuelChallenge) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int challengeId_ ;
       /**
@@ -495,7 +514,6 @@ public final class GCGDuelChallengeOuterClass {
       public Builder setChallengeId(int value) {
         
         challengeId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -504,7 +522,7 @@ public final class GCGDuelChallengeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         challengeId_ = 0;
         onChanged();
         return this;
@@ -527,7 +545,6 @@ public final class GCGDuelChallengeOuterClass {
       public Builder setCurProgress(int value) {
         
         curProgress_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +553,7 @@ public final class GCGDuelChallengeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurProgress() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         curProgress_ = 0;
         onChanged();
         return this;
@@ -559,7 +576,6 @@ public final class GCGDuelChallengeOuterClass {
       public Builder setTotalProgress(int value) {
         
         totalProgress_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -568,7 +584,7 @@ public final class GCGDuelChallengeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalProgress() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         totalProgress_ = 0;
         onChanged();
         return this;
@@ -606,18 +622,7 @@ public final class GCGDuelChallengeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGDuelChallenge(input, extensionRegistry);
       }
     };
 

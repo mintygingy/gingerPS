@@ -67,6 +67,53 @@ public final class ActivitySaleChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ActivitySaleChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+
+              saleId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              isClose_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivitySaleChangeNotifyOuterClass.internal_static_ActivitySaleChangeNotify_descriptor;
@@ -81,7 +128,7 @@ public final class ActivitySaleChangeNotifyOuterClass {
     }
 
     public static final int IS_CLOSE_FIELD_NUMBER = 14;
-    private boolean isClose_ = false;
+    private boolean isClose_;
     /**
      * <code>bool is_close = 14;</code>
      * @return The isClose.
@@ -92,7 +139,7 @@ public final class ActivitySaleChangeNotifyOuterClass {
     }
 
     public static final int SALE_ID_FIELD_NUMBER = 8;
-    private int saleId_ = 0;
+    private int saleId_;
     /**
      * <code>uint32 sale_id = 8;</code>
      * @return The saleId.
@@ -122,7 +169,7 @@ public final class ActivitySaleChangeNotifyOuterClass {
       if (isClose_ != false) {
         output.writeBool(14, isClose_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class ActivitySaleChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isClose_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class ActivitySaleChangeNotifyOuterClass {
           != other.getIsClose()) return false;
       if (getSaleId()
           != other.getSaleId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class ActivitySaleChangeNotifyOuterClass {
           getIsClose());
       hash = (37 * hash) + SALE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSaleId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -301,20 +348,26 @@ public final class ActivitySaleChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivitySaleChangeNotifyOuterClass.ActivitySaleChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isClose_ = false;
+
         saleId_ = 0;
+
         return this;
       }
 
@@ -341,19 +394,10 @@ public final class ActivitySaleChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivitySaleChangeNotifyOuterClass.ActivitySaleChangeNotify buildPartial() {
         emu.gingerps.net.proto.ActivitySaleChangeNotifyOuterClass.ActivitySaleChangeNotify result = new emu.gingerps.net.proto.ActivitySaleChangeNotifyOuterClass.ActivitySaleChangeNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isClose_ = isClose_;
+        result.saleId_ = saleId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ActivitySaleChangeNotifyOuterClass.ActivitySaleChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isClose_ = isClose_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.saleId_ = saleId_;
-        }
       }
 
       @java.lang.Override
@@ -406,7 +450,7 @@ public final class ActivitySaleChangeNotifyOuterClass {
         if (other.getSaleId() != 0) {
           setSaleId(other.getSaleId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -421,43 +465,19 @@ public final class ActivitySaleChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ActivitySaleChangeNotifyOuterClass.ActivitySaleChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                saleId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 112: {
-                isClose_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ActivitySaleChangeNotifyOuterClass.ActivitySaleChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isClose_ ;
       /**
@@ -476,7 +496,6 @@ public final class ActivitySaleChangeNotifyOuterClass {
       public Builder setIsClose(boolean value) {
         
         isClose_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -485,7 +504,7 @@ public final class ActivitySaleChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsClose() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isClose_ = false;
         onChanged();
         return this;
@@ -508,7 +527,6 @@ public final class ActivitySaleChangeNotifyOuterClass {
       public Builder setSaleId(int value) {
         
         saleId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -517,7 +535,7 @@ public final class ActivitySaleChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSaleId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         saleId_ = 0;
         onChanged();
         return this;
@@ -555,18 +573,7 @@ public final class ActivitySaleChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ActivitySaleChangeNotify(input, extensionRegistry);
       }
     };
 

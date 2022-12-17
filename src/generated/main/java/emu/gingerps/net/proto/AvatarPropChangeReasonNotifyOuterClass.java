@@ -91,6 +91,69 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AvatarPropChangeReasonNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              avatarGuid_ = input.readUInt64();
+              break;
+            }
+            case 56: {
+
+              propType_ = input.readUInt32();
+              break;
+            }
+            case 109: {
+
+              oldValue_ = input.readFloat();
+              break;
+            }
+            case 117: {
+
+              curValue_ = input.readFloat();
+              break;
+            }
+            case 120: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarPropChangeReasonNotifyOuterClass.internal_static_AvatarPropChangeReasonNotify_descriptor;
@@ -105,7 +168,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
     }
 
     public static final int PROP_TYPE_FIELD_NUMBER = 7;
-    private int propType_ = 0;
+    private int propType_;
     /**
      * <code>uint32 prop_type = 7;</code>
      * @return The propType.
@@ -116,7 +179,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 15;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.PropChangeReason reason = 15;</code>
      * @return The enum numeric value on the wire for reason.
@@ -129,12 +192,13 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason getReason() {
-      emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason result = emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason result = emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.UNRECOGNIZED : result;
     }
 
     public static final int CUR_VALUE_FIELD_NUMBER = 14;
-    private float curValue_ = 0F;
+    private float curValue_;
     /**
      * <code>float cur_value = 14;</code>
      * @return The curValue.
@@ -145,7 +209,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 3;
-    private long avatarGuid_ = 0L;
+    private long avatarGuid_;
     /**
      * <code>uint64 avatar_guid = 3;</code>
      * @return The avatarGuid.
@@ -156,7 +220,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
     }
 
     public static final int OLD_VALUE_FIELD_NUMBER = 13;
-    private float oldValue_ = 0F;
+    private float oldValue_;
     /**
      * <code>float old_value = 13;</code>
      * @return The oldValue.
@@ -186,16 +250,16 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       if (propType_ != 0) {
         output.writeUInt32(7, propType_);
       }
-      if (java.lang.Float.floatToRawIntBits(oldValue_) != 0) {
+      if (oldValue_ != 0F) {
         output.writeFloat(13, oldValue_);
       }
-      if (java.lang.Float.floatToRawIntBits(curValue_) != 0) {
+      if (curValue_ != 0F) {
         output.writeFloat(14, curValue_);
       }
       if (reason_ != emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_NONE.getNumber()) {
         output.writeEnum(15, reason_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -212,11 +276,11 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, propType_);
       }
-      if (java.lang.Float.floatToRawIntBits(oldValue_) != 0) {
+      if (oldValue_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(13, oldValue_);
       }
-      if (java.lang.Float.floatToRawIntBits(curValue_) != 0) {
+      if (curValue_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(14, curValue_);
       }
@@ -224,7 +288,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(15, reason_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -250,7 +314,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       if (java.lang.Float.floatToIntBits(getOldValue())
           != java.lang.Float.floatToIntBits(
               other.getOldValue())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -274,7 +338,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       hash = (37 * hash) + OLD_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getOldValue());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -401,23 +465,32 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         propType_ = 0;
+
         reason_ = 0;
+
         curValue_ = 0F;
+
         avatarGuid_ = 0L;
+
         oldValue_ = 0F;
+
         return this;
       }
 
@@ -444,28 +517,13 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotify buildPartial() {
         emu.gingerps.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotify result = new emu.gingerps.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.propType_ = propType_;
+        result.reason_ = reason_;
+        result.curValue_ = curValue_;
+        result.avatarGuid_ = avatarGuid_;
+        result.oldValue_ = oldValue_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.propType_ = propType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curValue_ = curValue_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.avatarGuid_ = avatarGuid_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.oldValue_ = oldValue_;
-        }
       }
 
       @java.lang.Override
@@ -527,7 +585,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
         if (other.getOldValue() != 0F) {
           setOldValue(other.getOldValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -542,58 +600,19 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                avatarGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 24
-              case 56: {
-                propType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 109: {
-                oldValue_ = input.readFloat();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 109
-              case 117: {
-                curValue_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 117
-              case 120: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int propType_ ;
       /**
@@ -612,7 +631,6 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       public Builder setPropType(int value) {
         
         propType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -621,7 +639,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPropType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         propType_ = 0;
         onChanged();
         return this;
@@ -641,8 +659,8 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -652,7 +670,8 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason getReason() {
-        emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason result = emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason result = emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.PropChangeReasonOuterClass.PropChangeReason.UNRECOGNIZED : result;
       }
       /**
@@ -664,7 +683,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -674,7 +693,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -697,7 +716,6 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       public Builder setCurValue(float value) {
         
         curValue_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -706,7 +724,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurValue() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curValue_ = 0F;
         onChanged();
         return this;
@@ -729,7 +747,6 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -738,7 +755,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -761,7 +778,6 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       public Builder setOldValue(float value) {
         
         oldValue_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -770,7 +786,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOldValue() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         oldValue_ = 0F;
         onChanged();
         return this;
@@ -808,18 +824,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AvatarPropChangeReasonNotify(input, extensionRegistry);
       }
     };
 

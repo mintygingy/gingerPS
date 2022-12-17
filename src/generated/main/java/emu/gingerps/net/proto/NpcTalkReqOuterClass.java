@@ -74,6 +74,58 @@ public final class NpcTalkReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private NpcTalkReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 88: {
+
+              npcEntityId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              talkId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.NpcTalkReqOuterClass.internal_static_NpcTalkReq_descriptor;
@@ -88,7 +140,7 @@ public final class NpcTalkReqOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 14;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
@@ -99,7 +151,7 @@ public final class NpcTalkReqOuterClass {
     }
 
     public static final int NPC_ENTITY_ID_FIELD_NUMBER = 11;
-    private int npcEntityId_ = 0;
+    private int npcEntityId_;
     /**
      * <code>uint32 npc_entity_id = 11;</code>
      * @return The npcEntityId.
@@ -110,7 +162,7 @@ public final class NpcTalkReqOuterClass {
     }
 
     public static final int TALK_ID_FIELD_NUMBER = 12;
-    private int talkId_ = 0;
+    private int talkId_;
     /**
      * <code>uint32 talk_id = 12;</code>
      * @return The talkId.
@@ -143,7 +195,7 @@ public final class NpcTalkReqOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(14, entityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -164,7 +216,7 @@ public final class NpcTalkReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, entityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +237,7 @@ public final class NpcTalkReqOuterClass {
           != other.getNpcEntityId()) return false;
       if (getTalkId()
           != other.getTalkId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +254,7 @@ public final class NpcTalkReqOuterClass {
       hash = (53 * hash) + getNpcEntityId();
       hash = (37 * hash) + TALK_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTalkId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -330,21 +382,28 @@ public final class NpcTalkReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.NpcTalkReqOuterClass.NpcTalkReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         entityId_ = 0;
+
         npcEntityId_ = 0;
+
         talkId_ = 0;
+
         return this;
       }
 
@@ -371,22 +430,11 @@ public final class NpcTalkReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.NpcTalkReqOuterClass.NpcTalkReq buildPartial() {
         emu.gingerps.net.proto.NpcTalkReqOuterClass.NpcTalkReq result = new emu.gingerps.net.proto.NpcTalkReqOuterClass.NpcTalkReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.entityId_ = entityId_;
+        result.npcEntityId_ = npcEntityId_;
+        result.talkId_ = talkId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.NpcTalkReqOuterClass.NpcTalkReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.npcEntityId_ = npcEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.talkId_ = talkId_;
-        }
       }
 
       @java.lang.Override
@@ -442,7 +490,7 @@ public final class NpcTalkReqOuterClass {
         if (other.getTalkId() != 0) {
           setTalkId(other.getTalkId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -457,48 +505,19 @@ public final class NpcTalkReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.NpcTalkReqOuterClass.NpcTalkReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 88: {
-                npcEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              case 96: {
-                talkId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              case 112: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.NpcTalkReqOuterClass.NpcTalkReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -517,7 +536,6 @@ public final class NpcTalkReqOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -526,7 +544,7 @@ public final class NpcTalkReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -549,7 +567,6 @@ public final class NpcTalkReqOuterClass {
       public Builder setNpcEntityId(int value) {
         
         npcEntityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -558,7 +575,7 @@ public final class NpcTalkReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNpcEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         npcEntityId_ = 0;
         onChanged();
         return this;
@@ -581,7 +598,6 @@ public final class NpcTalkReqOuterClass {
       public Builder setTalkId(int value) {
         
         talkId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -590,7 +606,7 @@ public final class NpcTalkReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTalkId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         talkId_ = 0;
         onChanged();
         return this;
@@ -628,18 +644,7 @@ public final class NpcTalkReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new NpcTalkReq(input, extensionRegistry);
       }
     };
 

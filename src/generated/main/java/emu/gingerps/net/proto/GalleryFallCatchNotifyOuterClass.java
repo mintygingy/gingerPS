@@ -71,12 +71,14 @@ public final class GalleryFallCatchNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
      */
+
     int getBallCatchCountMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
      */
+
     int getBallCatchCountMapOrThrow(
         int key);
   }
@@ -117,6 +119,82 @@ public final class GalleryFallCatchNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GalleryFallCatchNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              addScore_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isGround_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              curScore_ = input.readUInt32();
+              break;
+            }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                ballCatchCountMap_ = com.google.protobuf.MapField.newMapField(
+                    BallCatchCountMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              ballCatchCountMap__ = input.readMessage(
+                  BallCatchCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ballCatchCountMap_.getMutableMap().put(
+                  ballCatchCountMap__.getKey(), ballCatchCountMap__.getValue());
+              break;
+            }
+            case 120: {
+
+              timeCost_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GalleryFallCatchNotifyOuterClass.internal_static_GalleryFallCatchNotify_descriptor;
@@ -143,7 +221,7 @@ public final class GalleryFallCatchNotifyOuterClass {
     }
 
     public static final int ADD_SCORE_FIELD_NUMBER = 1;
-    private int addScore_ = 0;
+    private int addScore_;
     /**
      * <code>uint32 add_score = 1;</code>
      * @return The addScore.
@@ -154,7 +232,7 @@ public final class GalleryFallCatchNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 7;
-    private int galleryId_ = 0;
+    private int galleryId_;
     /**
      * <code>uint32 gallery_id = 7;</code>
      * @return The galleryId.
@@ -165,7 +243,7 @@ public final class GalleryFallCatchNotifyOuterClass {
     }
 
     public static final int CUR_SCORE_FIELD_NUMBER = 11;
-    private int curScore_ = 0;
+    private int curScore_;
     /**
      * <code>uint32 cur_score = 11;</code>
      * @return The curScore.
@@ -176,7 +254,7 @@ public final class GalleryFallCatchNotifyOuterClass {
     }
 
     public static final int TIME_COST_FIELD_NUMBER = 15;
-    private int timeCost_ = 0;
+    private int timeCost_;
     /**
      * <code>uint32 time_cost = 15;</code>
      * @return The timeCost.
@@ -187,7 +265,7 @@ public final class GalleryFallCatchNotifyOuterClass {
     }
 
     public static final int IS_GROUND_FIELD_NUMBER = 8;
-    private boolean isGround_ = false;
+    private boolean isGround_;
     /**
      * <code>bool is_ground = 8;</code>
      * @return The isGround.
@@ -209,7 +287,6 @@ public final class GalleryFallCatchNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> ballCatchCountMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -220,12 +297,14 @@ public final class GalleryFallCatchNotifyOuterClass {
       }
       return ballCatchCountMap_;
     }
+
     public int getBallCatchCountMapCount() {
       return internalGetBallCatchCountMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
      */
+
     @java.lang.Override
     public boolean containsBallCatchCountMap(
         int key) {
@@ -244,6 +323,7 @@ public final class GalleryFallCatchNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getBallCatchCountMapMap() {
       return internalGetBallCatchCountMap().getMap();
     }
@@ -251,6 +331,7 @@ public final class GalleryFallCatchNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
      */
     @java.lang.Override
+
     public int getBallCatchCountMapOrDefault(
         int key,
         int defaultValue) {
@@ -263,6 +344,7 @@ public final class GalleryFallCatchNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
      */
     @java.lang.Override
+
     public int getBallCatchCountMapOrThrow(
         int key) {
       
@@ -309,7 +391,7 @@ public final class GalleryFallCatchNotifyOuterClass {
       if (timeCost_ != 0) {
         output.writeUInt32(15, timeCost_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -348,7 +430,7 @@ public final class GalleryFallCatchNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, timeCost_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -375,7 +457,7 @@ public final class GalleryFallCatchNotifyOuterClass {
           != other.getIsGround()) return false;
       if (!internalGetBallCatchCountMap().equals(
           other.internalGetBallCatchCountMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -401,7 +483,7 @@ public final class GalleryFallCatchNotifyOuterClass {
         hash = (37 * hash) + BALL_CATCH_COUNT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetBallCatchCountMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -550,23 +632,32 @@ public final class GalleryFallCatchNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GalleryFallCatchNotifyOuterClass.GalleryFallCatchNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         addScore_ = 0;
+
         galleryId_ = 0;
+
         curScore_ = 0;
+
         timeCost_ = 0;
+
         isGround_ = false;
+
         internalGetMutableBallCatchCountMap().clear();
         return this;
       }
@@ -594,32 +685,16 @@ public final class GalleryFallCatchNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryFallCatchNotifyOuterClass.GalleryFallCatchNotify buildPartial() {
         emu.gingerps.net.proto.GalleryFallCatchNotifyOuterClass.GalleryFallCatchNotify result = new emu.gingerps.net.proto.GalleryFallCatchNotifyOuterClass.GalleryFallCatchNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.addScore_ = addScore_;
+        result.galleryId_ = galleryId_;
+        result.curScore_ = curScore_;
+        result.timeCost_ = timeCost_;
+        result.isGround_ = isGround_;
+        result.ballCatchCountMap_ = internalGetBallCatchCountMap();
+        result.ballCatchCountMap_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GalleryFallCatchNotifyOuterClass.GalleryFallCatchNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.addScore_ = addScore_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.galleryId_ = galleryId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curScore_ = curScore_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.timeCost_ = timeCost_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.isGround_ = isGround_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.ballCatchCountMap_ = internalGetBallCatchCountMap();
-          result.ballCatchCountMap_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -683,8 +758,7 @@ public final class GalleryFallCatchNotifyOuterClass {
         }
         internalGetMutableBallCatchCountMap().mergeFrom(
             other.internalGetBallCatchCountMap());
-        bitField0_ |= 0x00000020;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -699,64 +773,17 @@ public final class GalleryFallCatchNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GalleryFallCatchNotifyOuterClass.GalleryFallCatchNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                addScore_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 56: {
-                galleryId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 64: {
-                isGround_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 64
-              case 88: {
-                curScore_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              case 114: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                ballCatchCountMap__ = input.readMessage(
-                    BallCatchCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableBallCatchCountMap().getMutableMap().put(
-                    ballCatchCountMap__.getKey(), ballCatchCountMap__.getValue());
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 114
-              case 120: {
-                timeCost_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GalleryFallCatchNotifyOuterClass.GalleryFallCatchNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -778,7 +805,6 @@ public final class GalleryFallCatchNotifyOuterClass {
       public Builder setAddScore(int value) {
         
         addScore_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -787,7 +813,7 @@ public final class GalleryFallCatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAddScore() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         addScore_ = 0;
         onChanged();
         return this;
@@ -810,7 +836,6 @@ public final class GalleryFallCatchNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -819,7 +844,7 @@ public final class GalleryFallCatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         galleryId_ = 0;
         onChanged();
         return this;
@@ -842,7 +867,6 @@ public final class GalleryFallCatchNotifyOuterClass {
       public Builder setCurScore(int value) {
         
         curScore_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -851,7 +875,7 @@ public final class GalleryFallCatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurScore() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curScore_ = 0;
         onChanged();
         return this;
@@ -874,7 +898,6 @@ public final class GalleryFallCatchNotifyOuterClass {
       public Builder setTimeCost(int value) {
         
         timeCost_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -883,7 +906,7 @@ public final class GalleryFallCatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimeCost() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         timeCost_ = 0;
         onChanged();
         return this;
@@ -906,7 +929,6 @@ public final class GalleryFallCatchNotifyOuterClass {
       public Builder setIsGround(boolean value) {
         
         isGround_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -915,7 +937,7 @@ public final class GalleryFallCatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsGround() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         isGround_ = false;
         onChanged();
         return this;
@@ -924,7 +946,7 @@ public final class GalleryFallCatchNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> ballCatchCountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetBallCatchCountMap() {
+      internalGetBallCatchCountMap() {
         if (ballCatchCountMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               BallCatchCountMapDefaultEntryHolder.defaultEntry);
@@ -932,7 +954,8 @@ public final class GalleryFallCatchNotifyOuterClass {
         return ballCatchCountMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableBallCatchCountMap() {
+      internalGetMutableBallCatchCountMap() {
+        onChanged();;
         if (ballCatchCountMap_ == null) {
           ballCatchCountMap_ = com.google.protobuf.MapField.newMapField(
               BallCatchCountMapDefaultEntryHolder.defaultEntry);
@@ -940,16 +963,16 @@ public final class GalleryFallCatchNotifyOuterClass {
         if (!ballCatchCountMap_.isMutable()) {
           ballCatchCountMap_ = ballCatchCountMap_.copy();
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
         return ballCatchCountMap_;
       }
+
       public int getBallCatchCountMapCount() {
         return internalGetBallCatchCountMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
        */
+
       @java.lang.Override
       public boolean containsBallCatchCountMap(
           int key) {
@@ -968,6 +991,7 @@ public final class GalleryFallCatchNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getBallCatchCountMapMap() {
         return internalGetBallCatchCountMap().getMap();
       }
@@ -975,6 +999,7 @@ public final class GalleryFallCatchNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
        */
       @java.lang.Override
+
       public int getBallCatchCountMapOrDefault(
           int key,
           int defaultValue) {
@@ -987,6 +1012,7 @@ public final class GalleryFallCatchNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
        */
       @java.lang.Override
+
       public int getBallCatchCountMapOrThrow(
           int key) {
         
@@ -997,8 +1023,8 @@ public final class GalleryFallCatchNotifyOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearBallCatchCountMap() {
-        bitField0_ = (bitField0_ & ~0x00000020);
         internalGetMutableBallCatchCountMap().getMutableMap()
             .clear();
         return this;
@@ -1006,6 +1032,7 @@ public final class GalleryFallCatchNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
        */
+
       public Builder removeBallCatchCountMap(
           int key) {
         
@@ -1018,8 +1045,7 @@ public final class GalleryFallCatchNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableBallCatchCountMap() {
-        bitField0_ |= 0x00000020;
+      getMutableBallCatchCountMap() {
         return internalGetMutableBallCatchCountMap().getMutableMap();
       }
       /**
@@ -1032,17 +1058,16 @@ public final class GalleryFallCatchNotifyOuterClass {
         
         internalGetMutableBallCatchCountMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000020;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; ball_catch_count_map = 14;</code>
        */
+
       public Builder putAllBallCatchCountMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableBallCatchCountMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000020;
         return this;
       }
       @java.lang.Override
@@ -1078,18 +1103,7 @@ public final class GalleryFallCatchNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GalleryFallCatchNotify(input, extensionRegistry);
       }
     };
 

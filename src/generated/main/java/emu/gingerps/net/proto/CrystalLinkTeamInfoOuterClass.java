@@ -95,6 +95,68 @@ public final class CrystalLinkTeamInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CrystalLinkTeamInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                buffInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              buffInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                avatarInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              avatarInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          buffInfoList_ = java.util.Collections.unmodifiableList(buffInfoList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          avatarInfoList_ = java.util.Collections.unmodifiableList(avatarInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.internal_static_CrystalLinkTeamInfo_descriptor;
@@ -109,7 +171,6 @@ public final class CrystalLinkTeamInfoOuterClass {
     }
 
     public static final int AVATAR_INFO_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo> avatarInfoList_;
     /**
      * <code>repeated .CrystalLinkAvatarInfo avatar_info_list = 14;</code>
@@ -150,7 +211,6 @@ public final class CrystalLinkTeamInfoOuterClass {
     }
 
     public static final int BUFF_INFO_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo> buffInfoList_;
     /**
      * <code>repeated .CrystalLinkBuffInfo buff_info_list = 12;</code>
@@ -210,7 +270,7 @@ public final class CrystalLinkTeamInfoOuterClass {
       for (int i = 0; i < avatarInfoList_.size(); i++) {
         output.writeMessage(14, avatarInfoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -227,7 +287,7 @@ public final class CrystalLinkTeamInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, avatarInfoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -246,7 +306,7 @@ public final class CrystalLinkTeamInfoOuterClass {
           .equals(other.getAvatarInfoListList())) return false;
       if (!getBuffInfoListList()
           .equals(other.getBuffInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -265,7 +325,7 @@ public final class CrystalLinkTeamInfoOuterClass {
         hash = (37 * hash) + BUFF_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBuffInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,32 +442,36 @@ public final class CrystalLinkTeamInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAvatarInfoListFieldBuilder();
+          getBuffInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (avatarInfoListBuilder_ == null) {
           avatarInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          avatarInfoList_ = null;
           avatarInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (buffInfoListBuilder_ == null) {
           buffInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          buffInfoList_ = null;
           buffInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -434,13 +498,7 @@ public final class CrystalLinkTeamInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo buildPartial() {
         emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo result = new emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo result) {
+        int from_bitField0_ = bitField0_;
         if (avatarInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             avatarInfoList_ = java.util.Collections.unmodifiableList(avatarInfoList_);
@@ -459,10 +517,8 @@ public final class CrystalLinkTeamInfoOuterClass {
         } else {
           result.buffInfoList_ = buffInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -561,7 +617,7 @@ public final class CrystalLinkTeamInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -576,56 +632,17 @@ public final class CrystalLinkTeamInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 98: {
-                emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo.parser(),
-                        extensionRegistry);
-                if (buffInfoListBuilder_ == null) {
-                  ensureBuffInfoListIsMutable();
-                  buffInfoList_.add(m);
-                } else {
-                  buffInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              case 114: {
-                emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo.parser(),
-                        extensionRegistry);
-                if (avatarInfoListBuilder_ == null) {
-                  ensureAvatarInfoListIsMutable();
-                  avatarInfoList_.add(m);
-                } else {
-                  avatarInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1142,18 +1159,7 @@ public final class CrystalLinkTeamInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CrystalLinkTeamInfo(input, extensionRegistry);
       }
     };
 

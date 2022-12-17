@@ -94,6 +94,76 @@ public final class WidgetDoBagReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WidgetDoBagReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 88: {
+
+              materialId_ = input.readUInt32();
+              break;
+            }
+            case 3474: {
+              emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder subBuilder = null;
+              if (opInfoCase_ == 434) {
+                subBuilder = ((emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) opInfo_).toBuilder();
+              }
+              opInfo_ =
+                  input.readMessage(emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) opInfo_);
+                opInfo_ = subBuilder.buildPartial();
+              }
+              opInfoCase_ = 434;
+              break;
+            }
+            case 10706: {
+              emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo.Builder subBuilder = null;
+              if (opInfoCase_ == 1338) {
+                subBuilder = ((emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo) opInfo_).toBuilder();
+              }
+              opInfo_ =
+                  input.readMessage(emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo) opInfo_);
+                opInfo_ = subBuilder.buildPartial();
+              }
+              opInfoCase_ = 1338;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WidgetDoBagReqOuterClass.internal_static_WidgetDoBagReq_descriptor;
@@ -149,7 +219,7 @@ public final class WidgetDoBagReqOuterClass {
     }
 
     public static final int MATERIAL_ID_FIELD_NUMBER = 11;
-    private int materialId_ = 0;
+    private int materialId_;
     /**
      * <code>uint32 material_id = 11;</code>
      * @return The materialId.
@@ -244,7 +314,7 @@ public final class WidgetDoBagReqOuterClass {
       if (opInfoCase_ == 1338) {
         output.writeMessage(1338, (emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo) opInfo_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -265,7 +335,7 @@ public final class WidgetDoBagReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1338, (emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo) opInfo_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -295,7 +365,7 @@ public final class WidgetDoBagReqOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -320,7 +390,7 @@ public final class WidgetDoBagReqOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -448,25 +518,24 @@ public final class WidgetDoBagReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         materialId_ = 0;
-        if (locationInfoBuilder_ != null) {
-          locationInfoBuilder_.clear();
-        }
-        if (widgetCreatorInfoBuilder_ != null) {
-          widgetCreatorInfoBuilder_.clear();
-        }
+
         opInfoCase_ = 0;
         opInfo_ = null;
         return this;
@@ -495,30 +564,24 @@ public final class WidgetDoBagReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReq buildPartial() {
         emu.gingerps.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReq result = new emu.gingerps.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        result.materialId_ = materialId_;
+        if (opInfoCase_ == 434) {
+          if (locationInfoBuilder_ == null) {
+            result.opInfo_ = opInfo_;
+          } else {
+            result.opInfo_ = locationInfoBuilder_.build();
+          }
+        }
+        if (opInfoCase_ == 1338) {
+          if (widgetCreatorInfoBuilder_ == null) {
+            result.opInfo_ = opInfo_;
+          } else {
+            result.opInfo_ = widgetCreatorInfoBuilder_.build();
+          }
+        }
+        result.opInfoCase_ = opInfoCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.materialId_ = materialId_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReq result) {
-        result.opInfoCase_ = opInfoCase_;
-        result.opInfo_ = this.opInfo_;
-        if (opInfoCase_ == 434 &&
-            locationInfoBuilder_ != null) {
-          result.opInfo_ = locationInfoBuilder_.build();
-        }
-        if (opInfoCase_ == 1338 &&
-            widgetCreatorInfoBuilder_ != null) {
-          result.opInfo_ = widgetCreatorInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -581,7 +644,7 @@ public final class WidgetDoBagReqOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -596,49 +659,17 @@ public final class WidgetDoBagReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 88: {
-                materialId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 3474: {
-                input.readMessage(
-                    getLocationInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                opInfoCase_ = 434;
-                break;
-              } // case 3474
-              case 10706: {
-                input.readMessage(
-                    getWidgetCreatorInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                opInfoCase_ = 1338;
-                break;
-              } // case 10706
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int opInfoCase_ = 0;
@@ -656,7 +687,6 @@ public final class WidgetDoBagReqOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private int materialId_ ;
       /**
@@ -675,7 +705,6 @@ public final class WidgetDoBagReqOuterClass {
       public Builder setMaterialId(int value) {
         
         materialId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -684,7 +713,7 @@ public final class WidgetDoBagReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         materialId_ = 0;
         onChanged();
         return this;
@@ -764,9 +793,8 @@ public final class WidgetDoBagReqOuterClass {
         } else {
           if (opInfoCase_ == 434) {
             locationInfoBuilder_.mergeFrom(value);
-          } else {
-            locationInfoBuilder_.setMessage(value);
           }
+          locationInfoBuilder_.setMessage(value);
         }
         opInfoCase_ = 434;
         return this;
@@ -828,7 +856,7 @@ public final class WidgetDoBagReqOuterClass {
           opInfo_ = null;
         }
         opInfoCase_ = 434;
-        onChanged();
+        onChanged();;
         return locationInfoBuilder_;
       }
 
@@ -906,9 +934,8 @@ public final class WidgetDoBagReqOuterClass {
         } else {
           if (opInfoCase_ == 1338) {
             widgetCreatorInfoBuilder_.mergeFrom(value);
-          } else {
-            widgetCreatorInfoBuilder_.setMessage(value);
           }
+          widgetCreatorInfoBuilder_.setMessage(value);
         }
         opInfoCase_ = 1338;
         return this;
@@ -970,7 +997,7 @@ public final class WidgetDoBagReqOuterClass {
           opInfo_ = null;
         }
         opInfoCase_ = 1338;
-        onChanged();
+        onChanged();;
         return widgetCreatorInfoBuilder_;
       }
       @java.lang.Override
@@ -1006,18 +1033,7 @@ public final class WidgetDoBagReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WidgetDoBagReq(input, extensionRegistry);
       }
     };
 

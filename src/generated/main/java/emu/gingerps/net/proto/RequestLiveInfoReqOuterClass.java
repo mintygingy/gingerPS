@@ -62,6 +62,48 @@ public final class RequestLiveInfoReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RequestLiveInfoReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 104: {
+
+              liveId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RequestLiveInfoReqOuterClass.internal_static_RequestLiveInfoReq_descriptor;
@@ -76,7 +118,7 @@ public final class RequestLiveInfoReqOuterClass {
     }
 
     public static final int LIVE_ID_FIELD_NUMBER = 13;
-    private int liveId_ = 0;
+    private int liveId_;
     /**
      * <code>uint32 live_id = 13;</code>
      * @return The liveId.
@@ -103,7 +145,7 @@ public final class RequestLiveInfoReqOuterClass {
       if (liveId_ != 0) {
         output.writeUInt32(13, liveId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -116,7 +158,7 @@ public final class RequestLiveInfoReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, liveId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -133,7 +175,7 @@ public final class RequestLiveInfoReqOuterClass {
 
       if (getLiveId()
           != other.getLiveId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -146,7 +188,7 @@ public final class RequestLiveInfoReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + LIVE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLiveId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -274,19 +316,24 @@ public final class RequestLiveInfoReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.RequestLiveInfoReqOuterClass.RequestLiveInfoReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         liveId_ = 0;
+
         return this;
       }
 
@@ -313,16 +360,9 @@ public final class RequestLiveInfoReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RequestLiveInfoReqOuterClass.RequestLiveInfoReq buildPartial() {
         emu.gingerps.net.proto.RequestLiveInfoReqOuterClass.RequestLiveInfoReq result = new emu.gingerps.net.proto.RequestLiveInfoReqOuterClass.RequestLiveInfoReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.liveId_ = liveId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RequestLiveInfoReqOuterClass.RequestLiveInfoReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.liveId_ = liveId_;
-        }
       }
 
       @java.lang.Override
@@ -372,7 +412,7 @@ public final class RequestLiveInfoReqOuterClass {
         if (other.getLiveId() != 0) {
           setLiveId(other.getLiveId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -387,38 +427,19 @@ public final class RequestLiveInfoReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RequestLiveInfoReqOuterClass.RequestLiveInfoReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 104: {
-                liveId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RequestLiveInfoReqOuterClass.RequestLiveInfoReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int liveId_ ;
       /**
@@ -437,7 +458,6 @@ public final class RequestLiveInfoReqOuterClass {
       public Builder setLiveId(int value) {
         
         liveId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -446,7 +466,7 @@ public final class RequestLiveInfoReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLiveId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         liveId_ = 0;
         onChanged();
         return this;
@@ -484,18 +504,7 @@ public final class RequestLiveInfoReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RequestLiveInfoReq(input, extensionRegistry);
       }
     };
 

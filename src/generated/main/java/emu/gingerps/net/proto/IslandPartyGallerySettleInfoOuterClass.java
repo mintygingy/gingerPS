@@ -85,6 +85,69 @@ public final class IslandPartyGallerySettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private IslandPartyGallerySettleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = null;
+              if (playerInfo_ != null) {
+                subBuilder = playerInfo_.toBuilder();
+              }
+              playerInfo_ = input.readMessage(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(playerInfo_);
+                playerInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cardList_ = java.util.Collections.unmodifiableList(cardList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.internal_static_IslandPartyGallerySettleInfo_descriptor;
@@ -99,7 +162,6 @@ public final class IslandPartyGallerySettleInfoOuterClass {
     }
 
     public static final int CARD_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_;
     /**
      * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
@@ -162,7 +224,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
-      return playerInfo_ == null ? emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : playerInfo_;
+      return getPlayerInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -185,7 +247,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
       if (playerInfo_ != null) {
         output.writeMessage(7, getPlayerInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -202,7 +264,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getPlayerInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -224,7 +286,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         if (!getPlayerInfo()
             .equals(other.getPlayerInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -243,7 +305,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         hash = (37 * hash) + PLAYER_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,28 +422,33 @@ public final class IslandPartyGallerySettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCardListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          cardList_ = null;
           cardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        playerInfo_ = null;
-        if (playerInfoBuilder_ != null) {
-          playerInfoBuilder_.dispose();
+        if (playerInfoBuilder_ == null) {
+          playerInfo_ = null;
+        } else {
+          playerInfo_ = null;
           playerInfoBuilder_ = null;
         }
         return this;
@@ -410,13 +477,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo buildPartial() {
         emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo result = new emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo result) {
+        int from_bitField0_ = bitField0_;
         if (cardListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             cardList_ = java.util.Collections.unmodifiableList(cardList_);
@@ -426,15 +487,13 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         } else {
           result.cardList_ = cardListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.playerInfo_ = playerInfoBuilder_ == null
-              ? playerInfo_
-              : playerInfoBuilder_.build();
+        if (playerInfoBuilder_ == null) {
+          result.playerInfo_ = playerInfo_;
+        } else {
+          result.playerInfo_ = playerInfoBuilder_.build();
         }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -510,7 +569,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         if (other.hasPlayerInfo()) {
           mergePlayerInfo(other.getPlayerInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -525,50 +584,17 @@ public final class IslandPartyGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(),
-                        extensionRegistry);
-                if (cardListBuilder_ == null) {
-                  ensureCardListIsMutable();
-                  cardList_.add(m);
-                } else {
-                  cardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 58: {
-                input.readMessage(
-                    getPlayerInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -821,7 +847,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
        * @return Whether the playerInfo field is set.
        */
       public boolean hasPlayerInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return playerInfoBuilder_ != null || playerInfo_ != null;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 7;</code>
@@ -843,11 +869,11 @@ public final class IslandPartyGallerySettleInfoOuterClass {
             throw new NullPointerException();
           }
           playerInfo_ = value;
+          onChanged();
         } else {
           playerInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -857,11 +883,11 @@ public final class IslandPartyGallerySettleInfoOuterClass {
           emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder builderForValue) {
         if (playerInfoBuilder_ == null) {
           playerInfo_ = builderForValue.build();
+          onChanged();
         } else {
           playerInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -869,38 +895,38 @@ public final class IslandPartyGallerySettleInfoOuterClass {
        */
       public Builder mergePlayerInfo(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
         if (playerInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            playerInfo_ != null &&
-            playerInfo_ != emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance()) {
-            getPlayerInfoBuilder().mergeFrom(value);
+          if (playerInfo_ != null) {
+            playerInfo_ =
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.newBuilder(playerInfo_).mergeFrom(value).buildPartial();
           } else {
             playerInfo_ = value;
           }
+          onChanged();
         } else {
           playerInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 7;</code>
        */
       public Builder clearPlayerInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        playerInfo_ = null;
-        if (playerInfoBuilder_ != null) {
-          playerInfoBuilder_.dispose();
+        if (playerInfoBuilder_ == null) {
+          playerInfo_ = null;
+          onChanged();
+        } else {
+          playerInfo_ = null;
           playerInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 7;</code>
        */
       public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder getPlayerInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getPlayerInfoFieldBuilder().getBuilder();
       }
@@ -964,18 +990,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new IslandPartyGallerySettleInfo(input, extensionRegistry);
       }
     };
 

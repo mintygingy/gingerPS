@@ -79,6 +79,63 @@ public final class IrodoriChessEquipCardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private IrodoriChessEquipCardRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isHardMap_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              cardId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IrodoriChessEquipCardRspOuterClass.internal_static_IrodoriChessEquipCardRsp_descriptor;
@@ -93,7 +150,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
     }
 
     public static final int CARD_ID_FIELD_NUMBER = 9;
-    private int cardId_ = 0;
+    private int cardId_;
     /**
      * <code>uint32 card_id = 9;</code>
      * @return The cardId.
@@ -104,7 +161,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 2;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 2;</code>
      * @return The levelId.
@@ -115,7 +172,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
     }
 
     public static final int IS_HARD_MAP_FIELD_NUMBER = 8;
-    private boolean isHardMap_ = false;
+    private boolean isHardMap_;
     /**
      * <code>bool is_hard_map = 8;</code>
      * @return The isHardMap.
@@ -126,7 +183,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -162,7 +219,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
       if (cardId_ != 0) {
         output.writeUInt32(9, cardId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +244,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, cardId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +267,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
           != other.getIsHardMap()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -230,7 +287,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
           getIsHardMap());
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -357,22 +414,30 @@ public final class IrodoriChessEquipCardRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         cardId_ = 0;
+
         levelId_ = 0;
+
         isHardMap_ = false;
+
         retcode_ = 0;
+
         return this;
       }
 
@@ -399,25 +464,12 @@ public final class IrodoriChessEquipCardRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp buildPartial() {
         emu.gingerps.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp result = new emu.gingerps.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.cardId_ = cardId_;
+        result.levelId_ = levelId_;
+        result.isHardMap_ = isHardMap_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.cardId_ = cardId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.levelId_ = levelId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isHardMap_ = isHardMap_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.retcode_ = retcode_;
-        }
       }
 
       @java.lang.Override
@@ -476,7 +528,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -491,53 +543,19 @@ public final class IrodoriChessEquipCardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 8
-              case 16: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 64: {
-                isHardMap_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 72: {
-                cardId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int cardId_ ;
       /**
@@ -556,7 +574,6 @@ public final class IrodoriChessEquipCardRspOuterClass {
       public Builder setCardId(int value) {
         
         cardId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -565,7 +582,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         cardId_ = 0;
         onChanged();
         return this;
@@ -588,7 +605,6 @@ public final class IrodoriChessEquipCardRspOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -597,7 +613,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -620,7 +636,6 @@ public final class IrodoriChessEquipCardRspOuterClass {
       public Builder setIsHardMap(boolean value) {
         
         isHardMap_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -629,7 +644,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsHardMap() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isHardMap_ = false;
         onChanged();
         return this;
@@ -652,7 +667,6 @@ public final class IrodoriChessEquipCardRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -661,7 +675,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -699,18 +713,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new IrodoriChessEquipCardRsp(input, extensionRegistry);
       }
     };
 

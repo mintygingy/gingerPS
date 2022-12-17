@@ -92,6 +92,66 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ActivityPushTipsInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                activityPushTipsDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              activityPushTipsDataList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.parser(), extensionRegistry));
+              break;
+            }
+            case 104: {
+
+              activityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          activityPushTipsDataList_ = java.util.Collections.unmodifiableList(activityPushTipsDataList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityPushTipsInfoNotifyOuterClass.internal_static_ActivityPushTipsInfoNotify_descriptor;
@@ -106,7 +166,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 3;
-    private int scheduleId_ = 0;
+    private int scheduleId_;
     /**
      * <code>uint32 schedule_id = 3;</code>
      * @return The scheduleId.
@@ -117,7 +177,6 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
     }
 
     public static final int ACTIVITY_PUSH_TIPS_DATA_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> activityPushTipsDataList_;
     /**
      * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 10;</code>
@@ -158,7 +217,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
     }
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 13;
-    private int activityId_ = 0;
+    private int activityId_;
     /**
      * <code>uint32 activity_id = 13;</code>
      * @return The activityId.
@@ -191,7 +250,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       if (activityId_ != 0) {
         output.writeUInt32(13, activityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -212,7 +271,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, activityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -233,7 +292,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
           .equals(other.getActivityPushTipsDataListList())) return false;
       if (getActivityId()
           != other.getActivityId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -252,7 +311,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       }
       hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getActivityId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -379,27 +438,33 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getActivityPushTipsDataListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         scheduleId_ = 0;
+
         if (activityPushTipsDataListBuilder_ == null) {
           activityPushTipsDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          activityPushTipsDataList_ = null;
           activityPushTipsDataListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         activityId_ = 0;
+
         return this;
       }
 
@@ -426,32 +491,20 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify buildPartial() {
         emu.gingerps.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify result = new emu.gingerps.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.scheduleId_ = scheduleId_;
         if (activityPushTipsDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             activityPushTipsDataList_ = java.util.Collections.unmodifiableList(activityPushTipsDataList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.activityPushTipsDataList_ = activityPushTipsDataList_;
         } else {
           result.activityPushTipsDataList_ = activityPushTipsDataListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.scheduleId_ = scheduleId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.activityId_ = activityId_;
-        }
+        result.activityId_ = activityId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -505,7 +558,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
           if (!other.activityPushTipsDataList_.isEmpty()) {
             if (activityPushTipsDataList_.isEmpty()) {
               activityPushTipsDataList_ = other.activityPushTipsDataList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureActivityPushTipsDataListIsMutable();
               activityPushTipsDataList_.addAll(other.activityPushTipsDataList_);
@@ -518,7 +571,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
               activityPushTipsDataListBuilder_.dispose();
               activityPushTipsDataListBuilder_ = null;
               activityPushTipsDataList_ = other.activityPushTipsDataList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               activityPushTipsDataListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getActivityPushTipsDataListFieldBuilder() : null;
@@ -530,7 +583,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         if (other.getActivityId() != 0) {
           setActivityId(other.getActivityId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -545,53 +598,17 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                scheduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 82: {
-                emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.parser(),
-                        extensionRegistry);
-                if (activityPushTipsDataListBuilder_ == null) {
-                  ensureActivityPushTipsDataListIsMutable();
-                  activityPushTipsDataList_.add(m);
-                } else {
-                  activityPushTipsDataListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              case 104: {
-                activityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -613,7 +630,6 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -622,7 +638,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -631,9 +647,9 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> activityPushTipsDataList_ =
         java.util.Collections.emptyList();
       private void ensureActivityPushTipsDataListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           activityPushTipsDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>(activityPushTipsDataList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -783,7 +799,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       public Builder clearActivityPushTipsDataList() {
         if (activityPushTipsDataListBuilder_ == null) {
           activityPushTipsDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           activityPushTipsDataListBuilder_.clear();
@@ -860,7 +876,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
           activityPushTipsDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData, emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder, emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder>(
                   activityPushTipsDataList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           activityPushTipsDataList_ = null;
@@ -885,7 +901,6 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       public Builder setActivityId(int value) {
         
         activityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -894,7 +909,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         activityId_ = 0;
         onChanged();
         return this;
@@ -932,18 +947,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ActivityPushTipsInfoNotify(input, extensionRegistry);
       }
     };
 

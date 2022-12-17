@@ -66,6 +66,61 @@ public final class GCGReplayOperationDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGReplayOperationData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.Builder subBuilder = null;
+              if (op_ != null) {
+                subBuilder = op_.toBuilder();
+              }
+              op_ = input.readMessage(emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(op_);
+                op_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 64: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGReplayOperationDataOuterClass.internal_static_GCGReplayOperationData_descriptor;
@@ -102,11 +157,11 @@ public final class GCGReplayOperationDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperationOrBuilder getOpOrBuilder() {
-      return op_ == null ? emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.getDefaultInstance() : op_;
+      return getOp();
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 8;
-    private int controllerId_ = 0;
+    private int controllerId_;
     /**
      * <code>uint32 controller_id = 8;</code>
      * @return The controllerId.
@@ -136,7 +191,7 @@ public final class GCGReplayOperationDataOuterClass {
       if (controllerId_ != 0) {
         output.writeUInt32(8, controllerId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +208,7 @@ public final class GCGReplayOperationDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, controllerId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +230,7 @@ public final class GCGReplayOperationDataOuterClass {
       }
       if (getControllerId()
           != other.getControllerId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -192,7 +247,7 @@ public final class GCGReplayOperationDataOuterClass {
       }
       hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getControllerId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -309,24 +364,30 @@ public final class GCGReplayOperationDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGReplayOperationDataOuterClass.GCGReplayOperationData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        op_ = null;
-        if (opBuilder_ != null) {
-          opBuilder_.dispose();
+        if (opBuilder_ == null) {
+          op_ = null;
+        } else {
+          op_ = null;
           opBuilder_ = null;
         }
         controllerId_ = 0;
+
         return this;
       }
 
@@ -353,21 +414,14 @@ public final class GCGReplayOperationDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGReplayOperationDataOuterClass.GCGReplayOperationData buildPartial() {
         emu.gingerps.net.proto.GCGReplayOperationDataOuterClass.GCGReplayOperationData result = new emu.gingerps.net.proto.GCGReplayOperationDataOuterClass.GCGReplayOperationData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (opBuilder_ == null) {
+          result.op_ = op_;
+        } else {
+          result.op_ = opBuilder_.build();
+        }
+        result.controllerId_ = controllerId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGReplayOperationDataOuterClass.GCGReplayOperationData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.op_ = opBuilder_ == null
-              ? op_
-              : opBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.controllerId_ = controllerId_;
-        }
       }
 
       @java.lang.Override
@@ -420,7 +474,7 @@ public final class GCGReplayOperationDataOuterClass {
         if (other.getControllerId() != 0) {
           setControllerId(other.getControllerId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -435,45 +489,19 @@ public final class GCGReplayOperationDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGReplayOperationDataOuterClass.GCGReplayOperationData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getOpFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 64: {
-                controllerId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGReplayOperationDataOuterClass.GCGReplayOperationData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation op_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -483,7 +511,7 @@ public final class GCGReplayOperationDataOuterClass {
        * @return Whether the op field is set.
        */
       public boolean hasOp() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return opBuilder_ != null || op_ != null;
       }
       /**
        * <code>.GCGOperation op = 1;</code>
@@ -505,11 +533,11 @@ public final class GCGReplayOperationDataOuterClass {
             throw new NullPointerException();
           }
           op_ = value;
+          onChanged();
         } else {
           opBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -519,11 +547,11 @@ public final class GCGReplayOperationDataOuterClass {
           emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.Builder builderForValue) {
         if (opBuilder_ == null) {
           op_ = builderForValue.build();
+          onChanged();
         } else {
           opBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -531,38 +559,38 @@ public final class GCGReplayOperationDataOuterClass {
        */
       public Builder mergeOp(emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation value) {
         if (opBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            op_ != null &&
-            op_ != emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.getDefaultInstance()) {
-            getOpBuilder().mergeFrom(value);
+          if (op_ != null) {
+            op_ =
+              emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.newBuilder(op_).mergeFrom(value).buildPartial();
           } else {
             op_ = value;
           }
+          onChanged();
         } else {
           opBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGOperation op = 1;</code>
        */
       public Builder clearOp() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        op_ = null;
-        if (opBuilder_ != null) {
-          opBuilder_.dispose();
+        if (opBuilder_ == null) {
+          op_ = null;
+          onChanged();
+        } else {
+          op_ = null;
           opBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.GCGOperation op = 1;</code>
        */
       public emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.Builder getOpBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getOpFieldBuilder().getBuilder();
       }
@@ -611,7 +639,6 @@ public final class GCGReplayOperationDataOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -620,7 +647,7 @@ public final class GCGReplayOperationDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         controllerId_ = 0;
         onChanged();
         return this;
@@ -658,18 +685,7 @@ public final class GCGReplayOperationDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGReplayOperationData(input, extensionRegistry);
       }
     };
 

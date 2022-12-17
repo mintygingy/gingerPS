@@ -76,6 +76,61 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeResourceTakeFetterExpRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.Builder subBuilder = null;
+              if (fetterExp_ != null) {
+                subBuilder = fetterExp_.toBuilder();
+              }
+              fetterExp_ = input.readMessage(emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fetterExp_);
+                fetterExp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeResourceTakeFetterExpRspOuterClass.internal_static_HomeResourceTakeFetterExpRsp_descriptor;
@@ -112,11 +167,11 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeResourceOuterClass.HomeResourceOrBuilder getFetterExpOrBuilder() {
-      return fetterExp_ == null ? emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.getDefaultInstance() : fetterExp_;
+      return getFetterExp();
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -146,7 +201,7 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
       if (fetterExp_ != null) {
         output.writeMessage(4, getFetterExp());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getFetterExp());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
       }
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +257,7 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,24 +384,30 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeResourceTakeFetterExpRspOuterClass.HomeResourceTakeFetterExpRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        fetterExp_ = null;
-        if (fetterExpBuilder_ != null) {
-          fetterExpBuilder_.dispose();
+        if (fetterExpBuilder_ == null) {
+          fetterExp_ = null;
+        } else {
+          fetterExp_ = null;
           fetterExpBuilder_ = null;
         }
         retcode_ = 0;
+
         return this;
       }
 
@@ -373,21 +434,14 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeResourceTakeFetterExpRspOuterClass.HomeResourceTakeFetterExpRsp buildPartial() {
         emu.gingerps.net.proto.HomeResourceTakeFetterExpRspOuterClass.HomeResourceTakeFetterExpRsp result = new emu.gingerps.net.proto.HomeResourceTakeFetterExpRspOuterClass.HomeResourceTakeFetterExpRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (fetterExpBuilder_ == null) {
+          result.fetterExp_ = fetterExp_;
+        } else {
+          result.fetterExp_ = fetterExpBuilder_.build();
+        }
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeResourceTakeFetterExpRspOuterClass.HomeResourceTakeFetterExpRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.fetterExp_ = fetterExpBuilder_ == null
-              ? fetterExp_
-              : fetterExpBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +494,7 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,45 +509,19 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeResourceTakeFetterExpRspOuterClass.HomeResourceTakeFetterExpRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 8
-              case 34: {
-                input.readMessage(
-                    getFetterExpFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeResourceTakeFetterExpRspOuterClass.HomeResourceTakeFetterExpRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource fetterExp_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -503,7 +531,7 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
        * @return Whether the fetterExp field is set.
        */
       public boolean hasFetterExp() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return fetterExpBuilder_ != null || fetterExp_ != null;
       }
       /**
        * <code>.HomeResource fetter_exp = 4;</code>
@@ -525,11 +553,11 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
             throw new NullPointerException();
           }
           fetterExp_ = value;
+          onChanged();
         } else {
           fetterExpBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -539,11 +567,11 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
           emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.Builder builderForValue) {
         if (fetterExpBuilder_ == null) {
           fetterExp_ = builderForValue.build();
+          onChanged();
         } else {
           fetterExpBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -551,38 +579,38 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
        */
       public Builder mergeFetterExp(emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource value) {
         if (fetterExpBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            fetterExp_ != null &&
-            fetterExp_ != emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.getDefaultInstance()) {
-            getFetterExpBuilder().mergeFrom(value);
+          if (fetterExp_ != null) {
+            fetterExp_ =
+              emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.newBuilder(fetterExp_).mergeFrom(value).buildPartial();
           } else {
             fetterExp_ = value;
           }
+          onChanged();
         } else {
           fetterExpBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeResource fetter_exp = 4;</code>
        */
       public Builder clearFetterExp() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        fetterExp_ = null;
-        if (fetterExpBuilder_ != null) {
-          fetterExpBuilder_.dispose();
+        if (fetterExpBuilder_ == null) {
+          fetterExp_ = null;
+          onChanged();
+        } else {
+          fetterExp_ = null;
           fetterExpBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeResource fetter_exp = 4;</code>
        */
       public emu.gingerps.net.proto.HomeResourceOuterClass.HomeResource.Builder getFetterExpBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getFetterExpFieldBuilder().getBuilder();
       }
@@ -631,7 +659,6 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -640,7 +667,7 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -678,18 +705,7 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeResourceTakeFetterExpRsp(input, extensionRegistry);
       }
     };
 

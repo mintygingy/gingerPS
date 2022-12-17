@@ -88,6 +88,71 @@ public final class InstableSprayStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private InstableSprayStageInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              maxScore_ = input.readUInt32();
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                teamInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              teamInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 96: {
+
+              isFinished_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          teamInfoList_ = java.util.Collections.unmodifiableList(teamInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InstableSprayStageInfoOuterClass.internal_static_InstableSprayStageInfo_descriptor;
@@ -102,7 +167,7 @@ public final class InstableSprayStageInfoOuterClass {
     }
 
     public static final int IS_FINISHED_FIELD_NUMBER = 12;
-    private boolean isFinished_ = false;
+    private boolean isFinished_;
     /**
      * <code>bool is_finished = 12;</code>
      * @return The isFinished.
@@ -113,7 +178,7 @@ public final class InstableSprayStageInfoOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 2;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 2;</code>
      * @return The stageId.
@@ -124,7 +189,6 @@ public final class InstableSprayStageInfoOuterClass {
     }
 
     public static final int TEAM_INFO_LIST_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> teamInfoList_;
     /**
      * <code>repeated .InstableSprayTeamInfo team_info_list = 9;</code>
@@ -165,7 +229,7 @@ public final class InstableSprayStageInfoOuterClass {
     }
 
     public static final int MAX_SCORE_FIELD_NUMBER = 7;
-    private int maxScore_ = 0;
+    private int maxScore_;
     /**
      * <code>uint32 max_score = 7;</code>
      * @return The maxScore.
@@ -201,7 +265,7 @@ public final class InstableSprayStageInfoOuterClass {
       if (isFinished_ != false) {
         output.writeBool(12, isFinished_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -226,7 +290,7 @@ public final class InstableSprayStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, isFinished_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -249,7 +313,7 @@ public final class InstableSprayStageInfoOuterClass {
           .equals(other.getTeamInfoListList())) return false;
       if (getMaxScore()
           != other.getMaxScore()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -271,7 +335,7 @@ public final class InstableSprayStageInfoOuterClass {
       }
       hash = (37 * hash) + MAX_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getMaxScore();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -388,28 +452,35 @@ public final class InstableSprayStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTeamInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isFinished_ = false;
+
         stageId_ = 0;
+
         if (teamInfoListBuilder_ == null) {
           teamInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          teamInfoList_ = null;
           teamInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         maxScore_ = 0;
+
         return this;
       }
 
@@ -436,35 +507,21 @@ public final class InstableSprayStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo buildPartial() {
         emu.gingerps.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo result = new emu.gingerps.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.isFinished_ = isFinished_;
+        result.stageId_ = stageId_;
         if (teamInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             teamInfoList_ = java.util.Collections.unmodifiableList(teamInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.teamInfoList_ = teamInfoList_;
         } else {
           result.teamInfoList_ = teamInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isFinished_ = isFinished_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.stageId_ = stageId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.maxScore_ = maxScore_;
-        }
+        result.maxScore_ = maxScore_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -521,7 +578,7 @@ public final class InstableSprayStageInfoOuterClass {
           if (!other.teamInfoList_.isEmpty()) {
             if (teamInfoList_.isEmpty()) {
               teamInfoList_ = other.teamInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureTeamInfoListIsMutable();
               teamInfoList_.addAll(other.teamInfoList_);
@@ -534,7 +591,7 @@ public final class InstableSprayStageInfoOuterClass {
               teamInfoListBuilder_.dispose();
               teamInfoListBuilder_ = null;
               teamInfoList_ = other.teamInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               teamInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTeamInfoListFieldBuilder() : null;
@@ -546,7 +603,7 @@ public final class InstableSprayStageInfoOuterClass {
         if (other.getMaxScore() != 0) {
           setMaxScore(other.getMaxScore());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -561,58 +618,17 @@ public final class InstableSprayStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 56: {
-                maxScore_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 74: {
-                emu.gingerps.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.parser(),
-                        extensionRegistry);
-                if (teamInfoListBuilder_ == null) {
-                  ensureTeamInfoListIsMutable();
-                  teamInfoList_.add(m);
-                } else {
-                  teamInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 74
-              case 96: {
-                isFinished_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -634,7 +650,6 @@ public final class InstableSprayStageInfoOuterClass {
       public Builder setIsFinished(boolean value) {
         
         isFinished_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -643,7 +658,7 @@ public final class InstableSprayStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isFinished_ = false;
         onChanged();
         return this;
@@ -666,7 +681,6 @@ public final class InstableSprayStageInfoOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -675,7 +689,7 @@ public final class InstableSprayStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -684,9 +698,9 @@ public final class InstableSprayStageInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> teamInfoList_ =
         java.util.Collections.emptyList();
       private void ensureTeamInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           teamInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo>(teamInfoList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -836,7 +850,7 @@ public final class InstableSprayStageInfoOuterClass {
       public Builder clearTeamInfoList() {
         if (teamInfoListBuilder_ == null) {
           teamInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           teamInfoListBuilder_.clear();
@@ -913,7 +927,7 @@ public final class InstableSprayStageInfoOuterClass {
           teamInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo, emu.gingerps.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder, emu.gingerps.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder>(
                   teamInfoList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           teamInfoList_ = null;
@@ -938,7 +952,6 @@ public final class InstableSprayStageInfoOuterClass {
       public Builder setMaxScore(int value) {
         
         maxScore_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -947,7 +960,7 @@ public final class InstableSprayStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         maxScore_ = 0;
         onChanged();
         return this;
@@ -985,18 +998,7 @@ public final class InstableSprayStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InstableSprayStageInfo(input, extensionRegistry);
       }
     };
 

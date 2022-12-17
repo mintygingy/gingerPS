@@ -82,6 +82,66 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlantFlowerAcceptGiveFlowerRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder subBuilder = null;
+              if (acceptFlowerResultInfo_ != null) {
+                subBuilder = acceptFlowerResultInfo_.toBuilder();
+              }
+              acceptFlowerResultInfo_ = input.readMessage(emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(acceptFlowerResultInfo_);
+                acceptFlowerResultInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 48: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlantFlowerAcceptGiveFlowerRspOuterClass.internal_static_PlantFlowerAcceptGiveFlowerRsp_descriptor;
@@ -118,11 +178,11 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfoOrBuilder getAcceptFlowerResultInfoOrBuilder() {
-      return acceptFlowerResultInfo_ == null ? emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.getDefaultInstance() : acceptFlowerResultInfo_;
+      return getAcceptFlowerResultInfo();
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 6;
-    private int scheduleId_ = 0;
+    private int scheduleId_;
     /**
      * <code>uint32 schedule_id = 6;</code>
      * @return The scheduleId.
@@ -133,7 +193,7 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 9;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 9;</code>
      * @return The retcode.
@@ -166,7 +226,7 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(9, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +247,7 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -211,7 +271,7 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
           != other.getScheduleId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -230,7 +290,7 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
       hash = (53 * hash) + getScheduleId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -357,25 +417,32 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlantFlowerAcceptGiveFlowerRspOuterClass.PlantFlowerAcceptGiveFlowerRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        acceptFlowerResultInfo_ = null;
-        if (acceptFlowerResultInfoBuilder_ != null) {
-          acceptFlowerResultInfoBuilder_.dispose();
+        if (acceptFlowerResultInfoBuilder_ == null) {
+          acceptFlowerResultInfo_ = null;
+        } else {
+          acceptFlowerResultInfo_ = null;
           acceptFlowerResultInfoBuilder_ = null;
         }
         scheduleId_ = 0;
+
         retcode_ = 0;
+
         return this;
       }
 
@@ -402,24 +469,15 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlantFlowerAcceptGiveFlowerRspOuterClass.PlantFlowerAcceptGiveFlowerRsp buildPartial() {
         emu.gingerps.net.proto.PlantFlowerAcceptGiveFlowerRspOuterClass.PlantFlowerAcceptGiveFlowerRsp result = new emu.gingerps.net.proto.PlantFlowerAcceptGiveFlowerRspOuterClass.PlantFlowerAcceptGiveFlowerRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (acceptFlowerResultInfoBuilder_ == null) {
+          result.acceptFlowerResultInfo_ = acceptFlowerResultInfo_;
+        } else {
+          result.acceptFlowerResultInfo_ = acceptFlowerResultInfoBuilder_.build();
+        }
+        result.scheduleId_ = scheduleId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlantFlowerAcceptGiveFlowerRspOuterClass.PlantFlowerAcceptGiveFlowerRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.acceptFlowerResultInfo_ = acceptFlowerResultInfoBuilder_ == null
-              ? acceptFlowerResultInfo_
-              : acceptFlowerResultInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.scheduleId_ = scheduleId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
       }
 
       @java.lang.Override
@@ -475,7 +533,7 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,50 +548,19 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlantFlowerAcceptGiveFlowerRspOuterClass.PlantFlowerAcceptGiveFlowerRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                input.readMessage(
-                    getAcceptFlowerResultInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 26
-              case 48: {
-                scheduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 72: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlantFlowerAcceptGiveFlowerRspOuterClass.PlantFlowerAcceptGiveFlowerRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo acceptFlowerResultInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -543,7 +570,7 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
        * @return Whether the acceptFlowerResultInfo field is set.
        */
       public boolean hasAcceptFlowerResultInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return acceptFlowerResultInfoBuilder_ != null || acceptFlowerResultInfo_ != null;
       }
       /**
        * <code>.PlantFlowerAcceptFlowerResultInfo accept_flower_result_info = 3;</code>
@@ -565,11 +592,11 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
             throw new NullPointerException();
           }
           acceptFlowerResultInfo_ = value;
+          onChanged();
         } else {
           acceptFlowerResultInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -579,11 +606,11 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
           emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder builderForValue) {
         if (acceptFlowerResultInfoBuilder_ == null) {
           acceptFlowerResultInfo_ = builderForValue.build();
+          onChanged();
         } else {
           acceptFlowerResultInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -591,38 +618,38 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
        */
       public Builder mergeAcceptFlowerResultInfo(emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo value) {
         if (acceptFlowerResultInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            acceptFlowerResultInfo_ != null &&
-            acceptFlowerResultInfo_ != emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.getDefaultInstance()) {
-            getAcceptFlowerResultInfoBuilder().mergeFrom(value);
+          if (acceptFlowerResultInfo_ != null) {
+            acceptFlowerResultInfo_ =
+              emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.newBuilder(acceptFlowerResultInfo_).mergeFrom(value).buildPartial();
           } else {
             acceptFlowerResultInfo_ = value;
           }
+          onChanged();
         } else {
           acceptFlowerResultInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PlantFlowerAcceptFlowerResultInfo accept_flower_result_info = 3;</code>
        */
       public Builder clearAcceptFlowerResultInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        acceptFlowerResultInfo_ = null;
-        if (acceptFlowerResultInfoBuilder_ != null) {
-          acceptFlowerResultInfoBuilder_.dispose();
+        if (acceptFlowerResultInfoBuilder_ == null) {
+          acceptFlowerResultInfo_ = null;
+          onChanged();
+        } else {
+          acceptFlowerResultInfo_ = null;
           acceptFlowerResultInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.PlantFlowerAcceptFlowerResultInfo accept_flower_result_info = 3;</code>
        */
       public emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder getAcceptFlowerResultInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getAcceptFlowerResultInfoFieldBuilder().getBuilder();
       }
@@ -671,7 +698,6 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -680,7 +706,7 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -703,7 +729,6 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -712,7 +737,7 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -750,18 +775,7 @@ public final class PlantFlowerAcceptGiveFlowerRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlantFlowerAcceptGiveFlowerRsp(input, extensionRegistry);
       }
     };
 

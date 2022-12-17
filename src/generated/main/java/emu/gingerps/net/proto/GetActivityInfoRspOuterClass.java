@@ -129,6 +129,97 @@ public final class GetActivityInfoRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetActivityInfoRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                activatedSaleIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              activatedSaleIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                activatedSaleIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                activatedSaleIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                activityInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              activityInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 48: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                disableTransferPointInteractionList_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              disableTransferPointInteractionList_.add(
+                  input.readMessage(emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          activatedSaleIdList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          activityInfoList_ = java.util.Collections.unmodifiableList(activityInfoList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          disableTransferPointInteractionList_ = java.util.Collections.unmodifiableList(disableTransferPointInteractionList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetActivityInfoRspOuterClass.internal_static_GetActivityInfoRsp_descriptor;
@@ -143,7 +234,6 @@ public final class GetActivityInfoRspOuterClass {
     }
 
     public static final int DISABLE_TRANSFER_POINT_INTERACTION_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> disableTransferPointInteractionList_;
     /**
      * <code>repeated .Uint32Pair disable_transfer_point_interaction_list = 10;</code>
@@ -184,7 +274,7 @@ public final class GetActivityInfoRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 6;</code>
      * @return The retcode.
@@ -195,7 +285,6 @@ public final class GetActivityInfoRspOuterClass {
     }
 
     public static final int ACTIVITY_INFO_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo> activityInfoList_;
     /**
      * <code>repeated .ActivityInfo activity_info_list = 2;</code>
@@ -236,7 +325,6 @@ public final class GetActivityInfoRspOuterClass {
     }
 
     public static final int ACTIVATED_SALE_ID_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList activatedSaleIdList_;
     /**
      * <code>repeated uint32 activated_sale_id_list = 1;</code>
@@ -295,7 +383,7 @@ public final class GetActivityInfoRspOuterClass {
       for (int i = 0; i < disableTransferPointInteractionList_.size(); i++) {
         output.writeMessage(10, disableTransferPointInteractionList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -330,7 +418,7 @@ public final class GetActivityInfoRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, disableTransferPointInteractionList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -353,7 +441,7 @@ public final class GetActivityInfoRspOuterClass {
           .equals(other.getActivityInfoListList())) return false;
       if (!getActivatedSaleIdListList()
           .equals(other.getActivatedSaleIdListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -378,7 +466,7 @@ public final class GetActivityInfoRspOuterClass {
         hash = (37 * hash) + ACTIVATED_SALE_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getActivatedSaleIdListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -505,34 +593,40 @@ public final class GetActivityInfoRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDisableTransferPointInteractionListFieldBuilder();
+          getActivityInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (disableTransferPointInteractionListBuilder_ == null) {
           disableTransferPointInteractionList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          disableTransferPointInteractionList_ = null;
           disableTransferPointInteractionListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
+
         if (activityInfoListBuilder_ == null) {
           activityInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          activityInfoList_ = null;
           activityInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         activatedSaleIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -559,13 +653,7 @@ public final class GetActivityInfoRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRsp buildPartial() {
         emu.gingerps.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRsp result = new emu.gingerps.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRsp result) {
+        int from_bitField0_ = bitField0_;
         if (disableTransferPointInteractionListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             disableTransferPointInteractionList_ = java.util.Collections.unmodifiableList(disableTransferPointInteractionList_);
@@ -575,27 +663,23 @@ public final class GetActivityInfoRspOuterClass {
         } else {
           result.disableTransferPointInteractionList_ = disableTransferPointInteractionListBuilder_.build();
         }
+        result.retcode_ = retcode_;
         if (activityInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             activityInfoList_ = java.util.Collections.unmodifiableList(activityInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.activityInfoList_ = activityInfoList_;
         } else {
           result.activityInfoList_ = activityInfoListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           activatedSaleIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.activatedSaleIdList_ = activatedSaleIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -675,7 +759,7 @@ public final class GetActivityInfoRspOuterClass {
           if (!other.activityInfoList_.isEmpty()) {
             if (activityInfoList_.isEmpty()) {
               activityInfoList_ = other.activityInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureActivityInfoListIsMutable();
               activityInfoList_.addAll(other.activityInfoList_);
@@ -688,7 +772,7 @@ public final class GetActivityInfoRspOuterClass {
               activityInfoListBuilder_.dispose();
               activityInfoListBuilder_ = null;
               activityInfoList_ = other.activityInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               activityInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getActivityInfoListFieldBuilder() : null;
@@ -700,14 +784,14 @@ public final class GetActivityInfoRspOuterClass {
         if (!other.activatedSaleIdList_.isEmpty()) {
           if (activatedSaleIdList_.isEmpty()) {
             activatedSaleIdList_ = other.activatedSaleIdList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureActivatedSaleIdListIsMutable();
             activatedSaleIdList_.addAll(other.activatedSaleIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -722,77 +806,17 @@ public final class GetActivityInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int v = input.readUInt32();
-                ensureActivatedSaleIdListIsMutable();
-                activatedSaleIdList_.addInt(v);
-                break;
-              } // case 8
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureActivatedSaleIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  activatedSaleIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 10
-              case 18: {
-                emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo.parser(),
-                        extensionRegistry);
-                if (activityInfoListBuilder_ == null) {
-                  ensureActivityInfoListIsMutable();
-                  activityInfoList_.add(m);
-                } else {
-                  activityInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 48: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 82: {
-                emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(),
-                        extensionRegistry);
-                if (disableTransferPointInteractionListBuilder_ == null) {
-                  ensureDisableTransferPointInteractionListIsMutable();
-                  disableTransferPointInteractionList_.add(m);
-                } else {
-                  disableTransferPointInteractionListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1054,7 +1078,6 @@ public final class GetActivityInfoRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1063,7 +1086,7 @@ public final class GetActivityInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -1072,9 +1095,9 @@ public final class GetActivityInfoRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo> activityInfoList_ =
         java.util.Collections.emptyList();
       private void ensureActivityInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           activityInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo>(activityInfoList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1224,7 +1247,7 @@ public final class GetActivityInfoRspOuterClass {
       public Builder clearActivityInfoList() {
         if (activityInfoListBuilder_ == null) {
           activityInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           activityInfoListBuilder_.clear();
@@ -1301,7 +1324,7 @@ public final class GetActivityInfoRspOuterClass {
           activityInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo, emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder, emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfoOrBuilder>(
                   activityInfoList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           activityInfoList_ = null;
@@ -1311,10 +1334,10 @@ public final class GetActivityInfoRspOuterClass {
 
       private com.google.protobuf.Internal.IntList activatedSaleIdList_ = emptyIntList();
       private void ensureActivatedSaleIdListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           activatedSaleIdList_ = mutableCopy(activatedSaleIdList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated uint32 activated_sale_id_list = 1;</code>
@@ -1322,7 +1345,7 @@ public final class GetActivityInfoRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getActivatedSaleIdListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(activatedSaleIdList_) : activatedSaleIdList_;
       }
       /**
@@ -1348,7 +1371,6 @@ public final class GetActivityInfoRspOuterClass {
        */
       public Builder setActivatedSaleIdList(
           int index, int value) {
-        
         ensureActivatedSaleIdListIsMutable();
         activatedSaleIdList_.setInt(index, value);
         onChanged();
@@ -1360,7 +1382,6 @@ public final class GetActivityInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addActivatedSaleIdList(int value) {
-        
         ensureActivatedSaleIdListIsMutable();
         activatedSaleIdList_.addInt(value);
         onChanged();
@@ -1385,7 +1406,7 @@ public final class GetActivityInfoRspOuterClass {
        */
       public Builder clearActivatedSaleIdList() {
         activatedSaleIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1422,18 +1443,7 @@ public final class GetActivityInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetActivityInfoRsp(input, extensionRegistry);
       }
     };
 

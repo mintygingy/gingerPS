@@ -52,12 +52,14 @@ public final class MaterialDeleteReturnNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
      */
+
     int getUnk3300OFOKFKBALJDOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
      */
+
     int getUnk3300OFOKFKBALJDOrThrow(
         int key);
 
@@ -84,12 +86,14 @@ public final class MaterialDeleteReturnNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
      */
+
     int getUnk3300LAIHDKJAHAFOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
      */
+
     int getUnk3300LAIHDKJAHAFOrThrow(
         int key);
   }
@@ -131,6 +135,76 @@ public final class MaterialDeleteReturnNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MaterialDeleteReturnNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300LAIHDKJAHAF_ = com.google.protobuf.MapField.newMapField(
+                    Unk3300LAIHDKJAHAFDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              unk3300LAIHDKJAHAF__ = input.readMessage(
+                  Unk3300LAIHDKJAHAFDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              unk3300LAIHDKJAHAF_.getMutableMap().put(
+                  unk3300LAIHDKJAHAF__.getKey(), unk3300LAIHDKJAHAF__.getValue());
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300OFOKFKBALJD_ = com.google.protobuf.MapField.newMapField(
+                    Unk3300OFOKFKBALJDDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              unk3300OFOKFKBALJD__ = input.readMessage(
+                  Unk3300OFOKFKBALJDDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              unk3300OFOKFKBALJD_.getMutableMap().put(
+                  unk3300OFOKFKBALJD__.getKey(), unk3300OFOKFKBALJD__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MaterialDeleteReturnNotifyOuterClass.internal_static_MaterialDeleteReturnNotify_descriptor;
@@ -159,7 +233,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 7;
-    private int type_ = 0;
+    private int type_;
     /**
      * <code>.MaterialDeleteReturnType type = 7;</code>
      * @return The enum numeric value on the wire for type.
@@ -172,7 +246,8 @@ public final class MaterialDeleteReturnNotifyOuterClass {
      * @return The type.
      */
     @java.lang.Override public emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType getType() {
-      emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType result = emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.forNumber(type_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType result = emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.valueOf(type_);
       return result == null ? emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.UNRECOGNIZED : result;
     }
 
@@ -188,7 +263,6 @@ public final class MaterialDeleteReturnNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> unk3300OFOKFKBALJD_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -199,12 +273,14 @@ public final class MaterialDeleteReturnNotifyOuterClass {
       }
       return unk3300OFOKFKBALJD_;
     }
+
     public int getUnk3300OFOKFKBALJDCount() {
       return internalGetUnk3300OFOKFKBALJD().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
      */
+
     @java.lang.Override
     public boolean containsUnk3300OFOKFKBALJD(
         int key) {
@@ -223,6 +299,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300OFOKFKBALJDMap() {
       return internalGetUnk3300OFOKFKBALJD().getMap();
     }
@@ -230,6 +307,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
      */
     @java.lang.Override
+
     public int getUnk3300OFOKFKBALJDOrDefault(
         int key,
         int defaultValue) {
@@ -242,6 +320,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
      */
     @java.lang.Override
+
     public int getUnk3300OFOKFKBALJDOrThrow(
         int key) {
       
@@ -265,7 +344,6 @@ public final class MaterialDeleteReturnNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> unk3300LAIHDKJAHAF_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -276,12 +354,14 @@ public final class MaterialDeleteReturnNotifyOuterClass {
       }
       return unk3300LAIHDKJAHAF_;
     }
+
     public int getUnk3300LAIHDKJAHAFCount() {
       return internalGetUnk3300LAIHDKJAHAF().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
      */
+
     @java.lang.Override
     public boolean containsUnk3300LAIHDKJAHAF(
         int key) {
@@ -300,6 +380,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300LAIHDKJAHAFMap() {
       return internalGetUnk3300LAIHDKJAHAF().getMap();
     }
@@ -307,6 +388,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
      */
     @java.lang.Override
+
     public int getUnk3300LAIHDKJAHAFOrDefault(
         int key,
         int defaultValue) {
@@ -319,6 +401,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
      */
     @java.lang.Override
+
     public int getUnk3300LAIHDKJAHAFOrThrow(
         int key) {
       
@@ -359,7 +442,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
           internalGetUnk3300OFOKFKBALJD(),
           Unk3300OFOKFKBALJDDefaultEntryHolder.defaultEntry,
           12);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -392,7 +475,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(12, unk3300OFOKFKBALJD__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -412,7 +495,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
           other.internalGetUnk3300OFOKFKBALJD())) return false;
       if (!internalGetUnk3300LAIHDKJAHAF().equals(
           other.internalGetUnk3300LAIHDKJAHAF())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -433,7 +516,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         hash = (37 * hash) + UNK3300_LAIHDKJAHAF_FIELD_NUMBER;
         hash = (53 * hash) + internalGetUnk3300LAIHDKJAHAF().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -586,19 +669,24 @@ public final class MaterialDeleteReturnNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MaterialDeleteReturnNotifyOuterClass.MaterialDeleteReturnNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         type_ = 0;
+
         internalGetMutableUnk3300OFOKFKBALJD().clear();
         internalGetMutableUnk3300LAIHDKJAHAF().clear();
         return this;
@@ -627,24 +715,14 @@ public final class MaterialDeleteReturnNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MaterialDeleteReturnNotifyOuterClass.MaterialDeleteReturnNotify buildPartial() {
         emu.gingerps.net.proto.MaterialDeleteReturnNotifyOuterClass.MaterialDeleteReturnNotify result = new emu.gingerps.net.proto.MaterialDeleteReturnNotifyOuterClass.MaterialDeleteReturnNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.type_ = type_;
+        result.unk3300OFOKFKBALJD_ = internalGetUnk3300OFOKFKBALJD();
+        result.unk3300OFOKFKBALJD_.makeImmutable();
+        result.unk3300LAIHDKJAHAF_ = internalGetUnk3300LAIHDKJAHAF();
+        result.unk3300LAIHDKJAHAF_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MaterialDeleteReturnNotifyOuterClass.MaterialDeleteReturnNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.type_ = type_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300OFOKFKBALJD_ = internalGetUnk3300OFOKFKBALJD();
-          result.unk3300OFOKFKBALJD_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300LAIHDKJAHAF_ = internalGetUnk3300LAIHDKJAHAF();
-          result.unk3300LAIHDKJAHAF_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -696,11 +774,9 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         }
         internalGetMutableUnk3300OFOKFKBALJD().mergeFrom(
             other.internalGetUnk3300OFOKFKBALJD());
-        bitField0_ |= 0x00000002;
         internalGetMutableUnk3300LAIHDKJAHAF().mergeFrom(
             other.internalGetUnk3300LAIHDKJAHAF());
-        bitField0_ |= 0x00000004;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -715,53 +791,17 @@ public final class MaterialDeleteReturnNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MaterialDeleteReturnNotifyOuterClass.MaterialDeleteReturnNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                type_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 66: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                unk3300LAIHDKJAHAF__ = input.readMessage(
-                    Unk3300LAIHDKJAHAFDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableUnk3300LAIHDKJAHAF().getMutableMap().put(
-                    unk3300LAIHDKJAHAF__.getKey(), unk3300LAIHDKJAHAF__.getValue());
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 66
-              case 98: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                unk3300OFOKFKBALJD__ = input.readMessage(
-                    Unk3300OFOKFKBALJDDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableUnk3300OFOKFKBALJD().getMutableMap().put(
-                    unk3300OFOKFKBALJD__.getKey(), unk3300OFOKFKBALJD__.getValue());
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MaterialDeleteReturnNotifyOuterClass.MaterialDeleteReturnNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -780,8 +820,8 @@ public final class MaterialDeleteReturnNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+        
         type_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -791,7 +831,8 @@ public final class MaterialDeleteReturnNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType getType() {
-        emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType result = emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.forNumber(type_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType result = emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.valueOf(type_);
         return result == null ? emu.gingerps.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.UNRECOGNIZED : result;
       }
       /**
@@ -803,7 +844,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -813,7 +854,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         type_ = 0;
         onChanged();
         return this;
@@ -822,7 +863,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> unk3300OFOKFKBALJD_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetUnk3300OFOKFKBALJD() {
+      internalGetUnk3300OFOKFKBALJD() {
         if (unk3300OFOKFKBALJD_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300OFOKFKBALJDDefaultEntryHolder.defaultEntry);
@@ -830,7 +871,8 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         return unk3300OFOKFKBALJD_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableUnk3300OFOKFKBALJD() {
+      internalGetMutableUnk3300OFOKFKBALJD() {
+        onChanged();;
         if (unk3300OFOKFKBALJD_ == null) {
           unk3300OFOKFKBALJD_ = com.google.protobuf.MapField.newMapField(
               Unk3300OFOKFKBALJDDefaultEntryHolder.defaultEntry);
@@ -838,16 +880,16 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         if (!unk3300OFOKFKBALJD_.isMutable()) {
           unk3300OFOKFKBALJD_ = unk3300OFOKFKBALJD_.copy();
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
         return unk3300OFOKFKBALJD_;
       }
+
       public int getUnk3300OFOKFKBALJDCount() {
         return internalGetUnk3300OFOKFKBALJD().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
        */
+
       @java.lang.Override
       public boolean containsUnk3300OFOKFKBALJD(
           int key) {
@@ -866,6 +908,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300OFOKFKBALJDMap() {
         return internalGetUnk3300OFOKFKBALJD().getMap();
       }
@@ -873,6 +916,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
        */
       @java.lang.Override
+
       public int getUnk3300OFOKFKBALJDOrDefault(
           int key,
           int defaultValue) {
@@ -885,6 +929,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
        */
       @java.lang.Override
+
       public int getUnk3300OFOKFKBALJDOrThrow(
           int key) {
         
@@ -895,8 +940,8 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearUnk3300OFOKFKBALJD() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableUnk3300OFOKFKBALJD().getMutableMap()
             .clear();
         return this;
@@ -904,6 +949,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
        */
+
       public Builder removeUnk3300OFOKFKBALJD(
           int key) {
         
@@ -916,8 +962,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableUnk3300OFOKFKBALJD() {
-        bitField0_ |= 0x00000002;
+      getMutableUnk3300OFOKFKBALJD() {
         return internalGetMutableUnk3300OFOKFKBALJD().getMutableMap();
       }
       /**
@@ -930,24 +975,23 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         
         internalGetMutableUnk3300OFOKFKBALJD().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_OFOKFKBALJD = 12;</code>
        */
+
       public Builder putAllUnk3300OFOKFKBALJD(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableUnk3300OFOKFKBALJD().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000002;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> unk3300LAIHDKJAHAF_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetUnk3300LAIHDKJAHAF() {
+      internalGetUnk3300LAIHDKJAHAF() {
         if (unk3300LAIHDKJAHAF_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300LAIHDKJAHAFDefaultEntryHolder.defaultEntry);
@@ -955,7 +999,8 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         return unk3300LAIHDKJAHAF_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableUnk3300LAIHDKJAHAF() {
+      internalGetMutableUnk3300LAIHDKJAHAF() {
+        onChanged();;
         if (unk3300LAIHDKJAHAF_ == null) {
           unk3300LAIHDKJAHAF_ = com.google.protobuf.MapField.newMapField(
               Unk3300LAIHDKJAHAFDefaultEntryHolder.defaultEntry);
@@ -963,16 +1008,16 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         if (!unk3300LAIHDKJAHAF_.isMutable()) {
           unk3300LAIHDKJAHAF_ = unk3300LAIHDKJAHAF_.copy();
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
         return unk3300LAIHDKJAHAF_;
       }
+
       public int getUnk3300LAIHDKJAHAFCount() {
         return internalGetUnk3300LAIHDKJAHAF().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
        */
+
       @java.lang.Override
       public boolean containsUnk3300LAIHDKJAHAF(
           int key) {
@@ -991,6 +1036,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300LAIHDKJAHAFMap() {
         return internalGetUnk3300LAIHDKJAHAF().getMap();
       }
@@ -998,6 +1044,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
        */
       @java.lang.Override
+
       public int getUnk3300LAIHDKJAHAFOrDefault(
           int key,
           int defaultValue) {
@@ -1010,6 +1057,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
        */
       @java.lang.Override
+
       public int getUnk3300LAIHDKJAHAFOrThrow(
           int key) {
         
@@ -1020,8 +1068,8 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearUnk3300LAIHDKJAHAF() {
-        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableUnk3300LAIHDKJAHAF().getMutableMap()
             .clear();
         return this;
@@ -1029,6 +1077,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
        */
+
       public Builder removeUnk3300LAIHDKJAHAF(
           int key) {
         
@@ -1041,8 +1090,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableUnk3300LAIHDKJAHAF() {
-        bitField0_ |= 0x00000004;
+      getMutableUnk3300LAIHDKJAHAF() {
         return internalGetMutableUnk3300LAIHDKJAHAF().getMutableMap();
       }
       /**
@@ -1055,17 +1103,16 @@ public final class MaterialDeleteReturnNotifyOuterClass {
         
         internalGetMutableUnk3300LAIHDKJAHAF().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_LAIHDKJAHAF = 8;</code>
        */
+
       public Builder putAllUnk3300LAIHDKJAHAF(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableUnk3300LAIHDKJAHAF().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000004;
         return this;
       }
       @java.lang.Override
@@ -1101,18 +1148,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MaterialDeleteReturnNotify(input, extensionRegistry);
       }
     };
 

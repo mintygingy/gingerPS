@@ -75,6 +75,68 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SceneGalleryEffigyChallengeV2Info(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              unk3300MICPCKIOEJA_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              unk3300EOGAPBOFHOP_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              unk3300MBHBNIPEPNJ_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              unk3300BMPCKGJAGPE_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              unk3300AIEEGIBMOFH_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.internal_static_SceneGalleryEffigyChallengeV2Info_descriptor;
@@ -89,7 +151,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
     }
 
     public static final int UNK3300_MICPCKIOEJA_FIELD_NUMBER = 1;
-    private int unk3300MICPCKIOEJA_ = 0;
+    private int unk3300MICPCKIOEJA_;
     /**
      * <code>uint32 Unk3300_MICPCKIOEJA = 1;</code>
      * @return The unk3300MICPCKIOEJA.
@@ -100,7 +162,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
     }
 
     public static final int UNK3300_BMPCKGJAGPE_FIELD_NUMBER = 8;
-    private int unk3300BMPCKGJAGPE_ = 0;
+    private int unk3300BMPCKGJAGPE_;
     /**
      * <code>uint32 Unk3300_BMPCKGJAGPE = 8;</code>
      * @return The unk3300BMPCKGJAGPE.
@@ -111,7 +173,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
     }
 
     public static final int UNK3300_EOGAPBOFHOP_FIELD_NUMBER = 2;
-    private int unk3300EOGAPBOFHOP_ = 0;
+    private int unk3300EOGAPBOFHOP_;
     /**
      * <code>uint32 Unk3300_EOGAPBOFHOP = 2;</code>
      * @return The unk3300EOGAPBOFHOP.
@@ -122,7 +184,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
     }
 
     public static final int UNK3300_MBHBNIPEPNJ_FIELD_NUMBER = 7;
-    private int unk3300MBHBNIPEPNJ_ = 0;
+    private int unk3300MBHBNIPEPNJ_;
     /**
      * <code>uint32 Unk3300_MBHBNIPEPNJ = 7;</code>
      * @return The unk3300MBHBNIPEPNJ.
@@ -133,7 +195,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
     }
 
     public static final int UNK3300_AIEEGIBMOFH_FIELD_NUMBER = 11;
-    private int unk3300AIEEGIBMOFH_ = 0;
+    private int unk3300AIEEGIBMOFH_;
     /**
      * <code>uint32 Unk3300_AIEEGIBMOFH = 11;</code>
      * @return The unk3300AIEEGIBMOFH.
@@ -172,7 +234,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
       if (unk3300AIEEGIBMOFH_ != 0) {
         output.writeUInt32(11, unk3300AIEEGIBMOFH_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -201,7 +263,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, unk3300AIEEGIBMOFH_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +288,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
           != other.getUnk3300MBHBNIPEPNJ()) return false;
       if (getUnk3300AIEEGIBMOFH()
           != other.getUnk3300AIEEGIBMOFH()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -247,7 +309,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
       hash = (53 * hash) + getUnk3300MBHBNIPEPNJ();
       hash = (37 * hash) + UNK3300_AIEEGIBMOFH_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300AIEEGIBMOFH();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -364,23 +426,32 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.SceneGalleryEffigyChallengeV2Info.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300MICPCKIOEJA_ = 0;
+
         unk3300BMPCKGJAGPE_ = 0;
+
         unk3300EOGAPBOFHOP_ = 0;
+
         unk3300MBHBNIPEPNJ_ = 0;
+
         unk3300AIEEGIBMOFH_ = 0;
+
         return this;
       }
 
@@ -407,28 +478,13 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.SceneGalleryEffigyChallengeV2Info buildPartial() {
         emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.SceneGalleryEffigyChallengeV2Info result = new emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.SceneGalleryEffigyChallengeV2Info(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.unk3300MICPCKIOEJA_ = unk3300MICPCKIOEJA_;
+        result.unk3300BMPCKGJAGPE_ = unk3300BMPCKGJAGPE_;
+        result.unk3300EOGAPBOFHOP_ = unk3300EOGAPBOFHOP_;
+        result.unk3300MBHBNIPEPNJ_ = unk3300MBHBNIPEPNJ_;
+        result.unk3300AIEEGIBMOFH_ = unk3300AIEEGIBMOFH_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.SceneGalleryEffigyChallengeV2Info result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300MICPCKIOEJA_ = unk3300MICPCKIOEJA_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300BMPCKGJAGPE_ = unk3300BMPCKGJAGPE_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300EOGAPBOFHOP_ = unk3300EOGAPBOFHOP_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300MBHBNIPEPNJ_ = unk3300MBHBNIPEPNJ_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300AIEEGIBMOFH_ = unk3300AIEEGIBMOFH_;
-        }
       }
 
       @java.lang.Override
@@ -490,7 +546,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
         if (other.getUnk3300AIEEGIBMOFH() != 0) {
           setUnk3300AIEEGIBMOFH(other.getUnk3300AIEEGIBMOFH());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -505,58 +561,19 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.SceneGalleryEffigyChallengeV2Info parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                unk3300MICPCKIOEJA_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                unk3300EOGAPBOFHOP_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 56: {
-                unk3300MBHBNIPEPNJ_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 64: {
-                unk3300BMPCKGJAGPE_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 88: {
-                unk3300AIEEGIBMOFH_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.SceneGalleryEffigyChallengeV2Info) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int unk3300MICPCKIOEJA_ ;
       /**
@@ -575,7 +592,6 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
       public Builder setUnk3300MICPCKIOEJA(int value) {
         
         unk3300MICPCKIOEJA_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -584,7 +600,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MICPCKIOEJA() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300MICPCKIOEJA_ = 0;
         onChanged();
         return this;
@@ -607,7 +623,6 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
       public Builder setUnk3300BMPCKGJAGPE(int value) {
         
         unk3300BMPCKGJAGPE_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -616,7 +631,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BMPCKGJAGPE() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300BMPCKGJAGPE_ = 0;
         onChanged();
         return this;
@@ -639,7 +654,6 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
       public Builder setUnk3300EOGAPBOFHOP(int value) {
         
         unk3300EOGAPBOFHOP_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -648,7 +662,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EOGAPBOFHOP() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300EOGAPBOFHOP_ = 0;
         onChanged();
         return this;
@@ -671,7 +685,6 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
       public Builder setUnk3300MBHBNIPEPNJ(int value) {
         
         unk3300MBHBNIPEPNJ_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -680,7 +693,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MBHBNIPEPNJ() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300MBHBNIPEPNJ_ = 0;
         onChanged();
         return this;
@@ -703,7 +716,6 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
       public Builder setUnk3300AIEEGIBMOFH(int value) {
         
         unk3300AIEEGIBMOFH_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -712,7 +724,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AIEEGIBMOFH() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300AIEEGIBMOFH_ = 0;
         onChanged();
         return this;
@@ -750,18 +762,7 @@ public final class SceneGalleryEffigyChallengeV2InfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SceneGalleryEffigyChallengeV2Info(input, extensionRegistry);
       }
     };
 

@@ -76,6 +76,61 @@ public final class GCGSkillLimitsInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGSkillLimitsInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              skillId_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                limitsList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGLimitsInfoOuterClass.GCGLimitsInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              limitsList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGLimitsInfoOuterClass.GCGLimitsInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          limitsList_ = java.util.Collections.unmodifiableList(limitsList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.internal_static_GCGSkillLimitsInfo_descriptor;
@@ -90,7 +145,7 @@ public final class GCGSkillLimitsInfoOuterClass {
     }
 
     public static final int SKILL_ID_FIELD_NUMBER = 1;
-    private int skillId_ = 0;
+    private int skillId_;
     /**
      * <code>uint32 skill_id = 1;</code>
      * @return The skillId.
@@ -101,7 +156,6 @@ public final class GCGSkillLimitsInfoOuterClass {
     }
 
     public static final int LIMITS_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGLimitsInfoOuterClass.GCGLimitsInfo> limitsList_;
     /**
      * <code>repeated .GCGLimitsInfo limits_list = 7;</code>
@@ -161,7 +215,7 @@ public final class GCGSkillLimitsInfoOuterClass {
       for (int i = 0; i < limitsList_.size(); i++) {
         output.writeMessage(7, limitsList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -178,7 +232,7 @@ public final class GCGSkillLimitsInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, limitsList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +251,7 @@ public final class GCGSkillLimitsInfoOuterClass {
           != other.getSkillId()) return false;
       if (!getLimitsListList()
           .equals(other.getLimitsListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -214,7 +268,7 @@ public final class GCGSkillLimitsInfoOuterClass {
         hash = (37 * hash) + LIMITS_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getLimitsListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +385,31 @@ public final class GCGSkillLimitsInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getLimitsListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         skillId_ = 0;
+
         if (limitsListBuilder_ == null) {
           limitsList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          limitsList_ = null;
           limitsListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -377,29 +436,19 @@ public final class GCGSkillLimitsInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo buildPartial() {
         emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo result = new emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.skillId_ = skillId_;
         if (limitsListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             limitsList_ = java.util.Collections.unmodifiableList(limitsList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.limitsList_ = limitsList_;
         } else {
           result.limitsList_ = limitsListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.skillId_ = skillId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -453,7 +502,7 @@ public final class GCGSkillLimitsInfoOuterClass {
           if (!other.limitsList_.isEmpty()) {
             if (limitsList_.isEmpty()) {
               limitsList_ = other.limitsList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureLimitsListIsMutable();
               limitsList_.addAll(other.limitsList_);
@@ -466,7 +515,7 @@ public final class GCGSkillLimitsInfoOuterClass {
               limitsListBuilder_.dispose();
               limitsListBuilder_ = null;
               limitsList_ = other.limitsList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               limitsListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getLimitsListFieldBuilder() : null;
@@ -475,7 +524,7 @@ public final class GCGSkillLimitsInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,48 +539,17 @@ public final class GCGSkillLimitsInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                skillId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 58: {
-                emu.gingerps.net.proto.GCGLimitsInfoOuterClass.GCGLimitsInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGLimitsInfoOuterClass.GCGLimitsInfo.parser(),
-                        extensionRegistry);
-                if (limitsListBuilder_ == null) {
-                  ensureLimitsListIsMutable();
-                  limitsList_.add(m);
-                } else {
-                  limitsListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -553,7 +571,6 @@ public final class GCGSkillLimitsInfoOuterClass {
       public Builder setSkillId(int value) {
         
         skillId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +579,7 @@ public final class GCGSkillLimitsInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         skillId_ = 0;
         onChanged();
         return this;
@@ -571,9 +588,9 @@ public final class GCGSkillLimitsInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGLimitsInfoOuterClass.GCGLimitsInfo> limitsList_ =
         java.util.Collections.emptyList();
       private void ensureLimitsListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           limitsList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGLimitsInfoOuterClass.GCGLimitsInfo>(limitsList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -723,7 +740,7 @@ public final class GCGSkillLimitsInfoOuterClass {
       public Builder clearLimitsList() {
         if (limitsListBuilder_ == null) {
           limitsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           limitsListBuilder_.clear();
@@ -800,7 +817,7 @@ public final class GCGSkillLimitsInfoOuterClass {
           limitsListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGLimitsInfoOuterClass.GCGLimitsInfo, emu.gingerps.net.proto.GCGLimitsInfoOuterClass.GCGLimitsInfo.Builder, emu.gingerps.net.proto.GCGLimitsInfoOuterClass.GCGLimitsInfoOrBuilder>(
                   limitsList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           limitsList_ = null;
@@ -840,18 +857,7 @@ public final class GCGSkillLimitsInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGSkillLimitsInfo(input, extensionRegistry);
       }
     };
 

@@ -91,6 +91,79 @@ public final class CheckUgcUpdateRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CheckUgcUpdateRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                updateUgcGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              updateUgcGuidList_.addLong(input.readUInt64());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                updateUgcGuidList_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                updateUgcGuidList_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              ugcType_ = rawValue;
+              break;
+            }
+            case 56: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          updateUgcGuidList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CheckUgcUpdateRspOuterClass.internal_static_CheckUgcUpdateRsp_descriptor;
@@ -105,7 +178,7 @@ public final class CheckUgcUpdateRspOuterClass {
     }
 
     public static final int UGC_TYPE_FIELD_NUMBER = 6;
-    private int ugcType_ = 0;
+    private int ugcType_;
     /**
      * <code>.UgcType ugc_type = 6;</code>
      * @return The enum numeric value on the wire for ugcType.
@@ -118,12 +191,12 @@ public final class CheckUgcUpdateRspOuterClass {
      * @return The ugcType.
      */
     @java.lang.Override public emu.gingerps.net.proto.UgcTypeOuterClass.UgcType getUgcType() {
-      emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.forNumber(ugcType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.valueOf(ugcType_);
       return result == null ? emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
     }
 
     public static final int UPDATE_UGC_GUID_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList updateUgcGuidList_;
     /**
      * <code>repeated uint64 update_ugc_guid_list = 3;</code>
@@ -152,7 +225,7 @@ public final class CheckUgcUpdateRspOuterClass {
     private int updateUgcGuidListMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
@@ -190,7 +263,7 @@ public final class CheckUgcUpdateRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(7, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -221,7 +294,7 @@ public final class CheckUgcUpdateRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -241,7 +314,7 @@ public final class CheckUgcUpdateRspOuterClass {
           .equals(other.getUpdateUgcGuidListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -260,7 +333,7 @@ public final class CheckUgcUpdateRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -387,21 +460,28 @@ public final class CheckUgcUpdateRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.CheckUgcUpdateRspOuterClass.CheckUgcUpdateRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         ugcType_ = 0;
+
         updateUgcGuidList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
+
         return this;
       }
 
@@ -428,28 +508,16 @@ public final class CheckUgcUpdateRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CheckUgcUpdateRspOuterClass.CheckUgcUpdateRsp buildPartial() {
         emu.gingerps.net.proto.CheckUgcUpdateRspOuterClass.CheckUgcUpdateRsp result = new emu.gingerps.net.proto.CheckUgcUpdateRspOuterClass.CheckUgcUpdateRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CheckUgcUpdateRspOuterClass.CheckUgcUpdateRsp result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.ugcType_ = ugcType_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           updateUgcGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.updateUgcGuidList_ = updateUgcGuidList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CheckUgcUpdateRspOuterClass.CheckUgcUpdateRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.ugcType_ = ugcType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        result.retcode_ = retcode_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -502,7 +570,7 @@ public final class CheckUgcUpdateRspOuterClass {
         if (!other.updateUgcGuidList_.isEmpty()) {
           if (updateUgcGuidList_.isEmpty()) {
             updateUgcGuidList_ = other.updateUgcGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureUpdateUgcGuidListIsMutable();
             updateUgcGuidList_.addAll(other.updateUgcGuidList_);
@@ -512,7 +580,7 @@ public final class CheckUgcUpdateRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -527,56 +595,17 @@ public final class CheckUgcUpdateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CheckUgcUpdateRspOuterClass.CheckUgcUpdateRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                long v = input.readUInt64();
-                ensureUpdateUgcGuidListIsMutable();
-                updateUgcGuidList_.addLong(v);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUpdateUgcGuidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  updateUgcGuidList_.addLong(input.readUInt64());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 26
-              case 48: {
-                ugcType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 56: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CheckUgcUpdateRspOuterClass.CheckUgcUpdateRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -595,8 +624,8 @@ public final class CheckUgcUpdateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUgcTypeValue(int value) {
+        
         ugcType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -606,7 +635,8 @@ public final class CheckUgcUpdateRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.UgcTypeOuterClass.UgcType getUgcType() {
-        emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.forNumber(ugcType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.valueOf(ugcType_);
         return result == null ? emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
       }
       /**
@@ -618,7 +648,7 @@ public final class CheckUgcUpdateRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         ugcType_ = value.getNumber();
         onChanged();
         return this;
@@ -628,7 +658,7 @@ public final class CheckUgcUpdateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUgcType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         ugcType_ = 0;
         onChanged();
         return this;
@@ -636,10 +666,10 @@ public final class CheckUgcUpdateRspOuterClass {
 
       private com.google.protobuf.Internal.LongList updateUgcGuidList_ = emptyLongList();
       private void ensureUpdateUgcGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           updateUgcGuidList_ = mutableCopy(updateUgcGuidList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint64 update_ugc_guid_list = 3;</code>
@@ -647,7 +677,7 @@ public final class CheckUgcUpdateRspOuterClass {
        */
       public java.util.List<java.lang.Long>
           getUpdateUgcGuidListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(updateUgcGuidList_) : updateUgcGuidList_;
       }
       /**
@@ -673,7 +703,6 @@ public final class CheckUgcUpdateRspOuterClass {
        */
       public Builder setUpdateUgcGuidList(
           int index, long value) {
-        
         ensureUpdateUgcGuidListIsMutable();
         updateUgcGuidList_.setLong(index, value);
         onChanged();
@@ -685,7 +714,6 @@ public final class CheckUgcUpdateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUpdateUgcGuidList(long value) {
-        
         ensureUpdateUgcGuidListIsMutable();
         updateUgcGuidList_.addLong(value);
         onChanged();
@@ -710,7 +738,7 @@ public final class CheckUgcUpdateRspOuterClass {
        */
       public Builder clearUpdateUgcGuidList() {
         updateUgcGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -732,7 +760,6 @@ public final class CheckUgcUpdateRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -741,7 +768,7 @@ public final class CheckUgcUpdateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -779,18 +806,7 @@ public final class CheckUgcUpdateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CheckUgcUpdateRsp(input, extensionRegistry);
       }
     };
 

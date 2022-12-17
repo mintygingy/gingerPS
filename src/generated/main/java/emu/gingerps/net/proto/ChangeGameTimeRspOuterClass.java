@@ -73,6 +73,58 @@ public final class ChangeGameTimeRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ChangeGameTimeRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              extraDays_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              curGameTime_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChangeGameTimeRspOuterClass.internal_static_ChangeGameTimeRsp_descriptor;
@@ -87,7 +139,7 @@ public final class ChangeGameTimeRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
@@ -98,7 +150,7 @@ public final class ChangeGameTimeRspOuterClass {
     }
 
     public static final int EXTRA_DAYS_FIELD_NUMBER = 2;
-    private int extraDays_ = 0;
+    private int extraDays_;
     /**
      * <code>uint32 extra_days = 2;</code>
      * @return The extraDays.
@@ -109,7 +161,7 @@ public final class ChangeGameTimeRspOuterClass {
     }
 
     public static final int CUR_GAME_TIME_FIELD_NUMBER = 8;
-    private int curGameTime_ = 0;
+    private int curGameTime_;
     /**
      * <code>uint32 cur_game_time = 8;</code>
      * @return The curGameTime.
@@ -142,7 +194,7 @@ public final class ChangeGameTimeRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(10, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +215,7 @@ public final class ChangeGameTimeRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(10, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -184,7 +236,7 @@ public final class ChangeGameTimeRspOuterClass {
           != other.getExtraDays()) return false;
       if (getCurGameTime()
           != other.getCurGameTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -201,7 +253,7 @@ public final class ChangeGameTimeRspOuterClass {
       hash = (53 * hash) + getExtraDays();
       hash = (37 * hash) + CUR_GAME_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCurGameTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -328,21 +380,28 @@ public final class ChangeGameTimeRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         extraDays_ = 0;
+
         curGameTime_ = 0;
+
         return this;
       }
 
@@ -369,22 +428,11 @@ public final class ChangeGameTimeRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp buildPartial() {
         emu.gingerps.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp result = new emu.gingerps.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        result.extraDays_ = extraDays_;
+        result.curGameTime_ = curGameTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.extraDays_ = extraDays_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curGameTime_ = curGameTime_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +488,7 @@ public final class ChangeGameTimeRspOuterClass {
         if (other.getCurGameTime() != 0) {
           setCurGameTime(other.getCurGameTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,48 +503,19 @@ public final class ChangeGameTimeRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                extraDays_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 64: {
-                curGameTime_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 80: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -515,7 +534,6 @@ public final class ChangeGameTimeRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +542,7 @@ public final class ChangeGameTimeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -547,7 +565,6 @@ public final class ChangeGameTimeRspOuterClass {
       public Builder setExtraDays(int value) {
         
         extraDays_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -556,7 +573,7 @@ public final class ChangeGameTimeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExtraDays() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         extraDays_ = 0;
         onChanged();
         return this;
@@ -579,7 +596,6 @@ public final class ChangeGameTimeRspOuterClass {
       public Builder setCurGameTime(int value) {
         
         curGameTime_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -588,7 +604,7 @@ public final class ChangeGameTimeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurGameTime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curGameTime_ = 0;
         onChanged();
         return this;
@@ -626,18 +642,7 @@ public final class ChangeGameTimeRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ChangeGameTimeRsp(input, extensionRegistry);
       }
     };
 

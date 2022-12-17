@@ -121,6 +121,73 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ReportTrackingIOInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rydevicetype_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300PIBFPDAMJLE_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300CNPIGDOEJPB_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300DJHKHEFPCDK_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientTz_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ReportTrackingIOInfoNotifyOuterClass.internal_static_ReportTrackingIOInfoNotify_descriptor;
@@ -135,8 +202,7 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
     }
 
     public static final int CLIENT_TZ_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object clientTz_ = "";
+    private volatile java.lang.Object clientTz_;
     /**
      * <code>string client_tz = 13;</code>
      * @return The clientTz.
@@ -174,8 +240,7 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_DJHKHEFPCDK_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object unk3300DJHKHEFPCDK_ = "";
+    private volatile java.lang.Object unk3300DJHKHEFPCDK_;
     /**
      * <code>string Unk3300_DJHKHEFPCDK = 10;</code>
      * @return The unk3300DJHKHEFPCDK.
@@ -213,8 +278,7 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_PIBFPDAMJLE_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object unk3300PIBFPDAMJLE_ = "";
+    private volatile java.lang.Object unk3300PIBFPDAMJLE_;
     /**
      * <code>string Unk3300_PIBFPDAMJLE = 6;</code>
      * @return The unk3300PIBFPDAMJLE.
@@ -252,8 +316,7 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_CNPIGDOEJPB_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object unk3300CNPIGDOEJPB_ = "";
+    private volatile java.lang.Object unk3300CNPIGDOEJPB_;
     /**
      * <code>string Unk3300_CNPIGDOEJPB = 8;</code>
      * @return The unk3300CNPIGDOEJPB.
@@ -291,8 +354,7 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
     }
 
     public static final int RYDEVICETYPE_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object rydevicetype_ = "";
+    private volatile java.lang.Object rydevicetype_;
     /**
      * <code>string rydevicetype = 3;</code>
      * @return The rydevicetype.
@@ -358,7 +420,7 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientTz_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, clientTz_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -382,7 +444,7 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientTz_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, clientTz_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -407,7 +469,7 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
           .equals(other.getUnk3300CNPIGDOEJPB())) return false;
       if (!getRydevicetype()
           .equals(other.getRydevicetype())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -428,7 +490,7 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
       hash = (53 * hash) + getUnk3300CNPIGDOEJPB().hashCode();
       hash = (37 * hash) + RYDEVICETYPE_FIELD_NUMBER;
       hash = (53 * hash) + getRydevicetype().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -556,23 +618,32 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ReportTrackingIOInfoNotifyOuterClass.ReportTrackingIOInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         clientTz_ = "";
+
         unk3300DJHKHEFPCDK_ = "";
+
         unk3300PIBFPDAMJLE_ = "";
+
         unk3300CNPIGDOEJPB_ = "";
+
         rydevicetype_ = "";
+
         return this;
       }
 
@@ -599,28 +670,13 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ReportTrackingIOInfoNotifyOuterClass.ReportTrackingIOInfoNotify buildPartial() {
         emu.gingerps.net.proto.ReportTrackingIOInfoNotifyOuterClass.ReportTrackingIOInfoNotify result = new emu.gingerps.net.proto.ReportTrackingIOInfoNotifyOuterClass.ReportTrackingIOInfoNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.clientTz_ = clientTz_;
+        result.unk3300DJHKHEFPCDK_ = unk3300DJHKHEFPCDK_;
+        result.unk3300PIBFPDAMJLE_ = unk3300PIBFPDAMJLE_;
+        result.unk3300CNPIGDOEJPB_ = unk3300CNPIGDOEJPB_;
+        result.rydevicetype_ = rydevicetype_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ReportTrackingIOInfoNotifyOuterClass.ReportTrackingIOInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.clientTz_ = clientTz_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300DJHKHEFPCDK_ = unk3300DJHKHEFPCDK_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300PIBFPDAMJLE_ = unk3300PIBFPDAMJLE_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300CNPIGDOEJPB_ = unk3300CNPIGDOEJPB_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.rydevicetype_ = rydevicetype_;
-        }
       }
 
       @java.lang.Override
@@ -669,30 +725,25 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
         if (other == emu.gingerps.net.proto.ReportTrackingIOInfoNotifyOuterClass.ReportTrackingIOInfoNotify.getDefaultInstance()) return this;
         if (!other.getClientTz().isEmpty()) {
           clientTz_ = other.clientTz_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getUnk3300DJHKHEFPCDK().isEmpty()) {
           unk3300DJHKHEFPCDK_ = other.unk3300DJHKHEFPCDK_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getUnk3300PIBFPDAMJLE().isEmpty()) {
           unk3300PIBFPDAMJLE_ = other.unk3300PIBFPDAMJLE_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getUnk3300CNPIGDOEJPB().isEmpty()) {
           unk3300CNPIGDOEJPB_ = other.unk3300CNPIGDOEJPB_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getRydevicetype().isEmpty()) {
           rydevicetype_ = other.rydevicetype_;
-          bitField0_ |= 0x00000010;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -707,58 +758,19 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ReportTrackingIOInfoNotifyOuterClass.ReportTrackingIOInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                rydevicetype_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 26
-              case 50: {
-                unk3300PIBFPDAMJLE_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 50
-              case 66: {
-                unk3300CNPIGDOEJPB_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 66
-              case 82: {
-                unk3300DJHKHEFPCDK_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 82
-              case 106: {
-                clientTz_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ReportTrackingIOInfoNotifyOuterClass.ReportTrackingIOInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object clientTz_ = "";
       /**
@@ -801,9 +813,11 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        */
       public Builder setClientTz(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         clientTz_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -812,8 +826,8 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientTz() {
+        
         clientTz_ = getDefaultInstance().getClientTz();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -824,10 +838,12 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        */
       public Builder setClientTzBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         clientTz_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -873,9 +889,11 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        */
       public Builder setUnk3300DJHKHEFPCDK(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         unk3300DJHKHEFPCDK_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -884,8 +902,8 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DJHKHEFPCDK() {
+        
         unk3300DJHKHEFPCDK_ = getDefaultInstance().getUnk3300DJHKHEFPCDK();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -896,10 +914,12 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        */
       public Builder setUnk3300DJHKHEFPCDKBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         unk3300DJHKHEFPCDK_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -945,9 +965,11 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        */
       public Builder setUnk3300PIBFPDAMJLE(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         unk3300PIBFPDAMJLE_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -956,8 +978,8 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PIBFPDAMJLE() {
+        
         unk3300PIBFPDAMJLE_ = getDefaultInstance().getUnk3300PIBFPDAMJLE();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -968,10 +990,12 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        */
       public Builder setUnk3300PIBFPDAMJLEBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         unk3300PIBFPDAMJLE_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1017,9 +1041,11 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        */
       public Builder setUnk3300CNPIGDOEJPB(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         unk3300CNPIGDOEJPB_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1028,8 +1054,8 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CNPIGDOEJPB() {
+        
         unk3300CNPIGDOEJPB_ = getDefaultInstance().getUnk3300CNPIGDOEJPB();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1040,10 +1066,12 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        */
       public Builder setUnk3300CNPIGDOEJPBBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         unk3300CNPIGDOEJPB_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1089,9 +1117,11 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        */
       public Builder setRydevicetype(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         rydevicetype_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1100,8 +1130,8 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRydevicetype() {
+        
         rydevicetype_ = getDefaultInstance().getRydevicetype();
-        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1112,10 +1142,12 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
        */
       public Builder setRydevicetypeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         rydevicetype_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1152,18 +1184,7 @@ public final class ReportTrackingIOInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ReportTrackingIOInfoNotify(input, extensionRegistry);
       }
     };
 

@@ -69,6 +69,63 @@ public final class ActivityWatcherInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ActivityWatcherInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              totalProgress_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              isTakenReward_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              curProgress_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              watcherId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.internal_static_ActivityWatcherInfo_descriptor;
@@ -83,7 +140,7 @@ public final class ActivityWatcherInfoOuterClass {
     }
 
     public static final int IS_TAKEN_REWARD_FIELD_NUMBER = 2;
-    private boolean isTakenReward_ = false;
+    private boolean isTakenReward_;
     /**
      * <code>bool is_taken_reward = 2;</code>
      * @return The isTakenReward.
@@ -94,7 +151,7 @@ public final class ActivityWatcherInfoOuterClass {
     }
 
     public static final int TOTAL_PROGRESS_FIELD_NUMBER = 1;
-    private int totalProgress_ = 0;
+    private int totalProgress_;
     /**
      * <code>uint32 total_progress = 1;</code>
      * @return The totalProgress.
@@ -105,7 +162,7 @@ public final class ActivityWatcherInfoOuterClass {
     }
 
     public static final int CUR_PROGRESS_FIELD_NUMBER = 8;
-    private int curProgress_ = 0;
+    private int curProgress_;
     /**
      * <code>uint32 cur_progress = 8;</code>
      * @return The curProgress.
@@ -116,7 +173,7 @@ public final class ActivityWatcherInfoOuterClass {
     }
 
     public static final int WATCHER_ID_FIELD_NUMBER = 14;
-    private int watcherId_ = 0;
+    private int watcherId_;
     /**
      * <code>uint32 watcher_id = 14;</code>
      * @return The watcherId.
@@ -152,7 +209,7 @@ public final class ActivityWatcherInfoOuterClass {
       if (watcherId_ != 0) {
         output.writeUInt32(14, watcherId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class ActivityWatcherInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, watcherId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -200,7 +257,7 @@ public final class ActivityWatcherInfoOuterClass {
           != other.getCurProgress()) return false;
       if (getWatcherId()
           != other.getWatcherId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -220,7 +277,7 @@ public final class ActivityWatcherInfoOuterClass {
       hash = (53 * hash) + getCurProgress();
       hash = (37 * hash) + WATCHER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getWatcherId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -337,22 +394,30 @@ public final class ActivityWatcherInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isTakenReward_ = false;
+
         totalProgress_ = 0;
+
         curProgress_ = 0;
+
         watcherId_ = 0;
+
         return this;
       }
 
@@ -379,25 +444,12 @@ public final class ActivityWatcherInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo buildPartial() {
         emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo result = new emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isTakenReward_ = isTakenReward_;
+        result.totalProgress_ = totalProgress_;
+        result.curProgress_ = curProgress_;
+        result.watcherId_ = watcherId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isTakenReward_ = isTakenReward_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.totalProgress_ = totalProgress_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.curProgress_ = curProgress_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.watcherId_ = watcherId_;
-        }
       }
 
       @java.lang.Override
@@ -456,7 +508,7 @@ public final class ActivityWatcherInfoOuterClass {
         if (other.getWatcherId() != 0) {
           setWatcherId(other.getWatcherId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -471,53 +523,19 @@ public final class ActivityWatcherInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                totalProgress_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 8
-              case 16: {
-                isTakenReward_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 64: {
-                curProgress_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 112: {
-                watcherId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isTakenReward_ ;
       /**
@@ -536,7 +554,6 @@ public final class ActivityWatcherInfoOuterClass {
       public Builder setIsTakenReward(boolean value) {
         
         isTakenReward_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -545,7 +562,7 @@ public final class ActivityWatcherInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsTakenReward() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isTakenReward_ = false;
         onChanged();
         return this;
@@ -568,7 +585,6 @@ public final class ActivityWatcherInfoOuterClass {
       public Builder setTotalProgress(int value) {
         
         totalProgress_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -577,7 +593,7 @@ public final class ActivityWatcherInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalProgress() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         totalProgress_ = 0;
         onChanged();
         return this;
@@ -600,7 +616,6 @@ public final class ActivityWatcherInfoOuterClass {
       public Builder setCurProgress(int value) {
         
         curProgress_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -609,7 +624,7 @@ public final class ActivityWatcherInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurProgress() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         curProgress_ = 0;
         onChanged();
         return this;
@@ -632,7 +647,6 @@ public final class ActivityWatcherInfoOuterClass {
       public Builder setWatcherId(int value) {
         
         watcherId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -641,7 +655,7 @@ public final class ActivityWatcherInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWatcherId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         watcherId_ = 0;
         onChanged();
         return this;
@@ -679,18 +693,7 @@ public final class ActivityWatcherInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ActivityWatcherInfo(input, extensionRegistry);
       }
     };
 

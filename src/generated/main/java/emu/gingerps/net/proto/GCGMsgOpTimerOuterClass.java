@@ -75,6 +75,64 @@ public final class GCGMsgOpTimerOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGMsgOpTimer(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 49: {
+
+              beginTime_ = input.readFixed64();
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+
+              phase_ = rawValue;
+              break;
+            }
+            case 112: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
+            case 121: {
+
+              timeStamp_ = input.readFixed64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.internal_static_GCGMsgOpTimer_descriptor;
@@ -89,7 +147,7 @@ public final class GCGMsgOpTimerOuterClass {
     }
 
     public static final int PHASE_FIELD_NUMBER = 13;
-    private int phase_ = 0;
+    private int phase_;
     /**
      * <code>.GCGPhaseType phase = 13;</code>
      * @return The enum numeric value on the wire for phase.
@@ -102,12 +160,13 @@ public final class GCGMsgOpTimerOuterClass {
      * @return The phase.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType getPhase() {
-      emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.forNumber(phase_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.valueOf(phase_);
       return result == null ? emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.UNRECOGNIZED : result;
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 14;
-    private int controllerId_ = 0;
+    private int controllerId_;
     /**
      * <code>uint32 controller_id = 14;</code>
      * @return The controllerId.
@@ -118,7 +177,7 @@ public final class GCGMsgOpTimerOuterClass {
     }
 
     public static final int TIME_STAMP_FIELD_NUMBER = 15;
-    private long timeStamp_ = 0L;
+    private long timeStamp_;
     /**
      * <code>fixed64 time_stamp = 15;</code>
      * @return The timeStamp.
@@ -129,7 +188,7 @@ public final class GCGMsgOpTimerOuterClass {
     }
 
     public static final int BEGIN_TIME_FIELD_NUMBER = 6;
-    private long beginTime_ = 0L;
+    private long beginTime_;
     /**
      * <code>fixed64 begin_time = 6;</code>
      * @return The beginTime.
@@ -165,7 +224,7 @@ public final class GCGMsgOpTimerOuterClass {
       if (timeStamp_ != 0L) {
         output.writeFixed64(15, timeStamp_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -190,7 +249,7 @@ public final class GCGMsgOpTimerOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeFixed64Size(15, timeStamp_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -212,7 +271,7 @@ public final class GCGMsgOpTimerOuterClass {
           != other.getTimeStamp()) return false;
       if (getBeginTime()
           != other.getBeginTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -233,7 +292,7 @@ public final class GCGMsgOpTimerOuterClass {
       hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBeginTime());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -350,22 +409,30 @@ public final class GCGMsgOpTimerOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.GCGMsgOpTimer.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         phase_ = 0;
+
         controllerId_ = 0;
+
         timeStamp_ = 0L;
+
         beginTime_ = 0L;
+
         return this;
       }
 
@@ -392,25 +459,12 @@ public final class GCGMsgOpTimerOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.GCGMsgOpTimer buildPartial() {
         emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.GCGMsgOpTimer result = new emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.GCGMsgOpTimer(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.phase_ = phase_;
+        result.controllerId_ = controllerId_;
+        result.timeStamp_ = timeStamp_;
+        result.beginTime_ = beginTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.GCGMsgOpTimer result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.phase_ = phase_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.controllerId_ = controllerId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.timeStamp_ = timeStamp_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.beginTime_ = beginTime_;
-        }
       }
 
       @java.lang.Override
@@ -469,7 +523,7 @@ public final class GCGMsgOpTimerOuterClass {
         if (other.getBeginTime() != 0L) {
           setBeginTime(other.getBeginTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -484,53 +538,19 @@ public final class GCGMsgOpTimerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.GCGMsgOpTimer parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 49: {
-                beginTime_ = input.readFixed64();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 49
-              case 104: {
-                phase_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              case 112: {
-                controllerId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 112
-              case 121: {
-                timeStamp_ = input.readFixed64();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 121
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.GCGMsgOpTimer) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int phase_ = 0;
       /**
@@ -546,8 +566,8 @@ public final class GCGMsgOpTimerOuterClass {
        * @return This builder for chaining.
        */
       public Builder setPhaseValue(int value) {
+        
         phase_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -557,7 +577,8 @@ public final class GCGMsgOpTimerOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType getPhase() {
-        emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.forNumber(phase_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.valueOf(phase_);
         return result == null ? emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.UNRECOGNIZED : result;
       }
       /**
@@ -569,7 +590,7 @@ public final class GCGMsgOpTimerOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         phase_ = value.getNumber();
         onChanged();
         return this;
@@ -579,7 +600,7 @@ public final class GCGMsgOpTimerOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPhase() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         phase_ = 0;
         onChanged();
         return this;
@@ -602,7 +623,6 @@ public final class GCGMsgOpTimerOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -611,7 +631,7 @@ public final class GCGMsgOpTimerOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         controllerId_ = 0;
         onChanged();
         return this;
@@ -634,7 +654,6 @@ public final class GCGMsgOpTimerOuterClass {
       public Builder setTimeStamp(long value) {
         
         timeStamp_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -643,7 +662,7 @@ public final class GCGMsgOpTimerOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimeStamp() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         timeStamp_ = 0L;
         onChanged();
         return this;
@@ -666,7 +685,6 @@ public final class GCGMsgOpTimerOuterClass {
       public Builder setBeginTime(long value) {
         
         beginTime_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -675,7 +693,7 @@ public final class GCGMsgOpTimerOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         beginTime_ = 0L;
         onChanged();
         return this;
@@ -713,18 +731,7 @@ public final class GCGMsgOpTimerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGMsgOpTimer(input, extensionRegistry);
       }
     };
 

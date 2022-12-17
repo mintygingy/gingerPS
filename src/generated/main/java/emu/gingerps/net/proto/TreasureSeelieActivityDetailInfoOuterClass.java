@@ -82,6 +82,66 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TreasureSeelieActivityDetailInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                regionDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              regionDataList_.add(
+                  input.readMessage(emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData.parser(), extensionRegistry));
+              break;
+            }
+            case 104: {
+
+              treasureCloseTime_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              isContentClosed_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          regionDataList_ = java.util.Collections.unmodifiableList(regionDataList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.internal_static_TreasureSeelieActivityDetailInfo_descriptor;
@@ -96,7 +156,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
     }
 
     public static final int TREASURE_CLOSE_TIME_FIELD_NUMBER = 13;
-    private int treasureCloseTime_ = 0;
+    private int treasureCloseTime_;
     /**
      * <code>uint32 treasure_close_time = 13;</code>
      * @return The treasureCloseTime.
@@ -107,7 +167,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 15;
-    private boolean isContentClosed_ = false;
+    private boolean isContentClosed_;
     /**
      * <code>bool is_content_closed = 15;</code>
      * @return The isContentClosed.
@@ -118,7 +178,6 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
     }
 
     public static final int REGION_DATA_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData> regionDataList_;
     /**
      * <code>repeated .TreasureSeelieRegionData region_data_list = 6;</code>
@@ -181,7 +240,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
       if (isContentClosed_ != false) {
         output.writeBool(15, isContentClosed_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -202,7 +261,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isContentClosed_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -223,7 +282,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
           != other.getIsContentClosed()) return false;
       if (!getRegionDataListList()
           .equals(other.getRegionDataListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -243,7 +302,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
         hash = (37 * hash) + REGION_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRegionDataListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,27 +419,33 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRegionDataListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         treasureCloseTime_ = 0;
+
         isContentClosed_ = false;
+
         if (regionDataListBuilder_ == null) {
           regionDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          regionDataList_ = null;
           regionDataListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -407,32 +472,20 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo result = new emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.treasureCloseTime_ = treasureCloseTime_;
+        result.isContentClosed_ = isContentClosed_;
         if (regionDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             regionDataList_ = java.util.Collections.unmodifiableList(regionDataList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.regionDataList_ = regionDataList_;
         } else {
           result.regionDataList_ = regionDataListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.treasureCloseTime_ = treasureCloseTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isContentClosed_ = isContentClosed_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -489,7 +542,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
           if (!other.regionDataList_.isEmpty()) {
             if (regionDataList_.isEmpty()) {
               regionDataList_ = other.regionDataList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureRegionDataListIsMutable();
               regionDataList_.addAll(other.regionDataList_);
@@ -502,7 +555,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
               regionDataListBuilder_.dispose();
               regionDataListBuilder_ = null;
               regionDataList_ = other.regionDataList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               regionDataListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRegionDataListFieldBuilder() : null;
@@ -511,7 +564,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -526,53 +579,17 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 50: {
-                emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData.parser(),
-                        extensionRegistry);
-                if (regionDataListBuilder_ == null) {
-                  ensureRegionDataListIsMutable();
-                  regionDataList_.add(m);
-                } else {
-                  regionDataListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 104: {
-                treasureCloseTime_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              case 120: {
-                isContentClosed_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -594,7 +611,6 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
       public Builder setTreasureCloseTime(int value) {
         
         treasureCloseTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -603,7 +619,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTreasureCloseTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         treasureCloseTime_ = 0;
         onChanged();
         return this;
@@ -626,7 +642,6 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -635,7 +650,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -644,9 +659,9 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData> regionDataList_ =
         java.util.Collections.emptyList();
       private void ensureRegionDataListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           regionDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData>(regionDataList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -796,7 +811,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
       public Builder clearRegionDataList() {
         if (regionDataListBuilder_ == null) {
           regionDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           regionDataListBuilder_.clear();
@@ -873,7 +888,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
           regionDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData, emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData.Builder, emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionDataOrBuilder>(
                   regionDataList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           regionDataList_ = null;
@@ -913,18 +928,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TreasureSeelieActivityDetailInfo(input, extensionRegistry);
       }
     };
 

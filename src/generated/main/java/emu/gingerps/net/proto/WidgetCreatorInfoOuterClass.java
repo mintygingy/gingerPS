@@ -78,6 +78,67 @@ public final class WidgetCreatorInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WidgetCreatorInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 74: {
+              emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder subBuilder = null;
+              if (locationInfo_ != null) {
+                subBuilder = locationInfo_.toBuilder();
+              }
+              locationInfo_ = input.readMessage(emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(locationInfo_);
+                locationInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 96: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+
+              opType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.internal_static_WidgetCreatorInfo_descriptor;
@@ -92,7 +153,7 @@ public final class WidgetCreatorInfoOuterClass {
     }
 
     public static final int OP_TYPE_FIELD_NUMBER = 14;
-    private int opType_ = 0;
+    private int opType_;
     /**
      * <code>.WidgetCreatorOpType op_type = 14;</code>
      * @return The enum numeric value on the wire for opType.
@@ -105,12 +166,13 @@ public final class WidgetCreatorInfoOuterClass {
      * @return The opType.
      */
     @java.lang.Override public emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType getOpType() {
-      emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType result = emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType.forNumber(opType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType result = emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType.valueOf(opType_);
       return result == null ? emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType.UNRECOGNIZED : result;
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 12;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 12;</code>
      * @return The entityId.
@@ -143,7 +205,7 @@ public final class WidgetCreatorInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfoOrBuilder getLocationInfoOrBuilder() {
-      return locationInfo_ == null ? emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.getDefaultInstance() : locationInfo_;
+      return getLocationInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -169,7 +231,7 @@ public final class WidgetCreatorInfoOuterClass {
       if (opType_ != emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType.WIDGET_CREATOR_OP_TYPE_NONE.getNumber()) {
         output.writeEnum(14, opType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -190,7 +252,7 @@ public final class WidgetCreatorInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, opType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -213,7 +275,7 @@ public final class WidgetCreatorInfoOuterClass {
         if (!getLocationInfo()
             .equals(other.getLocationInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -232,7 +294,7 @@ public final class WidgetCreatorInfoOuterClass {
         hash = (37 * hash) + LOCATION_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getLocationInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,23 +411,30 @@ public final class WidgetCreatorInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         opType_ = 0;
+
         entityId_ = 0;
-        locationInfo_ = null;
-        if (locationInfoBuilder_ != null) {
-          locationInfoBuilder_.dispose();
+
+        if (locationInfoBuilder_ == null) {
+          locationInfo_ = null;
+        } else {
+          locationInfo_ = null;
           locationInfoBuilder_ = null;
         }
         return this;
@@ -394,24 +463,15 @@ public final class WidgetCreatorInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo buildPartial() {
         emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo result = new emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.opType_ = opType_;
+        result.entityId_ = entityId_;
+        if (locationInfoBuilder_ == null) {
+          result.locationInfo_ = locationInfo_;
+        } else {
+          result.locationInfo_ = locationInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.opType_ = opType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.locationInfo_ = locationInfoBuilder_ == null
-              ? locationInfo_
-              : locationInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -467,7 +527,7 @@ public final class WidgetCreatorInfoOuterClass {
         if (other.hasLocationInfo()) {
           mergeLocationInfo(other.getLocationInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -482,50 +542,19 @@ public final class WidgetCreatorInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 74: {
-                input.readMessage(
-                    getLocationInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 74
-              case 96: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              case 112: {
-                opType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int opType_ = 0;
       /**
@@ -541,8 +570,8 @@ public final class WidgetCreatorInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOpTypeValue(int value) {
+        
         opType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -552,7 +581,8 @@ public final class WidgetCreatorInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType getOpType() {
-        emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType result = emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType.forNumber(opType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType result = emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType.valueOf(opType_);
         return result == null ? emu.gingerps.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType.UNRECOGNIZED : result;
       }
       /**
@@ -564,7 +594,7 @@ public final class WidgetCreatorInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         opType_ = value.getNumber();
         onChanged();
         return this;
@@ -574,7 +604,7 @@ public final class WidgetCreatorInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         opType_ = 0;
         onChanged();
         return this;
@@ -597,7 +627,6 @@ public final class WidgetCreatorInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -606,7 +635,7 @@ public final class WidgetCreatorInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -620,7 +649,7 @@ public final class WidgetCreatorInfoOuterClass {
        * @return Whether the locationInfo field is set.
        */
       public boolean hasLocationInfo() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return locationInfoBuilder_ != null || locationInfo_ != null;
       }
       /**
        * <code>.WidgetCreateLocationInfo location_info = 9;</code>
@@ -642,11 +671,11 @@ public final class WidgetCreatorInfoOuterClass {
             throw new NullPointerException();
           }
           locationInfo_ = value;
+          onChanged();
         } else {
           locationInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -656,11 +685,11 @@ public final class WidgetCreatorInfoOuterClass {
           emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder builderForValue) {
         if (locationInfoBuilder_ == null) {
           locationInfo_ = builderForValue.build();
+          onChanged();
         } else {
           locationInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -668,38 +697,38 @@ public final class WidgetCreatorInfoOuterClass {
        */
       public Builder mergeLocationInfo(emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo value) {
         if (locationInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            locationInfo_ != null &&
-            locationInfo_ != emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.getDefaultInstance()) {
-            getLocationInfoBuilder().mergeFrom(value);
+          if (locationInfo_ != null) {
+            locationInfo_ =
+              emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.newBuilder(locationInfo_).mergeFrom(value).buildPartial();
           } else {
             locationInfo_ = value;
           }
+          onChanged();
         } else {
           locationInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.WidgetCreateLocationInfo location_info = 9;</code>
        */
       public Builder clearLocationInfo() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        locationInfo_ = null;
-        if (locationInfoBuilder_ != null) {
-          locationInfoBuilder_.dispose();
+        if (locationInfoBuilder_ == null) {
+          locationInfo_ = null;
+          onChanged();
+        } else {
+          locationInfo_ = null;
           locationInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.WidgetCreateLocationInfo location_info = 9;</code>
        */
       public emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder getLocationInfoBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getLocationInfoFieldBuilder().getBuilder();
       }
@@ -763,18 +792,7 @@ public final class WidgetCreatorInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WidgetCreatorInfo(input, extensionRegistry);
       }
     };
 

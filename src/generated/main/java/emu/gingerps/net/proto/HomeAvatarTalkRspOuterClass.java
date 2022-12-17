@@ -76,6 +76,61 @@ public final class HomeAvatarTalkRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeAvatarTalkRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 34: {
+              emu.gingerps.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.Builder subBuilder = null;
+              if (avatarTalkInfo_ != null) {
+                subBuilder = avatarTalkInfo_.toBuilder();
+              }
+              avatarTalkInfo_ = input.readMessage(emu.gingerps.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(avatarTalkInfo_);
+                avatarTalkInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 80: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeAvatarTalkRspOuterClass.internal_static_HomeAvatarTalkRsp_descriptor;
@@ -90,7 +145,7 @@ public final class HomeAvatarTalkRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
@@ -123,7 +178,7 @@ public final class HomeAvatarTalkRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfoOrBuilder getAvatarTalkInfoOrBuilder() {
-      return avatarTalkInfo_ == null ? emu.gingerps.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.getDefaultInstance() : avatarTalkInfo_;
+      return getAvatarTalkInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -146,7 +201,7 @@ public final class HomeAvatarTalkRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(10, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class HomeAvatarTalkRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(10, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class HomeAvatarTalkRspOuterClass {
         if (!getAvatarTalkInfo()
             .equals(other.getAvatarTalkInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +257,7 @@ public final class HomeAvatarTalkRspOuterClass {
         hash = (37 * hash) + AVATAR_TALK_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarTalkInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,22 +384,28 @@ public final class HomeAvatarTalkRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeAvatarTalkRspOuterClass.HomeAvatarTalkRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
-        avatarTalkInfo_ = null;
-        if (avatarTalkInfoBuilder_ != null) {
-          avatarTalkInfoBuilder_.dispose();
+
+        if (avatarTalkInfoBuilder_ == null) {
+          avatarTalkInfo_ = null;
+        } else {
+          avatarTalkInfo_ = null;
           avatarTalkInfoBuilder_ = null;
         }
         return this;
@@ -373,21 +434,14 @@ public final class HomeAvatarTalkRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeAvatarTalkRspOuterClass.HomeAvatarTalkRsp buildPartial() {
         emu.gingerps.net.proto.HomeAvatarTalkRspOuterClass.HomeAvatarTalkRsp result = new emu.gingerps.net.proto.HomeAvatarTalkRspOuterClass.HomeAvatarTalkRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        if (avatarTalkInfoBuilder_ == null) {
+          result.avatarTalkInfo_ = avatarTalkInfo_;
+        } else {
+          result.avatarTalkInfo_ = avatarTalkInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeAvatarTalkRspOuterClass.HomeAvatarTalkRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.avatarTalkInfo_ = avatarTalkInfoBuilder_ == null
-              ? avatarTalkInfo_
-              : avatarTalkInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -440,7 +494,7 @@ public final class HomeAvatarTalkRspOuterClass {
         if (other.hasAvatarTalkInfo()) {
           mergeAvatarTalkInfo(other.getAvatarTalkInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,45 +509,19 @@ public final class HomeAvatarTalkRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeAvatarTalkRspOuterClass.HomeAvatarTalkRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 34: {
-                input.readMessage(
-                    getAvatarTalkInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 34
-              case 80: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeAvatarTalkRspOuterClass.HomeAvatarTalkRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -512,7 +540,6 @@ public final class HomeAvatarTalkRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -521,7 +548,7 @@ public final class HomeAvatarTalkRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -535,7 +562,7 @@ public final class HomeAvatarTalkRspOuterClass {
        * @return Whether the avatarTalkInfo field is set.
        */
       public boolean hasAvatarTalkInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return avatarTalkInfoBuilder_ != null || avatarTalkInfo_ != null;
       }
       /**
        * <code>.HomeAvatarTalkFinishInfo avatar_talk_info = 4;</code>
@@ -557,11 +584,11 @@ public final class HomeAvatarTalkRspOuterClass {
             throw new NullPointerException();
           }
           avatarTalkInfo_ = value;
+          onChanged();
         } else {
           avatarTalkInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -571,11 +598,11 @@ public final class HomeAvatarTalkRspOuterClass {
           emu.gingerps.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.Builder builderForValue) {
         if (avatarTalkInfoBuilder_ == null) {
           avatarTalkInfo_ = builderForValue.build();
+          onChanged();
         } else {
           avatarTalkInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -583,38 +610,38 @@ public final class HomeAvatarTalkRspOuterClass {
        */
       public Builder mergeAvatarTalkInfo(emu.gingerps.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo value) {
         if (avatarTalkInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            avatarTalkInfo_ != null &&
-            avatarTalkInfo_ != emu.gingerps.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.getDefaultInstance()) {
-            getAvatarTalkInfoBuilder().mergeFrom(value);
+          if (avatarTalkInfo_ != null) {
+            avatarTalkInfo_ =
+              emu.gingerps.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.newBuilder(avatarTalkInfo_).mergeFrom(value).buildPartial();
           } else {
             avatarTalkInfo_ = value;
           }
+          onChanged();
         } else {
           avatarTalkInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeAvatarTalkFinishInfo avatar_talk_info = 4;</code>
        */
       public Builder clearAvatarTalkInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        avatarTalkInfo_ = null;
-        if (avatarTalkInfoBuilder_ != null) {
-          avatarTalkInfoBuilder_.dispose();
+        if (avatarTalkInfoBuilder_ == null) {
+          avatarTalkInfo_ = null;
+          onChanged();
+        } else {
+          avatarTalkInfo_ = null;
           avatarTalkInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeAvatarTalkFinishInfo avatar_talk_info = 4;</code>
        */
       public emu.gingerps.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.Builder getAvatarTalkInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getAvatarTalkInfoFieldBuilder().getBuilder();
       }
@@ -678,18 +705,7 @@ public final class HomeAvatarTalkRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeAvatarTalkRsp(input, extensionRegistry);
       }
     };
 

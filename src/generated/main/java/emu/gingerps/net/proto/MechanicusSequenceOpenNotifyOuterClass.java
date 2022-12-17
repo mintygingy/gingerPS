@@ -67,6 +67,53 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MechanicusSequenceOpenNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+
+              sequenceId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              mechanicusId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MechanicusSequenceOpenNotifyOuterClass.internal_static_MechanicusSequenceOpenNotify_descriptor;
@@ -81,7 +128,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
     }
 
     public static final int MECHANICUS_ID_FIELD_NUMBER = 12;
-    private int mechanicusId_ = 0;
+    private int mechanicusId_;
     /**
      * <code>uint32 mechanicus_id = 12;</code>
      * @return The mechanicusId.
@@ -92,7 +139,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
     }
 
     public static final int SEQUENCE_ID_FIELD_NUMBER = 9;
-    private int sequenceId_ = 0;
+    private int sequenceId_;
     /**
      * <code>uint32 sequence_id = 9;</code>
      * @return The sequenceId.
@@ -122,7 +169,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
       if (mechanicusId_ != 0) {
         output.writeUInt32(12, mechanicusId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, mechanicusId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
           != other.getMechanicusId()) return false;
       if (getSequenceId()
           != other.getSequenceId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -173,7 +220,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
       hash = (53 * hash) + getMechanicusId();
       hash = (37 * hash) + SEQUENCE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSequenceId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -300,20 +347,26 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         mechanicusId_ = 0;
+
         sequenceId_ = 0;
+
         return this;
       }
 
@@ -340,19 +393,10 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify buildPartial() {
         emu.gingerps.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify result = new emu.gingerps.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.mechanicusId_ = mechanicusId_;
+        result.sequenceId_ = sequenceId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.mechanicusId_ = mechanicusId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.sequenceId_ = sequenceId_;
-        }
       }
 
       @java.lang.Override
@@ -405,7 +449,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
         if (other.getSequenceId() != 0) {
           setSequenceId(other.getSequenceId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,43 +464,19 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                sequenceId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 96: {
-                mechanicusId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int mechanicusId_ ;
       /**
@@ -475,7 +495,6 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
       public Builder setMechanicusId(int value) {
         
         mechanicusId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -484,7 +503,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMechanicusId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         mechanicusId_ = 0;
         onChanged();
         return this;
@@ -507,7 +526,6 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
       public Builder setSequenceId(int value) {
         
         sequenceId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -516,7 +534,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSequenceId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         sequenceId_ = 0;
         onChanged();
         return this;
@@ -554,18 +572,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MechanicusSequenceOpenNotify(input, extensionRegistry);
       }
     };
 

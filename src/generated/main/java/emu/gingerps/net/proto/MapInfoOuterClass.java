@@ -94,6 +94,76 @@ public final class MapInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MapInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              minx_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              maxx_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              minz_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              maxz_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cells_ = new java.util.ArrayList<emu.gingerps.net.proto.CellInfoOuterClass.CellInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cells_.add(
+                  input.readMessage(emu.gingerps.net.proto.CellInfoOuterClass.CellInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cells_ = java.util.Collections.unmodifiableList(cells_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MapInfoOuterClass.internal_static_MapInfo_descriptor;
@@ -108,7 +178,7 @@ public final class MapInfoOuterClass {
     }
 
     public static final int MINX_FIELD_NUMBER = 1;
-    private int minx_ = 0;
+    private int minx_;
     /**
      * <code>int32 minx = 1;</code>
      * @return The minx.
@@ -119,7 +189,7 @@ public final class MapInfoOuterClass {
     }
 
     public static final int MAXX_FIELD_NUMBER = 2;
-    private int maxx_ = 0;
+    private int maxx_;
     /**
      * <code>int32 maxx = 2;</code>
      * @return The maxx.
@@ -130,7 +200,7 @@ public final class MapInfoOuterClass {
     }
 
     public static final int MINZ_FIELD_NUMBER = 3;
-    private int minz_ = 0;
+    private int minz_;
     /**
      * <code>int32 minz = 3;</code>
      * @return The minz.
@@ -141,7 +211,7 @@ public final class MapInfoOuterClass {
     }
 
     public static final int MAXZ_FIELD_NUMBER = 4;
-    private int maxz_ = 0;
+    private int maxz_;
     /**
      * <code>int32 maxz = 4;</code>
      * @return The maxz.
@@ -152,7 +222,6 @@ public final class MapInfoOuterClass {
     }
 
     public static final int CELLS_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CellInfoOuterClass.CellInfo> cells_;
     /**
      * <code>repeated .CellInfo cells = 5;</code>
@@ -221,7 +290,7 @@ public final class MapInfoOuterClass {
       for (int i = 0; i < cells_.size(); i++) {
         output.writeMessage(5, cells_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -250,7 +319,7 @@ public final class MapInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, cells_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -275,7 +344,7 @@ public final class MapInfoOuterClass {
           != other.getMaxz()) return false;
       if (!getCellsList()
           .equals(other.getCellsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -298,7 +367,7 @@ public final class MapInfoOuterClass {
         hash = (37 * hash) + CELLS_FIELD_NUMBER;
         hash = (53 * hash) + getCellsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -415,29 +484,37 @@ public final class MapInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MapInfoOuterClass.MapInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCellsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         minx_ = 0;
+
         maxx_ = 0;
+
         minz_ = 0;
+
         maxz_ = 0;
+
         if (cellsBuilder_ == null) {
           cells_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          cells_ = null;
           cellsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -464,38 +541,22 @@ public final class MapInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MapInfoOuterClass.MapInfo buildPartial() {
         emu.gingerps.net.proto.MapInfoOuterClass.MapInfo result = new emu.gingerps.net.proto.MapInfoOuterClass.MapInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MapInfoOuterClass.MapInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.minx_ = minx_;
+        result.maxx_ = maxx_;
+        result.minz_ = minz_;
+        result.maxz_ = maxz_;
         if (cellsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             cells_ = java.util.Collections.unmodifiableList(cells_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.cells_ = cells_;
         } else {
           result.cells_ = cellsBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MapInfoOuterClass.MapInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.minx_ = minx_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.maxx_ = maxx_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.minz_ = minz_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.maxz_ = maxz_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -558,7 +619,7 @@ public final class MapInfoOuterClass {
           if (!other.cells_.isEmpty()) {
             if (cells_.isEmpty()) {
               cells_ = other.cells_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureCellsIsMutable();
               cells_.addAll(other.cells_);
@@ -571,7 +632,7 @@ public final class MapInfoOuterClass {
               cellsBuilder_.dispose();
               cellsBuilder_ = null;
               cells_ = other.cells_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
               cellsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCellsFieldBuilder() : null;
@@ -580,7 +641,7 @@ public final class MapInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -595,63 +656,17 @@ public final class MapInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MapInfoOuterClass.MapInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                minx_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                maxx_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                minz_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                maxz_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 42: {
-                emu.gingerps.net.proto.CellInfoOuterClass.CellInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.CellInfoOuterClass.CellInfo.parser(),
-                        extensionRegistry);
-                if (cellsBuilder_ == null) {
-                  ensureCellsIsMutable();
-                  cells_.add(m);
-                } else {
-                  cellsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MapInfoOuterClass.MapInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -673,7 +688,6 @@ public final class MapInfoOuterClass {
       public Builder setMinx(int value) {
         
         minx_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -682,7 +696,7 @@ public final class MapInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMinx() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         minx_ = 0;
         onChanged();
         return this;
@@ -705,7 +719,6 @@ public final class MapInfoOuterClass {
       public Builder setMaxx(int value) {
         
         maxx_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -714,7 +727,7 @@ public final class MapInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxx() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         maxx_ = 0;
         onChanged();
         return this;
@@ -737,7 +750,6 @@ public final class MapInfoOuterClass {
       public Builder setMinz(int value) {
         
         minz_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -746,7 +758,7 @@ public final class MapInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMinz() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         minz_ = 0;
         onChanged();
         return this;
@@ -769,7 +781,6 @@ public final class MapInfoOuterClass {
       public Builder setMaxz(int value) {
         
         maxz_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -778,7 +789,7 @@ public final class MapInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxz() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         maxz_ = 0;
         onChanged();
         return this;
@@ -787,9 +798,9 @@ public final class MapInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.CellInfoOuterClass.CellInfo> cells_ =
         java.util.Collections.emptyList();
       private void ensureCellsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           cells_ = new java.util.ArrayList<emu.gingerps.net.proto.CellInfoOuterClass.CellInfo>(cells_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -939,7 +950,7 @@ public final class MapInfoOuterClass {
       public Builder clearCells() {
         if (cellsBuilder_ == null) {
           cells_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           cellsBuilder_.clear();
@@ -1016,7 +1027,7 @@ public final class MapInfoOuterClass {
           cellsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CellInfoOuterClass.CellInfo, emu.gingerps.net.proto.CellInfoOuterClass.CellInfo.Builder, emu.gingerps.net.proto.CellInfoOuterClass.CellInfoOrBuilder>(
                   cells_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           cells_ = null;
@@ -1056,18 +1067,7 @@ public final class MapInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MapInfo(input, extensionRegistry);
       }
     };
 

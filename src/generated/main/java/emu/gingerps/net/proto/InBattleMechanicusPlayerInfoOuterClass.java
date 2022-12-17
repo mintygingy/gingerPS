@@ -94,6 +94,76 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private InBattleMechanicusPlayerInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              buildingPoints_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                buildingList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              buildingList_.add(
+                  input.readMessage(emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 96: {
+
+              isCardConfirmed_ = input.readBool();
+              break;
+            }
+            case 104: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              pickCardId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          buildingList_ = java.util.Collections.unmodifiableList(buildingList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.internal_static_InBattleMechanicusPlayerInfo_descriptor;
@@ -108,7 +178,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 13;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 13;</code>
      * @return The uid.
@@ -119,7 +189,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
     }
 
     public static final int IS_CARD_CONFIRMED_FIELD_NUMBER = 12;
-    private boolean isCardConfirmed_ = false;
+    private boolean isCardConfirmed_;
     /**
      * <code>bool is_card_confirmed = 12;</code>
      * @return The isCardConfirmed.
@@ -130,7 +200,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
     }
 
     public static final int BUILDING_POINTS_FIELD_NUMBER = 2;
-    private int buildingPoints_ = 0;
+    private int buildingPoints_;
     /**
      * <code>uint32 building_points = 2;</code>
      * @return The buildingPoints.
@@ -141,7 +211,6 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
     }
 
     public static final int BUILDING_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo> buildingList_;
     /**
      * <code>repeated .InBattleMechanicusBuildingInfo building_list = 5;</code>
@@ -182,7 +251,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
     }
 
     public static final int PICK_CARD_ID_FIELD_NUMBER = 15;
-    private int pickCardId_ = 0;
+    private int pickCardId_;
     /**
      * <code>uint32 pick_card_id = 15;</code>
      * @return The pickCardId.
@@ -221,7 +290,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
       if (pickCardId_ != 0) {
         output.writeUInt32(15, pickCardId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -250,7 +319,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, pickCardId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -275,7 +344,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
           .equals(other.getBuildingListList())) return false;
       if (getPickCardId()
           != other.getPickCardId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -299,7 +368,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
       }
       hash = (37 * hash) + PICK_CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPickCardId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -416,29 +485,37 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBuildingListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         uid_ = 0;
+
         isCardConfirmed_ = false;
+
         buildingPoints_ = 0;
+
         if (buildingListBuilder_ == null) {
           buildingList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          buildingList_ = null;
           buildingListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         pickCardId_ = 0;
+
         return this;
       }
 
@@ -465,38 +542,22 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo buildPartial() {
         emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo result = new emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.uid_ = uid_;
+        result.isCardConfirmed_ = isCardConfirmed_;
+        result.buildingPoints_ = buildingPoints_;
         if (buildingListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             buildingList_ = java.util.Collections.unmodifiableList(buildingList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.buildingList_ = buildingList_;
         } else {
           result.buildingList_ = buildingListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.uid_ = uid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isCardConfirmed_ = isCardConfirmed_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.buildingPoints_ = buildingPoints_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.pickCardId_ = pickCardId_;
-        }
+        result.pickCardId_ = pickCardId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -556,7 +617,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
           if (!other.buildingList_.isEmpty()) {
             if (buildingList_.isEmpty()) {
               buildingList_ = other.buildingList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureBuildingListIsMutable();
               buildingList_.addAll(other.buildingList_);
@@ -569,7 +630,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
               buildingListBuilder_.dispose();
               buildingListBuilder_ = null;
               buildingList_ = other.buildingList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               buildingListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBuildingListFieldBuilder() : null;
@@ -581,7 +642,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
         if (other.getPickCardId() != 0) {
           setPickCardId(other.getPickCardId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -596,63 +657,17 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                buildingPoints_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 42: {
-                emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo.parser(),
-                        extensionRegistry);
-                if (buildingListBuilder_ == null) {
-                  ensureBuildingListIsMutable();
-                  buildingList_.add(m);
-                } else {
-                  buildingListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 96: {
-                isCardConfirmed_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              case 104: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              case 120: {
-                pickCardId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.InBattleMechanicusPlayerInfoOuterClass.InBattleMechanicusPlayerInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -674,7 +689,6 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -683,7 +697,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -706,7 +720,6 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
       public Builder setIsCardConfirmed(boolean value) {
         
         isCardConfirmed_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -715,7 +728,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCardConfirmed() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isCardConfirmed_ = false;
         onChanged();
         return this;
@@ -738,7 +751,6 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
       public Builder setBuildingPoints(int value) {
         
         buildingPoints_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -747,7 +759,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuildingPoints() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         buildingPoints_ = 0;
         onChanged();
         return this;
@@ -756,9 +768,9 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo> buildingList_ =
         java.util.Collections.emptyList();
       private void ensureBuildingListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           buildingList_ = new java.util.ArrayList<emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo>(buildingList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -908,7 +920,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
       public Builder clearBuildingList() {
         if (buildingListBuilder_ == null) {
           buildingList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           buildingListBuilder_.clear();
@@ -985,7 +997,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
           buildingListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo, emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo.Builder, emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfoOrBuilder>(
                   buildingList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           buildingList_ = null;
@@ -1010,7 +1022,6 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
       public Builder setPickCardId(int value) {
         
         pickCardId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1019,7 +1030,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPickCardId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         pickCardId_ = 0;
         onChanged();
         return this;
@@ -1057,18 +1068,7 @@ public final class InBattleMechanicusPlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InBattleMechanicusPlayerInfo(input, extensionRegistry);
       }
     };
 

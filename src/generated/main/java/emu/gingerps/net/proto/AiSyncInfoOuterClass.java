@@ -63,6 +63,58 @@ public final class AiSyncInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AiSyncInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              unk3300NOIPAMJJIDL_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              unk3300EBICCLLGICG_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AiSyncInfoOuterClass.internal_static_AiSyncInfo_descriptor;
@@ -77,7 +129,7 @@ public final class AiSyncInfoOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 2;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 2;</code>
      * @return The entityId.
@@ -88,7 +140,7 @@ public final class AiSyncInfoOuterClass {
     }
 
     public static final int UNK3300_NOIPAMJJIDL_FIELD_NUMBER = 4;
-    private boolean unk3300NOIPAMJJIDL_ = false;
+    private boolean unk3300NOIPAMJJIDL_;
     /**
      * <code>bool Unk3300_NOIPAMJJIDL = 4;</code>
      * @return The unk3300NOIPAMJJIDL.
@@ -99,7 +151,7 @@ public final class AiSyncInfoOuterClass {
     }
 
     public static final int UNK3300_EBICCLLGICG_FIELD_NUMBER = 14;
-    private boolean unk3300EBICCLLGICG_ = false;
+    private boolean unk3300EBICCLLGICG_;
     /**
      * <code>bool Unk3300_EBICCLLGICG = 14;</code>
      * @return The unk3300EBICCLLGICG.
@@ -132,7 +184,7 @@ public final class AiSyncInfoOuterClass {
       if (unk3300EBICCLLGICG_ != false) {
         output.writeBool(14, unk3300EBICCLLGICG_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +205,7 @@ public final class AiSyncInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, unk3300EBICCLLGICG_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +226,7 @@ public final class AiSyncInfoOuterClass {
           != other.getUnk3300NOIPAMJJIDL()) return false;
       if (getUnk3300EBICCLLGICG()
           != other.getUnk3300EBICCLLGICG()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -193,7 +245,7 @@ public final class AiSyncInfoOuterClass {
       hash = (37 * hash) + UNK3300_EBICCLLGICG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getUnk3300EBICCLLGICG());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -310,21 +362,28 @@ public final class AiSyncInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         entityId_ = 0;
+
         unk3300NOIPAMJJIDL_ = false;
+
         unk3300EBICCLLGICG_ = false;
+
         return this;
       }
 
@@ -351,22 +410,11 @@ public final class AiSyncInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo buildPartial() {
         emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo result = new emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.entityId_ = entityId_;
+        result.unk3300NOIPAMJJIDL_ = unk3300NOIPAMJJIDL_;
+        result.unk3300EBICCLLGICG_ = unk3300EBICCLLGICG_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300NOIPAMJJIDL_ = unk3300NOIPAMJJIDL_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300EBICCLLGICG_ = unk3300EBICCLLGICG_;
-        }
       }
 
       @java.lang.Override
@@ -422,7 +470,7 @@ public final class AiSyncInfoOuterClass {
         if (other.getUnk3300EBICCLLGICG() != false) {
           setUnk3300EBICCLLGICG(other.getUnk3300EBICCLLGICG());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -437,48 +485,19 @@ public final class AiSyncInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 32: {
-                unk3300NOIPAMJJIDL_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 112: {
-                unk3300EBICCLLGICG_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -497,7 +516,6 @@ public final class AiSyncInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -506,7 +524,7 @@ public final class AiSyncInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -529,7 +547,6 @@ public final class AiSyncInfoOuterClass {
       public Builder setUnk3300NOIPAMJJIDL(boolean value) {
         
         unk3300NOIPAMJJIDL_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -538,7 +555,7 @@ public final class AiSyncInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NOIPAMJJIDL() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300NOIPAMJJIDL_ = false;
         onChanged();
         return this;
@@ -561,7 +578,6 @@ public final class AiSyncInfoOuterClass {
       public Builder setUnk3300EBICCLLGICG(boolean value) {
         
         unk3300EBICCLLGICG_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -570,7 +586,7 @@ public final class AiSyncInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EBICCLLGICG() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300EBICCLLGICG_ = false;
         onChanged();
         return this;
@@ -608,18 +624,7 @@ public final class AiSyncInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AiSyncInfo(input, extensionRegistry);
       }
     };
 

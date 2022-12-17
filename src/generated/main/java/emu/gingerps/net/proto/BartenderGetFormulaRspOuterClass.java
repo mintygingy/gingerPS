@@ -91,6 +91,83 @@ public final class BartenderGetFormulaRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BartenderGetFormulaRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                affixList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              affixList_.addInt(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                affixList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                affixList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 56: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 80: {
+
+              isNew_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              formulaId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          affixList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BartenderGetFormulaRspOuterClass.internal_static_BartenderGetFormulaRsp_descriptor;
@@ -105,7 +182,7 @@ public final class BartenderGetFormulaRspOuterClass {
     }
 
     public static final int FORMULA_ID_FIELD_NUMBER = 15;
-    private int formulaId_ = 0;
+    private int formulaId_;
     /**
      * <code>uint32 formula_id = 15;</code>
      * @return The formulaId.
@@ -116,7 +193,6 @@ public final class BartenderGetFormulaRspOuterClass {
     }
 
     public static final int AFFIX_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList affixList_;
     /**
      * <code>repeated uint32 affix_list = 1;</code>
@@ -145,7 +221,7 @@ public final class BartenderGetFormulaRspOuterClass {
     private int affixListMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
@@ -156,7 +232,7 @@ public final class BartenderGetFormulaRspOuterClass {
     }
 
     public static final int IS_NEW_FIELD_NUMBER = 10;
-    private boolean isNew_ = false;
+    private boolean isNew_;
     /**
      * <code>bool is_new = 10;</code>
      * @return The isNew.
@@ -197,7 +273,7 @@ public final class BartenderGetFormulaRspOuterClass {
       if (formulaId_ != 0) {
         output.writeUInt32(15, formulaId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -232,7 +308,7 @@ public final class BartenderGetFormulaRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, formulaId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -255,7 +331,7 @@ public final class BartenderGetFormulaRspOuterClass {
           != other.getRetcode()) return false;
       if (getIsNew()
           != other.getIsNew()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -277,7 +353,7 @@ public final class BartenderGetFormulaRspOuterClass {
       hash = (37 * hash) + IS_NEW_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNew());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -404,22 +480,30 @@ public final class BartenderGetFormulaRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         formulaId_ = 0;
+
         affixList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
+
         isNew_ = false;
+
         return this;
       }
 
@@ -446,31 +530,17 @@ public final class BartenderGetFormulaRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp buildPartial() {
         emu.gingerps.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp result = new emu.gingerps.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.formulaId_ = formulaId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           affixList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.affixList_ = affixList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.formulaId_ = formulaId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isNew_ = isNew_;
-        }
+        result.retcode_ = retcode_;
+        result.isNew_ = isNew_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -523,7 +593,7 @@ public final class BartenderGetFormulaRspOuterClass {
         if (!other.affixList_.isEmpty()) {
           if (affixList_.isEmpty()) {
             affixList_ = other.affixList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAffixListIsMutable();
             affixList_.addAll(other.affixList_);
@@ -536,7 +606,7 @@ public final class BartenderGetFormulaRspOuterClass {
         if (other.getIsNew() != false) {
           setIsNew(other.getIsNew());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -551,61 +621,17 @@ public final class BartenderGetFormulaRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int v = input.readUInt32();
-                ensureAffixListIsMutable();
-                affixList_.addInt(v);
-                break;
-              } // case 8
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureAffixListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  affixList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 10
-              case 56: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              case 80: {
-                isNew_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 80
-              case 120: {
-                formulaId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -627,7 +653,6 @@ public final class BartenderGetFormulaRspOuterClass {
       public Builder setFormulaId(int value) {
         
         formulaId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -636,7 +661,7 @@ public final class BartenderGetFormulaRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFormulaId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         formulaId_ = 0;
         onChanged();
         return this;
@@ -644,10 +669,10 @@ public final class BartenderGetFormulaRspOuterClass {
 
       private com.google.protobuf.Internal.IntList affixList_ = emptyIntList();
       private void ensureAffixListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           affixList_ = mutableCopy(affixList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 affix_list = 1;</code>
@@ -655,7 +680,7 @@ public final class BartenderGetFormulaRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getAffixListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(affixList_) : affixList_;
       }
       /**
@@ -681,7 +706,6 @@ public final class BartenderGetFormulaRspOuterClass {
        */
       public Builder setAffixList(
           int index, int value) {
-        
         ensureAffixListIsMutable();
         affixList_.setInt(index, value);
         onChanged();
@@ -693,7 +717,6 @@ public final class BartenderGetFormulaRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAffixList(int value) {
-        
         ensureAffixListIsMutable();
         affixList_.addInt(value);
         onChanged();
@@ -718,7 +741,7 @@ public final class BartenderGetFormulaRspOuterClass {
        */
       public Builder clearAffixList() {
         affixList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -740,7 +763,6 @@ public final class BartenderGetFormulaRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -749,7 +771,7 @@ public final class BartenderGetFormulaRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -772,7 +794,6 @@ public final class BartenderGetFormulaRspOuterClass {
       public Builder setIsNew(boolean value) {
         
         isNew_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -781,7 +802,7 @@ public final class BartenderGetFormulaRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNew() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isNew_ = false;
         onChanged();
         return this;
@@ -819,18 +840,7 @@ public final class BartenderGetFormulaRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BartenderGetFormulaRsp(input, extensionRegistry);
       }
     };
 

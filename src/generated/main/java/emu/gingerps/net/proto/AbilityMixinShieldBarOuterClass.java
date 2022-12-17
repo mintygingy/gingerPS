@@ -69,6 +69,63 @@ public final class AbilityMixinShieldBarOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityMixinShieldBar(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              playerNum_ = input.readUInt32();
+              break;
+            }
+            case 37: {
+
+              shield_ = input.readFloat();
+              break;
+            }
+            case 56: {
+
+              elementType_ = input.readUInt32();
+              break;
+            }
+            case 69: {
+
+              maxShield_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinShieldBarOuterClass.internal_static_AbilityMixinShieldBar_descriptor;
@@ -83,7 +140,7 @@ public final class AbilityMixinShieldBarOuterClass {
     }
 
     public static final int MAX_SHIELD_FIELD_NUMBER = 8;
-    private float maxShield_ = 0F;
+    private float maxShield_;
     /**
      * <code>float max_shield = 8;</code>
      * @return The maxShield.
@@ -94,7 +151,7 @@ public final class AbilityMixinShieldBarOuterClass {
     }
 
     public static final int SHIELD_FIELD_NUMBER = 4;
-    private float shield_ = 0F;
+    private float shield_;
     /**
      * <code>float shield = 4;</code>
      * @return The shield.
@@ -105,7 +162,7 @@ public final class AbilityMixinShieldBarOuterClass {
     }
 
     public static final int PLAYER_NUM_FIELD_NUMBER = 3;
-    private int playerNum_ = 0;
+    private int playerNum_;
     /**
      * <code>uint32 player_num = 3;</code>
      * @return The playerNum.
@@ -116,7 +173,7 @@ public final class AbilityMixinShieldBarOuterClass {
     }
 
     public static final int ELEMENT_TYPE_FIELD_NUMBER = 7;
-    private int elementType_ = 0;
+    private int elementType_;
     /**
      * <code>uint32 element_type = 7;</code>
      * @return The elementType.
@@ -143,16 +200,16 @@ public final class AbilityMixinShieldBarOuterClass {
       if (playerNum_ != 0) {
         output.writeUInt32(3, playerNum_);
       }
-      if (java.lang.Float.floatToRawIntBits(shield_) != 0) {
+      if (shield_ != 0F) {
         output.writeFloat(4, shield_);
       }
       if (elementType_ != 0) {
         output.writeUInt32(7, elementType_);
       }
-      if (java.lang.Float.floatToRawIntBits(maxShield_) != 0) {
+      if (maxShield_ != 0F) {
         output.writeFloat(8, maxShield_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -165,7 +222,7 @@ public final class AbilityMixinShieldBarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, playerNum_);
       }
-      if (java.lang.Float.floatToRawIntBits(shield_) != 0) {
+      if (shield_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, shield_);
       }
@@ -173,11 +230,11 @@ public final class AbilityMixinShieldBarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, elementType_);
       }
-      if (java.lang.Float.floatToRawIntBits(maxShield_) != 0) {
+      if (maxShield_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(8, maxShield_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -202,7 +259,7 @@ public final class AbilityMixinShieldBarOuterClass {
           != other.getPlayerNum()) return false;
       if (getElementType()
           != other.getElementType()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -223,7 +280,7 @@ public final class AbilityMixinShieldBarOuterClass {
       hash = (53 * hash) + getPlayerNum();
       hash = (37 * hash) + ELEMENT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getElementType();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -340,22 +397,30 @@ public final class AbilityMixinShieldBarOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinShieldBarOuterClass.AbilityMixinShieldBar.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         maxShield_ = 0F;
+
         shield_ = 0F;
+
         playerNum_ = 0;
+
         elementType_ = 0;
+
         return this;
       }
 
@@ -382,25 +447,12 @@ public final class AbilityMixinShieldBarOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinShieldBarOuterClass.AbilityMixinShieldBar buildPartial() {
         emu.gingerps.net.proto.AbilityMixinShieldBarOuterClass.AbilityMixinShieldBar result = new emu.gingerps.net.proto.AbilityMixinShieldBarOuterClass.AbilityMixinShieldBar(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.maxShield_ = maxShield_;
+        result.shield_ = shield_;
+        result.playerNum_ = playerNum_;
+        result.elementType_ = elementType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinShieldBarOuterClass.AbilityMixinShieldBar result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.maxShield_ = maxShield_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.shield_ = shield_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.playerNum_ = playerNum_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.elementType_ = elementType_;
-        }
       }
 
       @java.lang.Override
@@ -459,7 +511,7 @@ public final class AbilityMixinShieldBarOuterClass {
         if (other.getElementType() != 0) {
           setElementType(other.getElementType());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -474,53 +526,19 @@ public final class AbilityMixinShieldBarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityMixinShieldBarOuterClass.AbilityMixinShieldBar parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                playerNum_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 37: {
-                shield_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 37
-              case 56: {
-                elementType_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 69: {
-                maxShield_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 69
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityMixinShieldBarOuterClass.AbilityMixinShieldBar) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private float maxShield_ ;
       /**
@@ -539,7 +557,6 @@ public final class AbilityMixinShieldBarOuterClass {
       public Builder setMaxShield(float value) {
         
         maxShield_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -548,7 +565,7 @@ public final class AbilityMixinShieldBarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxShield() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         maxShield_ = 0F;
         onChanged();
         return this;
@@ -571,7 +588,6 @@ public final class AbilityMixinShieldBarOuterClass {
       public Builder setShield(float value) {
         
         shield_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -580,7 +596,7 @@ public final class AbilityMixinShieldBarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShield() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         shield_ = 0F;
         onChanged();
         return this;
@@ -603,7 +619,6 @@ public final class AbilityMixinShieldBarOuterClass {
       public Builder setPlayerNum(int value) {
         
         playerNum_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -612,7 +627,7 @@ public final class AbilityMixinShieldBarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerNum() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         playerNum_ = 0;
         onChanged();
         return this;
@@ -635,7 +650,6 @@ public final class AbilityMixinShieldBarOuterClass {
       public Builder setElementType(int value) {
         
         elementType_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -644,7 +658,7 @@ public final class AbilityMixinShieldBarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         elementType_ = 0;
         onChanged();
         return this;
@@ -682,18 +696,7 @@ public final class AbilityMixinShieldBarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityMixinShieldBar(input, extensionRegistry);
       }
     };
 

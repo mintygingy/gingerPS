@@ -64,14 +64,14 @@ public final class DungeonChallengeFinishNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
+
+    emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue);
+        emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue);
     /**
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
      */
+
     emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
         int key);
 
@@ -199,6 +199,149 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DungeonChallengeFinishNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              challengeRecordType_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              finishType_ = rawValue;
+              break;
+            }
+            case 40: {
+
+              currentValue_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              timeCost_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isSuccess_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                strengthenPointDataMap_ = com.google.protobuf.MapField.newMapField(
+                    StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+              strengthenPointDataMap__ = input.readMessage(
+                  StrengthenPointDataMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              strengthenPointDataMap_.getMutableMap().put(
+                  strengthenPointDataMap__.getKey(), strengthenPointDataMap__.getValue());
+              break;
+            }
+            case 96: {
+
+              challengeIndex_ = input.readUInt32();
+              break;
+            }
+            case 610: {
+              emu.gingerps.net.proto.EffigyChallengeDungeonResultInfoOuterClass.EffigyChallengeDungeonResultInfo.Builder subBuilder = null;
+              if (detailCase_ == 76) {
+                subBuilder = ((emu.gingerps.net.proto.EffigyChallengeDungeonResultInfoOuterClass.EffigyChallengeDungeonResultInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.EffigyChallengeDungeonResultInfoOuterClass.EffigyChallengeDungeonResultInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.EffigyChallengeDungeonResultInfoOuterClass.EffigyChallengeDungeonResultInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 76;
+              break;
+            }
+            case 1730: {
+              emu.gingerps.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfo.Builder subBuilder = null;
+              if (detailCase_ == 216) {
+                subBuilder = ((emu.gingerps.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 216;
+              break;
+            }
+            case 12362: {
+              emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo.Builder subBuilder = null;
+              if (detailCase_ == 1545) {
+                subBuilder = ((emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.ChannelerSlabLoopDungeonResultInfoOuterClass.ChannelerSlabLoopDungeonResultInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1545;
+              break;
+            }
+            case 13426: {
+              emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo.Builder subBuilder = null;
+              if (detailCase_ == 1678) {
+                subBuilder = ((emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1678;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonChallengeFinishNotifyOuterClass.internal_static_DungeonChallengeFinishNotify_descriptor;
@@ -270,7 +413,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 9;
-    private boolean isNewRecord_ = false;
+    private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 9;</code>
      * @return The isNewRecord.
@@ -281,7 +424,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int CURRENT_VALUE_FIELD_NUMBER = 5;
-    private int currentValue_ = 0;
+    private int currentValue_;
     /**
      * <code>uint32 current_value = 5;</code>
      * @return The currentValue.
@@ -292,7 +435,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int FINISH_TYPE_FIELD_NUMBER = 3;
-    private int finishType_ = 0;
+    private int finishType_;
     /**
      * <code>.ChallengeFinishType finish_type = 3;</code>
      * @return The enum numeric value on the wire for finishType.
@@ -305,7 +448,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
      * @return The finishType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType getFinishType() {
-      emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType result = emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType.forNumber(finishType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType result = emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType.valueOf(finishType_);
       return result == null ? emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType.UNRECOGNIZED : result;
     }
 
@@ -321,7 +465,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> strengthenPointDataMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
@@ -332,12 +475,14 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       }
       return strengthenPointDataMap_;
     }
+
     public int getStrengthenPointDataMapCount() {
       return internalGetStrengthenPointDataMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
      */
+
     @java.lang.Override
     public boolean containsStrengthenPointDataMap(
         int key) {
@@ -356,6 +501,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> getStrengthenPointDataMapMap() {
       return internalGetStrengthenPointDataMap().getMap();
     }
@@ -363,11 +509,10 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
+
+    public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
+        emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> map =
           internalGetStrengthenPointDataMap().getMap();
@@ -377,6 +522,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
         int key) {
       
@@ -389,7 +535,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int CHALLENGE_RECORD_TYPE_FIELD_NUMBER = 2;
-    private int challengeRecordType_ = 0;
+    private int challengeRecordType_;
     /**
      * <code>uint32 challenge_record_type = 2;</code>
      * @return The challengeRecordType.
@@ -400,7 +546,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 8;
-    private boolean isSuccess_ = false;
+    private boolean isSuccess_;
     /**
      * <code>bool is_success = 8;</code>
      * @return The isSuccess.
@@ -411,7 +557,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int CHALLENGE_INDEX_FIELD_NUMBER = 12;
-    private int challengeIndex_ = 0;
+    private int challengeIndex_;
     /**
      * <code>uint32 challenge_index = 12;</code>
      * @return The challengeIndex.
@@ -422,7 +568,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
     }
 
     public static final int TIME_COST_FIELD_NUMBER = 7;
-    private int timeCost_ = 0;
+    private int timeCost_;
     /**
      * <code>uint32 time_cost = 7;</code>
      * @return The timeCost.
@@ -609,7 +755,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       if (detailCase_ == 1678) {
         output.writeMessage(1678, (emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo) detail_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -672,7 +818,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1678, (emu.gingerps.net.proto.CustomDungeonResultInfoOuterClass.CustomDungeonResultInfo) detail_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -723,7 +869,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -774,7 +920,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -923,38 +1069,37 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
 
       // Construct using emu.gingerps.net.proto.DungeonChallengeFinishNotifyOuterClass.DungeonChallengeFinishNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isNewRecord_ = false;
+
         currentValue_ = 0;
+
         finishType_ = 0;
+
         internalGetMutableStrengthenPointDataMap().clear();
         challengeRecordType_ = 0;
+
         isSuccess_ = false;
+
         challengeIndex_ = 0;
+
         timeCost_ = 0;
-        if (channellerSlabLoopDungeonResultInfoBuilder_ != null) {
-          channellerSlabLoopDungeonResultInfoBuilder_.clear();
-        }
-        if (effigyChallengeDungeonResultInfoBuilder_ != null) {
-          effigyChallengeDungeonResultInfoBuilder_.clear();
-        }
-        if (potionDungeonResultInfoBuilder_ != null) {
-          potionDungeonResultInfoBuilder_.clear();
-        }
-        if (customDungeonResultInfoBuilder_ != null) {
-          customDungeonResultInfoBuilder_.clear();
-        }
+
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -983,60 +1128,47 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonChallengeFinishNotifyOuterClass.DungeonChallengeFinishNotify buildPartial() {
         emu.gingerps.net.proto.DungeonChallengeFinishNotifyOuterClass.DungeonChallengeFinishNotify result = new emu.gingerps.net.proto.DungeonChallengeFinishNotifyOuterClass.DungeonChallengeFinishNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        int from_bitField0_ = bitField0_;
+        result.isNewRecord_ = isNewRecord_;
+        result.currentValue_ = currentValue_;
+        result.finishType_ = finishType_;
+        result.strengthenPointDataMap_ = internalGetStrengthenPointDataMap();
+        result.strengthenPointDataMap_.makeImmutable();
+        result.challengeRecordType_ = challengeRecordType_;
+        result.isSuccess_ = isSuccess_;
+        result.challengeIndex_ = challengeIndex_;
+        result.timeCost_ = timeCost_;
+        if (detailCase_ == 1545) {
+          if (channellerSlabLoopDungeonResultInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = channellerSlabLoopDungeonResultInfoBuilder_.build();
+          }
+        }
+        if (detailCase_ == 76) {
+          if (effigyChallengeDungeonResultInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = effigyChallengeDungeonResultInfoBuilder_.build();
+          }
+        }
+        if (detailCase_ == 216) {
+          if (potionDungeonResultInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = potionDungeonResultInfoBuilder_.build();
+          }
+        }
+        if (detailCase_ == 1678) {
+          if (customDungeonResultInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = customDungeonResultInfoBuilder_.build();
+          }
+        }
+        result.detailCase_ = detailCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DungeonChallengeFinishNotifyOuterClass.DungeonChallengeFinishNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isNewRecord_ = isNewRecord_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.currentValue_ = currentValue_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.finishType_ = finishType_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.strengthenPointDataMap_ = internalGetStrengthenPointDataMap();
-          result.strengthenPointDataMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.challengeRecordType_ = challengeRecordType_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isSuccess_ = isSuccess_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.challengeIndex_ = challengeIndex_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.timeCost_ = timeCost_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.DungeonChallengeFinishNotifyOuterClass.DungeonChallengeFinishNotify result) {
-        result.detailCase_ = detailCase_;
-        result.detail_ = this.detail_;
-        if (detailCase_ == 1545 &&
-            channellerSlabLoopDungeonResultInfoBuilder_ != null) {
-          result.detail_ = channellerSlabLoopDungeonResultInfoBuilder_.build();
-        }
-        if (detailCase_ == 76 &&
-            effigyChallengeDungeonResultInfoBuilder_ != null) {
-          result.detail_ = effigyChallengeDungeonResultInfoBuilder_.build();
-        }
-        if (detailCase_ == 216 &&
-            potionDungeonResultInfoBuilder_ != null) {
-          result.detail_ = potionDungeonResultInfoBuilder_.build();
-        }
-        if (detailCase_ == 1678 &&
-            customDungeonResultInfoBuilder_ != null) {
-          result.detail_ = customDungeonResultInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -1094,7 +1226,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         }
         internalGetMutableStrengthenPointDataMap().mergeFrom(
             other.internalGetStrengthenPointDataMap());
-        bitField0_ |= 0x00000008;
         if (other.getChallengeRecordType() != 0) {
           setChallengeRecordType(other.getChallengeRecordType());
         }
@@ -1128,7 +1259,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1143,102 +1274,17 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DungeonChallengeFinishNotifyOuterClass.DungeonChallengeFinishNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                challengeRecordType_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 16
-              case 24: {
-                finishType_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 40: {
-                currentValue_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 56: {
-                timeCost_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 56
-              case 64: {
-                isSuccess_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 64
-              case 72: {
-                isNewRecord_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 90: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-                strengthenPointDataMap__ = input.readMessage(
-                    StrengthenPointDataMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableStrengthenPointDataMap().getMutableMap().put(
-                    strengthenPointDataMap__.getKey(), strengthenPointDataMap__.getValue());
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 90
-              case 96: {
-                challengeIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 96
-              case 610: {
-                input.readMessage(
-                    getEffigyChallengeDungeonResultInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 76;
-                break;
-              } // case 610
-              case 1730: {
-                input.readMessage(
-                    getPotionDungeonResultInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 216;
-                break;
-              } // case 1730
-              case 12362: {
-                input.readMessage(
-                    getChannellerSlabLoopDungeonResultInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 1545;
-                break;
-              } // case 12362
-              case 13426: {
-                input.readMessage(
-                    getCustomDungeonResultInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 1678;
-                break;
-              } // case 13426
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DungeonChallengeFinishNotifyOuterClass.DungeonChallengeFinishNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int detailCase_ = 0;
@@ -1275,7 +1321,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1284,7 +1329,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -1307,7 +1352,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setCurrentValue(int value) {
         
         currentValue_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1316,7 +1360,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearCurrentValue() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         currentValue_ = 0;
         onChanged();
         return this;
@@ -1336,8 +1380,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder setFinishTypeValue(int value) {
+        
         finishType_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1347,7 +1391,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType getFinishType() {
-        emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType result = emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType.forNumber(finishType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType result = emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType.valueOf(finishType_);
         return result == null ? emu.gingerps.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType.UNRECOGNIZED : result;
       }
       /**
@@ -1359,7 +1404,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         finishType_ = value.getNumber();
         onChanged();
         return this;
@@ -1369,7 +1414,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearFinishType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         finishType_ = 0;
         onChanged();
         return this;
@@ -1378,7 +1423,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> strengthenPointDataMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-          internalGetStrengthenPointDataMap() {
+      internalGetStrengthenPointDataMap() {
         if (strengthenPointDataMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
@@ -1386,7 +1431,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         return strengthenPointDataMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-          internalGetMutableStrengthenPointDataMap() {
+      internalGetMutableStrengthenPointDataMap() {
+        onChanged();;
         if (strengthenPointDataMap_ == null) {
           strengthenPointDataMap_ = com.google.protobuf.MapField.newMapField(
               StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
@@ -1394,16 +1440,16 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         if (!strengthenPointDataMap_.isMutable()) {
           strengthenPointDataMap_ = strengthenPointDataMap_.copy();
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
         return strengthenPointDataMap_;
       }
+
       public int getStrengthenPointDataMapCount() {
         return internalGetStrengthenPointDataMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
        */
+
       @java.lang.Override
       public boolean containsStrengthenPointDataMap(
           int key) {
@@ -1422,6 +1468,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> getStrengthenPointDataMapMap() {
         return internalGetStrengthenPointDataMap().getMap();
       }
@@ -1429,11 +1476,10 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
+
+      public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
+          emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> map =
             internalGetStrengthenPointDataMap().getMap();
@@ -1443,6 +1489,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
           int key) {
         
@@ -1453,8 +1500,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         }
         return map.get(key);
       }
+
       public Builder clearStrengthenPointDataMap() {
-        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableStrengthenPointDataMap().getMutableMap()
             .clear();
         return this;
@@ -1462,6 +1509,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       /**
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
        */
+
       public Builder removeStrengthenPointDataMap(
           int key) {
         
@@ -1474,8 +1522,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-          getMutableStrengthenPointDataMap() {
-        bitField0_ |= 0x00000008;
+      getMutableStrengthenPointDataMap() {
         return internalGetMutableStrengthenPointDataMap().getMutableMap();
       }
       /**
@@ -1485,20 +1532,19 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           int key,
           emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableStrengthenPointDataMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000008;
         return this;
       }
       /**
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 11;</code>
        */
+
       public Builder putAllStrengthenPointDataMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> values) {
         internalGetMutableStrengthenPointDataMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000008;
         return this;
       }
 
@@ -1519,7 +1565,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setChallengeRecordType(int value) {
         
         challengeRecordType_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1528,7 +1573,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearChallengeRecordType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         challengeRecordType_ = 0;
         onChanged();
         return this;
@@ -1551,7 +1596,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1560,7 +1604,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isSuccess_ = false;
         onChanged();
         return this;
@@ -1583,7 +1627,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setChallengeIndex(int value) {
         
         challengeIndex_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1592,7 +1635,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearChallengeIndex() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         challengeIndex_ = 0;
         onChanged();
         return this;
@@ -1615,7 +1658,6 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
       public Builder setTimeCost(int value) {
         
         timeCost_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1624,7 +1666,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
        * @return This builder for chaining.
        */
       public Builder clearTimeCost() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         timeCost_ = 0;
         onChanged();
         return this;
@@ -1704,9 +1746,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 1545) {
             channellerSlabLoopDungeonResultInfoBuilder_.mergeFrom(value);
-          } else {
-            channellerSlabLoopDungeonResultInfoBuilder_.setMessage(value);
           }
+          channellerSlabLoopDungeonResultInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1545;
         return this;
@@ -1768,7 +1809,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 1545;
-        onChanged();
+        onChanged();;
         return channellerSlabLoopDungeonResultInfoBuilder_;
       }
 
@@ -1846,9 +1887,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 76) {
             effigyChallengeDungeonResultInfoBuilder_.mergeFrom(value);
-          } else {
-            effigyChallengeDungeonResultInfoBuilder_.setMessage(value);
           }
+          effigyChallengeDungeonResultInfoBuilder_.setMessage(value);
         }
         detailCase_ = 76;
         return this;
@@ -1910,7 +1950,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 76;
-        onChanged();
+        onChanged();;
         return effigyChallengeDungeonResultInfoBuilder_;
       }
 
@@ -1988,9 +2028,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 216) {
             potionDungeonResultInfoBuilder_.mergeFrom(value);
-          } else {
-            potionDungeonResultInfoBuilder_.setMessage(value);
           }
+          potionDungeonResultInfoBuilder_.setMessage(value);
         }
         detailCase_ = 216;
         return this;
@@ -2052,7 +2091,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 216;
-        onChanged();
+        onChanged();;
         return potionDungeonResultInfoBuilder_;
       }
 
@@ -2130,9 +2169,8 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
         } else {
           if (detailCase_ == 1678) {
             customDungeonResultInfoBuilder_.mergeFrom(value);
-          } else {
-            customDungeonResultInfoBuilder_.setMessage(value);
           }
+          customDungeonResultInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1678;
         return this;
@@ -2194,7 +2232,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           detail_ = null;
         }
         detailCase_ = 1678;
-        onChanged();
+        onChanged();;
         return customDungeonResultInfoBuilder_;
       }
       @java.lang.Override
@@ -2230,18 +2268,7 @@ emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData default
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DungeonChallengeFinishNotify(input, extensionRegistry);
       }
     };
 

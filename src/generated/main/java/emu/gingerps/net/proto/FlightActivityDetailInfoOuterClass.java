@@ -82,6 +82,66 @@ public final class FlightActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FlightActivityDetailInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              previewRewardId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              minOpenPlayerLevel_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                dailyRecordList_ = new java.util.ArrayList<emu.gingerps.net.proto.FlightDailyRecordOuterClass.FlightDailyRecord>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              dailyRecordList_.add(
+                  input.readMessage(emu.gingerps.net.proto.FlightDailyRecordOuterClass.FlightDailyRecord.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          dailyRecordList_ = java.util.Collections.unmodifiableList(dailyRecordList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.internal_static_FlightActivityDetailInfo_descriptor;
@@ -96,7 +156,6 @@ public final class FlightActivityDetailInfoOuterClass {
     }
 
     public static final int DAILY_RECORD_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.FlightDailyRecordOuterClass.FlightDailyRecord> dailyRecordList_;
     /**
      * <code>repeated .FlightDailyRecord daily_record_list = 12;</code>
@@ -137,7 +196,7 @@ public final class FlightActivityDetailInfoOuterClass {
     }
 
     public static final int PREVIEW_REWARD_ID_FIELD_NUMBER = 1;
-    private int previewRewardId_ = 0;
+    private int previewRewardId_;
     /**
      * <code>uint32 preview_reward_id = 1;</code>
      * @return The previewRewardId.
@@ -148,7 +207,7 @@ public final class FlightActivityDetailInfoOuterClass {
     }
 
     public static final int MIN_OPEN_PLAYER_LEVEL_FIELD_NUMBER = 4;
-    private int minOpenPlayerLevel_ = 0;
+    private int minOpenPlayerLevel_;
     /**
      * <code>uint32 min_open_player_level = 4;</code>
      * @return The minOpenPlayerLevel.
@@ -181,7 +240,7 @@ public final class FlightActivityDetailInfoOuterClass {
       for (int i = 0; i < dailyRecordList_.size(); i++) {
         output.writeMessage(12, dailyRecordList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -202,7 +261,7 @@ public final class FlightActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, dailyRecordList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -223,7 +282,7 @@ public final class FlightActivityDetailInfoOuterClass {
           != other.getPreviewRewardId()) return false;
       if (getMinOpenPlayerLevel()
           != other.getMinOpenPlayerLevel()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -242,7 +301,7 @@ public final class FlightActivityDetailInfoOuterClass {
       hash = (53 * hash) + getPreviewRewardId();
       hash = (37 * hash) + MIN_OPEN_PLAYER_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getMinOpenPlayerLevel();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -359,27 +418,33 @@ public final class FlightActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDailyRecordListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (dailyRecordListBuilder_ == null) {
           dailyRecordList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          dailyRecordList_ = null;
           dailyRecordListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         previewRewardId_ = 0;
+
         minOpenPlayerLevel_ = 0;
+
         return this;
       }
 
@@ -406,13 +471,7 @@ public final class FlightActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo result = new emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
         if (dailyRecordListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             dailyRecordList_ = java.util.Collections.unmodifiableList(dailyRecordList_);
@@ -422,16 +481,10 @@ public final class FlightActivityDetailInfoOuterClass {
         } else {
           result.dailyRecordList_ = dailyRecordListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.previewRewardId_ = previewRewardId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.minOpenPlayerLevel_ = minOpenPlayerLevel_;
-        }
+        result.previewRewardId_ = previewRewardId_;
+        result.minOpenPlayerLevel_ = minOpenPlayerLevel_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -510,7 +563,7 @@ public final class FlightActivityDetailInfoOuterClass {
         if (other.getMinOpenPlayerLevel() != 0) {
           setMinOpenPlayerLevel(other.getMinOpenPlayerLevel());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -525,53 +578,17 @@ public final class FlightActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                previewRewardId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 8
-              case 32: {
-                minOpenPlayerLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 98: {
-                emu.gingerps.net.proto.FlightDailyRecordOuterClass.FlightDailyRecord m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.FlightDailyRecordOuterClass.FlightDailyRecord.parser(),
-                        extensionRegistry);
-                if (dailyRecordListBuilder_ == null) {
-                  ensureDailyRecordListIsMutable();
-                  dailyRecordList_.add(m);
-                } else {
-                  dailyRecordListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -833,7 +850,6 @@ public final class FlightActivityDetailInfoOuterClass {
       public Builder setPreviewRewardId(int value) {
         
         previewRewardId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -842,7 +858,7 @@ public final class FlightActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPreviewRewardId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         previewRewardId_ = 0;
         onChanged();
         return this;
@@ -865,7 +881,6 @@ public final class FlightActivityDetailInfoOuterClass {
       public Builder setMinOpenPlayerLevel(int value) {
         
         minOpenPlayerLevel_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -874,7 +889,7 @@ public final class FlightActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMinOpenPlayerLevel() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         minOpenPlayerLevel_ = 0;
         onChanged();
         return this;
@@ -912,18 +927,7 @@ public final class FlightActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FlightActivityDetailInfo(input, extensionRegistry);
       }
     };
 

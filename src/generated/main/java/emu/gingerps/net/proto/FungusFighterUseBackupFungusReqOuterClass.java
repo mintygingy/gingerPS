@@ -74,6 +74,68 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FungusFighterUseBackupFungusReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                backupFungusIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              backupFungusIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                backupFungusIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                backupFungusIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          backupFungusIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FungusFighterUseBackupFungusReqOuterClass.internal_static_FungusFighterUseBackupFungusReq_descriptor;
@@ -88,7 +150,6 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
     }
 
     public static final int BACKUP_FUNGUS_ID_LIST_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList backupFungusIdList_;
     /**
      * <code>repeated uint32 backup_fungus_id_list = 8;</code>
@@ -138,7 +199,7 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
       for (int i = 0; i < backupFungusIdList_.size(); i++) {
         output.writeUInt32NoTag(backupFungusIdList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -161,7 +222,7 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
         }
         backupFungusIdListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -178,7 +239,7 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
 
       if (!getBackupFungusIdListList()
           .equals(other.getBackupFungusIdListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -193,7 +254,7 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
         hash = (37 * hash) + BACKUP_FUNGUS_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBackupFungusIdListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -321,19 +382,24 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.FungusFighterUseBackupFungusReqOuterClass.FungusFighterUseBackupFungusReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         backupFungusIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -360,22 +426,14 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FungusFighterUseBackupFungusReqOuterClass.FungusFighterUseBackupFungusReq buildPartial() {
         emu.gingerps.net.proto.FungusFighterUseBackupFungusReqOuterClass.FungusFighterUseBackupFungusReq result = new emu.gingerps.net.proto.FungusFighterUseBackupFungusReqOuterClass.FungusFighterUseBackupFungusReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.FungusFighterUseBackupFungusReqOuterClass.FungusFighterUseBackupFungusReq result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           backupFungusIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.backupFungusIdList_ = backupFungusIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FungusFighterUseBackupFungusReqOuterClass.FungusFighterUseBackupFungusReq result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -432,7 +490,7 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -447,46 +505,17 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FungusFighterUseBackupFungusReqOuterClass.FungusFighterUseBackupFungusReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                int v = input.readUInt32();
-                ensureBackupFungusIdListIsMutable();
-                backupFungusIdList_.addInt(v);
-                break;
-              } // case 64
-              case 66: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureBackupFungusIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  backupFungusIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 66
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FungusFighterUseBackupFungusReqOuterClass.FungusFighterUseBackupFungusReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -496,7 +525,7 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           backupFungusIdList_ = mutableCopy(backupFungusIdList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 backup_fungus_id_list = 8;</code>
@@ -530,7 +559,6 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
        */
       public Builder setBackupFungusIdList(
           int index, int value) {
-        
         ensureBackupFungusIdListIsMutable();
         backupFungusIdList_.setInt(index, value);
         onChanged();
@@ -542,7 +570,6 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addBackupFungusIdList(int value) {
-        
         ensureBackupFungusIdListIsMutable();
         backupFungusIdList_.addInt(value);
         onChanged();
@@ -604,18 +631,7 @@ public final class FungusFighterUseBackupFungusReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FungusFighterUseBackupFungusReq(input, extensionRegistry);
       }
     };
 

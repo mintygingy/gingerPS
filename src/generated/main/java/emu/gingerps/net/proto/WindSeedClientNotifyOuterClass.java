@@ -102,6 +102,85 @@ public final class WindSeedClientNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WindSeedClientNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 42: {
+              emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.Builder subBuilder = null;
+              if (notifyCase_ == 5) {
+                subBuilder = ((emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_).toBuilder();
+              }
+              notify_ =
+                  input.readMessage(emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_);
+                notify_ = subBuilder.buildPartial();
+              }
+              notifyCase_ = 5;
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.Builder subBuilder = null;
+              if (notifyCase_ == 7) {
+                subBuilder = ((emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_).toBuilder();
+              }
+              notify_ =
+                  input.readMessage(emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_);
+                notify_ = subBuilder.buildPartial();
+              }
+              notifyCase_ = 7;
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify.Builder subBuilder = null;
+              if (notifyCase_ == 14) {
+                subBuilder = ((emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify) notify_).toBuilder();
+              }
+              notify_ =
+                  input.readMessage(emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify) notify_);
+                notify_ = subBuilder.buildPartial();
+              }
+              notifyCase_ = 14;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.internal_static_WindSeedClientNotify_descriptor;
@@ -152,6 +231,48 @@ public final class WindSeedClientNotifyOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
+      private RefreshNotify(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+
+                refreshNum_ = input.readUInt32();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.internal_static_WindSeedClientNotify_RefreshNotify_descriptor;
@@ -166,7 +287,7 @@ public final class WindSeedClientNotifyOuterClass {
       }
 
       public static final int REFRESH_NUM_FIELD_NUMBER = 7;
-      private int refreshNum_ = 0;
+      private int refreshNum_;
       /**
        * <code>uint32 refresh_num = 7;</code>
        * @return The refreshNum.
@@ -193,7 +314,7 @@ public final class WindSeedClientNotifyOuterClass {
         if (refreshNum_ != 0) {
           output.writeUInt32(7, refreshNum_);
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -206,7 +327,7 @@ public final class WindSeedClientNotifyOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(7, refreshNum_);
         }
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -223,7 +344,7 @@ public final class WindSeedClientNotifyOuterClass {
 
         if (getRefreshNum()
             != other.getRefreshNum()) return false;
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
 
@@ -236,7 +357,7 @@ public final class WindSeedClientNotifyOuterClass {
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + REFRESH_NUM_FIELD_NUMBER;
         hash = (53 * hash) + getRefreshNum();
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -353,19 +474,24 @@ public final class WindSeedClientNotifyOuterClass {
 
         // Construct using emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          bitField0_ = 0;
           refreshNum_ = 0;
+
           return this;
         }
 
@@ -392,16 +518,9 @@ public final class WindSeedClientNotifyOuterClass {
         @java.lang.Override
         public emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify buildPartial() {
           emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify result = new emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify(this);
-          if (bitField0_ != 0) { buildPartial0(result); }
+          result.refreshNum_ = refreshNum_;
           onBuilt();
           return result;
-        }
-
-        private void buildPartial0(emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify result) {
-          int from_bitField0_ = bitField0_;
-          if (((from_bitField0_ & 0x00000001) != 0)) {
-            result.refreshNum_ = refreshNum_;
-          }
         }
 
         @java.lang.Override
@@ -451,7 +570,7 @@ public final class WindSeedClientNotifyOuterClass {
           if (other.getRefreshNum() != 0) {
             setRefreshNum(other.getRefreshNum());
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -466,38 +585,19 @@ public final class WindSeedClientNotifyOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 56: {
-                  refreshNum_ = input.readUInt32();
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 56
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
-        private int bitField0_;
 
         private int refreshNum_ ;
         /**
@@ -516,7 +616,6 @@ public final class WindSeedClientNotifyOuterClass {
         public Builder setRefreshNum(int value) {
           
           refreshNum_ = value;
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -525,7 +624,7 @@ public final class WindSeedClientNotifyOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearRefreshNum() {
-          bitField0_ = (bitField0_ & ~0x00000001);
+          
           refreshNum_ = 0;
           onChanged();
           return this;
@@ -563,18 +662,7 @@ public final class WindSeedClientNotifyOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new RefreshNotify(input, extensionRegistry);
         }
       };
 
@@ -652,6 +740,66 @@ public final class WindSeedClientNotifyOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
+      private AddWindBulletNotify(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+
+                unk3300CKIKKCAFJBC_ = input.readUInt32();
+                break;
+              }
+              case 88: {
+
+                unk3300MPDFAPBDJAH_ = input.readUInt32();
+                break;
+              }
+              case 114: {
+                emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+                if (seedPos_ != null) {
+                  subBuilder = seedPos_.toBuilder();
+                }
+                seedPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(seedPos_);
+                  seedPos_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.internal_static_WindSeedClientNotify_AddWindBulletNotify_descriptor;
@@ -688,11 +836,11 @@ public final class WindSeedClientNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSeedPosOrBuilder() {
-        return seedPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : seedPos_;
+        return getSeedPos();
       }
 
       public static final int UNK3300_CKIKKCAFJBC_FIELD_NUMBER = 7;
-      private int unk3300CKIKKCAFJBC_ = 0;
+      private int unk3300CKIKKCAFJBC_;
       /**
        * <code>uint32 Unk3300_CKIKKCAFJBC = 7;</code>
        * @return The unk3300CKIKKCAFJBC.
@@ -703,7 +851,7 @@ public final class WindSeedClientNotifyOuterClass {
       }
 
       public static final int UNK3300_MPDFAPBDJAH_FIELD_NUMBER = 11;
-      private int unk3300MPDFAPBDJAH_ = 0;
+      private int unk3300MPDFAPBDJAH_;
       /**
        * <code>uint32 Unk3300_MPDFAPBDJAH = 11;</code>
        * @return The unk3300MPDFAPBDJAH.
@@ -736,7 +884,7 @@ public final class WindSeedClientNotifyOuterClass {
         if (seedPos_ != null) {
           output.writeMessage(14, getSeedPos());
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -757,7 +905,7 @@ public final class WindSeedClientNotifyOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(14, getSeedPos());
         }
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -781,7 +929,7 @@ public final class WindSeedClientNotifyOuterClass {
             != other.getUnk3300CKIKKCAFJBC()) return false;
         if (getUnk3300MPDFAPBDJAH()
             != other.getUnk3300MPDFAPBDJAH()) return false;
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
 
@@ -800,7 +948,7 @@ public final class WindSeedClientNotifyOuterClass {
         hash = (53 * hash) + getUnk3300CKIKKCAFJBC();
         hash = (37 * hash) + UNK3300_MPDFAPBDJAH_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300MPDFAPBDJAH();
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -917,25 +1065,32 @@ public final class WindSeedClientNotifyOuterClass {
 
         // Construct using emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          bitField0_ = 0;
-          seedPos_ = null;
-          if (seedPosBuilder_ != null) {
-            seedPosBuilder_.dispose();
+          if (seedPosBuilder_ == null) {
+            seedPos_ = null;
+          } else {
+            seedPos_ = null;
             seedPosBuilder_ = null;
           }
           unk3300CKIKKCAFJBC_ = 0;
+
           unk3300MPDFAPBDJAH_ = 0;
+
           return this;
         }
 
@@ -962,24 +1117,15 @@ public final class WindSeedClientNotifyOuterClass {
         @java.lang.Override
         public emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify buildPartial() {
           emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify result = new emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify(this);
-          if (bitField0_ != 0) { buildPartial0(result); }
+          if (seedPosBuilder_ == null) {
+            result.seedPos_ = seedPos_;
+          } else {
+            result.seedPos_ = seedPosBuilder_.build();
+          }
+          result.unk3300CKIKKCAFJBC_ = unk3300CKIKKCAFJBC_;
+          result.unk3300MPDFAPBDJAH_ = unk3300MPDFAPBDJAH_;
           onBuilt();
           return result;
-        }
-
-        private void buildPartial0(emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify result) {
-          int from_bitField0_ = bitField0_;
-          if (((from_bitField0_ & 0x00000001) != 0)) {
-            result.seedPos_ = seedPosBuilder_ == null
-                ? seedPos_
-                : seedPosBuilder_.build();
-          }
-          if (((from_bitField0_ & 0x00000002) != 0)) {
-            result.unk3300CKIKKCAFJBC_ = unk3300CKIKKCAFJBC_;
-          }
-          if (((from_bitField0_ & 0x00000004) != 0)) {
-            result.unk3300MPDFAPBDJAH_ = unk3300MPDFAPBDJAH_;
-          }
         }
 
         @java.lang.Override
@@ -1035,7 +1181,7 @@ public final class WindSeedClientNotifyOuterClass {
           if (other.getUnk3300MPDFAPBDJAH() != 0) {
             setUnk3300MPDFAPBDJAH(other.getUnk3300MPDFAPBDJAH());
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -1050,50 +1196,19 @@ public final class WindSeedClientNotifyOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 56: {
-                  unk3300CKIKKCAFJBC_ = input.readUInt32();
-                  bitField0_ |= 0x00000002;
-                  break;
-                } // case 56
-                case 88: {
-                  unk3300MPDFAPBDJAH_ = input.readUInt32();
-                  bitField0_ |= 0x00000004;
-                  break;
-                } // case 88
-                case 114: {
-                  input.readMessage(
-                      getSeedPosFieldBuilder().getBuilder(),
-                      extensionRegistry);
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 114
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
-        private int bitField0_;
 
         private emu.gingerps.net.proto.VectorOuterClass.Vector seedPos_;
         private com.google.protobuf.SingleFieldBuilderV3<
@@ -1103,7 +1218,7 @@ public final class WindSeedClientNotifyOuterClass {
          * @return Whether the seedPos field is set.
          */
         public boolean hasSeedPos() {
-          return ((bitField0_ & 0x00000001) != 0);
+          return seedPosBuilder_ != null || seedPos_ != null;
         }
         /**
          * <code>.Vector seed_pos = 14;</code>
@@ -1125,11 +1240,11 @@ public final class WindSeedClientNotifyOuterClass {
               throw new NullPointerException();
             }
             seedPos_ = value;
+            onChanged();
           } else {
             seedPosBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000001;
-          onChanged();
+
           return this;
         }
         /**
@@ -1139,11 +1254,11 @@ public final class WindSeedClientNotifyOuterClass {
             emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
           if (seedPosBuilder_ == null) {
             seedPos_ = builderForValue.build();
+            onChanged();
           } else {
             seedPosBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000001;
-          onChanged();
+
           return this;
         }
         /**
@@ -1151,38 +1266,38 @@ public final class WindSeedClientNotifyOuterClass {
          */
         public Builder mergeSeedPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
           if (seedPosBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0) &&
-              seedPos_ != null &&
-              seedPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-              getSeedPosBuilder().mergeFrom(value);
+            if (seedPos_ != null) {
+              seedPos_ =
+                emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(seedPos_).mergeFrom(value).buildPartial();
             } else {
               seedPos_ = value;
             }
+            onChanged();
           } else {
             seedPosBuilder_.mergeFrom(value);
           }
-          bitField0_ |= 0x00000001;
-          onChanged();
+
           return this;
         }
         /**
          * <code>.Vector seed_pos = 14;</code>
          */
         public Builder clearSeedPos() {
-          bitField0_ = (bitField0_ & ~0x00000001);
-          seedPos_ = null;
-          if (seedPosBuilder_ != null) {
-            seedPosBuilder_.dispose();
+          if (seedPosBuilder_ == null) {
+            seedPos_ = null;
+            onChanged();
+          } else {
+            seedPos_ = null;
             seedPosBuilder_ = null;
           }
-          onChanged();
+
           return this;
         }
         /**
          * <code>.Vector seed_pos = 14;</code>
          */
         public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSeedPosBuilder() {
-          bitField0_ |= 0x00000001;
+          
           onChanged();
           return getSeedPosFieldBuilder().getBuilder();
         }
@@ -1231,7 +1346,6 @@ public final class WindSeedClientNotifyOuterClass {
         public Builder setUnk3300CKIKKCAFJBC(int value) {
           
           unk3300CKIKKCAFJBC_ = value;
-          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1240,7 +1354,7 @@ public final class WindSeedClientNotifyOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearUnk3300CKIKKCAFJBC() {
-          bitField0_ = (bitField0_ & ~0x00000002);
+          
           unk3300CKIKKCAFJBC_ = 0;
           onChanged();
           return this;
@@ -1263,7 +1377,6 @@ public final class WindSeedClientNotifyOuterClass {
         public Builder setUnk3300MPDFAPBDJAH(int value) {
           
           unk3300MPDFAPBDJAH_ = value;
-          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -1272,7 +1385,7 @@ public final class WindSeedClientNotifyOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearUnk3300MPDFAPBDJAH() {
-          bitField0_ = (bitField0_ & ~0x00000004);
+          
           unk3300MPDFAPBDJAH_ = 0;
           onChanged();
           return this;
@@ -1310,18 +1423,7 @@ public final class WindSeedClientNotifyOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new AddWindBulletNotify(input, extensionRegistry);
         }
       };
 
@@ -1391,6 +1493,58 @@ public final class WindSeedClientNotifyOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
+      private AreaNotify(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 82: {
+
+                areaCode_ = input.readBytes();
+                break;
+              }
+              case 96: {
+
+                areaId_ = input.readUInt32();
+                break;
+              }
+              case 104: {
+
+                areaType_ = input.readUInt32();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.internal_static_WindSeedClientNotify_AreaNotify_descriptor;
@@ -1405,7 +1559,7 @@ public final class WindSeedClientNotifyOuterClass {
       }
 
       public static final int AREA_ID_FIELD_NUMBER = 12;
-      private int areaId_ = 0;
+      private int areaId_;
       /**
        * <code>uint32 area_id = 12;</code>
        * @return The areaId.
@@ -1416,7 +1570,7 @@ public final class WindSeedClientNotifyOuterClass {
       }
 
       public static final int AREA_CODE_FIELD_NUMBER = 10;
-      private com.google.protobuf.ByteString areaCode_ = com.google.protobuf.ByteString.EMPTY;
+      private com.google.protobuf.ByteString areaCode_;
       /**
        * <code>bytes area_code = 10;</code>
        * @return The areaCode.
@@ -1427,7 +1581,7 @@ public final class WindSeedClientNotifyOuterClass {
       }
 
       public static final int AREA_TYPE_FIELD_NUMBER = 13;
-      private int areaType_ = 0;
+      private int areaType_;
       /**
        * <code>uint32 area_type = 13;</code>
        * @return The areaType.
@@ -1460,7 +1614,7 @@ public final class WindSeedClientNotifyOuterClass {
         if (areaType_ != 0) {
           output.writeUInt32(13, areaType_);
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -1481,7 +1635,7 @@ public final class WindSeedClientNotifyOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(13, areaType_);
         }
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1502,7 +1656,7 @@ public final class WindSeedClientNotifyOuterClass {
             .equals(other.getAreaCode())) return false;
         if (getAreaType()
             != other.getAreaType()) return false;
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
 
@@ -1519,7 +1673,7 @@ public final class WindSeedClientNotifyOuterClass {
         hash = (53 * hash) + getAreaCode().hashCode();
         hash = (37 * hash) + AREA_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getAreaType();
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1636,21 +1790,28 @@ public final class WindSeedClientNotifyOuterClass {
 
         // Construct using emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          bitField0_ = 0;
           areaId_ = 0;
+
           areaCode_ = com.google.protobuf.ByteString.EMPTY;
+
           areaType_ = 0;
+
           return this;
         }
 
@@ -1677,22 +1838,11 @@ public final class WindSeedClientNotifyOuterClass {
         @java.lang.Override
         public emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify buildPartial() {
           emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify result = new emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify(this);
-          if (bitField0_ != 0) { buildPartial0(result); }
+          result.areaId_ = areaId_;
+          result.areaCode_ = areaCode_;
+          result.areaType_ = areaType_;
           onBuilt();
           return result;
-        }
-
-        private void buildPartial0(emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify result) {
-          int from_bitField0_ = bitField0_;
-          if (((from_bitField0_ & 0x00000001) != 0)) {
-            result.areaId_ = areaId_;
-          }
-          if (((from_bitField0_ & 0x00000002) != 0)) {
-            result.areaCode_ = areaCode_;
-          }
-          if (((from_bitField0_ & 0x00000004) != 0)) {
-            result.areaType_ = areaType_;
-          }
         }
 
         @java.lang.Override
@@ -1748,7 +1898,7 @@ public final class WindSeedClientNotifyOuterClass {
           if (other.getAreaType() != 0) {
             setAreaType(other.getAreaType());
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -1763,48 +1913,19 @@ public final class WindSeedClientNotifyOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 82: {
-                  areaCode_ = input.readBytes();
-                  bitField0_ |= 0x00000002;
-                  break;
-                } // case 82
-                case 96: {
-                  areaId_ = input.readUInt32();
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 96
-                case 104: {
-                  areaType_ = input.readUInt32();
-                  bitField0_ |= 0x00000004;
-                  break;
-                } // case 104
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
-        private int bitField0_;
 
         private int areaId_ ;
         /**
@@ -1823,7 +1944,6 @@ public final class WindSeedClientNotifyOuterClass {
         public Builder setAreaId(int value) {
           
           areaId_ = value;
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1832,7 +1952,7 @@ public final class WindSeedClientNotifyOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearAreaId() {
-          bitField0_ = (bitField0_ & ~0x00000001);
+          
           areaId_ = 0;
           onChanged();
           return this;
@@ -1853,9 +1973,11 @@ public final class WindSeedClientNotifyOuterClass {
          * @return This builder for chaining.
          */
         public Builder setAreaCode(com.google.protobuf.ByteString value) {
-          if (value == null) { throw new NullPointerException(); }
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
           areaCode_ = value;
-          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1864,7 +1986,7 @@ public final class WindSeedClientNotifyOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearAreaCode() {
-          bitField0_ = (bitField0_ & ~0x00000002);
+          
           areaCode_ = getDefaultInstance().getAreaCode();
           onChanged();
           return this;
@@ -1887,7 +2009,6 @@ public final class WindSeedClientNotifyOuterClass {
         public Builder setAreaType(int value) {
           
           areaType_ = value;
-          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -1896,7 +2017,7 @@ public final class WindSeedClientNotifyOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearAreaType() {
-          bitField0_ = (bitField0_ & ~0x00000004);
+          
           areaType_ = 0;
           onChanged();
           return this;
@@ -1934,18 +2055,7 @@ public final class WindSeedClientNotifyOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new AreaNotify(input, extensionRegistry);
         }
       };
 
@@ -2124,7 +2234,7 @@ public final class WindSeedClientNotifyOuterClass {
       if (notifyCase_ == 14) {
         output.writeMessage(14, (emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify) notify_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2145,7 +2255,7 @@ public final class WindSeedClientNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, (emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify) notify_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2177,7 +2287,7 @@ public final class WindSeedClientNotifyOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2204,7 +2314,7 @@ public final class WindSeedClientNotifyOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2331,27 +2441,22 @@ public final class WindSeedClientNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        if (refreshNotifyBuilder_ != null) {
-          refreshNotifyBuilder_.clear();
-        }
-        if (addWindBulletNotifyBuilder_ != null) {
-          addWindBulletNotifyBuilder_.clear();
-        }
-        if (areaNotifyBuilder_ != null) {
-          areaNotifyBuilder_.clear();
-        }
         notifyCase_ = 0;
         notify_ = null;
         return this;
@@ -2380,31 +2485,30 @@ public final class WindSeedClientNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify buildPartial() {
         emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify result = new emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        if (notifyCase_ == 14) {
+          if (refreshNotifyBuilder_ == null) {
+            result.notify_ = notify_;
+          } else {
+            result.notify_ = refreshNotifyBuilder_.build();
+          }
+        }
+        if (notifyCase_ == 7) {
+          if (addWindBulletNotifyBuilder_ == null) {
+            result.notify_ = notify_;
+          } else {
+            result.notify_ = addWindBulletNotifyBuilder_.build();
+          }
+        }
+        if (notifyCase_ == 5) {
+          if (areaNotifyBuilder_ == null) {
+            result.notify_ = notify_;
+          } else {
+            result.notify_ = areaNotifyBuilder_.build();
+          }
+        }
+        result.notifyCase_ = notifyCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify result) {
-        int from_bitField0_ = bitField0_;
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify result) {
-        result.notifyCase_ = notifyCase_;
-        result.notify_ = this.notify_;
-        if (notifyCase_ == 14 &&
-            refreshNotifyBuilder_ != null) {
-          result.notify_ = refreshNotifyBuilder_.build();
-        }
-        if (notifyCase_ == 7 &&
-            addWindBulletNotifyBuilder_ != null) {
-          result.notify_ = addWindBulletNotifyBuilder_.build();
-        }
-        if (notifyCase_ == 5 &&
-            areaNotifyBuilder_ != null) {
-          result.notify_ = areaNotifyBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -2468,7 +2572,7 @@ public final class WindSeedClientNotifyOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2483,51 +2587,17 @@ public final class WindSeedClientNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 42: {
-                input.readMessage(
-                    getAreaNotifyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                notifyCase_ = 5;
-                break;
-              } // case 42
-              case 58: {
-                input.readMessage(
-                    getAddWindBulletNotifyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                notifyCase_ = 7;
-                break;
-              } // case 58
-              case 114: {
-                input.readMessage(
-                    getRefreshNotifyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                notifyCase_ = 14;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int notifyCase_ = 0;
@@ -2545,7 +2615,6 @@ public final class WindSeedClientNotifyOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify, emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify.Builder, emu.gingerps.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotifyOrBuilder> refreshNotifyBuilder_;
@@ -2621,9 +2690,8 @@ public final class WindSeedClientNotifyOuterClass {
         } else {
           if (notifyCase_ == 14) {
             refreshNotifyBuilder_.mergeFrom(value);
-          } else {
-            refreshNotifyBuilder_.setMessage(value);
           }
+          refreshNotifyBuilder_.setMessage(value);
         }
         notifyCase_ = 14;
         return this;
@@ -2685,7 +2753,7 @@ public final class WindSeedClientNotifyOuterClass {
           notify_ = null;
         }
         notifyCase_ = 14;
-        onChanged();
+        onChanged();;
         return refreshNotifyBuilder_;
       }
 
@@ -2763,9 +2831,8 @@ public final class WindSeedClientNotifyOuterClass {
         } else {
           if (notifyCase_ == 7) {
             addWindBulletNotifyBuilder_.mergeFrom(value);
-          } else {
-            addWindBulletNotifyBuilder_.setMessage(value);
           }
+          addWindBulletNotifyBuilder_.setMessage(value);
         }
         notifyCase_ = 7;
         return this;
@@ -2827,7 +2894,7 @@ public final class WindSeedClientNotifyOuterClass {
           notify_ = null;
         }
         notifyCase_ = 7;
-        onChanged();
+        onChanged();;
         return addWindBulletNotifyBuilder_;
       }
 
@@ -2905,9 +2972,8 @@ public final class WindSeedClientNotifyOuterClass {
         } else {
           if (notifyCase_ == 5) {
             areaNotifyBuilder_.mergeFrom(value);
-          } else {
-            areaNotifyBuilder_.setMessage(value);
           }
+          areaNotifyBuilder_.setMessage(value);
         }
         notifyCase_ = 5;
         return this;
@@ -2969,7 +3035,7 @@ public final class WindSeedClientNotifyOuterClass {
           notify_ = null;
         }
         notifyCase_ = 5;
-        onChanged();
+        onChanged();;
         return areaNotifyBuilder_;
       }
       @java.lang.Override
@@ -3005,18 +3071,7 @@ public final class WindSeedClientNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WindSeedClientNotify(input, extensionRegistry);
       }
     };
 

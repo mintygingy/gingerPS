@@ -93,6 +93,66 @@ public final class ClientAbilityChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ClientAbilityChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 80: {
+
+              isInitHash_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                invokes_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              invokes_.add(
+                  input.readMessage(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          invokes_ = java.util.Collections.unmodifiableList(invokes_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ClientAbilityChangeNotifyOuterClass.internal_static_ClientAbilityChangeNotify_descriptor;
@@ -107,7 +167,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
     }
 
     public static final int IS_INIT_HASH_FIELD_NUMBER = 10;
-    private boolean isInitHash_ = false;
+    private boolean isInitHash_;
     /**
      * <code>bool is_init_hash = 10;</code>
      * @return The isInitHash.
@@ -118,7 +178,6 @@ public final class ClientAbilityChangeNotifyOuterClass {
     }
 
     public static final int INVOKES_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry> invokes_;
     /**
      * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
@@ -159,7 +218,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 11;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
@@ -192,7 +251,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
       for (int i = 0; i < invokes_.size(); i++) {
         output.writeMessage(14, invokes_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +272,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, invokes_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -234,7 +293,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
           .equals(other.getInvokesList())) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -254,7 +313,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
       }
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,27 +441,33 @@ public final class ClientAbilityChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getInvokesFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isInitHash_ = false;
+
         if (invokesBuilder_ == null) {
           invokes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          invokes_ = null;
           invokesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         entityId_ = 0;
+
         return this;
       }
 
@@ -429,32 +494,20 @@ public final class ClientAbilityChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotify buildPartial() {
         emu.gingerps.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotify result = new emu.gingerps.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.isInitHash_ = isInitHash_;
         if (invokesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             invokes_ = java.util.Collections.unmodifiableList(invokes_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.invokes_ = invokes_;
         } else {
           result.invokes_ = invokesBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isInitHash_ = isInitHash_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.entityId_ = entityId_;
-        }
+        result.entityId_ = entityId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -508,7 +561,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
           if (!other.invokes_.isEmpty()) {
             if (invokes_.isEmpty()) {
               invokes_ = other.invokes_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureInvokesIsMutable();
               invokes_.addAll(other.invokes_);
@@ -521,7 +574,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
               invokesBuilder_.dispose();
               invokesBuilder_ = null;
               invokes_ = other.invokes_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               invokesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getInvokesFieldBuilder() : null;
@@ -533,7 +586,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -548,53 +601,17 @@ public final class ClientAbilityChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 80: {
-                isInitHash_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 88: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              case 114: {
-                emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(),
-                        extensionRegistry);
-                if (invokesBuilder_ == null) {
-                  ensureInvokesIsMutable();
-                  invokes_.add(m);
-                } else {
-                  invokesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -616,7 +633,6 @@ public final class ClientAbilityChangeNotifyOuterClass {
       public Builder setIsInitHash(boolean value) {
         
         isInitHash_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -625,7 +641,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsInitHash() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isInitHash_ = false;
         onChanged();
         return this;
@@ -634,9 +650,9 @@ public final class ClientAbilityChangeNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry> invokes_ =
         java.util.Collections.emptyList();
       private void ensureInvokesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           invokes_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry>(invokes_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -786,7 +802,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
       public Builder clearInvokes() {
         if (invokesBuilder_ == null) {
           invokes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           invokesBuilder_.clear();
@@ -863,7 +879,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
           invokesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry, emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder, emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder>(
                   invokes_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           invokes_ = null;
@@ -888,7 +904,6 @@ public final class ClientAbilityChangeNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -897,7 +912,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -935,18 +950,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ClientAbilityChangeNotify(input, extensionRegistry);
       }
     };
 

@@ -110,6 +110,88 @@ public final class GadgetPlayUidInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GadgetPlayUidInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              score_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              onlineId_ = s;
+              break;
+            }
+            case 50: {
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
+              if (profilePicture_ != null) {
+                subBuilder = profilePicture_.toBuilder();
+              }
+              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(profilePicture_);
+                profilePicture_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 72: {
+
+              battleWatcherId_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickname_ = s;
+              break;
+            }
+            case 96: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              icon_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.internal_static_GadgetPlayUidInfo_descriptor;
@@ -124,8 +206,7 @@ public final class GadgetPlayUidInfoOuterClass {
     }
 
     public static final int ONLINE_ID_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object onlineId_ = "";
+    private volatile java.lang.Object onlineId_;
     /**
      * <code>string online_id = 5;</code>
      * @return The onlineId.
@@ -163,7 +244,7 @@ public final class GadgetPlayUidInfoOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 1;
-    private int score_ = 0;
+    private int score_;
     /**
      * <code>uint32 score = 1;</code>
      * @return The score.
@@ -174,8 +255,7 @@ public final class GadgetPlayUidInfoOuterClass {
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object nickname_ = "";
+    private volatile java.lang.Object nickname_;
     /**
      * <code>string nickname = 11;</code>
      * @return The nickname.
@@ -213,7 +293,7 @@ public final class GadgetPlayUidInfoOuterClass {
     }
 
     public static final int ICON_FIELD_NUMBER = 15;
-    private int icon_ = 0;
+    private int icon_;
     /**
      * <code>uint32 icon = 15;</code>
      * @return The icon.
@@ -224,7 +304,7 @@ public final class GadgetPlayUidInfoOuterClass {
     }
 
     public static final int BATTLE_WATCHER_ID_FIELD_NUMBER = 9;
-    private int battleWatcherId_ = 0;
+    private int battleWatcherId_;
     /**
      * <code>uint32 battle_watcher_id = 9;</code>
      * @return The battleWatcherId.
@@ -257,11 +337,11 @@ public final class GadgetPlayUidInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+      return getProfilePicture();
     }
 
     public static final int UID_FIELD_NUMBER = 12;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 12;</code>
      * @return The uid.
@@ -306,7 +386,7 @@ public final class GadgetPlayUidInfoOuterClass {
       if (icon_ != 0) {
         output.writeUInt32(15, icon_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -341,7 +421,7 @@ public final class GadgetPlayUidInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, icon_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -373,7 +453,7 @@ public final class GadgetPlayUidInfoOuterClass {
       }
       if (getUid()
           != other.getUid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -400,7 +480,7 @@ public final class GadgetPlayUidInfoOuterClass {
       }
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -517,29 +597,40 @@ public final class GadgetPlayUidInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         onlineId_ = "";
+
         score_ = 0;
+
         nickname_ = "";
+
         icon_ = 0;
+
         battleWatcherId_ = 0;
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
         uid_ = 0;
+
         return this;
       }
 
@@ -566,36 +657,19 @@ public final class GadgetPlayUidInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo buildPartial() {
         emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo result = new emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.onlineId_ = onlineId_;
+        result.score_ = score_;
+        result.nickname_ = nickname_;
+        result.icon_ = icon_;
+        result.battleWatcherId_ = battleWatcherId_;
+        if (profilePictureBuilder_ == null) {
+          result.profilePicture_ = profilePicture_;
+        } else {
+          result.profilePicture_ = profilePictureBuilder_.build();
+        }
+        result.uid_ = uid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.onlineId_ = onlineId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.score_ = score_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.nickname_ = nickname_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.icon_ = icon_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.battleWatcherId_ = battleWatcherId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.profilePicture_ = profilePictureBuilder_ == null
-              ? profilePicture_
-              : profilePictureBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.uid_ = uid_;
-        }
       }
 
       @java.lang.Override
@@ -644,7 +718,6 @@ public final class GadgetPlayUidInfoOuterClass {
         if (other == emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo.getDefaultInstance()) return this;
         if (!other.getOnlineId().isEmpty()) {
           onlineId_ = other.onlineId_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getScore() != 0) {
@@ -652,7 +725,6 @@ public final class GadgetPlayUidInfoOuterClass {
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getIcon() != 0) {
@@ -667,7 +739,7 @@ public final class GadgetPlayUidInfoOuterClass {
         if (other.getUid() != 0) {
           setUid(other.getUid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -682,70 +754,19 @@ public final class GadgetPlayUidInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                score_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 8
-              case 42: {
-                onlineId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 42
-              case 50: {
-                input.readMessage(
-                    getProfilePictureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 50
-              case 72: {
-                battleWatcherId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 72
-              case 90: {
-                nickname_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 90
-              case 96: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 96
-              case 120: {
-                icon_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object onlineId_ = "";
       /**
@@ -788,9 +809,11 @@ public final class GadgetPlayUidInfoOuterClass {
        */
       public Builder setOnlineId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         onlineId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -799,8 +822,8 @@ public final class GadgetPlayUidInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
+        
         onlineId_ = getDefaultInstance().getOnlineId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -811,10 +834,12 @@ public final class GadgetPlayUidInfoOuterClass {
        */
       public Builder setOnlineIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         onlineId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -836,7 +861,6 @@ public final class GadgetPlayUidInfoOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -845,7 +869,7 @@ public final class GadgetPlayUidInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         score_ = 0;
         onChanged();
         return this;
@@ -892,9 +916,11 @@ public final class GadgetPlayUidInfoOuterClass {
        */
       public Builder setNickname(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         nickname_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -903,8 +929,8 @@ public final class GadgetPlayUidInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickname() {
+        
         nickname_ = getDefaultInstance().getNickname();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -915,10 +941,12 @@ public final class GadgetPlayUidInfoOuterClass {
        */
       public Builder setNicknameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         nickname_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -940,7 +968,6 @@ public final class GadgetPlayUidInfoOuterClass {
       public Builder setIcon(int value) {
         
         icon_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -949,7 +976,7 @@ public final class GadgetPlayUidInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIcon() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         icon_ = 0;
         onChanged();
         return this;
@@ -972,7 +999,6 @@ public final class GadgetPlayUidInfoOuterClass {
       public Builder setBattleWatcherId(int value) {
         
         battleWatcherId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -981,7 +1007,7 @@ public final class GadgetPlayUidInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBattleWatcherId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         battleWatcherId_ = 0;
         onChanged();
         return this;
@@ -995,7 +1021,7 @@ public final class GadgetPlayUidInfoOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
        * <code>.ProfilePicture profile_picture = 6;</code>
@@ -1017,11 +1043,11 @@ public final class GadgetPlayUidInfoOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1031,11 +1057,11 @@ public final class GadgetPlayUidInfoOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1043,38 +1069,38 @@ public final class GadgetPlayUidInfoOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            profilePicture_ != null &&
-            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
-            getProfilePictureBuilder().mergeFrom(value);
+          if (profilePicture_ != null) {
+            profilePicture_ =
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
           } else {
             profilePicture_ = value;
           }
+          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 6;</code>
        */
       public Builder clearProfilePicture() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+          onChanged();
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 6;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -1123,7 +1149,6 @@ public final class GadgetPlayUidInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1132,7 +1157,7 @@ public final class GadgetPlayUidInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -1170,18 +1195,7 @@ public final class GadgetPlayUidInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GadgetPlayUidInfo(input, extensionRegistry);
       }
     };
 

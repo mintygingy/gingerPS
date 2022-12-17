@@ -86,6 +86,60 @@ public final class PlayerPreEnterMpNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerPreEnterMpNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickname_ = s;
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.internal_static_PlayerPreEnterMpNotify_descriptor;
@@ -217,8 +271,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object nickname_ = "";
+    private volatile java.lang.Object nickname_;
     /**
      * <code>string nickname = 6;</code>
      * @return The nickname.
@@ -256,7 +309,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 4;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 4;</code>
      * @return The uid.
@@ -267,7 +320,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
     }
 
     public static final int STATE_FIELD_NUMBER = 10;
-    private int state_ = 0;
+    private int state_;
     /**
      * <code>.PlayerPreEnterMpNotify.State state = 10;</code>
      * @return The enum numeric value on the wire for state.
@@ -280,7 +333,8 @@ public final class PlayerPreEnterMpNotifyOuterClass {
      * @return The state.
      */
     @java.lang.Override public emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State getState() {
-      emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State result = emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State.forNumber(state_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State result = emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State.valueOf(state_);
       return result == null ? emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State.UNRECOGNIZED : result;
     }
 
@@ -307,7 +361,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
       if (state_ != emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State.STATE_INVALID.getNumber()) {
         output.writeEnum(10, state_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -327,7 +381,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, state_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -347,7 +401,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
       if (getUid()
           != other.getUid()) return false;
       if (state_ != other.state_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -364,7 +418,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
       hash = (53 * hash) + getUid();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -491,21 +545,28 @@ public final class PlayerPreEnterMpNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         nickname_ = "";
+
         uid_ = 0;
+
         state_ = 0;
+
         return this;
       }
 
@@ -532,22 +593,11 @@ public final class PlayerPreEnterMpNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify buildPartial() {
         emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify result = new emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.nickname_ = nickname_;
+        result.uid_ = uid_;
+        result.state_ = state_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.nickname_ = nickname_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.uid_ = uid_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.state_ = state_;
-        }
       }
 
       @java.lang.Override
@@ -596,7 +646,6 @@ public final class PlayerPreEnterMpNotifyOuterClass {
         if (other == emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.getDefaultInstance()) return this;
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getUid() != 0) {
@@ -605,7 +654,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -620,48 +669,19 @@ public final class PlayerPreEnterMpNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 50: {
-                nickname_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 50
-              case 80: {
-                state_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object nickname_ = "";
       /**
@@ -704,9 +724,11 @@ public final class PlayerPreEnterMpNotifyOuterClass {
        */
       public Builder setNickname(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         nickname_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -715,8 +737,8 @@ public final class PlayerPreEnterMpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickname() {
+        
         nickname_ = getDefaultInstance().getNickname();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -727,10 +749,12 @@ public final class PlayerPreEnterMpNotifyOuterClass {
        */
       public Builder setNicknameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         nickname_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -752,7 +776,6 @@ public final class PlayerPreEnterMpNotifyOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -761,7 +784,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -781,8 +804,8 @@ public final class PlayerPreEnterMpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
+        
         state_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -792,7 +815,8 @@ public final class PlayerPreEnterMpNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State getState() {
-        emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State result = emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State.forNumber(state_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State result = emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State.valueOf(state_);
         return result == null ? emu.gingerps.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State.UNRECOGNIZED : result;
       }
       /**
@@ -804,7 +828,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -814,7 +838,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         state_ = 0;
         onChanged();
         return this;
@@ -852,18 +876,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerPreEnterMpNotify(input, extensionRegistry);
       }
     };
 

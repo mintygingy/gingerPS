@@ -98,6 +98,75 @@ public final class MarkMapReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MarkMapReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+              int rawValue = input.readEnum();
+
+              op_ = rawValue;
+              break;
+            }
+            case 50: {
+              emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder subBuilder = null;
+              if (old_ != null) {
+                subBuilder = old_.toBuilder();
+              }
+              old_ = input.readMessage(emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(old_);
+                old_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 106: {
+              emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder subBuilder = null;
+              if (mark_ != null) {
+                subBuilder = mark_.toBuilder();
+              }
+              mark_ = input.readMessage(emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mark_);
+                mark_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MarkMapReqOuterClass.internal_static_MarkMapReq_descriptor;
@@ -238,7 +307,7 @@ public final class MarkMapReqOuterClass {
     }
 
     public static final int OP_FIELD_NUMBER = 3;
-    private int op_ = 0;
+    private int op_;
     /**
      * <code>.MarkMapReq.Operation op = 3;</code>
      * @return The enum numeric value on the wire for op.
@@ -251,7 +320,8 @@ public final class MarkMapReqOuterClass {
      * @return The op.
      */
     @java.lang.Override public emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation getOp() {
-      emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation result = emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation.forNumber(op_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation result = emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation.valueOf(op_);
       return result == null ? emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation.UNRECOGNIZED : result;
     }
 
@@ -278,7 +348,7 @@ public final class MarkMapReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder getOldOrBuilder() {
-      return old_ == null ? emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.getDefaultInstance() : old_;
+      return getOld();
     }
 
     public static final int MARK_FIELD_NUMBER = 13;
@@ -304,7 +374,7 @@ public final class MarkMapReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder getMarkOrBuilder() {
-      return mark_ == null ? emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.getDefaultInstance() : mark_;
+      return getMark();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -330,7 +400,7 @@ public final class MarkMapReqOuterClass {
       if (mark_ != null) {
         output.writeMessage(13, getMark());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -351,7 +421,7 @@ public final class MarkMapReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getMark());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -377,7 +447,7 @@ public final class MarkMapReqOuterClass {
         if (!getMark()
             .equals(other.getMark())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -398,7 +468,7 @@ public final class MarkMapReqOuterClass {
         hash = (37 * hash) + MARK_FIELD_NUMBER;
         hash = (53 * hash) + getMark().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -526,27 +596,34 @@ public final class MarkMapReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         op_ = 0;
-        old_ = null;
-        if (oldBuilder_ != null) {
-          oldBuilder_.dispose();
+
+        if (oldBuilder_ == null) {
+          old_ = null;
+        } else {
+          old_ = null;
           oldBuilder_ = null;
         }
-        mark_ = null;
-        if (markBuilder_ != null) {
-          markBuilder_.dispose();
+        if (markBuilder_ == null) {
+          mark_ = null;
+        } else {
+          mark_ = null;
           markBuilder_ = null;
         }
         return this;
@@ -575,26 +652,19 @@ public final class MarkMapReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq buildPartial() {
         emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq result = new emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.op_ = op_;
+        if (oldBuilder_ == null) {
+          result.old_ = old_;
+        } else {
+          result.old_ = oldBuilder_.build();
+        }
+        if (markBuilder_ == null) {
+          result.mark_ = mark_;
+        } else {
+          result.mark_ = markBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.op_ = op_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.old_ = oldBuilder_ == null
-              ? old_
-              : oldBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.mark_ = markBuilder_ == null
-              ? mark_
-              : markBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -650,7 +720,7 @@ public final class MarkMapReqOuterClass {
         if (other.hasMark()) {
           mergeMark(other.getMark());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -665,52 +735,19 @@ public final class MarkMapReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                op_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 50: {
-                input.readMessage(
-                    getOldFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 50
-              case 106: {
-                input.readMessage(
-                    getMarkFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int op_ = 0;
       /**
@@ -726,8 +763,8 @@ public final class MarkMapReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOpValue(int value) {
+        
         op_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -737,7 +774,8 @@ public final class MarkMapReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation getOp() {
-        emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation result = emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation.forNumber(op_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation result = emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation.valueOf(op_);
         return result == null ? emu.gingerps.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation.UNRECOGNIZED : result;
       }
       /**
@@ -749,7 +787,7 @@ public final class MarkMapReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         op_ = value.getNumber();
         onChanged();
         return this;
@@ -759,7 +797,7 @@ public final class MarkMapReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOp() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         op_ = 0;
         onChanged();
         return this;
@@ -773,7 +811,7 @@ public final class MarkMapReqOuterClass {
        * @return Whether the old field is set.
        */
       public boolean hasOld() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return oldBuilder_ != null || old_ != null;
       }
       /**
        * <code>.MapMarkPoint old = 6;</code>
@@ -795,11 +833,11 @@ public final class MarkMapReqOuterClass {
             throw new NullPointerException();
           }
           old_ = value;
+          onChanged();
         } else {
           oldBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -809,11 +847,11 @@ public final class MarkMapReqOuterClass {
           emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder builderForValue) {
         if (oldBuilder_ == null) {
           old_ = builderForValue.build();
+          onChanged();
         } else {
           oldBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -821,38 +859,38 @@ public final class MarkMapReqOuterClass {
        */
       public Builder mergeOld(emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint value) {
         if (oldBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            old_ != null &&
-            old_ != emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.getDefaultInstance()) {
-            getOldBuilder().mergeFrom(value);
+          if (old_ != null) {
+            old_ =
+              emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.newBuilder(old_).mergeFrom(value).buildPartial();
           } else {
             old_ = value;
           }
+          onChanged();
         } else {
           oldBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MapMarkPoint old = 6;</code>
        */
       public Builder clearOld() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        old_ = null;
-        if (oldBuilder_ != null) {
-          oldBuilder_.dispose();
+        if (oldBuilder_ == null) {
+          old_ = null;
+          onChanged();
+        } else {
+          old_ = null;
           oldBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MapMarkPoint old = 6;</code>
        */
       public emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder getOldBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getOldFieldBuilder().getBuilder();
       }
@@ -892,7 +930,7 @@ public final class MarkMapReqOuterClass {
        * @return Whether the mark field is set.
        */
       public boolean hasMark() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return markBuilder_ != null || mark_ != null;
       }
       /**
        * <code>.MapMarkPoint mark = 13;</code>
@@ -914,11 +952,11 @@ public final class MarkMapReqOuterClass {
             throw new NullPointerException();
           }
           mark_ = value;
+          onChanged();
         } else {
           markBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -928,11 +966,11 @@ public final class MarkMapReqOuterClass {
           emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder builderForValue) {
         if (markBuilder_ == null) {
           mark_ = builderForValue.build();
+          onChanged();
         } else {
           markBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -940,38 +978,38 @@ public final class MarkMapReqOuterClass {
        */
       public Builder mergeMark(emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint value) {
         if (markBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            mark_ != null &&
-            mark_ != emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.getDefaultInstance()) {
-            getMarkBuilder().mergeFrom(value);
+          if (mark_ != null) {
+            mark_ =
+              emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.newBuilder(mark_).mergeFrom(value).buildPartial();
           } else {
             mark_ = value;
           }
+          onChanged();
         } else {
           markBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MapMarkPoint mark = 13;</code>
        */
       public Builder clearMark() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        mark_ = null;
-        if (markBuilder_ != null) {
-          markBuilder_.dispose();
+        if (markBuilder_ == null) {
+          mark_ = null;
+          onChanged();
+        } else {
+          mark_ = null;
           markBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MapMarkPoint mark = 13;</code>
        */
       public emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder getMarkBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getMarkFieldBuilder().getBuilder();
       }
@@ -1035,18 +1073,7 @@ public final class MarkMapReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MarkMapReq(input, extensionRegistry);
       }
     };
 

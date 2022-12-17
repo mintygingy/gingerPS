@@ -69,6 +69,63 @@ public final class ResinCardDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ResinCardData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              configId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              lastDailyRewardTime_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              remainRewardDays_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              expireTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ResinCardDataOuterClass.internal_static_ResinCardData_descriptor;
@@ -83,7 +140,7 @@ public final class ResinCardDataOuterClass {
     }
 
     public static final int LAST_DAILY_REWARD_TIME_FIELD_NUMBER = 10;
-    private int lastDailyRewardTime_ = 0;
+    private int lastDailyRewardTime_;
     /**
      * <code>uint32 last_daily_reward_time = 10;</code>
      * @return The lastDailyRewardTime.
@@ -94,7 +151,7 @@ public final class ResinCardDataOuterClass {
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 2;
-    private int configId_ = 0;
+    private int configId_;
     /**
      * <code>uint32 config_id = 2;</code>
      * @return The configId.
@@ -105,7 +162,7 @@ public final class ResinCardDataOuterClass {
     }
 
     public static final int EXPIRE_TIME_FIELD_NUMBER = 13;
-    private int expireTime_ = 0;
+    private int expireTime_;
     /**
      * <code>uint32 expire_time = 13;</code>
      * @return The expireTime.
@@ -116,7 +173,7 @@ public final class ResinCardDataOuterClass {
     }
 
     public static final int REMAIN_REWARD_DAYS_FIELD_NUMBER = 11;
-    private int remainRewardDays_ = 0;
+    private int remainRewardDays_;
     /**
      * <code>uint32 remain_reward_days = 11;</code>
      * @return The remainRewardDays.
@@ -152,7 +209,7 @@ public final class ResinCardDataOuterClass {
       if (expireTime_ != 0) {
         output.writeUInt32(13, expireTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class ResinCardDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, expireTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -200,7 +257,7 @@ public final class ResinCardDataOuterClass {
           != other.getExpireTime()) return false;
       if (getRemainRewardDays()
           != other.getRemainRewardDays()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -219,7 +276,7 @@ public final class ResinCardDataOuterClass {
       hash = (53 * hash) + getExpireTime();
       hash = (37 * hash) + REMAIN_REWARD_DAYS_FIELD_NUMBER;
       hash = (53 * hash) + getRemainRewardDays();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -336,22 +393,30 @@ public final class ResinCardDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         lastDailyRewardTime_ = 0;
+
         configId_ = 0;
+
         expireTime_ = 0;
+
         remainRewardDays_ = 0;
+
         return this;
       }
 
@@ -378,25 +443,12 @@ public final class ResinCardDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData buildPartial() {
         emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData result = new emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.lastDailyRewardTime_ = lastDailyRewardTime_;
+        result.configId_ = configId_;
+        result.expireTime_ = expireTime_;
+        result.remainRewardDays_ = remainRewardDays_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.lastDailyRewardTime_ = lastDailyRewardTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.configId_ = configId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.expireTime_ = expireTime_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.remainRewardDays_ = remainRewardDays_;
-        }
       }
 
       @java.lang.Override
@@ -455,7 +507,7 @@ public final class ResinCardDataOuterClass {
         if (other.getRemainRewardDays() != 0) {
           setRemainRewardDays(other.getRemainRewardDays());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -470,53 +522,19 @@ public final class ResinCardDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                configId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 80: {
-                lastDailyRewardTime_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 88: {
-                remainRewardDays_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 88
-              case 104: {
-                expireTime_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ResinCardDataOuterClass.ResinCardData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int lastDailyRewardTime_ ;
       /**
@@ -535,7 +553,6 @@ public final class ResinCardDataOuterClass {
       public Builder setLastDailyRewardTime(int value) {
         
         lastDailyRewardTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +561,7 @@ public final class ResinCardDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastDailyRewardTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         lastDailyRewardTime_ = 0;
         onChanged();
         return this;
@@ -567,7 +584,6 @@ public final class ResinCardDataOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -576,7 +592,7 @@ public final class ResinCardDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         configId_ = 0;
         onChanged();
         return this;
@@ -599,7 +615,6 @@ public final class ResinCardDataOuterClass {
       public Builder setExpireTime(int value) {
         
         expireTime_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -608,7 +623,7 @@ public final class ResinCardDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExpireTime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         expireTime_ = 0;
         onChanged();
         return this;
@@ -631,7 +646,6 @@ public final class ResinCardDataOuterClass {
       public Builder setRemainRewardDays(int value) {
         
         remainRewardDays_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -640,7 +654,7 @@ public final class ResinCardDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemainRewardDays() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         remainRewardDays_ = 0;
         onChanged();
         return this;
@@ -678,18 +692,7 @@ public final class ResinCardDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ResinCardData(input, extensionRegistry);
       }
     };
 

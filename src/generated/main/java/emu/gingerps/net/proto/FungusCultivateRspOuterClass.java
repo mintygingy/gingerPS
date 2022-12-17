@@ -73,6 +73,58 @@ public final class FungusCultivateRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FungusCultivateRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              cultivateId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FungusCultivateRspOuterClass.internal_static_FungusCultivateRsp_descriptor;
@@ -87,7 +139,7 @@ public final class FungusCultivateRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -98,7 +150,7 @@ public final class FungusCultivateRspOuterClass {
     }
 
     public static final int CULTIVATE_ID_FIELD_NUMBER = 12;
-    private int cultivateId_ = 0;
+    private int cultivateId_;
     /**
      * <code>uint32 cultivate_id = 12;</code>
      * @return The cultivateId.
@@ -109,7 +161,7 @@ public final class FungusCultivateRspOuterClass {
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 13;
-    private boolean isNewRecord_ = false;
+    private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 13;</code>
      * @return The isNewRecord.
@@ -142,7 +194,7 @@ public final class FungusCultivateRspOuterClass {
       if (isNewRecord_ != false) {
         output.writeBool(13, isNewRecord_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +215,7 @@ public final class FungusCultivateRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isNewRecord_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -184,7 +236,7 @@ public final class FungusCultivateRspOuterClass {
           != other.getCultivateId()) return false;
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +254,7 @@ public final class FungusCultivateRspOuterClass {
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,21 +381,28 @@ public final class FungusCultivateRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.FungusCultivateRspOuterClass.FungusCultivateRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         cultivateId_ = 0;
+
         isNewRecord_ = false;
+
         return this;
       }
 
@@ -370,22 +429,11 @@ public final class FungusCultivateRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FungusCultivateRspOuterClass.FungusCultivateRsp buildPartial() {
         emu.gingerps.net.proto.FungusCultivateRspOuterClass.FungusCultivateRsp result = new emu.gingerps.net.proto.FungusCultivateRspOuterClass.FungusCultivateRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        result.cultivateId_ = cultivateId_;
+        result.isNewRecord_ = isNewRecord_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FungusCultivateRspOuterClass.FungusCultivateRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cultivateId_ = cultivateId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isNewRecord_ = isNewRecord_;
-        }
       }
 
       @java.lang.Override
@@ -441,7 +489,7 @@ public final class FungusCultivateRspOuterClass {
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -456,48 +504,19 @@ public final class FungusCultivateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FungusCultivateRspOuterClass.FungusCultivateRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 96: {
-                cultivateId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              case 104: {
-                isNewRecord_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FungusCultivateRspOuterClass.FungusCultivateRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -516,7 +535,6 @@ public final class FungusCultivateRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -525,7 +543,7 @@ public final class FungusCultivateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -548,7 +566,6 @@ public final class FungusCultivateRspOuterClass {
       public Builder setCultivateId(int value) {
         
         cultivateId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -557,7 +574,7 @@ public final class FungusCultivateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCultivateId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         cultivateId_ = 0;
         onChanged();
         return this;
@@ -580,7 +597,6 @@ public final class FungusCultivateRspOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -589,7 +605,7 @@ public final class FungusCultivateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -627,18 +643,7 @@ public final class FungusCultivateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FungusCultivateRsp(input, extensionRegistry);
       }
     };
 

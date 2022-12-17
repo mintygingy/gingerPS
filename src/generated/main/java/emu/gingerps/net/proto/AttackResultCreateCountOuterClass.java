@@ -81,6 +81,92 @@ public final class AttackResultCreateCountOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AttackResultCreateCount(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300PFFFFJBPKGN_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unk3300PFFFFJBPKGN_.addInt(input.readUInt32());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300PFFFFJBPKGN_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300PFFFFJBPKGN_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 80: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300MDGFBFBAHPB_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unk3300MDGFBFBAHPB_.addInt(input.readUInt32());
+              break;
+            }
+            case 82: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300MDGFBFBAHPB_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300MDGFBFBAHPB_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unk3300PFFFFJBPKGN_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          unk3300MDGFBFBAHPB_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AttackResultCreateCountOuterClass.internal_static_AttackResultCreateCount_descriptor;
@@ -95,7 +181,6 @@ public final class AttackResultCreateCountOuterClass {
     }
 
     public static final int UNK3300_PFFFFJBPKGN_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300PFFFFJBPKGN_;
     /**
      * <code>repeated uint32 Unk3300_PFFFFJBPKGN = 8;</code>
@@ -124,7 +209,6 @@ public final class AttackResultCreateCountOuterClass {
     private int unk3300PFFFFJBPKGNMemoizedSerializedSize = -1;
 
     public static final int UNK3300_MDGFBFBAHPB_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300MDGFBFBAHPB_;
     /**
      * <code>repeated uint32 Unk3300_MDGFBFBAHPB = 10;</code>
@@ -181,7 +265,7 @@ public final class AttackResultCreateCountOuterClass {
       for (int i = 0; i < unk3300MDGFBFBAHPB_.size(); i++) {
         output.writeUInt32NoTag(unk3300MDGFBFBAHPB_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +302,7 @@ public final class AttackResultCreateCountOuterClass {
         }
         unk3300MDGFBFBAHPBMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +321,7 @@ public final class AttackResultCreateCountOuterClass {
           .equals(other.getUnk3300PFFFFJBPKGNList())) return false;
       if (!getUnk3300MDGFBFBAHPBList()
           .equals(other.getUnk3300MDGFBFBAHPBList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -256,7 +340,7 @@ public final class AttackResultCreateCountOuterClass {
         hash = (37 * hash) + UNK3300_MDGFBFBAHPB_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300MDGFBFBAHPBList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -373,20 +457,26 @@ public final class AttackResultCreateCountOuterClass {
 
       // Construct using emu.gingerps.net.proto.AttackResultCreateCountOuterClass.AttackResultCreateCount.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300PFFFFJBPKGN_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300MDGFBFBAHPB_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -413,13 +503,7 @@ public final class AttackResultCreateCountOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AttackResultCreateCountOuterClass.AttackResultCreateCount buildPartial() {
         emu.gingerps.net.proto.AttackResultCreateCountOuterClass.AttackResultCreateCount result = new emu.gingerps.net.proto.AttackResultCreateCountOuterClass.AttackResultCreateCount(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AttackResultCreateCountOuterClass.AttackResultCreateCount result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           unk3300PFFFFJBPKGN_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -430,10 +514,8 @@ public final class AttackResultCreateCountOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.unk3300MDGFBFBAHPB_ = unk3300MDGFBFBAHPB_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AttackResultCreateCountOuterClass.AttackResultCreateCount result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -500,7 +582,7 @@ public final class AttackResultCreateCountOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -515,62 +597,17 @@ public final class AttackResultCreateCountOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AttackResultCreateCountOuterClass.AttackResultCreateCount parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                int v = input.readUInt32();
-                ensureUnk3300PFFFFJBPKGNIsMutable();
-                unk3300PFFFFJBPKGN_.addInt(v);
-                break;
-              } // case 64
-              case 66: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300PFFFFJBPKGNIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300PFFFFJBPKGN_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 66
-              case 80: {
-                int v = input.readUInt32();
-                ensureUnk3300MDGFBFBAHPBIsMutable();
-                unk3300MDGFBFBAHPB_.addInt(v);
-                break;
-              } // case 80
-              case 82: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300MDGFBFBAHPBIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300MDGFBFBAHPB_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 82
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AttackResultCreateCountOuterClass.AttackResultCreateCount) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -580,7 +617,7 @@ public final class AttackResultCreateCountOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           unk3300PFFFFJBPKGN_ = mutableCopy(unk3300PFFFFJBPKGN_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_PFFFFJBPKGN = 8;</code>
@@ -614,7 +651,6 @@ public final class AttackResultCreateCountOuterClass {
        */
       public Builder setUnk3300PFFFFJBPKGN(
           int index, int value) {
-        
         ensureUnk3300PFFFFJBPKGNIsMutable();
         unk3300PFFFFJBPKGN_.setInt(index, value);
         onChanged();
@@ -626,7 +662,6 @@ public final class AttackResultCreateCountOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300PFFFFJBPKGN(int value) {
-        
         ensureUnk3300PFFFFJBPKGNIsMutable();
         unk3300PFFFFJBPKGN_.addInt(value);
         onChanged();
@@ -661,7 +696,7 @@ public final class AttackResultCreateCountOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           unk3300MDGFBFBAHPB_ = mutableCopy(unk3300MDGFBFBAHPB_);
           bitField0_ |= 0x00000002;
-        }
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_MDGFBFBAHPB = 10;</code>
@@ -695,7 +730,6 @@ public final class AttackResultCreateCountOuterClass {
        */
       public Builder setUnk3300MDGFBFBAHPB(
           int index, int value) {
-        
         ensureUnk3300MDGFBFBAHPBIsMutable();
         unk3300MDGFBFBAHPB_.setInt(index, value);
         onChanged();
@@ -707,7 +741,6 @@ public final class AttackResultCreateCountOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300MDGFBFBAHPB(int value) {
-        
         ensureUnk3300MDGFBFBAHPBIsMutable();
         unk3300MDGFBFBAHPB_.addInt(value);
         onChanged();
@@ -769,18 +802,7 @@ public final class AttackResultCreateCountOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AttackResultCreateCount(input, extensionRegistry);
       }
     };
 

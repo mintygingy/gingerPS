@@ -178,6 +178,141 @@ public final class OnlinePlayerInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private OnlinePlayerInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickname_ = s;
+              break;
+            }
+            case 24: {
+
+              playerLevel_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              avatarId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              mpSettingType_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              curPlayerNumInWorld_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              worldLevel_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              onlineId_ = s;
+              break;
+            }
+            case 72: {
+
+              nameCardId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                blacklistUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              blacklistUidList_.addInt(input.readUInt32());
+              break;
+            }
+            case 82: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                blacklistUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                blacklistUidList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              signature_ = s;
+              break;
+            }
+            case 98: {
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
+              if (profilePicture_ != null) {
+                subBuilder = profilePicture_.toBuilder();
+              }
+              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(profilePicture_);
+                profilePicture_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              psnId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          blacklistUidList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.internal_static_OnlinePlayerInfo_descriptor;
@@ -192,7 +327,7 @@ public final class OnlinePlayerInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 1;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 1;</code>
      * @return The uid.
@@ -203,8 +338,7 @@ public final class OnlinePlayerInfoOuterClass {
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object nickname_ = "";
+    private volatile java.lang.Object nickname_;
     /**
      * <code>string nickname = 2;</code>
      * @return The nickname.
@@ -242,7 +376,7 @@ public final class OnlinePlayerInfoOuterClass {
     }
 
     public static final int PLAYER_LEVEL_FIELD_NUMBER = 3;
-    private int playerLevel_ = 0;
+    private int playerLevel_;
     /**
      * <code>uint32 player_level = 3;</code>
      * @return The playerLevel.
@@ -253,7 +387,7 @@ public final class OnlinePlayerInfoOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 4;
-    private int avatarId_ = 0;
+    private int avatarId_;
     /**
      * <code>uint32 avatar_id = 4;</code>
      * @return The avatarId.
@@ -264,7 +398,7 @@ public final class OnlinePlayerInfoOuterClass {
     }
 
     public static final int MP_SETTING_TYPE_FIELD_NUMBER = 5;
-    private int mpSettingType_ = 0;
+    private int mpSettingType_;
     /**
      * <code>.MpSettingType mp_setting_type = 5;</code>
      * @return The enum numeric value on the wire for mpSettingType.
@@ -277,12 +411,13 @@ public final class OnlinePlayerInfoOuterClass {
      * @return The mpSettingType.
      */
     @java.lang.Override public emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType getMpSettingType() {
-      emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType result = emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType.forNumber(mpSettingType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType result = emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType.valueOf(mpSettingType_);
       return result == null ? emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType.UNRECOGNIZED : result;
     }
 
     public static final int CUR_PLAYER_NUM_IN_WORLD_FIELD_NUMBER = 6;
-    private int curPlayerNumInWorld_ = 0;
+    private int curPlayerNumInWorld_;
     /**
      * <code>uint32 cur_player_num_in_world = 6;</code>
      * @return The curPlayerNumInWorld.
@@ -293,7 +428,7 @@ public final class OnlinePlayerInfoOuterClass {
     }
 
     public static final int WORLD_LEVEL_FIELD_NUMBER = 7;
-    private int worldLevel_ = 0;
+    private int worldLevel_;
     /**
      * <code>uint32 world_level = 7;</code>
      * @return The worldLevel.
@@ -304,8 +439,7 @@ public final class OnlinePlayerInfoOuterClass {
     }
 
     public static final int ONLINE_ID_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object onlineId_ = "";
+    private volatile java.lang.Object onlineId_;
     /**
      * <code>string online_id = 8;</code>
      * @return The onlineId.
@@ -343,7 +477,7 @@ public final class OnlinePlayerInfoOuterClass {
     }
 
     public static final int NAME_CARD_ID_FIELD_NUMBER = 9;
-    private int nameCardId_ = 0;
+    private int nameCardId_;
     /**
      * <code>uint32 name_card_id = 9;</code>
      * @return The nameCardId.
@@ -354,7 +488,6 @@ public final class OnlinePlayerInfoOuterClass {
     }
 
     public static final int BLACKLIST_UID_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList blacklistUidList_;
     /**
      * <code>repeated uint32 blacklist_uid_list = 10;</code>
@@ -383,8 +516,7 @@ public final class OnlinePlayerInfoOuterClass {
     private int blacklistUidListMemoizedSerializedSize = -1;
 
     public static final int SIGNATURE_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object signature_ = "";
+    private volatile java.lang.Object signature_;
     /**
      * <code>string signature = 11;</code>
      * @return The signature.
@@ -444,12 +576,11 @@ public final class OnlinePlayerInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+      return getProfilePicture();
     }
 
     public static final int PSN_ID_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object psnId_ = "";
+    private volatile java.lang.Object psnId_;
     /**
      * <code>string psn_id = 13;</code>
      * @return The psnId.
@@ -544,7 +675,7 @@ public final class OnlinePlayerInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(psnId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, psnId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -611,7 +742,7 @@ public final class OnlinePlayerInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(psnId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, psnId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -654,7 +785,7 @@ public final class OnlinePlayerInfoOuterClass {
       }
       if (!getPsnId()
           .equals(other.getPsnId())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -695,7 +826,7 @@ public final class OnlinePlayerInfoOuterClass {
       }
       hash = (37 * hash) + PSN_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPsnId().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -812,35 +943,52 @@ public final class OnlinePlayerInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         uid_ = 0;
+
         nickname_ = "";
+
         playerLevel_ = 0;
+
         avatarId_ = 0;
+
         mpSettingType_ = 0;
+
         curPlayerNumInWorld_ = 0;
+
         worldLevel_ = 0;
+
         onlineId_ = "";
+
         nameCardId_ = 0;
+
         blacklistUidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         signature_ = "";
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
         psnId_ = "";
+
         return this;
       }
 
@@ -867,60 +1015,30 @@ public final class OnlinePlayerInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo buildPartial() {
         emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo result = new emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo result) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.uid_ = uid_;
+        result.nickname_ = nickname_;
+        result.playerLevel_ = playerLevel_;
+        result.avatarId_ = avatarId_;
+        result.mpSettingType_ = mpSettingType_;
+        result.curPlayerNumInWorld_ = curPlayerNumInWorld_;
+        result.worldLevel_ = worldLevel_;
+        result.onlineId_ = onlineId_;
+        result.nameCardId_ = nameCardId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           blacklistUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.blacklistUidList_ = blacklistUidList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.uid_ = uid_;
+        result.signature_ = signature_;
+        if (profilePictureBuilder_ == null) {
+          result.profilePicture_ = profilePicture_;
+        } else {
+          result.profilePicture_ = profilePictureBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.nickname_ = nickname_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.playerLevel_ = playerLevel_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.avatarId_ = avatarId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.mpSettingType_ = mpSettingType_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.curPlayerNumInWorld_ = curPlayerNumInWorld_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.worldLevel_ = worldLevel_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.onlineId_ = onlineId_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.nameCardId_ = nameCardId_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.signature_ = signature_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.profilePicture_ = profilePictureBuilder_ == null
-              ? profilePicture_
-              : profilePictureBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.psnId_ = psnId_;
-        }
+        result.psnId_ = psnId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -972,7 +1090,6 @@ public final class OnlinePlayerInfoOuterClass {
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getPlayerLevel() != 0) {
@@ -992,7 +1109,6 @@ public final class OnlinePlayerInfoOuterClass {
         }
         if (!other.getOnlineId().isEmpty()) {
           onlineId_ = other.onlineId_;
-          bitField0_ |= 0x00000080;
           onChanged();
         }
         if (other.getNameCardId() != 0) {
@@ -1001,7 +1117,7 @@ public final class OnlinePlayerInfoOuterClass {
         if (!other.blacklistUidList_.isEmpty()) {
           if (blacklistUidList_.isEmpty()) {
             blacklistUidList_ = other.blacklistUidList_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureBlacklistUidListIsMutable();
             blacklistUidList_.addAll(other.blacklistUidList_);
@@ -1010,7 +1126,6 @@ public final class OnlinePlayerInfoOuterClass {
         }
         if (!other.getSignature().isEmpty()) {
           signature_ = other.signature_;
-          bitField0_ |= 0x00000400;
           onChanged();
         }
         if (other.hasProfilePicture()) {
@@ -1018,10 +1133,9 @@ public final class OnlinePlayerInfoOuterClass {
         }
         if (!other.getPsnId().isEmpty()) {
           psnId_ = other.psnId_;
-          bitField0_ |= 0x00001000;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1036,108 +1150,17 @@ public final class OnlinePlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                nickname_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 24: {
-                playerLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                avatarId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                mpSettingType_ = input.readEnum();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 48: {
-                curPlayerNumInWorld_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 56: {
-                worldLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              case 66: {
-                onlineId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 66
-              case 72: {
-                nameCardId_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 80: {
-                int v = input.readUInt32();
-                ensureBlacklistUidListIsMutable();
-                blacklistUidList_.addInt(v);
-                break;
-              } // case 80
-              case 82: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureBlacklistUidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  blacklistUidList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 82
-              case 90: {
-                signature_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 90
-              case 98: {
-                input.readMessage(
-                    getProfilePictureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 98
-              case 106: {
-                psnId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1159,7 +1182,6 @@ public final class OnlinePlayerInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1168,7 +1190,7 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -1215,9 +1237,11 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public Builder setNickname(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         nickname_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1226,8 +1250,8 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickname() {
+        
         nickname_ = getDefaultInstance().getNickname();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1238,10 +1262,12 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public Builder setNicknameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         nickname_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1263,7 +1289,6 @@ public final class OnlinePlayerInfoOuterClass {
       public Builder setPlayerLevel(int value) {
         
         playerLevel_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1272,7 +1297,7 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerLevel() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         playerLevel_ = 0;
         onChanged();
         return this;
@@ -1295,7 +1320,6 @@ public final class OnlinePlayerInfoOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1304,7 +1328,7 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         avatarId_ = 0;
         onChanged();
         return this;
@@ -1324,8 +1348,8 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMpSettingTypeValue(int value) {
+        
         mpSettingType_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1335,7 +1359,8 @@ public final class OnlinePlayerInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType getMpSettingType() {
-        emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType result = emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType.forNumber(mpSettingType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType result = emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType.valueOf(mpSettingType_);
         return result == null ? emu.gingerps.net.proto.MpSettingTypeOuterClass.MpSettingType.UNRECOGNIZED : result;
       }
       /**
@@ -1347,7 +1372,7 @@ public final class OnlinePlayerInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000010;
+        
         mpSettingType_ = value.getNumber();
         onChanged();
         return this;
@@ -1357,7 +1382,7 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMpSettingType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         mpSettingType_ = 0;
         onChanged();
         return this;
@@ -1380,7 +1405,6 @@ public final class OnlinePlayerInfoOuterClass {
       public Builder setCurPlayerNumInWorld(int value) {
         
         curPlayerNumInWorld_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1389,7 +1413,7 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurPlayerNumInWorld() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         curPlayerNumInWorld_ = 0;
         onChanged();
         return this;
@@ -1412,7 +1436,6 @@ public final class OnlinePlayerInfoOuterClass {
       public Builder setWorldLevel(int value) {
         
         worldLevel_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1421,7 +1444,7 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWorldLevel() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         worldLevel_ = 0;
         onChanged();
         return this;
@@ -1468,9 +1491,11 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public Builder setOnlineId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         onlineId_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1479,8 +1504,8 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
+        
         onlineId_ = getDefaultInstance().getOnlineId();
-        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -1491,10 +1516,12 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public Builder setOnlineIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         onlineId_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1516,7 +1543,6 @@ public final class OnlinePlayerInfoOuterClass {
       public Builder setNameCardId(int value) {
         
         nameCardId_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1525,7 +1551,7 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNameCardId() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         nameCardId_ = 0;
         onChanged();
         return this;
@@ -1533,10 +1559,10 @@ public final class OnlinePlayerInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList blacklistUidList_ = emptyIntList();
       private void ensureBlacklistUidListIsMutable() {
-        if (!((bitField0_ & 0x00000200) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           blacklistUidList_ = mutableCopy(blacklistUidList_);
-          bitField0_ |= 0x00000200;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 blacklist_uid_list = 10;</code>
@@ -1544,7 +1570,7 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getBlacklistUidListList() {
-        return ((bitField0_ & 0x00000200) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(blacklistUidList_) : blacklistUidList_;
       }
       /**
@@ -1570,7 +1596,6 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public Builder setBlacklistUidList(
           int index, int value) {
-        
         ensureBlacklistUidListIsMutable();
         blacklistUidList_.setInt(index, value);
         onChanged();
@@ -1582,7 +1607,6 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addBlacklistUidList(int value) {
-        
         ensureBlacklistUidListIsMutable();
         blacklistUidList_.addInt(value);
         onChanged();
@@ -1607,7 +1631,7 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public Builder clearBlacklistUidList() {
         blacklistUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1653,9 +1677,11 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public Builder setSignature(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         signature_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -1664,8 +1690,8 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSignature() {
+        
         signature_ = getDefaultInstance().getSignature();
-        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -1676,10 +1702,12 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public Builder setSignatureBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         signature_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -1692,7 +1720,7 @@ public final class OnlinePlayerInfoOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
        * <code>.ProfilePicture profile_picture = 12;</code>
@@ -1714,11 +1742,11 @@ public final class OnlinePlayerInfoOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000800;
-        onChanged();
+
         return this;
       }
       /**
@@ -1728,11 +1756,11 @@ public final class OnlinePlayerInfoOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000800;
-        onChanged();
+
         return this;
       }
       /**
@@ -1740,38 +1768,38 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) != 0) &&
-            profilePicture_ != null &&
-            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
-            getProfilePictureBuilder().mergeFrom(value);
+          if (profilePicture_ != null) {
+            profilePicture_ =
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
           } else {
             profilePicture_ = value;
           }
+          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000800;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 12;</code>
        */
       public Builder clearProfilePicture() {
-        bitField0_ = (bitField0_ & ~0x00000800);
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+          onChanged();
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 12;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        bitField0_ |= 0x00000800;
+        
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -1844,9 +1872,11 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public Builder setPsnId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         psnId_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -1855,8 +1885,8 @@ public final class OnlinePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPsnId() {
+        
         psnId_ = getDefaultInstance().getPsnId();
-        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
         return this;
       }
@@ -1867,10 +1897,12 @@ public final class OnlinePlayerInfoOuterClass {
        */
       public Builder setPsnIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         psnId_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -1907,18 +1939,7 @@ public final class OnlinePlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new OnlinePlayerInfo(input, extensionRegistry);
       }
     };
 

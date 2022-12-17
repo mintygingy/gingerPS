@@ -83,6 +83,66 @@ public final class GadgetChangeLevelTagReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GadgetChangeLevelTagReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              levelTagId_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder subBuilder = null;
+              if (combinationInfo_ != null) {
+                subBuilder = combinationInfo_.toBuilder();
+              }
+              combinationInfo_ = input.readMessage(emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(combinationInfo_);
+                combinationInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 112: {
+
+              gadgetEntityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GadgetChangeLevelTagReqOuterClass.internal_static_GadgetChangeLevelTagReq_descriptor;
@@ -97,7 +157,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
     }
 
     public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 14;
-    private int gadgetEntityId_ = 0;
+    private int gadgetEntityId_;
     /**
      * <code>uint32 gadget_entity_id = 14;</code>
      * @return The gadgetEntityId.
@@ -108,7 +168,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
     }
 
     public static final int LEVEL_TAG_ID_FIELD_NUMBER = 6;
-    private int levelTagId_ = 0;
+    private int levelTagId_;
     /**
      * <code>uint32 level_tag_id = 6;</code>
      * @return The levelTagId.
@@ -141,7 +201,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder() {
-      return combinationInfo_ == null ? emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.getDefaultInstance() : combinationInfo_;
+      return getCombinationInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -167,7 +227,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
       if (gadgetEntityId_ != 0) {
         output.writeUInt32(14, gadgetEntityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +248,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, gadgetEntityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -212,7 +272,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         if (!getCombinationInfo()
             .equals(other.getCombinationInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -231,7 +291,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         hash = (37 * hash) + COMBINATION_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getCombinationInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -359,23 +419,30 @@ public final class GadgetChangeLevelTagReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         gadgetEntityId_ = 0;
+
         levelTagId_ = 0;
-        combinationInfo_ = null;
-        if (combinationInfoBuilder_ != null) {
-          combinationInfoBuilder_.dispose();
+
+        if (combinationInfoBuilder_ == null) {
+          combinationInfo_ = null;
+        } else {
+          combinationInfo_ = null;
           combinationInfoBuilder_ = null;
         }
         return this;
@@ -404,24 +471,15 @@ public final class GadgetChangeLevelTagReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq buildPartial() {
         emu.gingerps.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq result = new emu.gingerps.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.gadgetEntityId_ = gadgetEntityId_;
+        result.levelTagId_ = levelTagId_;
+        if (combinationInfoBuilder_ == null) {
+          result.combinationInfo_ = combinationInfo_;
+        } else {
+          result.combinationInfo_ = combinationInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.gadgetEntityId_ = gadgetEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.levelTagId_ = levelTagId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.combinationInfo_ = combinationInfoBuilder_ == null
-              ? combinationInfo_
-              : combinationInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -477,7 +535,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         if (other.hasCombinationInfo()) {
           mergeCombinationInfo(other.getCombinationInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -492,50 +550,19 @@ public final class GadgetChangeLevelTagReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                levelTagId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 58: {
-                input.readMessage(
-                    getCombinationInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 58
-              case 112: {
-                gadgetEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int gadgetEntityId_ ;
       /**
@@ -554,7 +581,6 @@ public final class GadgetChangeLevelTagReqOuterClass {
       public Builder setGadgetEntityId(int value) {
         
         gadgetEntityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -563,7 +589,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         gadgetEntityId_ = 0;
         onChanged();
         return this;
@@ -586,7 +612,6 @@ public final class GadgetChangeLevelTagReqOuterClass {
       public Builder setLevelTagId(int value) {
         
         levelTagId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -595,7 +620,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelTagId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         levelTagId_ = 0;
         onChanged();
         return this;
@@ -609,7 +634,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
        * @return Whether the combinationInfo field is set.
        */
       public boolean hasCombinationInfo() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return combinationInfoBuilder_ != null || combinationInfo_ != null;
       }
       /**
        * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
@@ -631,11 +656,11 @@ public final class GadgetChangeLevelTagReqOuterClass {
             throw new NullPointerException();
           }
           combinationInfo_ = value;
+          onChanged();
         } else {
           combinationInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -645,11 +670,11 @@ public final class GadgetChangeLevelTagReqOuterClass {
           emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder builderForValue) {
         if (combinationInfoBuilder_ == null) {
           combinationInfo_ = builderForValue.build();
+          onChanged();
         } else {
           combinationInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -657,38 +682,38 @@ public final class GadgetChangeLevelTagReqOuterClass {
        */
       public Builder mergeCombinationInfo(emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo value) {
         if (combinationInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            combinationInfo_ != null &&
-            combinationInfo_ != emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.getDefaultInstance()) {
-            getCombinationInfoBuilder().mergeFrom(value);
+          if (combinationInfo_ != null) {
+            combinationInfo_ =
+              emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.newBuilder(combinationInfo_).mergeFrom(value).buildPartial();
           } else {
             combinationInfo_ = value;
           }
+          onChanged();
         } else {
           combinationInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
        */
       public Builder clearCombinationInfo() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        combinationInfo_ = null;
-        if (combinationInfoBuilder_ != null) {
-          combinationInfoBuilder_.dispose();
+        if (combinationInfoBuilder_ == null) {
+          combinationInfo_ = null;
+          onChanged();
+        } else {
+          combinationInfo_ = null;
           combinationInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
        */
       public emu.gingerps.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder getCombinationInfoBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getCombinationInfoFieldBuilder().getBuilder();
       }
@@ -752,18 +777,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GadgetChangeLevelTagReq(input, extensionRegistry);
       }
     };
 

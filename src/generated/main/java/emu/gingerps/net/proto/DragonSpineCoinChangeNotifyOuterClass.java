@@ -79,6 +79,63 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DragonSpineCoinChangeNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              unk3300NEOCMGJCEOJ_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              unk3300FOHJDGCAKEK_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              unk3300IMLKIJAOADF_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DragonSpineCoinChangeNotifyOuterClass.internal_static_DragonSpineCoinChangeNotify_descriptor;
@@ -93,7 +150,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
     }
 
     public static final int UNK3300_IMLKIJAOADF_FIELD_NUMBER = 11;
-    private int unk3300IMLKIJAOADF_ = 0;
+    private int unk3300IMLKIJAOADF_;
     /**
      * <code>uint32 Unk3300_IMLKIJAOADF = 11;</code>
      * @return The unk3300IMLKIJAOADF.
@@ -104,7 +161,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 15;
-    private int scheduleId_ = 0;
+    private int scheduleId_;
     /**
      * <code>uint32 schedule_id = 15;</code>
      * @return The scheduleId.
@@ -115,7 +172,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
     }
 
     public static final int UNK3300_FOHJDGCAKEK_FIELD_NUMBER = 3;
-    private int unk3300FOHJDGCAKEK_ = 0;
+    private int unk3300FOHJDGCAKEK_;
     /**
      * <code>uint32 Unk3300_FOHJDGCAKEK = 3;</code>
      * @return The unk3300FOHJDGCAKEK.
@@ -126,7 +183,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
     }
 
     public static final int UNK3300_NEOCMGJCEOJ_FIELD_NUMBER = 2;
-    private int unk3300NEOCMGJCEOJ_ = 0;
+    private int unk3300NEOCMGJCEOJ_;
     /**
      * <code>uint32 Unk3300_NEOCMGJCEOJ = 2;</code>
      * @return The unk3300NEOCMGJCEOJ.
@@ -162,7 +219,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       if (scheduleId_ != 0) {
         output.writeUInt32(15, scheduleId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +244,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, scheduleId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +267,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
           != other.getUnk3300FOHJDGCAKEK()) return false;
       if (getUnk3300NEOCMGJCEOJ()
           != other.getUnk3300NEOCMGJCEOJ()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -229,7 +286,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       hash = (53 * hash) + getUnk3300FOHJDGCAKEK();
       hash = (37 * hash) + UNK3300_NEOCMGJCEOJ_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300NEOCMGJCEOJ();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -356,22 +413,30 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300IMLKIJAOADF_ = 0;
+
         scheduleId_ = 0;
+
         unk3300FOHJDGCAKEK_ = 0;
+
         unk3300NEOCMGJCEOJ_ = 0;
+
         return this;
       }
 
@@ -398,25 +463,12 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify buildPartial() {
         emu.gingerps.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify result = new emu.gingerps.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.unk3300IMLKIJAOADF_ = unk3300IMLKIJAOADF_;
+        result.scheduleId_ = scheduleId_;
+        result.unk3300FOHJDGCAKEK_ = unk3300FOHJDGCAKEK_;
+        result.unk3300NEOCMGJCEOJ_ = unk3300NEOCMGJCEOJ_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300IMLKIJAOADF_ = unk3300IMLKIJAOADF_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.scheduleId_ = scheduleId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300FOHJDGCAKEK_ = unk3300FOHJDGCAKEK_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300NEOCMGJCEOJ_ = unk3300NEOCMGJCEOJ_;
-        }
       }
 
       @java.lang.Override
@@ -475,7 +527,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
         if (other.getUnk3300NEOCMGJCEOJ() != 0) {
           setUnk3300NEOCMGJCEOJ(other.getUnk3300NEOCMGJCEOJ());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,53 +542,19 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                unk3300NEOCMGJCEOJ_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 16
-              case 24: {
-                unk3300FOHJDGCAKEK_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 88: {
-                unk3300IMLKIJAOADF_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 120: {
-                scheduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int unk3300IMLKIJAOADF_ ;
       /**
@@ -555,7 +573,6 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       public Builder setUnk3300IMLKIJAOADF(int value) {
         
         unk3300IMLKIJAOADF_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -564,7 +581,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IMLKIJAOADF() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300IMLKIJAOADF_ = 0;
         onChanged();
         return this;
@@ -587,7 +604,6 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -596,7 +612,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -619,7 +635,6 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       public Builder setUnk3300FOHJDGCAKEK(int value) {
         
         unk3300FOHJDGCAKEK_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -628,7 +643,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FOHJDGCAKEK() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300FOHJDGCAKEK_ = 0;
         onChanged();
         return this;
@@ -651,7 +666,6 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       public Builder setUnk3300NEOCMGJCEOJ(int value) {
         
         unk3300NEOCMGJCEOJ_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -660,7 +674,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NEOCMGJCEOJ() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300NEOCMGJCEOJ_ = 0;
         onChanged();
         return this;
@@ -698,18 +712,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DragonSpineCoinChangeNotify(input, extensionRegistry);
       }
     };
 

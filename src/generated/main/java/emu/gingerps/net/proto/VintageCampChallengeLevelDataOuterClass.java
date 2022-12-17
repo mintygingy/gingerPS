@@ -69,6 +69,63 @@ public final class VintageCampChallengeLevelDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private VintageCampChallengeLevelData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 104: {
+
+              isFinish_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageCampChallengeLevelDataOuterClass.internal_static_VintageCampChallengeLevelData_descriptor;
@@ -83,7 +140,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
     }
 
     public static final int IS_FINISH_FIELD_NUMBER = 13;
-    private boolean isFinish_ = false;
+    private boolean isFinish_;
     /**
      * <code>bool is_finish = 13;</code>
      * @return The isFinish.
@@ -94,7 +151,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 15;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 15;</code>
      * @return The stageId.
@@ -105,7 +162,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 1;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 1;</code>
      * @return The levelId.
@@ -116,7 +173,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 12;
-    private boolean isOpen_ = false;
+    private boolean isOpen_;
     /**
      * <code>bool is_open = 12;</code>
      * @return The isOpen.
@@ -152,7 +209,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(15, stageId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +234,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, stageId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -200,7 +257,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
           != other.getLevelId()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -221,7 +278,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -338,22 +395,30 @@ public final class VintageCampChallengeLevelDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageCampChallengeLevelDataOuterClass.VintageCampChallengeLevelData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isFinish_ = false;
+
         stageId_ = 0;
+
         levelId_ = 0;
+
         isOpen_ = false;
+
         return this;
       }
 
@@ -380,25 +445,12 @@ public final class VintageCampChallengeLevelDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageCampChallengeLevelDataOuterClass.VintageCampChallengeLevelData buildPartial() {
         emu.gingerps.net.proto.VintageCampChallengeLevelDataOuterClass.VintageCampChallengeLevelData result = new emu.gingerps.net.proto.VintageCampChallengeLevelDataOuterClass.VintageCampChallengeLevelData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isFinish_ = isFinish_;
+        result.stageId_ = stageId_;
+        result.levelId_ = levelId_;
+        result.isOpen_ = isOpen_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.VintageCampChallengeLevelDataOuterClass.VintageCampChallengeLevelData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isFinish_ = isFinish_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.stageId_ = stageId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.levelId_ = levelId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isOpen_ = isOpen_;
-        }
       }
 
       @java.lang.Override
@@ -457,7 +509,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -472,53 +524,19 @@ public final class VintageCampChallengeLevelDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.VintageCampChallengeLevelDataOuterClass.VintageCampChallengeLevelData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 8
-              case 96: {
-                isOpen_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              case 104: {
-                isFinish_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              case 120: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.VintageCampChallengeLevelDataOuterClass.VintageCampChallengeLevelData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isFinish_ ;
       /**
@@ -537,7 +555,6 @@ public final class VintageCampChallengeLevelDataOuterClass {
       public Builder setIsFinish(boolean value) {
         
         isFinish_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -546,7 +563,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isFinish_ = false;
         onChanged();
         return this;
@@ -569,7 +586,6 @@ public final class VintageCampChallengeLevelDataOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -578,7 +594,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -601,7 +617,6 @@ public final class VintageCampChallengeLevelDataOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -610,7 +625,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -633,7 +648,6 @@ public final class VintageCampChallengeLevelDataOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -642,7 +656,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isOpen_ = false;
         onChanged();
         return this;
@@ -680,18 +694,7 @@ public final class VintageCampChallengeLevelDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new VintageCampChallengeLevelData(input, extensionRegistry);
       }
     };
 

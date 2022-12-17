@@ -97,6 +97,97 @@ public final class GetAreaExplorePointRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetAreaExplorePointRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                explorePointList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              explorePointList_.addInt(input.readUInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                explorePointList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                explorePointList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                areaIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              areaIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                areaIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                areaIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          explorePointList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          areaIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetAreaExplorePointRspOuterClass.internal_static_GetAreaExplorePointRsp_descriptor;
@@ -111,7 +202,6 @@ public final class GetAreaExplorePointRspOuterClass {
     }
 
     public static final int EXPLORE_POINT_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList explorePointList_;
     /**
      * <code>repeated uint32 explore_point_list = 4;</code>
@@ -140,7 +230,7 @@ public final class GetAreaExplorePointRspOuterClass {
     private int explorePointListMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -151,7 +241,6 @@ public final class GetAreaExplorePointRspOuterClass {
     }
 
     public static final int AREA_ID_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList areaIdList_;
     /**
      * <code>repeated uint32 area_id_list = 11;</code>
@@ -211,7 +300,7 @@ public final class GetAreaExplorePointRspOuterClass {
       for (int i = 0; i < areaIdList_.size(); i++) {
         output.writeUInt32NoTag(areaIdList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -252,7 +341,7 @@ public final class GetAreaExplorePointRspOuterClass {
         }
         areaIdListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -273,7 +362,7 @@ public final class GetAreaExplorePointRspOuterClass {
           != other.getRetcode()) return false;
       if (!getAreaIdListList()
           .equals(other.getAreaIdListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -294,7 +383,7 @@ public final class GetAreaExplorePointRspOuterClass {
         hash = (37 * hash) + AREA_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAreaIdListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -421,21 +510,28 @@ public final class GetAreaExplorePointRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetAreaExplorePointRspOuterClass.GetAreaExplorePointRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         explorePointList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
+
         areaIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -462,30 +558,20 @@ public final class GetAreaExplorePointRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetAreaExplorePointRspOuterClass.GetAreaExplorePointRsp buildPartial() {
         emu.gingerps.net.proto.GetAreaExplorePointRspOuterClass.GetAreaExplorePointRsp result = new emu.gingerps.net.proto.GetAreaExplorePointRspOuterClass.GetAreaExplorePointRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetAreaExplorePointRspOuterClass.GetAreaExplorePointRsp result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           explorePointList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.explorePointList_ = explorePointList_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        result.retcode_ = retcode_;
+        if (((bitField0_ & 0x00000002) != 0)) {
           areaIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.areaIdList_ = areaIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetAreaExplorePointRspOuterClass.GetAreaExplorePointRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -548,14 +634,14 @@ public final class GetAreaExplorePointRspOuterClass {
         if (!other.areaIdList_.isEmpty()) {
           if (areaIdList_.isEmpty()) {
             areaIdList_ = other.areaIdList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAreaIdListIsMutable();
             areaIdList_.addAll(other.areaIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -570,67 +656,17 @@ public final class GetAreaExplorePointRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetAreaExplorePointRspOuterClass.GetAreaExplorePointRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 32: {
-                int v = input.readUInt32();
-                ensureExplorePointListIsMutable();
-                explorePointList_.addInt(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureExplorePointListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  explorePointList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              case 88: {
-                int v = input.readUInt32();
-                ensureAreaIdListIsMutable();
-                areaIdList_.addInt(v);
-                break;
-              } // case 88
-              case 90: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureAreaIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  areaIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetAreaExplorePointRspOuterClass.GetAreaExplorePointRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -640,7 +676,7 @@ public final class GetAreaExplorePointRspOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           explorePointList_ = mutableCopy(explorePointList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 explore_point_list = 4;</code>
@@ -674,7 +710,6 @@ public final class GetAreaExplorePointRspOuterClass {
        */
       public Builder setExplorePointList(
           int index, int value) {
-        
         ensureExplorePointListIsMutable();
         explorePointList_.setInt(index, value);
         onChanged();
@@ -686,7 +721,6 @@ public final class GetAreaExplorePointRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addExplorePointList(int value) {
-        
         ensureExplorePointListIsMutable();
         explorePointList_.addInt(value);
         onChanged();
@@ -733,7 +767,6 @@ public final class GetAreaExplorePointRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -742,7 +775,7 @@ public final class GetAreaExplorePointRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -750,10 +783,10 @@ public final class GetAreaExplorePointRspOuterClass {
 
       private com.google.protobuf.Internal.IntList areaIdList_ = emptyIntList();
       private void ensureAreaIdListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           areaIdList_ = mutableCopy(areaIdList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 area_id_list = 11;</code>
@@ -761,7 +794,7 @@ public final class GetAreaExplorePointRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getAreaIdListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(areaIdList_) : areaIdList_;
       }
       /**
@@ -787,7 +820,6 @@ public final class GetAreaExplorePointRspOuterClass {
        */
       public Builder setAreaIdList(
           int index, int value) {
-        
         ensureAreaIdListIsMutable();
         areaIdList_.setInt(index, value);
         onChanged();
@@ -799,7 +831,6 @@ public final class GetAreaExplorePointRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAreaIdList(int value) {
-        
         ensureAreaIdListIsMutable();
         areaIdList_.addInt(value);
         onChanged();
@@ -824,7 +855,7 @@ public final class GetAreaExplorePointRspOuterClass {
        */
       public Builder clearAreaIdList() {
         areaIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -861,18 +892,7 @@ public final class GetAreaExplorePointRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetAreaExplorePointRsp(input, extensionRegistry);
       }
     };
 

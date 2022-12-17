@@ -66,6 +66,61 @@ public final class MatchPlayerInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MatchPlayerInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              isAgreed_ = input.readBool();
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = null;
+              if (playerInfo_ != null) {
+                subBuilder = playerInfo_.toBuilder();
+              }
+              playerInfo_ = input.readMessage(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(playerInfo_);
+                playerInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MatchPlayerInfoOuterClass.internal_static_MatchPlayerInfo_descriptor;
@@ -80,7 +135,7 @@ public final class MatchPlayerInfoOuterClass {
     }
 
     public static final int IS_AGREED_FIELD_NUMBER = 4;
-    private boolean isAgreed_ = false;
+    private boolean isAgreed_;
     /**
      * <code>bool is_agreed = 4;</code>
      * @return The isAgreed.
@@ -113,7 +168,7 @@ public final class MatchPlayerInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
-      return playerInfo_ == null ? emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : playerInfo_;
+      return getPlayerInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -136,7 +191,7 @@ public final class MatchPlayerInfoOuterClass {
       if (playerInfo_ != null) {
         output.writeMessage(15, getPlayerInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +208,7 @@ public final class MatchPlayerInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getPlayerInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +230,7 @@ public final class MatchPlayerInfoOuterClass {
         if (!getPlayerInfo()
             .equals(other.getPlayerInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -193,7 +248,7 @@ public final class MatchPlayerInfoOuterClass {
         hash = (37 * hash) + PLAYER_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -310,22 +365,28 @@ public final class MatchPlayerInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isAgreed_ = false;
-        playerInfo_ = null;
-        if (playerInfoBuilder_ != null) {
-          playerInfoBuilder_.dispose();
+
+        if (playerInfoBuilder_ == null) {
+          playerInfo_ = null;
+        } else {
+          playerInfo_ = null;
           playerInfoBuilder_ = null;
         }
         return this;
@@ -354,21 +415,14 @@ public final class MatchPlayerInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo buildPartial() {
         emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo result = new emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isAgreed_ = isAgreed_;
+        if (playerInfoBuilder_ == null) {
+          result.playerInfo_ = playerInfo_;
+        } else {
+          result.playerInfo_ = playerInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isAgreed_ = isAgreed_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.playerInfo_ = playerInfoBuilder_ == null
-              ? playerInfo_
-              : playerInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -421,7 +475,7 @@ public final class MatchPlayerInfoOuterClass {
         if (other.hasPlayerInfo()) {
           mergePlayerInfo(other.getPlayerInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -436,45 +490,19 @@ public final class MatchPlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                isAgreed_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 122: {
-                input.readMessage(
-                    getPlayerInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MatchPlayerInfoOuterClass.MatchPlayerInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isAgreed_ ;
       /**
@@ -493,7 +521,6 @@ public final class MatchPlayerInfoOuterClass {
       public Builder setIsAgreed(boolean value) {
         
         isAgreed_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -502,7 +529,7 @@ public final class MatchPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAgreed() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isAgreed_ = false;
         onChanged();
         return this;
@@ -516,7 +543,7 @@ public final class MatchPlayerInfoOuterClass {
        * @return Whether the playerInfo field is set.
        */
       public boolean hasPlayerInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return playerInfoBuilder_ != null || playerInfo_ != null;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 15;</code>
@@ -538,11 +565,11 @@ public final class MatchPlayerInfoOuterClass {
             throw new NullPointerException();
           }
           playerInfo_ = value;
+          onChanged();
         } else {
           playerInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -552,11 +579,11 @@ public final class MatchPlayerInfoOuterClass {
           emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder builderForValue) {
         if (playerInfoBuilder_ == null) {
           playerInfo_ = builderForValue.build();
+          onChanged();
         } else {
           playerInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -564,38 +591,38 @@ public final class MatchPlayerInfoOuterClass {
        */
       public Builder mergePlayerInfo(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
         if (playerInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            playerInfo_ != null &&
-            playerInfo_ != emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance()) {
-            getPlayerInfoBuilder().mergeFrom(value);
+          if (playerInfo_ != null) {
+            playerInfo_ =
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.newBuilder(playerInfo_).mergeFrom(value).buildPartial();
           } else {
             playerInfo_ = value;
           }
+          onChanged();
         } else {
           playerInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 15;</code>
        */
       public Builder clearPlayerInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        playerInfo_ = null;
-        if (playerInfoBuilder_ != null) {
-          playerInfoBuilder_.dispose();
+        if (playerInfoBuilder_ == null) {
+          playerInfo_ = null;
+          onChanged();
+        } else {
+          playerInfo_ = null;
           playerInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 15;</code>
        */
       public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder getPlayerInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getPlayerInfoFieldBuilder().getBuilder();
       }
@@ -659,18 +686,7 @@ public final class MatchPlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MatchPlayerInfo(input, extensionRegistry);
       }
     };
 

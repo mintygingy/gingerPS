@@ -69,6 +69,73 @@ public final class GameplayRecommendationSkillResponseOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GameplayRecommendationSkillResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                skillIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              skillIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                skillIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                skillIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 88: {
+
+              skillDepotId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          skillIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GameplayRecommendationSkillResponseOuterClass.internal_static_GameplayRecommendationSkillResponse_descriptor;
@@ -83,7 +150,6 @@ public final class GameplayRecommendationSkillResponseOuterClass {
     }
 
     public static final int SKILL_ID_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList skillIdList_;
     /**
      * <code>repeated uint32 skill_id_list = 1;</code>
@@ -112,7 +178,7 @@ public final class GameplayRecommendationSkillResponseOuterClass {
     private int skillIdListMemoizedSerializedSize = -1;
 
     public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 11;
-    private int skillDepotId_ = 0;
+    private int skillDepotId_;
     /**
      * <code>uint32 skill_depot_id = 11;</code>
      * @return The skillDepotId.
@@ -147,7 +213,7 @@ public final class GameplayRecommendationSkillResponseOuterClass {
       if (skillDepotId_ != 0) {
         output.writeUInt32(11, skillDepotId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -174,7 +240,7 @@ public final class GameplayRecommendationSkillResponseOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, skillDepotId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -193,7 +259,7 @@ public final class GameplayRecommendationSkillResponseOuterClass {
           .equals(other.getSkillIdListList())) return false;
       if (getSkillDepotId()
           != other.getSkillDepotId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -210,7 +276,7 @@ public final class GameplayRecommendationSkillResponseOuterClass {
       }
       hash = (37 * hash) + SKILL_DEPOT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSkillDepotId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,20 +393,26 @@ public final class GameplayRecommendationSkillResponseOuterClass {
 
       // Construct using emu.gingerps.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         skillIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         skillDepotId_ = 0;
+
         return this;
       }
 
@@ -367,25 +439,15 @@ public final class GameplayRecommendationSkillResponseOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse buildPartial() {
         emu.gingerps.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse result = new emu.gingerps.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           skillIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.skillIdList_ = skillIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.skillDepotId_ = skillDepotId_;
-        }
+        result.skillDepotId_ = skillDepotId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -445,7 +507,7 @@ public final class GameplayRecommendationSkillResponseOuterClass {
         if (other.getSkillDepotId() != 0) {
           setSkillDepotId(other.getSkillDepotId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -460,51 +522,17 @@ public final class GameplayRecommendationSkillResponseOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int v = input.readUInt32();
-                ensureSkillIdListIsMutable();
-                skillIdList_.addInt(v);
-                break;
-              } // case 8
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureSkillIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  skillIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 10
-              case 88: {
-                skillDepotId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -514,7 +542,7 @@ public final class GameplayRecommendationSkillResponseOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           skillIdList_ = mutableCopy(skillIdList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 skill_id_list = 1;</code>
@@ -548,7 +576,6 @@ public final class GameplayRecommendationSkillResponseOuterClass {
        */
       public Builder setSkillIdList(
           int index, int value) {
-        
         ensureSkillIdListIsMutable();
         skillIdList_.setInt(index, value);
         onChanged();
@@ -560,7 +587,6 @@ public final class GameplayRecommendationSkillResponseOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSkillIdList(int value) {
-        
         ensureSkillIdListIsMutable();
         skillIdList_.addInt(value);
         onChanged();
@@ -607,7 +633,6 @@ public final class GameplayRecommendationSkillResponseOuterClass {
       public Builder setSkillDepotId(int value) {
         
         skillDepotId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -616,7 +641,7 @@ public final class GameplayRecommendationSkillResponseOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillDepotId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         skillDepotId_ = 0;
         onChanged();
         return this;
@@ -654,18 +679,7 @@ public final class GameplayRecommendationSkillResponseOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GameplayRecommendationSkillResponse(input, extensionRegistry);
       }
     };
 

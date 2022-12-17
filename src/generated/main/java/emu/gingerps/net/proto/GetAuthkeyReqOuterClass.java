@@ -81,6 +81,59 @@ public final class GetAuthkeyReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetAuthkeyReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              unk3300FGBHHPOKCJH_ = input.readUInt32();
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              authAppid_ = s;
+              break;
+            }
+            case 120: {
+
+              unk3300DODLFCNOAMB_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetAuthkeyReqOuterClass.internal_static_GetAuthkeyReq_descriptor;
@@ -95,7 +148,7 @@ public final class GetAuthkeyReqOuterClass {
     }
 
     public static final int UNK3300_FGBHHPOKCJH_FIELD_NUMBER = 6;
-    private int unk3300FGBHHPOKCJH_ = 0;
+    private int unk3300FGBHHPOKCJH_;
     /**
      * <code>uint32 Unk3300_FGBHHPOKCJH = 6;</code>
      * @return The unk3300FGBHHPOKCJH.
@@ -106,8 +159,7 @@ public final class GetAuthkeyReqOuterClass {
     }
 
     public static final int AUTH_APPID_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object authAppid_ = "";
+    private volatile java.lang.Object authAppid_;
     /**
      * <code>string auth_appid = 13;</code>
      * @return The authAppid.
@@ -145,7 +197,7 @@ public final class GetAuthkeyReqOuterClass {
     }
 
     public static final int UNK3300_DODLFCNOAMB_FIELD_NUMBER = 15;
-    private int unk3300DODLFCNOAMB_ = 0;
+    private int unk3300DODLFCNOAMB_;
     /**
      * <code>uint32 Unk3300_DODLFCNOAMB = 15;</code>
      * @return The unk3300DODLFCNOAMB.
@@ -178,7 +230,7 @@ public final class GetAuthkeyReqOuterClass {
       if (unk3300DODLFCNOAMB_ != 0) {
         output.writeUInt32(15, unk3300DODLFCNOAMB_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -198,7 +250,7 @@ public final class GetAuthkeyReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, unk3300DODLFCNOAMB_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -219,7 +271,7 @@ public final class GetAuthkeyReqOuterClass {
           .equals(other.getAuthAppid())) return false;
       if (getUnk3300DODLFCNOAMB()
           != other.getUnk3300DODLFCNOAMB()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -236,7 +288,7 @@ public final class GetAuthkeyReqOuterClass {
       hash = (53 * hash) + getAuthAppid().hashCode();
       hash = (37 * hash) + UNK3300_DODLFCNOAMB_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300DODLFCNOAMB();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -364,21 +416,28 @@ public final class GetAuthkeyReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300FGBHHPOKCJH_ = 0;
+
         authAppid_ = "";
+
         unk3300DODLFCNOAMB_ = 0;
+
         return this;
       }
 
@@ -405,22 +464,11 @@ public final class GetAuthkeyReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq buildPartial() {
         emu.gingerps.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq result = new emu.gingerps.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.unk3300FGBHHPOKCJH_ = unk3300FGBHHPOKCJH_;
+        result.authAppid_ = authAppid_;
+        result.unk3300DODLFCNOAMB_ = unk3300DODLFCNOAMB_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300FGBHHPOKCJH_ = unk3300FGBHHPOKCJH_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.authAppid_ = authAppid_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300DODLFCNOAMB_ = unk3300DODLFCNOAMB_;
-        }
       }
 
       @java.lang.Override
@@ -472,13 +520,12 @@ public final class GetAuthkeyReqOuterClass {
         }
         if (!other.getAuthAppid().isEmpty()) {
           authAppid_ = other.authAppid_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getUnk3300DODLFCNOAMB() != 0) {
           setUnk3300DODLFCNOAMB(other.getUnk3300DODLFCNOAMB());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -493,48 +540,19 @@ public final class GetAuthkeyReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                unk3300FGBHHPOKCJH_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 106: {
-                authAppid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 106
-              case 120: {
-                unk3300DODLFCNOAMB_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int unk3300FGBHHPOKCJH_ ;
       /**
@@ -553,7 +571,6 @@ public final class GetAuthkeyReqOuterClass {
       public Builder setUnk3300FGBHHPOKCJH(int value) {
         
         unk3300FGBHHPOKCJH_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +579,7 @@ public final class GetAuthkeyReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FGBHHPOKCJH() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300FGBHHPOKCJH_ = 0;
         onChanged();
         return this;
@@ -609,9 +626,11 @@ public final class GetAuthkeyReqOuterClass {
        */
       public Builder setAuthAppid(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         authAppid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -620,8 +639,8 @@ public final class GetAuthkeyReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAuthAppid() {
+        
         authAppid_ = getDefaultInstance().getAuthAppid();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -632,10 +651,12 @@ public final class GetAuthkeyReqOuterClass {
        */
       public Builder setAuthAppidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         authAppid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -657,7 +678,6 @@ public final class GetAuthkeyReqOuterClass {
       public Builder setUnk3300DODLFCNOAMB(int value) {
         
         unk3300DODLFCNOAMB_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -666,7 +686,7 @@ public final class GetAuthkeyReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DODLFCNOAMB() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300DODLFCNOAMB_ = 0;
         onChanged();
         return this;
@@ -704,18 +724,7 @@ public final class GetAuthkeyReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetAuthkeyReq(input, extensionRegistry);
       }
     };
 

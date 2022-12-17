@@ -76,6 +76,61 @@ public final class HomeCreateBlueprintRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeCreateBlueprintRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 50: {
+              emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.Builder subBuilder = null;
+              if (slotInfo_ != null) {
+                subBuilder = slotInfo_.toBuilder();
+              }
+              slotInfo_ = input.readMessage(emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(slotInfo_);
+                slotInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 120: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeCreateBlueprintRspOuterClass.internal_static_HomeCreateBlueprintRsp_descriptor;
@@ -90,7 +145,7 @@ public final class HomeCreateBlueprintRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 15;</code>
      * @return The retcode.
@@ -123,7 +178,7 @@ public final class HomeCreateBlueprintRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfoOrBuilder getSlotInfoOrBuilder() {
-      return slotInfo_ == null ? emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.getDefaultInstance() : slotInfo_;
+      return getSlotInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -146,7 +201,7 @@ public final class HomeCreateBlueprintRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(15, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         if (!getSlotInfo()
             .equals(other.getSlotInfo())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +257,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         hash = (37 * hash) + SLOT_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getSlotInfo().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,22 +384,28 @@ public final class HomeCreateBlueprintRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeCreateBlueprintRspOuterClass.HomeCreateBlueprintRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
-        slotInfo_ = null;
-        if (slotInfoBuilder_ != null) {
-          slotInfoBuilder_.dispose();
+
+        if (slotInfoBuilder_ == null) {
+          slotInfo_ = null;
+        } else {
+          slotInfo_ = null;
           slotInfoBuilder_ = null;
         }
         return this;
@@ -373,21 +434,14 @@ public final class HomeCreateBlueprintRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeCreateBlueprintRspOuterClass.HomeCreateBlueprintRsp buildPartial() {
         emu.gingerps.net.proto.HomeCreateBlueprintRspOuterClass.HomeCreateBlueprintRsp result = new emu.gingerps.net.proto.HomeCreateBlueprintRspOuterClass.HomeCreateBlueprintRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        if (slotInfoBuilder_ == null) {
+          result.slotInfo_ = slotInfo_;
+        } else {
+          result.slotInfo_ = slotInfoBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeCreateBlueprintRspOuterClass.HomeCreateBlueprintRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.slotInfo_ = slotInfoBuilder_ == null
-              ? slotInfo_
-              : slotInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -440,7 +494,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         if (other.hasSlotInfo()) {
           mergeSlotInfo(other.getSlotInfo());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,45 +509,19 @@ public final class HomeCreateBlueprintRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeCreateBlueprintRspOuterClass.HomeCreateBlueprintRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 50: {
-                input.readMessage(
-                    getSlotInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 50
-              case 120: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeCreateBlueprintRspOuterClass.HomeCreateBlueprintRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -512,7 +540,6 @@ public final class HomeCreateBlueprintRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -521,7 +548,7 @@ public final class HomeCreateBlueprintRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -535,7 +562,7 @@ public final class HomeCreateBlueprintRspOuterClass {
        * @return Whether the slotInfo field is set.
        */
       public boolean hasSlotInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return slotInfoBuilder_ != null || slotInfo_ != null;
       }
       /**
        * <code>.HomeBlueprintSlotInfo slot_info = 6;</code>
@@ -557,11 +584,11 @@ public final class HomeCreateBlueprintRspOuterClass {
             throw new NullPointerException();
           }
           slotInfo_ = value;
+          onChanged();
         } else {
           slotInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -571,11 +598,11 @@ public final class HomeCreateBlueprintRspOuterClass {
           emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.Builder builderForValue) {
         if (slotInfoBuilder_ == null) {
           slotInfo_ = builderForValue.build();
+          onChanged();
         } else {
           slotInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -583,38 +610,38 @@ public final class HomeCreateBlueprintRspOuterClass {
        */
       public Builder mergeSlotInfo(emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo value) {
         if (slotInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            slotInfo_ != null &&
-            slotInfo_ != emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.getDefaultInstance()) {
-            getSlotInfoBuilder().mergeFrom(value);
+          if (slotInfo_ != null) {
+            slotInfo_ =
+              emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.newBuilder(slotInfo_).mergeFrom(value).buildPartial();
           } else {
             slotInfo_ = value;
           }
+          onChanged();
         } else {
           slotInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeBlueprintSlotInfo slot_info = 6;</code>
        */
       public Builder clearSlotInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        slotInfo_ = null;
-        if (slotInfoBuilder_ != null) {
-          slotInfoBuilder_.dispose();
+        if (slotInfoBuilder_ == null) {
+          slotInfo_ = null;
+          onChanged();
+        } else {
+          slotInfo_ = null;
           slotInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.HomeBlueprintSlotInfo slot_info = 6;</code>
        */
       public emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.Builder getSlotInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getSlotInfoFieldBuilder().getBuilder();
       }
@@ -678,18 +705,7 @@ public final class HomeCreateBlueprintRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeCreateBlueprintRsp(input, extensionRegistry);
       }
     };
 

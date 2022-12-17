@@ -73,6 +73,58 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ChannelerSlabStageActiveChallengeIndexNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              challengeIndex_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              activeCampIndex_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChannelerSlabStageActiveChallengeIndexNotifyOuterClass.internal_static_ChannelerSlabStageActiveChallengeIndexNotify_descriptor;
@@ -87,7 +139,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
     }
 
     public static final int CHALLENGE_INDEX_FIELD_NUMBER = 1;
-    private int challengeIndex_ = 0;
+    private int challengeIndex_;
     /**
      * <code>uint32 challenge_index = 1;</code>
      * @return The challengeIndex.
@@ -98,7 +150,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
     }
 
     public static final int ACTIVE_CAMP_INDEX_FIELD_NUMBER = 14;
-    private int activeCampIndex_ = 0;
+    private int activeCampIndex_;
     /**
      * <code>uint32 active_camp_index = 14;</code>
      * @return The activeCampIndex.
@@ -109,7 +161,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 10;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 10;</code>
      * @return The stageId.
@@ -142,7 +194,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
       if (activeCampIndex_ != 0) {
         output.writeUInt32(14, activeCampIndex_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +215,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, activeCampIndex_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -184,7 +236,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
           != other.getActiveCampIndex()) return false;
       if (getStageId()
           != other.getStageId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -201,7 +253,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
       hash = (53 * hash) + getActiveCampIndex();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -328,21 +380,28 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChannelerSlabStageActiveChallengeIndexNotifyOuterClass.ChannelerSlabStageActiveChallengeIndexNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         challengeIndex_ = 0;
+
         activeCampIndex_ = 0;
+
         stageId_ = 0;
+
         return this;
       }
 
@@ -369,22 +428,11 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChannelerSlabStageActiveChallengeIndexNotifyOuterClass.ChannelerSlabStageActiveChallengeIndexNotify buildPartial() {
         emu.gingerps.net.proto.ChannelerSlabStageActiveChallengeIndexNotifyOuterClass.ChannelerSlabStageActiveChallengeIndexNotify result = new emu.gingerps.net.proto.ChannelerSlabStageActiveChallengeIndexNotifyOuterClass.ChannelerSlabStageActiveChallengeIndexNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.challengeIndex_ = challengeIndex_;
+        result.activeCampIndex_ = activeCampIndex_;
+        result.stageId_ = stageId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ChannelerSlabStageActiveChallengeIndexNotifyOuterClass.ChannelerSlabStageActiveChallengeIndexNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.challengeIndex_ = challengeIndex_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.activeCampIndex_ = activeCampIndex_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.stageId_ = stageId_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +488,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,48 +503,19 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ChannelerSlabStageActiveChallengeIndexNotifyOuterClass.ChannelerSlabStageActiveChallengeIndexNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                challengeIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 80: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              case 112: {
-                activeCampIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ChannelerSlabStageActiveChallengeIndexNotifyOuterClass.ChannelerSlabStageActiveChallengeIndexNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int challengeIndex_ ;
       /**
@@ -515,7 +534,6 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
       public Builder setChallengeIndex(int value) {
         
         challengeIndex_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +542,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeIndex() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         challengeIndex_ = 0;
         onChanged();
         return this;
@@ -547,7 +565,6 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
       public Builder setActiveCampIndex(int value) {
         
         activeCampIndex_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -556,7 +573,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActiveCampIndex() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         activeCampIndex_ = 0;
         onChanged();
         return this;
@@ -579,7 +596,6 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -588,7 +604,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -626,18 +642,7 @@ public final class ChannelerSlabStageActiveChallengeIndexNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ChannelerSlabStageActiveChallengeIndexNotify(input, extensionRegistry);
       }
     };
 

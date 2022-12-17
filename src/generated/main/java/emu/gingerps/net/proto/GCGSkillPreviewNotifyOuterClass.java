@@ -142,6 +142,90 @@ public final class GCGSkillPreviewNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGSkillPreviewNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                changeOnstagePreviewList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              changeOnstagePreviewList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 48: {
+
+              onstageCardGuid_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                playCardList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              playCardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 104: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                skillPreviewList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              skillPreviewList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          changeOnstagePreviewList_ = java.util.Collections.unmodifiableList(changeOnstagePreviewList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          playCardList_ = java.util.Collections.unmodifiableList(playCardList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          skillPreviewList_ = java.util.Collections.unmodifiableList(skillPreviewList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSkillPreviewNotifyOuterClass.internal_static_GCGSkillPreviewNotify_descriptor;
@@ -156,7 +240,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 13;
-    private int controllerId_ = 0;
+    private int controllerId_;
     /**
      * <code>uint32 controller_id = 13;</code>
      * @return The controllerId.
@@ -167,7 +251,6 @@ public final class GCGSkillPreviewNotifyOuterClass {
     }
 
     public static final int SKILL_PREVIEW_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo> skillPreviewList_;
     /**
      * <code>repeated .GCGSkillPreviewInfo skill_preview_list = 15;</code>
@@ -208,7 +291,6 @@ public final class GCGSkillPreviewNotifyOuterClass {
     }
 
     public static final int CHANGE_ONSTAGE_PREVIEW_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo> changeOnstagePreviewList_;
     /**
      * <code>repeated .GCGChangeOnstageInfo change_onstage_preview_list = 3;</code>
@@ -249,7 +331,6 @@ public final class GCGSkillPreviewNotifyOuterClass {
     }
 
     public static final int PLAY_CARD_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo> playCardList_;
     /**
      * <code>repeated .GCGSkillPreviewPlayCardInfo play_card_list = 11;</code>
@@ -290,7 +371,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
     }
 
     public static final int ONSTAGE_CARD_GUID_FIELD_NUMBER = 6;
-    private int onstageCardGuid_ = 0;
+    private int onstageCardGuid_;
     /**
      * <code>uint32 onstage_card_guid = 6;</code>
      * @return The onstageCardGuid.
@@ -329,7 +410,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
       for (int i = 0; i < skillPreviewList_.size(); i++) {
         output.writeMessage(15, skillPreviewList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -358,7 +439,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, skillPreviewList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -383,7 +464,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
           .equals(other.getPlayCardListList())) return false;
       if (getOnstageCardGuid()
           != other.getOnstageCardGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -410,7 +491,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
       }
       hash = (37 * hash) + ONSTAGE_CARD_GUID_FIELD_NUMBER;
       hash = (53 * hash) + getOnstageCardGuid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -537,41 +618,47 @@ public final class GCGSkillPreviewNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSkillPreviewNotifyOuterClass.GCGSkillPreviewNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSkillPreviewListFieldBuilder();
+          getChangeOnstagePreviewListFieldBuilder();
+          getPlayCardListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         controllerId_ = 0;
+
         if (skillPreviewListBuilder_ == null) {
           skillPreviewList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          skillPreviewList_ = null;
           skillPreviewListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (changeOnstagePreviewListBuilder_ == null) {
           changeOnstagePreviewList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          changeOnstagePreviewList_ = null;
           changeOnstagePreviewListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (playCardListBuilder_ == null) {
           playCardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          playCardList_ = null;
           playCardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         onstageCardGuid_ = 0;
+
         return this;
       }
 
@@ -598,50 +685,38 @@ public final class GCGSkillPreviewNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSkillPreviewNotifyOuterClass.GCGSkillPreviewNotify buildPartial() {
         emu.gingerps.net.proto.GCGSkillPreviewNotifyOuterClass.GCGSkillPreviewNotify result = new emu.gingerps.net.proto.GCGSkillPreviewNotifyOuterClass.GCGSkillPreviewNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGSkillPreviewNotifyOuterClass.GCGSkillPreviewNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.controllerId_ = controllerId_;
         if (skillPreviewListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             skillPreviewList_ = java.util.Collections.unmodifiableList(skillPreviewList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.skillPreviewList_ = skillPreviewList_;
         } else {
           result.skillPreviewList_ = skillPreviewListBuilder_.build();
         }
         if (changeOnstagePreviewListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             changeOnstagePreviewList_ = java.util.Collections.unmodifiableList(changeOnstagePreviewList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.changeOnstagePreviewList_ = changeOnstagePreviewList_;
         } else {
           result.changeOnstagePreviewList_ = changeOnstagePreviewListBuilder_.build();
         }
         if (playCardListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             playCardList_ = java.util.Collections.unmodifiableList(playCardList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.playCardList_ = playCardList_;
         } else {
           result.playCardList_ = playCardListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGSkillPreviewNotifyOuterClass.GCGSkillPreviewNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.controllerId_ = controllerId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.onstageCardGuid_ = onstageCardGuid_;
-        }
+        result.onstageCardGuid_ = onstageCardGuid_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -695,7 +770,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
           if (!other.skillPreviewList_.isEmpty()) {
             if (skillPreviewList_.isEmpty()) {
               skillPreviewList_ = other.skillPreviewList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureSkillPreviewListIsMutable();
               skillPreviewList_.addAll(other.skillPreviewList_);
@@ -708,7 +783,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
               skillPreviewListBuilder_.dispose();
               skillPreviewListBuilder_ = null;
               skillPreviewList_ = other.skillPreviewList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               skillPreviewListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSkillPreviewListFieldBuilder() : null;
@@ -721,7 +796,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
           if (!other.changeOnstagePreviewList_.isEmpty()) {
             if (changeOnstagePreviewList_.isEmpty()) {
               changeOnstagePreviewList_ = other.changeOnstagePreviewList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureChangeOnstagePreviewListIsMutable();
               changeOnstagePreviewList_.addAll(other.changeOnstagePreviewList_);
@@ -734,7 +809,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
               changeOnstagePreviewListBuilder_.dispose();
               changeOnstagePreviewListBuilder_ = null;
               changeOnstagePreviewList_ = other.changeOnstagePreviewList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               changeOnstagePreviewListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChangeOnstagePreviewListFieldBuilder() : null;
@@ -747,7 +822,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
           if (!other.playCardList_.isEmpty()) {
             if (playCardList_.isEmpty()) {
               playCardList_ = other.playCardList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensurePlayCardListIsMutable();
               playCardList_.addAll(other.playCardList_);
@@ -760,7 +835,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
               playCardListBuilder_.dispose();
               playCardListBuilder_ = null;
               playCardList_ = other.playCardList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
               playCardListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayCardListFieldBuilder() : null;
@@ -772,7 +847,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
         if (other.getOnstageCardGuid() != 0) {
           setOnstageCardGuid(other.getOnstageCardGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -787,79 +862,17 @@ public final class GCGSkillPreviewNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGSkillPreviewNotifyOuterClass.GCGSkillPreviewNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo.parser(),
-                        extensionRegistry);
-                if (changeOnstagePreviewListBuilder_ == null) {
-                  ensureChangeOnstagePreviewListIsMutable();
-                  changeOnstagePreviewList_.add(m);
-                } else {
-                  changeOnstagePreviewListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 48: {
-                onstageCardGuid_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 48
-              case 90: {
-                emu.gingerps.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo.parser(),
-                        extensionRegistry);
-                if (playCardListBuilder_ == null) {
-                  ensurePlayCardListIsMutable();
-                  playCardList_.add(m);
-                } else {
-                  playCardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              case 104: {
-                controllerId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              case 122: {
-                emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.parser(),
-                        extensionRegistry);
-                if (skillPreviewListBuilder_ == null) {
-                  ensureSkillPreviewListIsMutable();
-                  skillPreviewList_.add(m);
-                } else {
-                  skillPreviewListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGSkillPreviewNotifyOuterClass.GCGSkillPreviewNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -881,7 +894,6 @@ public final class GCGSkillPreviewNotifyOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -890,7 +902,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         controllerId_ = 0;
         onChanged();
         return this;
@@ -899,9 +911,9 @@ public final class GCGSkillPreviewNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo> skillPreviewList_ =
         java.util.Collections.emptyList();
       private void ensureSkillPreviewListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           skillPreviewList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo>(skillPreviewList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1051,7 +1063,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
       public Builder clearSkillPreviewList() {
         if (skillPreviewListBuilder_ == null) {
           skillPreviewList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           skillPreviewListBuilder_.clear();
@@ -1128,7 +1140,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
           skillPreviewListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo, emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.Builder, emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfoOrBuilder>(
                   skillPreviewList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           skillPreviewList_ = null;
@@ -1139,9 +1151,9 @@ public final class GCGSkillPreviewNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo> changeOnstagePreviewList_ =
         java.util.Collections.emptyList();
       private void ensureChangeOnstagePreviewListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           changeOnstagePreviewList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo>(changeOnstagePreviewList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1291,7 +1303,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
       public Builder clearChangeOnstagePreviewList() {
         if (changeOnstagePreviewListBuilder_ == null) {
           changeOnstagePreviewList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           changeOnstagePreviewListBuilder_.clear();
@@ -1368,7 +1380,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
           changeOnstagePreviewListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo, emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo.Builder, emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfoOrBuilder>(
                   changeOnstagePreviewList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           changeOnstagePreviewList_ = null;
@@ -1379,9 +1391,9 @@ public final class GCGSkillPreviewNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo> playCardList_ =
         java.util.Collections.emptyList();
       private void ensurePlayCardListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           playCardList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo>(playCardList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1531,7 +1543,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
       public Builder clearPlayCardList() {
         if (playCardListBuilder_ == null) {
           playCardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           playCardListBuilder_.clear();
@@ -1608,7 +1620,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
           playCardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo, emu.gingerps.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo.Builder, emu.gingerps.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfoOrBuilder>(
                   playCardList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           playCardList_ = null;
@@ -1633,7 +1645,6 @@ public final class GCGSkillPreviewNotifyOuterClass {
       public Builder setOnstageCardGuid(int value) {
         
         onstageCardGuid_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1642,7 +1653,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOnstageCardGuid() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         onstageCardGuid_ = 0;
         onChanged();
         return this;
@@ -1680,18 +1691,7 @@ public final class GCGSkillPreviewNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGSkillPreviewNotify(input, extensionRegistry);
       }
     };
 

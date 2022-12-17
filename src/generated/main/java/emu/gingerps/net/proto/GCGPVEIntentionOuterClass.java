@@ -69,6 +69,73 @@ public final class GCGPVEIntentionOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGPVEIntention(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 112: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                skillIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              skillIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 114: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                skillIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                skillIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 120: {
+
+              cardGuid_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          skillIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGPVEIntentionOuterClass.internal_static_GCGPVEIntention_descriptor;
@@ -83,7 +150,6 @@ public final class GCGPVEIntentionOuterClass {
     }
 
     public static final int SKILL_ID_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList skillIdList_;
     /**
      * <code>repeated uint32 skill_id_list = 14;</code>
@@ -112,7 +178,7 @@ public final class GCGPVEIntentionOuterClass {
     private int skillIdListMemoizedSerializedSize = -1;
 
     public static final int CARD_GUID_FIELD_NUMBER = 15;
-    private int cardGuid_ = 0;
+    private int cardGuid_;
     /**
      * <code>uint32 card_guid = 15;</code>
      * @return The cardGuid.
@@ -147,7 +213,7 @@ public final class GCGPVEIntentionOuterClass {
       if (cardGuid_ != 0) {
         output.writeUInt32(15, cardGuid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -174,7 +240,7 @@ public final class GCGPVEIntentionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, cardGuid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -193,7 +259,7 @@ public final class GCGPVEIntentionOuterClass {
           .equals(other.getSkillIdListList())) return false;
       if (getCardGuid()
           != other.getCardGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -210,7 +276,7 @@ public final class GCGPVEIntentionOuterClass {
       }
       hash = (37 * hash) + CARD_GUID_FIELD_NUMBER;
       hash = (53 * hash) + getCardGuid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,20 +393,26 @@ public final class GCGPVEIntentionOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         skillIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         cardGuid_ = 0;
+
         return this;
       }
 
@@ -367,25 +439,15 @@ public final class GCGPVEIntentionOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention buildPartial() {
         emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention result = new emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           skillIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.skillIdList_ = skillIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cardGuid_ = cardGuid_;
-        }
+        result.cardGuid_ = cardGuid_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -445,7 +507,7 @@ public final class GCGPVEIntentionOuterClass {
         if (other.getCardGuid() != 0) {
           setCardGuid(other.getCardGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -460,51 +522,17 @@ public final class GCGPVEIntentionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 112: {
-                int v = input.readUInt32();
-                ensureSkillIdListIsMutable();
-                skillIdList_.addInt(v);
-                break;
-              } // case 112
-              case 114: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureSkillIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  skillIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 114
-              case 120: {
-                cardGuid_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGPVEIntentionOuterClass.GCGPVEIntention) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -514,7 +542,7 @@ public final class GCGPVEIntentionOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           skillIdList_ = mutableCopy(skillIdList_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 skill_id_list = 14;</code>
@@ -548,7 +576,6 @@ public final class GCGPVEIntentionOuterClass {
        */
       public Builder setSkillIdList(
           int index, int value) {
-        
         ensureSkillIdListIsMutable();
         skillIdList_.setInt(index, value);
         onChanged();
@@ -560,7 +587,6 @@ public final class GCGPVEIntentionOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSkillIdList(int value) {
-        
         ensureSkillIdListIsMutable();
         skillIdList_.addInt(value);
         onChanged();
@@ -607,7 +633,6 @@ public final class GCGPVEIntentionOuterClass {
       public Builder setCardGuid(int value) {
         
         cardGuid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -616,7 +641,7 @@ public final class GCGPVEIntentionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardGuid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         cardGuid_ = 0;
         onChanged();
         return this;
@@ -654,18 +679,7 @@ public final class GCGPVEIntentionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGPVEIntention(input, extensionRegistry);
       }
     };
 

@@ -41,14 +41,14 @@ public final class WorldDataNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrDefault(
+
+    emu.gingerps.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
+        emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
     /**
      * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
      */
+
     emu.gingerps.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrThrow(
         int key);
   }
@@ -89,6 +89,57 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private WorldDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                worldPropMap_ = com.google.protobuf.MapField.newMapField(
+                    WorldPropMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
+              worldPropMap__ = input.readMessage(
+                  WorldPropMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              worldPropMap_.getMutableMap().put(
+                  worldPropMap__.getKey(), worldPropMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -244,7 +295,6 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.PropValueOuterClass.PropValue.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> worldPropMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
@@ -255,12 +305,14 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
       }
       return worldPropMap_;
     }
+
     public int getWorldPropMapCount() {
       return internalGetWorldPropMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
      */
+
     @java.lang.Override
     public boolean containsWorldPropMap(
         int key) {
@@ -279,6 +331,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
      * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> getWorldPropMapMap() {
       return internalGetWorldPropMap().getMap();
     }
@@ -286,11 +339,10 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue);
      * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrDefault(
+
+    public emu.gingerps.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
+        emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> map =
           internalGetWorldPropMap().getMap();
@@ -300,6 +352,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
      * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrThrow(
         int key) {
       
@@ -331,7 +384,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
           internalGetWorldPropMap(),
           WorldPropMapDefaultEntryHolder.defaultEntry,
           6);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -350,7 +403,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(6, worldPropMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -367,7 +420,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
 
       if (!internalGetWorldPropMap().equals(
           other.internalGetWorldPropMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -382,7 +435,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         hash = (37 * hash) + WORLD_PROP_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetWorldPropMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -532,18 +585,22 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
 
       // Construct using emu.gingerps.net.proto.WorldDataNotifyOuterClass.WorldDataNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableWorldPropMap().clear();
         return this;
       }
@@ -571,17 +628,11 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       @java.lang.Override
       public emu.gingerps.net.proto.WorldDataNotifyOuterClass.WorldDataNotify buildPartial() {
         emu.gingerps.net.proto.WorldDataNotifyOuterClass.WorldDataNotify result = new emu.gingerps.net.proto.WorldDataNotifyOuterClass.WorldDataNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.worldPropMap_ = internalGetWorldPropMap();
+        result.worldPropMap_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WorldDataNotifyOuterClass.WorldDataNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.worldPropMap_ = internalGetWorldPropMap();
-          result.worldPropMap_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -630,8 +681,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         if (other == emu.gingerps.net.proto.WorldDataNotifyOuterClass.WorldDataNotify.getDefaultInstance()) return this;
         internalGetMutableWorldPropMap().mergeFrom(
             other.internalGetWorldPropMap());
-        bitField0_ |= 0x00000001;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -646,39 +696,17 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WorldDataNotifyOuterClass.WorldDataNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 50: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
-                worldPropMap__ = input.readMessage(
-                    WorldPropMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableWorldPropMap().getMutableMap().put(
-                    worldPropMap__.getKey(), worldPropMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WorldDataNotifyOuterClass.WorldDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -686,7 +714,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> worldPropMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
-          internalGetWorldPropMap() {
+      internalGetWorldPropMap() {
         if (worldPropMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               WorldPropMapDefaultEntryHolder.defaultEntry);
@@ -694,7 +722,8 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         return worldPropMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
-          internalGetMutableWorldPropMap() {
+      internalGetMutableWorldPropMap() {
+        onChanged();;
         if (worldPropMap_ == null) {
           worldPropMap_ = com.google.protobuf.MapField.newMapField(
               WorldPropMapDefaultEntryHolder.defaultEntry);
@@ -702,16 +731,16 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         if (!worldPropMap_.isMutable()) {
           worldPropMap_ = worldPropMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return worldPropMap_;
       }
+
       public int getWorldPropMapCount() {
         return internalGetWorldPropMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
        */
+
       @java.lang.Override
       public boolean containsWorldPropMap(
           int key) {
@@ -730,6 +759,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> getWorldPropMapMap() {
         return internalGetWorldPropMap().getMap();
       }
@@ -737,11 +767,10 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrDefault(
+
+      public emu.gingerps.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
+          emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> map =
             internalGetWorldPropMap().getMap();
@@ -751,6 +780,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrThrow(
           int key) {
         
@@ -761,8 +791,8 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearWorldPropMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableWorldPropMap().getMutableMap()
             .clear();
         return this;
@@ -770,6 +800,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
       /**
        * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
        */
+
       public Builder removeWorldPropMap(
           int key) {
         
@@ -782,8 +813,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue>
-          getMutableWorldPropMap() {
-        bitField0_ |= 0x00000001;
+      getMutableWorldPropMap() {
         return internalGetMutableWorldPropMap().getMutableMap();
       }
       /**
@@ -793,20 +823,19 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
           int key,
           emu.gingerps.net.proto.PropValueOuterClass.PropValue value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableWorldPropMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
        */
+
       public Builder putAllWorldPropMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.PropValueOuterClass.PropValue> values) {
         internalGetMutableWorldPropMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -842,18 +871,7 @@ emu.gingerps.net.proto.PropValueOuterClass.PropValue defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WorldDataNotify(input, extensionRegistry);
       }
     };
 

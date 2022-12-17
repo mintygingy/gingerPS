@@ -76,6 +76,64 @@ public final class HomeBlueprintSearchInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeBlueprintSearchInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              shareCode_ = s;
+              break;
+            }
+            case 80: {
+
+              moduleId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              blockId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeBlueprintSearchInfoOuterClass.internal_static_HomeBlueprintSearchInfo_descriptor;
@@ -90,8 +148,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
     }
 
     public static final int SHARE_CODE_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object shareCode_ = "";
+    private volatile java.lang.Object shareCode_;
     /**
      * <code>string share_code = 2;</code>
      * @return The shareCode.
@@ -129,7 +186,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 15;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 15;</code>
      * @return The sceneId.
@@ -140,7 +197,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
     }
 
     public static final int BLOCK_ID_FIELD_NUMBER = 13;
-    private int blockId_ = 0;
+    private int blockId_;
     /**
      * <code>uint32 block_id = 13;</code>
      * @return The blockId.
@@ -151,7 +208,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
     }
 
     public static final int MODULE_ID_FIELD_NUMBER = 10;
-    private int moduleId_ = 0;
+    private int moduleId_;
     /**
      * <code>uint32 module_id = 10;</code>
      * @return The moduleId.
@@ -187,7 +244,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
       if (sceneId_ != 0) {
         output.writeUInt32(15, sceneId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -211,7 +268,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, sceneId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -234,7 +291,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
           != other.getBlockId()) return false;
       if (getModuleId()
           != other.getModuleId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -253,7 +310,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
       hash = (53 * hash) + getBlockId();
       hash = (37 * hash) + MODULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getModuleId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -370,22 +427,30 @@ public final class HomeBlueprintSearchInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         shareCode_ = "";
+
         sceneId_ = 0;
+
         blockId_ = 0;
+
         moduleId_ = 0;
+
         return this;
       }
 
@@ -412,25 +477,12 @@ public final class HomeBlueprintSearchInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo buildPartial() {
         emu.gingerps.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo result = new emu.gingerps.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.shareCode_ = shareCode_;
+        result.sceneId_ = sceneId_;
+        result.blockId_ = blockId_;
+        result.moduleId_ = moduleId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.shareCode_ = shareCode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.blockId_ = blockId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.moduleId_ = moduleId_;
-        }
       }
 
       @java.lang.Override
@@ -479,7 +531,6 @@ public final class HomeBlueprintSearchInfoOuterClass {
         if (other == emu.gingerps.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo.getDefaultInstance()) return this;
         if (!other.getShareCode().isEmpty()) {
           shareCode_ = other.shareCode_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getSceneId() != 0) {
@@ -491,7 +542,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
         if (other.getModuleId() != 0) {
           setModuleId(other.getModuleId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -506,53 +557,19 @@ public final class HomeBlueprintSearchInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                shareCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 18
-              case 80: {
-                moduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 80
-              case 104: {
-                blockId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              case 120: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object shareCode_ = "";
       /**
@@ -595,9 +612,11 @@ public final class HomeBlueprintSearchInfoOuterClass {
        */
       public Builder setShareCode(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         shareCode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -606,8 +625,8 @@ public final class HomeBlueprintSearchInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShareCode() {
+        
         shareCode_ = getDefaultInstance().getShareCode();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -618,10 +637,12 @@ public final class HomeBlueprintSearchInfoOuterClass {
        */
       public Builder setShareCodeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         shareCode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -643,7 +664,6 @@ public final class HomeBlueprintSearchInfoOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -652,7 +672,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -675,7 +695,6 @@ public final class HomeBlueprintSearchInfoOuterClass {
       public Builder setBlockId(int value) {
         
         blockId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -684,7 +703,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBlockId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         blockId_ = 0;
         onChanged();
         return this;
@@ -707,7 +726,6 @@ public final class HomeBlueprintSearchInfoOuterClass {
       public Builder setModuleId(int value) {
         
         moduleId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -716,7 +734,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearModuleId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         moduleId_ = 0;
         onChanged();
         return this;
@@ -754,18 +772,7 @@ public final class HomeBlueprintSearchInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeBlueprintSearchInfo(input, extensionRegistry);
       }
     };
 

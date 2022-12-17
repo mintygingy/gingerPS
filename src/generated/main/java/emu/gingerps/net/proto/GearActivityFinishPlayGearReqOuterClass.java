@@ -99,6 +99,71 @@ public final class GearActivityFinishPlayGearReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GearActivityFinishPlayGearReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isSuccess_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              useClue_ = input.readBool();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                gearColumnInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              gearColumnInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          gearColumnInfoList_ = java.util.Collections.unmodifiableList(gearColumnInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GearActivityFinishPlayGearReqOuterClass.internal_static_GearActivityFinishPlayGearReq_descriptor;
@@ -113,7 +178,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
     }
 
     public static final int USE_CLUE_FIELD_NUMBER = 10;
-    private boolean useClue_ = false;
+    private boolean useClue_;
     /**
      * <code>bool use_clue = 10;</code>
      * @return The useClue.
@@ -124,7 +189,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 3;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 3;</code>
      * @return The levelId.
@@ -135,7 +200,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 8;
-    private boolean isSuccess_ = false;
+    private boolean isSuccess_;
     /**
      * <code>bool is_success = 8;</code>
      * @return The isSuccess.
@@ -146,7 +211,6 @@ public final class GearActivityFinishPlayGearReqOuterClass {
     }
 
     public static final int GEAR_COLUMN_INFO_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo> gearColumnInfoList_;
     /**
      * <code>repeated .GearColumnInfo gear_column_info_list = 12;</code>
@@ -212,7 +276,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
       for (int i = 0; i < gearColumnInfoList_.size(); i++) {
         output.writeMessage(12, gearColumnInfoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -237,7 +301,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, gearColumnInfoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -260,7 +324,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
           != other.getIsSuccess()) return false;
       if (!getGearColumnInfoListList()
           .equals(other.getGearColumnInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -283,7 +347,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
         hash = (37 * hash) + GEAR_COLUMN_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getGearColumnInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -411,28 +475,35 @@ public final class GearActivityFinishPlayGearReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GearActivityFinishPlayGearReqOuterClass.GearActivityFinishPlayGearReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getGearColumnInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         useClue_ = false;
+
         levelId_ = 0;
+
         isSuccess_ = false;
+
         if (gearColumnInfoListBuilder_ == null) {
           gearColumnInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          gearColumnInfoList_ = null;
           gearColumnInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -459,35 +530,21 @@ public final class GearActivityFinishPlayGearReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GearActivityFinishPlayGearReqOuterClass.GearActivityFinishPlayGearReq buildPartial() {
         emu.gingerps.net.proto.GearActivityFinishPlayGearReqOuterClass.GearActivityFinishPlayGearReq result = new emu.gingerps.net.proto.GearActivityFinishPlayGearReqOuterClass.GearActivityFinishPlayGearReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GearActivityFinishPlayGearReqOuterClass.GearActivityFinishPlayGearReq result) {
+        int from_bitField0_ = bitField0_;
+        result.useClue_ = useClue_;
+        result.levelId_ = levelId_;
+        result.isSuccess_ = isSuccess_;
         if (gearColumnInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             gearColumnInfoList_ = java.util.Collections.unmodifiableList(gearColumnInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.gearColumnInfoList_ = gearColumnInfoList_;
         } else {
           result.gearColumnInfoList_ = gearColumnInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GearActivityFinishPlayGearReqOuterClass.GearActivityFinishPlayGearReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.useClue_ = useClue_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.levelId_ = levelId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isSuccess_ = isSuccess_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -547,7 +604,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
           if (!other.gearColumnInfoList_.isEmpty()) {
             if (gearColumnInfoList_.isEmpty()) {
               gearColumnInfoList_ = other.gearColumnInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureGearColumnInfoListIsMutable();
               gearColumnInfoList_.addAll(other.gearColumnInfoList_);
@@ -560,7 +617,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
               gearColumnInfoListBuilder_.dispose();
               gearColumnInfoListBuilder_ = null;
               gearColumnInfoList_ = other.gearColumnInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               gearColumnInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getGearColumnInfoListFieldBuilder() : null;
@@ -569,7 +626,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -584,58 +641,17 @@ public final class GearActivityFinishPlayGearReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GearActivityFinishPlayGearReqOuterClass.GearActivityFinishPlayGearReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 64: {
-                isSuccess_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 80: {
-                useClue_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 98: {
-                emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo.parser(),
-                        extensionRegistry);
-                if (gearColumnInfoListBuilder_ == null) {
-                  ensureGearColumnInfoListIsMutable();
-                  gearColumnInfoList_.add(m);
-                } else {
-                  gearColumnInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GearActivityFinishPlayGearReqOuterClass.GearActivityFinishPlayGearReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -657,7 +673,6 @@ public final class GearActivityFinishPlayGearReqOuterClass {
       public Builder setUseClue(boolean value) {
         
         useClue_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -666,7 +681,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUseClue() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         useClue_ = false;
         onChanged();
         return this;
@@ -689,7 +704,6 @@ public final class GearActivityFinishPlayGearReqOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -698,7 +712,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -721,7 +735,6 @@ public final class GearActivityFinishPlayGearReqOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -730,7 +743,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isSuccess_ = false;
         onChanged();
         return this;
@@ -739,9 +752,9 @@ public final class GearActivityFinishPlayGearReqOuterClass {
       private java.util.List<emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo> gearColumnInfoList_ =
         java.util.Collections.emptyList();
       private void ensureGearColumnInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           gearColumnInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo>(gearColumnInfoList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -891,7 +904,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
       public Builder clearGearColumnInfoList() {
         if (gearColumnInfoListBuilder_ == null) {
           gearColumnInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           gearColumnInfoListBuilder_.clear();
@@ -968,7 +981,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
           gearColumnInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo, emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo.Builder, emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfoOrBuilder>(
                   gearColumnInfoList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           gearColumnInfoList_ = null;
@@ -1008,18 +1021,7 @@ public final class GearActivityFinishPlayGearReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GearActivityFinishPlayGearReq(input, extensionRegistry);
       }
     };
 

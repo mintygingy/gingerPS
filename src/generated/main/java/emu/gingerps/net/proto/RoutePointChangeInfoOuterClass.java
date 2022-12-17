@@ -63,6 +63,58 @@ public final class RoutePointChangeInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RoutePointChangeInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              pointIndex_ = input.readUInt32();
+              break;
+            }
+            case 101: {
+
+              targetVelocity_ = input.readFloat();
+              break;
+            }
+            case 117: {
+
+              waitTime_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RoutePointChangeInfoOuterClass.internal_static_RoutePointChangeInfo_descriptor;
@@ -77,7 +129,7 @@ public final class RoutePointChangeInfoOuterClass {
     }
 
     public static final int TARGET_VELOCITY_FIELD_NUMBER = 12;
-    private float targetVelocity_ = 0F;
+    private float targetVelocity_;
     /**
      * <code>float target_velocity = 12;</code>
      * @return The targetVelocity.
@@ -88,7 +140,7 @@ public final class RoutePointChangeInfoOuterClass {
     }
 
     public static final int WAIT_TIME_FIELD_NUMBER = 14;
-    private float waitTime_ = 0F;
+    private float waitTime_;
     /**
      * <code>float wait_time = 14;</code>
      * @return The waitTime.
@@ -99,7 +151,7 @@ public final class RoutePointChangeInfoOuterClass {
     }
 
     public static final int POINT_INDEX_FIELD_NUMBER = 4;
-    private int pointIndex_ = 0;
+    private int pointIndex_;
     /**
      * <code>uint32 point_index = 4;</code>
      * @return The pointIndex.
@@ -126,13 +178,13 @@ public final class RoutePointChangeInfoOuterClass {
       if (pointIndex_ != 0) {
         output.writeUInt32(4, pointIndex_);
       }
-      if (java.lang.Float.floatToRawIntBits(targetVelocity_) != 0) {
+      if (targetVelocity_ != 0F) {
         output.writeFloat(12, targetVelocity_);
       }
-      if (java.lang.Float.floatToRawIntBits(waitTime_) != 0) {
+      if (waitTime_ != 0F) {
         output.writeFloat(14, waitTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -145,15 +197,15 @@ public final class RoutePointChangeInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, pointIndex_);
       }
-      if (java.lang.Float.floatToRawIntBits(targetVelocity_) != 0) {
+      if (targetVelocity_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(12, targetVelocity_);
       }
-      if (java.lang.Float.floatToRawIntBits(waitTime_) != 0) {
+      if (waitTime_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(14, waitTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -176,7 +228,7 @@ public final class RoutePointChangeInfoOuterClass {
               other.getWaitTime())) return false;
       if (getPointIndex()
           != other.getPointIndex()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -195,7 +247,7 @@ public final class RoutePointChangeInfoOuterClass {
           getWaitTime());
       hash = (37 * hash) + POINT_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPointIndex();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -312,21 +364,28 @@ public final class RoutePointChangeInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         targetVelocity_ = 0F;
+
         waitTime_ = 0F;
+
         pointIndex_ = 0;
+
         return this;
       }
 
@@ -353,22 +412,11 @@ public final class RoutePointChangeInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfo buildPartial() {
         emu.gingerps.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfo result = new emu.gingerps.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.targetVelocity_ = targetVelocity_;
+        result.waitTime_ = waitTime_;
+        result.pointIndex_ = pointIndex_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.targetVelocity_ = targetVelocity_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.waitTime_ = waitTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.pointIndex_ = pointIndex_;
-        }
       }
 
       @java.lang.Override
@@ -424,7 +472,7 @@ public final class RoutePointChangeInfoOuterClass {
         if (other.getPointIndex() != 0) {
           setPointIndex(other.getPointIndex());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -439,48 +487,19 @@ public final class RoutePointChangeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                pointIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 101: {
-                targetVelocity_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 101
-              case 117: {
-                waitTime_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 117
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private float targetVelocity_ ;
       /**
@@ -499,7 +518,6 @@ public final class RoutePointChangeInfoOuterClass {
       public Builder setTargetVelocity(float value) {
         
         targetVelocity_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -508,7 +526,7 @@ public final class RoutePointChangeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetVelocity() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         targetVelocity_ = 0F;
         onChanged();
         return this;
@@ -531,7 +549,6 @@ public final class RoutePointChangeInfoOuterClass {
       public Builder setWaitTime(float value) {
         
         waitTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -540,7 +557,7 @@ public final class RoutePointChangeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWaitTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         waitTime_ = 0F;
         onChanged();
         return this;
@@ -563,7 +580,6 @@ public final class RoutePointChangeInfoOuterClass {
       public Builder setPointIndex(int value) {
         
         pointIndex_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -572,7 +588,7 @@ public final class RoutePointChangeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPointIndex() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         pointIndex_ = 0;
         onChanged();
         return this;
@@ -610,18 +626,7 @@ public final class RoutePointChangeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RoutePointChangeInfo(input, extensionRegistry);
       }
     };
 

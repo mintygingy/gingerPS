@@ -73,6 +73,58 @@ public final class FinishDeliveryNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FinishDeliveryNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              dayIndex_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              finishedQuestIndex_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FinishDeliveryNotifyOuterClass.internal_static_FinishDeliveryNotify_descriptor;
@@ -87,7 +139,7 @@ public final class FinishDeliveryNotifyOuterClass {
     }
 
     public static final int FINISHED_QUEST_INDEX_FIELD_NUMBER = 12;
-    private int finishedQuestIndex_ = 0;
+    private int finishedQuestIndex_;
     /**
      * <code>uint32 finished_quest_index = 12;</code>
      * @return The finishedQuestIndex.
@@ -98,7 +150,7 @@ public final class FinishDeliveryNotifyOuterClass {
     }
 
     public static final int DAY_INDEX_FIELD_NUMBER = 7;
-    private int dayIndex_ = 0;
+    private int dayIndex_;
     /**
      * <code>uint32 day_index = 7;</code>
      * @return The dayIndex.
@@ -109,7 +161,7 @@ public final class FinishDeliveryNotifyOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 6;
-    private int scheduleId_ = 0;
+    private int scheduleId_;
     /**
      * <code>uint32 schedule_id = 6;</code>
      * @return The scheduleId.
@@ -142,7 +194,7 @@ public final class FinishDeliveryNotifyOuterClass {
       if (finishedQuestIndex_ != 0) {
         output.writeUInt32(12, finishedQuestIndex_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +215,7 @@ public final class FinishDeliveryNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, finishedQuestIndex_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -184,7 +236,7 @@ public final class FinishDeliveryNotifyOuterClass {
           != other.getDayIndex()) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -201,7 +253,7 @@ public final class FinishDeliveryNotifyOuterClass {
       hash = (53 * hash) + getDayIndex();
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -328,21 +380,28 @@ public final class FinishDeliveryNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.FinishDeliveryNotifyOuterClass.FinishDeliveryNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         finishedQuestIndex_ = 0;
+
         dayIndex_ = 0;
+
         scheduleId_ = 0;
+
         return this;
       }
 
@@ -369,22 +428,11 @@ public final class FinishDeliveryNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FinishDeliveryNotifyOuterClass.FinishDeliveryNotify buildPartial() {
         emu.gingerps.net.proto.FinishDeliveryNotifyOuterClass.FinishDeliveryNotify result = new emu.gingerps.net.proto.FinishDeliveryNotifyOuterClass.FinishDeliveryNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.finishedQuestIndex_ = finishedQuestIndex_;
+        result.dayIndex_ = dayIndex_;
+        result.scheduleId_ = scheduleId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FinishDeliveryNotifyOuterClass.FinishDeliveryNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.finishedQuestIndex_ = finishedQuestIndex_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.dayIndex_ = dayIndex_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.scheduleId_ = scheduleId_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +488,7 @@ public final class FinishDeliveryNotifyOuterClass {
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,48 +503,19 @@ public final class FinishDeliveryNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FinishDeliveryNotifyOuterClass.FinishDeliveryNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                scheduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 48
-              case 56: {
-                dayIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 96: {
-                finishedQuestIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FinishDeliveryNotifyOuterClass.FinishDeliveryNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int finishedQuestIndex_ ;
       /**
@@ -515,7 +534,6 @@ public final class FinishDeliveryNotifyOuterClass {
       public Builder setFinishedQuestIndex(int value) {
         
         finishedQuestIndex_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +542,7 @@ public final class FinishDeliveryNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishedQuestIndex() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         finishedQuestIndex_ = 0;
         onChanged();
         return this;
@@ -547,7 +565,6 @@ public final class FinishDeliveryNotifyOuterClass {
       public Builder setDayIndex(int value) {
         
         dayIndex_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -556,7 +573,7 @@ public final class FinishDeliveryNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDayIndex() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         dayIndex_ = 0;
         onChanged();
         return this;
@@ -579,7 +596,6 @@ public final class FinishDeliveryNotifyOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -588,7 +604,7 @@ public final class FinishDeliveryNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -626,18 +642,7 @@ public final class FinishDeliveryNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FinishDeliveryNotify(input, extensionRegistry);
       }
     };
 

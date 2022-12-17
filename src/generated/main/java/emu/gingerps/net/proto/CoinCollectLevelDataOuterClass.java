@@ -145,6 +145,119 @@ public final class CoinCollectLevelDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CoinCollectLevelData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              unk3300HINHOCILNJC_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                doubleBestTeamInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              doubleBestTeamInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.parser(), extensionRegistry));
+              break;
+            }
+            case 24: {
+
+              unk3300ALILGJBDOMD_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              unk3300ONPKNIAHPHM_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              isLevelOpen_ = input.readBool();
+              break;
+            }
+            case 56: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.Builder subBuilder = null;
+              if (singleBestTeamInfo_ != null) {
+                subBuilder = singleBestTeamInfo_.toBuilder();
+              }
+              singleBestTeamInfo_ = input.readMessage(emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(singleBestTeamInfo_);
+                singleBestTeamInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 72: {
+
+              unk3300JDBOOHBJFCP_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              unk3300OLNMJJHJAGK_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              unk3300LOPHGLMNDCP_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              unk3300GDKMJJNFIPP_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              unk3300GNFGEFHKHEF_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          doubleBestTeamInfoList_ = java.util.Collections.unmodifiableList(doubleBestTeamInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CoinCollectLevelDataOuterClass.internal_static_CoinCollectLevelData_descriptor;
@@ -159,7 +272,7 @@ public final class CoinCollectLevelDataOuterClass {
     }
 
     public static final int IS_LEVEL_OPEN_FIELD_NUMBER = 6;
-    private boolean isLevelOpen_ = false;
+    private boolean isLevelOpen_;
     /**
      * <code>bool is_level_open = 6;</code>
      * @return The isLevelOpen.
@@ -170,7 +283,7 @@ public final class CoinCollectLevelDataOuterClass {
     }
 
     public static final int UNK3300_GNFGEFHKHEF_FIELD_NUMBER = 14;
-    private int unk3300GNFGEFHKHEF_ = 0;
+    private int unk3300GNFGEFHKHEF_;
     /**
      * <code>uint32 Unk3300_GNFGEFHKHEF = 14;</code>
      * @return The unk3300GNFGEFHKHEF.
@@ -181,7 +294,7 @@ public final class CoinCollectLevelDataOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 7;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 7;</code>
      * @return The levelId.
@@ -192,7 +305,7 @@ public final class CoinCollectLevelDataOuterClass {
     }
 
     public static final int UNK3300_ONPKNIAHPHM_FIELD_NUMBER = 4;
-    private int unk3300ONPKNIAHPHM_ = 0;
+    private int unk3300ONPKNIAHPHM_;
     /**
      * <code>uint32 Unk3300_ONPKNIAHPHM = 4;</code>
      * @return The unk3300ONPKNIAHPHM.
@@ -203,7 +316,7 @@ public final class CoinCollectLevelDataOuterClass {
     }
 
     public static final int UNK3300_GDKMJJNFIPP_FIELD_NUMBER = 13;
-    private boolean unk3300GDKMJJNFIPP_ = false;
+    private boolean unk3300GDKMJJNFIPP_;
     /**
      * <code>bool Unk3300_GDKMJJNFIPP = 13;</code>
      * @return The unk3300GDKMJJNFIPP.
@@ -236,11 +349,11 @@ public final class CoinCollectLevelDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoDataOrBuilder getSingleBestTeamInfoOrBuilder() {
-      return singleBestTeamInfo_ == null ? emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.getDefaultInstance() : singleBestTeamInfo_;
+      return getSingleBestTeamInfo();
     }
 
     public static final int UNK3300_HINHOCILNJC_FIELD_NUMBER = 1;
-    private int unk3300HINHOCILNJC_ = 0;
+    private int unk3300HINHOCILNJC_;
     /**
      * <code>uint32 Unk3300_HINHOCILNJC = 1;</code>
      * @return The unk3300HINHOCILNJC.
@@ -251,7 +364,7 @@ public final class CoinCollectLevelDataOuterClass {
     }
 
     public static final int UNK3300_ALILGJBDOMD_FIELD_NUMBER = 3;
-    private int unk3300ALILGJBDOMD_ = 0;
+    private int unk3300ALILGJBDOMD_;
     /**
      * <code>uint32 Unk3300_ALILGJBDOMD = 3;</code>
      * @return The unk3300ALILGJBDOMD.
@@ -262,7 +375,7 @@ public final class CoinCollectLevelDataOuterClass {
     }
 
     public static final int UNK3300_OLNMJJHJAGK_FIELD_NUMBER = 10;
-    private boolean unk3300OLNMJJHJAGK_ = false;
+    private boolean unk3300OLNMJJHJAGK_;
     /**
      * <code>bool Unk3300_OLNMJJHJAGK = 10;</code>
      * @return The unk3300OLNMJJHJAGK.
@@ -273,7 +386,7 @@ public final class CoinCollectLevelDataOuterClass {
     }
 
     public static final int UNK3300_LOPHGLMNDCP_FIELD_NUMBER = 11;
-    private int unk3300LOPHGLMNDCP_ = 0;
+    private int unk3300LOPHGLMNDCP_;
     /**
      * <code>uint32 Unk3300_LOPHGLMNDCP = 11;</code>
      * @return The unk3300LOPHGLMNDCP.
@@ -284,7 +397,6 @@ public final class CoinCollectLevelDataOuterClass {
     }
 
     public static final int DOUBLE_BEST_TEAM_INFO_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData> doubleBestTeamInfoList_;
     /**
      * <code>repeated .CoinCollectTeamInfoData double_best_team_info_list = 2;</code>
@@ -325,7 +437,7 @@ public final class CoinCollectLevelDataOuterClass {
     }
 
     public static final int UNK3300_JDBOOHBJFCP_FIELD_NUMBER = 9;
-    private boolean unk3300JDBOOHBJFCP_ = false;
+    private boolean unk3300JDBOOHBJFCP_;
     /**
      * <code>bool Unk3300_JDBOOHBJFCP = 9;</code>
      * @return The unk3300JDBOOHBJFCP.
@@ -385,7 +497,7 @@ public final class CoinCollectLevelDataOuterClass {
       if (unk3300GNFGEFHKHEF_ != 0) {
         output.writeUInt32(14, unk3300GNFGEFHKHEF_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -442,7 +554,7 @@ public final class CoinCollectLevelDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, unk3300GNFGEFHKHEF_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -484,7 +596,7 @@ public final class CoinCollectLevelDataOuterClass {
           .equals(other.getDoubleBestTeamInfoListList())) return false;
       if (getUnk3300JDBOOHBJFCP()
           != other.getUnk3300JDBOOHBJFCP()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -527,7 +639,7 @@ public final class CoinCollectLevelDataOuterClass {
       hash = (37 * hash) + UNK3300_JDBOOHBJFCP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getUnk3300JDBOOHBJFCP());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -644,40 +756,55 @@ public final class CoinCollectLevelDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDoubleBestTeamInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isLevelOpen_ = false;
+
         unk3300GNFGEFHKHEF_ = 0;
+
         levelId_ = 0;
+
         unk3300ONPKNIAHPHM_ = 0;
+
         unk3300GDKMJJNFIPP_ = false;
-        singleBestTeamInfo_ = null;
-        if (singleBestTeamInfoBuilder_ != null) {
-          singleBestTeamInfoBuilder_.dispose();
+
+        if (singleBestTeamInfoBuilder_ == null) {
+          singleBestTeamInfo_ = null;
+        } else {
+          singleBestTeamInfo_ = null;
           singleBestTeamInfoBuilder_ = null;
         }
         unk3300HINHOCILNJC_ = 0;
+
         unk3300ALILGJBDOMD_ = 0;
+
         unk3300OLNMJJHJAGK_ = false;
+
         unk3300LOPHGLMNDCP_ = 0;
+
         if (doubleBestTeamInfoListBuilder_ == null) {
           doubleBestTeamInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          doubleBestTeamInfoList_ = null;
           doubleBestTeamInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000400);
         unk3300JDBOOHBJFCP_ = false;
+
         return this;
       }
 
@@ -704,61 +831,33 @@ public final class CoinCollectLevelDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData buildPartial() {
         emu.gingerps.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData result = new emu.gingerps.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData result) {
+        int from_bitField0_ = bitField0_;
+        result.isLevelOpen_ = isLevelOpen_;
+        result.unk3300GNFGEFHKHEF_ = unk3300GNFGEFHKHEF_;
+        result.levelId_ = levelId_;
+        result.unk3300ONPKNIAHPHM_ = unk3300ONPKNIAHPHM_;
+        result.unk3300GDKMJJNFIPP_ = unk3300GDKMJJNFIPP_;
+        if (singleBestTeamInfoBuilder_ == null) {
+          result.singleBestTeamInfo_ = singleBestTeamInfo_;
+        } else {
+          result.singleBestTeamInfo_ = singleBestTeamInfoBuilder_.build();
+        }
+        result.unk3300HINHOCILNJC_ = unk3300HINHOCILNJC_;
+        result.unk3300ALILGJBDOMD_ = unk3300ALILGJBDOMD_;
+        result.unk3300OLNMJJHJAGK_ = unk3300OLNMJJHJAGK_;
+        result.unk3300LOPHGLMNDCP_ = unk3300LOPHGLMNDCP_;
         if (doubleBestTeamInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             doubleBestTeamInfoList_ = java.util.Collections.unmodifiableList(doubleBestTeamInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.doubleBestTeamInfoList_ = doubleBestTeamInfoList_;
         } else {
           result.doubleBestTeamInfoList_ = doubleBestTeamInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isLevelOpen_ = isLevelOpen_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300GNFGEFHKHEF_ = unk3300GNFGEFHKHEF_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.levelId_ = levelId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300ONPKNIAHPHM_ = unk3300ONPKNIAHPHM_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300GDKMJJNFIPP_ = unk3300GDKMJJNFIPP_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.singleBestTeamInfo_ = singleBestTeamInfoBuilder_ == null
-              ? singleBestTeamInfo_
-              : singleBestTeamInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.unk3300HINHOCILNJC_ = unk3300HINHOCILNJC_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.unk3300ALILGJBDOMD_ = unk3300ALILGJBDOMD_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.unk3300OLNMJJHJAGK_ = unk3300OLNMJJHJAGK_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.unk3300LOPHGLMNDCP_ = unk3300LOPHGLMNDCP_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.unk3300JDBOOHBJFCP_ = unk3300JDBOOHBJFCP_;
-        }
+        result.unk3300JDBOOHBJFCP_ = unk3300JDBOOHBJFCP_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -839,7 +938,7 @@ public final class CoinCollectLevelDataOuterClass {
           if (!other.doubleBestTeamInfoList_.isEmpty()) {
             if (doubleBestTeamInfoList_.isEmpty()) {
               doubleBestTeamInfoList_ = other.doubleBestTeamInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureDoubleBestTeamInfoListIsMutable();
               doubleBestTeamInfoList_.addAll(other.doubleBestTeamInfoList_);
@@ -852,7 +951,7 @@ public final class CoinCollectLevelDataOuterClass {
               doubleBestTeamInfoListBuilder_.dispose();
               doubleBestTeamInfoListBuilder_ = null;
               doubleBestTeamInfoList_ = other.doubleBestTeamInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000001);
               doubleBestTeamInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDoubleBestTeamInfoListFieldBuilder() : null;
@@ -864,7 +963,7 @@ public final class CoinCollectLevelDataOuterClass {
         if (other.getUnk3300JDBOOHBJFCP() != false) {
           setUnk3300JDBOOHBJFCP(other.getUnk3300JDBOOHBJFCP());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -879,100 +978,17 @@ public final class CoinCollectLevelDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                unk3300HINHOCILNJC_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 8
-              case 18: {
-                emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.parser(),
-                        extensionRegistry);
-                if (doubleBestTeamInfoListBuilder_ == null) {
-                  ensureDoubleBestTeamInfoListIsMutable();
-                  doubleBestTeamInfoList_.add(m);
-                } else {
-                  doubleBestTeamInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 24: {
-                unk3300ALILGJBDOMD_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 24
-              case 32: {
-                unk3300ONPKNIAHPHM_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 48: {
-                isLevelOpen_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 56: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              case 66: {
-                input.readMessage(
-                    getSingleBestTeamInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 66
-              case 72: {
-                unk3300JDBOOHBJFCP_ = input.readBool();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 72
-              case 80: {
-                unk3300OLNMJJHJAGK_ = input.readBool();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 80
-              case 88: {
-                unk3300LOPHGLMNDCP_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 88
-              case 104: {
-                unk3300GDKMJJNFIPP_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 104
-              case 112: {
-                unk3300GNFGEFHKHEF_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -994,7 +1010,6 @@ public final class CoinCollectLevelDataOuterClass {
       public Builder setIsLevelOpen(boolean value) {
         
         isLevelOpen_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1003,7 +1018,7 @@ public final class CoinCollectLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsLevelOpen() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isLevelOpen_ = false;
         onChanged();
         return this;
@@ -1026,7 +1041,6 @@ public final class CoinCollectLevelDataOuterClass {
       public Builder setUnk3300GNFGEFHKHEF(int value) {
         
         unk3300GNFGEFHKHEF_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1035,7 +1049,7 @@ public final class CoinCollectLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GNFGEFHKHEF() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300GNFGEFHKHEF_ = 0;
         onChanged();
         return this;
@@ -1058,7 +1072,6 @@ public final class CoinCollectLevelDataOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1067,7 +1080,7 @@ public final class CoinCollectLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -1090,7 +1103,6 @@ public final class CoinCollectLevelDataOuterClass {
       public Builder setUnk3300ONPKNIAHPHM(int value) {
         
         unk3300ONPKNIAHPHM_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1099,7 +1111,7 @@ public final class CoinCollectLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300ONPKNIAHPHM() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300ONPKNIAHPHM_ = 0;
         onChanged();
         return this;
@@ -1122,7 +1134,6 @@ public final class CoinCollectLevelDataOuterClass {
       public Builder setUnk3300GDKMJJNFIPP(boolean value) {
         
         unk3300GDKMJJNFIPP_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1131,7 +1142,7 @@ public final class CoinCollectLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GDKMJJNFIPP() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300GDKMJJNFIPP_ = false;
         onChanged();
         return this;
@@ -1145,7 +1156,7 @@ public final class CoinCollectLevelDataOuterClass {
        * @return Whether the singleBestTeamInfo field is set.
        */
       public boolean hasSingleBestTeamInfo() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return singleBestTeamInfoBuilder_ != null || singleBestTeamInfo_ != null;
       }
       /**
        * <code>.CoinCollectTeamInfoData single_best_team_info = 8;</code>
@@ -1167,11 +1178,11 @@ public final class CoinCollectLevelDataOuterClass {
             throw new NullPointerException();
           }
           singleBestTeamInfo_ = value;
+          onChanged();
         } else {
           singleBestTeamInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1181,11 +1192,11 @@ public final class CoinCollectLevelDataOuterClass {
           emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.Builder builderForValue) {
         if (singleBestTeamInfoBuilder_ == null) {
           singleBestTeamInfo_ = builderForValue.build();
+          onChanged();
         } else {
           singleBestTeamInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -1193,38 +1204,38 @@ public final class CoinCollectLevelDataOuterClass {
        */
       public Builder mergeSingleBestTeamInfo(emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData value) {
         if (singleBestTeamInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            singleBestTeamInfo_ != null &&
-            singleBestTeamInfo_ != emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.getDefaultInstance()) {
-            getSingleBestTeamInfoBuilder().mergeFrom(value);
+          if (singleBestTeamInfo_ != null) {
+            singleBestTeamInfo_ =
+              emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.newBuilder(singleBestTeamInfo_).mergeFrom(value).buildPartial();
           } else {
             singleBestTeamInfo_ = value;
           }
+          onChanged();
         } else {
           singleBestTeamInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CoinCollectTeamInfoData single_best_team_info = 8;</code>
        */
       public Builder clearSingleBestTeamInfo() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        singleBestTeamInfo_ = null;
-        if (singleBestTeamInfoBuilder_ != null) {
-          singleBestTeamInfoBuilder_.dispose();
+        if (singleBestTeamInfoBuilder_ == null) {
+          singleBestTeamInfo_ = null;
+          onChanged();
+        } else {
+          singleBestTeamInfo_ = null;
           singleBestTeamInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.CoinCollectTeamInfoData single_best_team_info = 8;</code>
        */
       public emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.Builder getSingleBestTeamInfoBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getSingleBestTeamInfoFieldBuilder().getBuilder();
       }
@@ -1273,7 +1284,6 @@ public final class CoinCollectLevelDataOuterClass {
       public Builder setUnk3300HINHOCILNJC(int value) {
         
         unk3300HINHOCILNJC_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1282,7 +1292,7 @@ public final class CoinCollectLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300HINHOCILNJC() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         unk3300HINHOCILNJC_ = 0;
         onChanged();
         return this;
@@ -1305,7 +1315,6 @@ public final class CoinCollectLevelDataOuterClass {
       public Builder setUnk3300ALILGJBDOMD(int value) {
         
         unk3300ALILGJBDOMD_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1314,7 +1323,7 @@ public final class CoinCollectLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300ALILGJBDOMD() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         unk3300ALILGJBDOMD_ = 0;
         onChanged();
         return this;
@@ -1337,7 +1346,6 @@ public final class CoinCollectLevelDataOuterClass {
       public Builder setUnk3300OLNMJJHJAGK(boolean value) {
         
         unk3300OLNMJJHJAGK_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1346,7 +1354,7 @@ public final class CoinCollectLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OLNMJJHJAGK() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         unk3300OLNMJJHJAGK_ = false;
         onChanged();
         return this;
@@ -1369,7 +1377,6 @@ public final class CoinCollectLevelDataOuterClass {
       public Builder setUnk3300LOPHGLMNDCP(int value) {
         
         unk3300LOPHGLMNDCP_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1378,7 +1385,7 @@ public final class CoinCollectLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LOPHGLMNDCP() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         unk3300LOPHGLMNDCP_ = 0;
         onChanged();
         return this;
@@ -1387,9 +1394,9 @@ public final class CoinCollectLevelDataOuterClass {
       private java.util.List<emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData> doubleBestTeamInfoList_ =
         java.util.Collections.emptyList();
       private void ensureDoubleBestTeamInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000400) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           doubleBestTeamInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData>(doubleBestTeamInfoList_);
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1539,7 +1546,7 @@ public final class CoinCollectLevelDataOuterClass {
       public Builder clearDoubleBestTeamInfoList() {
         if (doubleBestTeamInfoListBuilder_ == null) {
           doubleBestTeamInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           doubleBestTeamInfoListBuilder_.clear();
@@ -1616,7 +1623,7 @@ public final class CoinCollectLevelDataOuterClass {
           doubleBestTeamInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData, emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.Builder, emu.gingerps.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoDataOrBuilder>(
                   doubleBestTeamInfoList_,
-                  ((bitField0_ & 0x00000400) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           doubleBestTeamInfoList_ = null;
@@ -1641,7 +1648,6 @@ public final class CoinCollectLevelDataOuterClass {
       public Builder setUnk3300JDBOOHBJFCP(boolean value) {
         
         unk3300JDBOOHBJFCP_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -1650,7 +1656,7 @@ public final class CoinCollectLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300JDBOOHBJFCP() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         unk3300JDBOOHBJFCP_ = false;
         onChanged();
         return this;
@@ -1688,18 +1694,7 @@ public final class CoinCollectLevelDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CoinCollectLevelData(input, extensionRegistry);
       }
     };
 

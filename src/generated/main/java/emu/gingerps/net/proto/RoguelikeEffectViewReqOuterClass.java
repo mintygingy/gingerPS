@@ -92,6 +92,92 @@ public final class RoguelikeEffectViewReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RoguelikeEffectViewReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 80: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300FKGJGIJHKJI_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unk3300FKGJGIJHKJI_.addInt(input.readUInt32());
+              break;
+            }
+            case 82: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300FKGJGIJHKJI_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300FKGJGIJHKJI_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 120: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300LMIIAEPBKNB_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unk3300LMIIAEPBKNB_.addInt(input.readUInt32());
+              break;
+            }
+            case 122: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300LMIIAEPBKNB_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300LMIIAEPBKNB_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unk3300FKGJGIJHKJI_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          unk3300LMIIAEPBKNB_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RoguelikeEffectViewReqOuterClass.internal_static_RoguelikeEffectViewReq_descriptor;
@@ -106,7 +192,6 @@ public final class RoguelikeEffectViewReqOuterClass {
     }
 
     public static final int UNK3300_FKGJGIJHKJI_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300FKGJGIJHKJI_;
     /**
      * <code>repeated uint32 Unk3300_FKGJGIJHKJI = 10;</code>
@@ -135,7 +220,6 @@ public final class RoguelikeEffectViewReqOuterClass {
     private int unk3300FKGJGIJHKJIMemoizedSerializedSize = -1;
 
     public static final int UNK3300_LMIIAEPBKNB_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300LMIIAEPBKNB_;
     /**
      * <code>repeated uint32 Unk3300_LMIIAEPBKNB = 15;</code>
@@ -192,7 +276,7 @@ public final class RoguelikeEffectViewReqOuterClass {
       for (int i = 0; i < unk3300LMIIAEPBKNB_.size(); i++) {
         output.writeUInt32NoTag(unk3300LMIIAEPBKNB_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -229,7 +313,7 @@ public final class RoguelikeEffectViewReqOuterClass {
         }
         unk3300LMIIAEPBKNBMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -248,7 +332,7 @@ public final class RoguelikeEffectViewReqOuterClass {
           .equals(other.getUnk3300FKGJGIJHKJIList())) return false;
       if (!getUnk3300LMIIAEPBKNBList()
           .equals(other.getUnk3300LMIIAEPBKNBList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -267,7 +351,7 @@ public final class RoguelikeEffectViewReqOuterClass {
         hash = (37 * hash) + UNK3300_LMIIAEPBKNB_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300LMIIAEPBKNBList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -395,20 +479,26 @@ public final class RoguelikeEffectViewReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300FKGJGIJHKJI_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300LMIIAEPBKNB_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -435,13 +525,7 @@ public final class RoguelikeEffectViewReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq buildPartial() {
         emu.gingerps.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq result = new emu.gingerps.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           unk3300FKGJGIJHKJI_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -452,10 +536,8 @@ public final class RoguelikeEffectViewReqOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.unk3300LMIIAEPBKNB_ = unk3300LMIIAEPBKNB_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -522,7 +604,7 @@ public final class RoguelikeEffectViewReqOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -537,62 +619,17 @@ public final class RoguelikeEffectViewReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 80: {
-                int v = input.readUInt32();
-                ensureUnk3300FKGJGIJHKJIIsMutable();
-                unk3300FKGJGIJHKJI_.addInt(v);
-                break;
-              } // case 80
-              case 82: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300FKGJGIJHKJIIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300FKGJGIJHKJI_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 82
-              case 120: {
-                int v = input.readUInt32();
-                ensureUnk3300LMIIAEPBKNBIsMutable();
-                unk3300LMIIAEPBKNB_.addInt(v);
-                break;
-              } // case 120
-              case 122: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300LMIIAEPBKNBIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300LMIIAEPBKNB_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -602,7 +639,7 @@ public final class RoguelikeEffectViewReqOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           unk3300FKGJGIJHKJI_ = mutableCopy(unk3300FKGJGIJHKJI_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_FKGJGIJHKJI = 10;</code>
@@ -636,7 +673,6 @@ public final class RoguelikeEffectViewReqOuterClass {
        */
       public Builder setUnk3300FKGJGIJHKJI(
           int index, int value) {
-        
         ensureUnk3300FKGJGIJHKJIIsMutable();
         unk3300FKGJGIJHKJI_.setInt(index, value);
         onChanged();
@@ -648,7 +684,6 @@ public final class RoguelikeEffectViewReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300FKGJGIJHKJI(int value) {
-        
         ensureUnk3300FKGJGIJHKJIIsMutable();
         unk3300FKGJGIJHKJI_.addInt(value);
         onChanged();
@@ -683,7 +718,7 @@ public final class RoguelikeEffectViewReqOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           unk3300LMIIAEPBKNB_ = mutableCopy(unk3300LMIIAEPBKNB_);
           bitField0_ |= 0x00000002;
-        }
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_LMIIAEPBKNB = 15;</code>
@@ -717,7 +752,6 @@ public final class RoguelikeEffectViewReqOuterClass {
        */
       public Builder setUnk3300LMIIAEPBKNB(
           int index, int value) {
-        
         ensureUnk3300LMIIAEPBKNBIsMutable();
         unk3300LMIIAEPBKNB_.setInt(index, value);
         onChanged();
@@ -729,7 +763,6 @@ public final class RoguelikeEffectViewReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300LMIIAEPBKNB(int value) {
-        
         ensureUnk3300LMIIAEPBKNBIsMutable();
         unk3300LMIIAEPBKNB_.addInt(value);
         onChanged();
@@ -791,18 +824,7 @@ public final class RoguelikeEffectViewReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RoguelikeEffectViewReq(input, extensionRegistry);
       }
     };
 

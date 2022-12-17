@@ -75,6 +75,68 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityMetaTriggerElementReaction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              elementReactorType_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              hitIndex_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              elementReactionType_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              elementSourceType_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              triggerEntityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMetaTriggerElementReactionOuterClass.internal_static_AbilityMetaTriggerElementReaction_descriptor;
@@ -89,7 +151,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
     }
 
     public static final int HIT_INDEX_FIELD_NUMBER = 7;
-    private int hitIndex_ = 0;
+    private int hitIndex_;
     /**
      * <code>int32 hit_index = 7;</code>
      * @return The hitIndex.
@@ -100,7 +162,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
     }
 
     public static final int TRIGGER_ENTITY_ID_FIELD_NUMBER = 14;
-    private int triggerEntityId_ = 0;
+    private int triggerEntityId_;
     /**
      * <code>uint32 trigger_entity_id = 14;</code>
      * @return The triggerEntityId.
@@ -111,7 +173,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
     }
 
     public static final int ELEMENT_SOURCE_TYPE_FIELD_NUMBER = 13;
-    private int elementSourceType_ = 0;
+    private int elementSourceType_;
     /**
      * <code>uint32 element_source_type = 13;</code>
      * @return The elementSourceType.
@@ -122,7 +184,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
     }
 
     public static final int ELEMENT_REACTION_TYPE_FIELD_NUMBER = 12;
-    private int elementReactionType_ = 0;
+    private int elementReactionType_;
     /**
      * <code>uint32 element_reaction_type = 12;</code>
      * @return The elementReactionType.
@@ -133,7 +195,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
     }
 
     public static final int ELEMENT_REACTOR_TYPE_FIELD_NUMBER = 2;
-    private int elementReactorType_ = 0;
+    private int elementReactorType_;
     /**
      * <code>uint32 element_reactor_type = 2;</code>
      * @return The elementReactorType.
@@ -172,7 +234,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
       if (triggerEntityId_ != 0) {
         output.writeUInt32(14, triggerEntityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -201,7 +263,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, triggerEntityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +288,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
           != other.getElementReactionType()) return false;
       if (getElementReactorType()
           != other.getElementReactorType()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -247,7 +309,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
       hash = (53 * hash) + getElementReactionType();
       hash = (37 * hash) + ELEMENT_REACTOR_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getElementReactorType();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -364,23 +426,32 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMetaTriggerElementReactionOuterClass.AbilityMetaTriggerElementReaction.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         hitIndex_ = 0;
+
         triggerEntityId_ = 0;
+
         elementSourceType_ = 0;
+
         elementReactionType_ = 0;
+
         elementReactorType_ = 0;
+
         return this;
       }
 
@@ -407,28 +478,13 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMetaTriggerElementReactionOuterClass.AbilityMetaTriggerElementReaction buildPartial() {
         emu.gingerps.net.proto.AbilityMetaTriggerElementReactionOuterClass.AbilityMetaTriggerElementReaction result = new emu.gingerps.net.proto.AbilityMetaTriggerElementReactionOuterClass.AbilityMetaTriggerElementReaction(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.hitIndex_ = hitIndex_;
+        result.triggerEntityId_ = triggerEntityId_;
+        result.elementSourceType_ = elementSourceType_;
+        result.elementReactionType_ = elementReactionType_;
+        result.elementReactorType_ = elementReactorType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityMetaTriggerElementReactionOuterClass.AbilityMetaTriggerElementReaction result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.hitIndex_ = hitIndex_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.triggerEntityId_ = triggerEntityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.elementSourceType_ = elementSourceType_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.elementReactionType_ = elementReactionType_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.elementReactorType_ = elementReactorType_;
-        }
       }
 
       @java.lang.Override
@@ -490,7 +546,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
         if (other.getElementReactorType() != 0) {
           setElementReactorType(other.getElementReactorType());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -505,58 +561,19 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityMetaTriggerElementReactionOuterClass.AbilityMetaTriggerElementReaction parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                elementReactorType_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 16
-              case 56: {
-                hitIndex_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 96: {
-                elementReactionType_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              case 104: {
-                elementSourceType_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              case 112: {
-                triggerEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityMetaTriggerElementReactionOuterClass.AbilityMetaTriggerElementReaction) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int hitIndex_ ;
       /**
@@ -575,7 +592,6 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
       public Builder setHitIndex(int value) {
         
         hitIndex_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -584,7 +600,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHitIndex() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         hitIndex_ = 0;
         onChanged();
         return this;
@@ -607,7 +623,6 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
       public Builder setTriggerEntityId(int value) {
         
         triggerEntityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -616,7 +631,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTriggerEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         triggerEntityId_ = 0;
         onChanged();
         return this;
@@ -639,7 +654,6 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
       public Builder setElementSourceType(int value) {
         
         elementSourceType_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -648,7 +662,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementSourceType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         elementSourceType_ = 0;
         onChanged();
         return this;
@@ -671,7 +685,6 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
       public Builder setElementReactionType(int value) {
         
         elementReactionType_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -680,7 +693,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementReactionType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         elementReactionType_ = 0;
         onChanged();
         return this;
@@ -703,7 +716,6 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
       public Builder setElementReactorType(int value) {
         
         elementReactorType_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -712,7 +724,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementReactorType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         elementReactorType_ = 0;
         onChanged();
         return this;
@@ -750,18 +762,7 @@ public final class AbilityMetaTriggerElementReactionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityMetaTriggerElementReaction(input, extensionRegistry);
       }
     };
 

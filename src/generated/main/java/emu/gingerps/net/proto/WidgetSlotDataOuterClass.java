@@ -75,6 +75,64 @@ public final class WidgetSlotDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WidgetSlotData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              isActive_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              materialId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              tag_ = rawValue;
+              break;
+            }
+            case 120: {
+
+              cdOverTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WidgetSlotDataOuterClass.internal_static_WidgetSlotData_descriptor;
@@ -89,7 +147,7 @@ public final class WidgetSlotDataOuterClass {
     }
 
     public static final int CD_OVER_TIME_FIELD_NUMBER = 15;
-    private int cdOverTime_ = 0;
+    private int cdOverTime_;
     /**
      * <code>uint32 cd_over_time = 15;</code>
      * @return The cdOverTime.
@@ -100,7 +158,7 @@ public final class WidgetSlotDataOuterClass {
     }
 
     public static final int IS_ACTIVE_FIELD_NUMBER = 3;
-    private boolean isActive_ = false;
+    private boolean isActive_;
     /**
      * <code>bool is_active = 3;</code>
      * @return The isActive.
@@ -111,7 +169,7 @@ public final class WidgetSlotDataOuterClass {
     }
 
     public static final int MATERIAL_ID_FIELD_NUMBER = 8;
-    private int materialId_ = 0;
+    private int materialId_;
     /**
      * <code>uint32 material_id = 8;</code>
      * @return The materialId.
@@ -122,7 +180,7 @@ public final class WidgetSlotDataOuterClass {
     }
 
     public static final int TAG_FIELD_NUMBER = 11;
-    private int tag_ = 0;
+    private int tag_;
     /**
      * <code>.WidgetSlotTag tag = 11;</code>
      * @return The enum numeric value on the wire for tag.
@@ -135,7 +193,8 @@ public final class WidgetSlotDataOuterClass {
      * @return The tag.
      */
     @java.lang.Override public emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag getTag() {
-      emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag result = emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.forNumber(tag_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag result = emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.valueOf(tag_);
       return result == null ? emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.UNRECOGNIZED : result;
     }
 
@@ -165,7 +224,7 @@ public final class WidgetSlotDataOuterClass {
       if (cdOverTime_ != 0) {
         output.writeUInt32(15, cdOverTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -190,7 +249,7 @@ public final class WidgetSlotDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, cdOverTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -212,7 +271,7 @@ public final class WidgetSlotDataOuterClass {
       if (getMaterialId()
           != other.getMaterialId()) return false;
       if (tag_ != other.tag_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -232,7 +291,7 @@ public final class WidgetSlotDataOuterClass {
       hash = (53 * hash) + getMaterialId();
       hash = (37 * hash) + TAG_FIELD_NUMBER;
       hash = (53 * hash) + tag_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,22 +408,30 @@ public final class WidgetSlotDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         cdOverTime_ = 0;
+
         isActive_ = false;
+
         materialId_ = 0;
+
         tag_ = 0;
+
         return this;
       }
 
@@ -391,25 +458,12 @@ public final class WidgetSlotDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData buildPartial() {
         emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData result = new emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.cdOverTime_ = cdOverTime_;
+        result.isActive_ = isActive_;
+        result.materialId_ = materialId_;
+        result.tag_ = tag_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.cdOverTime_ = cdOverTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isActive_ = isActive_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.materialId_ = materialId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.tag_ = tag_;
-        }
       }
 
       @java.lang.Override
@@ -468,7 +522,7 @@ public final class WidgetSlotDataOuterClass {
         if (other.tag_ != 0) {
           setTagValue(other.getTagValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -483,53 +537,19 @@ public final class WidgetSlotDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                isActive_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 64: {
-                materialId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 88: {
-                tag_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 88
-              case 120: {
-                cdOverTime_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int cdOverTime_ ;
       /**
@@ -548,7 +568,6 @@ public final class WidgetSlotDataOuterClass {
       public Builder setCdOverTime(int value) {
         
         cdOverTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -557,7 +576,7 @@ public final class WidgetSlotDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCdOverTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         cdOverTime_ = 0;
         onChanged();
         return this;
@@ -580,7 +599,6 @@ public final class WidgetSlotDataOuterClass {
       public Builder setIsActive(boolean value) {
         
         isActive_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -589,7 +607,7 @@ public final class WidgetSlotDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsActive() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isActive_ = false;
         onChanged();
         return this;
@@ -612,7 +630,6 @@ public final class WidgetSlotDataOuterClass {
       public Builder setMaterialId(int value) {
         
         materialId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -621,7 +638,7 @@ public final class WidgetSlotDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         materialId_ = 0;
         onChanged();
         return this;
@@ -641,8 +658,8 @@ public final class WidgetSlotDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTagValue(int value) {
+        
         tag_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -652,7 +669,8 @@ public final class WidgetSlotDataOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag getTag() {
-        emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag result = emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.forNumber(tag_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag result = emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.valueOf(tag_);
         return result == null ? emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.UNRECOGNIZED : result;
       }
       /**
@@ -664,7 +682,7 @@ public final class WidgetSlotDataOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        
         tag_ = value.getNumber();
         onChanged();
         return this;
@@ -674,7 +692,7 @@ public final class WidgetSlotDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         tag_ = 0;
         onChanged();
         return this;
@@ -712,18 +730,7 @@ public final class WidgetSlotDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WidgetSlotData(input, extensionRegistry);
       }
     };
 

@@ -75,6 +75,68 @@ public final class FungusDetailOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FungusDetail(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              unk3300EHNBDJPANKL_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              fungusId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              isCultivate_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              nameId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              unk3300GCLBPDJDEDN_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FungusDetailOuterClass.internal_static_FungusDetail_descriptor;
@@ -89,7 +151,7 @@ public final class FungusDetailOuterClass {
     }
 
     public static final int NAME_ID_FIELD_NUMBER = 8;
-    private int nameId_ = 0;
+    private int nameId_;
     /**
      * <code>uint32 name_id = 8;</code>
      * @return The nameId.
@@ -100,7 +162,7 @@ public final class FungusDetailOuterClass {
     }
 
     public static final int UNK3300_EHNBDJPANKL_FIELD_NUMBER = 2;
-    private int unk3300EHNBDJPANKL_ = 0;
+    private int unk3300EHNBDJPANKL_;
     /**
      * <code>uint32 Unk3300_EHNBDJPANKL = 2;</code>
      * @return The unk3300EHNBDJPANKL.
@@ -111,7 +173,7 @@ public final class FungusDetailOuterClass {
     }
 
     public static final int FUNGUS_ID_FIELD_NUMBER = 3;
-    private int fungusId_ = 0;
+    private int fungusId_;
     /**
      * <code>uint32 fungus_id = 3;</code>
      * @return The fungusId.
@@ -122,7 +184,7 @@ public final class FungusDetailOuterClass {
     }
 
     public static final int IS_CULTIVATE_FIELD_NUMBER = 7;
-    private boolean isCultivate_ = false;
+    private boolean isCultivate_;
     /**
      * <code>bool is_cultivate = 7;</code>
      * @return The isCultivate.
@@ -133,7 +195,7 @@ public final class FungusDetailOuterClass {
     }
 
     public static final int UNK3300_GCLBPDJDEDN_FIELD_NUMBER = 13;
-    private int unk3300GCLBPDJDEDN_ = 0;
+    private int unk3300GCLBPDJDEDN_;
     /**
      * <code>uint32 Unk3300_GCLBPDJDEDN = 13;</code>
      * @return The unk3300GCLBPDJDEDN.
@@ -172,7 +234,7 @@ public final class FungusDetailOuterClass {
       if (unk3300GCLBPDJDEDN_ != 0) {
         output.writeUInt32(13, unk3300GCLBPDJDEDN_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -201,7 +263,7 @@ public final class FungusDetailOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, unk3300GCLBPDJDEDN_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +288,7 @@ public final class FungusDetailOuterClass {
           != other.getIsCultivate()) return false;
       if (getUnk3300GCLBPDJDEDN()
           != other.getUnk3300GCLBPDJDEDN()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -248,7 +310,7 @@ public final class FungusDetailOuterClass {
           getIsCultivate());
       hash = (37 * hash) + UNK3300_GCLBPDJDEDN_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300GCLBPDJDEDN();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -365,23 +427,32 @@ public final class FungusDetailOuterClass {
 
       // Construct using emu.gingerps.net.proto.FungusDetailOuterClass.FungusDetail.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         nameId_ = 0;
+
         unk3300EHNBDJPANKL_ = 0;
+
         fungusId_ = 0;
+
         isCultivate_ = false;
+
         unk3300GCLBPDJDEDN_ = 0;
+
         return this;
       }
 
@@ -408,28 +479,13 @@ public final class FungusDetailOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FungusDetailOuterClass.FungusDetail buildPartial() {
         emu.gingerps.net.proto.FungusDetailOuterClass.FungusDetail result = new emu.gingerps.net.proto.FungusDetailOuterClass.FungusDetail(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.nameId_ = nameId_;
+        result.unk3300EHNBDJPANKL_ = unk3300EHNBDJPANKL_;
+        result.fungusId_ = fungusId_;
+        result.isCultivate_ = isCultivate_;
+        result.unk3300GCLBPDJDEDN_ = unk3300GCLBPDJDEDN_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FungusDetailOuterClass.FungusDetail result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.nameId_ = nameId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300EHNBDJPANKL_ = unk3300EHNBDJPANKL_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.fungusId_ = fungusId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isCultivate_ = isCultivate_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300GCLBPDJDEDN_ = unk3300GCLBPDJDEDN_;
-        }
       }
 
       @java.lang.Override
@@ -491,7 +547,7 @@ public final class FungusDetailOuterClass {
         if (other.getUnk3300GCLBPDJDEDN() != 0) {
           setUnk3300GCLBPDJDEDN(other.getUnk3300GCLBPDJDEDN());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -506,58 +562,19 @@ public final class FungusDetailOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FungusDetailOuterClass.FungusDetail parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                unk3300EHNBDJPANKL_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                fungusId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 56: {
-                isCultivate_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 64: {
-                nameId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 104: {
-                unk3300GCLBPDJDEDN_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FungusDetailOuterClass.FungusDetail) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int nameId_ ;
       /**
@@ -576,7 +593,6 @@ public final class FungusDetailOuterClass {
       public Builder setNameId(int value) {
         
         nameId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -585,7 +601,7 @@ public final class FungusDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNameId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         nameId_ = 0;
         onChanged();
         return this;
@@ -608,7 +624,6 @@ public final class FungusDetailOuterClass {
       public Builder setUnk3300EHNBDJPANKL(int value) {
         
         unk3300EHNBDJPANKL_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -617,7 +632,7 @@ public final class FungusDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EHNBDJPANKL() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300EHNBDJPANKL_ = 0;
         onChanged();
         return this;
@@ -640,7 +655,6 @@ public final class FungusDetailOuterClass {
       public Builder setFungusId(int value) {
         
         fungusId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -649,7 +663,7 @@ public final class FungusDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFungusId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         fungusId_ = 0;
         onChanged();
         return this;
@@ -672,7 +686,6 @@ public final class FungusDetailOuterClass {
       public Builder setIsCultivate(boolean value) {
         
         isCultivate_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -681,7 +694,7 @@ public final class FungusDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCultivate() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isCultivate_ = false;
         onChanged();
         return this;
@@ -704,7 +717,6 @@ public final class FungusDetailOuterClass {
       public Builder setUnk3300GCLBPDJDEDN(int value) {
         
         unk3300GCLBPDJDEDN_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -713,7 +725,7 @@ public final class FungusDetailOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GCLBPDJDEDN() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300GCLBPDJDEDN_ = 0;
         onChanged();
         return this;
@@ -751,18 +763,7 @@ public final class FungusDetailOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FungusDetail(input, extensionRegistry);
       }
     };
 

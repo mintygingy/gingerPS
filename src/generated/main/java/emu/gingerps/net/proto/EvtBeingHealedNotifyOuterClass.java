@@ -79,6 +79,63 @@ public final class EvtBeingHealedNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtBeingHealedNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 21: {
+
+              realHealAmount_ = input.readFloat();
+              break;
+            }
+            case 29: {
+
+              healAmount_ = input.readFloat();
+              break;
+            }
+            case 32: {
+
+              targetId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              sourceId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.internal_static_EvtBeingHealedNotify_descriptor;
@@ -93,7 +150,7 @@ public final class EvtBeingHealedNotifyOuterClass {
     }
 
     public static final int REAL_HEAL_AMOUNT_FIELD_NUMBER = 2;
-    private float realHealAmount_ = 0F;
+    private float realHealAmount_;
     /**
      * <code>float real_heal_amount = 2;</code>
      * @return The realHealAmount.
@@ -104,7 +161,7 @@ public final class EvtBeingHealedNotifyOuterClass {
     }
 
     public static final int HEAL_AMOUNT_FIELD_NUMBER = 3;
-    private float healAmount_ = 0F;
+    private float healAmount_;
     /**
      * <code>float heal_amount = 3;</code>
      * @return The healAmount.
@@ -115,7 +172,7 @@ public final class EvtBeingHealedNotifyOuterClass {
     }
 
     public static final int TARGET_ID_FIELD_NUMBER = 4;
-    private int targetId_ = 0;
+    private int targetId_;
     /**
      * <code>uint32 target_id = 4;</code>
      * @return The targetId.
@@ -126,7 +183,7 @@ public final class EvtBeingHealedNotifyOuterClass {
     }
 
     public static final int SOURCE_ID_FIELD_NUMBER = 6;
-    private int sourceId_ = 0;
+    private int sourceId_;
     /**
      * <code>uint32 source_id = 6;</code>
      * @return The sourceId.
@@ -150,10 +207,10 @@ public final class EvtBeingHealedNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Float.floatToRawIntBits(realHealAmount_) != 0) {
+      if (realHealAmount_ != 0F) {
         output.writeFloat(2, realHealAmount_);
       }
-      if (java.lang.Float.floatToRawIntBits(healAmount_) != 0) {
+      if (healAmount_ != 0F) {
         output.writeFloat(3, healAmount_);
       }
       if (targetId_ != 0) {
@@ -162,7 +219,7 @@ public final class EvtBeingHealedNotifyOuterClass {
       if (sourceId_ != 0) {
         output.writeUInt32(6, sourceId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -171,11 +228,11 @@ public final class EvtBeingHealedNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Float.floatToRawIntBits(realHealAmount_) != 0) {
+      if (realHealAmount_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, realHealAmount_);
       }
-      if (java.lang.Float.floatToRawIntBits(healAmount_) != 0) {
+      if (healAmount_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, healAmount_);
       }
@@ -187,7 +244,7 @@ public final class EvtBeingHealedNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, sourceId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -212,7 +269,7 @@ public final class EvtBeingHealedNotifyOuterClass {
           != other.getTargetId()) return false;
       if (getSourceId()
           != other.getSourceId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -233,7 +290,7 @@ public final class EvtBeingHealedNotifyOuterClass {
       hash = (53 * hash) + getTargetId();
       hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSourceId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,22 +417,30 @@ public final class EvtBeingHealedNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         realHealAmount_ = 0F;
+
         healAmount_ = 0F;
+
         targetId_ = 0;
+
         sourceId_ = 0;
+
         return this;
       }
 
@@ -402,25 +467,12 @@ public final class EvtBeingHealedNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify buildPartial() {
         emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify result = new emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.realHealAmount_ = realHealAmount_;
+        result.healAmount_ = healAmount_;
+        result.targetId_ = targetId_;
+        result.sourceId_ = sourceId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.realHealAmount_ = realHealAmount_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.healAmount_ = healAmount_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.targetId_ = targetId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.sourceId_ = sourceId_;
-        }
       }
 
       @java.lang.Override
@@ -479,7 +531,7 @@ public final class EvtBeingHealedNotifyOuterClass {
         if (other.getSourceId() != 0) {
           setSourceId(other.getSourceId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -494,53 +546,19 @@ public final class EvtBeingHealedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 21: {
-                realHealAmount_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 21
-              case 29: {
-                healAmount_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 29
-              case 32: {
-                targetId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 48: {
-                sourceId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 48
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private float realHealAmount_ ;
       /**
@@ -559,7 +577,6 @@ public final class EvtBeingHealedNotifyOuterClass {
       public Builder setRealHealAmount(float value) {
         
         realHealAmount_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -568,7 +585,7 @@ public final class EvtBeingHealedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRealHealAmount() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         realHealAmount_ = 0F;
         onChanged();
         return this;
@@ -591,7 +608,6 @@ public final class EvtBeingHealedNotifyOuterClass {
       public Builder setHealAmount(float value) {
         
         healAmount_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -600,7 +616,7 @@ public final class EvtBeingHealedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHealAmount() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         healAmount_ = 0F;
         onChanged();
         return this;
@@ -623,7 +639,6 @@ public final class EvtBeingHealedNotifyOuterClass {
       public Builder setTargetId(int value) {
         
         targetId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -632,7 +647,7 @@ public final class EvtBeingHealedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         targetId_ = 0;
         onChanged();
         return this;
@@ -655,7 +670,6 @@ public final class EvtBeingHealedNotifyOuterClass {
       public Builder setSourceId(int value) {
         
         sourceId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -664,7 +678,7 @@ public final class EvtBeingHealedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSourceId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         sourceId_ = 0;
         onChanged();
         return this;
@@ -702,18 +716,7 @@ public final class EvtBeingHealedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtBeingHealedNotify(input, extensionRegistry);
       }
     };
 

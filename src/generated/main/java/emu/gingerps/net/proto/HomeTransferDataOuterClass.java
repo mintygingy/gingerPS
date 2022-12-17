@@ -66,6 +66,61 @@ public final class HomeTransferDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeTransferData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (spawnPos_ != null) {
+                subBuilder = spawnPos_.toBuilder();
+              }
+              spawnPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(spawnPos_);
+                spawnPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
+
+              guid_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeTransferDataOuterClass.internal_static_HomeTransferData_descriptor;
@@ -102,11 +157,11 @@ public final class HomeTransferDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSpawnPosOrBuilder() {
-      return spawnPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : spawnPos_;
+      return getSpawnPos();
     }
 
     public static final int GUID_FIELD_NUMBER = 5;
-    private int guid_ = 0;
+    private int guid_;
     /**
      * <code>uint32 guid = 5;</code>
      * @return The guid.
@@ -136,7 +191,7 @@ public final class HomeTransferDataOuterClass {
       if (guid_ != 0) {
         output.writeUInt32(5, guid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +208,7 @@ public final class HomeTransferDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, guid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +230,7 @@ public final class HomeTransferDataOuterClass {
       }
       if (getGuid()
           != other.getGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -192,7 +247,7 @@ public final class HomeTransferDataOuterClass {
       }
       hash = (37 * hash) + GUID_FIELD_NUMBER;
       hash = (53 * hash) + getGuid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -309,24 +364,30 @@ public final class HomeTransferDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeTransferDataOuterClass.HomeTransferData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        spawnPos_ = null;
-        if (spawnPosBuilder_ != null) {
-          spawnPosBuilder_.dispose();
+        if (spawnPosBuilder_ == null) {
+          spawnPos_ = null;
+        } else {
+          spawnPos_ = null;
           spawnPosBuilder_ = null;
         }
         guid_ = 0;
+
         return this;
       }
 
@@ -353,21 +414,14 @@ public final class HomeTransferDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeTransferDataOuterClass.HomeTransferData buildPartial() {
         emu.gingerps.net.proto.HomeTransferDataOuterClass.HomeTransferData result = new emu.gingerps.net.proto.HomeTransferDataOuterClass.HomeTransferData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (spawnPosBuilder_ == null) {
+          result.spawnPos_ = spawnPos_;
+        } else {
+          result.spawnPos_ = spawnPosBuilder_.build();
+        }
+        result.guid_ = guid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeTransferDataOuterClass.HomeTransferData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.spawnPos_ = spawnPosBuilder_ == null
-              ? spawnPos_
-              : spawnPosBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.guid_ = guid_;
-        }
       }
 
       @java.lang.Override
@@ -420,7 +474,7 @@ public final class HomeTransferDataOuterClass {
         if (other.getGuid() != 0) {
           setGuid(other.getGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -435,45 +489,19 @@ public final class HomeTransferDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeTransferDataOuterClass.HomeTransferData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getSpawnPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 40: {
-                guid_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeTransferDataOuterClass.HomeTransferData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector spawnPos_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -483,7 +511,7 @@ public final class HomeTransferDataOuterClass {
        * @return Whether the spawnPos field is set.
        */
       public boolean hasSpawnPos() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return spawnPosBuilder_ != null || spawnPos_ != null;
       }
       /**
        * <code>.Vector spawn_pos = 1;</code>
@@ -505,11 +533,11 @@ public final class HomeTransferDataOuterClass {
             throw new NullPointerException();
           }
           spawnPos_ = value;
+          onChanged();
         } else {
           spawnPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -519,11 +547,11 @@ public final class HomeTransferDataOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (spawnPosBuilder_ == null) {
           spawnPos_ = builderForValue.build();
+          onChanged();
         } else {
           spawnPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -531,38 +559,38 @@ public final class HomeTransferDataOuterClass {
        */
       public Builder mergeSpawnPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (spawnPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            spawnPos_ != null &&
-            spawnPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getSpawnPosBuilder().mergeFrom(value);
+          if (spawnPos_ != null) {
+            spawnPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(spawnPos_).mergeFrom(value).buildPartial();
           } else {
             spawnPos_ = value;
           }
+          onChanged();
         } else {
           spawnPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 1;</code>
        */
       public Builder clearSpawnPos() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        spawnPos_ = null;
-        if (spawnPosBuilder_ != null) {
-          spawnPosBuilder_.dispose();
+        if (spawnPosBuilder_ == null) {
+          spawnPos_ = null;
+          onChanged();
+        } else {
+          spawnPos_ = null;
           spawnPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 1;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSpawnPosBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getSpawnPosFieldBuilder().getBuilder();
       }
@@ -611,7 +639,6 @@ public final class HomeTransferDataOuterClass {
       public Builder setGuid(int value) {
         
         guid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -620,7 +647,7 @@ public final class HomeTransferDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         guid_ = 0;
         onChanged();
         return this;
@@ -658,18 +685,7 @@ public final class HomeTransferDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeTransferData(input, extensionRegistry);
       }
     };
 

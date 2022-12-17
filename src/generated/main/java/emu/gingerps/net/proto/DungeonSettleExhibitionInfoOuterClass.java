@@ -85,6 +85,69 @@ public final class DungeonSettleExhibitionInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DungeonSettleExhibitionInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = null;
+              if (playerInfo_ != null) {
+                subBuilder = playerInfo_.toBuilder();
+              }
+              playerInfo_ = input.readMessage(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(playerInfo_);
+                playerInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cardList_ = java.util.Collections.unmodifiableList(cardList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.internal_static_DungeonSettleExhibitionInfo_descriptor;
@@ -121,11 +184,10 @@ public final class DungeonSettleExhibitionInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
-      return playerInfo_ == null ? emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : playerInfo_;
+      return getPlayerInfo();
     }
 
     public static final int CARD_LIST_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_;
     /**
      * <code>repeated .ExhibitionDisplayInfo card_list = 13;</code>
@@ -185,7 +247,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
       if (playerInfo_ != null) {
         output.writeMessage(14, getPlayerInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -202,7 +264,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getPlayerInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -224,7 +286,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
       }
       if (!getCardListList()
           .equals(other.getCardListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -243,7 +305,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
         hash = (37 * hash) + CARD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCardListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,30 +422,35 @@ public final class DungeonSettleExhibitionInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCardListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        playerInfo_ = null;
-        if (playerInfoBuilder_ != null) {
-          playerInfoBuilder_.dispose();
+        if (playerInfoBuilder_ == null) {
+          playerInfo_ = null;
+        } else {
+          playerInfo_ = null;
           playerInfoBuilder_ = null;
         }
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          cardList_ = null;
           cardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -410,31 +477,23 @@ public final class DungeonSettleExhibitionInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo buildPartial() {
         emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo result = new emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (playerInfoBuilder_ == null) {
+          result.playerInfo_ = playerInfo_;
+        } else {
+          result.playerInfo_ = playerInfoBuilder_.build();
+        }
         if (cardListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             cardList_ = java.util.Collections.unmodifiableList(cardList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.cardList_ = cardList_;
         } else {
           result.cardList_ = cardListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.playerInfo_ = playerInfoBuilder_ == null
-              ? playerInfo_
-              : playerInfoBuilder_.build();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -488,7 +547,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
           if (!other.cardList_.isEmpty()) {
             if (cardList_.isEmpty()) {
               cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureCardListIsMutable();
               cardList_.addAll(other.cardList_);
@@ -501,7 +560,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
               cardListBuilder_.dispose();
               cardListBuilder_ = null;
               cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               cardListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCardListFieldBuilder() : null;
@@ -510,7 +569,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -525,50 +584,17 @@ public final class DungeonSettleExhibitionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 106: {
-                emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(),
-                        extensionRegistry);
-                if (cardListBuilder_ == null) {
-                  ensureCardListIsMutable();
-                  cardList_.add(m);
-                } else {
-                  cardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 106
-              case 114: {
-                input.readMessage(
-                    getPlayerInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -581,7 +607,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
        * @return Whether the playerInfo field is set.
        */
       public boolean hasPlayerInfo() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return playerInfoBuilder_ != null || playerInfo_ != null;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 14;</code>
@@ -603,11 +629,11 @@ public final class DungeonSettleExhibitionInfoOuterClass {
             throw new NullPointerException();
           }
           playerInfo_ = value;
+          onChanged();
         } else {
           playerInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -617,11 +643,11 @@ public final class DungeonSettleExhibitionInfoOuterClass {
           emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder builderForValue) {
         if (playerInfoBuilder_ == null) {
           playerInfo_ = builderForValue.build();
+          onChanged();
         } else {
           playerInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -629,38 +655,38 @@ public final class DungeonSettleExhibitionInfoOuterClass {
        */
       public Builder mergePlayerInfo(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
         if (playerInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            playerInfo_ != null &&
-            playerInfo_ != emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance()) {
-            getPlayerInfoBuilder().mergeFrom(value);
+          if (playerInfo_ != null) {
+            playerInfo_ =
+              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.newBuilder(playerInfo_).mergeFrom(value).buildPartial();
           } else {
             playerInfo_ = value;
           }
+          onChanged();
         } else {
           playerInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 14;</code>
        */
       public Builder clearPlayerInfo() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        playerInfo_ = null;
-        if (playerInfoBuilder_ != null) {
-          playerInfoBuilder_.dispose();
+        if (playerInfoBuilder_ == null) {
+          playerInfo_ = null;
+          onChanged();
+        } else {
+          playerInfo_ = null;
           playerInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 14;</code>
        */
       public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder getPlayerInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getPlayerInfoFieldBuilder().getBuilder();
       }
@@ -695,9 +721,9 @@ public final class DungeonSettleExhibitionInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_ =
         java.util.Collections.emptyList();
       private void ensureCardListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>(cardList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -847,7 +873,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
       public Builder clearCardList() {
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           cardListBuilder_.clear();
@@ -924,7 +950,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
           cardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder>(
                   cardList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           cardList_ = null;
@@ -964,18 +990,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DungeonSettleExhibitionInfo(input, extensionRegistry);
       }
     };
 

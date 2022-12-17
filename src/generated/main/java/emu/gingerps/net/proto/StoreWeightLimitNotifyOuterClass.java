@@ -97,6 +97,74 @@ public final class StoreWeightLimitNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private StoreWeightLimitNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              weaponCountLimit_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              materialCountLimit_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              weightLimit_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              storeType_ = rawValue;
+              break;
+            }
+            case 80: {
+
+              furnitureCountLimit_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              reliquaryCountLimit_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.StoreWeightLimitNotifyOuterClass.internal_static_StoreWeightLimitNotify_descriptor;
@@ -111,7 +179,7 @@ public final class StoreWeightLimitNotifyOuterClass {
     }
 
     public static final int RELIQUARY_COUNT_LIMIT_FIELD_NUMBER = 14;
-    private int reliquaryCountLimit_ = 0;
+    private int reliquaryCountLimit_;
     /**
      * <code>uint32 reliquary_count_limit = 14;</code>
      * @return The reliquaryCountLimit.
@@ -122,7 +190,7 @@ public final class StoreWeightLimitNotifyOuterClass {
     }
 
     public static final int FURNITURE_COUNT_LIMIT_FIELD_NUMBER = 10;
-    private int furnitureCountLimit_ = 0;
+    private int furnitureCountLimit_;
     /**
      * <code>uint32 furniture_count_limit = 10;</code>
      * @return The furnitureCountLimit.
@@ -133,7 +201,7 @@ public final class StoreWeightLimitNotifyOuterClass {
     }
 
     public static final int MATERIAL_COUNT_LIMIT_FIELD_NUMBER = 5;
-    private int materialCountLimit_ = 0;
+    private int materialCountLimit_;
     /**
      * <code>uint32 material_count_limit = 5;</code>
      * @return The materialCountLimit.
@@ -144,7 +212,7 @@ public final class StoreWeightLimitNotifyOuterClass {
     }
 
     public static final int WEAPON_COUNT_LIMIT_FIELD_NUMBER = 1;
-    private int weaponCountLimit_ = 0;
+    private int weaponCountLimit_;
     /**
      * <code>uint32 weapon_count_limit = 1;</code>
      * @return The weaponCountLimit.
@@ -155,7 +223,7 @@ public final class StoreWeightLimitNotifyOuterClass {
     }
 
     public static final int WEIGHT_LIMIT_FIELD_NUMBER = 8;
-    private int weightLimit_ = 0;
+    private int weightLimit_;
     /**
      * <code>uint32 weight_limit = 8;</code>
      * @return The weightLimit.
@@ -166,7 +234,7 @@ public final class StoreWeightLimitNotifyOuterClass {
     }
 
     public static final int STORE_TYPE_FIELD_NUMBER = 9;
-    private int storeType_ = 0;
+    private int storeType_;
     /**
      * <code>.StoreType store_type = 9;</code>
      * @return The enum numeric value on the wire for storeType.
@@ -179,7 +247,8 @@ public final class StoreWeightLimitNotifyOuterClass {
      * @return The storeType.
      */
     @java.lang.Override public emu.gingerps.net.proto.StoreTypeOuterClass.StoreType getStoreType() {
-      emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.forNumber(storeType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.valueOf(storeType_);
       return result == null ? emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
     }
 
@@ -215,7 +284,7 @@ public final class StoreWeightLimitNotifyOuterClass {
       if (reliquaryCountLimit_ != 0) {
         output.writeUInt32(14, reliquaryCountLimit_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -248,7 +317,7 @@ public final class StoreWeightLimitNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, reliquaryCountLimit_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -274,7 +343,7 @@ public final class StoreWeightLimitNotifyOuterClass {
       if (getWeightLimit()
           != other.getWeightLimit()) return false;
       if (storeType_ != other.storeType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -297,7 +366,7 @@ public final class StoreWeightLimitNotifyOuterClass {
       hash = (53 * hash) + getWeightLimit();
       hash = (37 * hash) + STORE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + storeType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -424,24 +493,34 @@ public final class StoreWeightLimitNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         reliquaryCountLimit_ = 0;
+
         furnitureCountLimit_ = 0;
+
         materialCountLimit_ = 0;
+
         weaponCountLimit_ = 0;
+
         weightLimit_ = 0;
+
         storeType_ = 0;
+
         return this;
       }
 
@@ -468,31 +547,14 @@ public final class StoreWeightLimitNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotify buildPartial() {
         emu.gingerps.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotify result = new emu.gingerps.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.reliquaryCountLimit_ = reliquaryCountLimit_;
+        result.furnitureCountLimit_ = furnitureCountLimit_;
+        result.materialCountLimit_ = materialCountLimit_;
+        result.weaponCountLimit_ = weaponCountLimit_;
+        result.weightLimit_ = weightLimit_;
+        result.storeType_ = storeType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.reliquaryCountLimit_ = reliquaryCountLimit_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.furnitureCountLimit_ = furnitureCountLimit_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.materialCountLimit_ = materialCountLimit_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.weaponCountLimit_ = weaponCountLimit_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.weightLimit_ = weightLimit_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.storeType_ = storeType_;
-        }
       }
 
       @java.lang.Override
@@ -557,7 +619,7 @@ public final class StoreWeightLimitNotifyOuterClass {
         if (other.storeType_ != 0) {
           setStoreTypeValue(other.getStoreTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -572,63 +634,19 @@ public final class StoreWeightLimitNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                weaponCountLimit_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 8
-              case 40: {
-                materialCountLimit_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 64: {
-                weightLimit_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 64
-              case 72: {
-                storeType_ = input.readEnum();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 72
-              case 80: {
-                furnitureCountLimit_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 112: {
-                reliquaryCountLimit_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int reliquaryCountLimit_ ;
       /**
@@ -647,7 +665,6 @@ public final class StoreWeightLimitNotifyOuterClass {
       public Builder setReliquaryCountLimit(int value) {
         
         reliquaryCountLimit_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -656,7 +673,7 @@ public final class StoreWeightLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReliquaryCountLimit() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         reliquaryCountLimit_ = 0;
         onChanged();
         return this;
@@ -679,7 +696,6 @@ public final class StoreWeightLimitNotifyOuterClass {
       public Builder setFurnitureCountLimit(int value) {
         
         furnitureCountLimit_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -688,7 +704,7 @@ public final class StoreWeightLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFurnitureCountLimit() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         furnitureCountLimit_ = 0;
         onChanged();
         return this;
@@ -711,7 +727,6 @@ public final class StoreWeightLimitNotifyOuterClass {
       public Builder setMaterialCountLimit(int value) {
         
         materialCountLimit_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -720,7 +735,7 @@ public final class StoreWeightLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaterialCountLimit() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         materialCountLimit_ = 0;
         onChanged();
         return this;
@@ -743,7 +758,6 @@ public final class StoreWeightLimitNotifyOuterClass {
       public Builder setWeaponCountLimit(int value) {
         
         weaponCountLimit_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -752,7 +766,7 @@ public final class StoreWeightLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWeaponCountLimit() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         weaponCountLimit_ = 0;
         onChanged();
         return this;
@@ -775,7 +789,6 @@ public final class StoreWeightLimitNotifyOuterClass {
       public Builder setWeightLimit(int value) {
         
         weightLimit_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -784,7 +797,7 @@ public final class StoreWeightLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWeightLimit() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         weightLimit_ = 0;
         onChanged();
         return this;
@@ -804,8 +817,8 @@ public final class StoreWeightLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStoreTypeValue(int value) {
+        
         storeType_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -815,7 +828,8 @@ public final class StoreWeightLimitNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.StoreTypeOuterClass.StoreType getStoreType() {
-        emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.forNumber(storeType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.StoreTypeOuterClass.StoreType result = emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.valueOf(storeType_);
         return result == null ? emu.gingerps.net.proto.StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
       }
       /**
@@ -827,7 +841,7 @@ public final class StoreWeightLimitNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000020;
+        
         storeType_ = value.getNumber();
         onChanged();
         return this;
@@ -837,7 +851,7 @@ public final class StoreWeightLimitNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStoreType() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         storeType_ = 0;
         onChanged();
         return this;
@@ -875,18 +889,7 @@ public final class StoreWeightLimitNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new StoreWeightLimitNotify(input, extensionRegistry);
       }
     };
 

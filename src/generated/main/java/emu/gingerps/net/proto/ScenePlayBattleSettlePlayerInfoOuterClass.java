@@ -135,6 +135,101 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ScenePlayBattleSettlePlayerInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              headImage_ = input.readUInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickname_ = s;
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              onlineId_ = s;
+              break;
+            }
+            case 56: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
+              if (profilePicture_ != null) {
+                subBuilder = profilePicture_.toBuilder();
+              }
+              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(profilePicture_);
+                profilePicture_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 88: {
+
+              param_ = input.readInt64();
+              break;
+            }
+            case 104: {
+
+              statisticId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cardList_ = java.util.Collections.unmodifiableList(cardList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayBattleSettlePlayerInfoOuterClass.internal_static_ScenePlayBattleSettlePlayerInfo_descriptor;
@@ -149,7 +244,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 7;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 7;</code>
      * @return The uid.
@@ -160,7 +255,6 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
     }
 
     public static final int CARD_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_;
     /**
      * <code>repeated .ExhibitionDisplayInfo card_list = 4;</code>
@@ -223,12 +317,11 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+      return getProfilePicture();
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object nickname_ = "";
+    private volatile java.lang.Object nickname_;
     /**
      * <code>string nickname = 3;</code>
      * @return The nickname.
@@ -266,7 +359,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
     }
 
     public static final int PARAM_FIELD_NUMBER = 11;
-    private long param_ = 0L;
+    private long param_;
     /**
      * <code>int64 param = 11;</code>
      * @return The param.
@@ -277,7 +370,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
     }
 
     public static final int STATISTIC_ID_FIELD_NUMBER = 13;
-    private int statisticId_ = 0;
+    private int statisticId_;
     /**
      * <code>uint32 statistic_id = 13;</code>
      * @return The statisticId.
@@ -288,8 +381,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
     }
 
     public static final int ONLINE_ID_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object onlineId_ = "";
+    private volatile java.lang.Object onlineId_;
     /**
      * <code>string online_id = 5;</code>
      * @return The onlineId.
@@ -327,7 +419,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
     }
 
     public static final int HEAD_IMAGE_FIELD_NUMBER = 2;
-    private int headImage_ = 0;
+    private int headImage_;
     /**
      * <code>uint32 head_image = 2;</code>
      * @return The headImage.
@@ -375,7 +467,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
       if (statisticId_ != 0) {
         output.writeUInt32(13, statisticId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -414,7 +506,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, statisticId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -448,7 +540,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
           .equals(other.getOnlineId())) return false;
       if (getHeadImage()
           != other.getHeadImage()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -480,7 +572,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
       hash = (53 * hash) + getOnlineId().hashCode();
       hash = (37 * hash) + HEAD_IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getHeadImage();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -597,36 +689,47 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayBattleSettlePlayerInfoOuterClass.ScenePlayBattleSettlePlayerInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCardListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         uid_ = 0;
+
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          cardList_ = null;
           cardListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
         nickname_ = "";
+
         param_ = 0L;
+
         statisticId_ = 0;
+
         onlineId_ = "";
+
         headImage_ = 0;
+
         return this;
       }
 
@@ -653,49 +756,29 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayBattleSettlePlayerInfoOuterClass.ScenePlayBattleSettlePlayerInfo buildPartial() {
         emu.gingerps.net.proto.ScenePlayBattleSettlePlayerInfoOuterClass.ScenePlayBattleSettlePlayerInfo result = new emu.gingerps.net.proto.ScenePlayBattleSettlePlayerInfoOuterClass.ScenePlayBattleSettlePlayerInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ScenePlayBattleSettlePlayerInfoOuterClass.ScenePlayBattleSettlePlayerInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.uid_ = uid_;
         if (cardListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             cardList_ = java.util.Collections.unmodifiableList(cardList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.cardList_ = cardList_;
         } else {
           result.cardList_ = cardListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ScenePlayBattleSettlePlayerInfoOuterClass.ScenePlayBattleSettlePlayerInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.uid_ = uid_;
+        if (profilePictureBuilder_ == null) {
+          result.profilePicture_ = profilePicture_;
+        } else {
+          result.profilePicture_ = profilePictureBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.profilePicture_ = profilePictureBuilder_ == null
-              ? profilePicture_
-              : profilePictureBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.nickname_ = nickname_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.param_ = param_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.statisticId_ = statisticId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.onlineId_ = onlineId_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.headImage_ = headImage_;
-        }
+        result.nickname_ = nickname_;
+        result.param_ = param_;
+        result.statisticId_ = statisticId_;
+        result.onlineId_ = onlineId_;
+        result.headImage_ = headImage_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -749,7 +832,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
           if (!other.cardList_.isEmpty()) {
             if (cardList_.isEmpty()) {
               cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureCardListIsMutable();
               cardList_.addAll(other.cardList_);
@@ -762,7 +845,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
               cardListBuilder_.dispose();
               cardListBuilder_ = null;
               cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               cardListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCardListFieldBuilder() : null;
@@ -776,7 +859,6 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.getParam() != 0L) {
@@ -787,13 +869,12 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
         }
         if (!other.getOnlineId().isEmpty()) {
           onlineId_ = other.onlineId_;
-          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (other.getHeadImage() != 0) {
           setHeadImage(other.getHeadImage());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -808,80 +889,17 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ScenePlayBattleSettlePlayerInfoOuterClass.ScenePlayBattleSettlePlayerInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                headImage_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 16
-              case 26: {
-                nickname_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 26
-              case 34: {
-                emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(),
-                        extensionRegistry);
-                if (cardListBuilder_ == null) {
-                  ensureCardListIsMutable();
-                  cardList_.add(m);
-                } else {
-                  cardListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                onlineId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 42
-              case 56: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 66: {
-                input.readMessage(
-                    getProfilePictureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 66
-              case 88: {
-                param_ = input.readInt64();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 88
-              case 104: {
-                statisticId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ScenePlayBattleSettlePlayerInfoOuterClass.ScenePlayBattleSettlePlayerInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -903,7 +921,6 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -912,7 +929,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -921,9 +938,9 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_ =
         java.util.Collections.emptyList();
       private void ensureCardListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>(cardList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1073,7 +1090,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
       public Builder clearCardList() {
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           cardListBuilder_.clear();
@@ -1150,7 +1167,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
           cardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder>(
                   cardList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           cardList_ = null;
@@ -1166,7 +1183,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
        * <code>.ProfilePicture profile_picture = 8;</code>
@@ -1188,11 +1205,11 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1202,11 +1219,11 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
+          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1214,38 +1231,38 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            profilePicture_ != null &&
-            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
-            getProfilePictureBuilder().mergeFrom(value);
+          if (profilePicture_ != null) {
+            profilePicture_ =
+              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
           } else {
             profilePicture_ = value;
           }
+          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 8;</code>
        */
       public Builder clearProfilePicture() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        profilePicture_ = null;
-        if (profilePictureBuilder_ != null) {
-          profilePictureBuilder_.dispose();
+        if (profilePictureBuilder_ == null) {
+          profilePicture_ = null;
+          onChanged();
+        } else {
+          profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 8;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -1318,9 +1335,11 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        */
       public Builder setNickname(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         nickname_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1329,8 +1348,8 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickname() {
+        
         nickname_ = getDefaultInstance().getNickname();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1341,10 +1360,12 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        */
       public Builder setNicknameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         nickname_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1366,7 +1387,6 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
       public Builder setParam(long value) {
         
         param_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1375,7 +1395,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         param_ = 0L;
         onChanged();
         return this;
@@ -1398,7 +1418,6 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
       public Builder setStatisticId(int value) {
         
         statisticId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1407,7 +1426,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStatisticId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         statisticId_ = 0;
         onChanged();
         return this;
@@ -1454,9 +1473,11 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        */
       public Builder setOnlineId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         onlineId_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1465,8 +1486,8 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
+        
         onlineId_ = getDefaultInstance().getOnlineId();
-        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -1477,10 +1498,12 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        */
       public Builder setOnlineIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         onlineId_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1502,7 +1525,6 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
       public Builder setHeadImage(int value) {
         
         headImage_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1511,7 +1533,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHeadImage() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         headImage_ = 0;
         onChanged();
         return this;
@@ -1549,18 +1571,7 @@ public final class ScenePlayBattleSettlePlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ScenePlayBattleSettlePlayerInfo(input, extensionRegistry);
       }
     };
 

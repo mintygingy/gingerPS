@@ -63,6 +63,58 @@ public final class WidgetCoolDownDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WidgetCoolDownData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              id_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              coolDownTime_ = input.readUInt64();
+              break;
+            }
+            case 104: {
+
+              isSuccess_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.internal_static_WidgetCoolDownData_descriptor;
@@ -77,7 +129,7 @@ public final class WidgetCoolDownDataOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 2;
-    private int id_ = 0;
+    private int id_;
     /**
      * <code>uint32 id = 2;</code>
      * @return The id.
@@ -88,7 +140,7 @@ public final class WidgetCoolDownDataOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 13;
-    private boolean isSuccess_ = false;
+    private boolean isSuccess_;
     /**
      * <code>bool is_success = 13;</code>
      * @return The isSuccess.
@@ -99,7 +151,7 @@ public final class WidgetCoolDownDataOuterClass {
     }
 
     public static final int COOL_DOWN_TIME_FIELD_NUMBER = 7;
-    private long coolDownTime_ = 0L;
+    private long coolDownTime_;
     /**
      * <code>uint64 cool_down_time = 7;</code>
      * @return The coolDownTime.
@@ -132,7 +184,7 @@ public final class WidgetCoolDownDataOuterClass {
       if (isSuccess_ != false) {
         output.writeBool(13, isSuccess_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +205,7 @@ public final class WidgetCoolDownDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isSuccess_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +226,7 @@ public final class WidgetCoolDownDataOuterClass {
           != other.getIsSuccess()) return false;
       if (getCoolDownTime()
           != other.getCoolDownTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -193,7 +245,7 @@ public final class WidgetCoolDownDataOuterClass {
       hash = (37 * hash) + COOL_DOWN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCoolDownTime());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -310,21 +362,28 @@ public final class WidgetCoolDownDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = 0;
+
         isSuccess_ = false;
+
         coolDownTime_ = 0L;
+
         return this;
       }
 
@@ -351,22 +410,11 @@ public final class WidgetCoolDownDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData buildPartial() {
         emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData result = new emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
+        result.isSuccess_ = isSuccess_;
+        result.coolDownTime_ = coolDownTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isSuccess_ = isSuccess_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.coolDownTime_ = coolDownTime_;
-        }
       }
 
       @java.lang.Override
@@ -422,7 +470,7 @@ public final class WidgetCoolDownDataOuterClass {
         if (other.getCoolDownTime() != 0L) {
           setCoolDownTime(other.getCoolDownTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -437,48 +485,19 @@ public final class WidgetCoolDownDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                id_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 56: {
-                coolDownTime_ = input.readUInt64();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              case 104: {
-                isSuccess_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int id_ ;
       /**
@@ -497,7 +516,6 @@ public final class WidgetCoolDownDataOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -506,7 +524,7 @@ public final class WidgetCoolDownDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         id_ = 0;
         onChanged();
         return this;
@@ -529,7 +547,6 @@ public final class WidgetCoolDownDataOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -538,7 +555,7 @@ public final class WidgetCoolDownDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isSuccess_ = false;
         onChanged();
         return this;
@@ -561,7 +578,6 @@ public final class WidgetCoolDownDataOuterClass {
       public Builder setCoolDownTime(long value) {
         
         coolDownTime_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -570,7 +586,7 @@ public final class WidgetCoolDownDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoolDownTime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         coolDownTime_ = 0L;
         onChanged();
         return this;
@@ -608,18 +624,7 @@ public final class WidgetCoolDownDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WidgetCoolDownData(input, extensionRegistry);
       }
     };
 

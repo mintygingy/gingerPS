@@ -105,6 +105,112 @@ public final class GCGDSCardDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGDSCardData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              cardId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              faceType_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unlockFaceTypeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unlockFaceTypeList_.addInt(input.readUInt32());
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                unlockFaceTypeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unlockFaceTypeList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 80: {
+
+              proficiency_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              num_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                proficiencyRewardTakenIdxList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              proficiencyRewardTakenIdxList_.addInt(input.readUInt32());
+              break;
+            }
+            case 114: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                proficiencyRewardTakenIdxList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                proficiencyRewardTakenIdxList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          unlockFaceTypeList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          proficiencyRewardTakenIdxList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGDSCardDataOuterClass.internal_static_GCGDSCardData_descriptor;
@@ -119,7 +225,7 @@ public final class GCGDSCardDataOuterClass {
     }
 
     public static final int NUM_FIELD_NUMBER = 11;
-    private int num_ = 0;
+    private int num_;
     /**
      * <code>uint32 num = 11;</code>
      * @return The num.
@@ -130,7 +236,7 @@ public final class GCGDSCardDataOuterClass {
     }
 
     public static final int FACE_TYPE_FIELD_NUMBER = 5;
-    private int faceType_ = 0;
+    private int faceType_;
     /**
      * <code>uint32 face_type = 5;</code>
      * @return The faceType.
@@ -141,7 +247,7 @@ public final class GCGDSCardDataOuterClass {
     }
 
     public static final int CARD_ID_FIELD_NUMBER = 4;
-    private int cardId_ = 0;
+    private int cardId_;
     /**
      * <code>uint32 card_id = 4;</code>
      * @return The cardId.
@@ -152,7 +258,6 @@ public final class GCGDSCardDataOuterClass {
     }
 
     public static final int PROFICIENCY_REWARD_TAKEN_IDX_LIST_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList proficiencyRewardTakenIdxList_;
     /**
      * <code>repeated uint32 proficiency_reward_taken_idx_list = 14;</code>
@@ -181,7 +286,6 @@ public final class GCGDSCardDataOuterClass {
     private int proficiencyRewardTakenIdxListMemoizedSerializedSize = -1;
 
     public static final int UNLOCK_FACE_TYPE_LIST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unlockFaceTypeList_;
     /**
      * <code>repeated uint32 unlock_face_type_list = 6;</code>
@@ -210,7 +314,7 @@ public final class GCGDSCardDataOuterClass {
     private int unlockFaceTypeListMemoizedSerializedSize = -1;
 
     public static final int PROFICIENCY_FIELD_NUMBER = 10;
-    private int proficiency_ = 0;
+    private int proficiency_;
     /**
      * <code>uint32 proficiency = 10;</code>
      * @return The proficiency.
@@ -261,7 +365,7 @@ public final class GCGDSCardDataOuterClass {
       for (int i = 0; i < proficiencyRewardTakenIdxList_.size(); i++) {
         output.writeUInt32NoTag(proficiencyRewardTakenIdxList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -314,7 +418,7 @@ public final class GCGDSCardDataOuterClass {
         }
         proficiencyRewardTakenIdxListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -341,7 +445,7 @@ public final class GCGDSCardDataOuterClass {
           .equals(other.getUnlockFaceTypeListList())) return false;
       if (getProficiency()
           != other.getProficiency()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -368,7 +472,7 @@ public final class GCGDSCardDataOuterClass {
       }
       hash = (37 * hash) + PROFICIENCY_FIELD_NUMBER;
       hash = (53 * hash) + getProficiency();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -485,24 +589,34 @@ public final class GCGDSCardDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGDSCardDataOuterClass.GCGDSCardData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         num_ = 0;
+
         faceType_ = 0;
+
         cardId_ = 0;
+
         proficiencyRewardTakenIdxList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         unlockFaceTypeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         proficiency_ = 0;
+
         return this;
       }
 
@@ -529,39 +643,23 @@ public final class GCGDSCardDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGDSCardDataOuterClass.GCGDSCardData buildPartial() {
         emu.gingerps.net.proto.GCGDSCardDataOuterClass.GCGDSCardData result = new emu.gingerps.net.proto.GCGDSCardDataOuterClass.GCGDSCardData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGDSCardDataOuterClass.GCGDSCardData result) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.num_ = num_;
+        result.faceType_ = faceType_;
+        result.cardId_ = cardId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           proficiencyRewardTakenIdxList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.proficiencyRewardTakenIdxList_ = proficiencyRewardTakenIdxList_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           unlockFaceTypeList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.unlockFaceTypeList_ = unlockFaceTypeList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGDSCardDataOuterClass.GCGDSCardData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.num_ = num_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.faceType_ = faceType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.cardId_ = cardId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.proficiency_ = proficiency_;
-        }
+        result.proficiency_ = proficiency_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -620,7 +718,7 @@ public final class GCGDSCardDataOuterClass {
         if (!other.proficiencyRewardTakenIdxList_.isEmpty()) {
           if (proficiencyRewardTakenIdxList_.isEmpty()) {
             proficiencyRewardTakenIdxList_ = other.proficiencyRewardTakenIdxList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureProficiencyRewardTakenIdxListIsMutable();
             proficiencyRewardTakenIdxList_.addAll(other.proficiencyRewardTakenIdxList_);
@@ -630,7 +728,7 @@ public final class GCGDSCardDataOuterClass {
         if (!other.unlockFaceTypeList_.isEmpty()) {
           if (unlockFaceTypeList_.isEmpty()) {
             unlockFaceTypeList_ = other.unlockFaceTypeList_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureUnlockFaceTypeListIsMutable();
             unlockFaceTypeList_.addAll(other.unlockFaceTypeList_);
@@ -640,7 +738,7 @@ public final class GCGDSCardDataOuterClass {
         if (other.getProficiency() != 0) {
           setProficiency(other.getProficiency());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -655,82 +753,17 @@ public final class GCGDSCardDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGDSCardDataOuterClass.GCGDSCardData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                cardId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 40: {
-                faceType_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 48: {
-                int v = input.readUInt32();
-                ensureUnlockFaceTypeListIsMutable();
-                unlockFaceTypeList_.addInt(v);
-                break;
-              } // case 48
-              case 50: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnlockFaceTypeListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unlockFaceTypeList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 50
-              case 80: {
-                proficiency_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 80
-              case 88: {
-                num_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 112: {
-                int v = input.readUInt32();
-                ensureProficiencyRewardTakenIdxListIsMutable();
-                proficiencyRewardTakenIdxList_.addInt(v);
-                break;
-              } // case 112
-              case 114: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureProficiencyRewardTakenIdxListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  proficiencyRewardTakenIdxList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGDSCardDataOuterClass.GCGDSCardData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -752,7 +785,6 @@ public final class GCGDSCardDataOuterClass {
       public Builder setNum(int value) {
         
         num_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -761,7 +793,7 @@ public final class GCGDSCardDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNum() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         num_ = 0;
         onChanged();
         return this;
@@ -784,7 +816,6 @@ public final class GCGDSCardDataOuterClass {
       public Builder setFaceType(int value) {
         
         faceType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -793,7 +824,7 @@ public final class GCGDSCardDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFaceType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         faceType_ = 0;
         onChanged();
         return this;
@@ -816,7 +847,6 @@ public final class GCGDSCardDataOuterClass {
       public Builder setCardId(int value) {
         
         cardId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -825,7 +855,7 @@ public final class GCGDSCardDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         cardId_ = 0;
         onChanged();
         return this;
@@ -833,10 +863,10 @@ public final class GCGDSCardDataOuterClass {
 
       private com.google.protobuf.Internal.IntList proficiencyRewardTakenIdxList_ = emptyIntList();
       private void ensureProficiencyRewardTakenIdxListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           proficiencyRewardTakenIdxList_ = mutableCopy(proficiencyRewardTakenIdxList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 proficiency_reward_taken_idx_list = 14;</code>
@@ -844,7 +874,7 @@ public final class GCGDSCardDataOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getProficiencyRewardTakenIdxListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(proficiencyRewardTakenIdxList_) : proficiencyRewardTakenIdxList_;
       }
       /**
@@ -870,7 +900,6 @@ public final class GCGDSCardDataOuterClass {
        */
       public Builder setProficiencyRewardTakenIdxList(
           int index, int value) {
-        
         ensureProficiencyRewardTakenIdxListIsMutable();
         proficiencyRewardTakenIdxList_.setInt(index, value);
         onChanged();
@@ -882,7 +911,6 @@ public final class GCGDSCardDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addProficiencyRewardTakenIdxList(int value) {
-        
         ensureProficiencyRewardTakenIdxListIsMutable();
         proficiencyRewardTakenIdxList_.addInt(value);
         onChanged();
@@ -907,17 +935,17 @@ public final class GCGDSCardDataOuterClass {
        */
       public Builder clearProficiencyRewardTakenIdxList() {
         proficiencyRewardTakenIdxList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList unlockFaceTypeList_ = emptyIntList();
       private void ensureUnlockFaceTypeListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           unlockFaceTypeList_ = mutableCopy(unlockFaceTypeList_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 unlock_face_type_list = 6;</code>
@@ -925,7 +953,7 @@ public final class GCGDSCardDataOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnlockFaceTypeListList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(unlockFaceTypeList_) : unlockFaceTypeList_;
       }
       /**
@@ -951,7 +979,6 @@ public final class GCGDSCardDataOuterClass {
        */
       public Builder setUnlockFaceTypeList(
           int index, int value) {
-        
         ensureUnlockFaceTypeListIsMutable();
         unlockFaceTypeList_.setInt(index, value);
         onChanged();
@@ -963,7 +990,6 @@ public final class GCGDSCardDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnlockFaceTypeList(int value) {
-        
         ensureUnlockFaceTypeListIsMutable();
         unlockFaceTypeList_.addInt(value);
         onChanged();
@@ -988,7 +1014,7 @@ public final class GCGDSCardDataOuterClass {
        */
       public Builder clearUnlockFaceTypeList() {
         unlockFaceTypeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1010,7 +1036,6 @@ public final class GCGDSCardDataOuterClass {
       public Builder setProficiency(int value) {
         
         proficiency_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1019,7 +1044,7 @@ public final class GCGDSCardDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProficiency() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         proficiency_ = 0;
         onChanged();
         return this;
@@ -1057,18 +1082,7 @@ public final class GCGDSCardDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGDSCardData(input, extensionRegistry);
       }
     };
 

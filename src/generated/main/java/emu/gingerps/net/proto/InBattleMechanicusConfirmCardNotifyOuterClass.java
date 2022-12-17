@@ -79,6 +79,63 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private InBattleMechanicusConfirmCardNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+
+              cardId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              groupId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              playerUid_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              playIndex_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleMechanicusConfirmCardNotifyOuterClass.internal_static_InBattleMechanicusConfirmCardNotify_descriptor;
@@ -93,7 +150,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 11;
-    private int groupId_ = 0;
+    private int groupId_;
     /**
      * <code>uint32 group_id = 11;</code>
      * @return The groupId.
@@ -104,7 +161,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
     }
 
     public static final int PLAYER_UID_FIELD_NUMBER = 12;
-    private int playerUid_ = 0;
+    private int playerUid_;
     /**
      * <code>uint32 player_uid = 12;</code>
      * @return The playerUid.
@@ -115,7 +172,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
     }
 
     public static final int CARD_ID_FIELD_NUMBER = 8;
-    private int cardId_ = 0;
+    private int cardId_;
     /**
      * <code>uint32 card_id = 8;</code>
      * @return The cardId.
@@ -126,7 +183,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
     }
 
     public static final int PLAY_INDEX_FIELD_NUMBER = 13;
-    private int playIndex_ = 0;
+    private int playIndex_;
     /**
      * <code>uint32 play_index = 13;</code>
      * @return The playIndex.
@@ -162,7 +219,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
       if (playIndex_ != 0) {
         output.writeUInt32(13, playIndex_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +244,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, playIndex_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +267,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
           != other.getCardId()) return false;
       if (getPlayIndex()
           != other.getPlayIndex()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -229,7 +286,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
       hash = (53 * hash) + getCardId();
       hash = (37 * hash) + PLAY_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPlayIndex();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -356,22 +413,30 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.InBattleMechanicusConfirmCardNotifyOuterClass.InBattleMechanicusConfirmCardNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         groupId_ = 0;
+
         playerUid_ = 0;
+
         cardId_ = 0;
+
         playIndex_ = 0;
+
         return this;
       }
 
@@ -398,25 +463,12 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleMechanicusConfirmCardNotifyOuterClass.InBattleMechanicusConfirmCardNotify buildPartial() {
         emu.gingerps.net.proto.InBattleMechanicusConfirmCardNotifyOuterClass.InBattleMechanicusConfirmCardNotify result = new emu.gingerps.net.proto.InBattleMechanicusConfirmCardNotifyOuterClass.InBattleMechanicusConfirmCardNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.groupId_ = groupId_;
+        result.playerUid_ = playerUid_;
+        result.cardId_ = cardId_;
+        result.playIndex_ = playIndex_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.InBattleMechanicusConfirmCardNotifyOuterClass.InBattleMechanicusConfirmCardNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.groupId_ = groupId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.playerUid_ = playerUid_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.cardId_ = cardId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.playIndex_ = playIndex_;
-        }
       }
 
       @java.lang.Override
@@ -475,7 +527,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
         if (other.getPlayIndex() != 0) {
           setPlayIndex(other.getPlayIndex());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,53 +542,19 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.InBattleMechanicusConfirmCardNotifyOuterClass.InBattleMechanicusConfirmCardNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                cardId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 88: {
-                groupId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 96: {
-                playerUid_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              case 104: {
-                playIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.InBattleMechanicusConfirmCardNotifyOuterClass.InBattleMechanicusConfirmCardNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int groupId_ ;
       /**
@@ -555,7 +573,6 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -564,7 +581,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         groupId_ = 0;
         onChanged();
         return this;
@@ -587,7 +604,6 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
       public Builder setPlayerUid(int value) {
         
         playerUid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -596,7 +612,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerUid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         playerUid_ = 0;
         onChanged();
         return this;
@@ -619,7 +635,6 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
       public Builder setCardId(int value) {
         
         cardId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -628,7 +643,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         cardId_ = 0;
         onChanged();
         return this;
@@ -651,7 +666,6 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
       public Builder setPlayIndex(int value) {
         
         playIndex_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -660,7 +674,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayIndex() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         playIndex_ = 0;
         onChanged();
         return this;
@@ -698,18 +712,7 @@ public final class InBattleMechanicusConfirmCardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InBattleMechanicusConfirmCardNotify(input, extensionRegistry);
       }
     };
 

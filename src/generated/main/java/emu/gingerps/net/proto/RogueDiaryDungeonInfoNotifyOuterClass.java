@@ -159,6 +159,139 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RogueDiaryDungeonInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              curRoom_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              coin_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                roomList_ = new java.util.ArrayList<emu.gingerps.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              roomList_.add(
+                  input.readMessage(emu.gingerps.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300MMBEJGDFCGE_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unk3300MMBEJGDFCGE_.addInt(input.readUInt32());
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300MMBEJGDFCGE_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300MMBEJGDFCGE_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 56: {
+
+              dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300DKCFGLAKPJL_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unk3300DKCFGLAKPJL_.addInt(input.readUInt32());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300DKCFGLAKPJL_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300DKCFGLAKPJL_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
+
+              time_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              curRound_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              difficulty_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          roomList_ = java.util.Collections.unmodifiableList(roomList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unk3300MMBEJGDFCGE_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          unk3300DKCFGLAKPJL_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RogueDiaryDungeonInfoNotifyOuterClass.internal_static_RogueDiaryDungeonInfoNotify_descriptor;
@@ -173,7 +306,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 12;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 12;</code>
      * @return The stageId.
@@ -184,7 +317,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
     }
 
     public static final int TIME_FIELD_NUMBER = 9;
-    private int time_ = 0;
+    private int time_;
     /**
      * <code>uint32 time = 9;</code>
      * @return The time.
@@ -195,7 +328,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_MMBEJGDFCGE_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300MMBEJGDFCGE_;
     /**
      * <code>repeated uint32 Unk3300_MMBEJGDFCGE = 6;</code>
@@ -224,7 +356,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
     private int unk3300MMBEJGDFCGEMemoizedSerializedSize = -1;
 
     public static final int CUR_ROOM_FIELD_NUMBER = 1;
-    private int curRoom_ = 0;
+    private int curRoom_;
     /**
      * <code>uint32 cur_room = 1;</code>
      * @return The curRoom.
@@ -235,7 +367,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_DKCFGLAKPJL_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300DKCFGLAKPJL_;
     /**
      * <code>repeated uint32 Unk3300_DKCFGLAKPJL = 8;</code>
@@ -264,7 +395,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
     private int unk3300DKCFGLAKPJLMemoizedSerializedSize = -1;
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 7;
-    private int dungeonId_ = 0;
+    private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 7;</code>
      * @return The dungeonId.
@@ -275,7 +406,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
     }
 
     public static final int ROOM_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo> roomList_;
     /**
      * <code>repeated .RogueDiaryRoomInfo room_list = 5;</code>
@@ -316,7 +446,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
     }
 
     public static final int DIFFICULTY_FIELD_NUMBER = 14;
-    private int difficulty_ = 0;
+    private int difficulty_;
     /**
      * <code>uint32 difficulty = 14;</code>
      * @return The difficulty.
@@ -327,7 +457,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
     }
 
     public static final int CUR_ROUND_FIELD_NUMBER = 10;
-    private int curRound_ = 0;
+    private int curRound_;
     /**
      * <code>uint32 cur_round = 10;</code>
      * @return The curRound.
@@ -338,7 +468,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
     }
 
     public static final int COIN_FIELD_NUMBER = 3;
-    private int coin_ = 0;
+    private int coin_;
     /**
      * <code>uint32 coin = 3;</code>
      * @return The coin.
@@ -401,7 +531,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       if (difficulty_ != 0) {
         output.writeUInt32(14, difficulty_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -470,7 +600,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, difficulty_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -505,7 +635,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
           != other.getCurRound()) return false;
       if (getCoin()
           != other.getCoin()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -542,7 +672,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       hash = (53 * hash) + getCurRound();
       hash = (37 * hash) + COIN_FIELD_NUMBER;
       hash = (53 * hash) + getCoin();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -670,34 +800,47 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.RogueDiaryDungeonInfoNotifyOuterClass.RogueDiaryDungeonInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRoomListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         stageId_ = 0;
+
         time_ = 0;
+
         unk3300MMBEJGDFCGE_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         curRoom_ = 0;
+
         unk3300DKCFGLAKPJL_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         dungeonId_ = 0;
+
         if (roomListBuilder_ == null) {
           roomList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          roomList_ = null;
           roomListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
         difficulty_ = 0;
+
         curRound_ = 0;
+
         coin_ = 0;
+
         return this;
       }
 
@@ -724,57 +867,35 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RogueDiaryDungeonInfoNotifyOuterClass.RogueDiaryDungeonInfoNotify buildPartial() {
         emu.gingerps.net.proto.RogueDiaryDungeonInfoNotifyOuterClass.RogueDiaryDungeonInfoNotify result = new emu.gingerps.net.proto.RogueDiaryDungeonInfoNotifyOuterClass.RogueDiaryDungeonInfoNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.RogueDiaryDungeonInfoNotifyOuterClass.RogueDiaryDungeonInfoNotify result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.stageId_ = stageId_;
+        result.time_ = time_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           unk3300MMBEJGDFCGE_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.unk3300MMBEJGDFCGE_ = unk3300MMBEJGDFCGE_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        result.curRoom_ = curRoom_;
+        if (((bitField0_ & 0x00000002) != 0)) {
           unk3300DKCFGLAKPJL_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.unk3300DKCFGLAKPJL_ = unk3300DKCFGLAKPJL_;
+        result.dungeonId_ = dungeonId_;
         if (roomListBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             roomList_ = java.util.Collections.unmodifiableList(roomList_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.roomList_ = roomList_;
         } else {
           result.roomList_ = roomListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RogueDiaryDungeonInfoNotifyOuterClass.RogueDiaryDungeonInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.stageId_ = stageId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.time_ = time_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.curRoom_ = curRoom_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.dungeonId_ = dungeonId_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.difficulty_ = difficulty_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.curRound_ = curRound_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.coin_ = coin_;
-        }
+        result.difficulty_ = difficulty_;
+        result.curRound_ = curRound_;
+        result.coin_ = coin_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -830,7 +951,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
         if (!other.unk3300MMBEJGDFCGE_.isEmpty()) {
           if (unk3300MMBEJGDFCGE_.isEmpty()) {
             unk3300MMBEJGDFCGE_ = other.unk3300MMBEJGDFCGE_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureUnk3300MMBEJGDFCGEIsMutable();
             unk3300MMBEJGDFCGE_.addAll(other.unk3300MMBEJGDFCGE_);
@@ -843,7 +964,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
         if (!other.unk3300DKCFGLAKPJL_.isEmpty()) {
           if (unk3300DKCFGLAKPJL_.isEmpty()) {
             unk3300DKCFGLAKPJL_ = other.unk3300DKCFGLAKPJL_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureUnk3300DKCFGLAKPJLIsMutable();
             unk3300DKCFGLAKPJL_.addAll(other.unk3300DKCFGLAKPJL_);
@@ -857,7 +978,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
           if (!other.roomList_.isEmpty()) {
             if (roomList_.isEmpty()) {
               roomList_ = other.roomList_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureRoomListIsMutable();
               roomList_.addAll(other.roomList_);
@@ -870,7 +991,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
               roomListBuilder_.dispose();
               roomListBuilder_ = null;
               roomList_ = other.roomList_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000004);
               roomListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRoomListFieldBuilder() : null;
@@ -888,7 +1009,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
         if (other.getCoin() != 0) {
           setCoin(other.getCoin());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -903,110 +1024,17 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RogueDiaryDungeonInfoNotifyOuterClass.RogueDiaryDungeonInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                curRoom_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 8
-              case 24: {
-                coin_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 24
-              case 42: {
-                emu.gingerps.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo.parser(),
-                        extensionRegistry);
-                if (roomListBuilder_ == null) {
-                  ensureRoomListIsMutable();
-                  roomList_.add(m);
-                } else {
-                  roomListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 48: {
-                int v = input.readUInt32();
-                ensureUnk3300MMBEJGDFCGEIsMutable();
-                unk3300MMBEJGDFCGE_.addInt(v);
-                break;
-              } // case 48
-              case 50: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300MMBEJGDFCGEIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300MMBEJGDFCGE_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 50
-              case 56: {
-                dungeonId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 56
-              case 64: {
-                int v = input.readUInt32();
-                ensureUnk3300DKCFGLAKPJLIsMutable();
-                unk3300DKCFGLAKPJL_.addInt(v);
-                break;
-              } // case 64
-              case 66: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300DKCFGLAKPJLIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300DKCFGLAKPJL_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 66
-              case 72: {
-                time_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 80: {
-                curRound_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 80
-              case 96: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              case 112: {
-                difficulty_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RogueDiaryDungeonInfoNotifyOuterClass.RogueDiaryDungeonInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1028,7 +1056,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1037,7 +1064,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -1060,7 +1087,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       public Builder setTime(int value) {
         
         time_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1069,7 +1095,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         time_ = 0;
         onChanged();
         return this;
@@ -1077,10 +1103,10 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300MMBEJGDFCGE_ = emptyIntList();
       private void ensureUnk3300MMBEJGDFCGEIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           unk3300MMBEJGDFCGE_ = mutableCopy(unk3300MMBEJGDFCGE_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_MMBEJGDFCGE = 6;</code>
@@ -1088,7 +1114,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300MMBEJGDFCGEList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300MMBEJGDFCGE_) : unk3300MMBEJGDFCGE_;
       }
       /**
@@ -1114,7 +1140,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        */
       public Builder setUnk3300MMBEJGDFCGE(
           int index, int value) {
-        
         ensureUnk3300MMBEJGDFCGEIsMutable();
         unk3300MMBEJGDFCGE_.setInt(index, value);
         onChanged();
@@ -1126,7 +1151,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300MMBEJGDFCGE(int value) {
-        
         ensureUnk3300MMBEJGDFCGEIsMutable();
         unk3300MMBEJGDFCGE_.addInt(value);
         onChanged();
@@ -1151,7 +1175,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        */
       public Builder clearUnk3300MMBEJGDFCGE() {
         unk3300MMBEJGDFCGE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1173,7 +1197,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       public Builder setCurRoom(int value) {
         
         curRoom_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1182,7 +1205,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurRoom() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         curRoom_ = 0;
         onChanged();
         return this;
@@ -1190,10 +1213,10 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300DKCFGLAKPJL_ = emptyIntList();
       private void ensureUnk3300DKCFGLAKPJLIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           unk3300DKCFGLAKPJL_ = mutableCopy(unk3300DKCFGLAKPJL_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_DKCFGLAKPJL = 8;</code>
@@ -1201,7 +1224,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300DKCFGLAKPJLList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300DKCFGLAKPJL_) : unk3300DKCFGLAKPJL_;
       }
       /**
@@ -1227,7 +1250,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        */
       public Builder setUnk3300DKCFGLAKPJL(
           int index, int value) {
-        
         ensureUnk3300DKCFGLAKPJLIsMutable();
         unk3300DKCFGLAKPJL_.setInt(index, value);
         onChanged();
@@ -1239,7 +1261,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300DKCFGLAKPJL(int value) {
-        
         ensureUnk3300DKCFGLAKPJLIsMutable();
         unk3300DKCFGLAKPJL_.addInt(value);
         onChanged();
@@ -1264,7 +1285,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        */
       public Builder clearUnk3300DKCFGLAKPJL() {
         unk3300DKCFGLAKPJL_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1286,7 +1307,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1295,7 +1315,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -1304,9 +1324,9 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo> roomList_ =
         java.util.Collections.emptyList();
       private void ensureRoomListIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           roomList_ = new java.util.ArrayList<emu.gingerps.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo>(roomList_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1456,7 +1476,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       public Builder clearRoomList() {
         if (roomListBuilder_ == null) {
           roomList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           roomListBuilder_.clear();
@@ -1533,7 +1553,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
           roomListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo, emu.gingerps.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo.Builder, emu.gingerps.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfoOrBuilder>(
                   roomList_,
-                  ((bitField0_ & 0x00000040) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           roomList_ = null;
@@ -1558,7 +1578,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       public Builder setDifficulty(int value) {
         
         difficulty_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1567,7 +1586,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficulty() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         difficulty_ = 0;
         onChanged();
         return this;
@@ -1590,7 +1609,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       public Builder setCurRound(int value) {
         
         curRound_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1599,7 +1617,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurRound() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         curRound_ = 0;
         onChanged();
         return this;
@@ -1622,7 +1640,6 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
       public Builder setCoin(int value) {
         
         coin_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1631,7 +1648,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoin() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         coin_ = 0;
         onChanged();
         return this;
@@ -1669,18 +1686,7 @@ public final class RogueDiaryDungeonInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RogueDiaryDungeonInfoNotify(input, extensionRegistry);
       }
     };
 

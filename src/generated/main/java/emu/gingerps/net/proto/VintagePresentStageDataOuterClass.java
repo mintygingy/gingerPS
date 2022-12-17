@@ -53,14 +53,14 @@ public final class VintagePresentStageDataOuterClass {
     /**
      * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData getPresentLevelMapOrDefault(
+
+    emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData getPresentLevelMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData defaultValue);
+        emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData defaultValue);
     /**
      * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
      */
+
     emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData getPresentLevelMapOrThrow(
         int key);
 
@@ -103,6 +103,77 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
     getUnknownFields() {
       return this.unknownFields;
     }
+    private VintagePresentStageData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              openTime_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              isFinish_ = input.readBool();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                presentLevelMap_ = com.google.protobuf.MapField.newMapField(
+                    PresentLevelMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData>
+              presentLevelMap__ = input.readMessage(
+                  PresentLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              presentLevelMap_.getMutableMap().put(
+                  presentLevelMap__.getKey(), presentLevelMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintagePresentStageDataOuterClass.internal_static_VintagePresentStageData_descriptor;
@@ -129,7 +200,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 4;
-    private boolean isOpen_ = false;
+    private boolean isOpen_;
     /**
      * <code>bool is_open = 4;</code>
      * @return The isOpen.
@@ -140,7 +211,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
     }
 
     public static final int IS_FINISH_FIELD_NUMBER = 10;
-    private boolean isFinish_ = false;
+    private boolean isFinish_;
     /**
      * <code>bool is_finish = 10;</code>
      * @return The isFinish.
@@ -162,7 +233,6 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData> presentLevelMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData>
@@ -173,12 +243,14 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
       }
       return presentLevelMap_;
     }
+
     public int getPresentLevelMapCount() {
       return internalGetPresentLevelMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
      */
+
     @java.lang.Override
     public boolean containsPresentLevelMap(
         int key) {
@@ -197,6 +269,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
      * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData> getPresentLevelMapMap() {
       return internalGetPresentLevelMap().getMap();
     }
@@ -204,11 +277,10 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
      * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData getPresentLevelMapOrDefault(
+
+    public emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData getPresentLevelMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData defaultValue) {
+        emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData> map =
           internalGetPresentLevelMap().getMap();
@@ -218,6 +290,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
      * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData getPresentLevelMapOrThrow(
         int key) {
       
@@ -230,7 +303,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
     }
 
     public static final int OPEN_TIME_FIELD_NUMBER = 8;
-    private int openTime_ = 0;
+    private int openTime_;
     /**
      * <code>uint32 open_time = 8;</code>
      * @return The openTime.
@@ -241,7 +314,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 1;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 1;</code>
      * @return The stageId.
@@ -283,7 +356,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
           internalGetPresentLevelMap(),
           PresentLevelMapDefaultEntryHolder.defaultEntry,
           11);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -318,7 +391,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(11, presentLevelMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -343,7 +416,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
           != other.getOpenTime()) return false;
       if (getStageId()
           != other.getStageId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -368,7 +441,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
       hash = (53 * hash) + getOpenTime();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -507,23 +580,31 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
 
       // Construct using emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isOpen_ = false;
+
         isFinish_ = false;
+
         internalGetMutablePresentLevelMap().clear();
         openTime_ = 0;
+
         stageId_ = 0;
+
         return this;
       }
 
@@ -550,29 +631,15 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
       @java.lang.Override
       public emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData buildPartial() {
         emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData result = new emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.isOpen_ = isOpen_;
+        result.isFinish_ = isFinish_;
+        result.presentLevelMap_ = internalGetPresentLevelMap();
+        result.presentLevelMap_.makeImmutable();
+        result.openTime_ = openTime_;
+        result.stageId_ = stageId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isOpen_ = isOpen_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isFinish_ = isFinish_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.presentLevelMap_ = internalGetPresentLevelMap();
-          result.presentLevelMap_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.openTime_ = openTime_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.stageId_ = stageId_;
-        }
       }
 
       @java.lang.Override
@@ -627,14 +694,13 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
         }
         internalGetMutablePresentLevelMap().mergeFrom(
             other.internalGetPresentLevelMap());
-        bitField0_ |= 0x00000004;
         if (other.getOpenTime() != 0) {
           setOpenTime(other.getOpenTime());
         }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -649,59 +715,17 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 8
-              case 32: {
-                isOpen_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 64: {
-                openTime_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 64
-              case 80: {
-                isFinish_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 90: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData>
-                presentLevelMap__ = input.readMessage(
-                    PresentLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutablePresentLevelMap().getMutableMap().put(
-                    presentLevelMap__.getKey(), presentLevelMap__.getValue());
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -723,7 +747,6 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -732,7 +755,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isOpen_ = false;
         onChanged();
         return this;
@@ -755,7 +778,6 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
       public Builder setIsFinish(boolean value) {
         
         isFinish_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -764,7 +786,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isFinish_ = false;
         onChanged();
         return this;
@@ -773,7 +795,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData> presentLevelMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData>
-          internalGetPresentLevelMap() {
+      internalGetPresentLevelMap() {
         if (presentLevelMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               PresentLevelMapDefaultEntryHolder.defaultEntry);
@@ -781,7 +803,8 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
         return presentLevelMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData>
-          internalGetMutablePresentLevelMap() {
+      internalGetMutablePresentLevelMap() {
+        onChanged();;
         if (presentLevelMap_ == null) {
           presentLevelMap_ = com.google.protobuf.MapField.newMapField(
               PresentLevelMapDefaultEntryHolder.defaultEntry);
@@ -789,16 +812,16 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
         if (!presentLevelMap_.isMutable()) {
           presentLevelMap_ = presentLevelMap_.copy();
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
         return presentLevelMap_;
       }
+
       public int getPresentLevelMapCount() {
         return internalGetPresentLevelMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
        */
+
       @java.lang.Override
       public boolean containsPresentLevelMap(
           int key) {
@@ -817,6 +840,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
        * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData> getPresentLevelMapMap() {
         return internalGetPresentLevelMap().getMap();
       }
@@ -824,11 +848,10 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
        * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData getPresentLevelMapOrDefault(
+
+      public emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData getPresentLevelMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData defaultValue) {
+          emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData> map =
             internalGetPresentLevelMap().getMap();
@@ -838,6 +861,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
        * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData getPresentLevelMapOrThrow(
           int key) {
         
@@ -848,8 +872,8 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
         }
         return map.get(key);
       }
+
       public Builder clearPresentLevelMap() {
-        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutablePresentLevelMap().getMutableMap()
             .clear();
         return this;
@@ -857,6 +881,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
       /**
        * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
        */
+
       public Builder removePresentLevelMap(
           int key) {
         
@@ -869,8 +894,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData>
-          getMutablePresentLevelMap() {
-        bitField0_ |= 0x00000004;
+      getMutablePresentLevelMap() {
         return internalGetMutablePresentLevelMap().getMutableMap();
       }
       /**
@@ -880,20 +904,19 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
           int key,
           emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutablePresentLevelMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, .VintagePresentLevelData&gt; present_level_map = 11;</code>
        */
+
       public Builder putAllPresentLevelMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData> values) {
         internalGetMutablePresentLevelMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000004;
         return this;
       }
 
@@ -914,7 +937,6 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
       public Builder setOpenTime(int value) {
         
         openTime_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -923,7 +945,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         openTime_ = 0;
         onChanged();
         return this;
@@ -946,7 +968,6 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -955,7 +976,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -993,18 +1014,7 @@ emu.gingerps.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new VintagePresentStageData(input, extensionRegistry);
       }
     };
 

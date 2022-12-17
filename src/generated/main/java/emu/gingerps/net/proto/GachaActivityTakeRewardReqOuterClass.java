@@ -41,12 +41,14 @@ public final class GachaActivityTakeRewardReqOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
      */
+
     int getRobotNumMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
      */
+
     int getRobotNumMapOrThrow(
         int key);
   }
@@ -88,6 +90,57 @@ public final class GachaActivityTakeRewardReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GachaActivityTakeRewardReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                robotNumMap_ = com.google.protobuf.MapField.newMapField(
+                    RobotNumMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              robotNumMap__ = input.readMessage(
+                  RobotNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              robotNumMap_.getMutableMap().put(
+                  robotNumMap__.getKey(), robotNumMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GachaActivityTakeRewardReqOuterClass.internal_static_GachaActivityTakeRewardReq_descriptor;
@@ -125,7 +178,6 @@ public final class GachaActivityTakeRewardReqOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> robotNumMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -136,12 +188,14 @@ public final class GachaActivityTakeRewardReqOuterClass {
       }
       return robotNumMap_;
     }
+
     public int getRobotNumMapCount() {
       return internalGetRobotNumMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
      */
+
     @java.lang.Override
     public boolean containsRobotNumMap(
         int key) {
@@ -160,6 +214,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getRobotNumMapMap() {
       return internalGetRobotNumMap().getMap();
     }
@@ -167,6 +222,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
      */
     @java.lang.Override
+
     public int getRobotNumMapOrDefault(
         int key,
         int defaultValue) {
@@ -179,6 +235,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
      */
     @java.lang.Override
+
     public int getRobotNumMapOrThrow(
         int key) {
       
@@ -210,7 +267,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
           internalGetRobotNumMap(),
           RobotNumMapDefaultEntryHolder.defaultEntry,
           7);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -229,7 +286,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(7, robotNumMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -246,7 +303,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
 
       if (!internalGetRobotNumMap().equals(
           other.internalGetRobotNumMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -261,7 +318,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
         hash = (37 * hash) + ROBOT_NUM_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetRobotNumMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -411,18 +468,22 @@ public final class GachaActivityTakeRewardReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GachaActivityTakeRewardReqOuterClass.GachaActivityTakeRewardReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableRobotNumMap().clear();
         return this;
       }
@@ -450,17 +511,11 @@ public final class GachaActivityTakeRewardReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GachaActivityTakeRewardReqOuterClass.GachaActivityTakeRewardReq buildPartial() {
         emu.gingerps.net.proto.GachaActivityTakeRewardReqOuterClass.GachaActivityTakeRewardReq result = new emu.gingerps.net.proto.GachaActivityTakeRewardReqOuterClass.GachaActivityTakeRewardReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.robotNumMap_ = internalGetRobotNumMap();
+        result.robotNumMap_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GachaActivityTakeRewardReqOuterClass.GachaActivityTakeRewardReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.robotNumMap_ = internalGetRobotNumMap();
-          result.robotNumMap_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -509,8 +564,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
         if (other == emu.gingerps.net.proto.GachaActivityTakeRewardReqOuterClass.GachaActivityTakeRewardReq.getDefaultInstance()) return this;
         internalGetMutableRobotNumMap().mergeFrom(
             other.internalGetRobotNumMap());
-        bitField0_ |= 0x00000001;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -525,39 +579,17 @@ public final class GachaActivityTakeRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GachaActivityTakeRewardReqOuterClass.GachaActivityTakeRewardReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 58: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                robotNumMap__ = input.readMessage(
-                    RobotNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableRobotNumMap().getMutableMap().put(
-                    robotNumMap__.getKey(), robotNumMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GachaActivityTakeRewardReqOuterClass.GachaActivityTakeRewardReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -565,7 +597,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> robotNumMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetRobotNumMap() {
+      internalGetRobotNumMap() {
         if (robotNumMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               RobotNumMapDefaultEntryHolder.defaultEntry);
@@ -573,7 +605,8 @@ public final class GachaActivityTakeRewardReqOuterClass {
         return robotNumMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableRobotNumMap() {
+      internalGetMutableRobotNumMap() {
+        onChanged();;
         if (robotNumMap_ == null) {
           robotNumMap_ = com.google.protobuf.MapField.newMapField(
               RobotNumMapDefaultEntryHolder.defaultEntry);
@@ -581,16 +614,16 @@ public final class GachaActivityTakeRewardReqOuterClass {
         if (!robotNumMap_.isMutable()) {
           robotNumMap_ = robotNumMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return robotNumMap_;
       }
+
       public int getRobotNumMapCount() {
         return internalGetRobotNumMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
        */
+
       @java.lang.Override
       public boolean containsRobotNumMap(
           int key) {
@@ -609,6 +642,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getRobotNumMapMap() {
         return internalGetRobotNumMap().getMap();
       }
@@ -616,6 +650,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
        */
       @java.lang.Override
+
       public int getRobotNumMapOrDefault(
           int key,
           int defaultValue) {
@@ -628,6 +663,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
        */
       @java.lang.Override
+
       public int getRobotNumMapOrThrow(
           int key) {
         
@@ -638,8 +674,8 @@ public final class GachaActivityTakeRewardReqOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearRobotNumMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableRobotNumMap().getMutableMap()
             .clear();
         return this;
@@ -647,6 +683,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
        */
+
       public Builder removeRobotNumMap(
           int key) {
         
@@ -659,8 +696,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableRobotNumMap() {
-        bitField0_ |= 0x00000001;
+      getMutableRobotNumMap() {
         return internalGetMutableRobotNumMap().getMutableMap();
       }
       /**
@@ -673,17 +709,16 @@ public final class GachaActivityTakeRewardReqOuterClass {
         
         internalGetMutableRobotNumMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; robot_num_map = 7;</code>
        */
+
       public Builder putAllRobotNumMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableRobotNumMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -719,18 +754,7 @@ public final class GachaActivityTakeRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GachaActivityTakeRewardReq(input, extensionRegistry);
       }
     };
 

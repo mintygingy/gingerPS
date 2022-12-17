@@ -110,6 +110,107 @@ public final class GadgetPlayInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GadgetPlayInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              playType_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              duration_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                progressStageList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              progressStageList_.addInt(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                progressStageList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                progressStageList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 32: {
+
+              startCd_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              startTime_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              progress_ = input.readUInt32();
+              break;
+            }
+            case 170: {
+              emu.gingerps.net.proto.GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.Builder subBuilder = null;
+              if (playInfoCase_ == 21) {
+                subBuilder = ((emu.gingerps.net.proto.GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) playInfo_).toBuilder();
+              }
+              playInfo_ =
+                  input.readMessage(emu.gingerps.net.proto.GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) playInfo_);
+                playInfo_ = subBuilder.buildPartial();
+              }
+              playInfoCase_ = 21;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          progressStageList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GadgetPlayInfoOuterClass.internal_static_GadgetPlayInfo_descriptor;
@@ -163,7 +264,7 @@ public final class GadgetPlayInfoOuterClass {
     }
 
     public static final int PLAY_TYPE_FIELD_NUMBER = 1;
-    private int playType_ = 0;
+    private int playType_;
     /**
      * <code>uint32 play_type = 1;</code>
      * @return The playType.
@@ -174,7 +275,7 @@ public final class GadgetPlayInfoOuterClass {
     }
 
     public static final int DURATION_FIELD_NUMBER = 2;
-    private int duration_ = 0;
+    private int duration_;
     /**
      * <code>uint32 duration = 2;</code>
      * @return The duration.
@@ -185,7 +286,6 @@ public final class GadgetPlayInfoOuterClass {
     }
 
     public static final int PROGRESS_STAGE_LIST_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList progressStageList_;
     /**
      * <code>repeated uint32 progress_stage_list = 3;</code>
@@ -214,7 +314,7 @@ public final class GadgetPlayInfoOuterClass {
     private int progressStageListMemoizedSerializedSize = -1;
 
     public static final int START_CD_FIELD_NUMBER = 4;
-    private int startCd_ = 0;
+    private int startCd_;
     /**
      * <code>uint32 start_cd = 4;</code>
      * @return The startCd.
@@ -225,7 +325,7 @@ public final class GadgetPlayInfoOuterClass {
     }
 
     public static final int START_TIME_FIELD_NUMBER = 5;
-    private int startTime_ = 0;
+    private int startTime_;
     /**
      * <code>uint32 start_time = 5;</code>
      * @return The startTime.
@@ -236,7 +336,7 @@ public final class GadgetPlayInfoOuterClass {
     }
 
     public static final int PROGRESS_FIELD_NUMBER = 6;
-    private int progress_ = 0;
+    private int progress_;
     /**
      * <code>uint32 progress = 6;</code>
      * @return The progress.
@@ -317,7 +417,7 @@ public final class GadgetPlayInfoOuterClass {
       if (playInfoCase_ == 21) {
         output.writeMessage(21, (emu.gingerps.net.proto.GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) playInfo_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -364,7 +464,7 @@ public final class GadgetPlayInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(21, (emu.gingerps.net.proto.GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) playInfo_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -400,7 +500,7 @@ public final class GadgetPlayInfoOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -433,7 +533,7 @@ public final class GadgetPlayInfoOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -550,27 +650,34 @@ public final class GadgetPlayInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         playType_ = 0;
+
         duration_ = 0;
+
         progressStageList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         startCd_ = 0;
+
         startTime_ = 0;
+
         progress_ = 0;
-        if (crucibleInfoBuilder_ != null) {
-          crucibleInfoBuilder_.clear();
-        }
+
         playInfoCase_ = 0;
         playInfo_ = null;
         return this;
@@ -599,47 +706,27 @@ public final class GadgetPlayInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo buildPartial() {
         emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo result = new emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.playType_ = playType_;
+        result.duration_ = duration_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           progressStageList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.progressStageList_ = progressStageList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.playType_ = playType_;
+        result.startCd_ = startCd_;
+        result.startTime_ = startTime_;
+        result.progress_ = progress_;
+        if (playInfoCase_ == 21) {
+          if (crucibleInfoBuilder_ == null) {
+            result.playInfo_ = playInfo_;
+          } else {
+            result.playInfo_ = crucibleInfoBuilder_.build();
+          }
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.duration_ = duration_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.startCd_ = startCd_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.startTime_ = startTime_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.progress_ = progress_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo result) {
         result.playInfoCase_ = playInfoCase_;
-        result.playInfo_ = this.playInfo_;
-        if (playInfoCase_ == 21 &&
-            crucibleInfoBuilder_ != null) {
-          result.playInfo_ = crucibleInfoBuilder_.build();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -695,7 +782,7 @@ public final class GadgetPlayInfoOuterClass {
         if (!other.progressStageList_.isEmpty()) {
           if (progressStageList_.isEmpty()) {
             progressStageList_ = other.progressStageList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureProgressStageListIsMutable();
             progressStageList_.addAll(other.progressStageList_);
@@ -720,7 +807,7 @@ public final class GadgetPlayInfoOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -735,78 +822,17 @@ public final class GadgetPlayInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                playType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                duration_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                int v = input.readUInt32();
-                ensureProgressStageListIsMutable();
-                progressStageList_.addInt(v);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureProgressStageListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  progressStageList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 26
-              case 32: {
-                startCd_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                startTime_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 48: {
-                progress_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 170: {
-                input.readMessage(
-                    getCrucibleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                playInfoCase_ = 21;
-                break;
-              } // case 170
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int playInfoCase_ = 0;
@@ -843,7 +869,6 @@ public final class GadgetPlayInfoOuterClass {
       public Builder setPlayType(int value) {
         
         playType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -852,7 +877,7 @@ public final class GadgetPlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         playType_ = 0;
         onChanged();
         return this;
@@ -875,7 +900,6 @@ public final class GadgetPlayInfoOuterClass {
       public Builder setDuration(int value) {
         
         duration_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -884,7 +908,7 @@ public final class GadgetPlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDuration() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         duration_ = 0;
         onChanged();
         return this;
@@ -892,10 +916,10 @@ public final class GadgetPlayInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList progressStageList_ = emptyIntList();
       private void ensureProgressStageListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           progressStageList_ = mutableCopy(progressStageList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 progress_stage_list = 3;</code>
@@ -903,7 +927,7 @@ public final class GadgetPlayInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getProgressStageListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(progressStageList_) : progressStageList_;
       }
       /**
@@ -929,7 +953,6 @@ public final class GadgetPlayInfoOuterClass {
        */
       public Builder setProgressStageList(
           int index, int value) {
-        
         ensureProgressStageListIsMutable();
         progressStageList_.setInt(index, value);
         onChanged();
@@ -941,7 +964,6 @@ public final class GadgetPlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addProgressStageList(int value) {
-        
         ensureProgressStageListIsMutable();
         progressStageList_.addInt(value);
         onChanged();
@@ -966,7 +988,7 @@ public final class GadgetPlayInfoOuterClass {
        */
       public Builder clearProgressStageList() {
         progressStageList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -988,7 +1010,6 @@ public final class GadgetPlayInfoOuterClass {
       public Builder setStartCd(int value) {
         
         startCd_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -997,7 +1018,7 @@ public final class GadgetPlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartCd() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         startCd_ = 0;
         onChanged();
         return this;
@@ -1020,7 +1041,6 @@ public final class GadgetPlayInfoOuterClass {
       public Builder setStartTime(int value) {
         
         startTime_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1029,7 +1049,7 @@ public final class GadgetPlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         startTime_ = 0;
         onChanged();
         return this;
@@ -1052,7 +1072,6 @@ public final class GadgetPlayInfoOuterClass {
       public Builder setProgress(int value) {
         
         progress_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1061,7 +1080,7 @@ public final class GadgetPlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProgress() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         progress_ = 0;
         onChanged();
         return this;
@@ -1141,9 +1160,8 @@ public final class GadgetPlayInfoOuterClass {
         } else {
           if (playInfoCase_ == 21) {
             crucibleInfoBuilder_.mergeFrom(value);
-          } else {
-            crucibleInfoBuilder_.setMessage(value);
           }
+          crucibleInfoBuilder_.setMessage(value);
         }
         playInfoCase_ = 21;
         return this;
@@ -1205,7 +1223,7 @@ public final class GadgetPlayInfoOuterClass {
           playInfo_ = null;
         }
         playInfoCase_ = 21;
-        onChanged();
+        onChanged();;
         return crucibleInfoBuilder_;
       }
       @java.lang.Override
@@ -1241,18 +1259,7 @@ public final class GadgetPlayInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GadgetPlayInfo(input, extensionRegistry);
       }
     };
 

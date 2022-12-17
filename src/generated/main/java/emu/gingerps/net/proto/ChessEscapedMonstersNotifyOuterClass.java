@@ -61,6 +61,48 @@ public final class ChessEscapedMonstersNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ChessEscapedMonstersNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 112: {
+
+              escapedMonsters_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChessEscapedMonstersNotifyOuterClass.internal_static_ChessEscapedMonstersNotify_descriptor;
@@ -75,7 +117,7 @@ public final class ChessEscapedMonstersNotifyOuterClass {
     }
 
     public static final int ESCAPED_MONSTERS_FIELD_NUMBER = 14;
-    private int escapedMonsters_ = 0;
+    private int escapedMonsters_;
     /**
      * <code>uint32 escaped_monsters = 14;</code>
      * @return The escapedMonsters.
@@ -102,7 +144,7 @@ public final class ChessEscapedMonstersNotifyOuterClass {
       if (escapedMonsters_ != 0) {
         output.writeUInt32(14, escapedMonsters_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -115,7 +157,7 @@ public final class ChessEscapedMonstersNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, escapedMonsters_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -132,7 +174,7 @@ public final class ChessEscapedMonstersNotifyOuterClass {
 
       if (getEscapedMonsters()
           != other.getEscapedMonsters()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -145,7 +187,7 @@ public final class ChessEscapedMonstersNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ESCAPED_MONSTERS_FIELD_NUMBER;
       hash = (53 * hash) + getEscapedMonsters();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -272,19 +314,24 @@ public final class ChessEscapedMonstersNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChessEscapedMonstersNotifyOuterClass.ChessEscapedMonstersNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         escapedMonsters_ = 0;
+
         return this;
       }
 
@@ -311,16 +358,9 @@ public final class ChessEscapedMonstersNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChessEscapedMonstersNotifyOuterClass.ChessEscapedMonstersNotify buildPartial() {
         emu.gingerps.net.proto.ChessEscapedMonstersNotifyOuterClass.ChessEscapedMonstersNotify result = new emu.gingerps.net.proto.ChessEscapedMonstersNotifyOuterClass.ChessEscapedMonstersNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.escapedMonsters_ = escapedMonsters_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ChessEscapedMonstersNotifyOuterClass.ChessEscapedMonstersNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.escapedMonsters_ = escapedMonsters_;
-        }
       }
 
       @java.lang.Override
@@ -370,7 +410,7 @@ public final class ChessEscapedMonstersNotifyOuterClass {
         if (other.getEscapedMonsters() != 0) {
           setEscapedMonsters(other.getEscapedMonsters());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -385,38 +425,19 @@ public final class ChessEscapedMonstersNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ChessEscapedMonstersNotifyOuterClass.ChessEscapedMonstersNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 112: {
-                escapedMonsters_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ChessEscapedMonstersNotifyOuterClass.ChessEscapedMonstersNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int escapedMonsters_ ;
       /**
@@ -435,7 +456,6 @@ public final class ChessEscapedMonstersNotifyOuterClass {
       public Builder setEscapedMonsters(int value) {
         
         escapedMonsters_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -444,7 +464,7 @@ public final class ChessEscapedMonstersNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEscapedMonsters() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         escapedMonsters_ = 0;
         onChanged();
         return this;
@@ -482,18 +502,7 @@ public final class ChessEscapedMonstersNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ChessEscapedMonstersNotify(input, extensionRegistry);
       }
     };
 

@@ -143,6 +143,118 @@ public final class RoutePointOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private RoutePoint(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (position_ != null) {
+                subBuilder = position_.toBuilder();
+              }
+              position_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(position_);
+                position_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 21: {
+
+              arriveRange_ = input.readFloat();
+              break;
+            }
+            case 24: {
+
+              hasReachEvent_ = input.readBool();
+              break;
+            }
+            case 93: {
+              moveParamsCase_ = 11;
+              moveParams_ = input.readFloat();
+              break;
+            }
+            case 101: {
+              moveParamsCase_ = 12;
+              moveParams_ = input.readFloat();
+              break;
+            }
+            case 170: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (rotateParamsCase_ == 21) {
+                subBuilder = ((emu.gingerps.net.proto.VectorOuterClass.Vector) rotateParams_).toBuilder();
+              }
+              rotateParams_ =
+                  input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.VectorOuterClass.Vector) rotateParams_);
+                rotateParams_ = subBuilder.buildPartial();
+              }
+              rotateParamsCase_ = 21;
+              break;
+            }
+            case 178: {
+              emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder subBuilder = null;
+              if (rotateParamsCase_ == 22) {
+                subBuilder = ((emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion) rotateParams_).toBuilder();
+              }
+              rotateParams_ =
+                  input.readMessage(emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion) rotateParams_);
+                rotateParams_ = subBuilder.buildPartial();
+              }
+              rotateParamsCase_ = 22;
+              break;
+            }
+            case 186: {
+              emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder subBuilder = null;
+              if (rotateParamsCase_ == 23) {
+                subBuilder = ((emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion) rotateParams_).toBuilder();
+              }
+              rotateParams_ =
+                  input.readMessage(emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion) rotateParams_);
+                rotateParams_ = subBuilder.buildPartial();
+              }
+              rotateParamsCase_ = 23;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RoutePointOuterClass.internal_static_RoutePoint_descriptor;
@@ -263,11 +375,11 @@ public final class RoutePointOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder() {
-      return position_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : position_;
+      return getPosition();
     }
 
     public static final int ARRIVE_RANGE_FIELD_NUMBER = 2;
-    private float arriveRange_ = 0F;
+    private float arriveRange_;
     /**
      * <code>float arrive_range = 2;</code>
      * @return The arriveRange.
@@ -278,7 +390,7 @@ public final class RoutePointOuterClass {
     }
 
     public static final int HAS_REACH_EVENT_FIELD_NUMBER = 3;
-    private boolean hasReachEvent_ = false;
+    private boolean hasReachEvent_;
     /**
      * <code>bool has_reach_event = 3;</code>
      * @return The hasReachEvent.
@@ -440,7 +552,7 @@ public final class RoutePointOuterClass {
       if (position_ != null) {
         output.writeMessage(1, getPosition());
       }
-      if (java.lang.Float.floatToRawIntBits(arriveRange_) != 0) {
+      if (arriveRange_ != 0F) {
         output.writeFloat(2, arriveRange_);
       }
       if (hasReachEvent_ != false) {
@@ -463,7 +575,7 @@ public final class RoutePointOuterClass {
       if (rotateParamsCase_ == 23) {
         output.writeMessage(23, (emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion) rotateParams_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -476,7 +588,7 @@ public final class RoutePointOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPosition());
       }
-      if (java.lang.Float.floatToRawIntBits(arriveRange_) != 0) {
+      if (arriveRange_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, arriveRange_);
       }
@@ -506,7 +618,7 @@ public final class RoutePointOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(23, (emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion) rotateParams_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -563,7 +675,7 @@ public final class RoutePointOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -614,7 +726,7 @@ public final class RoutePointOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -731,34 +843,32 @@ public final class RoutePointOuterClass {
 
       // Construct using emu.gingerps.net.proto.RoutePointOuterClass.RoutePoint.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        position_ = null;
-        if (positionBuilder_ != null) {
-          positionBuilder_.dispose();
+        if (positionBuilder_ == null) {
+          position_ = null;
+        } else {
+          position_ = null;
           positionBuilder_ = null;
         }
         arriveRange_ = 0F;
+
         hasReachEvent_ = false;
-        if (rotationBuilder_ != null) {
-          rotationBuilder_.clear();
-        }
-        if (rotationSpeedBuilder_ != null) {
-          rotationSpeedBuilder_.clear();
-        }
-        if (axisSpeedBuilder_ != null) {
-          axisSpeedBuilder_.clear();
-        }
+
         moveParamsCase_ = 0;
         moveParams_ = null;
         rotateParamsCase_ = 0;
@@ -789,44 +899,44 @@ public final class RoutePointOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RoutePointOuterClass.RoutePoint buildPartial() {
         emu.gingerps.net.proto.RoutePointOuterClass.RoutePoint result = new emu.gingerps.net.proto.RoutePointOuterClass.RoutePoint(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        if (positionBuilder_ == null) {
+          result.position_ = position_;
+        } else {
+          result.position_ = positionBuilder_.build();
+        }
+        result.arriveRange_ = arriveRange_;
+        result.hasReachEvent_ = hasReachEvent_;
+        if (moveParamsCase_ == 11) {
+          result.moveParams_ = moveParams_;
+        }
+        if (moveParamsCase_ == 12) {
+          result.moveParams_ = moveParams_;
+        }
+        if (rotateParamsCase_ == 21) {
+          if (rotationBuilder_ == null) {
+            result.rotateParams_ = rotateParams_;
+          } else {
+            result.rotateParams_ = rotationBuilder_.build();
+          }
+        }
+        if (rotateParamsCase_ == 22) {
+          if (rotationSpeedBuilder_ == null) {
+            result.rotateParams_ = rotateParams_;
+          } else {
+            result.rotateParams_ = rotationSpeedBuilder_.build();
+          }
+        }
+        if (rotateParamsCase_ == 23) {
+          if (axisSpeedBuilder_ == null) {
+            result.rotateParams_ = rotateParams_;
+          } else {
+            result.rotateParams_ = axisSpeedBuilder_.build();
+          }
+        }
+        result.moveParamsCase_ = moveParamsCase_;
+        result.rotateParamsCase_ = rotateParamsCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.RoutePointOuterClass.RoutePoint result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.position_ = positionBuilder_ == null
-              ? position_
-              : positionBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.arriveRange_ = arriveRange_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.hasReachEvent_ = hasReachEvent_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.RoutePointOuterClass.RoutePoint result) {
-        result.moveParamsCase_ = moveParamsCase_;
-        result.moveParams_ = this.moveParams_;
-        result.rotateParamsCase_ = rotateParamsCase_;
-        result.rotateParams_ = this.rotateParams_;
-        if (rotateParamsCase_ == 21 &&
-            rotationBuilder_ != null) {
-          result.rotateParams_ = rotationBuilder_.build();
-        }
-        if (rotateParamsCase_ == 22 &&
-            rotationSpeedBuilder_ != null) {
-          result.rotateParams_ = rotationSpeedBuilder_.build();
-        }
-        if (rotateParamsCase_ == 23 &&
-            axisSpeedBuilder_ != null) {
-          result.rotateParams_ = axisSpeedBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -912,7 +1022,7 @@ public final class RoutePointOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -927,78 +1037,17 @@ public final class RoutePointOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.RoutePointOuterClass.RoutePoint parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getPositionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 21: {
-                arriveRange_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              case 24: {
-                hasReachEvent_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 93: {
-                moveParams_ = input.readFloat();
-                moveParamsCase_ = 11;
-                break;
-              } // case 93
-              case 101: {
-                moveParams_ = input.readFloat();
-                moveParamsCase_ = 12;
-                break;
-              } // case 101
-              case 170: {
-                input.readMessage(
-                    getRotationFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                rotateParamsCase_ = 21;
-                break;
-              } // case 170
-              case 178: {
-                input.readMessage(
-                    getRotationSpeedFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                rotateParamsCase_ = 22;
-                break;
-              } // case 178
-              case 186: {
-                input.readMessage(
-                    getAxisSpeedFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                rotateParamsCase_ = 23;
-                break;
-              } // case 186
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.RoutePointOuterClass.RoutePoint) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int moveParamsCase_ = 0;
@@ -1031,7 +1080,6 @@ public final class RoutePointOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector position_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1041,7 +1089,7 @@ public final class RoutePointOuterClass {
        * @return Whether the position field is set.
        */
       public boolean hasPosition() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return positionBuilder_ != null || position_ != null;
       }
       /**
        * <code>.Vector position = 1;</code>
@@ -1063,11 +1111,11 @@ public final class RoutePointOuterClass {
             throw new NullPointerException();
           }
           position_ = value;
+          onChanged();
         } else {
           positionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -1077,11 +1125,11 @@ public final class RoutePointOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (positionBuilder_ == null) {
           position_ = builderForValue.build();
+          onChanged();
         } else {
           positionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -1089,38 +1137,38 @@ public final class RoutePointOuterClass {
        */
       public Builder mergePosition(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (positionBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            position_ != null &&
-            position_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getPositionBuilder().mergeFrom(value);
+          if (position_ != null) {
+            position_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(position_).mergeFrom(value).buildPartial();
           } else {
             position_ = value;
           }
+          onChanged();
         } else {
           positionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector position = 1;</code>
        */
       public Builder clearPosition() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        position_ = null;
-        if (positionBuilder_ != null) {
-          positionBuilder_.dispose();
+        if (positionBuilder_ == null) {
+          position_ = null;
+          onChanged();
+        } else {
+          position_ = null;
           positionBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector position = 1;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPositionBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getPositionFieldBuilder().getBuilder();
       }
@@ -1169,7 +1217,6 @@ public final class RoutePointOuterClass {
       public Builder setArriveRange(float value) {
         
         arriveRange_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1178,7 +1225,7 @@ public final class RoutePointOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearArriveRange() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         arriveRange_ = 0F;
         onChanged();
         return this;
@@ -1201,7 +1248,6 @@ public final class RoutePointOuterClass {
       public Builder setHasReachEvent(boolean value) {
         
         hasReachEvent_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1210,7 +1256,7 @@ public final class RoutePointOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHasReachEvent() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         hasReachEvent_ = false;
         onChanged();
         return this;
@@ -1239,7 +1285,6 @@ public final class RoutePointOuterClass {
        * @return This builder for chaining.
        */
       public Builder setVelocity(float value) {
-        
         moveParamsCase_ = 11;
         moveParams_ = value;
         onChanged();
@@ -1281,7 +1326,6 @@ public final class RoutePointOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTime(float value) {
-        
         moveParamsCase_ = 12;
         moveParams_ = value;
         onChanged();
@@ -1374,9 +1418,8 @@ public final class RoutePointOuterClass {
         } else {
           if (rotateParamsCase_ == 21) {
             rotationBuilder_.mergeFrom(value);
-          } else {
-            rotationBuilder_.setMessage(value);
           }
+          rotationBuilder_.setMessage(value);
         }
         rotateParamsCase_ = 21;
         return this;
@@ -1438,7 +1481,7 @@ public final class RoutePointOuterClass {
           rotateParams_ = null;
         }
         rotateParamsCase_ = 21;
-        onChanged();
+        onChanged();;
         return rotationBuilder_;
       }
 
@@ -1516,9 +1559,8 @@ public final class RoutePointOuterClass {
         } else {
           if (rotateParamsCase_ == 22) {
             rotationSpeedBuilder_.mergeFrom(value);
-          } else {
-            rotationSpeedBuilder_.setMessage(value);
           }
+          rotationSpeedBuilder_.setMessage(value);
         }
         rotateParamsCase_ = 22;
         return this;
@@ -1580,7 +1622,7 @@ public final class RoutePointOuterClass {
           rotateParams_ = null;
         }
         rotateParamsCase_ = 22;
-        onChanged();
+        onChanged();;
         return rotationSpeedBuilder_;
       }
 
@@ -1658,9 +1700,8 @@ public final class RoutePointOuterClass {
         } else {
           if (rotateParamsCase_ == 23) {
             axisSpeedBuilder_.mergeFrom(value);
-          } else {
-            axisSpeedBuilder_.setMessage(value);
           }
+          axisSpeedBuilder_.setMessage(value);
         }
         rotateParamsCase_ = 23;
         return this;
@@ -1722,7 +1763,7 @@ public final class RoutePointOuterClass {
           rotateParams_ = null;
         }
         rotateParamsCase_ = 23;
-        onChanged();
+        onChanged();;
         return axisSpeedBuilder_;
       }
       @java.lang.Override
@@ -1758,18 +1799,7 @@ public final class RoutePointOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RoutePoint(input, extensionRegistry);
       }
     };
 

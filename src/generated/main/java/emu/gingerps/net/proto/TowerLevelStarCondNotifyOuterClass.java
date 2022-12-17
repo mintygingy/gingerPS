@@ -92,6 +92,66 @@ public final class TowerLevelStarCondNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TowerLevelStarCondNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                condDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              condDataList_.add(
+                  input.readMessage(emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+
+              levelIndex_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              floorId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          condDataList_ = java.util.Collections.unmodifiableList(condDataList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerLevelStarCondNotifyOuterClass.internal_static_TowerLevelStarCondNotify_descriptor;
@@ -106,7 +166,6 @@ public final class TowerLevelStarCondNotifyOuterClass {
     }
 
     public static final int COND_DATA_LIST_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData> condDataList_;
     /**
      * <code>repeated .TowerLevelStarCondData cond_data_list = 1;</code>
@@ -147,7 +206,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
     }
 
     public static final int LEVEL_INDEX_FIELD_NUMBER = 8;
-    private int levelIndex_ = 0;
+    private int levelIndex_;
     /**
      * <code>uint32 level_index = 8;</code>
      * @return The levelIndex.
@@ -158,7 +217,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
     }
 
     public static final int FLOOR_ID_FIELD_NUMBER = 10;
-    private int floorId_ = 0;
+    private int floorId_;
     /**
      * <code>uint32 floor_id = 10;</code>
      * @return The floorId.
@@ -191,7 +250,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
       if (floorId_ != 0) {
         output.writeUInt32(10, floorId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -212,7 +271,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, floorId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -233,7 +292,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
           != other.getLevelIndex()) return false;
       if (getFloorId()
           != other.getFloorId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -252,7 +311,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
       hash = (53 * hash) + getLevelIndex();
       hash = (37 * hash) + FLOOR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFloorId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -379,27 +438,33 @@ public final class TowerLevelStarCondNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCondDataListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (condDataListBuilder_ == null) {
           condDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          condDataList_ = null;
           condDataListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         levelIndex_ = 0;
+
         floorId_ = 0;
+
         return this;
       }
 
@@ -426,13 +491,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotify buildPartial() {
         emu.gingerps.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotify result = new emu.gingerps.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotify result) {
+        int from_bitField0_ = bitField0_;
         if (condDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             condDataList_ = java.util.Collections.unmodifiableList(condDataList_);
@@ -442,16 +501,10 @@ public final class TowerLevelStarCondNotifyOuterClass {
         } else {
           result.condDataList_ = condDataListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.levelIndex_ = levelIndex_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.floorId_ = floorId_;
-        }
+        result.levelIndex_ = levelIndex_;
+        result.floorId_ = floorId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -530,7 +583,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
         if (other.getFloorId() != 0) {
           setFloorId(other.getFloorId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -545,53 +598,17 @@ public final class TowerLevelStarCondNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.parser(),
-                        extensionRegistry);
-                if (condDataListBuilder_ == null) {
-                  ensureCondDataListIsMutable();
-                  condDataList_.add(m);
-                } else {
-                  condDataListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 64: {
-                levelIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 80: {
-                floorId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -853,7 +870,6 @@ public final class TowerLevelStarCondNotifyOuterClass {
       public Builder setLevelIndex(int value) {
         
         levelIndex_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -862,7 +878,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelIndex() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         levelIndex_ = 0;
         onChanged();
         return this;
@@ -885,7 +901,6 @@ public final class TowerLevelStarCondNotifyOuterClass {
       public Builder setFloorId(int value) {
         
         floorId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -894,7 +909,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFloorId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         floorId_ = 0;
         onChanged();
         return this;
@@ -932,18 +947,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TowerLevelStarCondNotify(input, extensionRegistry);
       }
     };
 

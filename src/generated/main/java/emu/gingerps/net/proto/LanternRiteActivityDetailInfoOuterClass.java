@@ -118,6 +118,97 @@ public final class LanternRiteActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private LanternRiteActivityDetailInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26: {
+              emu.gingerps.net.proto.LanternProjectionInfoOuterClass.LanternProjectionInfo.Builder subBuilder = null;
+              if (projectionInfo_ != null) {
+                subBuilder = projectionInfo_.toBuilder();
+              }
+              projectionInfo_ = input.readMessage(emu.gingerps.net.proto.LanternProjectionInfoOuterClass.LanternProjectionInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(projectionInfo_);
+                projectionInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                stageInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              stageInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+
+              unk3300DKBJLCIMBAL_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              unk3300PDFJNCDGKGH_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              isContentClosed_ = input.readBool();
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.LanternRiteFireworksInfoOuterClass.LanternRiteFireworksInfo.Builder subBuilder = null;
+              if (fireworksInfo_ != null) {
+                subBuilder = fireworksInfo_.toBuilder();
+              }
+              fireworksInfo_ = input.readMessage(emu.gingerps.net.proto.LanternRiteFireworksInfoOuterClass.LanternRiteFireworksInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fireworksInfo_);
+                fireworksInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          stageInfoList_ = java.util.Collections.unmodifiableList(stageInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.internal_static_LanternRiteActivityDetailInfo_descriptor;
@@ -132,7 +223,6 @@ public final class LanternRiteActivityDetailInfoOuterClass {
     }
 
     public static final int STAGE_INFO_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo> stageInfoList_;
     /**
      * <code>repeated .SalvageStageInfo stage_info_list = 5;</code>
@@ -195,11 +285,11 @@ public final class LanternRiteActivityDetailInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.LanternRiteFireworksInfoOuterClass.LanternRiteFireworksInfoOrBuilder getFireworksInfoOrBuilder() {
-      return fireworksInfo_ == null ? emu.gingerps.net.proto.LanternRiteFireworksInfoOuterClass.LanternRiteFireworksInfo.getDefaultInstance() : fireworksInfo_;
+      return getFireworksInfo();
     }
 
     public static final int UNK3300_PDFJNCDGKGH_FIELD_NUMBER = 11;
-    private boolean unk3300PDFJNCDGKGH_ = false;
+    private boolean unk3300PDFJNCDGKGH_;
     /**
      * <code>bool Unk3300_PDFJNCDGKGH = 11;</code>
      * @return The unk3300PDFJNCDGKGH.
@@ -232,11 +322,11 @@ public final class LanternRiteActivityDetailInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.LanternProjectionInfoOuterClass.LanternProjectionInfoOrBuilder getProjectionInfoOrBuilder() {
-      return projectionInfo_ == null ? emu.gingerps.net.proto.LanternProjectionInfoOuterClass.LanternProjectionInfo.getDefaultInstance() : projectionInfo_;
+      return getProjectionInfo();
     }
 
     public static final int UNK3300_DKBJLCIMBAL_FIELD_NUMBER = 8;
-    private boolean unk3300DKBJLCIMBAL_ = false;
+    private boolean unk3300DKBJLCIMBAL_;
     /**
      * <code>bool Unk3300_DKBJLCIMBAL = 8;</code>
      * @return The unk3300DKBJLCIMBAL.
@@ -247,7 +337,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 14;
-    private boolean isContentClosed_ = false;
+    private boolean isContentClosed_;
     /**
      * <code>bool is_content_closed = 14;</code>
      * @return The isContentClosed.
@@ -289,7 +379,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
       if (fireworksInfo_ != null) {
         output.writeMessage(15, getFireworksInfo());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -322,7 +412,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getFireworksInfo());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -355,7 +445,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
           != other.getUnk3300DKBJLCIMBAL()) return false;
       if (getIsContentClosed()
           != other.getIsContentClosed()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -387,7 +477,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
       hash = (37 * hash) + IS_CONTENT_CLOSED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsContentClosed());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -504,38 +594,47 @@ public final class LanternRiteActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getStageInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (stageInfoListBuilder_ == null) {
           stageInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          stageInfoList_ = null;
           stageInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        fireworksInfo_ = null;
-        if (fireworksInfoBuilder_ != null) {
-          fireworksInfoBuilder_.dispose();
+        if (fireworksInfoBuilder_ == null) {
+          fireworksInfo_ = null;
+        } else {
+          fireworksInfo_ = null;
           fireworksInfoBuilder_ = null;
         }
         unk3300PDFJNCDGKGH_ = false;
-        projectionInfo_ = null;
-        if (projectionInfoBuilder_ != null) {
-          projectionInfoBuilder_.dispose();
+
+        if (projectionInfoBuilder_ == null) {
+          projectionInfo_ = null;
+        } else {
+          projectionInfo_ = null;
           projectionInfoBuilder_ = null;
         }
         unk3300DKBJLCIMBAL_ = false;
+
         isContentClosed_ = false;
+
         return this;
       }
 
@@ -562,13 +661,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo result = new emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
         if (stageInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             stageInfoList_ = java.util.Collections.unmodifiableList(stageInfoList_);
@@ -578,29 +671,21 @@ public final class LanternRiteActivityDetailInfoOuterClass {
         } else {
           result.stageInfoList_ = stageInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.fireworksInfo_ = fireworksInfoBuilder_ == null
-              ? fireworksInfo_
-              : fireworksInfoBuilder_.build();
+        if (fireworksInfoBuilder_ == null) {
+          result.fireworksInfo_ = fireworksInfo_;
+        } else {
+          result.fireworksInfo_ = fireworksInfoBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300PDFJNCDGKGH_ = unk3300PDFJNCDGKGH_;
+        result.unk3300PDFJNCDGKGH_ = unk3300PDFJNCDGKGH_;
+        if (projectionInfoBuilder_ == null) {
+          result.projectionInfo_ = projectionInfo_;
+        } else {
+          result.projectionInfo_ = projectionInfoBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.projectionInfo_ = projectionInfoBuilder_ == null
-              ? projectionInfo_
-              : projectionInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300DKBJLCIMBAL_ = unk3300DKBJLCIMBAL_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isContentClosed_ = isContentClosed_;
-        }
+        result.unk3300DKBJLCIMBAL_ = unk3300DKBJLCIMBAL_;
+        result.isContentClosed_ = isContentClosed_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -688,7 +773,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
         if (other.getIsContentClosed() != false) {
           setIsContentClosed(other.getIsContentClosed());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -703,72 +788,17 @@ public final class LanternRiteActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 26: {
-                input.readMessage(
-                    getProjectionInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 26
-              case 42: {
-                emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo.parser(),
-                        extensionRegistry);
-                if (stageInfoListBuilder_ == null) {
-                  ensureStageInfoListIsMutable();
-                  stageInfoList_.add(m);
-                } else {
-                  stageInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 64: {
-                unk3300DKBJLCIMBAL_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 64
-              case 88: {
-                unk3300PDFJNCDGKGH_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              case 112: {
-                isContentClosed_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 112
-              case 122: {
-                input.readMessage(
-                    getFireworksInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1021,7 +1051,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
        * @return Whether the fireworksInfo field is set.
        */
       public boolean hasFireworksInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return fireworksInfoBuilder_ != null || fireworksInfo_ != null;
       }
       /**
        * <code>.LanternRiteFireworksInfo fireworks_info = 15;</code>
@@ -1043,11 +1073,11 @@ public final class LanternRiteActivityDetailInfoOuterClass {
             throw new NullPointerException();
           }
           fireworksInfo_ = value;
+          onChanged();
         } else {
           fireworksInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1057,11 +1087,11 @@ public final class LanternRiteActivityDetailInfoOuterClass {
           emu.gingerps.net.proto.LanternRiteFireworksInfoOuterClass.LanternRiteFireworksInfo.Builder builderForValue) {
         if (fireworksInfoBuilder_ == null) {
           fireworksInfo_ = builderForValue.build();
+          onChanged();
         } else {
           fireworksInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1069,38 +1099,38 @@ public final class LanternRiteActivityDetailInfoOuterClass {
        */
       public Builder mergeFireworksInfo(emu.gingerps.net.proto.LanternRiteFireworksInfoOuterClass.LanternRiteFireworksInfo value) {
         if (fireworksInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            fireworksInfo_ != null &&
-            fireworksInfo_ != emu.gingerps.net.proto.LanternRiteFireworksInfoOuterClass.LanternRiteFireworksInfo.getDefaultInstance()) {
-            getFireworksInfoBuilder().mergeFrom(value);
+          if (fireworksInfo_ != null) {
+            fireworksInfo_ =
+              emu.gingerps.net.proto.LanternRiteFireworksInfoOuterClass.LanternRiteFireworksInfo.newBuilder(fireworksInfo_).mergeFrom(value).buildPartial();
           } else {
             fireworksInfo_ = value;
           }
+          onChanged();
         } else {
           fireworksInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.LanternRiteFireworksInfo fireworks_info = 15;</code>
        */
       public Builder clearFireworksInfo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        fireworksInfo_ = null;
-        if (fireworksInfoBuilder_ != null) {
-          fireworksInfoBuilder_.dispose();
+        if (fireworksInfoBuilder_ == null) {
+          fireworksInfo_ = null;
+          onChanged();
+        } else {
+          fireworksInfo_ = null;
           fireworksInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.LanternRiteFireworksInfo fireworks_info = 15;</code>
        */
       public emu.gingerps.net.proto.LanternRiteFireworksInfoOuterClass.LanternRiteFireworksInfo.Builder getFireworksInfoBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getFireworksInfoFieldBuilder().getBuilder();
       }
@@ -1149,7 +1179,6 @@ public final class LanternRiteActivityDetailInfoOuterClass {
       public Builder setUnk3300PDFJNCDGKGH(boolean value) {
         
         unk3300PDFJNCDGKGH_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1158,7 +1187,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PDFJNCDGKGH() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300PDFJNCDGKGH_ = false;
         onChanged();
         return this;
@@ -1172,7 +1201,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
        * @return Whether the projectionInfo field is set.
        */
       public boolean hasProjectionInfo() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return projectionInfoBuilder_ != null || projectionInfo_ != null;
       }
       /**
        * <code>.LanternProjectionInfo projection_info = 3;</code>
@@ -1194,11 +1223,11 @@ public final class LanternRiteActivityDetailInfoOuterClass {
             throw new NullPointerException();
           }
           projectionInfo_ = value;
+          onChanged();
         } else {
           projectionInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1208,11 +1237,11 @@ public final class LanternRiteActivityDetailInfoOuterClass {
           emu.gingerps.net.proto.LanternProjectionInfoOuterClass.LanternProjectionInfo.Builder builderForValue) {
         if (projectionInfoBuilder_ == null) {
           projectionInfo_ = builderForValue.build();
+          onChanged();
         } else {
           projectionInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1220,38 +1249,38 @@ public final class LanternRiteActivityDetailInfoOuterClass {
        */
       public Builder mergeProjectionInfo(emu.gingerps.net.proto.LanternProjectionInfoOuterClass.LanternProjectionInfo value) {
         if (projectionInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            projectionInfo_ != null &&
-            projectionInfo_ != emu.gingerps.net.proto.LanternProjectionInfoOuterClass.LanternProjectionInfo.getDefaultInstance()) {
-            getProjectionInfoBuilder().mergeFrom(value);
+          if (projectionInfo_ != null) {
+            projectionInfo_ =
+              emu.gingerps.net.proto.LanternProjectionInfoOuterClass.LanternProjectionInfo.newBuilder(projectionInfo_).mergeFrom(value).buildPartial();
           } else {
             projectionInfo_ = value;
           }
+          onChanged();
         } else {
           projectionInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.LanternProjectionInfo projection_info = 3;</code>
        */
       public Builder clearProjectionInfo() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        projectionInfo_ = null;
-        if (projectionInfoBuilder_ != null) {
-          projectionInfoBuilder_.dispose();
+        if (projectionInfoBuilder_ == null) {
+          projectionInfo_ = null;
+          onChanged();
+        } else {
+          projectionInfo_ = null;
           projectionInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.LanternProjectionInfo projection_info = 3;</code>
        */
       public emu.gingerps.net.proto.LanternProjectionInfoOuterClass.LanternProjectionInfo.Builder getProjectionInfoBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getProjectionInfoFieldBuilder().getBuilder();
       }
@@ -1300,7 +1329,6 @@ public final class LanternRiteActivityDetailInfoOuterClass {
       public Builder setUnk3300DKBJLCIMBAL(boolean value) {
         
         unk3300DKBJLCIMBAL_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1309,7 +1337,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DKBJLCIMBAL() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300DKBJLCIMBAL_ = false;
         onChanged();
         return this;
@@ -1332,7 +1360,6 @@ public final class LanternRiteActivityDetailInfoOuterClass {
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1341,7 +1368,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -1379,18 +1406,7 @@ public final class LanternRiteActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new LanternRiteActivityDetailInfo(input, extensionRegistry);
       }
     };
 

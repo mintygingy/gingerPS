@@ -84,6 +84,76 @@ public final class EvtSyncEntityPositionInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtSyncEntityPositionInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              faceAngleCompact_ = input.readInt32();
+              break;
+            }
+            case 80: {
+
+              stateHash_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              normalizedTimeCompact_ = input.readUInt32();
+              break;
+            }
+            case 114: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (pos_ != null) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtSyncEntityPositionInfoOuterClass.internal_static_EvtSyncEntityPositionInfo_descriptor;
@@ -98,7 +168,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
     }
 
     public static final int STATE_HASH_FIELD_NUMBER = 10;
-    private int stateHash_ = 0;
+    private int stateHash_;
     /**
      * <code>uint32 state_hash = 10;</code>
      * @return The stateHash.
@@ -109,7 +179,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
     }
 
     public static final int FACE_ANGLE_COMPACT_FIELD_NUMBER = 4;
-    private int faceAngleCompact_ = 0;
+    private int faceAngleCompact_;
     /**
      * <code>int32 face_angle_compact = 4;</code>
      * @return The faceAngleCompact.
@@ -142,11 +212,11 @@ public final class EvtSyncEntityPositionInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+      return getPos();
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 1;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 1;</code>
      * @return The entityId.
@@ -157,7 +227,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
     }
 
     public static final int NORMALIZED_TIME_COMPACT_FIELD_NUMBER = 13;
-    private int normalizedTimeCompact_ = 0;
+    private int normalizedTimeCompact_;
     /**
      * <code>uint32 normalized_time_compact = 13;</code>
      * @return The normalizedTimeCompact.
@@ -196,7 +266,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       if (pos_ != null) {
         output.writeMessage(14, getPos());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -225,7 +295,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getPos());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -253,7 +323,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
           != other.getEntityId()) return false;
       if (getNormalizedTimeCompact()
           != other.getNormalizedTimeCompact()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -276,7 +346,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + NORMALIZED_TIME_COMPACT_FIELD_NUMBER;
       hash = (53 * hash) + getNormalizedTimeCompact();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,27 +463,36 @@ public final class EvtSyncEntityPositionInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         stateHash_ = 0;
+
         faceAngleCompact_ = 0;
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
         entityId_ = 0;
+
         normalizedTimeCompact_ = 0;
+
         return this;
       }
 
@@ -440,30 +519,17 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo buildPartial() {
         emu.gingerps.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo result = new emu.gingerps.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.stateHash_ = stateHash_;
+        result.faceAngleCompact_ = faceAngleCompact_;
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        result.entityId_ = entityId_;
+        result.normalizedTimeCompact_ = normalizedTimeCompact_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.stateHash_ = stateHash_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.faceAngleCompact_ = faceAngleCompact_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.normalizedTimeCompact_ = normalizedTimeCompact_;
-        }
       }
 
       @java.lang.Override
@@ -525,7 +591,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         if (other.getNormalizedTimeCompact() != 0) {
           setNormalizedTimeCompact(other.getNormalizedTimeCompact());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -540,60 +606,19 @@ public final class EvtSyncEntityPositionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 8
-              case 32: {
-                faceAngleCompact_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 80: {
-                stateHash_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 104: {
-                normalizedTimeCompact_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 104
-              case 114: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int stateHash_ ;
       /**
@@ -612,7 +637,6 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       public Builder setStateHash(int value) {
         
         stateHash_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -621,7 +645,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStateHash() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         stateHash_ = 0;
         onChanged();
         return this;
@@ -644,7 +668,6 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       public Builder setFaceAngleCompact(int value) {
         
         faceAngleCompact_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -653,7 +676,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFaceAngleCompact() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         faceAngleCompact_ = 0;
         onChanged();
         return this;
@@ -667,7 +690,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return posBuilder_ != null || pos_ != null;
       }
       /**
        * <code>.Vector pos = 14;</code>
@@ -689,11 +712,11 @@ public final class EvtSyncEntityPositionInfoOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -703,11 +726,11 @@ public final class EvtSyncEntityPositionInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -715,38 +738,38 @@ public final class EvtSyncEntityPositionInfoOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            pos_ != null &&
-            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (pos_ != null) {
+            pos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 14;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 14;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -795,7 +818,6 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -804,7 +826,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -827,7 +849,6 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       public Builder setNormalizedTimeCompact(int value) {
         
         normalizedTimeCompact_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -836,7 +857,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNormalizedTimeCompact() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         normalizedTimeCompact_ = 0;
         onChanged();
         return this;
@@ -874,18 +895,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtSyncEntityPositionInfo(input, extensionRegistry);
       }
     };
 

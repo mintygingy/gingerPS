@@ -62,6 +62,48 @@ public final class FleurFairReplayMiniGameReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FleurFairReplayMiniGameReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              minigameId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FleurFairReplayMiniGameReqOuterClass.internal_static_FleurFairReplayMiniGameReq_descriptor;
@@ -76,7 +118,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
     }
 
     public static final int MINIGAME_ID_FIELD_NUMBER = 3;
-    private int minigameId_ = 0;
+    private int minigameId_;
     /**
      * <code>uint32 minigame_id = 3;</code>
      * @return The minigameId.
@@ -103,7 +145,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
       if (minigameId_ != 0) {
         output.writeUInt32(3, minigameId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -116,7 +158,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, minigameId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -133,7 +175,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
 
       if (getMinigameId()
           != other.getMinigameId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -146,7 +188,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MINIGAME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMinigameId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -274,19 +316,24 @@ public final class FleurFairReplayMiniGameReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.FleurFairReplayMiniGameReqOuterClass.FleurFairReplayMiniGameReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         minigameId_ = 0;
+
         return this;
       }
 
@@ -313,16 +360,9 @@ public final class FleurFairReplayMiniGameReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FleurFairReplayMiniGameReqOuterClass.FleurFairReplayMiniGameReq buildPartial() {
         emu.gingerps.net.proto.FleurFairReplayMiniGameReqOuterClass.FleurFairReplayMiniGameReq result = new emu.gingerps.net.proto.FleurFairReplayMiniGameReqOuterClass.FleurFairReplayMiniGameReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.minigameId_ = minigameId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FleurFairReplayMiniGameReqOuterClass.FleurFairReplayMiniGameReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.minigameId_ = minigameId_;
-        }
       }
 
       @java.lang.Override
@@ -372,7 +412,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
         if (other.getMinigameId() != 0) {
           setMinigameId(other.getMinigameId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -387,38 +427,19 @@ public final class FleurFairReplayMiniGameReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FleurFairReplayMiniGameReqOuterClass.FleurFairReplayMiniGameReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                minigameId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FleurFairReplayMiniGameReqOuterClass.FleurFairReplayMiniGameReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int minigameId_ ;
       /**
@@ -437,7 +458,6 @@ public final class FleurFairReplayMiniGameReqOuterClass {
       public Builder setMinigameId(int value) {
         
         minigameId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -446,7 +466,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMinigameId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         minigameId_ = 0;
         onChanged();
         return this;
@@ -484,18 +504,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FleurFairReplayMiniGameReq(input, extensionRegistry);
       }
     };
 

@@ -73,6 +73,58 @@ public final class TakePlayerLevelRewardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TakePlayerLevelRewardRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 80: {
+
+              rewardId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 120: {
+
+              level_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TakePlayerLevelRewardRspOuterClass.internal_static_TakePlayerLevelRewardRsp_descriptor;
@@ -87,7 +139,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
     }
 
     public static final int REWARD_ID_FIELD_NUMBER = 10;
-    private int rewardId_ = 0;
+    private int rewardId_;
     /**
      * <code>uint32 reward_id = 10;</code>
      * @return The rewardId.
@@ -98,7 +150,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
     }
 
     public static final int LEVEL_FIELD_NUMBER = 15;
-    private int level_ = 0;
+    private int level_;
     /**
      * <code>uint32 level = 15;</code>
      * @return The level.
@@ -109,7 +161,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
@@ -142,7 +194,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
       if (level_ != 0) {
         output.writeUInt32(15, level_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +215,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, level_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -184,7 +236,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
           != other.getLevel()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -201,7 +253,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
       hash = (53 * hash) + getLevel();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -328,21 +380,28 @@ public final class TakePlayerLevelRewardRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.TakePlayerLevelRewardRspOuterClass.TakePlayerLevelRewardRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         rewardId_ = 0;
+
         level_ = 0;
+
         retcode_ = 0;
+
         return this;
       }
 
@@ -369,22 +428,11 @@ public final class TakePlayerLevelRewardRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TakePlayerLevelRewardRspOuterClass.TakePlayerLevelRewardRsp buildPartial() {
         emu.gingerps.net.proto.TakePlayerLevelRewardRspOuterClass.TakePlayerLevelRewardRsp result = new emu.gingerps.net.proto.TakePlayerLevelRewardRspOuterClass.TakePlayerLevelRewardRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.rewardId_ = rewardId_;
+        result.level_ = level_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TakePlayerLevelRewardRspOuterClass.TakePlayerLevelRewardRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.rewardId_ = rewardId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.level_ = level_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +488,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,48 +503,19 @@ public final class TakePlayerLevelRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TakePlayerLevelRewardRspOuterClass.TakePlayerLevelRewardRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 80: {
-                rewardId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              case 96: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              case 120: {
-                level_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TakePlayerLevelRewardRspOuterClass.TakePlayerLevelRewardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int rewardId_ ;
       /**
@@ -515,7 +534,6 @@ public final class TakePlayerLevelRewardRspOuterClass {
       public Builder setRewardId(int value) {
         
         rewardId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +542,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRewardId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         rewardId_ = 0;
         onChanged();
         return this;
@@ -547,7 +565,6 @@ public final class TakePlayerLevelRewardRspOuterClass {
       public Builder setLevel(int value) {
         
         level_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -556,7 +573,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         level_ = 0;
         onChanged();
         return this;
@@ -579,7 +596,6 @@ public final class TakePlayerLevelRewardRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -588,7 +604,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -626,18 +642,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TakePlayerLevelRewardRsp(input, extensionRegistry);
       }
     };
 

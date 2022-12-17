@@ -80,6 +80,59 @@ public final class EnterCustomDungeonReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EnterCustomDungeonReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              dungeonGuid_ = input.readUInt64();
+              break;
+            }
+            case 56: {
+
+              dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              enterType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EnterCustomDungeonReqOuterClass.internal_static_EnterCustomDungeonReq_descriptor;
@@ -94,7 +147,7 @@ public final class EnterCustomDungeonReqOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 7;
-    private int dungeonId_ = 0;
+    private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 7;</code>
      * @return The dungeonId.
@@ -105,7 +158,7 @@ public final class EnterCustomDungeonReqOuterClass {
     }
 
     public static final int ENTER_TYPE_FIELD_NUMBER = 8;
-    private int enterType_ = 0;
+    private int enterType_;
     /**
      * <code>.EnterCustomDungeonType enter_type = 8;</code>
      * @return The enum numeric value on the wire for enterType.
@@ -118,12 +171,13 @@ public final class EnterCustomDungeonReqOuterClass {
      * @return The enterType.
      */
     @java.lang.Override public emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType getEnterType() {
-      emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType result = emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.forNumber(enterType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType result = emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.valueOf(enterType_);
       return result == null ? emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.UNRECOGNIZED : result;
     }
 
     public static final int DUNGEON_GUID_FIELD_NUMBER = 4;
-    private long dungeonGuid_ = 0L;
+    private long dungeonGuid_;
     /**
      * <code>uint64 dungeon_guid = 4;</code>
      * @return The dungeonGuid.
@@ -156,7 +210,7 @@ public final class EnterCustomDungeonReqOuterClass {
       if (enterType_ != emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.ENTER_CUSTOM_DUNGEON_TYPE_NONE.getNumber()) {
         output.writeEnum(8, enterType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +231,7 @@ public final class EnterCustomDungeonReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, enterType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +251,7 @@ public final class EnterCustomDungeonReqOuterClass {
       if (enterType_ != other.enterType_) return false;
       if (getDungeonGuid()
           != other.getDungeonGuid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -215,7 +269,7 @@ public final class EnterCustomDungeonReqOuterClass {
       hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDungeonGuid());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -343,21 +397,28 @@ public final class EnterCustomDungeonReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         dungeonId_ = 0;
+
         enterType_ = 0;
+
         dungeonGuid_ = 0L;
+
         return this;
       }
 
@@ -384,22 +445,11 @@ public final class EnterCustomDungeonReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq buildPartial() {
         emu.gingerps.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq result = new emu.gingerps.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.dungeonId_ = dungeonId_;
+        result.enterType_ = enterType_;
+        result.dungeonGuid_ = dungeonGuid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.dungeonId_ = dungeonId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.enterType_ = enterType_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.dungeonGuid_ = dungeonGuid_;
-        }
       }
 
       @java.lang.Override
@@ -455,7 +505,7 @@ public final class EnterCustomDungeonReqOuterClass {
         if (other.getDungeonGuid() != 0L) {
           setDungeonGuid(other.getDungeonGuid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -470,48 +520,19 @@ public final class EnterCustomDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                dungeonGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 56: {
-                dungeonId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 64: {
-                enterType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int dungeonId_ ;
       /**
@@ -530,7 +551,6 @@ public final class EnterCustomDungeonReqOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -539,7 +559,7 @@ public final class EnterCustomDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -559,8 +579,8 @@ public final class EnterCustomDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setEnterTypeValue(int value) {
+        
         enterType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -570,7 +590,8 @@ public final class EnterCustomDungeonReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType getEnterType() {
-        emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType result = emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.forNumber(enterType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType result = emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.valueOf(enterType_);
         return result == null ? emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.UNRECOGNIZED : result;
       }
       /**
@@ -582,7 +603,7 @@ public final class EnterCustomDungeonReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         enterType_ = value.getNumber();
         onChanged();
         return this;
@@ -592,7 +613,7 @@ public final class EnterCustomDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEnterType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         enterType_ = 0;
         onChanged();
         return this;
@@ -615,7 +636,6 @@ public final class EnterCustomDungeonReqOuterClass {
       public Builder setDungeonGuid(long value) {
         
         dungeonGuid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -624,7 +644,7 @@ public final class EnterCustomDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonGuid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         dungeonGuid_ = 0L;
         onChanged();
         return this;
@@ -662,18 +682,7 @@ public final class EnterCustomDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EnterCustomDungeonReq(input, extensionRegistry);
       }
     };
 

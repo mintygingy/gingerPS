@@ -104,6 +104,102 @@ public final class SingleStartBrickBreakerReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SingleStartBrickBreakerReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                chosenAvatarList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              chosenAvatarList_.addInt(input.readUInt32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                chosenAvatarList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                chosenAvatarList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                chosenSkillList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              chosenSkillList_.addInt(input.readUInt32());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                chosenSkillList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                chosenSkillList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 104: {
+
+              isDungeon_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          chosenAvatarList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          chosenSkillList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SingleStartBrickBreakerReqOuterClass.internal_static_SingleStartBrickBreakerReq_descriptor;
@@ -118,7 +214,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
     }
 
     public static final int IS_DUNGEON_FIELD_NUMBER = 13;
-    private boolean isDungeon_ = false;
+    private boolean isDungeon_;
     /**
      * <code>bool is_dungeon = 13;</code>
      * @return The isDungeon.
@@ -129,7 +225,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 8;
-    private int levelId_ = 0;
+    private int levelId_;
     /**
      * <code>uint32 level_id = 8;</code>
      * @return The levelId.
@@ -140,7 +236,6 @@ public final class SingleStartBrickBreakerReqOuterClass {
     }
 
     public static final int CHOSEN_SKILL_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList chosenSkillList_;
     /**
      * <code>repeated uint32 chosen_skill_list = 12;</code>
@@ -169,7 +264,6 @@ public final class SingleStartBrickBreakerReqOuterClass {
     private int chosenSkillListMemoizedSerializedSize = -1;
 
     public static final int CHOSEN_AVATAR_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList chosenAvatarList_;
     /**
      * <code>repeated uint32 chosen_avatar_list = 5;</code>
@@ -232,7 +326,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
       if (isDungeon_ != false) {
         output.writeBool(13, isDungeon_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -277,7 +371,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isDungeon_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -300,7 +394,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
           .equals(other.getChosenSkillListList())) return false;
       if (!getChosenAvatarListList()
           .equals(other.getChosenAvatarListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -324,7 +418,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
         hash = (37 * hash) + CHOSEN_AVATAR_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getChosenAvatarListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -452,22 +546,30 @@ public final class SingleStartBrickBreakerReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SingleStartBrickBreakerReqOuterClass.SingleStartBrickBreakerReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isDungeon_ = false;
+
         levelId_ = 0;
+
         chosenSkillList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         chosenAvatarList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -494,33 +596,21 @@ public final class SingleStartBrickBreakerReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SingleStartBrickBreakerReqOuterClass.SingleStartBrickBreakerReq buildPartial() {
         emu.gingerps.net.proto.SingleStartBrickBreakerReqOuterClass.SingleStartBrickBreakerReq result = new emu.gingerps.net.proto.SingleStartBrickBreakerReqOuterClass.SingleStartBrickBreakerReq(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SingleStartBrickBreakerReqOuterClass.SingleStartBrickBreakerReq result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.isDungeon_ = isDungeon_;
+        result.levelId_ = levelId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           chosenSkillList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.chosenSkillList_ = chosenSkillList_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           chosenAvatarList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.chosenAvatarList_ = chosenAvatarList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SingleStartBrickBreakerReqOuterClass.SingleStartBrickBreakerReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isDungeon_ = isDungeon_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.levelId_ = levelId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -576,7 +666,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
         if (!other.chosenSkillList_.isEmpty()) {
           if (chosenSkillList_.isEmpty()) {
             chosenSkillList_ = other.chosenSkillList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureChosenSkillListIsMutable();
             chosenSkillList_.addAll(other.chosenSkillList_);
@@ -586,14 +676,14 @@ public final class SingleStartBrickBreakerReqOuterClass {
         if (!other.chosenAvatarList_.isEmpty()) {
           if (chosenAvatarList_.isEmpty()) {
             chosenAvatarList_ = other.chosenAvatarList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureChosenAvatarListIsMutable();
             chosenAvatarList_.addAll(other.chosenAvatarList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -608,72 +698,17 @@ public final class SingleStartBrickBreakerReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SingleStartBrickBreakerReqOuterClass.SingleStartBrickBreakerReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                int v = input.readUInt32();
-                ensureChosenAvatarListIsMutable();
-                chosenAvatarList_.addInt(v);
-                break;
-              } // case 40
-              case 42: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureChosenAvatarListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  chosenAvatarList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 42
-              case 64: {
-                levelId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 96: {
-                int v = input.readUInt32();
-                ensureChosenSkillListIsMutable();
-                chosenSkillList_.addInt(v);
-                break;
-              } // case 96
-              case 98: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureChosenSkillListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  chosenSkillList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 98
-              case 104: {
-                isDungeon_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SingleStartBrickBreakerReqOuterClass.SingleStartBrickBreakerReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -695,7 +730,6 @@ public final class SingleStartBrickBreakerReqOuterClass {
       public Builder setIsDungeon(boolean value) {
         
         isDungeon_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -704,7 +738,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsDungeon() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isDungeon_ = false;
         onChanged();
         return this;
@@ -727,7 +761,6 @@ public final class SingleStartBrickBreakerReqOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -736,7 +769,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         levelId_ = 0;
         onChanged();
         return this;
@@ -744,10 +777,10 @@ public final class SingleStartBrickBreakerReqOuterClass {
 
       private com.google.protobuf.Internal.IntList chosenSkillList_ = emptyIntList();
       private void ensureChosenSkillListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           chosenSkillList_ = mutableCopy(chosenSkillList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 chosen_skill_list = 12;</code>
@@ -755,7 +788,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getChosenSkillListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(chosenSkillList_) : chosenSkillList_;
       }
       /**
@@ -781,7 +814,6 @@ public final class SingleStartBrickBreakerReqOuterClass {
        */
       public Builder setChosenSkillList(
           int index, int value) {
-        
         ensureChosenSkillListIsMutable();
         chosenSkillList_.setInt(index, value);
         onChanged();
@@ -793,7 +825,6 @@ public final class SingleStartBrickBreakerReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addChosenSkillList(int value) {
-        
         ensureChosenSkillListIsMutable();
         chosenSkillList_.addInt(value);
         onChanged();
@@ -818,17 +849,17 @@ public final class SingleStartBrickBreakerReqOuterClass {
        */
       public Builder clearChosenSkillList() {
         chosenSkillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList chosenAvatarList_ = emptyIntList();
       private void ensureChosenAvatarListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           chosenAvatarList_ = mutableCopy(chosenAvatarList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 chosen_avatar_list = 5;</code>
@@ -836,7 +867,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getChosenAvatarListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(chosenAvatarList_) : chosenAvatarList_;
       }
       /**
@@ -862,7 +893,6 @@ public final class SingleStartBrickBreakerReqOuterClass {
        */
       public Builder setChosenAvatarList(
           int index, int value) {
-        
         ensureChosenAvatarListIsMutable();
         chosenAvatarList_.setInt(index, value);
         onChanged();
@@ -874,7 +904,6 @@ public final class SingleStartBrickBreakerReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addChosenAvatarList(int value) {
-        
         ensureChosenAvatarListIsMutable();
         chosenAvatarList_.addInt(value);
         onChanged();
@@ -899,7 +928,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
        */
       public Builder clearChosenAvatarList() {
         chosenAvatarList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -936,18 +965,7 @@ public final class SingleStartBrickBreakerReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SingleStartBrickBreakerReq(input, extensionRegistry);
       }
     };
 

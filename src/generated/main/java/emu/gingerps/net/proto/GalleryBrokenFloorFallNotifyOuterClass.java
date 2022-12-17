@@ -67,6 +67,53 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GalleryBrokenFloorFallNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              fallCount_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GalleryBrokenFloorFallNotifyOuterClass.internal_static_GalleryBrokenFloorFallNotify_descriptor;
@@ -81,7 +128,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
     }
 
     public static final int FALL_COUNT_FIELD_NUMBER = 10;
-    private int fallCount_ = 0;
+    private int fallCount_;
     /**
      * <code>uint32 fall_count = 10;</code>
      * @return The fallCount.
@@ -92,7 +139,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 7;
-    private int galleryId_ = 0;
+    private int galleryId_;
     /**
      * <code>uint32 gallery_id = 7;</code>
      * @return The galleryId.
@@ -122,7 +169,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
       if (fallCount_ != 0) {
         output.writeUInt32(10, fallCount_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +186,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, fallCount_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -158,7 +205,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
           != other.getFallCount()) return false;
       if (getGalleryId()
           != other.getGalleryId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -173,7 +220,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
       hash = (53 * hash) + getFallCount();
       hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGalleryId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -300,20 +347,26 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GalleryBrokenFloorFallNotifyOuterClass.GalleryBrokenFloorFallNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         fallCount_ = 0;
+
         galleryId_ = 0;
+
         return this;
       }
 
@@ -340,19 +393,10 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryBrokenFloorFallNotifyOuterClass.GalleryBrokenFloorFallNotify buildPartial() {
         emu.gingerps.net.proto.GalleryBrokenFloorFallNotifyOuterClass.GalleryBrokenFloorFallNotify result = new emu.gingerps.net.proto.GalleryBrokenFloorFallNotifyOuterClass.GalleryBrokenFloorFallNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.fallCount_ = fallCount_;
+        result.galleryId_ = galleryId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GalleryBrokenFloorFallNotifyOuterClass.GalleryBrokenFloorFallNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.fallCount_ = fallCount_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.galleryId_ = galleryId_;
-        }
       }
 
       @java.lang.Override
@@ -405,7 +449,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
         if (other.getGalleryId() != 0) {
           setGalleryId(other.getGalleryId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,43 +464,19 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GalleryBrokenFloorFallNotifyOuterClass.GalleryBrokenFloorFallNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                galleryId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 80: {
-                fallCount_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GalleryBrokenFloorFallNotifyOuterClass.GalleryBrokenFloorFallNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int fallCount_ ;
       /**
@@ -475,7 +495,6 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
       public Builder setFallCount(int value) {
         
         fallCount_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -484,7 +503,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFallCount() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         fallCount_ = 0;
         onChanged();
         return this;
@@ -507,7 +526,6 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -516,7 +534,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         galleryId_ = 0;
         onChanged();
         return this;
@@ -554,18 +572,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GalleryBrokenFloorFallNotify(input, extensionRegistry);
       }
     };
 

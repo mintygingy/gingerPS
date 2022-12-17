@@ -114,6 +114,101 @@ public final class TreasureSeelieRegionDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TreasureSeelieRegionData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              unk3300KGECOIIKJLJ_ = input.readUInt32();
+              break;
+            }
+            case 53: {
+
+              regionRadius_ = input.readFloat();
+              break;
+            }
+            case 64: {
+
+              unk3300CPHOJNMEDBC_ = input.readUInt32();
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (regionCenterPos_ != null) {
+                subBuilder = regionCenterPos_.toBuilder();
+              }
+              regionCenterPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(regionCenterPos_);
+                regionCenterPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 80: {
+
+              isDone_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              openTime_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              unk3300AFAMHPCEIKP_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              regionId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.internal_static_TreasureSeelieRegionData_descriptor;
@@ -128,7 +223,7 @@ public final class TreasureSeelieRegionDataOuterClass {
     }
 
     public static final int REGION_ID_FIELD_NUMBER = 15;
-    private int regionId_ = 0;
+    private int regionId_;
     /**
      * <code>uint32 region_id = 15;</code>
      * @return The regionId.
@@ -139,7 +234,7 @@ public final class TreasureSeelieRegionDataOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 1;
-    private boolean isOpen_ = false;
+    private boolean isOpen_;
     /**
      * <code>bool is_open = 1;</code>
      * @return The isOpen.
@@ -150,7 +245,7 @@ public final class TreasureSeelieRegionDataOuterClass {
     }
 
     public static final int OPEN_TIME_FIELD_NUMBER = 11;
-    private int openTime_ = 0;
+    private int openTime_;
     /**
      * <code>uint32 open_time = 11;</code>
      * @return The openTime.
@@ -183,11 +278,11 @@ public final class TreasureSeelieRegionDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getRegionCenterPosOrBuilder() {
-      return regionCenterPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : regionCenterPos_;
+      return getRegionCenterPos();
     }
 
     public static final int UNK3300_CPHOJNMEDBC_FIELD_NUMBER = 8;
-    private int unk3300CPHOJNMEDBC_ = 0;
+    private int unk3300CPHOJNMEDBC_;
     /**
      * <code>uint32 Unk3300_CPHOJNMEDBC = 8;</code>
      * @return The unk3300CPHOJNMEDBC.
@@ -198,7 +293,7 @@ public final class TreasureSeelieRegionDataOuterClass {
     }
 
     public static final int REGION_RADIUS_FIELD_NUMBER = 6;
-    private float regionRadius_ = 0F;
+    private float regionRadius_;
     /**
      * <code>float region_radius = 6;</code>
      * @return The regionRadius.
@@ -209,7 +304,7 @@ public final class TreasureSeelieRegionDataOuterClass {
     }
 
     public static final int UNK3300_KGECOIIKJLJ_FIELD_NUMBER = 5;
-    private int unk3300KGECOIIKJLJ_ = 0;
+    private int unk3300KGECOIIKJLJ_;
     /**
      * <code>uint32 Unk3300_KGECOIIKJLJ = 5;</code>
      * @return The unk3300KGECOIIKJLJ.
@@ -220,7 +315,7 @@ public final class TreasureSeelieRegionDataOuterClass {
     }
 
     public static final int UNK3300_AFAMHPCEIKP_FIELD_NUMBER = 14;
-    private int unk3300AFAMHPCEIKP_ = 0;
+    private int unk3300AFAMHPCEIKP_;
     /**
      * <code>uint32 Unk3300_AFAMHPCEIKP = 14;</code>
      * @return The unk3300AFAMHPCEIKP.
@@ -231,7 +326,7 @@ public final class TreasureSeelieRegionDataOuterClass {
     }
 
     public static final int IS_DONE_FIELD_NUMBER = 10;
-    private boolean isDone_ = false;
+    private boolean isDone_;
     /**
      * <code>bool is_done = 10;</code>
      * @return The isDone.
@@ -242,7 +337,7 @@ public final class TreasureSeelieRegionDataOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 3;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 3;</code>
      * @return The sceneId.
@@ -275,7 +370,7 @@ public final class TreasureSeelieRegionDataOuterClass {
       if (unk3300KGECOIIKJLJ_ != 0) {
         output.writeUInt32(5, unk3300KGECOIIKJLJ_);
       }
-      if (java.lang.Float.floatToRawIntBits(regionRadius_) != 0) {
+      if (regionRadius_ != 0F) {
         output.writeFloat(6, regionRadius_);
       }
       if (unk3300CPHOJNMEDBC_ != 0) {
@@ -296,7 +391,7 @@ public final class TreasureSeelieRegionDataOuterClass {
       if (regionId_ != 0) {
         output.writeUInt32(15, regionId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -317,7 +412,7 @@ public final class TreasureSeelieRegionDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, unk3300KGECOIIKJLJ_);
       }
-      if (java.lang.Float.floatToRawIntBits(regionRadius_) != 0) {
+      if (regionRadius_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, regionRadius_);
       }
@@ -345,7 +440,7 @@ public final class TreasureSeelieRegionDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, regionId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -384,7 +479,7 @@ public final class TreasureSeelieRegionDataOuterClass {
           != other.getIsDone()) return false;
       if (getSceneId()
           != other.getSceneId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -420,7 +515,7 @@ public final class TreasureSeelieRegionDataOuterClass {
           getIsDone());
       hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -537,32 +632,46 @@ public final class TreasureSeelieRegionDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         regionId_ = 0;
+
         isOpen_ = false;
+
         openTime_ = 0;
-        regionCenterPos_ = null;
-        if (regionCenterPosBuilder_ != null) {
-          regionCenterPosBuilder_.dispose();
+
+        if (regionCenterPosBuilder_ == null) {
+          regionCenterPos_ = null;
+        } else {
+          regionCenterPos_ = null;
           regionCenterPosBuilder_ = null;
         }
         unk3300CPHOJNMEDBC_ = 0;
+
         regionRadius_ = 0F;
+
         unk3300KGECOIIKJLJ_ = 0;
+
         unk3300AFAMHPCEIKP_ = 0;
+
         isDone_ = false;
+
         sceneId_ = 0;
+
         return this;
       }
 
@@ -589,45 +698,22 @@ public final class TreasureSeelieRegionDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData buildPartial() {
         emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData result = new emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.regionId_ = regionId_;
+        result.isOpen_ = isOpen_;
+        result.openTime_ = openTime_;
+        if (regionCenterPosBuilder_ == null) {
+          result.regionCenterPos_ = regionCenterPos_;
+        } else {
+          result.regionCenterPos_ = regionCenterPosBuilder_.build();
+        }
+        result.unk3300CPHOJNMEDBC_ = unk3300CPHOJNMEDBC_;
+        result.regionRadius_ = regionRadius_;
+        result.unk3300KGECOIIKJLJ_ = unk3300KGECOIIKJLJ_;
+        result.unk3300AFAMHPCEIKP_ = unk3300AFAMHPCEIKP_;
+        result.isDone_ = isDone_;
+        result.sceneId_ = sceneId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.regionId_ = regionId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isOpen_ = isOpen_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.openTime_ = openTime_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.regionCenterPos_ = regionCenterPosBuilder_ == null
-              ? regionCenterPos_
-              : regionCenterPosBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300CPHOJNMEDBC_ = unk3300CPHOJNMEDBC_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.regionRadius_ = regionRadius_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.unk3300KGECOIIKJLJ_ = unk3300KGECOIIKJLJ_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.unk3300AFAMHPCEIKP_ = unk3300AFAMHPCEIKP_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.isDone_ = isDone_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
       }
 
       @java.lang.Override
@@ -704,7 +790,7 @@ public final class TreasureSeelieRegionDataOuterClass {
         if (other.getSceneId() != 0) {
           setSceneId(other.getSceneId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -719,85 +805,19 @@ public final class TreasureSeelieRegionDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                isOpen_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 8
-              case 24: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 24
-              case 40: {
-                unk3300KGECOIIKJLJ_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 40
-              case 53: {
-                regionRadius_ = input.readFloat();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 53
-              case 64: {
-                unk3300CPHOJNMEDBC_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 64
-              case 74: {
-                input.readMessage(
-                    getRegionCenterPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 74
-              case 80: {
-                isDone_ = input.readBool();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 80
-              case 88: {
-                openTime_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              case 112: {
-                unk3300AFAMHPCEIKP_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 112
-              case 120: {
-                regionId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TreasureSeelieRegionDataOuterClass.TreasureSeelieRegionData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int regionId_ ;
       /**
@@ -816,7 +836,6 @@ public final class TreasureSeelieRegionDataOuterClass {
       public Builder setRegionId(int value) {
         
         regionId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -825,7 +844,7 @@ public final class TreasureSeelieRegionDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegionId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         regionId_ = 0;
         onChanged();
         return this;
@@ -848,7 +867,6 @@ public final class TreasureSeelieRegionDataOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -857,7 +875,7 @@ public final class TreasureSeelieRegionDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isOpen_ = false;
         onChanged();
         return this;
@@ -880,7 +898,6 @@ public final class TreasureSeelieRegionDataOuterClass {
       public Builder setOpenTime(int value) {
         
         openTime_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -889,7 +906,7 @@ public final class TreasureSeelieRegionDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         openTime_ = 0;
         onChanged();
         return this;
@@ -903,7 +920,7 @@ public final class TreasureSeelieRegionDataOuterClass {
        * @return Whether the regionCenterPos field is set.
        */
       public boolean hasRegionCenterPos() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return regionCenterPosBuilder_ != null || regionCenterPos_ != null;
       }
       /**
        * <code>.Vector region_center_pos = 9;</code>
@@ -925,11 +942,11 @@ public final class TreasureSeelieRegionDataOuterClass {
             throw new NullPointerException();
           }
           regionCenterPos_ = value;
+          onChanged();
         } else {
           regionCenterPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -939,11 +956,11 @@ public final class TreasureSeelieRegionDataOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (regionCenterPosBuilder_ == null) {
           regionCenterPos_ = builderForValue.build();
+          onChanged();
         } else {
           regionCenterPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -951,38 +968,38 @@ public final class TreasureSeelieRegionDataOuterClass {
        */
       public Builder mergeRegionCenterPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (regionCenterPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            regionCenterPos_ != null &&
-            regionCenterPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getRegionCenterPosBuilder().mergeFrom(value);
+          if (regionCenterPos_ != null) {
+            regionCenterPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(regionCenterPos_).mergeFrom(value).buildPartial();
           } else {
             regionCenterPos_ = value;
           }
+          onChanged();
         } else {
           regionCenterPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector region_center_pos = 9;</code>
        */
       public Builder clearRegionCenterPos() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        regionCenterPos_ = null;
-        if (regionCenterPosBuilder_ != null) {
-          regionCenterPosBuilder_.dispose();
+        if (regionCenterPosBuilder_ == null) {
+          regionCenterPos_ = null;
+          onChanged();
+        } else {
+          regionCenterPos_ = null;
           regionCenterPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector region_center_pos = 9;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getRegionCenterPosBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getRegionCenterPosFieldBuilder().getBuilder();
       }
@@ -1031,7 +1048,6 @@ public final class TreasureSeelieRegionDataOuterClass {
       public Builder setUnk3300CPHOJNMEDBC(int value) {
         
         unk3300CPHOJNMEDBC_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1040,7 +1056,7 @@ public final class TreasureSeelieRegionDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CPHOJNMEDBC() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300CPHOJNMEDBC_ = 0;
         onChanged();
         return this;
@@ -1063,7 +1079,6 @@ public final class TreasureSeelieRegionDataOuterClass {
       public Builder setRegionRadius(float value) {
         
         regionRadius_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1072,7 +1087,7 @@ public final class TreasureSeelieRegionDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegionRadius() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         regionRadius_ = 0F;
         onChanged();
         return this;
@@ -1095,7 +1110,6 @@ public final class TreasureSeelieRegionDataOuterClass {
       public Builder setUnk3300KGECOIIKJLJ(int value) {
         
         unk3300KGECOIIKJLJ_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1104,7 +1118,7 @@ public final class TreasureSeelieRegionDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KGECOIIKJLJ() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         unk3300KGECOIIKJLJ_ = 0;
         onChanged();
         return this;
@@ -1127,7 +1141,6 @@ public final class TreasureSeelieRegionDataOuterClass {
       public Builder setUnk3300AFAMHPCEIKP(int value) {
         
         unk3300AFAMHPCEIKP_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1136,7 +1149,7 @@ public final class TreasureSeelieRegionDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AFAMHPCEIKP() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         unk3300AFAMHPCEIKP_ = 0;
         onChanged();
         return this;
@@ -1159,7 +1172,6 @@ public final class TreasureSeelieRegionDataOuterClass {
       public Builder setIsDone(boolean value) {
         
         isDone_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1168,7 +1180,7 @@ public final class TreasureSeelieRegionDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsDone() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         isDone_ = false;
         onChanged();
         return this;
@@ -1191,7 +1203,6 @@ public final class TreasureSeelieRegionDataOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1200,7 +1211,7 @@ public final class TreasureSeelieRegionDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -1238,18 +1249,7 @@ public final class TreasureSeelieRegionDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TreasureSeelieRegionData(input, extensionRegistry);
       }
     };
 

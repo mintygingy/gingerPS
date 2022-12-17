@@ -70,6 +70,56 @@ public final class GrantRewardNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GrantRewardNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.RewardOuterClass.Reward.Builder subBuilder = null;
+              if (reward_ != null) {
+                subBuilder = reward_.toBuilder();
+              }
+              reward_ = input.readMessage(emu.gingerps.net.proto.RewardOuterClass.Reward.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(reward_);
+                reward_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GrantRewardNotifyOuterClass.internal_static_GrantRewardNotify_descriptor;
@@ -106,7 +156,7 @@ public final class GrantRewardNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.RewardOuterClass.RewardOrBuilder getRewardOrBuilder() {
-      return reward_ == null ? emu.gingerps.net.proto.RewardOuterClass.Reward.getDefaultInstance() : reward_;
+      return getReward();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -126,7 +176,7 @@ public final class GrantRewardNotifyOuterClass {
       if (reward_ != null) {
         output.writeMessage(1, getReward());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +189,7 @@ public final class GrantRewardNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getReward());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +209,7 @@ public final class GrantRewardNotifyOuterClass {
         if (!getReward()
             .equals(other.getReward())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +224,7 @@ public final class GrantRewardNotifyOuterClass {
         hash = (37 * hash) + REWARD_FIELD_NUMBER;
         hash = (53 * hash) + getReward().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -301,21 +351,26 @@ public final class GrantRewardNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GrantRewardNotifyOuterClass.GrantRewardNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        reward_ = null;
-        if (rewardBuilder_ != null) {
-          rewardBuilder_.dispose();
+        if (rewardBuilder_ == null) {
+          reward_ = null;
+        } else {
+          reward_ = null;
           rewardBuilder_ = null;
         }
         return this;
@@ -344,18 +399,13 @@ public final class GrantRewardNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GrantRewardNotifyOuterClass.GrantRewardNotify buildPartial() {
         emu.gingerps.net.proto.GrantRewardNotifyOuterClass.GrantRewardNotify result = new emu.gingerps.net.proto.GrantRewardNotifyOuterClass.GrantRewardNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (rewardBuilder_ == null) {
+          result.reward_ = reward_;
+        } else {
+          result.reward_ = rewardBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GrantRewardNotifyOuterClass.GrantRewardNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.reward_ = rewardBuilder_ == null
-              ? reward_
-              : rewardBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -405,7 +455,7 @@ public final class GrantRewardNotifyOuterClass {
         if (other.hasReward()) {
           mergeReward(other.getReward());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,40 +470,19 @@ public final class GrantRewardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GrantRewardNotifyOuterClass.GrantRewardNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getRewardFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GrantRewardNotifyOuterClass.GrantRewardNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.RewardOuterClass.Reward reward_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -463,7 +492,7 @@ public final class GrantRewardNotifyOuterClass {
        * @return Whether the reward field is set.
        */
       public boolean hasReward() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return rewardBuilder_ != null || reward_ != null;
       }
       /**
        * <code>.Reward reward = 1;</code>
@@ -485,11 +514,11 @@ public final class GrantRewardNotifyOuterClass {
             throw new NullPointerException();
           }
           reward_ = value;
+          onChanged();
         } else {
           rewardBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -499,11 +528,11 @@ public final class GrantRewardNotifyOuterClass {
           emu.gingerps.net.proto.RewardOuterClass.Reward.Builder builderForValue) {
         if (rewardBuilder_ == null) {
           reward_ = builderForValue.build();
+          onChanged();
         } else {
           rewardBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -511,38 +540,38 @@ public final class GrantRewardNotifyOuterClass {
        */
       public Builder mergeReward(emu.gingerps.net.proto.RewardOuterClass.Reward value) {
         if (rewardBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            reward_ != null &&
-            reward_ != emu.gingerps.net.proto.RewardOuterClass.Reward.getDefaultInstance()) {
-            getRewardBuilder().mergeFrom(value);
+          if (reward_ != null) {
+            reward_ =
+              emu.gingerps.net.proto.RewardOuterClass.Reward.newBuilder(reward_).mergeFrom(value).buildPartial();
           } else {
             reward_ = value;
           }
+          onChanged();
         } else {
           rewardBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Reward reward = 1;</code>
        */
       public Builder clearReward() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        reward_ = null;
-        if (rewardBuilder_ != null) {
-          rewardBuilder_.dispose();
+        if (rewardBuilder_ == null) {
+          reward_ = null;
+          onChanged();
+        } else {
+          reward_ = null;
           rewardBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Reward reward = 1;</code>
        */
       public emu.gingerps.net.proto.RewardOuterClass.Reward.Builder getRewardBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getRewardFieldBuilder().getBuilder();
       }
@@ -606,18 +635,7 @@ public final class GrantRewardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GrantRewardNotify(input, extensionRegistry);
       }
     };
 

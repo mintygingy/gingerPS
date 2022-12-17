@@ -61,6 +61,48 @@ public final class GCGHeartBeatNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGHeartBeatNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 96: {
+
+              serverSeq_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGHeartBeatNotifyOuterClass.internal_static_GCGHeartBeatNotify_descriptor;
@@ -75,7 +117,7 @@ public final class GCGHeartBeatNotifyOuterClass {
     }
 
     public static final int SERVER_SEQ_FIELD_NUMBER = 12;
-    private int serverSeq_ = 0;
+    private int serverSeq_;
     /**
      * <code>uint32 server_seq = 12;</code>
      * @return The serverSeq.
@@ -102,7 +144,7 @@ public final class GCGHeartBeatNotifyOuterClass {
       if (serverSeq_ != 0) {
         output.writeUInt32(12, serverSeq_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -115,7 +157,7 @@ public final class GCGHeartBeatNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, serverSeq_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -132,7 +174,7 @@ public final class GCGHeartBeatNotifyOuterClass {
 
       if (getServerSeq()
           != other.getServerSeq()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -145,7 +187,7 @@ public final class GCGHeartBeatNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SERVER_SEQ_FIELD_NUMBER;
       hash = (53 * hash) + getServerSeq();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -272,19 +314,24 @@ public final class GCGHeartBeatNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGHeartBeatNotifyOuterClass.GCGHeartBeatNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         serverSeq_ = 0;
+
         return this;
       }
 
@@ -311,16 +358,9 @@ public final class GCGHeartBeatNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGHeartBeatNotifyOuterClass.GCGHeartBeatNotify buildPartial() {
         emu.gingerps.net.proto.GCGHeartBeatNotifyOuterClass.GCGHeartBeatNotify result = new emu.gingerps.net.proto.GCGHeartBeatNotifyOuterClass.GCGHeartBeatNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.serverSeq_ = serverSeq_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGHeartBeatNotifyOuterClass.GCGHeartBeatNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.serverSeq_ = serverSeq_;
-        }
       }
 
       @java.lang.Override
@@ -370,7 +410,7 @@ public final class GCGHeartBeatNotifyOuterClass {
         if (other.getServerSeq() != 0) {
           setServerSeq(other.getServerSeq());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -385,38 +425,19 @@ public final class GCGHeartBeatNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGHeartBeatNotifyOuterClass.GCGHeartBeatNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 96: {
-                serverSeq_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGHeartBeatNotifyOuterClass.GCGHeartBeatNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int serverSeq_ ;
       /**
@@ -435,7 +456,6 @@ public final class GCGHeartBeatNotifyOuterClass {
       public Builder setServerSeq(int value) {
         
         serverSeq_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -444,7 +464,7 @@ public final class GCGHeartBeatNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearServerSeq() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         serverSeq_ = 0;
         onChanged();
         return this;
@@ -482,18 +502,7 @@ public final class GCGHeartBeatNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGHeartBeatNotify(input, extensionRegistry);
       }
     };
 

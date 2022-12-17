@@ -98,6 +98,71 @@ public final class GetAllMailRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetAllMailRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 64: {
+
+              isTruncated_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              isCollected_ = input.readBool();
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                mailList_ = new java.util.ArrayList<emu.gingerps.net.proto.MailDataOuterClass.MailData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              mailList_.add(
+                  input.readMessage(emu.gingerps.net.proto.MailDataOuterClass.MailData.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          mailList_ = java.util.Collections.unmodifiableList(mailList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetAllMailRspOuterClass.internal_static_GetAllMailRsp_descriptor;
@@ -112,7 +177,6 @@ public final class GetAllMailRspOuterClass {
     }
 
     public static final int MAIL_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MailDataOuterClass.MailData> mailList_;
     /**
      * <code>repeated .MailData mail_list = 15;</code>
@@ -153,7 +217,7 @@ public final class GetAllMailRspOuterClass {
     }
 
     public static final int IS_COLLECTED_FIELD_NUMBER = 12;
-    private boolean isCollected_ = false;
+    private boolean isCollected_;
     /**
      * <code>bool is_collected = 12;</code>
      * @return The isCollected.
@@ -164,7 +228,7 @@ public final class GetAllMailRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -175,7 +239,7 @@ public final class GetAllMailRspOuterClass {
     }
 
     public static final int IS_TRUNCATED_FIELD_NUMBER = 8;
-    private boolean isTruncated_ = false;
+    private boolean isTruncated_;
     /**
      * <code>bool is_truncated = 8;</code>
      * @return The isTruncated.
@@ -211,7 +275,7 @@ public final class GetAllMailRspOuterClass {
       for (int i = 0; i < mailList_.size(); i++) {
         output.writeMessage(15, mailList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -236,7 +300,7 @@ public final class GetAllMailRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, mailList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -259,7 +323,7 @@ public final class GetAllMailRspOuterClass {
           != other.getRetcode()) return false;
       if (getIsTruncated()
           != other.getIsTruncated()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -282,7 +346,7 @@ public final class GetAllMailRspOuterClass {
       hash = (37 * hash) + IS_TRUNCATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsTruncated());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -409,28 +473,35 @@ public final class GetAllMailRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetAllMailRspOuterClass.GetAllMailRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMailListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (mailListBuilder_ == null) {
           mailList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          mailList_ = null;
           mailListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         isCollected_ = false;
+
         retcode_ = 0;
+
         isTruncated_ = false;
+
         return this;
       }
 
@@ -457,13 +528,7 @@ public final class GetAllMailRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetAllMailRspOuterClass.GetAllMailRsp buildPartial() {
         emu.gingerps.net.proto.GetAllMailRspOuterClass.GetAllMailRsp result = new emu.gingerps.net.proto.GetAllMailRspOuterClass.GetAllMailRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetAllMailRspOuterClass.GetAllMailRsp result) {
+        int from_bitField0_ = bitField0_;
         if (mailListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             mailList_ = java.util.Collections.unmodifiableList(mailList_);
@@ -473,19 +538,11 @@ public final class GetAllMailRspOuterClass {
         } else {
           result.mailList_ = mailListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetAllMailRspOuterClass.GetAllMailRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isCollected_ = isCollected_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isTruncated_ = isTruncated_;
-        }
+        result.isCollected_ = isCollected_;
+        result.retcode_ = retcode_;
+        result.isTruncated_ = isTruncated_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -567,7 +624,7 @@ public final class GetAllMailRspOuterClass {
         if (other.getIsTruncated() != false) {
           setIsTruncated(other.getIsTruncated());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -582,58 +639,17 @@ public final class GetAllMailRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetAllMailRspOuterClass.GetAllMailRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 8
-              case 64: {
-                isTruncated_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 64
-              case 96: {
-                isCollected_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 96
-              case 122: {
-                emu.gingerps.net.proto.MailDataOuterClass.MailData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.MailDataOuterClass.MailData.parser(),
-                        extensionRegistry);
-                if (mailListBuilder_ == null) {
-                  ensureMailListIsMutable();
-                  mailList_.add(m);
-                } else {
-                  mailListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetAllMailRspOuterClass.GetAllMailRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -895,7 +911,6 @@ public final class GetAllMailRspOuterClass {
       public Builder setIsCollected(boolean value) {
         
         isCollected_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -904,7 +919,7 @@ public final class GetAllMailRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCollected() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isCollected_ = false;
         onChanged();
         return this;
@@ -927,7 +942,6 @@ public final class GetAllMailRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -936,7 +950,7 @@ public final class GetAllMailRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -959,7 +973,6 @@ public final class GetAllMailRspOuterClass {
       public Builder setIsTruncated(boolean value) {
         
         isTruncated_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -968,7 +981,7 @@ public final class GetAllMailRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsTruncated() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isTruncated_ = false;
         onChanged();
         return this;
@@ -1006,18 +1019,7 @@ public final class GetAllMailRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetAllMailRsp(input, extensionRegistry);
       }
     };
 

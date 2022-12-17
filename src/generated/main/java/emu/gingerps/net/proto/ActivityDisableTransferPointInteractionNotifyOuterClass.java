@@ -76,6 +76,61 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ActivityDisableTransferPointInteractionNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 90: {
+              emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.Builder subBuilder = null;
+              if (scenePointPair_ != null) {
+                subBuilder = scenePointPair_.toBuilder();
+              }
+              scenePointPair_ = input.readMessage(emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scenePointPair_);
+                scenePointPair_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 104: {
+
+              isDisable_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityDisableTransferPointInteractionNotifyOuterClass.internal_static_ActivityDisableTransferPointInteractionNotify_descriptor;
@@ -90,7 +145,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
     }
 
     public static final int IS_DISABLE_FIELD_NUMBER = 13;
-    private boolean isDisable_ = false;
+    private boolean isDisable_;
     /**
      * <code>bool is_disable = 13;</code>
      * @return The isDisable.
@@ -123,7 +178,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getScenePointPairOrBuilder() {
-      return scenePointPair_ == null ? emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance() : scenePointPair_;
+      return getScenePointPair();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -146,7 +201,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
       if (isDisable_ != false) {
         output.writeBool(13, isDisable_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +218,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isDisable_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -185,7 +240,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         if (!getScenePointPair()
             .equals(other.getScenePointPair())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -203,7 +258,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         hash = (37 * hash) + SCENE_POINT_PAIR_FIELD_NUMBER;
         hash = (53 * hash) + getScenePointPair().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -330,22 +385,28 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityDisableTransferPointInteractionNotifyOuterClass.ActivityDisableTransferPointInteractionNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isDisable_ = false;
-        scenePointPair_ = null;
-        if (scenePointPairBuilder_ != null) {
-          scenePointPairBuilder_.dispose();
+
+        if (scenePointPairBuilder_ == null) {
+          scenePointPair_ = null;
+        } else {
+          scenePointPair_ = null;
           scenePointPairBuilder_ = null;
         }
         return this;
@@ -374,21 +435,14 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityDisableTransferPointInteractionNotifyOuterClass.ActivityDisableTransferPointInteractionNotify buildPartial() {
         emu.gingerps.net.proto.ActivityDisableTransferPointInteractionNotifyOuterClass.ActivityDisableTransferPointInteractionNotify result = new emu.gingerps.net.proto.ActivityDisableTransferPointInteractionNotifyOuterClass.ActivityDisableTransferPointInteractionNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isDisable_ = isDisable_;
+        if (scenePointPairBuilder_ == null) {
+          result.scenePointPair_ = scenePointPair_;
+        } else {
+          result.scenePointPair_ = scenePointPairBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ActivityDisableTransferPointInteractionNotifyOuterClass.ActivityDisableTransferPointInteractionNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isDisable_ = isDisable_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.scenePointPair_ = scenePointPairBuilder_ == null
-              ? scenePointPair_
-              : scenePointPairBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -441,7 +495,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         if (other.hasScenePointPair()) {
           mergeScenePointPair(other.getScenePointPair());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -456,45 +510,19 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ActivityDisableTransferPointInteractionNotifyOuterClass.ActivityDisableTransferPointInteractionNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 90: {
-                input.readMessage(
-                    getScenePointPairFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 90
-              case 104: {
-                isDisable_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ActivityDisableTransferPointInteractionNotifyOuterClass.ActivityDisableTransferPointInteractionNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isDisable_ ;
       /**
@@ -513,7 +541,6 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
       public Builder setIsDisable(boolean value) {
         
         isDisable_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -522,7 +549,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsDisable() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isDisable_ = false;
         onChanged();
         return this;
@@ -536,7 +563,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
        * @return Whether the scenePointPair field is set.
        */
       public boolean hasScenePointPair() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return scenePointPairBuilder_ != null || scenePointPair_ != null;
       }
       /**
        * <code>.Uint32Pair scene_point_pair = 11;</code>
@@ -558,11 +585,11 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
             throw new NullPointerException();
           }
           scenePointPair_ = value;
+          onChanged();
         } else {
           scenePointPairBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -572,11 +599,11 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
           emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
         if (scenePointPairBuilder_ == null) {
           scenePointPair_ = builderForValue.build();
+          onChanged();
         } else {
           scenePointPairBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -584,38 +611,38 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
        */
       public Builder mergeScenePointPair(emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair value) {
         if (scenePointPairBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            scenePointPair_ != null &&
-            scenePointPair_ != emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance()) {
-            getScenePointPairBuilder().mergeFrom(value);
+          if (scenePointPair_ != null) {
+            scenePointPair_ =
+              emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.newBuilder(scenePointPair_).mergeFrom(value).buildPartial();
           } else {
             scenePointPair_ = value;
           }
+          onChanged();
         } else {
           scenePointPairBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Uint32Pair scene_point_pair = 11;</code>
        */
       public Builder clearScenePointPair() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        scenePointPair_ = null;
-        if (scenePointPairBuilder_ != null) {
-          scenePointPairBuilder_.dispose();
+        if (scenePointPairBuilder_ == null) {
+          scenePointPair_ = null;
+          onChanged();
+        } else {
+          scenePointPair_ = null;
           scenePointPairBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Uint32Pair scene_point_pair = 11;</code>
        */
       public emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.Builder getScenePointPairBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getScenePointPairFieldBuilder().getBuilder();
       }
@@ -679,18 +706,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ActivityDisableTransferPointInteractionNotify(input, extensionRegistry);
       }
     };
 

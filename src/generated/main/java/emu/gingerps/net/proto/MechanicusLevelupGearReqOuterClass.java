@@ -68,6 +68,53 @@ public final class MechanicusLevelupGearReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MechanicusLevelupGearReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 104: {
+
+              gearId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              mechanicusId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MechanicusLevelupGearReqOuterClass.internal_static_MechanicusLevelupGearReq_descriptor;
@@ -82,7 +129,7 @@ public final class MechanicusLevelupGearReqOuterClass {
     }
 
     public static final int MECHANICUS_ID_FIELD_NUMBER = 14;
-    private int mechanicusId_ = 0;
+    private int mechanicusId_;
     /**
      * <code>uint32 mechanicus_id = 14;</code>
      * @return The mechanicusId.
@@ -93,7 +140,7 @@ public final class MechanicusLevelupGearReqOuterClass {
     }
 
     public static final int GEAR_ID_FIELD_NUMBER = 13;
-    private int gearId_ = 0;
+    private int gearId_;
     /**
      * <code>uint32 gear_id = 13;</code>
      * @return The gearId.
@@ -123,7 +170,7 @@ public final class MechanicusLevelupGearReqOuterClass {
       if (mechanicusId_ != 0) {
         output.writeUInt32(14, mechanicusId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class MechanicusLevelupGearReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, mechanicusId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class MechanicusLevelupGearReqOuterClass {
           != other.getMechanicusId()) return false;
       if (getGearId()
           != other.getGearId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class MechanicusLevelupGearReqOuterClass {
       hash = (53 * hash) + getMechanicusId();
       hash = (37 * hash) + GEAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGearId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -302,20 +349,26 @@ public final class MechanicusLevelupGearReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.MechanicusLevelupGearReqOuterClass.MechanicusLevelupGearReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         mechanicusId_ = 0;
+
         gearId_ = 0;
+
         return this;
       }
 
@@ -342,19 +395,10 @@ public final class MechanicusLevelupGearReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MechanicusLevelupGearReqOuterClass.MechanicusLevelupGearReq buildPartial() {
         emu.gingerps.net.proto.MechanicusLevelupGearReqOuterClass.MechanicusLevelupGearReq result = new emu.gingerps.net.proto.MechanicusLevelupGearReqOuterClass.MechanicusLevelupGearReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.mechanicusId_ = mechanicusId_;
+        result.gearId_ = gearId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.MechanicusLevelupGearReqOuterClass.MechanicusLevelupGearReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.mechanicusId_ = mechanicusId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.gearId_ = gearId_;
-        }
       }
 
       @java.lang.Override
@@ -407,7 +451,7 @@ public final class MechanicusLevelupGearReqOuterClass {
         if (other.getGearId() != 0) {
           setGearId(other.getGearId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -422,43 +466,19 @@ public final class MechanicusLevelupGearReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.MechanicusLevelupGearReqOuterClass.MechanicusLevelupGearReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 104: {
-                gearId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              case 112: {
-                mechanicusId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.MechanicusLevelupGearReqOuterClass.MechanicusLevelupGearReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int mechanicusId_ ;
       /**
@@ -477,7 +497,6 @@ public final class MechanicusLevelupGearReqOuterClass {
       public Builder setMechanicusId(int value) {
         
         mechanicusId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -486,7 +505,7 @@ public final class MechanicusLevelupGearReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMechanicusId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         mechanicusId_ = 0;
         onChanged();
         return this;
@@ -509,7 +528,6 @@ public final class MechanicusLevelupGearReqOuterClass {
       public Builder setGearId(int value) {
         
         gearId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -518,7 +536,7 @@ public final class MechanicusLevelupGearReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGearId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         gearId_ = 0;
         onChanged();
         return this;
@@ -556,18 +574,7 @@ public final class MechanicusLevelupGearReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MechanicusLevelupGearReq(input, extensionRegistry);
       }
     };
 

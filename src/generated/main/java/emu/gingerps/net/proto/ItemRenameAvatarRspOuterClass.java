@@ -73,6 +73,58 @@ public final class ItemRenameAvatarRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ItemRenameAvatarRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              cdTime_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              renameId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ItemRenameAvatarRspOuterClass.internal_static_ItemRenameAvatarRsp_descriptor;
@@ -87,7 +139,7 @@ public final class ItemRenameAvatarRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 14;</code>
      * @return The retcode.
@@ -98,7 +150,7 @@ public final class ItemRenameAvatarRspOuterClass {
     }
 
     public static final int CD_TIME_FIELD_NUMBER = 5;
-    private int cdTime_ = 0;
+    private int cdTime_;
     /**
      * <code>uint32 cd_time = 5;</code>
      * @return The cdTime.
@@ -109,7 +161,7 @@ public final class ItemRenameAvatarRspOuterClass {
     }
 
     public static final int RENAME_ID_FIELD_NUMBER = 8;
-    private int renameId_ = 0;
+    private int renameId_;
     /**
      * <code>uint32 rename_id = 8;</code>
      * @return The renameId.
@@ -142,7 +194,7 @@ public final class ItemRenameAvatarRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(14, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +215,7 @@ public final class ItemRenameAvatarRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -184,7 +236,7 @@ public final class ItemRenameAvatarRspOuterClass {
           != other.getCdTime()) return false;
       if (getRenameId()
           != other.getRenameId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -201,7 +253,7 @@ public final class ItemRenameAvatarRspOuterClass {
       hash = (53 * hash) + getCdTime();
       hash = (37 * hash) + RENAME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRenameId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -328,21 +380,28 @@ public final class ItemRenameAvatarRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         cdTime_ = 0;
+
         renameId_ = 0;
+
         return this;
       }
 
@@ -369,22 +428,11 @@ public final class ItemRenameAvatarRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp buildPartial() {
         emu.gingerps.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp result = new emu.gingerps.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.retcode_ = retcode_;
+        result.cdTime_ = cdTime_;
+        result.renameId_ = renameId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cdTime_ = cdTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.renameId_ = renameId_;
-        }
       }
 
       @java.lang.Override
@@ -440,7 +488,7 @@ public final class ItemRenameAvatarRspOuterClass {
         if (other.getRenameId() != 0) {
           setRenameId(other.getRenameId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -455,48 +503,19 @@ public final class ItemRenameAvatarRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                cdTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 64: {
-                renameId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 64
-              case 112: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -515,7 +534,6 @@ public final class ItemRenameAvatarRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +542,7 @@ public final class ItemRenameAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -547,7 +565,6 @@ public final class ItemRenameAvatarRspOuterClass {
       public Builder setCdTime(int value) {
         
         cdTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -556,7 +573,7 @@ public final class ItemRenameAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCdTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         cdTime_ = 0;
         onChanged();
         return this;
@@ -579,7 +596,6 @@ public final class ItemRenameAvatarRspOuterClass {
       public Builder setRenameId(int value) {
         
         renameId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -588,7 +604,7 @@ public final class ItemRenameAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRenameId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         renameId_ = 0;
         onChanged();
         return this;
@@ -626,18 +642,7 @@ public final class ItemRenameAvatarRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ItemRenameAvatarRsp(input, extensionRegistry);
       }
     };
 

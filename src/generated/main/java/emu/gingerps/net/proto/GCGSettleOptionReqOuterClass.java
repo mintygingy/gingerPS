@@ -68,6 +68,49 @@ public final class GCGSettleOptionReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GCGSettleOptionReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+              int rawValue = input.readEnum();
+
+              option_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSettleOptionReqOuterClass.internal_static_GCGSettleOptionReq_descriptor;
@@ -82,7 +125,7 @@ public final class GCGSettleOptionReqOuterClass {
     }
 
     public static final int OPTION_FIELD_NUMBER = 9;
-    private int option_ = 0;
+    private int option_;
     /**
      * <code>.GCGSettleOption option = 9;</code>
      * @return The enum numeric value on the wire for option.
@@ -95,7 +138,8 @@ public final class GCGSettleOptionReqOuterClass {
      * @return The option.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption getOption() {
-      emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption result = emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption.forNumber(option_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption result = emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption.valueOf(option_);
       return result == null ? emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption.UNRECOGNIZED : result;
     }
 
@@ -116,7 +160,7 @@ public final class GCGSettleOptionReqOuterClass {
       if (option_ != emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption.GCG_SETTLE_OPTION_OPT_NONE.getNumber()) {
         output.writeEnum(9, option_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +173,7 @@ public final class GCGSettleOptionReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, option_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -145,7 +189,7 @@ public final class GCGSettleOptionReqOuterClass {
       emu.gingerps.net.proto.GCGSettleOptionReqOuterClass.GCGSettleOptionReq other = (emu.gingerps.net.proto.GCGSettleOptionReqOuterClass.GCGSettleOptionReq) obj;
 
       if (option_ != other.option_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -158,7 +202,7 @@ public final class GCGSettleOptionReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + OPTION_FIELD_NUMBER;
       hash = (53 * hash) + option_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -286,19 +330,24 @@ public final class GCGSettleOptionReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSettleOptionReqOuterClass.GCGSettleOptionReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         option_ = 0;
+
         return this;
       }
 
@@ -325,16 +374,9 @@ public final class GCGSettleOptionReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSettleOptionReqOuterClass.GCGSettleOptionReq buildPartial() {
         emu.gingerps.net.proto.GCGSettleOptionReqOuterClass.GCGSettleOptionReq result = new emu.gingerps.net.proto.GCGSettleOptionReqOuterClass.GCGSettleOptionReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.option_ = option_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GCGSettleOptionReqOuterClass.GCGSettleOptionReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.option_ = option_;
-        }
       }
 
       @java.lang.Override
@@ -384,7 +426,7 @@ public final class GCGSettleOptionReqOuterClass {
         if (other.option_ != 0) {
           setOptionValue(other.getOptionValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -399,38 +441,19 @@ public final class GCGSettleOptionReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GCGSettleOptionReqOuterClass.GCGSettleOptionReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                option_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GCGSettleOptionReqOuterClass.GCGSettleOptionReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int option_ = 0;
       /**
@@ -446,8 +469,8 @@ public final class GCGSettleOptionReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOptionValue(int value) {
+        
         option_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -457,7 +480,8 @@ public final class GCGSettleOptionReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption getOption() {
-        emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption result = emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption.forNumber(option_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption result = emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption.valueOf(option_);
         return result == null ? emu.gingerps.net.proto.GCGSettleOptionOuterClass.GCGSettleOption.UNRECOGNIZED : result;
       }
       /**
@@ -469,7 +493,7 @@ public final class GCGSettleOptionReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         option_ = value.getNumber();
         onChanged();
         return this;
@@ -479,7 +503,7 @@ public final class GCGSettleOptionReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOption() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         option_ = 0;
         onChanged();
         return this;
@@ -517,18 +541,7 @@ public final class GCGSettleOptionReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GCGSettleOptionReq(input, extensionRegistry);
       }
     };
 

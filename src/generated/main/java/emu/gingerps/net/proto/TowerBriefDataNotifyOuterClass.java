@@ -97,6 +97,78 @@ public final class TowerBriefDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TowerBriefDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              lastFloorIndex_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              lastLevelIndex_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              totalStarNum_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              scheduleStartTime_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              nextScheduleChangeTime_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              towerScheduleId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              isFinishedEntranceFloor_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerBriefDataNotifyOuterClass.internal_static_TowerBriefDataNotify_descriptor;
@@ -111,7 +183,7 @@ public final class TowerBriefDataNotifyOuterClass {
     }
 
     public static final int LAST_LEVEL_INDEX_FIELD_NUMBER = 6;
-    private int lastLevelIndex_ = 0;
+    private int lastLevelIndex_;
     /**
      * <code>uint32 last_level_index = 6;</code>
      * @return The lastLevelIndex.
@@ -122,7 +194,7 @@ public final class TowerBriefDataNotifyOuterClass {
     }
 
     public static final int NEXT_SCHEDULE_CHANGE_TIME_FIELD_NUMBER = 9;
-    private int nextScheduleChangeTime_ = 0;
+    private int nextScheduleChangeTime_;
     /**
      * <code>uint32 next_schedule_change_time = 9;</code>
      * @return The nextScheduleChangeTime.
@@ -133,7 +205,7 @@ public final class TowerBriefDataNotifyOuterClass {
     }
 
     public static final int IS_FINISHED_ENTRANCE_FLOOR_FIELD_NUMBER = 14;
-    private boolean isFinishedEntranceFloor_ = false;
+    private boolean isFinishedEntranceFloor_;
     /**
      * <code>bool is_finished_entrance_floor = 14;</code>
      * @return The isFinishedEntranceFloor.
@@ -144,7 +216,7 @@ public final class TowerBriefDataNotifyOuterClass {
     }
 
     public static final int LAST_FLOOR_INDEX_FIELD_NUMBER = 1;
-    private int lastFloorIndex_ = 0;
+    private int lastFloorIndex_;
     /**
      * <code>uint32 last_floor_index = 1;</code>
      * @return The lastFloorIndex.
@@ -155,7 +227,7 @@ public final class TowerBriefDataNotifyOuterClass {
     }
 
     public static final int TOWER_SCHEDULE_ID_FIELD_NUMBER = 11;
-    private int towerScheduleId_ = 0;
+    private int towerScheduleId_;
     /**
      * <code>uint32 tower_schedule_id = 11;</code>
      * @return The towerScheduleId.
@@ -166,7 +238,7 @@ public final class TowerBriefDataNotifyOuterClass {
     }
 
     public static final int SCHEDULE_START_TIME_FIELD_NUMBER = 8;
-    private int scheduleStartTime_ = 0;
+    private int scheduleStartTime_;
     /**
      * <code>uint32 schedule_start_time = 8;</code>
      * @return The scheduleStartTime.
@@ -177,7 +249,7 @@ public final class TowerBriefDataNotifyOuterClass {
     }
 
     public static final int TOTAL_STAR_NUM_FIELD_NUMBER = 7;
-    private int totalStarNum_ = 0;
+    private int totalStarNum_;
     /**
      * <code>uint32 total_star_num = 7;</code>
      * @return The totalStarNum.
@@ -222,7 +294,7 @@ public final class TowerBriefDataNotifyOuterClass {
       if (isFinishedEntranceFloor_ != false) {
         output.writeBool(14, isFinishedEntranceFloor_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -259,7 +331,7 @@ public final class TowerBriefDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isFinishedEntranceFloor_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -288,7 +360,7 @@ public final class TowerBriefDataNotifyOuterClass {
           != other.getScheduleStartTime()) return false;
       if (getTotalStarNum()
           != other.getTotalStarNum()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -314,7 +386,7 @@ public final class TowerBriefDataNotifyOuterClass {
       hash = (53 * hash) + getScheduleStartTime();
       hash = (37 * hash) + TOTAL_STAR_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getTotalStarNum();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -441,25 +513,36 @@ public final class TowerBriefDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         lastLevelIndex_ = 0;
+
         nextScheduleChangeTime_ = 0;
+
         isFinishedEntranceFloor_ = false;
+
         lastFloorIndex_ = 0;
+
         towerScheduleId_ = 0;
+
         scheduleStartTime_ = 0;
+
         totalStarNum_ = 0;
+
         return this;
       }
 
@@ -486,34 +569,15 @@ public final class TowerBriefDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify buildPartial() {
         emu.gingerps.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify result = new emu.gingerps.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.lastLevelIndex_ = lastLevelIndex_;
+        result.nextScheduleChangeTime_ = nextScheduleChangeTime_;
+        result.isFinishedEntranceFloor_ = isFinishedEntranceFloor_;
+        result.lastFloorIndex_ = lastFloorIndex_;
+        result.towerScheduleId_ = towerScheduleId_;
+        result.scheduleStartTime_ = scheduleStartTime_;
+        result.totalStarNum_ = totalStarNum_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.lastLevelIndex_ = lastLevelIndex_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.nextScheduleChangeTime_ = nextScheduleChangeTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.isFinishedEntranceFloor_ = isFinishedEntranceFloor_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.lastFloorIndex_ = lastFloorIndex_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.towerScheduleId_ = towerScheduleId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.scheduleStartTime_ = scheduleStartTime_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.totalStarNum_ = totalStarNum_;
-        }
       }
 
       @java.lang.Override
@@ -581,7 +645,7 @@ public final class TowerBriefDataNotifyOuterClass {
         if (other.getTotalStarNum() != 0) {
           setTotalStarNum(other.getTotalStarNum());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -596,68 +660,19 @@ public final class TowerBriefDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                lastFloorIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 8
-              case 48: {
-                lastLevelIndex_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 56: {
-                totalStarNum_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              case 64: {
-                scheduleStartTime_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 64
-              case 72: {
-                nextScheduleChangeTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 88: {
-                towerScheduleId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 88
-              case 112: {
-                isFinishedEntranceFloor_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int lastLevelIndex_ ;
       /**
@@ -676,7 +691,6 @@ public final class TowerBriefDataNotifyOuterClass {
       public Builder setLastLevelIndex(int value) {
         
         lastLevelIndex_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -685,7 +699,7 @@ public final class TowerBriefDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastLevelIndex() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         lastLevelIndex_ = 0;
         onChanged();
         return this;
@@ -708,7 +722,6 @@ public final class TowerBriefDataNotifyOuterClass {
       public Builder setNextScheduleChangeTime(int value) {
         
         nextScheduleChangeTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -717,7 +730,7 @@ public final class TowerBriefDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextScheduleChangeTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         nextScheduleChangeTime_ = 0;
         onChanged();
         return this;
@@ -740,7 +753,6 @@ public final class TowerBriefDataNotifyOuterClass {
       public Builder setIsFinishedEntranceFloor(boolean value) {
         
         isFinishedEntranceFloor_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -749,7 +761,7 @@ public final class TowerBriefDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinishedEntranceFloor() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         isFinishedEntranceFloor_ = false;
         onChanged();
         return this;
@@ -772,7 +784,6 @@ public final class TowerBriefDataNotifyOuterClass {
       public Builder setLastFloorIndex(int value) {
         
         lastFloorIndex_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -781,7 +792,7 @@ public final class TowerBriefDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastFloorIndex() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         lastFloorIndex_ = 0;
         onChanged();
         return this;
@@ -804,7 +815,6 @@ public final class TowerBriefDataNotifyOuterClass {
       public Builder setTowerScheduleId(int value) {
         
         towerScheduleId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -813,7 +823,7 @@ public final class TowerBriefDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTowerScheduleId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         towerScheduleId_ = 0;
         onChanged();
         return this;
@@ -836,7 +846,6 @@ public final class TowerBriefDataNotifyOuterClass {
       public Builder setScheduleStartTime(int value) {
         
         scheduleStartTime_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -845,7 +854,7 @@ public final class TowerBriefDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleStartTime() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         scheduleStartTime_ = 0;
         onChanged();
         return this;
@@ -868,7 +877,6 @@ public final class TowerBriefDataNotifyOuterClass {
       public Builder setTotalStarNum(int value) {
         
         totalStarNum_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -877,7 +885,7 @@ public final class TowerBriefDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalStarNum() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         totalStarNum_ = 0;
         onChanged();
         return this;
@@ -915,18 +923,7 @@ public final class TowerBriefDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TowerBriefDataNotify(input, extensionRegistry);
       }
     };
 

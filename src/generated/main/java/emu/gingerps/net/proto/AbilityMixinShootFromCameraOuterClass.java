@@ -75,6 +75,69 @@ public final class AbilityMixinShootFromCameraOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AbilityMixinShootFromCamera(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 74: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (initPos_ != null) {
+                subBuilder = initPos_.toBuilder();
+              }
+              initPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(initPos_);
+                initPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 106: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (forward_ != null) {
+                subBuilder = forward_.toBuilder();
+              }
+              forward_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(forward_);
+                forward_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinShootFromCameraOuterClass.internal_static_AbilityMixinShootFromCamera_descriptor;
@@ -111,7 +174,7 @@ public final class AbilityMixinShootFromCameraOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getForwardOrBuilder() {
-      return forward_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : forward_;
+      return getForward();
     }
 
     public static final int INIT_POS_FIELD_NUMBER = 9;
@@ -137,7 +200,7 @@ public final class AbilityMixinShootFromCameraOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getInitPosOrBuilder() {
-      return initPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : initPos_;
+      return getInitPos();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -160,7 +223,7 @@ public final class AbilityMixinShootFromCameraOuterClass {
       if (forward_ != null) {
         output.writeMessage(13, getForward());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -177,7 +240,7 @@ public final class AbilityMixinShootFromCameraOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getForward());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -202,7 +265,7 @@ public final class AbilityMixinShootFromCameraOuterClass {
         if (!getInitPos()
             .equals(other.getInitPos())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -221,7 +284,7 @@ public final class AbilityMixinShootFromCameraOuterClass {
         hash = (37 * hash) + INIT_POS_FIELD_NUMBER;
         hash = (53 * hash) + getInitPos().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -338,26 +401,32 @@ public final class AbilityMixinShootFromCameraOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinShootFromCameraOuterClass.AbilityMixinShootFromCamera.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        forward_ = null;
-        if (forwardBuilder_ != null) {
-          forwardBuilder_.dispose();
+        if (forwardBuilder_ == null) {
+          forward_ = null;
+        } else {
+          forward_ = null;
           forwardBuilder_ = null;
         }
-        initPos_ = null;
-        if (initPosBuilder_ != null) {
-          initPosBuilder_.dispose();
+        if (initPosBuilder_ == null) {
+          initPos_ = null;
+        } else {
+          initPos_ = null;
           initPosBuilder_ = null;
         }
         return this;
@@ -386,23 +455,18 @@ public final class AbilityMixinShootFromCameraOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinShootFromCameraOuterClass.AbilityMixinShootFromCamera buildPartial() {
         emu.gingerps.net.proto.AbilityMixinShootFromCameraOuterClass.AbilityMixinShootFromCamera result = new emu.gingerps.net.proto.AbilityMixinShootFromCameraOuterClass.AbilityMixinShootFromCamera(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (forwardBuilder_ == null) {
+          result.forward_ = forward_;
+        } else {
+          result.forward_ = forwardBuilder_.build();
+        }
+        if (initPosBuilder_ == null) {
+          result.initPos_ = initPos_;
+        } else {
+          result.initPos_ = initPosBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinShootFromCameraOuterClass.AbilityMixinShootFromCamera result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.forward_ = forwardBuilder_ == null
-              ? forward_
-              : forwardBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.initPos_ = initPosBuilder_ == null
-              ? initPos_
-              : initPosBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -455,7 +519,7 @@ public final class AbilityMixinShootFromCameraOuterClass {
         if (other.hasInitPos()) {
           mergeInitPos(other.getInitPos());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -470,47 +534,19 @@ public final class AbilityMixinShootFromCameraOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.AbilityMixinShootFromCameraOuterClass.AbilityMixinShootFromCamera parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 74: {
-                input.readMessage(
-                    getInitPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 74
-              case 106: {
-                input.readMessage(
-                    getForwardFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.AbilityMixinShootFromCameraOuterClass.AbilityMixinShootFromCamera) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector forward_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -520,7 +556,7 @@ public final class AbilityMixinShootFromCameraOuterClass {
        * @return Whether the forward field is set.
        */
       public boolean hasForward() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return forwardBuilder_ != null || forward_ != null;
       }
       /**
        * <code>.Vector forward = 13;</code>
@@ -542,11 +578,11 @@ public final class AbilityMixinShootFromCameraOuterClass {
             throw new NullPointerException();
           }
           forward_ = value;
+          onChanged();
         } else {
           forwardBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -556,11 +592,11 @@ public final class AbilityMixinShootFromCameraOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (forwardBuilder_ == null) {
           forward_ = builderForValue.build();
+          onChanged();
         } else {
           forwardBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -568,38 +604,38 @@ public final class AbilityMixinShootFromCameraOuterClass {
        */
       public Builder mergeForward(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (forwardBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            forward_ != null &&
-            forward_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getForwardBuilder().mergeFrom(value);
+          if (forward_ != null) {
+            forward_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(forward_).mergeFrom(value).buildPartial();
           } else {
             forward_ = value;
           }
+          onChanged();
         } else {
           forwardBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector forward = 13;</code>
        */
       public Builder clearForward() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        forward_ = null;
-        if (forwardBuilder_ != null) {
-          forwardBuilder_.dispose();
+        if (forwardBuilder_ == null) {
+          forward_ = null;
+          onChanged();
+        } else {
+          forward_ = null;
           forwardBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector forward = 13;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getForwardBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getForwardFieldBuilder().getBuilder();
       }
@@ -639,7 +675,7 @@ public final class AbilityMixinShootFromCameraOuterClass {
        * @return Whether the initPos field is set.
        */
       public boolean hasInitPos() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return initPosBuilder_ != null || initPos_ != null;
       }
       /**
        * <code>.Vector init_pos = 9;</code>
@@ -661,11 +697,11 @@ public final class AbilityMixinShootFromCameraOuterClass {
             throw new NullPointerException();
           }
           initPos_ = value;
+          onChanged();
         } else {
           initPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -675,11 +711,11 @@ public final class AbilityMixinShootFromCameraOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (initPosBuilder_ == null) {
           initPos_ = builderForValue.build();
+          onChanged();
         } else {
           initPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -687,38 +723,38 @@ public final class AbilityMixinShootFromCameraOuterClass {
        */
       public Builder mergeInitPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (initPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            initPos_ != null &&
-            initPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getInitPosBuilder().mergeFrom(value);
+          if (initPos_ != null) {
+            initPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(initPos_).mergeFrom(value).buildPartial();
           } else {
             initPos_ = value;
           }
+          onChanged();
         } else {
           initPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector init_pos = 9;</code>
        */
       public Builder clearInitPos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        initPos_ = null;
-        if (initPosBuilder_ != null) {
-          initPosBuilder_.dispose();
+        if (initPosBuilder_ == null) {
+          initPos_ = null;
+          onChanged();
+        } else {
+          initPos_ = null;
           initPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector init_pos = 9;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getInitPosBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getInitPosFieldBuilder().getBuilder();
       }
@@ -782,18 +818,7 @@ public final class AbilityMixinShootFromCameraOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AbilityMixinShootFromCamera(input, extensionRegistry);
       }
     };
 

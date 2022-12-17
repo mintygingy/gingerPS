@@ -87,6 +87,79 @@ public final class HomeNpcDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeNpcData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              costumeId_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (spawnRot_ != null) {
+                subBuilder = spawnRot_.toBuilder();
+              }
+              spawnRot_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(spawnRot_);
+                spawnRot_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 88: {
+
+              avatarId_ = input.readUInt32();
+              break;
+            }
+            case 106: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (spawnPos_ != null) {
+                subBuilder = spawnPos_.toBuilder();
+              }
+              spawnPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(spawnPos_);
+                spawnPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeNpcDataOuterClass.internal_static_HomeNpcData_descriptor;
@@ -101,7 +174,7 @@ public final class HomeNpcDataOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 11;
-    private int avatarId_ = 0;
+    private int avatarId_;
     /**
      * <code>uint32 avatar_id = 11;</code>
      * @return The avatarId.
@@ -134,11 +207,11 @@ public final class HomeNpcDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSpawnPosOrBuilder() {
-      return spawnPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : spawnPos_;
+      return getSpawnPos();
     }
 
     public static final int COSTUME_ID_FIELD_NUMBER = 4;
-    private int costumeId_ = 0;
+    private int costumeId_;
     /**
      * <code>uint32 costume_id = 4;</code>
      * @return The costumeId.
@@ -171,7 +244,7 @@ public final class HomeNpcDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSpawnRotOrBuilder() {
-      return spawnRot_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : spawnRot_;
+      return getSpawnRot();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -200,7 +273,7 @@ public final class HomeNpcDataOuterClass {
       if (spawnPos_ != null) {
         output.writeMessage(13, getSpawnPos());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -225,7 +298,7 @@ public final class HomeNpcDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getSpawnPos());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -254,7 +327,7 @@ public final class HomeNpcDataOuterClass {
         if (!getSpawnRot()
             .equals(other.getSpawnRot())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -277,7 +350,7 @@ public final class HomeNpcDataOuterClass {
         hash = (37 * hash) + SPAWN_ROT_FIELD_NUMBER;
         hash = (53 * hash) + getSpawnRot().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -394,28 +467,36 @@ public final class HomeNpcDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         avatarId_ = 0;
-        spawnPos_ = null;
-        if (spawnPosBuilder_ != null) {
-          spawnPosBuilder_.dispose();
+
+        if (spawnPosBuilder_ == null) {
+          spawnPos_ = null;
+        } else {
+          spawnPos_ = null;
           spawnPosBuilder_ = null;
         }
         costumeId_ = 0;
-        spawnRot_ = null;
-        if (spawnRotBuilder_ != null) {
-          spawnRotBuilder_.dispose();
+
+        if (spawnRotBuilder_ == null) {
+          spawnRot_ = null;
+        } else {
+          spawnRot_ = null;
           spawnRotBuilder_ = null;
         }
         return this;
@@ -444,29 +525,20 @@ public final class HomeNpcDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData buildPartial() {
         emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData result = new emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.avatarId_ = avatarId_;
+        if (spawnPosBuilder_ == null) {
+          result.spawnPos_ = spawnPos_;
+        } else {
+          result.spawnPos_ = spawnPosBuilder_.build();
+        }
+        result.costumeId_ = costumeId_;
+        if (spawnRotBuilder_ == null) {
+          result.spawnRot_ = spawnRot_;
+        } else {
+          result.spawnRot_ = spawnRotBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.avatarId_ = avatarId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.spawnPos_ = spawnPosBuilder_ == null
-              ? spawnPos_
-              : spawnPosBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.costumeId_ = costumeId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.spawnRot_ = spawnRotBuilder_ == null
-              ? spawnRot_
-              : spawnRotBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -525,7 +597,7 @@ public final class HomeNpcDataOuterClass {
         if (other.hasSpawnRot()) {
           mergeSpawnRot(other.getSpawnRot());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -540,57 +612,19 @@ public final class HomeNpcDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                costumeId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 58: {
-                input.readMessage(
-                    getSpawnRotFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 58
-              case 88: {
-                avatarId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 106: {
-                input.readMessage(
-                    getSpawnPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeNpcDataOuterClass.HomeNpcData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int avatarId_ ;
       /**
@@ -609,7 +643,6 @@ public final class HomeNpcDataOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -618,7 +651,7 @@ public final class HomeNpcDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         avatarId_ = 0;
         onChanged();
         return this;
@@ -632,7 +665,7 @@ public final class HomeNpcDataOuterClass {
        * @return Whether the spawnPos field is set.
        */
       public boolean hasSpawnPos() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return spawnPosBuilder_ != null || spawnPos_ != null;
       }
       /**
        * <code>.Vector spawn_pos = 13;</code>
@@ -654,11 +687,11 @@ public final class HomeNpcDataOuterClass {
             throw new NullPointerException();
           }
           spawnPos_ = value;
+          onChanged();
         } else {
           spawnPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -668,11 +701,11 @@ public final class HomeNpcDataOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (spawnPosBuilder_ == null) {
           spawnPos_ = builderForValue.build();
+          onChanged();
         } else {
           spawnPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -680,38 +713,38 @@ public final class HomeNpcDataOuterClass {
        */
       public Builder mergeSpawnPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (spawnPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            spawnPos_ != null &&
-            spawnPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getSpawnPosBuilder().mergeFrom(value);
+          if (spawnPos_ != null) {
+            spawnPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(spawnPos_).mergeFrom(value).buildPartial();
           } else {
             spawnPos_ = value;
           }
+          onChanged();
         } else {
           spawnPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 13;</code>
        */
       public Builder clearSpawnPos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        spawnPos_ = null;
-        if (spawnPosBuilder_ != null) {
-          spawnPosBuilder_.dispose();
+        if (spawnPosBuilder_ == null) {
+          spawnPos_ = null;
+          onChanged();
+        } else {
+          spawnPos_ = null;
           spawnPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 13;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSpawnPosBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getSpawnPosFieldBuilder().getBuilder();
       }
@@ -760,7 +793,6 @@ public final class HomeNpcDataOuterClass {
       public Builder setCostumeId(int value) {
         
         costumeId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -769,7 +801,7 @@ public final class HomeNpcDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         costumeId_ = 0;
         onChanged();
         return this;
@@ -783,7 +815,7 @@ public final class HomeNpcDataOuterClass {
        * @return Whether the spawnRot field is set.
        */
       public boolean hasSpawnRot() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return spawnRotBuilder_ != null || spawnRot_ != null;
       }
       /**
        * <code>.Vector spawn_rot = 7;</code>
@@ -805,11 +837,11 @@ public final class HomeNpcDataOuterClass {
             throw new NullPointerException();
           }
           spawnRot_ = value;
+          onChanged();
         } else {
           spawnRotBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -819,11 +851,11 @@ public final class HomeNpcDataOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (spawnRotBuilder_ == null) {
           spawnRot_ = builderForValue.build();
+          onChanged();
         } else {
           spawnRotBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -831,38 +863,38 @@ public final class HomeNpcDataOuterClass {
        */
       public Builder mergeSpawnRot(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (spawnRotBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            spawnRot_ != null &&
-            spawnRot_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getSpawnRotBuilder().mergeFrom(value);
+          if (spawnRot_ != null) {
+            spawnRot_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(spawnRot_).mergeFrom(value).buildPartial();
           } else {
             spawnRot_ = value;
           }
+          onChanged();
         } else {
           spawnRotBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector spawn_rot = 7;</code>
        */
       public Builder clearSpawnRot() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        spawnRot_ = null;
-        if (spawnRotBuilder_ != null) {
-          spawnRotBuilder_.dispose();
+        if (spawnRotBuilder_ == null) {
+          spawnRot_ = null;
+          onChanged();
+        } else {
+          spawnRot_ = null;
           spawnRotBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector spawn_rot = 7;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSpawnRotBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getSpawnRotFieldBuilder().getBuilder();
       }
@@ -926,18 +958,7 @@ public final class HomeNpcDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeNpcData(input, extensionRegistry);
       }
     };
 

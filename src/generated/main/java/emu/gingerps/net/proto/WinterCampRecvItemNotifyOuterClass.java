@@ -70,6 +70,56 @@ public final class WinterCampRecvItemNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WinterCampRecvItemNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 90: {
+              emu.gingerps.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.Builder subBuilder = null;
+              if (recvItemData_ != null) {
+                subBuilder = recvItemData_.toBuilder();
+              }
+              recvItemData_ = input.readMessage(emu.gingerps.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(recvItemData_);
+                recvItemData_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WinterCampRecvItemNotifyOuterClass.internal_static_WinterCampRecvItemNotify_descriptor;
@@ -106,7 +156,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemDataOrBuilder getRecvItemDataOrBuilder() {
-      return recvItemData_ == null ? emu.gingerps.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.getDefaultInstance() : recvItemData_;
+      return getRecvItemData();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -126,7 +176,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
       if (recvItemData_ != null) {
         output.writeMessage(11, getRecvItemData());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -139,7 +189,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getRecvItemData());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +209,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         if (!getRecvItemData()
             .equals(other.getRecvItemData())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +224,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         hash = (37 * hash) + RECV_ITEM_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getRecvItemData().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -301,21 +351,26 @@ public final class WinterCampRecvItemNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WinterCampRecvItemNotifyOuterClass.WinterCampRecvItemNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        recvItemData_ = null;
-        if (recvItemDataBuilder_ != null) {
-          recvItemDataBuilder_.dispose();
+        if (recvItemDataBuilder_ == null) {
+          recvItemData_ = null;
+        } else {
+          recvItemData_ = null;
           recvItemDataBuilder_ = null;
         }
         return this;
@@ -344,18 +399,13 @@ public final class WinterCampRecvItemNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WinterCampRecvItemNotifyOuterClass.WinterCampRecvItemNotify buildPartial() {
         emu.gingerps.net.proto.WinterCampRecvItemNotifyOuterClass.WinterCampRecvItemNotify result = new emu.gingerps.net.proto.WinterCampRecvItemNotifyOuterClass.WinterCampRecvItemNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (recvItemDataBuilder_ == null) {
+          result.recvItemData_ = recvItemData_;
+        } else {
+          result.recvItemData_ = recvItemDataBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WinterCampRecvItemNotifyOuterClass.WinterCampRecvItemNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.recvItemData_ = recvItemDataBuilder_ == null
-              ? recvItemData_
-              : recvItemDataBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -405,7 +455,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         if (other.hasRecvItemData()) {
           mergeRecvItemData(other.getRecvItemData());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -420,40 +470,19 @@ public final class WinterCampRecvItemNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WinterCampRecvItemNotifyOuterClass.WinterCampRecvItemNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 90: {
-                input.readMessage(
-                    getRecvItemDataFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WinterCampRecvItemNotifyOuterClass.WinterCampRecvItemNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData recvItemData_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -463,7 +492,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
        * @return Whether the recvItemData field is set.
        */
       public boolean hasRecvItemData() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return recvItemDataBuilder_ != null || recvItemData_ != null;
       }
       /**
        * <code>.WinterCampRecvItemData recv_item_data = 11;</code>
@@ -485,11 +514,11 @@ public final class WinterCampRecvItemNotifyOuterClass {
             throw new NullPointerException();
           }
           recvItemData_ = value;
+          onChanged();
         } else {
           recvItemDataBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -499,11 +528,11 @@ public final class WinterCampRecvItemNotifyOuterClass {
           emu.gingerps.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.Builder builderForValue) {
         if (recvItemDataBuilder_ == null) {
           recvItemData_ = builderForValue.build();
+          onChanged();
         } else {
           recvItemDataBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -511,38 +540,38 @@ public final class WinterCampRecvItemNotifyOuterClass {
        */
       public Builder mergeRecvItemData(emu.gingerps.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData value) {
         if (recvItemDataBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            recvItemData_ != null &&
-            recvItemData_ != emu.gingerps.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.getDefaultInstance()) {
-            getRecvItemDataBuilder().mergeFrom(value);
+          if (recvItemData_ != null) {
+            recvItemData_ =
+              emu.gingerps.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.newBuilder(recvItemData_).mergeFrom(value).buildPartial();
           } else {
             recvItemData_ = value;
           }
+          onChanged();
         } else {
           recvItemDataBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.WinterCampRecvItemData recv_item_data = 11;</code>
        */
       public Builder clearRecvItemData() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        recvItemData_ = null;
-        if (recvItemDataBuilder_ != null) {
-          recvItemDataBuilder_.dispose();
+        if (recvItemDataBuilder_ == null) {
+          recvItemData_ = null;
+          onChanged();
+        } else {
+          recvItemData_ = null;
           recvItemDataBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.WinterCampRecvItemData recv_item_data = 11;</code>
        */
       public emu.gingerps.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.Builder getRecvItemDataBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getRecvItemDataFieldBuilder().getBuilder();
       }
@@ -606,18 +635,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WinterCampRecvItemNotify(input, extensionRegistry);
       }
     };
 

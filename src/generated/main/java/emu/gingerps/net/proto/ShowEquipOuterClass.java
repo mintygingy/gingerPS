@@ -83,6 +83,76 @@ public final class ShowEquipOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ShowEquip(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              itemId_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              emu.gingerps.net.proto.ReliquaryOuterClass.Reliquary.Builder subBuilder = null;
+              if (detailCase_ == 2) {
+                subBuilder = ((emu.gingerps.net.proto.ReliquaryOuterClass.Reliquary) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.ReliquaryOuterClass.Reliquary.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.ReliquaryOuterClass.Reliquary) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 2;
+              break;
+            }
+            case 26: {
+              emu.gingerps.net.proto.WeaponOuterClass.Weapon.Builder subBuilder = null;
+              if (detailCase_ == 3) {
+                subBuilder = ((emu.gingerps.net.proto.WeaponOuterClass.Weapon) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.WeaponOuterClass.Weapon.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.WeaponOuterClass.Weapon) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 3;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ShowEquipOuterClass.internal_static_ShowEquip_descriptor;
@@ -138,7 +208,7 @@ public final class ShowEquipOuterClass {
     }
 
     public static final int ITEM_ID_FIELD_NUMBER = 1;
-    private int itemId_ = 0;
+    private int itemId_;
     /**
      * <code>uint32 item_id = 1;</code>
      * @return The itemId.
@@ -233,7 +303,7 @@ public final class ShowEquipOuterClass {
       if (detailCase_ == 3) {
         output.writeMessage(3, (emu.gingerps.net.proto.WeaponOuterClass.Weapon) detail_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -254,7 +324,7 @@ public final class ShowEquipOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (emu.gingerps.net.proto.WeaponOuterClass.Weapon) detail_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -284,7 +354,7 @@ public final class ShowEquipOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -309,7 +379,7 @@ public final class ShowEquipOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -426,25 +496,24 @@ public final class ShowEquipOuterClass {
 
       // Construct using emu.gingerps.net.proto.ShowEquipOuterClass.ShowEquip.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         itemId_ = 0;
-        if (reliquaryBuilder_ != null) {
-          reliquaryBuilder_.clear();
-        }
-        if (weaponBuilder_ != null) {
-          weaponBuilder_.clear();
-        }
+
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -473,30 +542,24 @@ public final class ShowEquipOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ShowEquipOuterClass.ShowEquip buildPartial() {
         emu.gingerps.net.proto.ShowEquipOuterClass.ShowEquip result = new emu.gingerps.net.proto.ShowEquipOuterClass.ShowEquip(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        result.itemId_ = itemId_;
+        if (detailCase_ == 2) {
+          if (reliquaryBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = reliquaryBuilder_.build();
+          }
+        }
+        if (detailCase_ == 3) {
+          if (weaponBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = weaponBuilder_.build();
+          }
+        }
+        result.detailCase_ = detailCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ShowEquipOuterClass.ShowEquip result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.itemId_ = itemId_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.ShowEquipOuterClass.ShowEquip result) {
-        result.detailCase_ = detailCase_;
-        result.detail_ = this.detail_;
-        if (detailCase_ == 2 &&
-            reliquaryBuilder_ != null) {
-          result.detail_ = reliquaryBuilder_.build();
-        }
-        if (detailCase_ == 3 &&
-            weaponBuilder_ != null) {
-          result.detail_ = weaponBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -559,7 +622,7 @@ public final class ShowEquipOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -574,49 +637,17 @@ public final class ShowEquipOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ShowEquipOuterClass.ShowEquip parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                itemId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getReliquaryFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 2;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getWeaponFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 3;
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ShowEquipOuterClass.ShowEquip) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int detailCase_ = 0;
@@ -634,7 +665,6 @@ public final class ShowEquipOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private int itemId_ ;
       /**
@@ -653,7 +683,6 @@ public final class ShowEquipOuterClass {
       public Builder setItemId(int value) {
         
         itemId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -662,7 +691,7 @@ public final class ShowEquipOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearItemId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         itemId_ = 0;
         onChanged();
         return this;
@@ -742,9 +771,8 @@ public final class ShowEquipOuterClass {
         } else {
           if (detailCase_ == 2) {
             reliquaryBuilder_.mergeFrom(value);
-          } else {
-            reliquaryBuilder_.setMessage(value);
           }
+          reliquaryBuilder_.setMessage(value);
         }
         detailCase_ = 2;
         return this;
@@ -806,7 +834,7 @@ public final class ShowEquipOuterClass {
           detail_ = null;
         }
         detailCase_ = 2;
-        onChanged();
+        onChanged();;
         return reliquaryBuilder_;
       }
 
@@ -884,9 +912,8 @@ public final class ShowEquipOuterClass {
         } else {
           if (detailCase_ == 3) {
             weaponBuilder_.mergeFrom(value);
-          } else {
-            weaponBuilder_.setMessage(value);
           }
+          weaponBuilder_.setMessage(value);
         }
         detailCase_ = 3;
         return this;
@@ -948,7 +975,7 @@ public final class ShowEquipOuterClass {
           detail_ = null;
         }
         detailCase_ = 3;
-        onChanged();
+        onChanged();;
         return weaponBuilder_;
       }
       @java.lang.Override
@@ -984,18 +1011,7 @@ public final class ShowEquipOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ShowEquip(input, extensionRegistry);
       }
     };
 

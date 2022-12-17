@@ -109,6 +109,107 @@ public final class GetCityReputationMapInfoRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetCityReputationMapInfoRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unlockHuntingCityList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unlockHuntingCityList_.addInt(input.readUInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                unlockHuntingCityList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unlockHuntingCityList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 40: {
+
+              unk3300NCMHMODIIKM_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              unk3300GJFNOPNMFNG_ = input.readBool();
+              break;
+            }
+            case 104: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 120: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                rewardCityList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              rewardCityList_.addInt(input.readUInt32());
+              break;
+            }
+            case 122: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                rewardCityList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                rewardCityList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unlockHuntingCityList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          rewardCityList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetCityReputationMapInfoRspOuterClass.internal_static_GetCityReputationMapInfoRsp_descriptor;
@@ -123,7 +224,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 13;</code>
      * @return The retcode.
@@ -134,7 +235,6 @@ public final class GetCityReputationMapInfoRspOuterClass {
     }
 
     public static final int UNLOCK_HUNTING_CITY_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unlockHuntingCityList_;
     /**
      * <code>repeated uint32 unlock_hunting_city_list = 4;</code>
@@ -163,7 +263,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
     private int unlockHuntingCityListMemoizedSerializedSize = -1;
 
     public static final int UNK3300_GJFNOPNMFNG_FIELD_NUMBER = 12;
-    private boolean unk3300GJFNOPNMFNG_ = false;
+    private boolean unk3300GJFNOPNMFNG_;
     /**
      * <code>bool Unk3300_GJFNOPNMFNG = 12;</code>
      * @return The unk3300GJFNOPNMFNG.
@@ -174,7 +274,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
     }
 
     public static final int UNK3300_NCMHMODIIKM_FIELD_NUMBER = 5;
-    private boolean unk3300NCMHMODIIKM_ = false;
+    private boolean unk3300NCMHMODIIKM_;
     /**
      * <code>bool Unk3300_NCMHMODIIKM = 5;</code>
      * @return The unk3300NCMHMODIIKM.
@@ -185,7 +285,6 @@ public final class GetCityReputationMapInfoRspOuterClass {
     }
 
     public static final int REWARD_CITY_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList rewardCityList_;
     /**
      * <code>repeated uint32 reward_city_list = 15;</code>
@@ -251,7 +350,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
       for (int i = 0; i < rewardCityList_.size(); i++) {
         output.writeUInt32NoTag(rewardCityList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -300,7 +399,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
         }
         rewardCityListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -325,7 +424,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
           != other.getUnk3300NCMHMODIIKM()) return false;
       if (!getRewardCityListList()
           .equals(other.getRewardCityListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -352,7 +451,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
         hash = (37 * hash) + REWARD_CITY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRewardCityListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -479,23 +578,32 @@ public final class GetCityReputationMapInfoRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         unlockHuntingCityList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300GJFNOPNMFNG_ = false;
+
         unk3300NCMHMODIIKM_ = false;
+
         rewardCityList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -522,36 +630,22 @@ public final class GetCityReputationMapInfoRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp buildPartial() {
         emu.gingerps.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp result = new emu.gingerps.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           unlockHuntingCityList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.unlockHuntingCityList_ = unlockHuntingCityList_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        result.unk3300GJFNOPNMFNG_ = unk3300GJFNOPNMFNG_;
+        result.unk3300NCMHMODIIKM_ = unk3300NCMHMODIIKM_;
+        if (((bitField0_ & 0x00000002) != 0)) {
           rewardCityList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.rewardCityList_ = rewardCityList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300GJFNOPNMFNG_ = unk3300GJFNOPNMFNG_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300NCMHMODIIKM_ = unk3300NCMHMODIIKM_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -604,7 +698,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
         if (!other.unlockHuntingCityList_.isEmpty()) {
           if (unlockHuntingCityList_.isEmpty()) {
             unlockHuntingCityList_ = other.unlockHuntingCityList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureUnlockHuntingCityListIsMutable();
             unlockHuntingCityList_.addAll(other.unlockHuntingCityList_);
@@ -620,14 +714,14 @@ public final class GetCityReputationMapInfoRspOuterClass {
         if (!other.rewardCityList_.isEmpty()) {
           if (rewardCityList_.isEmpty()) {
             rewardCityList_ = other.rewardCityList_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureRewardCityListIsMutable();
             rewardCityList_.addAll(other.rewardCityList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -642,77 +736,17 @@ public final class GetCityReputationMapInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                int v = input.readUInt32();
-                ensureUnlockHuntingCityListIsMutable();
-                unlockHuntingCityList_.addInt(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnlockHuntingCityListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unlockHuntingCityList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              case 40: {
-                unk3300NCMHMODIIKM_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 40
-              case 96: {
-                unk3300GJFNOPNMFNG_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              case 104: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              case 120: {
-                int v = input.readUInt32();
-                ensureRewardCityListIsMutable();
-                rewardCityList_.addInt(v);
-                break;
-              } // case 120
-              case 122: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureRewardCityListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  rewardCityList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -734,7 +768,6 @@ public final class GetCityReputationMapInfoRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -743,7 +776,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -751,10 +784,10 @@ public final class GetCityReputationMapInfoRspOuterClass {
 
       private com.google.protobuf.Internal.IntList unlockHuntingCityList_ = emptyIntList();
       private void ensureUnlockHuntingCityListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           unlockHuntingCityList_ = mutableCopy(unlockHuntingCityList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 unlock_hunting_city_list = 4;</code>
@@ -762,7 +795,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnlockHuntingCityListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(unlockHuntingCityList_) : unlockHuntingCityList_;
       }
       /**
@@ -788,7 +821,6 @@ public final class GetCityReputationMapInfoRspOuterClass {
        */
       public Builder setUnlockHuntingCityList(
           int index, int value) {
-        
         ensureUnlockHuntingCityListIsMutable();
         unlockHuntingCityList_.setInt(index, value);
         onChanged();
@@ -800,7 +832,6 @@ public final class GetCityReputationMapInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnlockHuntingCityList(int value) {
-        
         ensureUnlockHuntingCityListIsMutable();
         unlockHuntingCityList_.addInt(value);
         onChanged();
@@ -825,7 +856,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
        */
       public Builder clearUnlockHuntingCityList() {
         unlockHuntingCityList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -847,7 +878,6 @@ public final class GetCityReputationMapInfoRspOuterClass {
       public Builder setUnk3300GJFNOPNMFNG(boolean value) {
         
         unk3300GJFNOPNMFNG_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -856,7 +886,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GJFNOPNMFNG() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300GJFNOPNMFNG_ = false;
         onChanged();
         return this;
@@ -879,7 +909,6 @@ public final class GetCityReputationMapInfoRspOuterClass {
       public Builder setUnk3300NCMHMODIIKM(boolean value) {
         
         unk3300NCMHMODIIKM_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -888,7 +917,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NCMHMODIIKM() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300NCMHMODIIKM_ = false;
         onChanged();
         return this;
@@ -896,10 +925,10 @@ public final class GetCityReputationMapInfoRspOuterClass {
 
       private com.google.protobuf.Internal.IntList rewardCityList_ = emptyIntList();
       private void ensureRewardCityListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           rewardCityList_ = mutableCopy(rewardCityList_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 reward_city_list = 15;</code>
@@ -907,7 +936,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getRewardCityListList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(rewardCityList_) : rewardCityList_;
       }
       /**
@@ -933,7 +962,6 @@ public final class GetCityReputationMapInfoRspOuterClass {
        */
       public Builder setRewardCityList(
           int index, int value) {
-        
         ensureRewardCityListIsMutable();
         rewardCityList_.setInt(index, value);
         onChanged();
@@ -945,7 +973,6 @@ public final class GetCityReputationMapInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addRewardCityList(int value) {
-        
         ensureRewardCityListIsMutable();
         rewardCityList_.addInt(value);
         onChanged();
@@ -970,7 +997,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
        */
       public Builder clearRewardCityList() {
         rewardCityList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1007,18 +1034,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetCityReputationMapInfoRsp(input, extensionRegistry);
       }
     };
 

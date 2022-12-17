@@ -76,6 +76,61 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GameplayRecommendationReliquaryResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                mainPropDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              mainPropDataList_.add(
+                  input.readMessage(emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.parser(), extensionRegistry));
+              break;
+            }
+            case 88: {
+
+              equipType_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          mainPropDataList_ = java.util.Collections.unmodifiableList(mainPropDataList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GameplayRecommendationReliquaryResponseOuterClass.internal_static_GameplayRecommendationReliquaryResponse_descriptor;
@@ -90,7 +145,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
     }
 
     public static final int EQUIP_TYPE_FIELD_NUMBER = 11;
-    private int equipType_ = 0;
+    private int equipType_;
     /**
      * <code>uint32 equip_type = 11;</code>
      * @return The equipType.
@@ -101,7 +156,6 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
     }
 
     public static final int MAIN_PROP_DATA_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> mainPropDataList_;
     /**
      * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 2;</code>
@@ -161,7 +215,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       if (equipType_ != 0) {
         output.writeUInt32(11, equipType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -178,7 +232,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, equipType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +251,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
           != other.getEquipType()) return false;
       if (!getMainPropDataListList()
           .equals(other.getMainPropDataListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -214,7 +268,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         hash = (37 * hash) + MAIN_PROP_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMainPropDataListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +385,31 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
 
       // Construct using emu.gingerps.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMainPropDataListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         equipType_ = 0;
+
         if (mainPropDataListBuilder_ == null) {
           mainPropDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          mainPropDataList_ = null;
           mainPropDataListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -377,29 +436,19 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse buildPartial() {
         emu.gingerps.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse result = new emu.gingerps.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse result) {
+        int from_bitField0_ = bitField0_;
+        result.equipType_ = equipType_;
         if (mainPropDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             mainPropDataList_ = java.util.Collections.unmodifiableList(mainPropDataList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.mainPropDataList_ = mainPropDataList_;
         } else {
           result.mainPropDataList_ = mainPropDataListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.equipType_ = equipType_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -453,7 +502,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
           if (!other.mainPropDataList_.isEmpty()) {
             if (mainPropDataList_.isEmpty()) {
               mainPropDataList_ = other.mainPropDataList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureMainPropDataListIsMutable();
               mainPropDataList_.addAll(other.mainPropDataList_);
@@ -466,7 +515,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
               mainPropDataListBuilder_.dispose();
               mainPropDataListBuilder_ = null;
               mainPropDataList_ = other.mainPropDataList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               mainPropDataListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMainPropDataListFieldBuilder() : null;
@@ -475,7 +524,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -490,48 +539,17 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.parser(),
-                        extensionRegistry);
-                if (mainPropDataListBuilder_ == null) {
-                  ensureMainPropDataListIsMutable();
-                  mainPropDataList_.add(m);
-                } else {
-                  mainPropDataListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 88: {
-                equipType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -553,7 +571,6 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       public Builder setEquipType(int value) {
         
         equipType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +579,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEquipType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         equipType_ = 0;
         onChanged();
         return this;
@@ -571,9 +588,9 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       private java.util.List<emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> mainPropDataList_ =
         java.util.Collections.emptyList();
       private void ensureMainPropDataListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           mainPropDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData>(mainPropDataList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -723,7 +740,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       public Builder clearMainPropDataList() {
         if (mainPropDataListBuilder_ == null) {
           mainPropDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           mainPropDataListBuilder_.clear();
@@ -800,7 +817,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
           mainPropDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData, emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder, emu.gingerps.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder>(
                   mainPropDataList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           mainPropDataList_ = null;
@@ -840,18 +857,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GameplayRecommendationReliquaryResponse(input, extensionRegistry);
       }
     };
 

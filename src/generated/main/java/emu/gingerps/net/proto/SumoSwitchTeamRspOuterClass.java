@@ -110,6 +110,81 @@ public final class SumoSwitchTeamRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SumoSwitchTeamRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              unk3300DJBJACGHGDM_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 64: {
+
+              unk3300BNJBIGHIJOC_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                dungeonTeamList_ = new java.util.ArrayList<emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              dungeonTeamList_.add(
+                  input.readMessage(emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
+
+              activityId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          dungeonTeamList_ = java.util.Collections.unmodifiableList(dungeonTeamList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SumoSwitchTeamRspOuterClass.internal_static_SumoSwitchTeamRsp_descriptor;
@@ -124,7 +199,7 @@ public final class SumoSwitchTeamRspOuterClass {
     }
 
     public static final int UNK3300_BNJBIGHIJOC_FIELD_NUMBER = 8;
-    private int unk3300BNJBIGHIJOC_ = 0;
+    private int unk3300BNJBIGHIJOC_;
     /**
      * <code>uint32 Unk3300_BNJBIGHIJOC = 8;</code>
      * @return The unk3300BNJBIGHIJOC.
@@ -135,7 +210,7 @@ public final class SumoSwitchTeamRspOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 2;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 2;</code>
      * @return The stageId.
@@ -146,7 +221,7 @@ public final class SumoSwitchTeamRspOuterClass {
     }
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 15;
-    private int activityId_ = 0;
+    private int activityId_;
     /**
      * <code>uint32 activity_id = 15;</code>
      * @return The activityId.
@@ -157,7 +232,7 @@ public final class SumoSwitchTeamRspOuterClass {
     }
 
     public static final int UNK3300_DJBJACGHGDM_FIELD_NUMBER = 1;
-    private int unk3300DJBJACGHGDM_ = 0;
+    private int unk3300DJBJACGHGDM_;
     /**
      * <code>uint32 Unk3300_DJBJACGHGDM = 1;</code>
      * @return The unk3300DJBJACGHGDM.
@@ -168,7 +243,6 @@ public final class SumoSwitchTeamRspOuterClass {
     }
 
     public static final int DUNGEON_TEAM_LIST_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam> dungeonTeamList_;
     /**
      * <code>repeated .SumoDungeonTeam dungeon_team_list = 12;</code>
@@ -209,7 +283,7 @@ public final class SumoSwitchTeamRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 6;</code>
      * @return The retcode.
@@ -251,7 +325,7 @@ public final class SumoSwitchTeamRspOuterClass {
       if (activityId_ != 0) {
         output.writeUInt32(15, activityId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -284,7 +358,7 @@ public final class SumoSwitchTeamRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, activityId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -311,7 +385,7 @@ public final class SumoSwitchTeamRspOuterClass {
           .equals(other.getDungeonTeamListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -336,7 +410,7 @@ public final class SumoSwitchTeamRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -463,30 +537,39 @@ public final class SumoSwitchTeamRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDungeonTeamListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300BNJBIGHIJOC_ = 0;
+
         stageId_ = 0;
+
         activityId_ = 0;
+
         unk3300DJBJACGHGDM_ = 0;
+
         if (dungeonTeamListBuilder_ == null) {
           dungeonTeamList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          dungeonTeamList_ = null;
           dungeonTeamListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         retcode_ = 0;
+
         return this;
       }
 
@@ -513,41 +596,23 @@ public final class SumoSwitchTeamRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp buildPartial() {
         emu.gingerps.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp result = new emu.gingerps.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.unk3300BNJBIGHIJOC_ = unk3300BNJBIGHIJOC_;
+        result.stageId_ = stageId_;
+        result.activityId_ = activityId_;
+        result.unk3300DJBJACGHGDM_ = unk3300DJBJACGHGDM_;
         if (dungeonTeamListBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             dungeonTeamList_ = java.util.Collections.unmodifiableList(dungeonTeamList_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.dungeonTeamList_ = dungeonTeamList_;
         } else {
           result.dungeonTeamList_ = dungeonTeamListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300BNJBIGHIJOC_ = unk3300BNJBIGHIJOC_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.stageId_ = stageId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.activityId_ = activityId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300DJBJACGHGDM_ = unk3300DJBJACGHGDM_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        result.retcode_ = retcode_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -610,7 +675,7 @@ public final class SumoSwitchTeamRspOuterClass {
           if (!other.dungeonTeamList_.isEmpty()) {
             if (dungeonTeamList_.isEmpty()) {
               dungeonTeamList_ = other.dungeonTeamList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureDungeonTeamListIsMutable();
               dungeonTeamList_.addAll(other.dungeonTeamList_);
@@ -623,7 +688,7 @@ public final class SumoSwitchTeamRspOuterClass {
               dungeonTeamListBuilder_.dispose();
               dungeonTeamListBuilder_ = null;
               dungeonTeamList_ = other.dungeonTeamList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
               dungeonTeamListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDungeonTeamListFieldBuilder() : null;
@@ -635,7 +700,7 @@ public final class SumoSwitchTeamRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -650,68 +715,17 @@ public final class SumoSwitchTeamRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                unk3300DJBJACGHGDM_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 8
-              case 16: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 48: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 64: {
-                unk3300BNJBIGHIJOC_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              case 98: {
-                emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.parser(),
-                        extensionRegistry);
-                if (dungeonTeamListBuilder_ == null) {
-                  ensureDungeonTeamListIsMutable();
-                  dungeonTeamList_.add(m);
-                } else {
-                  dungeonTeamListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
-              case 120: {
-                activityId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -733,7 +747,6 @@ public final class SumoSwitchTeamRspOuterClass {
       public Builder setUnk3300BNJBIGHIJOC(int value) {
         
         unk3300BNJBIGHIJOC_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -742,7 +755,7 @@ public final class SumoSwitchTeamRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BNJBIGHIJOC() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300BNJBIGHIJOC_ = 0;
         onChanged();
         return this;
@@ -765,7 +778,6 @@ public final class SumoSwitchTeamRspOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -774,7 +786,7 @@ public final class SumoSwitchTeamRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -797,7 +809,6 @@ public final class SumoSwitchTeamRspOuterClass {
       public Builder setActivityId(int value) {
         
         activityId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -806,7 +817,7 @@ public final class SumoSwitchTeamRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         activityId_ = 0;
         onChanged();
         return this;
@@ -829,7 +840,6 @@ public final class SumoSwitchTeamRspOuterClass {
       public Builder setUnk3300DJBJACGHGDM(int value) {
         
         unk3300DJBJACGHGDM_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -838,7 +848,7 @@ public final class SumoSwitchTeamRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DJBJACGHGDM() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300DJBJACGHGDM_ = 0;
         onChanged();
         return this;
@@ -847,9 +857,9 @@ public final class SumoSwitchTeamRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam> dungeonTeamList_ =
         java.util.Collections.emptyList();
       private void ensureDungeonTeamListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           dungeonTeamList_ = new java.util.ArrayList<emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam>(dungeonTeamList_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -999,7 +1009,7 @@ public final class SumoSwitchTeamRspOuterClass {
       public Builder clearDungeonTeamList() {
         if (dungeonTeamListBuilder_ == null) {
           dungeonTeamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           dungeonTeamListBuilder_.clear();
@@ -1076,7 +1086,7 @@ public final class SumoSwitchTeamRspOuterClass {
           dungeonTeamListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam, emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.Builder, emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeamOrBuilder>(
                   dungeonTeamList_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           dungeonTeamList_ = null;
@@ -1101,7 +1111,6 @@ public final class SumoSwitchTeamRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1110,7 +1119,7 @@ public final class SumoSwitchTeamRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -1148,18 +1157,7 @@ public final class SumoSwitchTeamRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SumoSwitchTeamRsp(input, extensionRegistry);
       }
     };
 

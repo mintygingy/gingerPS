@@ -73,6 +73,58 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private DraftGuestReplyTwiceConfirmNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 88: {
+
+              guestUid_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              isAgree_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              draftId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.internal_static_DraftGuestReplyTwiceConfirmNotify_descriptor;
@@ -87,7 +139,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
     }
 
     public static final int IS_AGREE_FIELD_NUMBER = 14;
-    private boolean isAgree_ = false;
+    private boolean isAgree_;
     /**
      * <code>bool is_agree = 14;</code>
      * @return The isAgree.
@@ -98,7 +150,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
     }
 
     public static final int DRAFT_ID_FIELD_NUMBER = 15;
-    private int draftId_ = 0;
+    private int draftId_;
     /**
      * <code>uint32 draft_id = 15;</code>
      * @return The draftId.
@@ -109,7 +161,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
     }
 
     public static final int GUEST_UID_FIELD_NUMBER = 11;
-    private int guestUid_ = 0;
+    private int guestUid_;
     /**
      * <code>uint32 guest_uid = 11;</code>
      * @return The guestUid.
@@ -142,7 +194,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       if (draftId_ != 0) {
         output.writeUInt32(15, draftId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -163,7 +215,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, draftId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -184,7 +236,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
           != other.getDraftId()) return false;
       if (getGuestUid()
           != other.getGuestUid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -202,7 +254,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       hash = (53 * hash) + getDraftId();
       hash = (37 * hash) + GUEST_UID_FIELD_NUMBER;
       hash = (53 * hash) + getGuestUid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,21 +381,28 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isAgree_ = false;
+
         draftId_ = 0;
+
         guestUid_ = 0;
+
         return this;
       }
 
@@ -370,22 +429,11 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify buildPartial() {
         emu.gingerps.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify result = new emu.gingerps.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isAgree_ = isAgree_;
+        result.draftId_ = draftId_;
+        result.guestUid_ = guestUid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isAgree_ = isAgree_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.draftId_ = draftId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.guestUid_ = guestUid_;
-        }
       }
 
       @java.lang.Override
@@ -441,7 +489,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
         if (other.getGuestUid() != 0) {
           setGuestUid(other.getGuestUid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -456,48 +504,19 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 88: {
-                guestUid_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 88
-              case 112: {
-                isAgree_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              case 120: {
-                draftId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isAgree_ ;
       /**
@@ -516,7 +535,6 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       public Builder setIsAgree(boolean value) {
         
         isAgree_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -525,7 +543,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAgree() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isAgree_ = false;
         onChanged();
         return this;
@@ -548,7 +566,6 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       public Builder setDraftId(int value) {
         
         draftId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -557,7 +574,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDraftId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         draftId_ = 0;
         onChanged();
         return this;
@@ -580,7 +597,6 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       public Builder setGuestUid(int value) {
         
         guestUid_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -589,7 +605,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuestUid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         guestUid_ = 0;
         onChanged();
         return this;
@@ -627,18 +643,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DraftGuestReplyTwiceConfirmNotify(input, extensionRegistry);
       }
     };
 

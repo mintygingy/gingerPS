@@ -82,6 +82,69 @@ public final class CustomDungeonVerifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CustomDungeonVerify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              dungeonGuid_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              timestamp_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              lang_ = input.readUInt32();
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              region_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonVerifyOuterClass.internal_static_CustomDungeonVerify_descriptor;
@@ -96,7 +159,7 @@ public final class CustomDungeonVerifyOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 3;
-    private int uid_ = 0;
+    private int uid_;
     /**
      * <code>uint32 uid = 3;</code>
      * @return The uid.
@@ -107,8 +170,7 @@ public final class CustomDungeonVerifyOuterClass {
     }
 
     public static final int REGION_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object region_ = "";
+    private volatile java.lang.Object region_;
     /**
      * <code>string region = 13;</code>
      * @return The region.
@@ -146,7 +208,7 @@ public final class CustomDungeonVerifyOuterClass {
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 5;
-    private int timestamp_ = 0;
+    private int timestamp_;
     /**
      * <code>uint32 timestamp = 5;</code>
      * @return The timestamp.
@@ -157,7 +219,7 @@ public final class CustomDungeonVerifyOuterClass {
     }
 
     public static final int DUNGEON_GUID_FIELD_NUMBER = 1;
-    private long dungeonGuid_ = 0L;
+    private long dungeonGuid_;
     /**
      * <code>uint64 dungeon_guid = 1;</code>
      * @return The dungeonGuid.
@@ -168,7 +230,7 @@ public final class CustomDungeonVerifyOuterClass {
     }
 
     public static final int LANG_FIELD_NUMBER = 6;
-    private int lang_ = 0;
+    private int lang_;
     /**
      * <code>uint32 lang = 6;</code>
      * @return The lang.
@@ -207,7 +269,7 @@ public final class CustomDungeonVerifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, region_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -235,7 +297,7 @@ public final class CustomDungeonVerifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, region_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -260,7 +322,7 @@ public final class CustomDungeonVerifyOuterClass {
           != other.getDungeonGuid()) return false;
       if (getLang()
           != other.getLang()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -282,7 +344,7 @@ public final class CustomDungeonVerifyOuterClass {
           getDungeonGuid());
       hash = (37 * hash) + LANG_FIELD_NUMBER;
       hash = (53 * hash) + getLang();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -399,23 +461,32 @@ public final class CustomDungeonVerifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonVerifyOuterClass.CustomDungeonVerify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         uid_ = 0;
+
         region_ = "";
+
         timestamp_ = 0;
+
         dungeonGuid_ = 0L;
+
         lang_ = 0;
+
         return this;
       }
 
@@ -442,28 +513,13 @@ public final class CustomDungeonVerifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonVerifyOuterClass.CustomDungeonVerify buildPartial() {
         emu.gingerps.net.proto.CustomDungeonVerifyOuterClass.CustomDungeonVerify result = new emu.gingerps.net.proto.CustomDungeonVerifyOuterClass.CustomDungeonVerify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.uid_ = uid_;
+        result.region_ = region_;
+        result.timestamp_ = timestamp_;
+        result.dungeonGuid_ = dungeonGuid_;
+        result.lang_ = lang_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonVerifyOuterClass.CustomDungeonVerify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.uid_ = uid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.region_ = region_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.timestamp_ = timestamp_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.dungeonGuid_ = dungeonGuid_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.lang_ = lang_;
-        }
       }
 
       @java.lang.Override
@@ -515,7 +571,6 @@ public final class CustomDungeonVerifyOuterClass {
         }
         if (!other.getRegion().isEmpty()) {
           region_ = other.region_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getTimestamp() != 0) {
@@ -527,7 +582,7 @@ public final class CustomDungeonVerifyOuterClass {
         if (other.getLang() != 0) {
           setLang(other.getLang());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -542,58 +597,19 @@ public final class CustomDungeonVerifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CustomDungeonVerifyOuterClass.CustomDungeonVerify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                dungeonGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 8
-              case 24: {
-                uid_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 24
-              case 40: {
-                timestamp_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 48: {
-                lang_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 48
-              case 106: {
-                region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CustomDungeonVerifyOuterClass.CustomDungeonVerify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int uid_ ;
       /**
@@ -612,7 +628,6 @@ public final class CustomDungeonVerifyOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -621,7 +636,7 @@ public final class CustomDungeonVerifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uid_ = 0;
         onChanged();
         return this;
@@ -668,9 +683,11 @@ public final class CustomDungeonVerifyOuterClass {
        */
       public Builder setRegion(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         region_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -679,8 +696,8 @@ public final class CustomDungeonVerifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegion() {
+        
         region_ = getDefaultInstance().getRegion();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -691,10 +708,12 @@ public final class CustomDungeonVerifyOuterClass {
        */
       public Builder setRegionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         region_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -716,7 +735,6 @@ public final class CustomDungeonVerifyOuterClass {
       public Builder setTimestamp(int value) {
         
         timestamp_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -725,7 +743,7 @@ public final class CustomDungeonVerifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         timestamp_ = 0;
         onChanged();
         return this;
@@ -748,7 +766,6 @@ public final class CustomDungeonVerifyOuterClass {
       public Builder setDungeonGuid(long value) {
         
         dungeonGuid_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -757,7 +774,7 @@ public final class CustomDungeonVerifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonGuid() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         dungeonGuid_ = 0L;
         onChanged();
         return this;
@@ -780,7 +797,6 @@ public final class CustomDungeonVerifyOuterClass {
       public Builder setLang(int value) {
         
         lang_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -789,7 +805,7 @@ public final class CustomDungeonVerifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLang() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         lang_ = 0;
         onChanged();
         return this;
@@ -827,18 +843,7 @@ public final class CustomDungeonVerifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CustomDungeonVerify(input, extensionRegistry);
       }
     };
 

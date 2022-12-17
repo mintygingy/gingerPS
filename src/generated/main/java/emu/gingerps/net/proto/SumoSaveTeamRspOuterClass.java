@@ -104,6 +104,76 @@ public final class SumoSaveTeamRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private SumoSaveTeamRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                teamList_ = new java.util.ArrayList<emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              teamList_.add(
+                  input.readMessage(emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData.parser(), extensionRegistry));
+              break;
+            }
+            case 32: {
+
+              activityId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              difficultyId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          teamList_ = java.util.Collections.unmodifiableList(teamList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SumoSaveTeamRspOuterClass.internal_static_SumoSaveTeamRsp_descriptor;
@@ -118,7 +188,7 @@ public final class SumoSaveTeamRspOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 15;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 15;</code>
      * @return The stageId.
@@ -129,7 +199,7 @@ public final class SumoSaveTeamRspOuterClass {
     }
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 4;
-    private int activityId_ = 0;
+    private int activityId_;
     /**
      * <code>uint32 activity_id = 4;</code>
      * @return The activityId.
@@ -140,7 +210,7 @@ public final class SumoSaveTeamRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 9;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 9;</code>
      * @return The retcode.
@@ -151,7 +221,6 @@ public final class SumoSaveTeamRspOuterClass {
     }
 
     public static final int TEAM_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData> teamList_;
     /**
      * <code>repeated .SumoTeamData team_list = 2;</code>
@@ -192,7 +261,7 @@ public final class SumoSaveTeamRspOuterClass {
     }
 
     public static final int DIFFICULTY_ID_FIELD_NUMBER = 14;
-    private int difficultyId_ = 0;
+    private int difficultyId_;
     /**
      * <code>uint32 difficulty_id = 14;</code>
      * @return The difficultyId.
@@ -231,7 +300,7 @@ public final class SumoSaveTeamRspOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(15, stageId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -260,7 +329,7 @@ public final class SumoSaveTeamRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, stageId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -285,7 +354,7 @@ public final class SumoSaveTeamRspOuterClass {
           .equals(other.getTeamListList())) return false;
       if (getDifficultyId()
           != other.getDifficultyId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -308,7 +377,7 @@ public final class SumoSaveTeamRspOuterClass {
       }
       hash = (37 * hash) + DIFFICULTY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDifficultyId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -435,29 +504,37 @@ public final class SumoSaveTeamRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SumoSaveTeamRspOuterClass.SumoSaveTeamRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTeamListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         stageId_ = 0;
+
         activityId_ = 0;
+
         retcode_ = 0;
+
         if (teamListBuilder_ == null) {
           teamList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          teamList_ = null;
           teamListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         difficultyId_ = 0;
+
         return this;
       }
 
@@ -484,38 +561,22 @@ public final class SumoSaveTeamRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SumoSaveTeamRspOuterClass.SumoSaveTeamRsp buildPartial() {
         emu.gingerps.net.proto.SumoSaveTeamRspOuterClass.SumoSaveTeamRsp result = new emu.gingerps.net.proto.SumoSaveTeamRspOuterClass.SumoSaveTeamRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SumoSaveTeamRspOuterClass.SumoSaveTeamRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.stageId_ = stageId_;
+        result.activityId_ = activityId_;
+        result.retcode_ = retcode_;
         if (teamListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             teamList_ = java.util.Collections.unmodifiableList(teamList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.teamList_ = teamList_;
         } else {
           result.teamList_ = teamListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.SumoSaveTeamRspOuterClass.SumoSaveTeamRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.stageId_ = stageId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.activityId_ = activityId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.difficultyId_ = difficultyId_;
-        }
+        result.difficultyId_ = difficultyId_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -575,7 +636,7 @@ public final class SumoSaveTeamRspOuterClass {
           if (!other.teamList_.isEmpty()) {
             if (teamList_.isEmpty()) {
               teamList_ = other.teamList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureTeamListIsMutable();
               teamList_.addAll(other.teamList_);
@@ -588,7 +649,7 @@ public final class SumoSaveTeamRspOuterClass {
               teamListBuilder_.dispose();
               teamListBuilder_ = null;
               teamList_ = other.teamList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               teamListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTeamListFieldBuilder() : null;
@@ -600,7 +661,7 @@ public final class SumoSaveTeamRspOuterClass {
         if (other.getDifficultyId() != 0) {
           setDifficultyId(other.getDifficultyId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -615,63 +676,17 @@ public final class SumoSaveTeamRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.SumoSaveTeamRspOuterClass.SumoSaveTeamRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData.parser(),
-                        extensionRegistry);
-                if (teamListBuilder_ == null) {
-                  ensureTeamListIsMutable();
-                  teamList_.add(m);
-                } else {
-                  teamListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 32: {
-                activityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 72: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 72
-              case 112: {
-                difficultyId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 112
-              case 120: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.SumoSaveTeamRspOuterClass.SumoSaveTeamRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -693,7 +708,6 @@ public final class SumoSaveTeamRspOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -702,7 +716,7 @@ public final class SumoSaveTeamRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -725,7 +739,6 @@ public final class SumoSaveTeamRspOuterClass {
       public Builder setActivityId(int value) {
         
         activityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -734,7 +747,7 @@ public final class SumoSaveTeamRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         activityId_ = 0;
         onChanged();
         return this;
@@ -757,7 +770,6 @@ public final class SumoSaveTeamRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -766,7 +778,7 @@ public final class SumoSaveTeamRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -775,9 +787,9 @@ public final class SumoSaveTeamRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData> teamList_ =
         java.util.Collections.emptyList();
       private void ensureTeamListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           teamList_ = new java.util.ArrayList<emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData>(teamList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -927,7 +939,7 @@ public final class SumoSaveTeamRspOuterClass {
       public Builder clearTeamList() {
         if (teamListBuilder_ == null) {
           teamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           teamListBuilder_.clear();
@@ -1004,7 +1016,7 @@ public final class SumoSaveTeamRspOuterClass {
           teamListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData, emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamData.Builder, emu.gingerps.net.proto.SumoTeamDataOuterClass.SumoTeamDataOrBuilder>(
                   teamList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           teamList_ = null;
@@ -1029,7 +1041,6 @@ public final class SumoSaveTeamRspOuterClass {
       public Builder setDifficultyId(int value) {
         
         difficultyId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1038,7 +1049,7 @@ public final class SumoSaveTeamRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficultyId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         difficultyId_ = 0;
         onChanged();
         return this;
@@ -1076,18 +1087,7 @@ public final class SumoSaveTeamRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SumoSaveTeamRsp(input, extensionRegistry);
       }
     };
 

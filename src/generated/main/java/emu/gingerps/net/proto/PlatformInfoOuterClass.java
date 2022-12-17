@@ -180,6 +180,154 @@ public final class PlatformInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlatformInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              routeId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              startIndex_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              startRouteTime_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              startSceneTime_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (startPos_ != null) {
+                subBuilder = startPos_.toBuilder();
+              }
+              startPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startPos_);
+                startPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 64: {
+
+              isStarted_ = input.readBool();
+              break;
+            }
+            case 74: {
+              emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder subBuilder = null;
+              if (startRot_ != null) {
+                subBuilder = startRot_.toBuilder();
+              }
+              startRot_ = input.readMessage(emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startRot_);
+                startRot_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 80: {
+
+              stopSceneTime_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (posOffset_ != null) {
+                subBuilder = posOffset_.toBuilder();
+              }
+              posOffset_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(posOffset_);
+                posOffset_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 98: {
+              emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder subBuilder = null;
+              if (rotOffset_ != null) {
+                subBuilder = rotOffset_.toBuilder();
+              }
+              rotOffset_ = input.readMessage(emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rotOffset_);
+                rotOffset_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+
+              movingPlatformType_ = rawValue;
+              break;
+            }
+            case 112: {
+
+              isActive_ = input.readBool();
+              break;
+            }
+            case 122: {
+              emu.gingerps.net.proto.RouteOuterClass.Route.Builder subBuilder = null;
+              if (route_ != null) {
+                subBuilder = route_.toBuilder();
+              }
+              route_ = input.readMessage(emu.gingerps.net.proto.RouteOuterClass.Route.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(route_);
+                route_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 128: {
+
+              pointId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlatformInfoOuterClass.internal_static_PlatformInfo_descriptor;
@@ -194,7 +342,7 @@ public final class PlatformInfoOuterClass {
     }
 
     public static final int ROUTE_ID_FIELD_NUMBER = 1;
-    private int routeId_ = 0;
+    private int routeId_;
     /**
      * <code>uint32 route_id = 1;</code>
      * @return The routeId.
@@ -205,7 +353,7 @@ public final class PlatformInfoOuterClass {
     }
 
     public static final int START_INDEX_FIELD_NUMBER = 2;
-    private int startIndex_ = 0;
+    private int startIndex_;
     /**
      * <code>int32 start_index = 2;</code>
      * @return The startIndex.
@@ -216,7 +364,7 @@ public final class PlatformInfoOuterClass {
     }
 
     public static final int START_ROUTE_TIME_FIELD_NUMBER = 3;
-    private int startRouteTime_ = 0;
+    private int startRouteTime_;
     /**
      * <code>uint32 start_route_time = 3;</code>
      * @return The startRouteTime.
@@ -227,7 +375,7 @@ public final class PlatformInfoOuterClass {
     }
 
     public static final int START_SCENE_TIME_FIELD_NUMBER = 4;
-    private int startSceneTime_ = 0;
+    private int startSceneTime_;
     /**
      * <code>uint32 start_scene_time = 4;</code>
      * @return The startSceneTime.
@@ -260,11 +408,11 @@ public final class PlatformInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getStartPosOrBuilder() {
-      return startPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : startPos_;
+      return getStartPos();
     }
 
     public static final int IS_STARTED_FIELD_NUMBER = 8;
-    private boolean isStarted_ = false;
+    private boolean isStarted_;
     /**
      * <code>bool is_started = 8;</code>
      * @return The isStarted.
@@ -297,11 +445,11 @@ public final class PlatformInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder getStartRotOrBuilder() {
-      return startRot_ == null ? emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.getDefaultInstance() : startRot_;
+      return getStartRot();
     }
 
     public static final int STOP_SCENE_TIME_FIELD_NUMBER = 10;
-    private int stopSceneTime_ = 0;
+    private int stopSceneTime_;
     /**
      * <code>uint32 stop_scene_time = 10;</code>
      * @return The stopSceneTime.
@@ -334,7 +482,7 @@ public final class PlatformInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOffsetOrBuilder() {
-      return posOffset_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : posOffset_;
+      return getPosOffset();
     }
 
     public static final int ROT_OFFSET_FIELD_NUMBER = 12;
@@ -360,11 +508,11 @@ public final class PlatformInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder getRotOffsetOrBuilder() {
-      return rotOffset_ == null ? emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.getDefaultInstance() : rotOffset_;
+      return getRotOffset();
     }
 
     public static final int MOVING_PLATFORM_TYPE_FIELD_NUMBER = 13;
-    private int movingPlatformType_ = 0;
+    private int movingPlatformType_;
     /**
      * <code>.MovingPlatformType moving_platform_type = 13;</code>
      * @return The enum numeric value on the wire for movingPlatformType.
@@ -377,12 +525,13 @@ public final class PlatformInfoOuterClass {
      * @return The movingPlatformType.
      */
     @java.lang.Override public emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType getMovingPlatformType() {
-      emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType result = emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType.forNumber(movingPlatformType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType result = emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType.valueOf(movingPlatformType_);
       return result == null ? emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType.UNRECOGNIZED : result;
     }
 
     public static final int IS_ACTIVE_FIELD_NUMBER = 14;
-    private boolean isActive_ = false;
+    private boolean isActive_;
     /**
      * <code>bool is_active = 14;</code>
      * @return The isActive.
@@ -415,11 +564,11 @@ public final class PlatformInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.RouteOuterClass.RouteOrBuilder getRouteOrBuilder() {
-      return route_ == null ? emu.gingerps.net.proto.RouteOuterClass.Route.getDefaultInstance() : route_;
+      return getRoute();
     }
 
     public static final int POINT_ID_FIELD_NUMBER = 16;
-    private int pointId_ = 0;
+    private int pointId_;
     /**
      * <code>uint32 point_id = 16;</code>
      * @return The pointId.
@@ -485,7 +634,7 @@ public final class PlatformInfoOuterClass {
       if (pointId_ != 0) {
         output.writeUInt32(16, pointId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -550,7 +699,7 @@ public final class PlatformInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(16, pointId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -607,7 +756,7 @@ public final class PlatformInfoOuterClass {
       }
       if (getPointId()
           != other.getPointId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -658,7 +807,7 @@ public final class PlatformInfoOuterClass {
       }
       hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPointId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -775,52 +924,70 @@ public final class PlatformInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         routeId_ = 0;
+
         startIndex_ = 0;
+
         startRouteTime_ = 0;
+
         startSceneTime_ = 0;
-        startPos_ = null;
-        if (startPosBuilder_ != null) {
-          startPosBuilder_.dispose();
+
+        if (startPosBuilder_ == null) {
+          startPos_ = null;
+        } else {
+          startPos_ = null;
           startPosBuilder_ = null;
         }
         isStarted_ = false;
-        startRot_ = null;
-        if (startRotBuilder_ != null) {
-          startRotBuilder_.dispose();
+
+        if (startRotBuilder_ == null) {
+          startRot_ = null;
+        } else {
+          startRot_ = null;
           startRotBuilder_ = null;
         }
         stopSceneTime_ = 0;
-        posOffset_ = null;
-        if (posOffsetBuilder_ != null) {
-          posOffsetBuilder_.dispose();
+
+        if (posOffsetBuilder_ == null) {
+          posOffset_ = null;
+        } else {
+          posOffset_ = null;
           posOffsetBuilder_ = null;
         }
-        rotOffset_ = null;
-        if (rotOffsetBuilder_ != null) {
-          rotOffsetBuilder_.dispose();
+        if (rotOffsetBuilder_ == null) {
+          rotOffset_ = null;
+        } else {
+          rotOffset_ = null;
           rotOffsetBuilder_ = null;
         }
         movingPlatformType_ = 0;
+
         isActive_ = false;
-        route_ = null;
-        if (routeBuilder_ != null) {
-          routeBuilder_.dispose();
+
+        if (routeBuilder_ == null) {
+          route_ = null;
+        } else {
+          route_ = null;
           routeBuilder_ = null;
         }
         pointId_ = 0;
+
         return this;
       }
 
@@ -847,65 +1014,42 @@ public final class PlatformInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo buildPartial() {
         emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo result = new emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.routeId_ = routeId_;
+        result.startIndex_ = startIndex_;
+        result.startRouteTime_ = startRouteTime_;
+        result.startSceneTime_ = startSceneTime_;
+        if (startPosBuilder_ == null) {
+          result.startPos_ = startPos_;
+        } else {
+          result.startPos_ = startPosBuilder_.build();
+        }
+        result.isStarted_ = isStarted_;
+        if (startRotBuilder_ == null) {
+          result.startRot_ = startRot_;
+        } else {
+          result.startRot_ = startRotBuilder_.build();
+        }
+        result.stopSceneTime_ = stopSceneTime_;
+        if (posOffsetBuilder_ == null) {
+          result.posOffset_ = posOffset_;
+        } else {
+          result.posOffset_ = posOffsetBuilder_.build();
+        }
+        if (rotOffsetBuilder_ == null) {
+          result.rotOffset_ = rotOffset_;
+        } else {
+          result.rotOffset_ = rotOffsetBuilder_.build();
+        }
+        result.movingPlatformType_ = movingPlatformType_;
+        result.isActive_ = isActive_;
+        if (routeBuilder_ == null) {
+          result.route_ = route_;
+        } else {
+          result.route_ = routeBuilder_.build();
+        }
+        result.pointId_ = pointId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.routeId_ = routeId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.startIndex_ = startIndex_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.startRouteTime_ = startRouteTime_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.startSceneTime_ = startSceneTime_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.startPos_ = startPosBuilder_ == null
-              ? startPos_
-              : startPosBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.isStarted_ = isStarted_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.startRot_ = startRotBuilder_ == null
-              ? startRot_
-              : startRotBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.stopSceneTime_ = stopSceneTime_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.posOffset_ = posOffsetBuilder_ == null
-              ? posOffset_
-              : posOffsetBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.rotOffset_ = rotOffsetBuilder_ == null
-              ? rotOffset_
-              : rotOffsetBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.movingPlatformType_ = movingPlatformType_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.isActive_ = isActive_;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.route_ = routeBuilder_ == null
-              ? route_
-              : routeBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.pointId_ = pointId_;
-        }
       }
 
       @java.lang.Override
@@ -994,7 +1138,7 @@ public final class PlatformInfoOuterClass {
         if (other.getPointId() != 0) {
           setPointId(other.getPointId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1009,113 +1153,19 @@ public final class PlatformInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                routeId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                startIndex_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                startRouteTime_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                startSceneTime_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 58: {
-                input.readMessage(
-                    getStartPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 58
-              case 64: {
-                isStarted_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 64
-              case 74: {
-                input.readMessage(
-                    getStartRotFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 74
-              case 80: {
-                stopSceneTime_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 80
-              case 90: {
-                input.readMessage(
-                    getPosOffsetFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 90
-              case 98: {
-                input.readMessage(
-                    getRotOffsetFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 98
-              case 104: {
-                movingPlatformType_ = input.readEnum();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 104
-              case 112: {
-                isActive_ = input.readBool();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 112
-              case 122: {
-                input.readMessage(
-                    getRouteFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 122
-              case 128: {
-                pointId_ = input.readUInt32();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 128
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int routeId_ ;
       /**
@@ -1134,7 +1184,6 @@ public final class PlatformInfoOuterClass {
       public Builder setRouteId(int value) {
         
         routeId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1143,7 +1192,7 @@ public final class PlatformInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRouteId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         routeId_ = 0;
         onChanged();
         return this;
@@ -1166,7 +1215,6 @@ public final class PlatformInfoOuterClass {
       public Builder setStartIndex(int value) {
         
         startIndex_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1175,7 +1223,7 @@ public final class PlatformInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartIndex() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         startIndex_ = 0;
         onChanged();
         return this;
@@ -1198,7 +1246,6 @@ public final class PlatformInfoOuterClass {
       public Builder setStartRouteTime(int value) {
         
         startRouteTime_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1207,7 +1254,7 @@ public final class PlatformInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartRouteTime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         startRouteTime_ = 0;
         onChanged();
         return this;
@@ -1230,7 +1277,6 @@ public final class PlatformInfoOuterClass {
       public Builder setStartSceneTime(int value) {
         
         startSceneTime_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1239,7 +1285,7 @@ public final class PlatformInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartSceneTime() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         startSceneTime_ = 0;
         onChanged();
         return this;
@@ -1253,7 +1299,7 @@ public final class PlatformInfoOuterClass {
        * @return Whether the startPos field is set.
        */
       public boolean hasStartPos() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return startPosBuilder_ != null || startPos_ != null;
       }
       /**
        * <code>.Vector start_pos = 7;</code>
@@ -1275,11 +1321,11 @@ public final class PlatformInfoOuterClass {
             throw new NullPointerException();
           }
           startPos_ = value;
+          onChanged();
         } else {
           startPosBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1289,11 +1335,11 @@ public final class PlatformInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (startPosBuilder_ == null) {
           startPos_ = builderForValue.build();
+          onChanged();
         } else {
           startPosBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1301,38 +1347,38 @@ public final class PlatformInfoOuterClass {
        */
       public Builder mergeStartPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (startPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            startPos_ != null &&
-            startPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getStartPosBuilder().mergeFrom(value);
+          if (startPos_ != null) {
+            startPos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(startPos_).mergeFrom(value).buildPartial();
           } else {
             startPos_ = value;
           }
+          onChanged();
         } else {
           startPosBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector start_pos = 7;</code>
        */
       public Builder clearStartPos() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        startPos_ = null;
-        if (startPosBuilder_ != null) {
-          startPosBuilder_.dispose();
+        if (startPosBuilder_ == null) {
+          startPos_ = null;
+          onChanged();
+        } else {
+          startPos_ = null;
           startPosBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector start_pos = 7;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getStartPosBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getStartPosFieldBuilder().getBuilder();
       }
@@ -1381,7 +1427,6 @@ public final class PlatformInfoOuterClass {
       public Builder setIsStarted(boolean value) {
         
         isStarted_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1390,7 +1435,7 @@ public final class PlatformInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsStarted() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         isStarted_ = false;
         onChanged();
         return this;
@@ -1404,7 +1449,7 @@ public final class PlatformInfoOuterClass {
        * @return Whether the startRot field is set.
        */
       public boolean hasStartRot() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return startRotBuilder_ != null || startRot_ != null;
       }
       /**
        * <code>.MathQuaternion start_rot = 9;</code>
@@ -1426,11 +1471,11 @@ public final class PlatformInfoOuterClass {
             throw new NullPointerException();
           }
           startRot_ = value;
+          onChanged();
         } else {
           startRotBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1440,11 +1485,11 @@ public final class PlatformInfoOuterClass {
           emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder builderForValue) {
         if (startRotBuilder_ == null) {
           startRot_ = builderForValue.build();
+          onChanged();
         } else {
           startRotBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
@@ -1452,38 +1497,38 @@ public final class PlatformInfoOuterClass {
        */
       public Builder mergeStartRot(emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion value) {
         if (startRotBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0) &&
-            startRot_ != null &&
-            startRot_ != emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.getDefaultInstance()) {
-            getStartRotBuilder().mergeFrom(value);
+          if (startRot_ != null) {
+            startRot_ =
+              emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.newBuilder(startRot_).mergeFrom(value).buildPartial();
           } else {
             startRot_ = value;
           }
+          onChanged();
         } else {
           startRotBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MathQuaternion start_rot = 9;</code>
        */
       public Builder clearStartRot() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        startRot_ = null;
-        if (startRotBuilder_ != null) {
-          startRotBuilder_.dispose();
+        if (startRotBuilder_ == null) {
+          startRot_ = null;
+          onChanged();
+        } else {
+          startRot_ = null;
           startRotBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MathQuaternion start_rot = 9;</code>
        */
       public emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder getStartRotBuilder() {
-        bitField0_ |= 0x00000040;
+        
         onChanged();
         return getStartRotFieldBuilder().getBuilder();
       }
@@ -1532,7 +1577,6 @@ public final class PlatformInfoOuterClass {
       public Builder setStopSceneTime(int value) {
         
         stopSceneTime_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1541,7 +1585,7 @@ public final class PlatformInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStopSceneTime() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         stopSceneTime_ = 0;
         onChanged();
         return this;
@@ -1555,7 +1599,7 @@ public final class PlatformInfoOuterClass {
        * @return Whether the posOffset field is set.
        */
       public boolean hasPosOffset() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return posOffsetBuilder_ != null || posOffset_ != null;
       }
       /**
        * <code>.Vector pos_offset = 11;</code>
@@ -1577,11 +1621,11 @@ public final class PlatformInfoOuterClass {
             throw new NullPointerException();
           }
           posOffset_ = value;
+          onChanged();
         } else {
           posOffsetBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000100;
-        onChanged();
+
         return this;
       }
       /**
@@ -1591,11 +1635,11 @@ public final class PlatformInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posOffsetBuilder_ == null) {
           posOffset_ = builderForValue.build();
+          onChanged();
         } else {
           posOffsetBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000100;
-        onChanged();
+
         return this;
       }
       /**
@@ -1603,38 +1647,38 @@ public final class PlatformInfoOuterClass {
        */
       public Builder mergePosOffset(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posOffsetBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0) &&
-            posOffset_ != null &&
-            posOffset_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getPosOffsetBuilder().mergeFrom(value);
+          if (posOffset_ != null) {
+            posOffset_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(posOffset_).mergeFrom(value).buildPartial();
           } else {
             posOffset_ = value;
           }
+          onChanged();
         } else {
           posOffsetBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000100;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos_offset = 11;</code>
        */
       public Builder clearPosOffset() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        posOffset_ = null;
-        if (posOffsetBuilder_ != null) {
-          posOffsetBuilder_.dispose();
+        if (posOffsetBuilder_ == null) {
+          posOffset_ = null;
+          onChanged();
+        } else {
+          posOffset_ = null;
           posOffsetBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos_offset = 11;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosOffsetBuilder() {
-        bitField0_ |= 0x00000100;
+        
         onChanged();
         return getPosOffsetFieldBuilder().getBuilder();
       }
@@ -1674,7 +1718,7 @@ public final class PlatformInfoOuterClass {
        * @return Whether the rotOffset field is set.
        */
       public boolean hasRotOffset() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return rotOffsetBuilder_ != null || rotOffset_ != null;
       }
       /**
        * <code>.MathQuaternion rot_offset = 12;</code>
@@ -1696,11 +1740,11 @@ public final class PlatformInfoOuterClass {
             throw new NullPointerException();
           }
           rotOffset_ = value;
+          onChanged();
         } else {
           rotOffsetBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000200;
-        onChanged();
+
         return this;
       }
       /**
@@ -1710,11 +1754,11 @@ public final class PlatformInfoOuterClass {
           emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder builderForValue) {
         if (rotOffsetBuilder_ == null) {
           rotOffset_ = builderForValue.build();
+          onChanged();
         } else {
           rotOffsetBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000200;
-        onChanged();
+
         return this;
       }
       /**
@@ -1722,38 +1766,38 @@ public final class PlatformInfoOuterClass {
        */
       public Builder mergeRotOffset(emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion value) {
         if (rotOffsetBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) != 0) &&
-            rotOffset_ != null &&
-            rotOffset_ != emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.getDefaultInstance()) {
-            getRotOffsetBuilder().mergeFrom(value);
+          if (rotOffset_ != null) {
+            rotOffset_ =
+              emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.newBuilder(rotOffset_).mergeFrom(value).buildPartial();
           } else {
             rotOffset_ = value;
           }
+          onChanged();
         } else {
           rotOffsetBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000200;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MathQuaternion rot_offset = 12;</code>
        */
       public Builder clearRotOffset() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        rotOffset_ = null;
-        if (rotOffsetBuilder_ != null) {
-          rotOffsetBuilder_.dispose();
+        if (rotOffsetBuilder_ == null) {
+          rotOffset_ = null;
+          onChanged();
+        } else {
+          rotOffset_ = null;
           rotOffsetBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.MathQuaternion rot_offset = 12;</code>
        */
       public emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder getRotOffsetBuilder() {
-        bitField0_ |= 0x00000200;
+        
         onChanged();
         return getRotOffsetFieldBuilder().getBuilder();
       }
@@ -1799,8 +1843,8 @@ public final class PlatformInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMovingPlatformTypeValue(int value) {
+        
         movingPlatformType_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -1810,7 +1854,8 @@ public final class PlatformInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType getMovingPlatformType() {
-        emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType result = emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType.forNumber(movingPlatformType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType result = emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType.valueOf(movingPlatformType_);
         return result == null ? emu.gingerps.net.proto.MovingPlatformTypeOuterClass.MovingPlatformType.UNRECOGNIZED : result;
       }
       /**
@@ -1822,7 +1867,7 @@ public final class PlatformInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000400;
+        
         movingPlatformType_ = value.getNumber();
         onChanged();
         return this;
@@ -1832,7 +1877,7 @@ public final class PlatformInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMovingPlatformType() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         movingPlatformType_ = 0;
         onChanged();
         return this;
@@ -1855,7 +1900,6 @@ public final class PlatformInfoOuterClass {
       public Builder setIsActive(boolean value) {
         
         isActive_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -1864,7 +1908,7 @@ public final class PlatformInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsActive() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         isActive_ = false;
         onChanged();
         return this;
@@ -1878,7 +1922,7 @@ public final class PlatformInfoOuterClass {
        * @return Whether the route field is set.
        */
       public boolean hasRoute() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return routeBuilder_ != null || route_ != null;
       }
       /**
        * <code>.Route route = 15;</code>
@@ -1900,11 +1944,11 @@ public final class PlatformInfoOuterClass {
             throw new NullPointerException();
           }
           route_ = value;
+          onChanged();
         } else {
           routeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00001000;
-        onChanged();
+
         return this;
       }
       /**
@@ -1914,11 +1958,11 @@ public final class PlatformInfoOuterClass {
           emu.gingerps.net.proto.RouteOuterClass.Route.Builder builderForValue) {
         if (routeBuilder_ == null) {
           route_ = builderForValue.build();
+          onChanged();
         } else {
           routeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00001000;
-        onChanged();
+
         return this;
       }
       /**
@@ -1926,38 +1970,38 @@ public final class PlatformInfoOuterClass {
        */
       public Builder mergeRoute(emu.gingerps.net.proto.RouteOuterClass.Route value) {
         if (routeBuilder_ == null) {
-          if (((bitField0_ & 0x00001000) != 0) &&
-            route_ != null &&
-            route_ != emu.gingerps.net.proto.RouteOuterClass.Route.getDefaultInstance()) {
-            getRouteBuilder().mergeFrom(value);
+          if (route_ != null) {
+            route_ =
+              emu.gingerps.net.proto.RouteOuterClass.Route.newBuilder(route_).mergeFrom(value).buildPartial();
           } else {
             route_ = value;
           }
+          onChanged();
         } else {
           routeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00001000;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Route route = 15;</code>
        */
       public Builder clearRoute() {
-        bitField0_ = (bitField0_ & ~0x00001000);
-        route_ = null;
-        if (routeBuilder_ != null) {
-          routeBuilder_.dispose();
+        if (routeBuilder_ == null) {
+          route_ = null;
+          onChanged();
+        } else {
+          route_ = null;
           routeBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Route route = 15;</code>
        */
       public emu.gingerps.net.proto.RouteOuterClass.Route.Builder getRouteBuilder() {
-        bitField0_ |= 0x00001000;
+        
         onChanged();
         return getRouteFieldBuilder().getBuilder();
       }
@@ -2006,7 +2050,6 @@ public final class PlatformInfoOuterClass {
       public Builder setPointId(int value) {
         
         pointId_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -2015,7 +2058,7 @@ public final class PlatformInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        
         pointId_ = 0;
         onChanged();
         return this;
@@ -2053,18 +2096,7 @@ public final class PlatformInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlatformInfo(input, extensionRegistry);
       }
     };
 

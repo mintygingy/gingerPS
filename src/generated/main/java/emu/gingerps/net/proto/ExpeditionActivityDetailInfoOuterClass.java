@@ -119,6 +119,88 @@ public final class ExpeditionActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ExpeditionActivityDetailInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              unk3300MNPBCNEDKAJ_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              isContentClosed_ = input.readBool();
+              break;
+            }
+            case 48: {
+
+              contentCloseTime_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              unk3300GJLCAJOFCKL_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                pathInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              pathInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                challengeInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              challengeInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          pathInfoList_ = java.util.Collections.unmodifiableList(pathInfoList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          challengeInfoList_ = java.util.Collections.unmodifiableList(challengeInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.internal_static_ExpeditionActivityDetailInfo_descriptor;
@@ -133,7 +215,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
     }
 
     public static final int UNK3300_GJLCAJOFCKL_FIELD_NUMBER = 9;
-    private int unk3300GJLCAJOFCKL_ = 0;
+    private int unk3300GJLCAJOFCKL_;
     /**
      * <code>uint32 Unk3300_GJLCAJOFCKL = 9;</code>
      * @return The unk3300GJLCAJOFCKL.
@@ -144,7 +226,6 @@ public final class ExpeditionActivityDetailInfoOuterClass {
     }
 
     public static final int CHALLENGE_INFO_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo> challengeInfoList_;
     /**
      * <code>repeated .ExpeditionChallengeInfo challenge_info_list = 15;</code>
@@ -185,7 +266,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
     }
 
     public static final int UNK3300_MNPBCNEDKAJ_FIELD_NUMBER = 3;
-    private int unk3300MNPBCNEDKAJ_ = 0;
+    private int unk3300MNPBCNEDKAJ_;
     /**
      * <code>uint32 Unk3300_MNPBCNEDKAJ = 3;</code>
      * @return The unk3300MNPBCNEDKAJ.
@@ -196,7 +277,6 @@ public final class ExpeditionActivityDetailInfoOuterClass {
     }
 
     public static final int PATH_INFO_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo> pathInfoList_;
     /**
      * <code>repeated .ExpeditionPathInfo path_info_list = 11;</code>
@@ -237,7 +317,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 4;
-    private boolean isContentClosed_ = false;
+    private boolean isContentClosed_;
     /**
      * <code>bool is_content_closed = 4;</code>
      * @return The isContentClosed.
@@ -248,7 +328,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
     }
 
     public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 6;
-    private int contentCloseTime_ = 0;
+    private int contentCloseTime_;
     /**
      * <code>uint32 content_close_time = 6;</code>
      * @return The contentCloseTime.
@@ -290,7 +370,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
       for (int i = 0; i < challengeInfoList_.size(); i++) {
         output.writeMessage(15, challengeInfoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -323,7 +403,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, challengeInfoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -350,7 +430,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
           != other.getIsContentClosed()) return false;
       if (getContentCloseTime()
           != other.getContentCloseTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -378,7 +458,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
           getIsContentClosed());
       hash = (37 * hash) + CONTENT_CLOSE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getContentCloseTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -495,36 +575,44 @@ public final class ExpeditionActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getChallengeInfoListFieldBuilder();
+          getPathInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300GJLCAJOFCKL_ = 0;
+
         if (challengeInfoListBuilder_ == null) {
           challengeInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          challengeInfoList_ = null;
           challengeInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300MNPBCNEDKAJ_ = 0;
+
         if (pathInfoListBuilder_ == null) {
           pathInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          pathInfoList_ = null;
           pathInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         isContentClosed_ = false;
+
         contentCloseTime_ = 0;
+
         return this;
       }
 
@@ -551,47 +639,31 @@ public final class ExpeditionActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo result = new emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.unk3300GJLCAJOFCKL_ = unk3300GJLCAJOFCKL_;
         if (challengeInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             challengeInfoList_ = java.util.Collections.unmodifiableList(challengeInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.challengeInfoList_ = challengeInfoList_;
         } else {
           result.challengeInfoList_ = challengeInfoListBuilder_.build();
         }
+        result.unk3300MNPBCNEDKAJ_ = unk3300MNPBCNEDKAJ_;
         if (pathInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             pathInfoList_ = java.util.Collections.unmodifiableList(pathInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.pathInfoList_ = pathInfoList_;
         } else {
           result.pathInfoList_ = pathInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300GJLCAJOFCKL_ = unk3300GJLCAJOFCKL_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300MNPBCNEDKAJ_ = unk3300MNPBCNEDKAJ_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.isContentClosed_ = isContentClosed_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.contentCloseTime_ = contentCloseTime_;
-        }
+        result.isContentClosed_ = isContentClosed_;
+        result.contentCloseTime_ = contentCloseTime_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -645,7 +717,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
           if (!other.challengeInfoList_.isEmpty()) {
             if (challengeInfoList_.isEmpty()) {
               challengeInfoList_ = other.challengeInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureChallengeInfoListIsMutable();
               challengeInfoList_.addAll(other.challengeInfoList_);
@@ -658,7 +730,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
               challengeInfoListBuilder_.dispose();
               challengeInfoListBuilder_ = null;
               challengeInfoList_ = other.challengeInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               challengeInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChallengeInfoListFieldBuilder() : null;
@@ -674,7 +746,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
           if (!other.pathInfoList_.isEmpty()) {
             if (pathInfoList_.isEmpty()) {
               pathInfoList_ = other.pathInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensurePathInfoListIsMutable();
               pathInfoList_.addAll(other.pathInfoList_);
@@ -687,7 +759,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
               pathInfoListBuilder_.dispose();
               pathInfoListBuilder_ = null;
               pathInfoList_ = other.pathInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
               pathInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPathInfoListFieldBuilder() : null;
@@ -702,7 +774,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
         if (other.getContentCloseTime() != 0) {
           setContentCloseTime(other.getContentCloseTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -717,76 +789,17 @@ public final class ExpeditionActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                unk3300MNPBCNEDKAJ_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                isContentClosed_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 32
-              case 48: {
-                contentCloseTime_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 72: {
-                unk3300GJLCAJOFCKL_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 90: {
-                emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo.parser(),
-                        extensionRegistry);
-                if (pathInfoListBuilder_ == null) {
-                  ensurePathInfoListIsMutable();
-                  pathInfoList_.add(m);
-                } else {
-                  pathInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              case 122: {
-                emu.gingerps.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo.parser(),
-                        extensionRegistry);
-                if (challengeInfoListBuilder_ == null) {
-                  ensureChallengeInfoListIsMutable();
-                  challengeInfoList_.add(m);
-                } else {
-                  challengeInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -808,7 +821,6 @@ public final class ExpeditionActivityDetailInfoOuterClass {
       public Builder setUnk3300GJLCAJOFCKL(int value) {
         
         unk3300GJLCAJOFCKL_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -817,7 +829,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GJLCAJOFCKL() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300GJLCAJOFCKL_ = 0;
         onChanged();
         return this;
@@ -826,9 +838,9 @@ public final class ExpeditionActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo> challengeInfoList_ =
         java.util.Collections.emptyList();
       private void ensureChallengeInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           challengeInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo>(challengeInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -978,7 +990,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
       public Builder clearChallengeInfoList() {
         if (challengeInfoListBuilder_ == null) {
           challengeInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           challengeInfoListBuilder_.clear();
@@ -1055,7 +1067,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
           challengeInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo, emu.gingerps.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo.Builder, emu.gingerps.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfoOrBuilder>(
                   challengeInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           challengeInfoList_ = null;
@@ -1080,7 +1092,6 @@ public final class ExpeditionActivityDetailInfoOuterClass {
       public Builder setUnk3300MNPBCNEDKAJ(int value) {
         
         unk3300MNPBCNEDKAJ_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1089,7 +1100,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MNPBCNEDKAJ() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300MNPBCNEDKAJ_ = 0;
         onChanged();
         return this;
@@ -1098,9 +1109,9 @@ public final class ExpeditionActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo> pathInfoList_ =
         java.util.Collections.emptyList();
       private void ensurePathInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           pathInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo>(pathInfoList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1250,7 +1261,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
       public Builder clearPathInfoList() {
         if (pathInfoListBuilder_ == null) {
           pathInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           pathInfoListBuilder_.clear();
@@ -1327,7 +1338,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
           pathInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo, emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo.Builder, emu.gingerps.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder>(
                   pathInfoList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           pathInfoList_ = null;
@@ -1352,7 +1363,6 @@ public final class ExpeditionActivityDetailInfoOuterClass {
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1361,7 +1371,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -1384,7 +1394,6 @@ public final class ExpeditionActivityDetailInfoOuterClass {
       public Builder setContentCloseTime(int value) {
         
         contentCloseTime_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1393,7 +1402,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearContentCloseTime() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         contentCloseTime_ = 0;
         onChanged();
         return this;
@@ -1431,18 +1440,7 @@ public final class ExpeditionActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ExpeditionActivityDetailInfo(input, extensionRegistry);
       }
     };
 

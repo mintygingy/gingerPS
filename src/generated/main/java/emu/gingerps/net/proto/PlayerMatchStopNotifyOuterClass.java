@@ -73,6 +73,54 @@ public final class PlayerMatchStopNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerMatchStopNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+
+              hostUid_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerMatchStopNotifyOuterClass.internal_static_PlayerMatchStopNotify_descriptor;
@@ -87,7 +135,7 @@ public final class PlayerMatchStopNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 10;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.MatchReason reason = 10;</code>
      * @return The enum numeric value on the wire for reason.
@@ -100,12 +148,13 @@ public final class PlayerMatchStopNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason getReason() {
-      emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason result = emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason result = emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.UNRECOGNIZED : result;
     }
 
     public static final int HOST_UID_FIELD_NUMBER = 8;
-    private int hostUid_ = 0;
+    private int hostUid_;
     /**
      * <code>uint32 host_uid = 8;</code>
      * @return The hostUid.
@@ -135,7 +184,7 @@ public final class PlayerMatchStopNotifyOuterClass {
       if (reason_ != emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.MATCH_REASON_NONE.getNumber()) {
         output.writeEnum(10, reason_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -152,7 +201,7 @@ public final class PlayerMatchStopNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, reason_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -170,7 +219,7 @@ public final class PlayerMatchStopNotifyOuterClass {
       if (reason_ != other.reason_) return false;
       if (getHostUid()
           != other.getHostUid()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -185,7 +234,7 @@ public final class PlayerMatchStopNotifyOuterClass {
       hash = (53 * hash) + reason_;
       hash = (37 * hash) + HOST_UID_FIELD_NUMBER;
       hash = (53 * hash) + getHostUid();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -312,20 +361,26 @@ public final class PlayerMatchStopNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerMatchStopNotifyOuterClass.PlayerMatchStopNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         reason_ = 0;
+
         hostUid_ = 0;
+
         return this;
       }
 
@@ -352,19 +407,10 @@ public final class PlayerMatchStopNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerMatchStopNotifyOuterClass.PlayerMatchStopNotify buildPartial() {
         emu.gingerps.net.proto.PlayerMatchStopNotifyOuterClass.PlayerMatchStopNotify result = new emu.gingerps.net.proto.PlayerMatchStopNotifyOuterClass.PlayerMatchStopNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.reason_ = reason_;
+        result.hostUid_ = hostUid_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerMatchStopNotifyOuterClass.PlayerMatchStopNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.hostUid_ = hostUid_;
-        }
       }
 
       @java.lang.Override
@@ -417,7 +463,7 @@ public final class PlayerMatchStopNotifyOuterClass {
         if (other.getHostUid() != 0) {
           setHostUid(other.getHostUid());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -432,43 +478,19 @@ public final class PlayerMatchStopNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerMatchStopNotifyOuterClass.PlayerMatchStopNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                hostUid_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 64
-              case 80: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerMatchStopNotifyOuterClass.PlayerMatchStopNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int reason_ = 0;
       /**
@@ -484,8 +506,8 @@ public final class PlayerMatchStopNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -495,7 +517,8 @@ public final class PlayerMatchStopNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason getReason() {
-        emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason result = emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason result = emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.UNRECOGNIZED : result;
       }
       /**
@@ -507,7 +530,7 @@ public final class PlayerMatchStopNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -517,7 +540,7 @@ public final class PlayerMatchStopNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -540,7 +563,6 @@ public final class PlayerMatchStopNotifyOuterClass {
       public Builder setHostUid(int value) {
         
         hostUid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -549,7 +571,7 @@ public final class PlayerMatchStopNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHostUid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         hostUid_ = 0;
         onChanged();
         return this;
@@ -587,18 +609,7 @@ public final class PlayerMatchStopNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerMatchStopNotify(input, extensionRegistry);
       }
     };
 

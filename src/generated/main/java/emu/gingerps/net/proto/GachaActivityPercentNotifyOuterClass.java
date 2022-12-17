@@ -59,12 +59,14 @@ public final class GachaActivityPercentNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
      */
+
     int getTargetNumMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
      */
+
     int getTargetNumMapOrThrow(
         int key);
   }
@@ -105,6 +107,72 @@ public final class GachaActivityPercentNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GachaActivityPercentNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              unk3300IOLPAJKDEEA_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              unk3300EOPJBPHFDEE_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                targetNumMap_ = com.google.protobuf.MapField.newMapField(
+                    TargetNumMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              targetNumMap__ = input.readMessage(
+                  TargetNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              targetNumMap_.getMutableMap().put(
+                  targetNumMap__.getKey(), targetNumMap__.getValue());
+              break;
+            }
+            case 104: {
+
+              unk3300GHHIGKFDONE_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GachaActivityPercentNotifyOuterClass.internal_static_GachaActivityPercentNotify_descriptor;
@@ -131,7 +199,7 @@ public final class GachaActivityPercentNotifyOuterClass {
     }
 
     public static final int UNK3300_GHHIGKFDONE_FIELD_NUMBER = 13;
-    private int unk3300GHHIGKFDONE_ = 0;
+    private int unk3300GHHIGKFDONE_;
     /**
      * <code>uint32 Unk3300_GHHIGKFDONE = 13;</code>
      * @return The unk3300GHHIGKFDONE.
@@ -142,7 +210,7 @@ public final class GachaActivityPercentNotifyOuterClass {
     }
 
     public static final int UNK3300_EOPJBPHFDEE_FIELD_NUMBER = 6;
-    private int unk3300EOPJBPHFDEE_ = 0;
+    private int unk3300EOPJBPHFDEE_;
     /**
      * <code>uint32 Unk3300_EOPJBPHFDEE = 6;</code>
      * @return The unk3300EOPJBPHFDEE.
@@ -153,7 +221,7 @@ public final class GachaActivityPercentNotifyOuterClass {
     }
 
     public static final int UNK3300_IOLPAJKDEEA_FIELD_NUMBER = 5;
-    private int unk3300IOLPAJKDEEA_ = 0;
+    private int unk3300IOLPAJKDEEA_;
     /**
      * <code>uint32 Unk3300_IOLPAJKDEEA = 5;</code>
      * @return The unk3300IOLPAJKDEEA.
@@ -175,7 +243,6 @@ public final class GachaActivityPercentNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> targetNumMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -186,12 +253,14 @@ public final class GachaActivityPercentNotifyOuterClass {
       }
       return targetNumMap_;
     }
+
     public int getTargetNumMapCount() {
       return internalGetTargetNumMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
      */
+
     @java.lang.Override
     public boolean containsTargetNumMap(
         int key) {
@@ -210,6 +279,7 @@ public final class GachaActivityPercentNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, java.lang.Integer> getTargetNumMapMap() {
       return internalGetTargetNumMap().getMap();
     }
@@ -217,6 +287,7 @@ public final class GachaActivityPercentNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
      */
     @java.lang.Override
+
     public int getTargetNumMapOrDefault(
         int key,
         int defaultValue) {
@@ -229,6 +300,7 @@ public final class GachaActivityPercentNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
      */
     @java.lang.Override
+
     public int getTargetNumMapOrThrow(
         int key) {
       
@@ -269,7 +341,7 @@ public final class GachaActivityPercentNotifyOuterClass {
       if (unk3300GHHIGKFDONE_ != 0) {
         output.writeUInt32(13, unk3300GHHIGKFDONE_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -300,7 +372,7 @@ public final class GachaActivityPercentNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, unk3300GHHIGKFDONE_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -323,7 +395,7 @@ public final class GachaActivityPercentNotifyOuterClass {
           != other.getUnk3300IOLPAJKDEEA()) return false;
       if (!internalGetTargetNumMap().equals(
           other.internalGetTargetNumMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -344,7 +416,7 @@ public final class GachaActivityPercentNotifyOuterClass {
         hash = (37 * hash) + TARGET_NUM_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetTargetNumMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -493,21 +565,28 @@ public final class GachaActivityPercentNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GachaActivityPercentNotifyOuterClass.GachaActivityPercentNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300GHHIGKFDONE_ = 0;
+
         unk3300EOPJBPHFDEE_ = 0;
+
         unk3300IOLPAJKDEEA_ = 0;
+
         internalGetMutableTargetNumMap().clear();
         return this;
       }
@@ -535,26 +614,14 @@ public final class GachaActivityPercentNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GachaActivityPercentNotifyOuterClass.GachaActivityPercentNotify buildPartial() {
         emu.gingerps.net.proto.GachaActivityPercentNotifyOuterClass.GachaActivityPercentNotify result = new emu.gingerps.net.proto.GachaActivityPercentNotifyOuterClass.GachaActivityPercentNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.unk3300GHHIGKFDONE_ = unk3300GHHIGKFDONE_;
+        result.unk3300EOPJBPHFDEE_ = unk3300EOPJBPHFDEE_;
+        result.unk3300IOLPAJKDEEA_ = unk3300IOLPAJKDEEA_;
+        result.targetNumMap_ = internalGetTargetNumMap();
+        result.targetNumMap_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GachaActivityPercentNotifyOuterClass.GachaActivityPercentNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300GHHIGKFDONE_ = unk3300GHHIGKFDONE_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300EOPJBPHFDEE_ = unk3300EOPJBPHFDEE_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300IOLPAJKDEEA_ = unk3300IOLPAJKDEEA_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.targetNumMap_ = internalGetTargetNumMap();
-          result.targetNumMap_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -612,8 +679,7 @@ public final class GachaActivityPercentNotifyOuterClass {
         }
         internalGetMutableTargetNumMap().mergeFrom(
             other.internalGetTargetNumMap());
-        bitField0_ |= 0x00000008;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -628,54 +694,17 @@ public final class GachaActivityPercentNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GachaActivityPercentNotifyOuterClass.GachaActivityPercentNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                unk3300IOLPAJKDEEA_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              case 48: {
-                unk3300EOPJBPHFDEE_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 98: {
-                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-                targetNumMap__ = input.readMessage(
-                    TargetNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableTargetNumMap().getMutableMap().put(
-                    targetNumMap__.getKey(), targetNumMap__.getValue());
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 98
-              case 104: {
-                unk3300GHHIGKFDONE_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GachaActivityPercentNotifyOuterClass.GachaActivityPercentNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -697,7 +726,6 @@ public final class GachaActivityPercentNotifyOuterClass {
       public Builder setUnk3300GHHIGKFDONE(int value) {
         
         unk3300GHHIGKFDONE_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -706,7 +734,7 @@ public final class GachaActivityPercentNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GHHIGKFDONE() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300GHHIGKFDONE_ = 0;
         onChanged();
         return this;
@@ -729,7 +757,6 @@ public final class GachaActivityPercentNotifyOuterClass {
       public Builder setUnk3300EOPJBPHFDEE(int value) {
         
         unk3300EOPJBPHFDEE_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -738,7 +765,7 @@ public final class GachaActivityPercentNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EOPJBPHFDEE() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300EOPJBPHFDEE_ = 0;
         onChanged();
         return this;
@@ -761,7 +788,6 @@ public final class GachaActivityPercentNotifyOuterClass {
       public Builder setUnk3300IOLPAJKDEEA(int value) {
         
         unk3300IOLPAJKDEEA_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -770,7 +796,7 @@ public final class GachaActivityPercentNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IOLPAJKDEEA() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300IOLPAJKDEEA_ = 0;
         onChanged();
         return this;
@@ -779,7 +805,7 @@ public final class GachaActivityPercentNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> targetNumMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetTargetNumMap() {
+      internalGetTargetNumMap() {
         if (targetNumMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               TargetNumMapDefaultEntryHolder.defaultEntry);
@@ -787,7 +813,8 @@ public final class GachaActivityPercentNotifyOuterClass {
         return targetNumMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-          internalGetMutableTargetNumMap() {
+      internalGetMutableTargetNumMap() {
+        onChanged();;
         if (targetNumMap_ == null) {
           targetNumMap_ = com.google.protobuf.MapField.newMapField(
               TargetNumMapDefaultEntryHolder.defaultEntry);
@@ -795,16 +822,16 @@ public final class GachaActivityPercentNotifyOuterClass {
         if (!targetNumMap_.isMutable()) {
           targetNumMap_ = targetNumMap_.copy();
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
         return targetNumMap_;
       }
+
       public int getTargetNumMapCount() {
         return internalGetTargetNumMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
        */
+
       @java.lang.Override
       public boolean containsTargetNumMap(
           int key) {
@@ -823,6 +850,7 @@ public final class GachaActivityPercentNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, java.lang.Integer> getTargetNumMapMap() {
         return internalGetTargetNumMap().getMap();
       }
@@ -830,6 +858,7 @@ public final class GachaActivityPercentNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
        */
       @java.lang.Override
+
       public int getTargetNumMapOrDefault(
           int key,
           int defaultValue) {
@@ -842,6 +871,7 @@ public final class GachaActivityPercentNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
        */
       @java.lang.Override
+
       public int getTargetNumMapOrThrow(
           int key) {
         
@@ -852,8 +882,8 @@ public final class GachaActivityPercentNotifyOuterClass {
         }
         return map.get(key);
       }
+
       public Builder clearTargetNumMap() {
-        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableTargetNumMap().getMutableMap()
             .clear();
         return this;
@@ -861,6 +891,7 @@ public final class GachaActivityPercentNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
        */
+
       public Builder removeTargetNumMap(
           int key) {
         
@@ -873,8 +904,7 @@ public final class GachaActivityPercentNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-          getMutableTargetNumMap() {
-        bitField0_ |= 0x00000008;
+      getMutableTargetNumMap() {
         return internalGetMutableTargetNumMap().getMutableMap();
       }
       /**
@@ -887,17 +917,16 @@ public final class GachaActivityPercentNotifyOuterClass {
         
         internalGetMutableTargetNumMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000008;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; target_num_map = 12;</code>
        */
+
       public Builder putAllTargetNumMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableTargetNumMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000008;
         return this;
       }
       @java.lang.Override
@@ -933,18 +962,7 @@ public final class GachaActivityPercentNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GachaActivityPercentNotify(input, extensionRegistry);
       }
     };
 

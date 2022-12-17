@@ -62,6 +62,48 @@ public final class GetBargainDataReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetBargainDataReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 64: {
+
+              bargainId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetBargainDataReqOuterClass.internal_static_GetBargainDataReq_descriptor;
@@ -76,7 +118,7 @@ public final class GetBargainDataReqOuterClass {
     }
 
     public static final int BARGAIN_ID_FIELD_NUMBER = 8;
-    private int bargainId_ = 0;
+    private int bargainId_;
     /**
      * <code>uint32 bargain_id = 8;</code>
      * @return The bargainId.
@@ -103,7 +145,7 @@ public final class GetBargainDataReqOuterClass {
       if (bargainId_ != 0) {
         output.writeUInt32(8, bargainId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -116,7 +158,7 @@ public final class GetBargainDataReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, bargainId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -133,7 +175,7 @@ public final class GetBargainDataReqOuterClass {
 
       if (getBargainId()
           != other.getBargainId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -146,7 +188,7 @@ public final class GetBargainDataReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BARGAIN_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBargainId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -274,19 +316,24 @@ public final class GetBargainDataReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetBargainDataReqOuterClass.GetBargainDataReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         bargainId_ = 0;
+
         return this;
       }
 
@@ -313,16 +360,9 @@ public final class GetBargainDataReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetBargainDataReqOuterClass.GetBargainDataReq buildPartial() {
         emu.gingerps.net.proto.GetBargainDataReqOuterClass.GetBargainDataReq result = new emu.gingerps.net.proto.GetBargainDataReqOuterClass.GetBargainDataReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.bargainId_ = bargainId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetBargainDataReqOuterClass.GetBargainDataReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.bargainId_ = bargainId_;
-        }
       }
 
       @java.lang.Override
@@ -372,7 +412,7 @@ public final class GetBargainDataReqOuterClass {
         if (other.getBargainId() != 0) {
           setBargainId(other.getBargainId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -387,38 +427,19 @@ public final class GetBargainDataReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetBargainDataReqOuterClass.GetBargainDataReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 64: {
-                bargainId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 64
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetBargainDataReqOuterClass.GetBargainDataReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int bargainId_ ;
       /**
@@ -437,7 +458,6 @@ public final class GetBargainDataReqOuterClass {
       public Builder setBargainId(int value) {
         
         bargainId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -446,7 +466,7 @@ public final class GetBargainDataReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBargainId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         bargainId_ = 0;
         onChanged();
         return this;
@@ -484,18 +504,7 @@ public final class GetBargainDataReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetBargainDataReq(input, extensionRegistry);
       }
     };
 

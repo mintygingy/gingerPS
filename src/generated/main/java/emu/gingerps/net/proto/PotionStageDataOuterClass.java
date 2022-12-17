@@ -118,6 +118,114 @@ public final class PotionStageDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PotionStageData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300BMEHJHFCPMA_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unk3300BMEHJHFCPMA_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300BMEHJHFCPMA_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300BMEHJHFCPMA_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 72: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300NLMEPPPMCKI_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unk3300NLMEPPPMCKI_.addInt(input.readUInt32());
+              break;
+            }
+            case 74: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300NLMEPPPMCKI_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unk3300NLMEPPPMCKI_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                levelList_ = new java.util.ArrayList<emu.gingerps.net.proto.PotionLevelDataOuterClass.PotionLevelData>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              levelList_.add(
+                  input.readMessage(emu.gingerps.net.proto.PotionLevelDataOuterClass.PotionLevelData.parser(), extensionRegistry));
+              break;
+            }
+            case 104: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unk3300BMEHJHFCPMA_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          unk3300NLMEPPPMCKI_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          levelList_ = java.util.Collections.unmodifiableList(levelList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PotionStageDataOuterClass.internal_static_PotionStageData_descriptor;
@@ -132,7 +240,6 @@ public final class PotionStageDataOuterClass {
     }
 
     public static final int UNK3300_BMEHJHFCPMA_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300BMEHJHFCPMA_;
     /**
      * <code>repeated uint32 Unk3300_BMEHJHFCPMA = 7;</code>
@@ -161,7 +268,6 @@ public final class PotionStageDataOuterClass {
     private int unk3300BMEHJHFCPMAMemoizedSerializedSize = -1;
 
     public static final int UNK3300_NLMEPPPMCKI_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300NLMEPPPMCKI_;
     /**
      * <code>repeated uint32 Unk3300_NLMEPPPMCKI = 9;</code>
@@ -190,7 +296,7 @@ public final class PotionStageDataOuterClass {
     private int unk3300NLMEPPPMCKIMemoizedSerializedSize = -1;
 
     public static final int STAGE_ID_FIELD_NUMBER = 13;
-    private int stageId_ = 0;
+    private int stageId_;
     /**
      * <code>uint32 stage_id = 13;</code>
      * @return The stageId.
@@ -201,7 +307,7 @@ public final class PotionStageDataOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 8;
-    private boolean isOpen_ = false;
+    private boolean isOpen_;
     /**
      * <code>bool is_open = 8;</code>
      * @return The isOpen.
@@ -212,7 +318,6 @@ public final class PotionStageDataOuterClass {
     }
 
     public static final int LEVEL_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.PotionLevelDataOuterClass.PotionLevelData> levelList_;
     /**
      * <code>repeated .PotionLevelData level_list = 11;</code>
@@ -290,7 +395,7 @@ public final class PotionStageDataOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(13, stageId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -339,7 +444,7 @@ public final class PotionStageDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, stageId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -364,7 +469,7 @@ public final class PotionStageDataOuterClass {
           != other.getIsOpen()) return false;
       if (!getLevelListList()
           .equals(other.getLevelListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -392,7 +497,7 @@ public final class PotionStageDataOuterClass {
         hash = (37 * hash) + LEVEL_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getLevelListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -509,29 +614,37 @@ public final class PotionStageDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.PotionStageDataOuterClass.PotionStageData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getLevelListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300BMEHJHFCPMA_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300NLMEPPPMCKI_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         stageId_ = 0;
+
         isOpen_ = false;
+
         if (levelListBuilder_ == null) {
           levelList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          levelList_ = null;
           levelListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -558,13 +671,7 @@ public final class PotionStageDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PotionStageDataOuterClass.PotionStageData buildPartial() {
         emu.gingerps.net.proto.PotionStageDataOuterClass.PotionStageData result = new emu.gingerps.net.proto.PotionStageDataOuterClass.PotionStageData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PotionStageDataOuterClass.PotionStageData result) {
+        int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           unk3300BMEHJHFCPMA_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -575,25 +682,19 @@ public final class PotionStageDataOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.unk3300NLMEPPPMCKI_ = unk3300NLMEPPPMCKI_;
+        result.stageId_ = stageId_;
+        result.isOpen_ = isOpen_;
         if (levelListBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             levelList_ = java.util.Collections.unmodifiableList(levelList_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.levelList_ = levelList_;
         } else {
           result.levelList_ = levelListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PotionStageDataOuterClass.PotionStageData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.stageId_ = stageId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isOpen_ = isOpen_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -670,7 +771,7 @@ public final class PotionStageDataOuterClass {
           if (!other.levelList_.isEmpty()) {
             if (levelList_.isEmpty()) {
               levelList_ = other.levelList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureLevelListIsMutable();
               levelList_.addAll(other.levelList_);
@@ -683,7 +784,7 @@ public final class PotionStageDataOuterClass {
               levelListBuilder_.dispose();
               levelListBuilder_ = null;
               levelList_ = other.levelList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000004);
               levelListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getLevelListFieldBuilder() : null;
@@ -692,7 +793,7 @@ public final class PotionStageDataOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -707,85 +808,17 @@ public final class PotionStageDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PotionStageDataOuterClass.PotionStageData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                int v = input.readUInt32();
-                ensureUnk3300BMEHJHFCPMAIsMutable();
-                unk3300BMEHJHFCPMA_.addInt(v);
-                break;
-              } // case 56
-              case 58: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300BMEHJHFCPMAIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300BMEHJHFCPMA_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 58
-              case 64: {
-                isOpen_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 64
-              case 72: {
-                int v = input.readUInt32();
-                ensureUnk3300NLMEPPPMCKIIsMutable();
-                unk3300NLMEPPPMCKI_.addInt(v);
-                break;
-              } // case 72
-              case 74: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnk3300NLMEPPPMCKIIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unk3300NLMEPPPMCKI_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 74
-              case 90: {
-                emu.gingerps.net.proto.PotionLevelDataOuterClass.PotionLevelData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.PotionLevelDataOuterClass.PotionLevelData.parser(),
-                        extensionRegistry);
-                if (levelListBuilder_ == null) {
-                  ensureLevelListIsMutable();
-                  levelList_.add(m);
-                } else {
-                  levelListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 90
-              case 104: {
-                stageId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PotionStageDataOuterClass.PotionStageData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -795,7 +828,7 @@ public final class PotionStageDataOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           unk3300BMEHJHFCPMA_ = mutableCopy(unk3300BMEHJHFCPMA_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_BMEHJHFCPMA = 7;</code>
@@ -829,7 +862,6 @@ public final class PotionStageDataOuterClass {
        */
       public Builder setUnk3300BMEHJHFCPMA(
           int index, int value) {
-        
         ensureUnk3300BMEHJHFCPMAIsMutable();
         unk3300BMEHJHFCPMA_.setInt(index, value);
         onChanged();
@@ -841,7 +873,6 @@ public final class PotionStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300BMEHJHFCPMA(int value) {
-        
         ensureUnk3300BMEHJHFCPMAIsMutable();
         unk3300BMEHJHFCPMA_.addInt(value);
         onChanged();
@@ -876,7 +907,7 @@ public final class PotionStageDataOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           unk3300NLMEPPPMCKI_ = mutableCopy(unk3300NLMEPPPMCKI_);
           bitField0_ |= 0x00000002;
-        }
+         }
       }
       /**
        * <code>repeated uint32 Unk3300_NLMEPPPMCKI = 9;</code>
@@ -910,7 +941,6 @@ public final class PotionStageDataOuterClass {
        */
       public Builder setUnk3300NLMEPPPMCKI(
           int index, int value) {
-        
         ensureUnk3300NLMEPPPMCKIIsMutable();
         unk3300NLMEPPPMCKI_.setInt(index, value);
         onChanged();
@@ -922,7 +952,6 @@ public final class PotionStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300NLMEPPPMCKI(int value) {
-        
         ensureUnk3300NLMEPPPMCKIIsMutable();
         unk3300NLMEPPPMCKI_.addInt(value);
         onChanged();
@@ -969,7 +998,6 @@ public final class PotionStageDataOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -978,7 +1006,7 @@ public final class PotionStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         stageId_ = 0;
         onChanged();
         return this;
@@ -1001,7 +1029,6 @@ public final class PotionStageDataOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1010,7 +1037,7 @@ public final class PotionStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isOpen_ = false;
         onChanged();
         return this;
@@ -1019,9 +1046,9 @@ public final class PotionStageDataOuterClass {
       private java.util.List<emu.gingerps.net.proto.PotionLevelDataOuterClass.PotionLevelData> levelList_ =
         java.util.Collections.emptyList();
       private void ensureLevelListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           levelList_ = new java.util.ArrayList<emu.gingerps.net.proto.PotionLevelDataOuterClass.PotionLevelData>(levelList_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1171,7 +1198,7 @@ public final class PotionStageDataOuterClass {
       public Builder clearLevelList() {
         if (levelListBuilder_ == null) {
           levelList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           levelListBuilder_.clear();
@@ -1248,7 +1275,7 @@ public final class PotionStageDataOuterClass {
           levelListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.PotionLevelDataOuterClass.PotionLevelData, emu.gingerps.net.proto.PotionLevelDataOuterClass.PotionLevelData.Builder, emu.gingerps.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder>(
                   levelList_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           levelList_ = null;
@@ -1288,18 +1315,7 @@ public final class PotionStageDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PotionStageData(input, extensionRegistry);
       }
     };
 

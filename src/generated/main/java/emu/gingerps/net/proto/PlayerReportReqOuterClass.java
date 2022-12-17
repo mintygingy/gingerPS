@@ -106,6 +106,71 @@ public final class PlayerReportReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerReportReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetHomeModuleName_ = s;
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 80: {
+
+              targetUid_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              content_ = s;
+              break;
+            }
+            case 120: {
+
+              targetHomeModuleId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerReportReqOuterClass.internal_static_PlayerReportReq_descriptor;
@@ -120,8 +185,7 @@ public final class PlayerReportReqOuterClass {
     }
 
     public static final int TARGET_HOME_MODULE_NAME_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object targetHomeModuleName_ = "";
+    private volatile java.lang.Object targetHomeModuleName_;
     /**
      * <code>string target_home_module_name = 5;</code>
      * @return The targetHomeModuleName.
@@ -159,7 +223,7 @@ public final class PlayerReportReqOuterClass {
     }
 
     public static final int TARGET_UID_FIELD_NUMBER = 10;
-    private int targetUid_ = 0;
+    private int targetUid_;
     /**
      * <code>uint32 target_uid = 10;</code>
      * @return The targetUid.
@@ -170,7 +234,7 @@ public final class PlayerReportReqOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 7;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.ReportReasonType reason = 7;</code>
      * @return The enum numeric value on the wire for reason.
@@ -183,13 +247,13 @@ public final class PlayerReportReqOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType getReason() {
-      emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType result = emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType result = emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType.UNRECOGNIZED : result;
     }
 
     public static final int CONTENT_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object content_ = "";
+    private volatile java.lang.Object content_;
     /**
      * <code>string content = 11;</code>
      * @return The content.
@@ -227,7 +291,7 @@ public final class PlayerReportReqOuterClass {
     }
 
     public static final int TARGET_HOME_MODULE_ID_FIELD_NUMBER = 15;
-    private int targetHomeModuleId_ = 0;
+    private int targetHomeModuleId_;
     /**
      * <code>uint32 target_home_module_id = 15;</code>
      * @return The targetHomeModuleId.
@@ -266,7 +330,7 @@ public final class PlayerReportReqOuterClass {
       if (targetHomeModuleId_ != 0) {
         output.writeUInt32(15, targetHomeModuleId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -293,7 +357,7 @@ public final class PlayerReportReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, targetHomeModuleId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -317,7 +381,7 @@ public final class PlayerReportReqOuterClass {
           .equals(other.getContent())) return false;
       if (getTargetHomeModuleId()
           != other.getTargetHomeModuleId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -338,7 +402,7 @@ public final class PlayerReportReqOuterClass {
       hash = (53 * hash) + getContent().hashCode();
       hash = (37 * hash) + TARGET_HOME_MODULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetHomeModuleId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -466,23 +530,32 @@ public final class PlayerReportReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerReportReqOuterClass.PlayerReportReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         targetHomeModuleName_ = "";
+
         targetUid_ = 0;
+
         reason_ = 0;
+
         content_ = "";
+
         targetHomeModuleId_ = 0;
+
         return this;
       }
 
@@ -509,28 +582,13 @@ public final class PlayerReportReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerReportReqOuterClass.PlayerReportReq buildPartial() {
         emu.gingerps.net.proto.PlayerReportReqOuterClass.PlayerReportReq result = new emu.gingerps.net.proto.PlayerReportReqOuterClass.PlayerReportReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.targetHomeModuleName_ = targetHomeModuleName_;
+        result.targetUid_ = targetUid_;
+        result.reason_ = reason_;
+        result.content_ = content_;
+        result.targetHomeModuleId_ = targetHomeModuleId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerReportReqOuterClass.PlayerReportReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.targetHomeModuleName_ = targetHomeModuleName_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.targetUid_ = targetUid_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.content_ = content_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.targetHomeModuleId_ = targetHomeModuleId_;
-        }
       }
 
       @java.lang.Override
@@ -579,7 +637,6 @@ public final class PlayerReportReqOuterClass {
         if (other == emu.gingerps.net.proto.PlayerReportReqOuterClass.PlayerReportReq.getDefaultInstance()) return this;
         if (!other.getTargetHomeModuleName().isEmpty()) {
           targetHomeModuleName_ = other.targetHomeModuleName_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getTargetUid() != 0) {
@@ -590,13 +647,12 @@ public final class PlayerReportReqOuterClass {
         }
         if (!other.getContent().isEmpty()) {
           content_ = other.content_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.getTargetHomeModuleId() != 0) {
           setTargetHomeModuleId(other.getTargetHomeModuleId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -611,58 +667,19 @@ public final class PlayerReportReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerReportReqOuterClass.PlayerReportReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 42: {
-                targetHomeModuleName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 42
-              case 56: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 56
-              case 80: {
-                targetUid_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 90: {
-                content_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 90
-              case 120: {
-                targetHomeModuleId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerReportReqOuterClass.PlayerReportReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object targetHomeModuleName_ = "";
       /**
@@ -705,9 +722,11 @@ public final class PlayerReportReqOuterClass {
        */
       public Builder setTargetHomeModuleName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         targetHomeModuleName_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -716,8 +735,8 @@ public final class PlayerReportReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetHomeModuleName() {
+        
         targetHomeModuleName_ = getDefaultInstance().getTargetHomeModuleName();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -728,10 +747,12 @@ public final class PlayerReportReqOuterClass {
        */
       public Builder setTargetHomeModuleNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         targetHomeModuleName_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -753,7 +774,6 @@ public final class PlayerReportReqOuterClass {
       public Builder setTargetUid(int value) {
         
         targetUid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -762,7 +782,7 @@ public final class PlayerReportReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         targetUid_ = 0;
         onChanged();
         return this;
@@ -782,8 +802,8 @@ public final class PlayerReportReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -793,7 +813,8 @@ public final class PlayerReportReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType getReason() {
-        emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType result = emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType result = emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.ReportReasonTypeOuterClass.ReportReasonType.UNRECOGNIZED : result;
       }
       /**
@@ -805,7 +826,7 @@ public final class PlayerReportReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -815,7 +836,7 @@ public final class PlayerReportReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -862,9 +883,11 @@ public final class PlayerReportReqOuterClass {
        */
       public Builder setContent(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         content_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -873,8 +896,8 @@ public final class PlayerReportReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearContent() {
+        
         content_ = getDefaultInstance().getContent();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -885,10 +908,12 @@ public final class PlayerReportReqOuterClass {
        */
       public Builder setContentBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         content_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -910,7 +935,6 @@ public final class PlayerReportReqOuterClass {
       public Builder setTargetHomeModuleId(int value) {
         
         targetHomeModuleId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -919,7 +943,7 @@ public final class PlayerReportReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetHomeModuleId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         targetHomeModuleId_ = 0;
         onChanged();
         return this;
@@ -957,18 +981,7 @@ public final class PlayerReportReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerReportReq(input, extensionRegistry);
       }
     };
 

@@ -94,6 +94,72 @@ public final class VehicleInteractRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private VehicleInteractRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              interactType_ = rawValue;
+              break;
+            }
+            case 90: {
+              emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember.Builder subBuilder = null;
+              if (member_ != null) {
+                subBuilder = member_.toBuilder();
+              }
+              member_ = input.readMessage(emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(member_);
+                member_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VehicleInteractRspOuterClass.internal_static_VehicleInteractRsp_descriptor;
@@ -108,7 +174,7 @@ public final class VehicleInteractRspOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 4;
-    private int entityId_ = 0;
+    private int entityId_;
     /**
      * <code>uint32 entity_id = 4;</code>
      * @return The entityId.
@@ -141,11 +207,11 @@ public final class VehicleInteractRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMemberOrBuilder getMemberOrBuilder() {
-      return member_ == null ? emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember.getDefaultInstance() : member_;
+      return getMember();
     }
 
     public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 6;</code>
      * @return The retcode.
@@ -156,7 +222,7 @@ public final class VehicleInteractRspOuterClass {
     }
 
     public static final int INTERACT_TYPE_FIELD_NUMBER = 7;
-    private int interactType_ = 0;
+    private int interactType_;
     /**
      * <code>.VehicleInteractType interact_type = 7;</code>
      * @return The enum numeric value on the wire for interactType.
@@ -169,7 +235,8 @@ public final class VehicleInteractRspOuterClass {
      * @return The interactType.
      */
     @java.lang.Override public emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType getInteractType() {
-      emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType result = emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.forNumber(interactType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType result = emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.valueOf(interactType_);
       return result == null ? emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.UNRECOGNIZED : result;
     }
 
@@ -199,7 +266,7 @@ public final class VehicleInteractRspOuterClass {
       if (member_ != null) {
         output.writeMessage(11, getMember());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -224,7 +291,7 @@ public final class VehicleInteractRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getMember());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -249,7 +316,7 @@ public final class VehicleInteractRspOuterClass {
       if (getRetcode()
           != other.getRetcode()) return false;
       if (interactType_ != other.interactType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -270,7 +337,7 @@ public final class VehicleInteractRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + INTERACT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + interactType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -397,26 +464,34 @@ public final class VehicleInteractRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.VehicleInteractRspOuterClass.VehicleInteractRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         entityId_ = 0;
-        member_ = null;
-        if (memberBuilder_ != null) {
-          memberBuilder_.dispose();
+
+        if (memberBuilder_ == null) {
+          member_ = null;
+        } else {
+          member_ = null;
           memberBuilder_ = null;
         }
         retcode_ = 0;
+
         interactType_ = 0;
+
         return this;
       }
 
@@ -443,27 +518,16 @@ public final class VehicleInteractRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VehicleInteractRspOuterClass.VehicleInteractRsp buildPartial() {
         emu.gingerps.net.proto.VehicleInteractRspOuterClass.VehicleInteractRsp result = new emu.gingerps.net.proto.VehicleInteractRspOuterClass.VehicleInteractRsp(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.entityId_ = entityId_;
+        if (memberBuilder_ == null) {
+          result.member_ = member_;
+        } else {
+          result.member_ = memberBuilder_.build();
+        }
+        result.retcode_ = retcode_;
+        result.interactType_ = interactType_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.VehicleInteractRspOuterClass.VehicleInteractRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.entityId_ = entityId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.member_ = memberBuilder_ == null
-              ? member_
-              : memberBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.interactType_ = interactType_;
-        }
       }
 
       @java.lang.Override
@@ -522,7 +586,7 @@ public final class VehicleInteractRspOuterClass {
         if (other.interactType_ != 0) {
           setInteractTypeValue(other.getInteractTypeValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -537,55 +601,19 @@ public final class VehicleInteractRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.VehicleInteractRspOuterClass.VehicleInteractRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 48: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 48
-              case 56: {
-                interactType_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 90: {
-                input.readMessage(
-                    getMemberFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.VehicleInteractRspOuterClass.VehicleInteractRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -604,7 +632,6 @@ public final class VehicleInteractRspOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -613,7 +640,7 @@ public final class VehicleInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         entityId_ = 0;
         onChanged();
         return this;
@@ -627,7 +654,7 @@ public final class VehicleInteractRspOuterClass {
        * @return Whether the member field is set.
        */
       public boolean hasMember() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return memberBuilder_ != null || member_ != null;
       }
       /**
        * <code>.VehicleMember member = 11;</code>
@@ -649,11 +676,11 @@ public final class VehicleInteractRspOuterClass {
             throw new NullPointerException();
           }
           member_ = value;
+          onChanged();
         } else {
           memberBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -663,11 +690,11 @@ public final class VehicleInteractRspOuterClass {
           emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember.Builder builderForValue) {
         if (memberBuilder_ == null) {
           member_ = builderForValue.build();
+          onChanged();
         } else {
           memberBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -675,38 +702,38 @@ public final class VehicleInteractRspOuterClass {
        */
       public Builder mergeMember(emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember value) {
         if (memberBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            member_ != null &&
-            member_ != emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember.getDefaultInstance()) {
-            getMemberBuilder().mergeFrom(value);
+          if (member_ != null) {
+            member_ =
+              emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember.newBuilder(member_).mergeFrom(value).buildPartial();
           } else {
             member_ = value;
           }
+          onChanged();
         } else {
           memberBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.VehicleMember member = 11;</code>
        */
       public Builder clearMember() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        member_ = null;
-        if (memberBuilder_ != null) {
-          memberBuilder_.dispose();
+        if (memberBuilder_ == null) {
+          member_ = null;
+          onChanged();
+        } else {
+          member_ = null;
           memberBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.VehicleMember member = 11;</code>
        */
       public emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember.Builder getMemberBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getMemberFieldBuilder().getBuilder();
       }
@@ -755,7 +782,6 @@ public final class VehicleInteractRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -764,7 +790,7 @@ public final class VehicleInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -784,8 +810,8 @@ public final class VehicleInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setInteractTypeValue(int value) {
+        
         interactType_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -795,7 +821,8 @@ public final class VehicleInteractRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType getInteractType() {
-        emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType result = emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.forNumber(interactType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType result = emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.valueOf(interactType_);
         return result == null ? emu.gingerps.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.UNRECOGNIZED : result;
       }
       /**
@@ -807,7 +834,7 @@ public final class VehicleInteractRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        
         interactType_ = value.getNumber();
         onChanged();
         return this;
@@ -817,7 +844,7 @@ public final class VehicleInteractRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInteractType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         interactType_ = 0;
         onChanged();
         return this;
@@ -855,18 +882,7 @@ public final class VehicleInteractRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new VehicleInteractRsp(input, extensionRegistry);
       }
     };
 

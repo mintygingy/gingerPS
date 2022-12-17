@@ -104,6 +104,83 @@ public final class FungusCultivateReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FungusCultivateReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              unk3300IOANLJBMBAI_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              unk3300IMEGFNOLDCE_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              unk3300PGJKEICFKLL_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              unk3300DJEGJDACDEF_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              unk3300MBPLICBFAGL_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              unk3300AEGCNHLOPEP_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              cultivateId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              time_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FungusCultivateReqOuterClass.internal_static_FungusCultivateReq_descriptor;
@@ -118,7 +195,7 @@ public final class FungusCultivateReqOuterClass {
     }
 
     public static final int UNK3300_IOANLJBMBAI_FIELD_NUMBER = 1;
-    private int unk3300IOANLJBMBAI_ = 0;
+    private int unk3300IOANLJBMBAI_;
     /**
      * <code>uint32 Unk3300_IOANLJBMBAI = 1;</code>
      * @return The unk3300IOANLJBMBAI.
@@ -129,7 +206,7 @@ public final class FungusCultivateReqOuterClass {
     }
 
     public static final int UNK3300_DJEGJDACDEF_FIELD_NUMBER = 6;
-    private int unk3300DJEGJDACDEF_ = 0;
+    private int unk3300DJEGJDACDEF_;
     /**
      * <code>uint32 Unk3300_DJEGJDACDEF = 6;</code>
      * @return The unk3300DJEGJDACDEF.
@@ -140,7 +217,7 @@ public final class FungusCultivateReqOuterClass {
     }
 
     public static final int UNK3300_IMEGFNOLDCE_FIELD_NUMBER = 2;
-    private int unk3300IMEGFNOLDCE_ = 0;
+    private int unk3300IMEGFNOLDCE_;
     /**
      * <code>uint32 Unk3300_IMEGFNOLDCE = 2;</code>
      * @return The unk3300IMEGFNOLDCE.
@@ -151,7 +228,7 @@ public final class FungusCultivateReqOuterClass {
     }
 
     public static final int UNK3300_PGJKEICFKLL_FIELD_NUMBER = 5;
-    private int unk3300PGJKEICFKLL_ = 0;
+    private int unk3300PGJKEICFKLL_;
     /**
      * <code>uint32 Unk3300_PGJKEICFKLL = 5;</code>
      * @return The unk3300PGJKEICFKLL.
@@ -162,7 +239,7 @@ public final class FungusCultivateReqOuterClass {
     }
 
     public static final int UNK3300_MBPLICBFAGL_FIELD_NUMBER = 7;
-    private int unk3300MBPLICBFAGL_ = 0;
+    private int unk3300MBPLICBFAGL_;
     /**
      * <code>uint32 Unk3300_MBPLICBFAGL = 7;</code>
      * @return The unk3300MBPLICBFAGL.
@@ -173,7 +250,7 @@ public final class FungusCultivateReqOuterClass {
     }
 
     public static final int CULTIVATE_ID_FIELD_NUMBER = 12;
-    private int cultivateId_ = 0;
+    private int cultivateId_;
     /**
      * <code>uint32 cultivate_id = 12;</code>
      * @return The cultivateId.
@@ -184,7 +261,7 @@ public final class FungusCultivateReqOuterClass {
     }
 
     public static final int TIME_FIELD_NUMBER = 15;
-    private int time_ = 0;
+    private int time_;
     /**
      * <code>uint32 time = 15;</code>
      * @return The time.
@@ -195,7 +272,7 @@ public final class FungusCultivateReqOuterClass {
     }
 
     public static final int UNK3300_AEGCNHLOPEP_FIELD_NUMBER = 8;
-    private int unk3300AEGCNHLOPEP_ = 0;
+    private int unk3300AEGCNHLOPEP_;
     /**
      * <code>uint32 Unk3300_AEGCNHLOPEP = 8;</code>
      * @return The unk3300AEGCNHLOPEP.
@@ -243,7 +320,7 @@ public final class FungusCultivateReqOuterClass {
       if (time_ != 0) {
         output.writeUInt32(15, time_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -284,7 +361,7 @@ public final class FungusCultivateReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, time_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -315,7 +392,7 @@ public final class FungusCultivateReqOuterClass {
           != other.getTime()) return false;
       if (getUnk3300AEGCNHLOPEP()
           != other.getUnk3300AEGCNHLOPEP()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -342,7 +419,7 @@ public final class FungusCultivateReqOuterClass {
       hash = (53 * hash) + getTime();
       hash = (37 * hash) + UNK3300_AEGCNHLOPEP_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300AEGCNHLOPEP();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -470,26 +547,38 @@ public final class FungusCultivateReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.FungusCultivateReqOuterClass.FungusCultivateReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300IOANLJBMBAI_ = 0;
+
         unk3300DJEGJDACDEF_ = 0;
+
         unk3300IMEGFNOLDCE_ = 0;
+
         unk3300PGJKEICFKLL_ = 0;
+
         unk3300MBPLICBFAGL_ = 0;
+
         cultivateId_ = 0;
+
         time_ = 0;
+
         unk3300AEGCNHLOPEP_ = 0;
+
         return this;
       }
 
@@ -516,37 +605,16 @@ public final class FungusCultivateReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FungusCultivateReqOuterClass.FungusCultivateReq buildPartial() {
         emu.gingerps.net.proto.FungusCultivateReqOuterClass.FungusCultivateReq result = new emu.gingerps.net.proto.FungusCultivateReqOuterClass.FungusCultivateReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.unk3300IOANLJBMBAI_ = unk3300IOANLJBMBAI_;
+        result.unk3300DJEGJDACDEF_ = unk3300DJEGJDACDEF_;
+        result.unk3300IMEGFNOLDCE_ = unk3300IMEGFNOLDCE_;
+        result.unk3300PGJKEICFKLL_ = unk3300PGJKEICFKLL_;
+        result.unk3300MBPLICBFAGL_ = unk3300MBPLICBFAGL_;
+        result.cultivateId_ = cultivateId_;
+        result.time_ = time_;
+        result.unk3300AEGCNHLOPEP_ = unk3300AEGCNHLOPEP_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FungusCultivateReqOuterClass.FungusCultivateReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300IOANLJBMBAI_ = unk3300IOANLJBMBAI_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300DJEGJDACDEF_ = unk3300DJEGJDACDEF_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300IMEGFNOLDCE_ = unk3300IMEGFNOLDCE_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300PGJKEICFKLL_ = unk3300PGJKEICFKLL_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.unk3300MBPLICBFAGL_ = unk3300MBPLICBFAGL_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.cultivateId_ = cultivateId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.time_ = time_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.unk3300AEGCNHLOPEP_ = unk3300AEGCNHLOPEP_;
-        }
       }
 
       @java.lang.Override
@@ -617,7 +685,7 @@ public final class FungusCultivateReqOuterClass {
         if (other.getUnk3300AEGCNHLOPEP() != 0) {
           setUnk3300AEGCNHLOPEP(other.getUnk3300AEGCNHLOPEP());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -632,73 +700,19 @@ public final class FungusCultivateReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FungusCultivateReqOuterClass.FungusCultivateReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                unk3300IOANLJBMBAI_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                unk3300IMEGFNOLDCE_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 40: {
-                unk3300PGJKEICFKLL_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 40
-              case 48: {
-                unk3300DJEGJDACDEF_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 56: {
-                unk3300MBPLICBFAGL_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 56
-              case 64: {
-                unk3300AEGCNHLOPEP_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 64
-              case 96: {
-                cultivateId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 96
-              case 120: {
-                time_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FungusCultivateReqOuterClass.FungusCultivateReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int unk3300IOANLJBMBAI_ ;
       /**
@@ -717,7 +731,6 @@ public final class FungusCultivateReqOuterClass {
       public Builder setUnk3300IOANLJBMBAI(int value) {
         
         unk3300IOANLJBMBAI_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -726,7 +739,7 @@ public final class FungusCultivateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IOANLJBMBAI() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300IOANLJBMBAI_ = 0;
         onChanged();
         return this;
@@ -749,7 +762,6 @@ public final class FungusCultivateReqOuterClass {
       public Builder setUnk3300DJEGJDACDEF(int value) {
         
         unk3300DJEGJDACDEF_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -758,7 +770,7 @@ public final class FungusCultivateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DJEGJDACDEF() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300DJEGJDACDEF_ = 0;
         onChanged();
         return this;
@@ -781,7 +793,6 @@ public final class FungusCultivateReqOuterClass {
       public Builder setUnk3300IMEGFNOLDCE(int value) {
         
         unk3300IMEGFNOLDCE_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -790,7 +801,7 @@ public final class FungusCultivateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IMEGFNOLDCE() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300IMEGFNOLDCE_ = 0;
         onChanged();
         return this;
@@ -813,7 +824,6 @@ public final class FungusCultivateReqOuterClass {
       public Builder setUnk3300PGJKEICFKLL(int value) {
         
         unk3300PGJKEICFKLL_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -822,7 +832,7 @@ public final class FungusCultivateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PGJKEICFKLL() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300PGJKEICFKLL_ = 0;
         onChanged();
         return this;
@@ -845,7 +855,6 @@ public final class FungusCultivateReqOuterClass {
       public Builder setUnk3300MBPLICBFAGL(int value) {
         
         unk3300MBPLICBFAGL_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -854,7 +863,7 @@ public final class FungusCultivateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MBPLICBFAGL() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         unk3300MBPLICBFAGL_ = 0;
         onChanged();
         return this;
@@ -877,7 +886,6 @@ public final class FungusCultivateReqOuterClass {
       public Builder setCultivateId(int value) {
         
         cultivateId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -886,7 +894,7 @@ public final class FungusCultivateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCultivateId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         cultivateId_ = 0;
         onChanged();
         return this;
@@ -909,7 +917,6 @@ public final class FungusCultivateReqOuterClass {
       public Builder setTime(int value) {
         
         time_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -918,7 +925,7 @@ public final class FungusCultivateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTime() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         time_ = 0;
         onChanged();
         return this;
@@ -941,7 +948,6 @@ public final class FungusCultivateReqOuterClass {
       public Builder setUnk3300AEGCNHLOPEP(int value) {
         
         unk3300AEGCNHLOPEP_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -950,7 +956,7 @@ public final class FungusCultivateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AEGCNHLOPEP() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         unk3300AEGCNHLOPEP_ = 0;
         onChanged();
         return this;
@@ -988,18 +994,7 @@ public final class FungusCultivateReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FungusCultivateReq(input, extensionRegistry);
       }
     };
 

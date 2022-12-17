@@ -88,6 +88,71 @@ public final class UgcActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private UgcActivityDetailInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
+
+              customDungeonGroupId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              isUgcFeatureClosed_ = input.readBool();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                officialCustomDungeonList_ = new java.util.ArrayList<emu.gingerps.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              officialCustomDungeonList_.add(
+                  input.readMessage(emu.gingerps.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+
+              isEnableUgc_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          officialCustomDungeonList_ = java.util.Collections.unmodifiableList(officialCustomDungeonList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.internal_static_UgcActivityDetailInfo_descriptor;
@@ -102,7 +167,7 @@ public final class UgcActivityDetailInfoOuterClass {
     }
 
     public static final int IS_ENABLE_UGC_FIELD_NUMBER = 14;
-    private boolean isEnableUgc_ = false;
+    private boolean isEnableUgc_;
     /**
      * <code>bool is_enable_ugc = 14;</code>
      * @return The isEnableUgc.
@@ -113,7 +178,6 @@ public final class UgcActivityDetailInfoOuterClass {
     }
 
     public static final int OFFICIAL_CUSTOM_DUNGEON_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon> officialCustomDungeonList_;
     /**
      * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 10;</code>
@@ -154,7 +218,7 @@ public final class UgcActivityDetailInfoOuterClass {
     }
 
     public static final int CUSTOM_DUNGEON_GROUP_ID_FIELD_NUMBER = 4;
-    private int customDungeonGroupId_ = 0;
+    private int customDungeonGroupId_;
     /**
      * <code>uint32 custom_dungeon_group_id = 4;</code>
      * @return The customDungeonGroupId.
@@ -165,7 +229,7 @@ public final class UgcActivityDetailInfoOuterClass {
     }
 
     public static final int IS_UGC_FEATURE_CLOSED_FIELD_NUMBER = 9;
-    private boolean isUgcFeatureClosed_ = false;
+    private boolean isUgcFeatureClosed_;
     /**
      * <code>bool is_ugc_feature_closed = 9;</code>
      * @return The isUgcFeatureClosed.
@@ -201,7 +265,7 @@ public final class UgcActivityDetailInfoOuterClass {
       if (isEnableUgc_ != false) {
         output.writeBool(14, isEnableUgc_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -226,7 +290,7 @@ public final class UgcActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isEnableUgc_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -249,7 +313,7 @@ public final class UgcActivityDetailInfoOuterClass {
           != other.getCustomDungeonGroupId()) return false;
       if (getIsUgcFeatureClosed()
           != other.getIsUgcFeatureClosed()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -272,7 +336,7 @@ public final class UgcActivityDetailInfoOuterClass {
       hash = (37 * hash) + IS_UGC_FEATURE_CLOSED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsUgcFeatureClosed());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -389,28 +453,35 @@ public final class UgcActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getOfficialCustomDungeonListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isEnableUgc_ = false;
+
         if (officialCustomDungeonListBuilder_ == null) {
           officialCustomDungeonList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          officialCustomDungeonList_ = null;
           officialCustomDungeonListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         customDungeonGroupId_ = 0;
+
         isUgcFeatureClosed_ = false;
+
         return this;
       }
 
@@ -437,35 +508,21 @@ public final class UgcActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo result = new emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        result.isEnableUgc_ = isEnableUgc_;
         if (officialCustomDungeonListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             officialCustomDungeonList_ = java.util.Collections.unmodifiableList(officialCustomDungeonList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.officialCustomDungeonList_ = officialCustomDungeonList_;
         } else {
           result.officialCustomDungeonList_ = officialCustomDungeonListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isEnableUgc_ = isEnableUgc_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.customDungeonGroupId_ = customDungeonGroupId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isUgcFeatureClosed_ = isUgcFeatureClosed_;
-        }
+        result.customDungeonGroupId_ = customDungeonGroupId_;
+        result.isUgcFeatureClosed_ = isUgcFeatureClosed_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -519,7 +576,7 @@ public final class UgcActivityDetailInfoOuterClass {
           if (!other.officialCustomDungeonList_.isEmpty()) {
             if (officialCustomDungeonList_.isEmpty()) {
               officialCustomDungeonList_ = other.officialCustomDungeonList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureOfficialCustomDungeonListIsMutable();
               officialCustomDungeonList_.addAll(other.officialCustomDungeonList_);
@@ -532,7 +589,7 @@ public final class UgcActivityDetailInfoOuterClass {
               officialCustomDungeonListBuilder_.dispose();
               officialCustomDungeonListBuilder_ = null;
               officialCustomDungeonList_ = other.officialCustomDungeonList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               officialCustomDungeonListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOfficialCustomDungeonListFieldBuilder() : null;
@@ -547,7 +604,7 @@ public final class UgcActivityDetailInfoOuterClass {
         if (other.getIsUgcFeatureClosed() != false) {
           setIsUgcFeatureClosed(other.getIsUgcFeatureClosed());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -562,58 +619,17 @@ public final class UgcActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 32: {
-                customDungeonGroupId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 32
-              case 72: {
-                isUgcFeatureClosed_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 72
-              case 82: {
-                emu.gingerps.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.parser(),
-                        extensionRegistry);
-                if (officialCustomDungeonListBuilder_ == null) {
-                  ensureOfficialCustomDungeonListIsMutable();
-                  officialCustomDungeonList_.add(m);
-                } else {
-                  officialCustomDungeonListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              case 112: {
-                isEnableUgc_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -635,7 +651,6 @@ public final class UgcActivityDetailInfoOuterClass {
       public Builder setIsEnableUgc(boolean value) {
         
         isEnableUgc_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -644,7 +659,7 @@ public final class UgcActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsEnableUgc() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isEnableUgc_ = false;
         onChanged();
         return this;
@@ -653,9 +668,9 @@ public final class UgcActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon> officialCustomDungeonList_ =
         java.util.Collections.emptyList();
       private void ensureOfficialCustomDungeonListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           officialCustomDungeonList_ = new java.util.ArrayList<emu.gingerps.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon>(officialCustomDungeonList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -805,7 +820,7 @@ public final class UgcActivityDetailInfoOuterClass {
       public Builder clearOfficialCustomDungeonList() {
         if (officialCustomDungeonListBuilder_ == null) {
           officialCustomDungeonList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           officialCustomDungeonListBuilder_.clear();
@@ -882,7 +897,7 @@ public final class UgcActivityDetailInfoOuterClass {
           officialCustomDungeonListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon, emu.gingerps.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.Builder, emu.gingerps.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeonOrBuilder>(
                   officialCustomDungeonList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           officialCustomDungeonList_ = null;
@@ -907,7 +922,6 @@ public final class UgcActivityDetailInfoOuterClass {
       public Builder setCustomDungeonGroupId(int value) {
         
         customDungeonGroupId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -916,7 +930,7 @@ public final class UgcActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCustomDungeonGroupId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         customDungeonGroupId_ = 0;
         onChanged();
         return this;
@@ -939,7 +953,6 @@ public final class UgcActivityDetailInfoOuterClass {
       public Builder setIsUgcFeatureClosed(boolean value) {
         
         isUgcFeatureClosed_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -948,7 +961,7 @@ public final class UgcActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsUgcFeatureClosed() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isUgcFeatureClosed_ = false;
         onChanged();
         return this;
@@ -986,18 +999,7 @@ public final class UgcActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new UgcActivityDetailInfo(input, extensionRegistry);
       }
     };
 

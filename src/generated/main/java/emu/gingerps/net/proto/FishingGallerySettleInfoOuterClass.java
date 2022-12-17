@@ -65,14 +65,14 @@ public final class FishingGallerySettleInfoOuterClass {
     /**
      * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.FishInfoOuterClass.FishInfo getFishMapOrDefault(
+
+    emu.gingerps.net.proto.FishInfoOuterClass.FishInfo getFishMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue);
+        emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue);
     /**
      * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
      */
+
     emu.gingerps.net.proto.FishInfoOuterClass.FishInfo getFishMapOrThrow(
         int key);
   }
@@ -104,6 +104,69 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue);
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FishingGallerySettleInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                fishMap_ = com.google.protobuf.MapField.newMapField(
+                    FishMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo>
+              fishMap__ = input.readMessage(
+                  FishMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              fishMap_.getMutableMap().put(
+                  fishMap__.getKey(), fishMap__.getValue());
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                fishingScoreList_ = new java.util.ArrayList<emu.gingerps.net.proto.FishingScoreOuterClass.FishingScore>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              fishingScoreList_.add(
+                  input.readMessage(emu.gingerps.net.proto.FishingScoreOuterClass.FishingScore.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          fishingScoreList_ = java.util.Collections.unmodifiableList(fishingScoreList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.internal_static_FishingGallerySettleInfo_descriptor;
@@ -130,7 +193,6 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue);
     }
 
     public static final int FISHING_SCORE_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.FishingScoreOuterClass.FishingScore> fishingScoreList_;
     /**
      * <code>repeated .FishingScore fishing_score_list = 15;</code>
@@ -182,7 +244,6 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.FishInfoOuterClass.FishInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo> fishMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo>
@@ -193,12 +254,14 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue);
       }
       return fishMap_;
     }
+
     public int getFishMapCount() {
       return internalGetFishMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
      */
+
     @java.lang.Override
     public boolean containsFishMap(
         int key) {
@@ -217,6 +280,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue);
      * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo> getFishMapMap() {
       return internalGetFishMap().getMap();
     }
@@ -224,11 +288,10 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue);
      * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.FishInfoOuterClass.FishInfo getFishMapOrDefault(
+
+    public emu.gingerps.net.proto.FishInfoOuterClass.FishInfo getFishMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
+        emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo> map =
           internalGetFishMap().getMap();
@@ -238,6 +301,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
      * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.FishInfoOuterClass.FishInfo getFishMapOrThrow(
         int key) {
       
@@ -272,7 +336,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
       for (int i = 0; i < fishingScoreList_.size(); i++) {
         output.writeMessage(15, fishingScoreList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -295,7 +359,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, fishingScoreList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -314,7 +378,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
           .equals(other.getFishingScoreListList())) return false;
       if (!internalGetFishMap().equals(
           other.internalGetFishMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -333,7 +397,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
         hash = (37 * hash) + FISH_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetFishMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -472,25 +536,29 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
 
       // Construct using emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getFishingScoreListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (fishingScoreListBuilder_ == null) {
           fishingScoreList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          fishingScoreList_ = null;
           fishingScoreListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableFishMap().clear();
         return this;
       }
@@ -518,13 +586,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
       @java.lang.Override
       public emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo buildPartial() {
         emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo result = new emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo result) {
+        int from_bitField0_ = bitField0_;
         if (fishingScoreListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             fishingScoreList_ = java.util.Collections.unmodifiableList(fishingScoreList_);
@@ -534,14 +596,10 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
         } else {
           result.fishingScoreList_ = fishingScoreListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.fishMap_ = internalGetFishMap();
-          result.fishMap_.makeImmutable();
-        }
+        result.fishMap_ = internalGetFishMap();
+        result.fishMap_.makeImmutable();
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -616,8 +674,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
         }
         internalGetMutableFishMap().mergeFrom(
             other.internalGetFishMap());
-        bitField0_ |= 0x00000002;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -632,52 +689,17 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 82: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo>
-                fishMap__ = input.readMessage(
-                    FishMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableFishMap().getMutableMap().put(
-                    fishMap__.getKey(), fishMap__.getValue());
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 82
-              case 122: {
-                emu.gingerps.net.proto.FishingScoreOuterClass.FishingScore m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.FishingScoreOuterClass.FishingScore.parser(),
-                        extensionRegistry);
-                if (fishingScoreListBuilder_ == null) {
-                  ensureFishingScoreListIsMutable();
-                  fishingScoreList_.add(m);
-                } else {
-                  fishingScoreListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -925,7 +947,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo> fishMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo>
-          internalGetFishMap() {
+      internalGetFishMap() {
         if (fishMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               FishMapDefaultEntryHolder.defaultEntry);
@@ -933,7 +955,8 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
         return fishMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo>
-          internalGetMutableFishMap() {
+      internalGetMutableFishMap() {
+        onChanged();;
         if (fishMap_ == null) {
           fishMap_ = com.google.protobuf.MapField.newMapField(
               FishMapDefaultEntryHolder.defaultEntry);
@@ -941,16 +964,16 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
         if (!fishMap_.isMutable()) {
           fishMap_ = fishMap_.copy();
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
         return fishMap_;
       }
+
       public int getFishMapCount() {
         return internalGetFishMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
        */
+
       @java.lang.Override
       public boolean containsFishMap(
           int key) {
@@ -969,6 +992,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
        * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo> getFishMapMap() {
         return internalGetFishMap().getMap();
       }
@@ -976,11 +1000,10 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
        * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.FishInfoOuterClass.FishInfo getFishMapOrDefault(
+
+      public emu.gingerps.net.proto.FishInfoOuterClass.FishInfo getFishMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
+          emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo> map =
             internalGetFishMap().getMap();
@@ -990,6 +1013,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
        * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.FishInfoOuterClass.FishInfo getFishMapOrThrow(
           int key) {
         
@@ -1000,8 +1024,8 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearFishMap() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableFishMap().getMutableMap()
             .clear();
         return this;
@@ -1009,6 +1033,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
       /**
        * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
        */
+
       public Builder removeFishMap(
           int key) {
         
@@ -1021,8 +1046,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo>
-          getMutableFishMap() {
-        bitField0_ |= 0x00000002;
+      getMutableFishMap() {
         return internalGetMutableFishMap().getMutableMap();
       }
       /**
@@ -1032,20 +1056,19 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
           int key,
           emu.gingerps.net.proto.FishInfoOuterClass.FishInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableFishMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, .FishInfo&gt; fish_map = 10;</code>
        */
+
       public Builder putAllFishMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FishInfoOuterClass.FishInfo> values) {
         internalGetMutableFishMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000002;
         return this;
       }
       @java.lang.Override
@@ -1081,18 +1104,7 @@ emu.gingerps.net.proto.FishInfoOuterClass.FishInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FishingGallerySettleInfo(input, extensionRegistry);
       }
     };
 

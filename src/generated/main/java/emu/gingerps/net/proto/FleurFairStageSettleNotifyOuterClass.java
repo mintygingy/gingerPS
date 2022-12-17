@@ -93,6 +93,76 @@ public final class FleurFairStageSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FleurFairStageSettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.Builder subBuilder = null;
+              if (detailCase_ == 1) {
+                subBuilder = ((emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1;
+              break;
+            }
+            case 56: {
+
+              stageType_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo.Builder subBuilder = null;
+              if (detailCase_ == 12) {
+                subBuilder = ((emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 12;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FleurFairStageSettleNotifyOuterClass.internal_static_FleurFairStageSettleNotify_descriptor;
@@ -148,7 +218,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
     }
 
     public static final int STAGE_TYPE_FIELD_NUMBER = 7;
-    private int stageType_ = 0;
+    private int stageType_;
     /**
      * <code>uint32 stage_type = 7;</code>
      * @return The stageType.
@@ -243,7 +313,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
       if (detailCase_ == 12) {
         output.writeMessage(12, (emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) detail_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -264,7 +334,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, (emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) detail_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -294,7 +364,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -319,7 +389,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -446,25 +516,24 @@ public final class FleurFairStageSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         stageType_ = 0;
-        if (gallerySettleInfoBuilder_ != null) {
-          gallerySettleInfoBuilder_.clear();
-        }
-        if (bossSettleInfoBuilder_ != null) {
-          bossSettleInfoBuilder_.clear();
-        }
+
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -493,30 +562,24 @@ public final class FleurFairStageSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify buildPartial() {
         emu.gingerps.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify result = new emu.gingerps.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        result.stageType_ = stageType_;
+        if (detailCase_ == 1) {
+          if (gallerySettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = gallerySettleInfoBuilder_.build();
+          }
+        }
+        if (detailCase_ == 12) {
+          if (bossSettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = bossSettleInfoBuilder_.build();
+          }
+        }
+        result.detailCase_ = detailCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.stageType_ = stageType_;
-        }
-      }
-
-      private void buildPartialOneofs(emu.gingerps.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify result) {
-        result.detailCase_ = detailCase_;
-        result.detail_ = this.detail_;
-        if (detailCase_ == 1 &&
-            gallerySettleInfoBuilder_ != null) {
-          result.detail_ = gallerySettleInfoBuilder_.build();
-        }
-        if (detailCase_ == 12 &&
-            bossSettleInfoBuilder_ != null) {
-          result.detail_ = bossSettleInfoBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -579,7 +642,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -594,49 +657,17 @@ public final class FleurFairStageSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getGallerySettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 1;
-                break;
-              } // case 10
-              case 56: {
-                stageType_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 56
-              case 98: {
-                input.readMessage(
-                    getBossSettleInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailCase_ = 12;
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int detailCase_ = 0;
@@ -654,7 +685,6 @@ public final class FleurFairStageSettleNotifyOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private int stageType_ ;
       /**
@@ -673,7 +703,6 @@ public final class FleurFairStageSettleNotifyOuterClass {
       public Builder setStageType(int value) {
         
         stageType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -682,7 +711,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         stageType_ = 0;
         onChanged();
         return this;
@@ -762,9 +791,8 @@ public final class FleurFairStageSettleNotifyOuterClass {
         } else {
           if (detailCase_ == 1) {
             gallerySettleInfoBuilder_.mergeFrom(value);
-          } else {
-            gallerySettleInfoBuilder_.setMessage(value);
           }
+          gallerySettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1;
         return this;
@@ -826,7 +854,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
           detail_ = null;
         }
         detailCase_ = 1;
-        onChanged();
+        onChanged();;
         return gallerySettleInfoBuilder_;
       }
 
@@ -904,9 +932,8 @@ public final class FleurFairStageSettleNotifyOuterClass {
         } else {
           if (detailCase_ == 12) {
             bossSettleInfoBuilder_.mergeFrom(value);
-          } else {
-            bossSettleInfoBuilder_.setMessage(value);
           }
+          bossSettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 12;
         return this;
@@ -968,7 +995,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
           detail_ = null;
         }
         detailCase_ = 12;
-        onChanged();
+        onChanged();;
         return bossSettleInfoBuilder_;
       }
       @java.lang.Override
@@ -1004,18 +1031,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FleurFairStageSettleNotify(input, extensionRegistry);
       }
     };
 

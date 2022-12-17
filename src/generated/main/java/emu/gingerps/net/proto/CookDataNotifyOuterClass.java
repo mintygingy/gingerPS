@@ -86,6 +86,61 @@ public final class CookDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CookDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 72: {
+
+              grade_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                recipeDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.CookRecipeDataOuterClass.CookRecipeData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              recipeDataList_.add(
+                  input.readMessage(emu.gingerps.net.proto.CookRecipeDataOuterClass.CookRecipeData.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          recipeDataList_ = java.util.Collections.unmodifiableList(recipeDataList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CookDataNotifyOuterClass.internal_static_CookDataNotify_descriptor;
@@ -100,7 +155,6 @@ public final class CookDataNotifyOuterClass {
     }
 
     public static final int RECIPE_DATA_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CookRecipeDataOuterClass.CookRecipeData> recipeDataList_;
     /**
      * <code>repeated .CookRecipeData recipe_data_list = 15;</code>
@@ -141,7 +195,7 @@ public final class CookDataNotifyOuterClass {
     }
 
     public static final int GRADE_FIELD_NUMBER = 9;
-    private int grade_ = 0;
+    private int grade_;
     /**
      * <code>uint32 grade = 9;</code>
      * @return The grade.
@@ -171,7 +225,7 @@ public final class CookDataNotifyOuterClass {
       for (int i = 0; i < recipeDataList_.size(); i++) {
         output.writeMessage(15, recipeDataList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +242,7 @@ public final class CookDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, recipeDataList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -207,7 +261,7 @@ public final class CookDataNotifyOuterClass {
           .equals(other.getRecipeDataListList())) return false;
       if (getGrade()
           != other.getGrade()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -224,7 +278,7 @@ public final class CookDataNotifyOuterClass {
       }
       hash = (37 * hash) + GRADE_FIELD_NUMBER;
       hash = (53 * hash) + getGrade();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +405,31 @@ public final class CookDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CookDataNotifyOuterClass.CookDataNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRecipeDataListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (recipeDataListBuilder_ == null) {
           recipeDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          recipeDataList_ = null;
           recipeDataListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         grade_ = 0;
+
         return this;
       }
 
@@ -397,13 +456,7 @@ public final class CookDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CookDataNotifyOuterClass.CookDataNotify buildPartial() {
         emu.gingerps.net.proto.CookDataNotifyOuterClass.CookDataNotify result = new emu.gingerps.net.proto.CookDataNotifyOuterClass.CookDataNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CookDataNotifyOuterClass.CookDataNotify result) {
+        int from_bitField0_ = bitField0_;
         if (recipeDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             recipeDataList_ = java.util.Collections.unmodifiableList(recipeDataList_);
@@ -413,13 +466,9 @@ public final class CookDataNotifyOuterClass {
         } else {
           result.recipeDataList_ = recipeDataListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CookDataNotifyOuterClass.CookDataNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.grade_ = grade_;
-        }
+        result.grade_ = grade_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -495,7 +544,7 @@ public final class CookDataNotifyOuterClass {
         if (other.getGrade() != 0) {
           setGrade(other.getGrade());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -510,48 +559,17 @@ public final class CookDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CookDataNotifyOuterClass.CookDataNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 72: {
-                grade_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 72
-              case 122: {
-                emu.gingerps.net.proto.CookRecipeDataOuterClass.CookRecipeData m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.CookRecipeDataOuterClass.CookRecipeData.parser(),
-                        extensionRegistry);
-                if (recipeDataListBuilder_ == null) {
-                  ensureRecipeDataListIsMutable();
-                  recipeDataList_.add(m);
-                } else {
-                  recipeDataListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CookDataNotifyOuterClass.CookDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -813,7 +831,6 @@ public final class CookDataNotifyOuterClass {
       public Builder setGrade(int value) {
         
         grade_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -822,7 +839,7 @@ public final class CookDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGrade() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         grade_ = 0;
         onChanged();
         return this;
@@ -860,18 +877,7 @@ public final class CookDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CookDataNotify(input, extensionRegistry);
       }
     };
 

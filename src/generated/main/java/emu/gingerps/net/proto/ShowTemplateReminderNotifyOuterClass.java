@@ -109,6 +109,107 @@ public final class ShowTemplateReminderNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ShowTemplateReminderNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              templateReminderId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                paramList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              paramList_.addInt(input.readInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                paramList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                paramList_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 48: {
+
+              unk3300LABCNBEGCED_ = input.readBool();
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                paramUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              paramUidList_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                paramUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                paramUidList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 96: {
+
+              unk3300AENIIBBBPJC_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          paramList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          paramUidList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ShowTemplateReminderNotifyOuterClass.internal_static_ShowTemplateReminderNotify_descriptor;
@@ -123,7 +224,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
     }
 
     public static final int UNK3300_LABCNBEGCED_FIELD_NUMBER = 6;
-    private boolean unk3300LABCNBEGCED_ = false;
+    private boolean unk3300LABCNBEGCED_;
     /**
      * <code>bool Unk3300_LABCNBEGCED = 6;</code>
      * @return The unk3300LABCNBEGCED.
@@ -134,7 +235,6 @@ public final class ShowTemplateReminderNotifyOuterClass {
     }
 
     public static final int PARAM_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList paramList_;
     /**
      * <code>repeated int32 param_list = 4;</code>
@@ -163,7 +263,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
     private int paramListMemoizedSerializedSize = -1;
 
     public static final int TEMPLATE_REMINDER_ID_FIELD_NUMBER = 2;
-    private int templateReminderId_ = 0;
+    private int templateReminderId_;
     /**
      * <code>uint32 template_reminder_id = 2;</code>
      * @return The templateReminderId.
@@ -174,7 +274,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
     }
 
     public static final int UNK3300_AENIIBBBPJC_FIELD_NUMBER = 12;
-    private boolean unk3300AENIIBBBPJC_ = false;
+    private boolean unk3300AENIIBBBPJC_;
     /**
      * <code>bool Unk3300_AENIIBBBPJC = 12;</code>
      * @return The unk3300AENIIBBBPJC.
@@ -185,7 +285,6 @@ public final class ShowTemplateReminderNotifyOuterClass {
     }
 
     public static final int PARAM_UID_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList paramUidList_;
     /**
      * <code>repeated uint32 param_uid_list = 7;</code>
@@ -251,7 +350,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
       if (unk3300AENIIBBBPJC_ != false) {
         output.writeBool(12, unk3300AENIIBBBPJC_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -300,7 +399,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, unk3300AENIIBBBPJC_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -325,7 +424,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
           != other.getUnk3300AENIIBBBPJC()) return false;
       if (!getParamUidListList()
           .equals(other.getParamUidListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -352,7 +451,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
         hash = (37 * hash) + PARAM_UID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getParamUidListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -479,23 +578,32 @@ public final class ShowTemplateReminderNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ShowTemplateReminderNotifyOuterClass.ShowTemplateReminderNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300LABCNBEGCED_ = false;
+
         paramList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         templateReminderId_ = 0;
+
         unk3300AENIIBBBPJC_ = false;
+
         paramUidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -522,36 +630,22 @@ public final class ShowTemplateReminderNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ShowTemplateReminderNotifyOuterClass.ShowTemplateReminderNotify buildPartial() {
         emu.gingerps.net.proto.ShowTemplateReminderNotifyOuterClass.ShowTemplateReminderNotify result = new emu.gingerps.net.proto.ShowTemplateReminderNotifyOuterClass.ShowTemplateReminderNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ShowTemplateReminderNotifyOuterClass.ShowTemplateReminderNotify result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.unk3300LABCNBEGCED_ = unk3300LABCNBEGCED_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           paramList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.paramList_ = paramList_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        result.templateReminderId_ = templateReminderId_;
+        result.unk3300AENIIBBBPJC_ = unk3300AENIIBBBPJC_;
+        if (((bitField0_ & 0x00000002) != 0)) {
           paramUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.paramUidList_ = paramUidList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.ShowTemplateReminderNotifyOuterClass.ShowTemplateReminderNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300LABCNBEGCED_ = unk3300LABCNBEGCED_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.templateReminderId_ = templateReminderId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.unk3300AENIIBBBPJC_ = unk3300AENIIBBBPJC_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -604,7 +698,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
         if (!other.paramList_.isEmpty()) {
           if (paramList_.isEmpty()) {
             paramList_ = other.paramList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureParamListIsMutable();
             paramList_.addAll(other.paramList_);
@@ -620,14 +714,14 @@ public final class ShowTemplateReminderNotifyOuterClass {
         if (!other.paramUidList_.isEmpty()) {
           if (paramUidList_.isEmpty()) {
             paramUidList_ = other.paramUidList_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureParamUidListIsMutable();
             paramUidList_.addAll(other.paramUidList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -642,77 +736,17 @@ public final class ShowTemplateReminderNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.ShowTemplateReminderNotifyOuterClass.ShowTemplateReminderNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                templateReminderId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 32: {
-                int v = input.readInt32();
-                ensureParamListIsMutable();
-                paramList_.addInt(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureParamListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  paramList_.addInt(input.readInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              case 48: {
-                unk3300LABCNBEGCED_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 56: {
-                int v = input.readUInt32();
-                ensureParamUidListIsMutable();
-                paramUidList_.addInt(v);
-                break;
-              } // case 56
-              case 58: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureParamUidListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  paramUidList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 58
-              case 96: {
-                unk3300AENIIBBBPJC_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.ShowTemplateReminderNotifyOuterClass.ShowTemplateReminderNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -734,7 +768,6 @@ public final class ShowTemplateReminderNotifyOuterClass {
       public Builder setUnk3300LABCNBEGCED(boolean value) {
         
         unk3300LABCNBEGCED_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -743,7 +776,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LABCNBEGCED() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300LABCNBEGCED_ = false;
         onChanged();
         return this;
@@ -751,10 +784,10 @@ public final class ShowTemplateReminderNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList paramList_ = emptyIntList();
       private void ensureParamListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           paramList_ = mutableCopy(paramList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated int32 param_list = 4;</code>
@@ -762,7 +795,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getParamListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(paramList_) : paramList_;
       }
       /**
@@ -788,7 +821,6 @@ public final class ShowTemplateReminderNotifyOuterClass {
        */
       public Builder setParamList(
           int index, int value) {
-        
         ensureParamListIsMutable();
         paramList_.setInt(index, value);
         onChanged();
@@ -800,7 +832,6 @@ public final class ShowTemplateReminderNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParamList(int value) {
-        
         ensureParamListIsMutable();
         paramList_.addInt(value);
         onChanged();
@@ -825,7 +856,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
        */
       public Builder clearParamList() {
         paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -847,7 +878,6 @@ public final class ShowTemplateReminderNotifyOuterClass {
       public Builder setTemplateReminderId(int value) {
         
         templateReminderId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -856,7 +886,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTemplateReminderId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         templateReminderId_ = 0;
         onChanged();
         return this;
@@ -879,7 +909,6 @@ public final class ShowTemplateReminderNotifyOuterClass {
       public Builder setUnk3300AENIIBBBPJC(boolean value) {
         
         unk3300AENIIBBBPJC_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -888,7 +917,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AENIIBBBPJC() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         unk3300AENIIBBBPJC_ = false;
         onChanged();
         return this;
@@ -896,10 +925,10 @@ public final class ShowTemplateReminderNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList paramUidList_ = emptyIntList();
       private void ensureParamUidListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           paramUidList_ = mutableCopy(paramUidList_);
-          bitField0_ |= 0x00000010;
-        }
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated uint32 param_uid_list = 7;</code>
@@ -907,7 +936,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getParamUidListList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(paramUidList_) : paramUidList_;
       }
       /**
@@ -933,7 +962,6 @@ public final class ShowTemplateReminderNotifyOuterClass {
        */
       public Builder setParamUidList(
           int index, int value) {
-        
         ensureParamUidListIsMutable();
         paramUidList_.setInt(index, value);
         onChanged();
@@ -945,7 +973,6 @@ public final class ShowTemplateReminderNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParamUidList(int value) {
-        
         ensureParamUidListIsMutable();
         paramUidList_.addInt(value);
         onChanged();
@@ -970,7 +997,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
        */
       public Builder clearParamUidList() {
         paramUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1007,18 +1034,7 @@ public final class ShowTemplateReminderNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ShowTemplateReminderNotify(input, extensionRegistry);
       }
     };
 

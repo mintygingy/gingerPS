@@ -92,6 +92,66 @@ public final class GetSceneNpcPositionRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetSceneNpcPositionRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                npcInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.NpcPositionInfoOuterClass.NpcPositionInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              npcInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.NpcPositionInfoOuterClass.NpcPositionInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          npcInfoList_ = java.util.Collections.unmodifiableList(npcInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetSceneNpcPositionRspOuterClass.internal_static_GetSceneNpcPositionRsp_descriptor;
@@ -106,7 +166,7 @@ public final class GetSceneNpcPositionRspOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 1;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 1;</code>
      * @return The sceneId.
@@ -117,7 +177,6 @@ public final class GetSceneNpcPositionRspOuterClass {
     }
 
     public static final int NPC_INFO_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.NpcPositionInfoOuterClass.NpcPositionInfo> npcInfoList_;
     /**
      * <code>repeated .NpcPositionInfo npc_info_list = 2;</code>
@@ -158,7 +217,7 @@ public final class GetSceneNpcPositionRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 5;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 5;</code>
      * @return The retcode.
@@ -191,7 +250,7 @@ public final class GetSceneNpcPositionRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(5, retcode_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -212,7 +271,7 @@ public final class GetSceneNpcPositionRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, retcode_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -233,7 +292,7 @@ public final class GetSceneNpcPositionRspOuterClass {
           .equals(other.getNpcInfoListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -252,7 +311,7 @@ public final class GetSceneNpcPositionRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -379,27 +438,33 @@ public final class GetSceneNpcPositionRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetSceneNpcPositionRspOuterClass.GetSceneNpcPositionRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getNpcInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         sceneId_ = 0;
+
         if (npcInfoListBuilder_ == null) {
           npcInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          npcInfoList_ = null;
           npcInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
+
         return this;
       }
 
@@ -426,32 +491,20 @@ public final class GetSceneNpcPositionRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetSceneNpcPositionRspOuterClass.GetSceneNpcPositionRsp buildPartial() {
         emu.gingerps.net.proto.GetSceneNpcPositionRspOuterClass.GetSceneNpcPositionRsp result = new emu.gingerps.net.proto.GetSceneNpcPositionRspOuterClass.GetSceneNpcPositionRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetSceneNpcPositionRspOuterClass.GetSceneNpcPositionRsp result) {
+        int from_bitField0_ = bitField0_;
+        result.sceneId_ = sceneId_;
         if (npcInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             npcInfoList_ = java.util.Collections.unmodifiableList(npcInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.npcInfoList_ = npcInfoList_;
         } else {
           result.npcInfoList_ = npcInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetSceneNpcPositionRspOuterClass.GetSceneNpcPositionRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        result.retcode_ = retcode_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -505,7 +558,7 @@ public final class GetSceneNpcPositionRspOuterClass {
           if (!other.npcInfoList_.isEmpty()) {
             if (npcInfoList_.isEmpty()) {
               npcInfoList_ = other.npcInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureNpcInfoListIsMutable();
               npcInfoList_.addAll(other.npcInfoList_);
@@ -518,7 +571,7 @@ public final class GetSceneNpcPositionRspOuterClass {
               npcInfoListBuilder_.dispose();
               npcInfoListBuilder_ = null;
               npcInfoList_ = other.npcInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               npcInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getNpcInfoListFieldBuilder() : null;
@@ -530,7 +583,7 @@ public final class GetSceneNpcPositionRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -545,53 +598,17 @@ public final class GetSceneNpcPositionRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetSceneNpcPositionRspOuterClass.GetSceneNpcPositionRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                emu.gingerps.net.proto.NpcPositionInfoOuterClass.NpcPositionInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.NpcPositionInfoOuterClass.NpcPositionInfo.parser(),
-                        extensionRegistry);
-                if (npcInfoListBuilder_ == null) {
-                  ensureNpcInfoListIsMutable();
-                  npcInfoList_.add(m);
-                } else {
-                  npcInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 40: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetSceneNpcPositionRspOuterClass.GetSceneNpcPositionRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -613,7 +630,6 @@ public final class GetSceneNpcPositionRspOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -622,7 +638,7 @@ public final class GetSceneNpcPositionRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -631,9 +647,9 @@ public final class GetSceneNpcPositionRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.NpcPositionInfoOuterClass.NpcPositionInfo> npcInfoList_ =
         java.util.Collections.emptyList();
       private void ensureNpcInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           npcInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.NpcPositionInfoOuterClass.NpcPositionInfo>(npcInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -783,7 +799,7 @@ public final class GetSceneNpcPositionRspOuterClass {
       public Builder clearNpcInfoList() {
         if (npcInfoListBuilder_ == null) {
           npcInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           npcInfoListBuilder_.clear();
@@ -860,7 +876,7 @@ public final class GetSceneNpcPositionRspOuterClass {
           npcInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.NpcPositionInfoOuterClass.NpcPositionInfo, emu.gingerps.net.proto.NpcPositionInfoOuterClass.NpcPositionInfo.Builder, emu.gingerps.net.proto.NpcPositionInfoOuterClass.NpcPositionInfoOrBuilder>(
                   npcInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           npcInfoList_ = null;
@@ -885,7 +901,6 @@ public final class GetSceneNpcPositionRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -894,7 +909,7 @@ public final class GetSceneNpcPositionRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -932,18 +947,7 @@ public final class GetSceneNpcPositionRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetSceneNpcPositionRsp(input, extensionRegistry);
       }
     };
 

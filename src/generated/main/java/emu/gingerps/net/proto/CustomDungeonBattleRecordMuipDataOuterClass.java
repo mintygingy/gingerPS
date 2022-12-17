@@ -57,6 +57,53 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CustomDungeonBattleRecordMuipData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              dungeonGuid_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              minCostTime_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonBattleRecordMuipDataOuterClass.internal_static_CustomDungeonBattleRecordMuipData_descriptor;
@@ -71,7 +118,7 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
     }
 
     public static final int DUNGEON_GUID_FIELD_NUMBER = 1;
-    private long dungeonGuid_ = 0L;
+    private long dungeonGuid_;
     /**
      * <code>uint64 dungeon_guid = 1;</code>
      * @return The dungeonGuid.
@@ -82,7 +129,7 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
     }
 
     public static final int MIN_COST_TIME_FIELD_NUMBER = 2;
-    private int minCostTime_ = 0;
+    private int minCostTime_;
     /**
      * <code>uint32 min_cost_time = 2;</code>
      * @return The minCostTime.
@@ -112,7 +159,7 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
       if (minCostTime_ != 0) {
         output.writeUInt32(2, minCostTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +176,7 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, minCostTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -148,7 +195,7 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
           != other.getDungeonGuid()) return false;
       if (getMinCostTime()
           != other.getMinCostTime()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -164,7 +211,7 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
           getDungeonGuid());
       hash = (37 * hash) + MIN_COST_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getMinCostTime();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -281,20 +328,26 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonBattleRecordMuipDataOuterClass.CustomDungeonBattleRecordMuipData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         dungeonGuid_ = 0L;
+
         minCostTime_ = 0;
+
         return this;
       }
 
@@ -321,19 +374,10 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonBattleRecordMuipDataOuterClass.CustomDungeonBattleRecordMuipData buildPartial() {
         emu.gingerps.net.proto.CustomDungeonBattleRecordMuipDataOuterClass.CustomDungeonBattleRecordMuipData result = new emu.gingerps.net.proto.CustomDungeonBattleRecordMuipDataOuterClass.CustomDungeonBattleRecordMuipData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.dungeonGuid_ = dungeonGuid_;
+        result.minCostTime_ = minCostTime_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonBattleRecordMuipDataOuterClass.CustomDungeonBattleRecordMuipData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.dungeonGuid_ = dungeonGuid_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.minCostTime_ = minCostTime_;
-        }
       }
 
       @java.lang.Override
@@ -386,7 +430,7 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
         if (other.getMinCostTime() != 0) {
           setMinCostTime(other.getMinCostTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -401,43 +445,19 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CustomDungeonBattleRecordMuipDataOuterClass.CustomDungeonBattleRecordMuipData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                dungeonGuid_ = input.readUInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                minCostTime_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CustomDungeonBattleRecordMuipDataOuterClass.CustomDungeonBattleRecordMuipData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long dungeonGuid_ ;
       /**
@@ -456,7 +476,6 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
       public Builder setDungeonGuid(long value) {
         
         dungeonGuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -465,7 +484,7 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonGuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         dungeonGuid_ = 0L;
         onChanged();
         return this;
@@ -488,7 +507,6 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
       public Builder setMinCostTime(int value) {
         
         minCostTime_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -497,7 +515,7 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMinCostTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         minCostTime_ = 0;
         onChanged();
         return this;
@@ -535,18 +553,7 @@ public final class CustomDungeonBattleRecordMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CustomDungeonBattleRecordMuipData(input, extensionRegistry);
       }
     };
 

@@ -97,6 +97,80 @@ public final class CustomDungeonOfficialNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CustomDungeonOfficialNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              enterType_ = rawValue;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              tryType_ = rawValue;
+              break;
+            }
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                officialBlackCoinList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              officialBlackCoinList_.addInt(input.readUInt32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                officialBlackCoinList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                officialBlackCoinList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          officialBlackCoinList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonOfficialNotifyOuterClass.internal_static_CustomDungeonOfficialNotify_descriptor;
@@ -111,7 +185,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
     }
 
     public static final int TRY_TYPE_FIELD_NUMBER = 2;
-    private int tryType_ = 0;
+    private int tryType_;
     /**
      * <code>.TryCustomDungeonType try_type = 2;</code>
      * @return The enum numeric value on the wire for tryType.
@@ -124,12 +198,13 @@ public final class CustomDungeonOfficialNotifyOuterClass {
      * @return The tryType.
      */
     @java.lang.Override public emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType getTryType() {
-      emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType result = emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType.forNumber(tryType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType result = emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType.valueOf(tryType_);
       return result == null ? emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType.UNRECOGNIZED : result;
     }
 
     public static final int ENTER_TYPE_FIELD_NUMBER = 1;
-    private int enterType_ = 0;
+    private int enterType_;
     /**
      * <code>.EnterCustomDungeonType enter_type = 1;</code>
      * @return The enum numeric value on the wire for enterType.
@@ -142,12 +217,12 @@ public final class CustomDungeonOfficialNotifyOuterClass {
      * @return The enterType.
      */
     @java.lang.Override public emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType getEnterType() {
-      emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType result = emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.forNumber(enterType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType result = emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.valueOf(enterType_);
       return result == null ? emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.UNRECOGNIZED : result;
     }
 
     public static final int OFFICIAL_BLACK_COIN_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList officialBlackCoinList_;
     /**
      * <code>repeated uint32 official_black_coin_list = 5;</code>
@@ -203,7 +278,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
       for (int i = 0; i < officialBlackCoinList_.size(); i++) {
         output.writeUInt32NoTag(officialBlackCoinList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +309,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
         }
         officialBlackCoinListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -253,7 +328,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
       if (enterType_ != other.enterType_) return false;
       if (!getOfficialBlackCoinListList()
           .equals(other.getOfficialBlackCoinListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -272,7 +347,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
         hash = (37 * hash) + OFFICIAL_BLACK_COIN_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getOfficialBlackCoinListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -399,21 +474,28 @@ public final class CustomDungeonOfficialNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonOfficialNotifyOuterClass.CustomDungeonOfficialNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         tryType_ = 0;
+
         enterType_ = 0;
+
         officialBlackCoinList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -440,28 +522,16 @@ public final class CustomDungeonOfficialNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonOfficialNotifyOuterClass.CustomDungeonOfficialNotify buildPartial() {
         emu.gingerps.net.proto.CustomDungeonOfficialNotifyOuterClass.CustomDungeonOfficialNotify result = new emu.gingerps.net.proto.CustomDungeonOfficialNotifyOuterClass.CustomDungeonOfficialNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CustomDungeonOfficialNotifyOuterClass.CustomDungeonOfficialNotify result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.tryType_ = tryType_;
+        result.enterType_ = enterType_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           officialBlackCoinList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.officialBlackCoinList_ = officialBlackCoinList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonOfficialNotifyOuterClass.CustomDungeonOfficialNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.tryType_ = tryType_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.enterType_ = enterType_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -517,14 +587,14 @@ public final class CustomDungeonOfficialNotifyOuterClass {
         if (!other.officialBlackCoinList_.isEmpty()) {
           if (officialBlackCoinList_.isEmpty()) {
             officialBlackCoinList_ = other.officialBlackCoinList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureOfficialBlackCoinListIsMutable();
             officialBlackCoinList_.addAll(other.officialBlackCoinList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -539,56 +609,17 @@ public final class CustomDungeonOfficialNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.CustomDungeonOfficialNotifyOuterClass.CustomDungeonOfficialNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                enterType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 8
-              case 16: {
-                tryType_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 40: {
-                int v = input.readUInt32();
-                ensureOfficialBlackCoinListIsMutable();
-                officialBlackCoinList_.addInt(v);
-                break;
-              } // case 40
-              case 42: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureOfficialBlackCoinListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  officialBlackCoinList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.CustomDungeonOfficialNotifyOuterClass.CustomDungeonOfficialNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -607,8 +638,8 @@ public final class CustomDungeonOfficialNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTryTypeValue(int value) {
+        
         tryType_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -618,7 +649,8 @@ public final class CustomDungeonOfficialNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType getTryType() {
-        emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType result = emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType.forNumber(tryType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType result = emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType.valueOf(tryType_);
         return result == null ? emu.gingerps.net.proto.TryCustomDungeonTypeOuterClass.TryCustomDungeonType.UNRECOGNIZED : result;
       }
       /**
@@ -630,7 +662,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         tryType_ = value.getNumber();
         onChanged();
         return this;
@@ -640,7 +672,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTryType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         tryType_ = 0;
         onChanged();
         return this;
@@ -660,8 +692,8 @@ public final class CustomDungeonOfficialNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setEnterTypeValue(int value) {
+        
         enterType_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -671,7 +703,8 @@ public final class CustomDungeonOfficialNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType getEnterType() {
-        emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType result = emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.forNumber(enterType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType result = emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.valueOf(enterType_);
         return result == null ? emu.gingerps.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.UNRECOGNIZED : result;
       }
       /**
@@ -683,7 +716,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         enterType_ = value.getNumber();
         onChanged();
         return this;
@@ -693,7 +726,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEnterType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         enterType_ = 0;
         onChanged();
         return this;
@@ -701,10 +734,10 @@ public final class CustomDungeonOfficialNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList officialBlackCoinList_ = emptyIntList();
       private void ensureOfficialBlackCoinListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           officialBlackCoinList_ = mutableCopy(officialBlackCoinList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 official_black_coin_list = 5;</code>
@@ -712,7 +745,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getOfficialBlackCoinListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(officialBlackCoinList_) : officialBlackCoinList_;
       }
       /**
@@ -738,7 +771,6 @@ public final class CustomDungeonOfficialNotifyOuterClass {
        */
       public Builder setOfficialBlackCoinList(
           int index, int value) {
-        
         ensureOfficialBlackCoinListIsMutable();
         officialBlackCoinList_.setInt(index, value);
         onChanged();
@@ -750,7 +782,6 @@ public final class CustomDungeonOfficialNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addOfficialBlackCoinList(int value) {
-        
         ensureOfficialBlackCoinListIsMutable();
         officialBlackCoinList_.addInt(value);
         onChanged();
@@ -775,7 +806,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
        */
       public Builder clearOfficialBlackCoinList() {
         officialBlackCoinList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -812,18 +843,7 @@ public final class CustomDungeonOfficialNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CustomDungeonOfficialNotify(input, extensionRegistry);
       }
     };
 

@@ -41,14 +41,14 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
      */
-    /* nullable */
-emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo getCombatThreatInfoMapOrDefault(
+
+    emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo getCombatThreatInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue);
+        emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue);
     /**
      * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
      */
+
     emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo getCombatThreatInfoMapOrThrow(
         int key);
   }
@@ -90,6 +90,57 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue);
     getUnknownFields() {
       return this.unknownFields;
     }
+    private EvtAiSyncCombatThreatInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                combatThreatInfoMap_ = com.google.protobuf.MapField.newMapField(
+                    CombatThreatInfoMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo>
+              combatThreatInfoMap__ = input.readMessage(
+                  CombatThreatInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              combatThreatInfoMap_.getMutableMap().put(
+                  combatThreatInfoMap__.getKey(), combatThreatInfoMap__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtAiSyncCombatThreatInfoNotifyOuterClass.internal_static_EvtAiSyncCombatThreatInfoNotify_descriptor;
@@ -127,7 +178,6 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo> combatThreatInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo>
@@ -138,12 +188,14 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue);
       }
       return combatThreatInfoMap_;
     }
+
     public int getCombatThreatInfoMapCount() {
       return internalGetCombatThreatInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
      */
+
     @java.lang.Override
     public boolean containsCombatThreatInfoMap(
         int key) {
@@ -162,6 +214,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue);
      * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo> getCombatThreatInfoMapMap() {
       return internalGetCombatThreatInfoMap().getMap();
     }
@@ -169,11 +222,10 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue);
      * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
      */
     @java.lang.Override
-    public /* nullable */
-emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo getCombatThreatInfoMapOrDefault(
+
+    public emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo getCombatThreatInfoMapOrDefault(
         int key,
-        /* nullable */
-emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
+        emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo> map =
           internalGetCombatThreatInfoMap().getMap();
@@ -183,6 +235,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
      * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
      */
     @java.lang.Override
+
     public emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo getCombatThreatInfoMapOrThrow(
         int key) {
       
@@ -214,7 +267,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
           internalGetCombatThreatInfoMap(),
           CombatThreatInfoMapDefaultEntryHolder.defaultEntry,
           11);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -233,7 +286,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(11, combatThreatInfoMap__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -250,7 +303,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
 
       if (!internalGetCombatThreatInfoMap().equals(
           other.internalGetCombatThreatInfoMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -265,7 +318,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
         hash = (37 * hash) + COMBAT_THREAT_INFO_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetCombatThreatInfoMap().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -415,18 +468,22 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
 
       // Construct using emu.gingerps.net.proto.EvtAiSyncCombatThreatInfoNotifyOuterClass.EvtAiSyncCombatThreatInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableCombatThreatInfoMap().clear();
         return this;
       }
@@ -454,17 +511,11 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtAiSyncCombatThreatInfoNotifyOuterClass.EvtAiSyncCombatThreatInfoNotify buildPartial() {
         emu.gingerps.net.proto.EvtAiSyncCombatThreatInfoNotifyOuterClass.EvtAiSyncCombatThreatInfoNotify result = new emu.gingerps.net.proto.EvtAiSyncCombatThreatInfoNotifyOuterClass.EvtAiSyncCombatThreatInfoNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.combatThreatInfoMap_ = internalGetCombatThreatInfoMap();
+        result.combatThreatInfoMap_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.EvtAiSyncCombatThreatInfoNotifyOuterClass.EvtAiSyncCombatThreatInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.combatThreatInfoMap_ = internalGetCombatThreatInfoMap();
-          result.combatThreatInfoMap_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -513,8 +564,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
         if (other == emu.gingerps.net.proto.EvtAiSyncCombatThreatInfoNotifyOuterClass.EvtAiSyncCombatThreatInfoNotify.getDefaultInstance()) return this;
         internalGetMutableCombatThreatInfoMap().mergeFrom(
             other.internalGetCombatThreatInfoMap());
-        bitField0_ |= 0x00000001;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -529,39 +579,17 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.EvtAiSyncCombatThreatInfoNotifyOuterClass.EvtAiSyncCombatThreatInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 90: {
-                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo>
-                combatThreatInfoMap__ = input.readMessage(
-                    CombatThreatInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableCombatThreatInfoMap().getMutableMap().put(
-                    combatThreatInfoMap__.getKey(), combatThreatInfoMap__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.EvtAiSyncCombatThreatInfoNotifyOuterClass.EvtAiSyncCombatThreatInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -569,7 +597,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo> combatThreatInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo>
-          internalGetCombatThreatInfoMap() {
+      internalGetCombatThreatInfoMap() {
         if (combatThreatInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               CombatThreatInfoMapDefaultEntryHolder.defaultEntry);
@@ -577,7 +605,8 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
         return combatThreatInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo>
-          internalGetMutableCombatThreatInfoMap() {
+      internalGetMutableCombatThreatInfoMap() {
+        onChanged();;
         if (combatThreatInfoMap_ == null) {
           combatThreatInfoMap_ = com.google.protobuf.MapField.newMapField(
               CombatThreatInfoMapDefaultEntryHolder.defaultEntry);
@@ -585,16 +614,16 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
         if (!combatThreatInfoMap_.isMutable()) {
           combatThreatInfoMap_ = combatThreatInfoMap_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return combatThreatInfoMap_;
       }
+
       public int getCombatThreatInfoMapCount() {
         return internalGetCombatThreatInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
        */
+
       @java.lang.Override
       public boolean containsCombatThreatInfoMap(
           int key) {
@@ -613,6 +642,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
        * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo> getCombatThreatInfoMapMap() {
         return internalGetCombatThreatInfoMap().getMap();
       }
@@ -620,11 +650,10 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
        * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
        */
       @java.lang.Override
-      public /* nullable */
-emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo getCombatThreatInfoMapOrDefault(
+
+      public emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo getCombatThreatInfoMapOrDefault(
           int key,
-          /* nullable */
-emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
+          emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo> map =
             internalGetCombatThreatInfoMap().getMap();
@@ -634,6 +663,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
        * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
        */
       @java.lang.Override
+
       public emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo getCombatThreatInfoMapOrThrow(
           int key) {
         
@@ -644,8 +674,8 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearCombatThreatInfoMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableCombatThreatInfoMap().getMutableMap()
             .clear();
         return this;
@@ -653,6 +683,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
       /**
        * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
        */
+
       public Builder removeCombatThreatInfoMap(
           int key) {
         
@@ -665,8 +696,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo>
-          getMutableCombatThreatInfoMap() {
-        bitField0_ |= 0x00000001;
+      getMutableCombatThreatInfoMap() {
         return internalGetMutableCombatThreatInfoMap().getMutableMap();
       }
       /**
@@ -676,20 +706,19 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
           int key,
           emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableCombatThreatInfoMap().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 11;</code>
        */
+
       public Builder putAllCombatThreatInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo> values) {
         internalGetMutableCombatThreatInfoMap().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -725,18 +754,7 @@ emu.gingerps.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new EvtAiSyncCombatThreatInfoNotify(input, extensionRegistry);
       }
     };
 

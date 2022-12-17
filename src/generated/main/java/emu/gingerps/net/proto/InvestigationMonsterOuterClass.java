@@ -171,6 +171,145 @@ public final class InvestigationMonsterOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private InvestigationMonster(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              nextBossChestRefreshTime_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              level_ = input.readUInt32();
+              break;
+            }
+            case 26: {
+              emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder subBuilder = null;
+              if (weeklyBossResinDiscountInfo_ != null) {
+                subBuilder = weeklyBossResinDiscountInfo_.toBuilder();
+              }
+              weeklyBossResinDiscountInfo_ = input.readMessage(emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(weeklyBossResinDiscountInfo_);
+                weeklyBossResinDiscountInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              lockState_ = rawValue;
+              break;
+            }
+            case 40: {
+
+              isAreaLocked_ = input.readBool();
+              break;
+            }
+            case 48: {
+
+              bossChestNum_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (pos_ != null) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 64: {
+
+              nextRefreshTime_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              id_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              refreshInterval_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              maxBossChestNum_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              isAlive_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              cityId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              resin_ = input.readUInt32();
+              break;
+            }
+            case 4496: {
+
+              monsterId_ = input.readUInt32();
+              break;
+            }
+            case 13880: {
+
+              groupId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InvestigationMonsterOuterClass.internal_static_InvestigationMonster_descriptor;
@@ -293,7 +432,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int IS_ALIVE_FIELD_NUMBER = 13;
-    private boolean isAlive_ = false;
+    private boolean isAlive_;
     /**
      * <code>bool is_alive = 13;</code>
      * @return The isAlive.
@@ -326,11 +465,11 @@ public final class InvestigationMonsterOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+      return getPos();
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 12;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 12;</code>
      * @return The sceneId.
@@ -341,7 +480,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 8;
-    private int nextRefreshTime_ = 0;
+    private int nextRefreshTime_;
     /**
      * <code>uint32 next_refresh_time = 8;</code>
      * @return The nextRefreshTime.
@@ -352,7 +491,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int CITY_ID_FIELD_NUMBER = 14;
-    private int cityId_ = 0;
+    private int cityId_;
     /**
      * <code>uint32 city_id = 14;</code>
      * @return The cityId.
@@ -363,7 +502,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 1735;
-    private int groupId_ = 0;
+    private int groupId_;
     /**
      * <code>uint32 group_id = 1735;</code>
      * @return The groupId.
@@ -374,7 +513,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int NEXT_BOSS_CHEST_REFRESH_TIME_FIELD_NUMBER = 1;
-    private int nextBossChestRefreshTime_ = 0;
+    private int nextBossChestRefreshTime_;
     /**
      * <code>uint32 next_boss_chest_refresh_time = 1;</code>
      * @return The nextBossChestRefreshTime.
@@ -407,11 +546,11 @@ public final class InvestigationMonsterOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfoOrBuilder getWeeklyBossResinDiscountInfoOrBuilder() {
-      return weeklyBossResinDiscountInfo_ == null ? emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.getDefaultInstance() : weeklyBossResinDiscountInfo_;
+      return getWeeklyBossResinDiscountInfo();
     }
 
     public static final int BOSS_CHEST_NUM_FIELD_NUMBER = 6;
-    private int bossChestNum_ = 0;
+    private int bossChestNum_;
     /**
      * <code>uint32 boss_chest_num = 6;</code>
      * @return The bossChestNum.
@@ -422,7 +561,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 9;
-    private int id_ = 0;
+    private int id_;
     /**
      * <code>uint32 id = 9;</code>
      * @return The id.
@@ -433,7 +572,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int MONSTER_ID_FIELD_NUMBER = 562;
-    private int monsterId_ = 0;
+    private int monsterId_;
     /**
      * <code>uint32 monster_id = 562;</code>
      * @return The monsterId.
@@ -444,7 +583,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int LOCK_STATE_FIELD_NUMBER = 4;
-    private int lockState_ = 0;
+    private int lockState_;
     /**
      * <code>.InvestigationMonster.LockState lock_state = 4;</code>
      * @return The enum numeric value on the wire for lockState.
@@ -457,12 +596,13 @@ public final class InvestigationMonsterOuterClass {
      * @return The lockState.
      */
     @java.lang.Override public emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState getLockState() {
-      emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState result = emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState.forNumber(lockState_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState result = emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState.valueOf(lockState_);
       return result == null ? emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState.UNRECOGNIZED : result;
     }
 
     public static final int REFRESH_INTERVAL_FIELD_NUMBER = 10;
-    private int refreshInterval_ = 0;
+    private int refreshInterval_;
     /**
      * <code>uint32 refresh_interval = 10;</code>
      * @return The refreshInterval.
@@ -473,7 +613,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int IS_AREA_LOCKED_FIELD_NUMBER = 5;
-    private boolean isAreaLocked_ = false;
+    private boolean isAreaLocked_;
     /**
      * <code>bool is_area_locked = 5;</code>
      * @return The isAreaLocked.
@@ -484,7 +624,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int LEVEL_FIELD_NUMBER = 2;
-    private int level_ = 0;
+    private int level_;
     /**
      * <code>uint32 level = 2;</code>
      * @return The level.
@@ -495,7 +635,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int MAX_BOSS_CHEST_NUM_FIELD_NUMBER = 11;
-    private int maxBossChestNum_ = 0;
+    private int maxBossChestNum_;
     /**
      * <code>uint32 max_boss_chest_num = 11;</code>
      * @return The maxBossChestNum.
@@ -506,7 +646,7 @@ public final class InvestigationMonsterOuterClass {
     }
 
     public static final int RESIN_FIELD_NUMBER = 15;
-    private int resin_ = 0;
+    private int resin_;
     /**
      * <code>uint32 resin = 15;</code>
      * @return The resin.
@@ -581,7 +721,7 @@ public final class InvestigationMonsterOuterClass {
       if (groupId_ != 0) {
         output.writeUInt32(1735, groupId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -658,7 +798,7 @@ public final class InvestigationMonsterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1735, groupId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -712,7 +852,7 @@ public final class InvestigationMonsterOuterClass {
           != other.getMaxBossChestNum()) return false;
       if (getResin()
           != other.getResin()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -763,7 +903,7 @@ public final class InvestigationMonsterOuterClass {
       hash = (53 * hash) + getMaxBossChestNum();
       hash = (37 * hash) + RESIN_FIELD_NUMBER;
       hash = (53 * hash) + getResin();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -880,43 +1020,64 @@ public final class InvestigationMonsterOuterClass {
 
       // Construct using emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         isAlive_ = false;
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
         sceneId_ = 0;
+
         nextRefreshTime_ = 0;
+
         cityId_ = 0;
+
         groupId_ = 0;
+
         nextBossChestRefreshTime_ = 0;
-        weeklyBossResinDiscountInfo_ = null;
-        if (weeklyBossResinDiscountInfoBuilder_ != null) {
-          weeklyBossResinDiscountInfoBuilder_.dispose();
+
+        if (weeklyBossResinDiscountInfoBuilder_ == null) {
+          weeklyBossResinDiscountInfo_ = null;
+        } else {
+          weeklyBossResinDiscountInfo_ = null;
           weeklyBossResinDiscountInfoBuilder_ = null;
         }
         bossChestNum_ = 0;
+
         id_ = 0;
+
         monsterId_ = 0;
+
         lockState_ = 0;
+
         refreshInterval_ = 0;
+
         isAreaLocked_ = false;
+
         level_ = 0;
+
         maxBossChestNum_ = 0;
+
         resin_ = 0;
+
         return this;
       }
 
@@ -943,68 +1104,33 @@ public final class InvestigationMonsterOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster buildPartial() {
         emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster result = new emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.isAlive_ = isAlive_;
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        result.sceneId_ = sceneId_;
+        result.nextRefreshTime_ = nextRefreshTime_;
+        result.cityId_ = cityId_;
+        result.groupId_ = groupId_;
+        result.nextBossChestRefreshTime_ = nextBossChestRefreshTime_;
+        if (weeklyBossResinDiscountInfoBuilder_ == null) {
+          result.weeklyBossResinDiscountInfo_ = weeklyBossResinDiscountInfo_;
+        } else {
+          result.weeklyBossResinDiscountInfo_ = weeklyBossResinDiscountInfoBuilder_.build();
+        }
+        result.bossChestNum_ = bossChestNum_;
+        result.id_ = id_;
+        result.monsterId_ = monsterId_;
+        result.lockState_ = lockState_;
+        result.refreshInterval_ = refreshInterval_;
+        result.isAreaLocked_ = isAreaLocked_;
+        result.level_ = level_;
+        result.maxBossChestNum_ = maxBossChestNum_;
+        result.resin_ = resin_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.isAlive_ = isAlive_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.nextRefreshTime_ = nextRefreshTime_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.cityId_ = cityId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.groupId_ = groupId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.nextBossChestRefreshTime_ = nextBossChestRefreshTime_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.weeklyBossResinDiscountInfo_ = weeklyBossResinDiscountInfoBuilder_ == null
-              ? weeklyBossResinDiscountInfo_
-              : weeklyBossResinDiscountInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.bossChestNum_ = bossChestNum_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.monsterId_ = monsterId_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.lockState_ = lockState_;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.refreshInterval_ = refreshInterval_;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.isAreaLocked_ = isAreaLocked_;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.level_ = level_;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.maxBossChestNum_ = maxBossChestNum_;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.resin_ = resin_;
-        }
       }
 
       @java.lang.Override
@@ -1102,7 +1228,7 @@ public final class InvestigationMonsterOuterClass {
         if (other.getResin() != 0) {
           setResin(other.getResin());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1117,122 +1243,19 @@ public final class InvestigationMonsterOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                nextBossChestRefreshTime_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 8
-              case 16: {
-                level_ = input.readUInt32();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 16
-              case 26: {
-                input.readMessage(
-                    getWeeklyBossResinDiscountInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 26
-              case 32: {
-                lockState_ = input.readEnum();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 32
-              case 40: {
-                isAreaLocked_ = input.readBool();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 40
-              case 48: {
-                bossChestNum_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 48
-              case 58: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 58
-              case 64: {
-                nextRefreshTime_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 64
-              case 72: {
-                id_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 72
-              case 80: {
-                refreshInterval_ = input.readUInt32();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 80
-              case 88: {
-                maxBossChestNum_ = input.readUInt32();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 88
-              case 96: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 96
-              case 104: {
-                isAlive_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 104
-              case 112: {
-                cityId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 112
-              case 120: {
-                resin_ = input.readUInt32();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 120
-              case 4496: {
-                monsterId_ = input.readUInt32();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 4496
-              case 13880: {
-                groupId_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 13880
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private boolean isAlive_ ;
       /**
@@ -1251,7 +1274,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setIsAlive(boolean value) {
         
         isAlive_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1260,7 +1282,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAlive() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         isAlive_ = false;
         onChanged();
         return this;
@@ -1274,7 +1296,7 @@ public final class InvestigationMonsterOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return posBuilder_ != null || pos_ != null;
       }
       /**
        * <code>.Vector pos = 7;</code>
@@ -1296,11 +1318,11 @@ public final class InvestigationMonsterOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1310,11 +1332,11 @@ public final class InvestigationMonsterOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1322,38 +1344,38 @@ public final class InvestigationMonsterOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            pos_ != null &&
-            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (pos_ != null) {
+            pos_ =
+              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 7;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          pos_ = null;
           posBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.Vector pos = 7;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -1402,7 +1424,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1411,7 +1432,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -1434,7 +1455,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setNextRefreshTime(int value) {
         
         nextRefreshTime_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1443,7 +1463,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextRefreshTime() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         nextRefreshTime_ = 0;
         onChanged();
         return this;
@@ -1466,7 +1486,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setCityId(int value) {
         
         cityId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1475,7 +1494,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCityId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         cityId_ = 0;
         onChanged();
         return this;
@@ -1498,7 +1517,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1507,7 +1525,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         groupId_ = 0;
         onChanged();
         return this;
@@ -1530,7 +1548,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setNextBossChestRefreshTime(int value) {
         
         nextBossChestRefreshTime_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1539,7 +1556,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextBossChestRefreshTime() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         nextBossChestRefreshTime_ = 0;
         onChanged();
         return this;
@@ -1553,7 +1570,7 @@ public final class InvestigationMonsterOuterClass {
        * @return Whether the weeklyBossResinDiscountInfo field is set.
        */
       public boolean hasWeeklyBossResinDiscountInfo() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return weeklyBossResinDiscountInfoBuilder_ != null || weeklyBossResinDiscountInfo_ != null;
       }
       /**
        * <code>.WeeklyBossResinDiscountInfo weekly_boss_resin_discount_info = 3;</code>
@@ -1575,11 +1592,11 @@ public final class InvestigationMonsterOuterClass {
             throw new NullPointerException();
           }
           weeklyBossResinDiscountInfo_ = value;
+          onChanged();
         } else {
           weeklyBossResinDiscountInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
-        onChanged();
+
         return this;
       }
       /**
@@ -1589,11 +1606,11 @@ public final class InvestigationMonsterOuterClass {
           emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder builderForValue) {
         if (weeklyBossResinDiscountInfoBuilder_ == null) {
           weeklyBossResinDiscountInfo_ = builderForValue.build();
+          onChanged();
         } else {
           weeklyBossResinDiscountInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
-        onChanged();
+
         return this;
       }
       /**
@@ -1601,38 +1618,38 @@ public final class InvestigationMonsterOuterClass {
        */
       public Builder mergeWeeklyBossResinDiscountInfo(emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo value) {
         if (weeklyBossResinDiscountInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0) &&
-            weeklyBossResinDiscountInfo_ != null &&
-            weeklyBossResinDiscountInfo_ != emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.getDefaultInstance()) {
-            getWeeklyBossResinDiscountInfoBuilder().mergeFrom(value);
+          if (weeklyBossResinDiscountInfo_ != null) {
+            weeklyBossResinDiscountInfo_ =
+              emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.newBuilder(weeklyBossResinDiscountInfo_).mergeFrom(value).buildPartial();
           } else {
             weeklyBossResinDiscountInfo_ = value;
           }
+          onChanged();
         } else {
           weeklyBossResinDiscountInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000080;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.WeeklyBossResinDiscountInfo weekly_boss_resin_discount_info = 3;</code>
        */
       public Builder clearWeeklyBossResinDiscountInfo() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        weeklyBossResinDiscountInfo_ = null;
-        if (weeklyBossResinDiscountInfoBuilder_ != null) {
-          weeklyBossResinDiscountInfoBuilder_.dispose();
+        if (weeklyBossResinDiscountInfoBuilder_ == null) {
+          weeklyBossResinDiscountInfo_ = null;
+          onChanged();
+        } else {
+          weeklyBossResinDiscountInfo_ = null;
           weeklyBossResinDiscountInfoBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.WeeklyBossResinDiscountInfo weekly_boss_resin_discount_info = 3;</code>
        */
       public emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder getWeeklyBossResinDiscountInfoBuilder() {
-        bitField0_ |= 0x00000080;
+        
         onChanged();
         return getWeeklyBossResinDiscountInfoFieldBuilder().getBuilder();
       }
@@ -1681,7 +1698,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setBossChestNum(int value) {
         
         bossChestNum_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1690,7 +1706,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBossChestNum() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         bossChestNum_ = 0;
         onChanged();
         return this;
@@ -1713,7 +1729,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1722,7 +1737,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         id_ = 0;
         onChanged();
         return this;
@@ -1745,7 +1760,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setMonsterId(int value) {
         
         monsterId_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -1754,7 +1768,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMonsterId() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         monsterId_ = 0;
         onChanged();
         return this;
@@ -1774,8 +1788,8 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder setLockStateValue(int value) {
+        
         lockState_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -1785,7 +1799,8 @@ public final class InvestigationMonsterOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState getLockState() {
-        emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState result = emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState.forNumber(lockState_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState result = emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState.valueOf(lockState_);
         return result == null ? emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState.UNRECOGNIZED : result;
       }
       /**
@@ -1797,7 +1812,7 @@ public final class InvestigationMonsterOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000800;
+        
         lockState_ = value.getNumber();
         onChanged();
         return this;
@@ -1807,7 +1822,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLockState() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         lockState_ = 0;
         onChanged();
         return this;
@@ -1830,7 +1845,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setRefreshInterval(int value) {
         
         refreshInterval_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -1839,7 +1853,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRefreshInterval() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         refreshInterval_ = 0;
         onChanged();
         return this;
@@ -1862,7 +1876,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setIsAreaLocked(boolean value) {
         
         isAreaLocked_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -1871,7 +1884,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAreaLocked() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        
         isAreaLocked_ = false;
         onChanged();
         return this;
@@ -1894,7 +1907,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setLevel(int value) {
         
         level_ = value;
-        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -1903,7 +1915,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        
         level_ = 0;
         onChanged();
         return this;
@@ -1926,7 +1938,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setMaxBossChestNum(int value) {
         
         maxBossChestNum_ = value;
-        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -1935,7 +1946,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxBossChestNum() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        
         maxBossChestNum_ = 0;
         onChanged();
         return this;
@@ -1958,7 +1969,6 @@ public final class InvestigationMonsterOuterClass {
       public Builder setResin(int value) {
         
         resin_ = value;
-        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -1967,7 +1977,7 @@ public final class InvestigationMonsterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearResin() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        
         resin_ = 0;
         onChanged();
         return this;
@@ -2005,18 +2015,7 @@ public final class InvestigationMonsterOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InvestigationMonster(input, extensionRegistry);
       }
     };
 

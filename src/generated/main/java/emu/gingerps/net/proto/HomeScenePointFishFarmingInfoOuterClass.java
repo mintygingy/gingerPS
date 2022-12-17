@@ -75,6 +75,78 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private HomeScenePointFishFarmingInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 56: {
+
+              localEntityId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                fishIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              fishIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                fishIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                fishIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          fishIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeScenePointFishFarmingInfoOuterClass.internal_static_HomeScenePointFishFarmingInfo_descriptor;
@@ -89,7 +161,7 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 9;
-    private int sceneId_ = 0;
+    private int sceneId_;
     /**
      * <code>uint32 scene_id = 9;</code>
      * @return The sceneId.
@@ -100,7 +172,7 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
     }
 
     public static final int LOCAL_ENTITY_ID_FIELD_NUMBER = 7;
-    private int localEntityId_ = 0;
+    private int localEntityId_;
     /**
      * <code>uint32 local_entity_id = 7;</code>
      * @return The localEntityId.
@@ -111,7 +183,6 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
     }
 
     public static final int FISH_ID_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList fishIdList_;
     /**
      * <code>repeated uint32 fish_id_list = 11;</code>
@@ -167,7 +238,7 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
       for (int i = 0; i < fishIdList_.size(); i++) {
         output.writeUInt32NoTag(fishIdList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -198,7 +269,7 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
         }
         fishIdListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -219,7 +290,7 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
           != other.getLocalEntityId()) return false;
       if (!getFishIdListList()
           .equals(other.getFishIdListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -238,7 +309,7 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
         hash = (37 * hash) + FISH_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFishIdListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -355,21 +426,28 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeScenePointFishFarmingInfoOuterClass.HomeScenePointFishFarmingInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         sceneId_ = 0;
+
         localEntityId_ = 0;
+
         fishIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -396,28 +474,16 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeScenePointFishFarmingInfoOuterClass.HomeScenePointFishFarmingInfo buildPartial() {
         emu.gingerps.net.proto.HomeScenePointFishFarmingInfoOuterClass.HomeScenePointFishFarmingInfo result = new emu.gingerps.net.proto.HomeScenePointFishFarmingInfoOuterClass.HomeScenePointFishFarmingInfo(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomeScenePointFishFarmingInfoOuterClass.HomeScenePointFishFarmingInfo result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.sceneId_ = sceneId_;
+        result.localEntityId_ = localEntityId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           fishIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fishIdList_ = fishIdList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.HomeScenePointFishFarmingInfoOuterClass.HomeScenePointFishFarmingInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sceneId_ = sceneId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.localEntityId_ = localEntityId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -473,14 +539,14 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
         if (!other.fishIdList_.isEmpty()) {
           if (fishIdList_.isEmpty()) {
             fishIdList_ = other.fishIdList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFishIdListIsMutable();
             fishIdList_.addAll(other.fishIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -495,56 +561,17 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.HomeScenePointFishFarmingInfoOuterClass.HomeScenePointFishFarmingInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 56: {
-                localEntityId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 72: {
-                sceneId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 88: {
-                int v = input.readUInt32();
-                ensureFishIdListIsMutable();
-                fishIdList_.addInt(v);
-                break;
-              } // case 88
-              case 90: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureFishIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  fishIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.HomeScenePointFishFarmingInfoOuterClass.HomeScenePointFishFarmingInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -566,7 +593,6 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -575,7 +601,7 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         sceneId_ = 0;
         onChanged();
         return this;
@@ -598,7 +624,6 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
       public Builder setLocalEntityId(int value) {
         
         localEntityId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -607,7 +632,7 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLocalEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         localEntityId_ = 0;
         onChanged();
         return this;
@@ -615,10 +640,10 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList fishIdList_ = emptyIntList();
       private void ensureFishIdListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           fishIdList_ = mutableCopy(fishIdList_);
-          bitField0_ |= 0x00000004;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 fish_id_list = 11;</code>
@@ -626,7 +651,7 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getFishIdListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(fishIdList_) : fishIdList_;
       }
       /**
@@ -652,7 +677,6 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
        */
       public Builder setFishIdList(
           int index, int value) {
-        
         ensureFishIdListIsMutable();
         fishIdList_.setInt(index, value);
         onChanged();
@@ -664,7 +688,6 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFishIdList(int value) {
-        
         ensureFishIdListIsMutable();
         fishIdList_.addInt(value);
         onChanged();
@@ -689,7 +712,7 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
        */
       public Builder clearFishIdList() {
         fishIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -726,18 +749,7 @@ public final class HomeScenePointFishFarmingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new HomeScenePointFishFarmingInfo(input, extensionRegistry);
       }
     };
 

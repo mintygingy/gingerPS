@@ -127,6 +127,109 @@ public final class PlayerMatchInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerMatchInfoNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              mpPlayId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              unk3300BNEIANJBLBL_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              matchId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              unk3300OCILKHJPJED_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                matchParamList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              matchParamList_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                matchParamList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                matchParamList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 96: {
+
+              hostUid_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+
+              matchType_ = rawValue;
+              break;
+            }
+            case 120: {
+
+              mechanicusDifficultLevel_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          matchParamList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerMatchInfoNotifyOuterClass.internal_static_PlayerMatchInfoNotify_descriptor;
@@ -141,7 +244,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 4;
-    private int dungeonId_ = 0;
+    private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 4;</code>
      * @return The dungeonId.
@@ -152,7 +255,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_BNEIANJBLBL_FIELD_NUMBER = 5;
-    private int unk3300BNEIANJBLBL_ = 0;
+    private int unk3300BNEIANJBLBL_;
     /**
      * <code>uint32 Unk3300_BNEIANJBLBL = 5;</code>
      * @return The unk3300BNEIANJBLBL.
@@ -163,7 +266,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_OCILKHJPJED_FIELD_NUMBER = 10;
-    private int unk3300OCILKHJPJED_ = 0;
+    private int unk3300OCILKHJPJED_;
     /**
      * <code>uint32 Unk3300_OCILKHJPJED = 10;</code>
      * @return The unk3300OCILKHJPJED.
@@ -174,7 +277,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
     }
 
     public static final int HOST_UID_FIELD_NUMBER = 12;
-    private int hostUid_ = 0;
+    private int hostUid_;
     /**
      * <code>uint32 host_uid = 12;</code>
      * @return The hostUid.
@@ -185,7 +288,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
     }
 
     public static final int MATCH_TYPE_FIELD_NUMBER = 13;
-    private int matchType_ = 0;
+    private int matchType_;
     /**
      * <code>.MatchType match_type = 13;</code>
      * @return The enum numeric value on the wire for matchType.
@@ -198,12 +301,13 @@ public final class PlayerMatchInfoNotifyOuterClass {
      * @return The matchType.
      */
     @java.lang.Override public emu.gingerps.net.proto.MatchTypeOuterClass.MatchType getMatchType() {
-      emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.forNumber(matchType_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.valueOf(matchType_);
       return result == null ? emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
     }
 
     public static final int MECHANICUS_DIFFICULT_LEVEL_FIELD_NUMBER = 15;
-    private int mechanicusDifficultLevel_ = 0;
+    private int mechanicusDifficultLevel_;
     /**
      * <code>uint32 mechanicus_difficult_level = 15;</code>
      * @return The mechanicusDifficultLevel.
@@ -214,7 +318,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
     }
 
     public static final int MP_PLAY_ID_FIELD_NUMBER = 2;
-    private int mpPlayId_ = 0;
+    private int mpPlayId_;
     /**
      * <code>uint32 mp_play_id = 2;</code>
      * @return The mpPlayId.
@@ -225,7 +329,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
     }
 
     public static final int MATCH_ID_FIELD_NUMBER = 7;
-    private int matchId_ = 0;
+    private int matchId_;
     /**
      * <code>uint32 match_id = 7;</code>
      * @return The matchId.
@@ -236,7 +340,6 @@ public final class PlayerMatchInfoNotifyOuterClass {
     }
 
     public static final int MATCH_PARAM_LIST_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList matchParamList_;
     /**
      * <code>repeated uint32 match_param_list = 11;</code>
@@ -310,7 +413,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
       if (mechanicusDifficultLevel_ != 0) {
         output.writeUInt32(15, mechanicusDifficultLevel_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -365,7 +468,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, mechanicusDifficultLevel_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -397,7 +500,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
           != other.getMatchId()) return false;
       if (!getMatchParamListList()
           .equals(other.getMatchParamListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -428,7 +531,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
         hash = (37 * hash) + MATCH_PARAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMatchParamListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -555,27 +658,40 @@ public final class PlayerMatchInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerMatchInfoNotifyOuterClass.PlayerMatchInfoNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         dungeonId_ = 0;
+
         unk3300BNEIANJBLBL_ = 0;
+
         unk3300OCILKHJPJED_ = 0;
+
         hostUid_ = 0;
+
         matchType_ = 0;
+
         mechanicusDifficultLevel_ = 0;
+
         mpPlayId_ = 0;
+
         matchId_ = 0;
+
         matchParamList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -602,46 +718,22 @@ public final class PlayerMatchInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerMatchInfoNotifyOuterClass.PlayerMatchInfoNotify buildPartial() {
         emu.gingerps.net.proto.PlayerMatchInfoNotifyOuterClass.PlayerMatchInfoNotify result = new emu.gingerps.net.proto.PlayerMatchInfoNotifyOuterClass.PlayerMatchInfoNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PlayerMatchInfoNotifyOuterClass.PlayerMatchInfoNotify result) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.dungeonId_ = dungeonId_;
+        result.unk3300BNEIANJBLBL_ = unk3300BNEIANJBLBL_;
+        result.unk3300OCILKHJPJED_ = unk3300OCILKHJPJED_;
+        result.hostUid_ = hostUid_;
+        result.matchType_ = matchType_;
+        result.mechanicusDifficultLevel_ = mechanicusDifficultLevel_;
+        result.mpPlayId_ = mpPlayId_;
+        result.matchId_ = matchId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           matchParamList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.matchParamList_ = matchParamList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.PlayerMatchInfoNotifyOuterClass.PlayerMatchInfoNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.dungeonId_ = dungeonId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.unk3300BNEIANJBLBL_ = unk3300BNEIANJBLBL_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.unk3300OCILKHJPJED_ = unk3300OCILKHJPJED_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.hostUid_ = hostUid_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.matchType_ = matchType_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.mechanicusDifficultLevel_ = mechanicusDifficultLevel_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.mpPlayId_ = mpPlayId_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.matchId_ = matchId_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -715,14 +807,14 @@ public final class PlayerMatchInfoNotifyOuterClass {
         if (!other.matchParamList_.isEmpty()) {
           if (matchParamList_.isEmpty()) {
             matchParamList_ = other.matchParamList_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureMatchParamListIsMutable();
             matchParamList_.addAll(other.matchParamList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -737,86 +829,17 @@ public final class PlayerMatchInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.PlayerMatchInfoNotifyOuterClass.PlayerMatchInfoNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                mpPlayId_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 16
-              case 32: {
-                dungeonId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
-              case 40: {
-                unk3300BNEIANJBLBL_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 40
-              case 56: {
-                matchId_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 56
-              case 80: {
-                unk3300OCILKHJPJED_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              case 88: {
-                int v = input.readUInt32();
-                ensureMatchParamListIsMutable();
-                matchParamList_.addInt(v);
-                break;
-              } // case 88
-              case 90: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureMatchParamListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  matchParamList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 90
-              case 96: {
-                hostUid_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              case 104: {
-                matchType_ = input.readEnum();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 104
-              case 120: {
-                mechanicusDifficultLevel_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.PlayerMatchInfoNotifyOuterClass.PlayerMatchInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -838,7 +861,6 @@ public final class PlayerMatchInfoNotifyOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -847,7 +869,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -870,7 +892,6 @@ public final class PlayerMatchInfoNotifyOuterClass {
       public Builder setUnk3300BNEIANJBLBL(int value) {
         
         unk3300BNEIANJBLBL_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -879,7 +900,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BNEIANJBLBL() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         unk3300BNEIANJBLBL_ = 0;
         onChanged();
         return this;
@@ -902,7 +923,6 @@ public final class PlayerMatchInfoNotifyOuterClass {
       public Builder setUnk3300OCILKHJPJED(int value) {
         
         unk3300OCILKHJPJED_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -911,7 +931,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OCILKHJPJED() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         unk3300OCILKHJPJED_ = 0;
         onChanged();
         return this;
@@ -934,7 +954,6 @@ public final class PlayerMatchInfoNotifyOuterClass {
       public Builder setHostUid(int value) {
         
         hostUid_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -943,7 +962,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHostUid() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         hostUid_ = 0;
         onChanged();
         return this;
@@ -963,8 +982,8 @@ public final class PlayerMatchInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMatchTypeValue(int value) {
+        
         matchType_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -974,7 +993,8 @@ public final class PlayerMatchInfoNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.MatchTypeOuterClass.MatchType getMatchType() {
-        emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.forNumber(matchType_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.valueOf(matchType_);
         return result == null ? emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
       }
       /**
@@ -986,7 +1006,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000010;
+        
         matchType_ = value.getNumber();
         onChanged();
         return this;
@@ -996,7 +1016,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMatchType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         matchType_ = 0;
         onChanged();
         return this;
@@ -1019,7 +1039,6 @@ public final class PlayerMatchInfoNotifyOuterClass {
       public Builder setMechanicusDifficultLevel(int value) {
         
         mechanicusDifficultLevel_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1028,7 +1047,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMechanicusDifficultLevel() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         mechanicusDifficultLevel_ = 0;
         onChanged();
         return this;
@@ -1051,7 +1070,6 @@ public final class PlayerMatchInfoNotifyOuterClass {
       public Builder setMpPlayId(int value) {
         
         mpPlayId_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1060,7 +1078,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMpPlayId() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         mpPlayId_ = 0;
         onChanged();
         return this;
@@ -1083,7 +1101,6 @@ public final class PlayerMatchInfoNotifyOuterClass {
       public Builder setMatchId(int value) {
         
         matchId_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1092,7 +1109,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMatchId() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         matchId_ = 0;
         onChanged();
         return this;
@@ -1100,10 +1117,10 @@ public final class PlayerMatchInfoNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList matchParamList_ = emptyIntList();
       private void ensureMatchParamListIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           matchParamList_ = mutableCopy(matchParamList_);
-          bitField0_ |= 0x00000100;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 match_param_list = 11;</code>
@@ -1111,7 +1128,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getMatchParamListList() {
-        return ((bitField0_ & 0x00000100) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(matchParamList_) : matchParamList_;
       }
       /**
@@ -1137,7 +1154,6 @@ public final class PlayerMatchInfoNotifyOuterClass {
        */
       public Builder setMatchParamList(
           int index, int value) {
-        
         ensureMatchParamListIsMutable();
         matchParamList_.setInt(index, value);
         onChanged();
@@ -1149,7 +1165,6 @@ public final class PlayerMatchInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addMatchParamList(int value) {
-        
         ensureMatchParamListIsMutable();
         matchParamList_.addInt(value);
         onChanged();
@@ -1174,7 +1189,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
        */
       public Builder clearMatchParamList() {
         matchParamList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1211,18 +1226,7 @@ public final class PlayerMatchInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerMatchInfoNotify(input, extensionRegistry);
       }
     };
 

@@ -63,6 +63,58 @@ public final class Unk3300ADHENCIFKNI {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Unk3300_ADHENCIFKNI(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
+
+              beginTime_ = input.readUInt64();
+              break;
+            }
+            case 80: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              timeStamp_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.Unk3300ADHENCIFKNI.internal_static_Unk3300_ADHENCIFKNI_descriptor;
@@ -77,7 +129,7 @@ public final class Unk3300ADHENCIFKNI {
     }
 
     public static final int BEGIN_TIME_FIELD_NUMBER = 6;
-    private long beginTime_ = 0L;
+    private long beginTime_;
     /**
      * <code>uint64 begin_time = 6;</code>
      * @return The beginTime.
@@ -88,7 +140,7 @@ public final class Unk3300ADHENCIFKNI {
     }
 
     public static final int TIME_STAMP_FIELD_NUMBER = 13;
-    private long timeStamp_ = 0L;
+    private long timeStamp_;
     /**
      * <code>uint64 time_stamp = 13;</code>
      * @return The timeStamp.
@@ -99,7 +151,7 @@ public final class Unk3300ADHENCIFKNI {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 10;
-    private int controllerId_ = 0;
+    private int controllerId_;
     /**
      * <code>uint32 controller_id = 10;</code>
      * @return The controllerId.
@@ -132,7 +184,7 @@ public final class Unk3300ADHENCIFKNI {
       if (timeStamp_ != 0L) {
         output.writeUInt64(13, timeStamp_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -153,7 +205,7 @@ public final class Unk3300ADHENCIFKNI {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(13, timeStamp_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +226,7 @@ public final class Unk3300ADHENCIFKNI {
           != other.getTimeStamp()) return false;
       if (getControllerId()
           != other.getControllerId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -193,7 +245,7 @@ public final class Unk3300ADHENCIFKNI {
           getTimeStamp());
       hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getControllerId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -310,21 +362,28 @@ public final class Unk3300ADHENCIFKNI {
 
       // Construct using emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         beginTime_ = 0L;
+
         timeStamp_ = 0L;
+
         controllerId_ = 0;
+
         return this;
       }
 
@@ -351,22 +410,11 @@ public final class Unk3300ADHENCIFKNI {
       @java.lang.Override
       public emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI buildPartial() {
         emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI result = new emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.beginTime_ = beginTime_;
+        result.timeStamp_ = timeStamp_;
+        result.controllerId_ = controllerId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.beginTime_ = beginTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.timeStamp_ = timeStamp_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.controllerId_ = controllerId_;
-        }
       }
 
       @java.lang.Override
@@ -422,7 +470,7 @@ public final class Unk3300ADHENCIFKNI {
         if (other.getControllerId() != 0) {
           setControllerId(other.getControllerId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -437,48 +485,19 @@ public final class Unk3300ADHENCIFKNI {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 48: {
-                beginTime_ = input.readUInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 48
-              case 80: {
-                controllerId_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 80
-              case 104: {
-                timeStamp_ = input.readUInt64();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 104
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.Unk3300ADHENCIFKNI.Unk3300_ADHENCIFKNI) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long beginTime_ ;
       /**
@@ -497,7 +516,6 @@ public final class Unk3300ADHENCIFKNI {
       public Builder setBeginTime(long value) {
         
         beginTime_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -506,7 +524,7 @@ public final class Unk3300ADHENCIFKNI {
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         beginTime_ = 0L;
         onChanged();
         return this;
@@ -529,7 +547,6 @@ public final class Unk3300ADHENCIFKNI {
       public Builder setTimeStamp(long value) {
         
         timeStamp_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -538,7 +555,7 @@ public final class Unk3300ADHENCIFKNI {
        * @return This builder for chaining.
        */
       public Builder clearTimeStamp() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         timeStamp_ = 0L;
         onChanged();
         return this;
@@ -561,7 +578,6 @@ public final class Unk3300ADHENCIFKNI {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -570,7 +586,7 @@ public final class Unk3300ADHENCIFKNI {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         controllerId_ = 0;
         onChanged();
         return this;
@@ -608,18 +624,7 @@ public final class Unk3300ADHENCIFKNI {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Unk3300_ADHENCIFKNI(input, extensionRegistry);
       }
     };
 

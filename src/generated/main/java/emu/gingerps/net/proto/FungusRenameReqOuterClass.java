@@ -68,6 +68,53 @@ public final class FungusRenameReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FungusRenameReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 88: {
+
+              nameId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              fungusId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FungusRenameReqOuterClass.internal_static_FungusRenameReq_descriptor;
@@ -82,7 +129,7 @@ public final class FungusRenameReqOuterClass {
     }
 
     public static final int FUNGUS_ID_FIELD_NUMBER = 12;
-    private int fungusId_ = 0;
+    private int fungusId_;
     /**
      * <code>uint32 fungus_id = 12;</code>
      * @return The fungusId.
@@ -93,7 +140,7 @@ public final class FungusRenameReqOuterClass {
     }
 
     public static final int NAME_ID_FIELD_NUMBER = 11;
-    private int nameId_ = 0;
+    private int nameId_;
     /**
      * <code>uint32 name_id = 11;</code>
      * @return The nameId.
@@ -123,7 +170,7 @@ public final class FungusRenameReqOuterClass {
       if (fungusId_ != 0) {
         output.writeUInt32(12, fungusId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -140,7 +187,7 @@ public final class FungusRenameReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, fungusId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -159,7 +206,7 @@ public final class FungusRenameReqOuterClass {
           != other.getFungusId()) return false;
       if (getNameId()
           != other.getNameId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -174,7 +221,7 @@ public final class FungusRenameReqOuterClass {
       hash = (53 * hash) + getFungusId();
       hash = (37 * hash) + NAME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNameId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -302,20 +349,26 @@ public final class FungusRenameReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.FungusRenameReqOuterClass.FungusRenameReq.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         fungusId_ = 0;
+
         nameId_ = 0;
+
         return this;
       }
 
@@ -342,19 +395,10 @@ public final class FungusRenameReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FungusRenameReqOuterClass.FungusRenameReq buildPartial() {
         emu.gingerps.net.proto.FungusRenameReqOuterClass.FungusRenameReq result = new emu.gingerps.net.proto.FungusRenameReqOuterClass.FungusRenameReq(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.fungusId_ = fungusId_;
+        result.nameId_ = nameId_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.FungusRenameReqOuterClass.FungusRenameReq result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.fungusId_ = fungusId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.nameId_ = nameId_;
-        }
       }
 
       @java.lang.Override
@@ -407,7 +451,7 @@ public final class FungusRenameReqOuterClass {
         if (other.getNameId() != 0) {
           setNameId(other.getNameId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -422,43 +466,19 @@ public final class FungusRenameReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.FungusRenameReqOuterClass.FungusRenameReq parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 88: {
-                nameId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 88
-              case 96: {
-                fungusId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.FungusRenameReqOuterClass.FungusRenameReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int fungusId_ ;
       /**
@@ -477,7 +497,6 @@ public final class FungusRenameReqOuterClass {
       public Builder setFungusId(int value) {
         
         fungusId_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -486,7 +505,7 @@ public final class FungusRenameReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFungusId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         fungusId_ = 0;
         onChanged();
         return this;
@@ -509,7 +528,6 @@ public final class FungusRenameReqOuterClass {
       public Builder setNameId(int value) {
         
         nameId_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -518,7 +536,7 @@ public final class FungusRenameReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNameId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         nameId_ = 0;
         onChanged();
         return this;
@@ -556,18 +574,7 @@ public final class FungusRenameReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FungusRenameReq(input, extensionRegistry);
       }
     };
 

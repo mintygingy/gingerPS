@@ -129,6 +129,84 @@ public final class IslandPartySettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private IslandPartySettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                scoreList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              scoreList_.add(
+                  input.readMessage(emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 72: {
+
+              timeRemain_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
+              break;
+            }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                settleInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              settleInfoList_.add(
+                  input.readMessage(emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          scoreList_ = java.util.Collections.unmodifiableList(scoreList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          settleInfoList_ = java.util.Collections.unmodifiableList(settleInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IslandPartySettleNotifyOuterClass.internal_static_IslandPartySettleNotify_descriptor;
@@ -143,7 +221,7 @@ public final class IslandPartySettleNotifyOuterClass {
     }
 
     public static final int TIME_REMAIN_FIELD_NUMBER = 9;
-    private int timeRemain_ = 0;
+    private int timeRemain_;
     /**
      * <code>uint32 time_remain = 9;</code>
      * @return The timeRemain.
@@ -154,7 +232,7 @@ public final class IslandPartySettleNotifyOuterClass {
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 3;
-    private boolean isNewRecord_ = false;
+    private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 3;</code>
      * @return The isNewRecord.
@@ -165,7 +243,6 @@ public final class IslandPartySettleNotifyOuterClass {
     }
 
     public static final int SCORE_LIST_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> scoreList_;
     /**
      * <code>repeated .ExhibitionDisplayInfo score_list = 5;</code>
@@ -206,7 +283,7 @@ public final class IslandPartySettleNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 12;
-    private int reason_ = 0;
+    private int reason_;
     /**
      * <code>.GalleryStopReason reason = 12;</code>
      * @return The enum numeric value on the wire for reason.
@@ -219,12 +296,12 @@ public final class IslandPartySettleNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
+      @SuppressWarnings("deprecation")
+      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
       return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
     }
 
     public static final int SETTLE_INFO_LIST_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo> settleInfoList_;
     /**
      * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 13;</code>
@@ -293,7 +370,7 @@ public final class IslandPartySettleNotifyOuterClass {
       for (int i = 0; i < settleInfoList_.size(); i++) {
         output.writeMessage(13, settleInfoList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -322,7 +399,7 @@ public final class IslandPartySettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, settleInfoList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -346,7 +423,7 @@ public final class IslandPartySettleNotifyOuterClass {
       if (reason_ != other.reason_) return false;
       if (!getSettleInfoListList()
           .equals(other.getSettleInfoListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -372,7 +449,7 @@ public final class IslandPartySettleNotifyOuterClass {
         hash = (37 * hash) + SETTLE_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSettleInfoListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -499,35 +576,42 @@ public final class IslandPartySettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.IslandPartySettleNotifyOuterClass.IslandPartySettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getScoreListFieldBuilder();
+          getSettleInfoListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         timeRemain_ = 0;
+
         isNewRecord_ = false;
+
         if (scoreListBuilder_ == null) {
           scoreList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          scoreList_ = null;
           scoreListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         reason_ = 0;
+
         if (settleInfoListBuilder_ == null) {
           settleInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          settleInfoList_ = null;
           settleInfoListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -554,44 +638,30 @@ public final class IslandPartySettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IslandPartySettleNotifyOuterClass.IslandPartySettleNotify buildPartial() {
         emu.gingerps.net.proto.IslandPartySettleNotifyOuterClass.IslandPartySettleNotify result = new emu.gingerps.net.proto.IslandPartySettleNotifyOuterClass.IslandPartySettleNotify(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.IslandPartySettleNotifyOuterClass.IslandPartySettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        result.timeRemain_ = timeRemain_;
+        result.isNewRecord_ = isNewRecord_;
         if (scoreListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             scoreList_ = java.util.Collections.unmodifiableList(scoreList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.scoreList_ = scoreList_;
         } else {
           result.scoreList_ = scoreListBuilder_.build();
         }
+        result.reason_ = reason_;
         if (settleInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             settleInfoList_ = java.util.Collections.unmodifiableList(settleInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.settleInfoList_ = settleInfoList_;
         } else {
           result.settleInfoList_ = settleInfoListBuilder_.build();
         }
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.IslandPartySettleNotifyOuterClass.IslandPartySettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.timeRemain_ = timeRemain_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isNewRecord_ = isNewRecord_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.reason_ = reason_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -648,7 +718,7 @@ public final class IslandPartySettleNotifyOuterClass {
           if (!other.scoreList_.isEmpty()) {
             if (scoreList_.isEmpty()) {
               scoreList_ = other.scoreList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureScoreListIsMutable();
               scoreList_.addAll(other.scoreList_);
@@ -661,7 +731,7 @@ public final class IslandPartySettleNotifyOuterClass {
               scoreListBuilder_.dispose();
               scoreListBuilder_ = null;
               scoreList_ = other.scoreList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               scoreListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getScoreListFieldBuilder() : null;
@@ -677,7 +747,7 @@ public final class IslandPartySettleNotifyOuterClass {
           if (!other.settleInfoList_.isEmpty()) {
             if (settleInfoList_.isEmpty()) {
               settleInfoList_ = other.settleInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureSettleInfoListIsMutable();
               settleInfoList_.addAll(other.settleInfoList_);
@@ -690,7 +760,7 @@ public final class IslandPartySettleNotifyOuterClass {
               settleInfoListBuilder_.dispose();
               settleInfoListBuilder_ = null;
               settleInfoList_ = other.settleInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000002);
               settleInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSettleInfoListFieldBuilder() : null;
@@ -699,7 +769,7 @@ public final class IslandPartySettleNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -714,71 +784,17 @@ public final class IslandPartySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.IslandPartySettleNotifyOuterClass.IslandPartySettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-                isNewRecord_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 42: {
-                emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(),
-                        extensionRegistry);
-                if (scoreListBuilder_ == null) {
-                  ensureScoreListIsMutable();
-                  scoreList_.add(m);
-                } else {
-                  scoreListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 72: {
-                timeRemain_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 72
-              case 96: {
-                reason_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 96
-              case 106: {
-                emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.parser(),
-                        extensionRegistry);
-                if (settleInfoListBuilder_ == null) {
-                  ensureSettleInfoListIsMutable();
-                  settleInfoList_.add(m);
-                } else {
-                  settleInfoListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 106
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.IslandPartySettleNotifyOuterClass.IslandPartySettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -800,7 +816,6 @@ public final class IslandPartySettleNotifyOuterClass {
       public Builder setTimeRemain(int value) {
         
         timeRemain_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -809,7 +824,7 @@ public final class IslandPartySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimeRemain() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         timeRemain_ = 0;
         onChanged();
         return this;
@@ -832,7 +847,6 @@ public final class IslandPartySettleNotifyOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -841,7 +855,7 @@ public final class IslandPartySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -850,9 +864,9 @@ public final class IslandPartySettleNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> scoreList_ =
         java.util.Collections.emptyList();
       private void ensureScoreListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           scoreList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>(scoreList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1002,7 +1016,7 @@ public final class IslandPartySettleNotifyOuterClass {
       public Builder clearScoreList() {
         if (scoreListBuilder_ == null) {
           scoreList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           scoreListBuilder_.clear();
@@ -1079,7 +1093,7 @@ public final class IslandPartySettleNotifyOuterClass {
           scoreListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder>(
                   scoreList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           scoreList_ = null;
@@ -1101,8 +1115,8 @@ public final class IslandPartySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1112,7 +1126,8 @@ public final class IslandPartySettleNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
+        @SuppressWarnings("deprecation")
+        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
         return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
       }
       /**
@@ -1124,7 +1139,7 @@ public final class IslandPartySettleNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -1134,7 +1149,7 @@ public final class IslandPartySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -1143,9 +1158,9 @@ public final class IslandPartySettleNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo> settleInfoList_ =
         java.util.Collections.emptyList();
       private void ensureSettleInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           settleInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo>(settleInfoList_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1295,7 +1310,7 @@ public final class IslandPartySettleNotifyOuterClass {
       public Builder clearSettleInfoList() {
         if (settleInfoListBuilder_ == null) {
           settleInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           settleInfoListBuilder_.clear();
@@ -1372,7 +1387,7 @@ public final class IslandPartySettleNotifyOuterClass {
           settleInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo, emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.Builder, emu.gingerps.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfoOrBuilder>(
                   settleInfoList_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           settleInfoList_ = null;
@@ -1412,18 +1427,7 @@ public final class IslandPartySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new IslandPartySettleNotify(input, extensionRegistry);
       }
     };
 

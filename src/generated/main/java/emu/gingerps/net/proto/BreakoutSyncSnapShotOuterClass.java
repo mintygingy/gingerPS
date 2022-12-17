@@ -60,6 +60,56 @@ public final class BreakoutSyncSnapShotOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BreakoutSyncSnapShot(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 114: {
+              emu.gingerps.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.Builder subBuilder = null;
+              if (snapShot_ != null) {
+                subBuilder = snapShot_.toBuilder();
+              }
+              snapShot_ = input.readMessage(emu.gingerps.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(snapShot_);
+                snapShot_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.internal_static_BreakoutSyncSnapShot_descriptor;
@@ -96,7 +146,7 @@ public final class BreakoutSyncSnapShotOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShotOrBuilder getSnapShotOrBuilder() {
-      return snapShot_ == null ? emu.gingerps.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.getDefaultInstance() : snapShot_;
+      return getSnapShot();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -116,7 +166,7 @@ public final class BreakoutSyncSnapShotOuterClass {
       if (snapShot_ != null) {
         output.writeMessage(14, getSnapShot());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -129,7 +179,7 @@ public final class BreakoutSyncSnapShotOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getSnapShot());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -149,7 +199,7 @@ public final class BreakoutSyncSnapShotOuterClass {
         if (!getSnapShot()
             .equals(other.getSnapShot())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -164,7 +214,7 @@ public final class BreakoutSyncSnapShotOuterClass {
         hash = (37 * hash) + SNAP_SHOT_FIELD_NUMBER;
         hash = (53 * hash) + getSnapShot().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -281,21 +331,26 @@ public final class BreakoutSyncSnapShotOuterClass {
 
       // Construct using emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        snapShot_ = null;
-        if (snapShotBuilder_ != null) {
-          snapShotBuilder_.dispose();
+        if (snapShotBuilder_ == null) {
+          snapShot_ = null;
+        } else {
+          snapShot_ = null;
           snapShotBuilder_ = null;
         }
         return this;
@@ -324,18 +379,13 @@ public final class BreakoutSyncSnapShotOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot buildPartial() {
         emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot result = new emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        if (snapShotBuilder_ == null) {
+          result.snapShot_ = snapShot_;
+        } else {
+          result.snapShot_ = snapShotBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.snapShot_ = snapShotBuilder_ == null
-              ? snapShot_
-              : snapShotBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -385,7 +435,7 @@ public final class BreakoutSyncSnapShotOuterClass {
         if (other.hasSnapShot()) {
           mergeSnapShot(other.getSnapShot());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -400,40 +450,19 @@ public final class BreakoutSyncSnapShotOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 114: {
-                input.readMessage(
-                    getSnapShotFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private emu.gingerps.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot snapShot_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -443,7 +472,7 @@ public final class BreakoutSyncSnapShotOuterClass {
        * @return Whether the snapShot field is set.
        */
       public boolean hasSnapShot() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return snapShotBuilder_ != null || snapShot_ != null;
       }
       /**
        * <code>.BreakoutSnapShot snap_shot = 14;</code>
@@ -465,11 +494,11 @@ public final class BreakoutSyncSnapShotOuterClass {
             throw new NullPointerException();
           }
           snapShot_ = value;
+          onChanged();
         } else {
           snapShotBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -479,11 +508,11 @@ public final class BreakoutSyncSnapShotOuterClass {
           emu.gingerps.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.Builder builderForValue) {
         if (snapShotBuilder_ == null) {
           snapShot_ = builderForValue.build();
+          onChanged();
         } else {
           snapShotBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
@@ -491,38 +520,38 @@ public final class BreakoutSyncSnapShotOuterClass {
        */
       public Builder mergeSnapShot(emu.gingerps.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot value) {
         if (snapShotBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            snapShot_ != null &&
-            snapShot_ != emu.gingerps.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.getDefaultInstance()) {
-            getSnapShotBuilder().mergeFrom(value);
+          if (snapShot_ != null) {
+            snapShot_ =
+              emu.gingerps.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.newBuilder(snapShot_).mergeFrom(value).buildPartial();
           } else {
             snapShot_ = value;
           }
+          onChanged();
         } else {
           snapShotBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutSnapShot snap_shot = 14;</code>
        */
       public Builder clearSnapShot() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        snapShot_ = null;
-        if (snapShotBuilder_ != null) {
-          snapShotBuilder_.dispose();
+        if (snapShotBuilder_ == null) {
+          snapShot_ = null;
+          onChanged();
+        } else {
+          snapShot_ = null;
           snapShotBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.BreakoutSnapShot snap_shot = 14;</code>
        */
       public emu.gingerps.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.Builder getSnapShotBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getSnapShotFieldBuilder().getBuilder();
       }
@@ -586,18 +615,7 @@ public final class BreakoutSyncSnapShotOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BreakoutSyncSnapShot(input, extensionRegistry);
       }
     };
 

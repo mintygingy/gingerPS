@@ -103,6 +103,83 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private WinterCampTriathlonSettleNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 40: {
+
+              unk3300EMNKJGKNCMP_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              remainTime_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              isSuccess_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              unk3300ACDOMBHMNJG_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              unk3300OEFOGONENFN_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              score_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WinterCampTriathlonSettleNotifyOuterClass.internal_static_WinterCampTriathlonSettleNotify_descriptor;
@@ -117,7 +194,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
     }
 
     public static final int UNK3300_ACDOMBHMNJG_FIELD_NUMBER = 11;
-    private int unk3300ACDOMBHMNJG_ = 0;
+    private int unk3300ACDOMBHMNJG_;
     /**
      * <code>uint32 Unk3300_ACDOMBHMNJG = 11;</code>
      * @return The unk3300ACDOMBHMNJG.
@@ -128,7 +205,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 10;
-    private boolean isSuccess_ = false;
+    private boolean isSuccess_;
     /**
      * <code>bool is_success = 10;</code>
      * @return The isSuccess.
@@ -139,7 +216,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 15;
-    private int score_ = 0;
+    private int score_;
     /**
      * <code>uint32 score = 15;</code>
      * @return The score.
@@ -150,7 +227,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 7;
-    private boolean isNewRecord_ = false;
+    private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 7;</code>
      * @return The isNewRecord.
@@ -161,7 +238,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 14;
-    private int galleryId_ = 0;
+    private int galleryId_;
     /**
      * <code>uint32 gallery_id = 14;</code>
      * @return The galleryId.
@@ -172,7 +249,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
     }
 
     public static final int UNK3300_OEFOGONENFN_FIELD_NUMBER = 12;
-    private int unk3300OEFOGONENFN_ = 0;
+    private int unk3300OEFOGONENFN_;
     /**
      * <code>uint32 Unk3300_OEFOGONENFN = 12;</code>
      * @return The unk3300OEFOGONENFN.
@@ -183,7 +260,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
     }
 
     public static final int REMAIN_TIME_FIELD_NUMBER = 6;
-    private int remainTime_ = 0;
+    private int remainTime_;
     /**
      * <code>uint32 remain_time = 6;</code>
      * @return The remainTime.
@@ -194,7 +271,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
     }
 
     public static final int UNK3300_EMNKJGKNCMP_FIELD_NUMBER = 5;
-    private int unk3300EMNKJGKNCMP_ = 0;
+    private int unk3300EMNKJGKNCMP_;
     /**
      * <code>uint32 Unk3300_EMNKJGKNCMP = 5;</code>
      * @return The unk3300EMNKJGKNCMP.
@@ -242,7 +319,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
       if (score_ != 0) {
         output.writeUInt32(15, score_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -283,7 +360,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, score_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -314,7 +391,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
           != other.getRemainTime()) return false;
       if (getUnk3300EMNKJGKNCMP()
           != other.getUnk3300EMNKJGKNCMP()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -343,7 +420,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
       hash = (53 * hash) + getRemainTime();
       hash = (37 * hash) + UNK3300_EMNKJGKNCMP_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300EMNKJGKNCMP();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -470,26 +547,38 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WinterCampTriathlonSettleNotifyOuterClass.WinterCampTriathlonSettleNotify.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         unk3300ACDOMBHMNJG_ = 0;
+
         isSuccess_ = false;
+
         score_ = 0;
+
         isNewRecord_ = false;
+
         galleryId_ = 0;
+
         unk3300OEFOGONENFN_ = 0;
+
         remainTime_ = 0;
+
         unk3300EMNKJGKNCMP_ = 0;
+
         return this;
       }
 
@@ -516,37 +605,16 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WinterCampTriathlonSettleNotifyOuterClass.WinterCampTriathlonSettleNotify buildPartial() {
         emu.gingerps.net.proto.WinterCampTriathlonSettleNotifyOuterClass.WinterCampTriathlonSettleNotify result = new emu.gingerps.net.proto.WinterCampTriathlonSettleNotifyOuterClass.WinterCampTriathlonSettleNotify(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.unk3300ACDOMBHMNJG_ = unk3300ACDOMBHMNJG_;
+        result.isSuccess_ = isSuccess_;
+        result.score_ = score_;
+        result.isNewRecord_ = isNewRecord_;
+        result.galleryId_ = galleryId_;
+        result.unk3300OEFOGONENFN_ = unk3300OEFOGONENFN_;
+        result.remainTime_ = remainTime_;
+        result.unk3300EMNKJGKNCMP_ = unk3300EMNKJGKNCMP_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.WinterCampTriathlonSettleNotifyOuterClass.WinterCampTriathlonSettleNotify result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.unk3300ACDOMBHMNJG_ = unk3300ACDOMBHMNJG_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isSuccess_ = isSuccess_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.score_ = score_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.isNewRecord_ = isNewRecord_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.galleryId_ = galleryId_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.unk3300OEFOGONENFN_ = unk3300OEFOGONENFN_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.remainTime_ = remainTime_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.unk3300EMNKJGKNCMP_ = unk3300EMNKJGKNCMP_;
-        }
       }
 
       @java.lang.Override
@@ -617,7 +685,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
         if (other.getUnk3300EMNKJGKNCMP() != 0) {
           setUnk3300EMNKJGKNCMP(other.getUnk3300EMNKJGKNCMP());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -632,73 +700,19 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.WinterCampTriathlonSettleNotifyOuterClass.WinterCampTriathlonSettleNotify parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 40: {
-                unk3300EMNKJGKNCMP_ = input.readUInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 40
-              case 48: {
-                remainTime_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 48
-              case 56: {
-                isNewRecord_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 56
-              case 80: {
-                isSuccess_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 80
-              case 88: {
-                unk3300ACDOMBHMNJG_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 88
-              case 96: {
-                unk3300OEFOGONENFN_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 96
-              case 112: {
-                galleryId_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 112
-              case 120: {
-                score_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.WinterCampTriathlonSettleNotifyOuterClass.WinterCampTriathlonSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int unk3300ACDOMBHMNJG_ ;
       /**
@@ -717,7 +731,6 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
       public Builder setUnk3300ACDOMBHMNJG(int value) {
         
         unk3300ACDOMBHMNJG_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -726,7 +739,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300ACDOMBHMNJG() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         unk3300ACDOMBHMNJG_ = 0;
         onChanged();
         return this;
@@ -749,7 +762,6 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -758,7 +770,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         isSuccess_ = false;
         onChanged();
         return this;
@@ -781,7 +793,6 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -790,7 +801,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         score_ = 0;
         onChanged();
         return this;
@@ -813,7 +824,6 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -822,7 +832,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -845,7 +855,6 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -854,7 +863,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         galleryId_ = 0;
         onChanged();
         return this;
@@ -877,7 +886,6 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
       public Builder setUnk3300OEFOGONENFN(int value) {
         
         unk3300OEFOGONENFN_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -886,7 +894,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OEFOGONENFN() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         unk3300OEFOGONENFN_ = 0;
         onChanged();
         return this;
@@ -909,7 +917,6 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
       public Builder setRemainTime(int value) {
         
         remainTime_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -918,7 +925,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemainTime() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         remainTime_ = 0;
         onChanged();
         return this;
@@ -941,7 +948,6 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
       public Builder setUnk3300EMNKJGKNCMP(int value) {
         
         unk3300EMNKJGKNCMP_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -950,7 +956,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EMNKJGKNCMP() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         unk3300EMNKJGKNCMP_ = 0;
         onChanged();
         return this;
@@ -988,18 +994,7 @@ public final class WinterCampTriathlonSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WinterCampTriathlonSettleNotify(input, extensionRegistry);
       }
     };
 

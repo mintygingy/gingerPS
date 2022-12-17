@@ -129,6 +129,97 @@ public final class StartRogueDiaryPlayRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private StartRogueDiaryPlayRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                randCardList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              randCardList_.addInt(input.readUInt32());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                randCardList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                randCardList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 48: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                trialAvatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              trialAvatarList_.add(
+                  input.readMessage(emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.parser(), extensionRegistry));
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                avatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              avatarList_.add(
+                  input.readMessage(emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          randCardList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          trialAvatarList_ = java.util.Collections.unmodifiableList(trialAvatarList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          avatarList_ = java.util.Collections.unmodifiableList(avatarList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.StartRogueDiaryPlayRspOuterClass.internal_static_StartRogueDiaryPlayRsp_descriptor;
@@ -143,7 +234,6 @@ public final class StartRogueDiaryPlayRspOuterClass {
     }
 
     public static final int AVATAR_LIST_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> avatarList_;
     /**
      * <code>repeated .RogueDiaryAvatar avatar_list = 15;</code>
@@ -184,7 +274,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 6;</code>
      * @return The retcode.
@@ -195,7 +285,6 @@ public final class StartRogueDiaryPlayRspOuterClass {
     }
 
     public static final int TRIAL_AVATAR_LIST_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> trialAvatarList_;
     /**
      * <code>repeated .RogueDiaryAvatar trial_avatar_list = 9;</code>
@@ -236,7 +325,6 @@ public final class StartRogueDiaryPlayRspOuterClass {
     }
 
     public static final int RAND_CARD_LIST_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList randCardList_;
     /**
      * <code>repeated uint32 rand_card_list = 2;</code>
@@ -295,7 +383,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
       for (int i = 0; i < avatarList_.size(); i++) {
         output.writeMessage(15, avatarList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -330,7 +418,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, avatarList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -353,7 +441,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
           .equals(other.getTrialAvatarListList())) return false;
       if (!getRandCardListList()
           .equals(other.getRandCardListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -378,7 +466,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
         hash = (37 * hash) + RAND_CARD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRandCardListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -505,34 +593,40 @@ public final class StartRogueDiaryPlayRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.StartRogueDiaryPlayRspOuterClass.StartRogueDiaryPlayRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAvatarListFieldBuilder();
+          getTrialAvatarListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (avatarListBuilder_ == null) {
           avatarList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          avatarList_ = null;
           avatarListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
+
         if (trialAvatarListBuilder_ == null) {
           trialAvatarList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          trialAvatarList_ = null;
           trialAvatarListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         randCardList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -559,13 +653,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.StartRogueDiaryPlayRspOuterClass.StartRogueDiaryPlayRsp buildPartial() {
         emu.gingerps.net.proto.StartRogueDiaryPlayRspOuterClass.StartRogueDiaryPlayRsp result = new emu.gingerps.net.proto.StartRogueDiaryPlayRspOuterClass.StartRogueDiaryPlayRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.StartRogueDiaryPlayRspOuterClass.StartRogueDiaryPlayRsp result) {
+        int from_bitField0_ = bitField0_;
         if (avatarListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             avatarList_ = java.util.Collections.unmodifiableList(avatarList_);
@@ -575,27 +663,23 @@ public final class StartRogueDiaryPlayRspOuterClass {
         } else {
           result.avatarList_ = avatarListBuilder_.build();
         }
+        result.retcode_ = retcode_;
         if (trialAvatarListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             trialAvatarList_ = java.util.Collections.unmodifiableList(trialAvatarList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.trialAvatarList_ = trialAvatarList_;
         } else {
           result.trialAvatarList_ = trialAvatarListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           randCardList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.randCardList_ = randCardList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.StartRogueDiaryPlayRspOuterClass.StartRogueDiaryPlayRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -675,7 +759,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
           if (!other.trialAvatarList_.isEmpty()) {
             if (trialAvatarList_.isEmpty()) {
               trialAvatarList_ = other.trialAvatarList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureTrialAvatarListIsMutable();
               trialAvatarList_.addAll(other.trialAvatarList_);
@@ -688,7 +772,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
               trialAvatarListBuilder_.dispose();
               trialAvatarListBuilder_ = null;
               trialAvatarList_ = other.trialAvatarList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               trialAvatarListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTrialAvatarListFieldBuilder() : null;
@@ -700,14 +784,14 @@ public final class StartRogueDiaryPlayRspOuterClass {
         if (!other.randCardList_.isEmpty()) {
           if (randCardList_.isEmpty()) {
             randCardList_ = other.randCardList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureRandCardListIsMutable();
             randCardList_.addAll(other.randCardList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -722,77 +806,17 @@ public final class StartRogueDiaryPlayRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.StartRogueDiaryPlayRspOuterClass.StartRogueDiaryPlayRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                int v = input.readUInt32();
-                ensureRandCardListIsMutable();
-                randCardList_.addInt(v);
-                break;
-              } // case 16
-              case 18: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureRandCardListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  randCardList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 18
-              case 48: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 74: {
-                emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.parser(),
-                        extensionRegistry);
-                if (trialAvatarListBuilder_ == null) {
-                  ensureTrialAvatarListIsMutable();
-                  trialAvatarList_.add(m);
-                } else {
-                  trialAvatarListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 74
-              case 122: {
-                emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar m =
-                    input.readMessage(
-                        emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.parser(),
-                        extensionRegistry);
-                if (avatarListBuilder_ == null) {
-                  ensureAvatarListIsMutable();
-                  avatarList_.add(m);
-                } else {
-                  avatarListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 122
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.StartRogueDiaryPlayRspOuterClass.StartRogueDiaryPlayRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1054,7 +1078,6 @@ public final class StartRogueDiaryPlayRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1063,7 +1086,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -1072,9 +1095,9 @@ public final class StartRogueDiaryPlayRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> trialAvatarList_ =
         java.util.Collections.emptyList();
       private void ensureTrialAvatarListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           trialAvatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar>(trialAvatarList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1224,7 +1247,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
       public Builder clearTrialAvatarList() {
         if (trialAvatarListBuilder_ == null) {
           trialAvatarList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           trialAvatarListBuilder_.clear();
@@ -1301,7 +1324,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
           trialAvatarListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar, emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.Builder, emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatarOrBuilder>(
                   trialAvatarList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           trialAvatarList_ = null;
@@ -1311,10 +1334,10 @@ public final class StartRogueDiaryPlayRspOuterClass {
 
       private com.google.protobuf.Internal.IntList randCardList_ = emptyIntList();
       private void ensureRandCardListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           randCardList_ = mutableCopy(randCardList_);
-          bitField0_ |= 0x00000008;
-        }
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated uint32 rand_card_list = 2;</code>
@@ -1322,7 +1345,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getRandCardListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(randCardList_) : randCardList_;
       }
       /**
@@ -1348,7 +1371,6 @@ public final class StartRogueDiaryPlayRspOuterClass {
        */
       public Builder setRandCardList(
           int index, int value) {
-        
         ensureRandCardListIsMutable();
         randCardList_.setInt(index, value);
         onChanged();
@@ -1360,7 +1382,6 @@ public final class StartRogueDiaryPlayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addRandCardList(int value) {
-        
         ensureRandCardListIsMutable();
         randCardList_.addInt(value);
         onChanged();
@@ -1385,7 +1406,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
        */
       public Builder clearRandCardList() {
         randCardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1422,18 +1443,7 @@ public final class StartRogueDiaryPlayRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new StartRogueDiaryPlayRsp(input, extensionRegistry);
       }
     };
 

@@ -79,6 +79,73 @@ public final class GetShopmallDataRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GetShopmallDataRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                shopTypeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              shopTypeList_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                shopTypeList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                shopTypeList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          shopTypeList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetShopmallDataRspOuterClass.internal_static_GetShopmallDataRsp_descriptor;
@@ -93,7 +160,7 @@ public final class GetShopmallDataRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_ = 0;
+    private int retcode_;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -104,7 +171,6 @@ public final class GetShopmallDataRspOuterClass {
     }
 
     public static final int SHOP_TYPE_LIST_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList shopTypeList_;
     /**
      * <code>repeated uint32 shop_type_list = 7;</code>
@@ -157,7 +223,7 @@ public final class GetShopmallDataRspOuterClass {
       for (int i = 0; i < shopTypeList_.size(); i++) {
         output.writeUInt32NoTag(shopTypeList_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -184,7 +250,7 @@ public final class GetShopmallDataRspOuterClass {
         }
         shopTypeListMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -203,7 +269,7 @@ public final class GetShopmallDataRspOuterClass {
           != other.getRetcode()) return false;
       if (!getShopTypeListList()
           .equals(other.getShopTypeListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -220,7 +286,7 @@ public final class GetShopmallDataRspOuterClass {
         hash = (37 * hash) + SHOP_TYPE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getShopTypeListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,20 +413,26 @@ public final class GetShopmallDataRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         retcode_ = 0;
+
         shopTypeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -387,25 +459,15 @@ public final class GetShopmallDataRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp buildPartial() {
         emu.gingerps.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp result = new emu.gingerps.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
+        if (((bitField0_ & 0x00000001) != 0)) {
           shopTypeList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.shopTypeList_ = shopTypeList_;
-      }
-
-      private void buildPartial0(emu.gingerps.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.retcode_ = retcode_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -458,14 +520,14 @@ public final class GetShopmallDataRspOuterClass {
         if (!other.shopTypeList_.isEmpty()) {
           if (shopTypeList_.isEmpty()) {
             shopTypeList_ = other.shopTypeList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureShopTypeListIsMutable();
             shopTypeList_.addAll(other.shopTypeList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -480,51 +542,17 @@ public final class GetShopmallDataRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        emu.gingerps.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 16: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 16
-              case 56: {
-                int v = input.readUInt32();
-                ensureShopTypeListIsMutable();
-                shopTypeList_.addInt(v);
-                break;
-              } // case 56
-              case 58: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureShopTypeListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  shopTypeList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.gingerps.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -546,7 +574,6 @@ public final class GetShopmallDataRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -555,7 +582,7 @@ public final class GetShopmallDataRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         retcode_ = 0;
         onChanged();
         return this;
@@ -563,10 +590,10 @@ public final class GetShopmallDataRspOuterClass {
 
       private com.google.protobuf.Internal.IntList shopTypeList_ = emptyIntList();
       private void ensureShopTypeListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           shopTypeList_ = mutableCopy(shopTypeList_);
-          bitField0_ |= 0x00000002;
-        }
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated uint32 shop_type_list = 7;</code>
@@ -574,7 +601,7 @@ public final class GetShopmallDataRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getShopTypeListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(shopTypeList_) : shopTypeList_;
       }
       /**
@@ -600,7 +627,6 @@ public final class GetShopmallDataRspOuterClass {
        */
       public Builder setShopTypeList(
           int index, int value) {
-        
         ensureShopTypeListIsMutable();
         shopTypeList_.setInt(index, value);
         onChanged();
@@ -612,7 +638,6 @@ public final class GetShopmallDataRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addShopTypeList(int value) {
-        
         ensureShopTypeListIsMutable();
         shopTypeList_.addInt(value);
         onChanged();
@@ -637,7 +662,7 @@ public final class GetShopmallDataRspOuterClass {
        */
       public Builder clearShopTypeList() {
         shopTypeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -674,18 +699,7 @@ public final class GetShopmallDataRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GetShopmallDataRsp(input, extensionRegistry);
       }
     };
 
